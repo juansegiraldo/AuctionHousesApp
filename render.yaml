@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: auction-houses-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: auction-houses-db
+          property: connectionString
+
+databases:
+  - name: auction-houses-db
+    databaseName: auction_houses
+    user: auction_user
