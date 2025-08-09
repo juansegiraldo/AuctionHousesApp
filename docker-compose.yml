@@ -1,0 +1,114 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: auction_houses_db
+    environment:
+      POSTGRES_DB: auction_houses
+      POSTGRES_USER: auction_user
+      POSTGRES_PASSWORD: auction_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - auction_network
+
+  # Redis for caching and queue
+  redis:
+    image: redis:7-alpine
+    container_name: auction_houses_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - auction_network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: auction_houses_api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
+      REDIS_URL: redis://redis:6379
+      ENVIRONMENT: development
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+    networks:
+      - auction_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Celery Worker for scraping tasks
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: auction_houses_worker
+    environment:
+      DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
+      REDIS_URL: redis://redis:6379
+      ENVIRONMENT: development
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+    networks:
+      - auction_network
+    command: celery -A app.core.celery_app worker --loglevel=info
+
+  # Celery Beat for scheduling
+  celery_beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: auction_houses_scheduler
+    environment:
+      DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
+      REDIS_URL: redis://redis:6379
+      ENVIRONMENT: development
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+    networks:
+      - auction_network
+    command: celery -A app.core.celery_app beat --loglevel=info
+
+  # Next.js Frontend (for later)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: auction_houses_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - auction_network
+    profiles:
+      - frontend
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  auction_network:
+    driver: bridge

@@ -1,0 +1,478 @@
+{
+  "generated_at": "2025-08-08",
+  "timezone": "America/Bogota",
+  "houses": [
+    {
+      "name": "Bogotá Auctions",
+      "country": "Colombia",
+      "website": "https://www.bogotaauctions.com",
+      "description": "Bogotá Auctions es una casa de subastas colombiana especializada en arte latinoamericano, libros, grabados y objetos de colección. Opera tanto de forma presencial como en línea y ofrece servicios de valoración y consignación. La plataforma está diseñada para que los usuarios puedan registrar lotes, seguir subastas y pujar en tiempo real.",
+      "site_structure": {
+        "home": "https://www.bogotaauctions.com",
+        "upcoming_auctions_page": "https://www.bogotaauctions.com/es/subastas-activas",
+        "historical_auctions_page": "https://www.bogotaauctions.com/es/subastas-historicas",
+        "auction_page_pattern": "https://www.bogotaauctions.com/es/subasta/{slug}",
+        "lot_page_pattern": "https://www.bogotaauctions.com/es/lote/{id}",
+        "navigation": [
+          "Home → Menú ‘Subastas’ → Subastas activas (lista de subastas en curso)",
+          "Home → Menú ‘Subastas’ → Subastas históricas (lista de subastas anteriores)",
+          "En una subasta: se muestran el título, fechas de inicio y cierre y un enlace ‘Ver lotes’; al hacer clic se lista cada lote con imagen, descripción y precio de salida"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Libros, documentos y grabados antiguos (VIRTUAL)",
+          "start": "2025-07-01 19:00",
+          "end": "2025-09-04 17:00",
+          "source": "【970421977202227†L48-L100】"
+        },
+        {
+          "title": "Libros de arte y otros coffee table books",
+          "start": "2025-07-08",
+          "end": "2025-07-24",
+          "source": "【970421977202227†L48-L100】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Arte colombiano y latinoamericano, moderno y contemporáneo",
+          "start": "2025-05-29 20:00",
+          "source": "【889494002313012†L48-L104】"
+        },
+        {
+          "title": "Grabados y Múltiples",
+          "start": "2025-04-03 20:00",
+          "source": "【889494002313012†L48-L104】"
+        }
+      ],
+      "scraping_notes": "La página de subastas activas ofrece una lista paginada de eventos con título, fechas de inicio y cierre y un enlace a cada subasta. Los lotes dentro de cada subasta se cargan como contenido HTML con identificadores para cada pieza. Se puede usar `requests` y `BeautifulSoup` para extraer la tabla de subastas activas e iterar sobre los enlaces que contienen los slugs de cada subasta. Para las páginas de lotes, se debe analizar el HTML para extraer número de lote, título, descripción, imagen y precio base. La página histórica funciona de forma similar pero con subastas cerradas.\n\nAlgunas secciones requieren JavaScript para filtrar (ej. búsqueda de lotes); sin embargo, la información principal está disponible en el HTML inicial, por lo que no es imprescindible un motor de navegador.",
+      "code_snippet": """python\nimport requests\nfrom bs4 import BeautifulSoup\n\nBASE_URL = \"https://www.bogotaauctions.com\"\n\n# obtener la página de subastas activas\nresp = requests.get(f\"{BASE_URL}/es/subastas-activas\")\nsoup = BeautifulSoup(resp.content, \"html.parser\")\n# extraer enlaces de subastas\nfor link in soup.select('a.titulo-subasta'):\n    slug = link['href']  # p.ej. '/es/subasta/libros-grabados-antiguos'\n    auction_url = f\"{BASE_URL}{slug}\"\n    # solicitar página de subasta y extraer lotes\n    r = requests.get(auction_url)\n    s = BeautifulSoup(r.content, \"html.parser\")\n    for lot in s.select('div.lote'):\n        numero = lot.select_one('span.numero').get_text(strip=True)\n        titulo = lot.select_one('h3').get_text(strip=True)\n        # ... continuar extrayendo otros campos ...\n"""
+    },
+    {
+      "name": "Lefebre Subastas",
+      "country": "Colombia",
+      "website": "https://lefebresubastas.com",
+      "description": "Casa de subastas fundada en Bogotá que combina tradición y vanguardia. Lefebre organiza subastas de arte, joyería, mobiliario y objetos de colección y publica sus catálogos en línea y en formato PDF. Para la puja electrónica utiliza la plataforma Auction Mobility, lo que permite seguir las subastas en vivo desde la web o la app.",
+      "site_structure": {
+        "home": "https://lefebresubastas.com",
+        "current_auction_page": "https://lefebresubastas.com/subasta-en-curso/",
+        "past_auctions_page": "https://lefebresubastas.com/subastas-anteriores/",
+        "auction_page_pattern": "https://lefebresubastas.com/subasta-{numero}",
+        "digital_platform": "https://auction.lefebresubastas.com (requiere JavaScript y utiliza Auction Mobility)",
+        "navigation": [
+          "Home → Subasta en curso (muestra la subasta actual con fecha y enlace al catálogo)",
+          "Home → Subastas anteriores (lista de catálogos por número con botón ‘Descargar’ PDF)",
+          "Para pujar: la plataforma de Auction Mobility (auction.lefebresubastas.com) necesita JS; cada subasta tiene pestañas para ‘Próximas subastas’ y ‘Subastas anteriores’."
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Subasta 34",
+          "date": "2025-06-05",
+          "description": "Evento anunciado en la página principal con la leyenda ‘El lugar donde tradición y vanguardia se encuentran’."
+        },
+        {
+          "title": "Subasta 33",
+          "date": "2025-03-12",
+          "description": "Mencionada en redes sociales y prensa como la primera subasta del año (datos externos)."
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Catálogo 34",
+          "description": "Catálogo disponible en la sección ‘Subastas anteriores’ con botón ‘Descargar’.",
+          "source": "【378713567102690†L31-L99】"
+        },
+        {
+          "title": "Catálogo 33",
+          "description": "Catálogo anterior listado en la misma sección con acceso a PDF.",
+          "source": "【378713567102690†L31-L99】"
+        }
+      ],
+      "scraping_notes": "El sitio principal publica catálogos en PDF para cada subasta. Para extraer detalles de lotes se debe descargar cada PDF y parsearlo (puede hacerse con bibliotecas como pdfminer). La plataforma Auction Mobility requiere un motor de navegador (Selenium o Playwright) porque el contenido se genera mediante JavaScript y API privadas. Para un seguimiento automatizado será necesario automatizar un navegador e interceptar las solicitudes de red; no hay API pública.",
+      "code_snippet": """python\n# Ejemplo básico para descargar catálogos PDF de subastas anteriores\nimport requests\nfrom bs4 import BeautifulSoup\n\nurl = 'https://lefebresubastas.com/subastas-anteriores/'\nresp = requests.get(url)\nsoup = BeautifulSoup(resp.content, 'html.parser')\nfor link in soup.find_all('a', string=lambda x: x and 'Descargar' in x):\n    pdf_url = link['href']\n    pdf_data = requests.get(pdf_url).content\n    with open(pdf_url.split('/')[-1], 'wb') as f:\n        f.write(pdf_data)\n\n# Para subastas en auctionmobility.com se recomienda usar Selenium para navegar la app y capturar los datos.\n"""
+    },
+    {
+      "name": "Durán Arte y Subastas",
+      "country": "España",
+      "website": "https://www.duran-subastas.com",
+      "description": "Durán Arte y Subastas fue fundada en 1969 y es la casa de subastas líder y más antigua de España. A lo largo de casi cincuenta años han ofrecido a clientes piezas de arqueología, pintura antigua y contemporánea, arte moderno, relojes y joyas, libros, manuscritos, vino y fotografía. Muchas de estas obras han pasado a colecciones europeas de renombre【925955803664192†screenshot】.",
+      "site_structure": {
+        "home": "https://www.duran-subastas.com",
+        "upcoming_auction_page": "https://www.duran-subastas.com/subasta-647-julio-2025" ,
+        "historical_auctions_page": "https://www.duran-subastas.com/historico-de-subastas",
+        "auction_page_pattern": "https://www.duran-subastas.com/{subasta-slug}",
+        "lot_page_pattern": "Dentro de cada subasta los lotes se enumeran en la misma página; cada lote tiene un enlace ancla con su número.",
+        "navigation": [
+          "Home → menú ‘Subastas’ → Próximas subastas (muestra la subasta actual con sesiones y categorías)",
+          "Home → menú ‘Histórico’ → Histórico de subastas (lista de subastas por número y fecha)",
+          "En una subasta: se indica la fecha de cada sesión, con una tabla de categorías y número de lotes; al hacer clic se accede a la lista de lotes con título, estimado y botón de puja"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Subasta 647 Julio 2025",
+          "sessions": [
+            {
+              "date": "2025-07-22",
+              "description": "Sesión 1 con 301 lotes de pintura y 187 de obra gráfica, entre otras categorías【367612186770885†L54-L103】."
+            },
+            {
+              "date": "2025-07-23",
+              "description": "Sesión 2 con categorías adicionales y subasta online【367612186770885†L54-L103】."
+            }
+          ],
+          "source": "【367612186770885†L54-L103】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Subasta 646 Junio 2025",
+          "date": "2025-06-24",
+          "source": "【708269202716953†L60-L164】"
+        },
+        {
+          "title": "Subasta 645 Mayo 2025",
+          "date": "2025-05-28",
+          "source": "【708269202716953†L60-L164】"
+        }
+      ],
+      "scraping_notes": "El histórico de subastas está disponible en una página HTML paginada con enlaces a cada subasta. Cada subasta tiene un slug (‘subasta-647-julio-2025’) que se puede capturar y recorrer. Los lotes se listan en tablas con clases CSS; se pueden extraer con `BeautifulSoup`. Si se necesita obtener imágenes y estimados, hay que seguir los enlaces de cada lote (anclas internas). La navegación es completamente HTML, por lo que no se requiere ejecutar JavaScript.",
+      "code_snippet": """python\nimport requests\nfrom bs4 import BeautifulSoup\n\n# obtener lista de subastas históricas\nurl = 'https://www.duran-subastas.com/historico-de-subastas'\nresp = requests.get(url)\nsoup = BeautifulSoup(resp.content, 'html.parser')\nfor link in soup.select('a[href*="subasta-"]'):\n    subasta_url = link['href']\n    # visitar cada subasta\n    s_resp = requests.get(subasta_url)\n    s_soup = BeautifulSoup(s_resp.content, 'html.parser')\n    for lot in s_soup.select('div.lot'):\n        num = lot.select_one('.lot-number').get_text(strip=True)\n        title = lot.select_one('.lot-title').get_text(strip=True)\n        # ... extraer estimado, artista, etc.\n"""
+    },
+    {
+      "name": "Setdart",
+      "country": "España",
+      "website": "https://www.setdart.com",
+      "description": "Setdart Subastas nació en 2004 y es la primera subasta de arte online en España; combina el alcance global del entorno digital con la presencia física en sus sedes de Barcelona, Madrid y Valencia. Cuenta con más de 60.000 usuarios y un equipo joven y dinámico que gestiona la compra y venta de obras mediante estrategias personalizadas y un sólido marketing【377378898617231†L426-L435】.",
+      "site_structure": {
+        "home": "https://www.setdart.com",
+        "calendar_page": "https://www.setdart.com/es/subastas/calendario",
+        "lots_page_pattern": "https://www.setdart.com/subasta/{auction-id}/{lot-id}",
+        "navigation": [
+          "Home → Menú ‘Subastas’ → Calendario de subastas (tabla con fecha, hora y tema de cada subasta【885506371603877†L84-L162】)",
+          "Home → Menú ‘Subastas’ → Próximas subastas (catálogo completo con miles de lotes【692829160619365†L168-L241】)",
+          "Dentro de cada subasta del calendario hay un enlace ‘Explorar subasta’ que lleva a la lista de lotes; cada lote tiene su propia página con foto, descripción y puja actual"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Arte del siglo XIX y XX",
+          "date": "2025-09-01 16:00 CEST",
+          "lots": 700,
+          "source": "【885506371603877†L84-L162】"
+        },
+        {
+          "title": "Grabados y Múltiples",
+          "date": "2025-09-02 16:00 CEST",
+          "description": "Subasta dedicada a grabados con cientos de lotes",
+          "source": "【885506371603877†L84-L162】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Arqueología, Sesión II",
+          "date": "2024-12-23",
+          "source": "【377378898617231†L461-L487】"
+        },
+        {
+          "title": "Córdoba: 2,000 Years of Art",
+          "date": "2024-12-21",
+          "source": "【377378898617231†L535-L556】"
+        }
+      ],
+      "scraping_notes": "Setdart es principalmente un portal de subastas online. El calendario y la lista de lotes están disponibles en HTML; sin embargo, las pujas en tiempo real se actualizan mediante peticiones AJAX que requieren llamadas adicionales. Para extraer el calendario se puede usar `requests` y `BeautifulSoup`, analizando la tabla de calendarios. Los lotes están paginados y requieren parámetro `page`. Para pujar o seguir precios en tiempo real se recomienda un navegador automatizado.",
+      "code_snippet": """python\n# ejemplo: extraer eventos del calendario de Setdart\nimport requests\nfrom bs4 import BeautifulSoup\n\ncalendar_url = 'https://www.setdart.com/es/subastas/calendario'\nresp = requests.get(calendar_url)\nsoup = BeautifulSoup(resp.content, 'html.parser')\nfor row in soup.select('div.calendar-event'):\n    title = row.select_one('h4').get_text(strip=True)\n    date = row.select_one('div.date').get_text(strip=True)\n    link = row.find('a')['href']\n    print(title, date, link)\n"""
+    },
+    {
+      "name": "Ansorena",
+      "country": "España",
+      "website": "https://www.ansorena.com",
+      "description": "Ansorena comenzó como un taller de joyería fundado en 1845 y celebró su primera subasta en 1974 tras trasladarse a la calle Alcalá 52 de Madrid. Ofrece una amplia gama de objetos de arte y antigüedades, incluidos cuadros de distintas épocas, joyas, alfombras y mobiliario; su equipo de expertos también realiza tasaciones【435023107520912†L21-L26】.",
+      "site_structure": {
+        "home": "https://www.ansorena.com",
+        "upcoming_auction_page": "https://www.ansorena.com/noticias/subasta-de-septiembre-2025", 
+        "historical_auctions_page": "https://www.ansorena.com/historico", 
+        "navigation": [
+          "Home → Noticias/Subastas (publica información sobre la próxima subasta con fechas y categorías)",
+          "Dentro de la página de la subasta hay enlaces a ‘Ver catálogo’ y ‘Descargar PDF’; el catálogo contiene la lista de lotes con descripción y estimados",
+          "La web también tiene secciones de tasación, galería y venta directa"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Subasta de Septiembre",
+          "dates": "2025-09-30 al 2025-10-02",
+          "description": "Anunciada en la página de noticias; incluye pintura, escultura, mobiliario y porcelana【269558333310627†L50-L60】",
+          "source": "【269558333310627†L50-L60】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Subasta de Junio 2025",
+          "description": "Información no disponible públicamente; se espera que el catálogo esté en la sección histórico o PDF.",
+          "source": "N/A"
+        }
+      ],
+      "scraping_notes": "El portal de Ansorena utiliza páginas HTML simples para sus comunicados de subastas. Los catálogos se publican en PDF; para extraer lotes se debe descargar el PDF y analizarlo. El histórico de subastas no siempre está accesible (a menudo devuelve error 502), por lo que podría ser necesario contactar con la casa o usar archivos archivados."
+    },
+    {
+      "name": "Christie's",
+      "country": "Estados Unidos",
+      "website": "https://www.christies.com",
+      "description": "Fundada en 1766, Christie’s es una empresa de arte y lujo líder mundial con presencia física en 46 países de América, Europa, Medio Oriente y Asia. Es reconocida por sus subastas presenciales y en línea y ofrece servicios de valoración, financiación y ventas privadas. Sus subastas abarcan más de 80 categorías de arte y lujo, con precios desde 500 USD hasta más de 100 millones【493859447084903†L5-L15】.",
+      "site_structure": {
+        "home": "https://www.christies.com",
+        "auction_calendar": "https://www.christies.com/en/calendar", 
+        "auction_page_pattern": "https://www.christies.com/en/auction/{auction-name}",
+        "lot_page_pattern": "https://www.christies.com/lotfinder/{lot-id}",
+        "navigation": [
+          "Home → Calendar (lista de eventos con fecha, ubicación y tipo: subasta en vivo, subasta en línea o exposición)",
+          "Dentro de la página del evento: información detallada, enlace a ‘Browse lots’ para ver los lotes y secciones de registro y puja",
+          "Las páginas individuales de lotes proporcionan imágenes, descripciones y estimados; los datos se cargan en HTML estándar"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Pebble Beach",
+          "date": "2025-08-15 al 2025-08-16",
+          "location": "Pebble Beach, California (live auction)",
+          "source": "【808682395991327†L52-L139】"
+        },
+        {
+          "title": "Canvas for Change: A Sustainable Future (exhibición)",
+          "date": "2025-08-07 al 2025-08-21",
+          "location": "Nueva York (exposición)",
+          "source": "【808682395991327†L52-L139】"
+        },
+        {
+          "title": "Inside Job: Christie's New York Staff Art Show",
+          "date": "2025-07-16 al 2025-08-22",
+          "location": "Nueva York (subasta en línea)",
+          "source": "【808682395991327†L52-L139】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "20th Century Evening Sale",
+          "description": "Subasta emblemática celebrada en la sede de Nueva York a principios de 2025; el catálogo incluye obras de Warhol y Basquiat.",
+          "source": "Datos externos/no citados"
+        }
+      ],
+      "scraping_notes": "El calendario y la mayoría de las páginas de Christie's son HTML con datos embebidos; se pueden extraer con `requests`/`BeautifulSoup`. Sin embargo, muchas subastas requieren autenticación o captchas para pujar; se recomienda usar la API pública si está disponible o automatizar con Selenium. Para cada evento, el enlace ‘Browse lots’ devuelve una lista de lotes paginada; cada página incluye JSON incrustado que facilita el scraping."
+    },
+    {
+      "name": "Sotheby's",
+      "country": "Estados Unidos",
+      "website": "https://www.sothebys.com",
+      "description": "Fundada en 1744, Sotheby's es la casa de subastas de arte más antigua y una de las más grandes del mundo. Cuenta con una red global de 80 oficinas y ventas anuales superiores a 7 000 millones de dólares【268255942637232†L10-L14】. Sotheby's organiza subastas de arte, joyas, bienes de lujo y automóviles y ofrece servicios de ventas privadas, financiación y asesoría.",
+      "site_structure": {
+        "home": "https://www.sothebys.com",
+        "calendar_page": "https://www.sothebys.com/en/calendar",
+        "auction_page_pattern": "https://www.sothebys.com/en/buy/auction/{auction-id}",
+        "navigation": [
+          "Home → Calendar (presenta tarjetas de subastas con título, fechas, ubicación y enlace ‘View Auction’)【518368546752211†L195-L333】",
+          "En la página de cada subasta: se lista la categoría, información de fechas, detalles y un botón para registrar y ver lotes",
+          "Cada lote tiene su propia página con imágenes, descripción, estimado y puja actual"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "NBA Auctions: Heat Check",
+          "date": "2025-08-06 al 2025-08-13",
+          "location": "Nueva York (subasta en línea)",
+          "source": "【518368546752211†L195-L333】"
+        },
+        {
+          "title": "The Gem Drop",
+          "date": "2025-08-11 al 2025-08-14",
+          "location": "Nueva York (subasta en línea)",
+          "source": "【518368546752211†L195-L333】"
+        },
+        {
+          "title": "Arcade Sale | London",
+          "date": "2025-08-07 al 2025-08-15",
+          "location": "Londres (subasta en línea)",
+          "source": "【518368546752211†L195-L333】"
+        },
+        {
+          "title": "RM Sotheby's | Monterey",
+          "date": "2025-08-15 al 2025-08-16",
+          "location": "Monterey, California",
+          "source": "【518368546752211†L195-L333】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Fine Jewels",
+          "description": "Subasta de joyas celebrada en mayo de 2025 en Nueva York; incluyó diamantes y piedras preciosas.",
+          "source": "Datos externos/no citados"
+        }
+      ],
+      "scraping_notes": "El calendario de Sotheby's está diseñado con tarjetas HTML; se puede extraer la información principal con `requests` y `BeautifulSoup`. Algunas subastas (por ejemplo, las de RM Sotheby's) se alojan en dominios distintos (rmsothebys.com) y pueden tener APIs diferentes. Para pujar o acceder a lotes, es necesario iniciar sesión; la información de lotes puede requerir el uso de un navegador automatizado para superar scripts de protección."
+    },
+    {
+      "name": "Bonhams",
+      "country": "Estados Unidos/Reino Unido",
+      "website": "https://www.bonhams.com",
+      "description": "Bonhams es una casa de subastas internacional de propiedad privada fundada en Londres en 1793 por Thomas Dodd y George Bonham. Es uno de los subastadores más antiguos y grandes de arte, antigüedades y objetos raros. A lo largo de su historia ha ampliado su presencia mundial y combina prácticas tradicionales con innovaciones modernas【115005799900984†L197-L200】.",
+      "site_structure": {
+        "home": "https://www.bonhams.com",
+        "upcoming_auctions_page": "https://www.bonhams.com/auctions/upcoming/",
+        "auction_page_pattern": "https://www.bonhams.com/auction/{auction-id}",
+        "navigation": [
+          "Home → Auctions → Upcoming auctions (lista filtrable por país, categoría, mes y tipo de subasta)【464290118117960†L20-L96】",
+          "Dentro de cada subasta se muestra la fecha, lugar y un enlace ‘View lots’ que abre la lista de lotes con imágenes y descripciones",
+          "La web ofrece filtros por mes (agosto, septiembre, etc.), país y categoría; los datos están en HTML estándar"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "California & Western Art Online",
+          "date": "2025-07-30 al 2025-08-08",
+          "location": "Los Ángeles (subasta online)",
+          "source": "【464290118117960†L104-L121】"
+        },
+        {
+          "title": "Americana Online",
+          "date": "2025-08-02 al 2025-08-12",
+          "location": "Skinner Marlborough, Massachusetts (online)",
+          "source": "【464290118117960†L158-L167】"
+        },
+        {
+          "title": "Luxury Online: Watches and Pens",
+          "date": "2025-08-06 al 2025-08-13",
+          "location": "Hong Kong (subasta online)",
+          "source": "【464290118117960†L196-L205】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Discovery Sale",
+          "date": "2025-08-14",
+          "description": "Venta ‘Discovery | Interiors’ celebrada en agosto de 2025 en Skinner Marlborough con muebles y objetos de decoración【464290118117960†L249-L257】."
+        }
+      ],
+      "scraping_notes": "Bonhams presenta sus listados de subastas en HTML con filtros implementados mediante parámetros en la URL. Es posible recorrer las páginas de cada subasta para extraer la lista de lotes; cada lote tiene su propia URL. La carga es estática, por lo que `requests` y `BeautifulSoup` son suficientes. Para subastas de automóviles (Bonhams Cars) se usa un dominio diferente (cars.bonhams.com) que sigue una estructura similar."
+    },
+    {
+      "name": "Morton Subastas",
+      "country": "México",
+      "website": "https://www.mortonsubastas.com",
+      "description": "Morton Casa de Subastas abrió sus puertas en 1988 como galería de antigüedades y ese mismo año realizó su primera subasta. A lo largo de su historia ha manejado importantes colecciones de arte y antigüedades que ahora se encuentran en colecciones privadas y museos de México y del extranjero. Cuenta con especialistas en antigüedades, arte moderno y contemporáneo, joyería, libros y documentos, y arte decorativo【74403376416023†L106-L115】. Muchas piezas subastadas han sido de artistas internacionales como Salvador Dalí, Diego Rivera, Frida Kahlo y Andy Warhol【74403376416023†L116-L121】. Además de su sede en Ciudad de México, Morton opera en Estados Unidos mediante Morton Kuehnert en Houston【74403376416023†L127-L128】.",
+      "site_structure": {
+        "home": "https://www.mortonsubastas.com",
+        "calendar_page": "https://live.mortonsubastas.com/en/auctions",
+        "past_auctions_page": "https://live.mortonsubastas.com/en/auctions/past",
+        "auction_page_pattern": "https://live.mortonsubastas.com/en/auctions/morton-subastas/{slug}",
+        "lot_page_pattern": "Dentro de cada subasta, los lotes se listan en una tabla con enlaces a páginas individuales de cada lot",
+        "navigation": [
+          "Home → Auctions → Upcoming (lista de subastas con título, fecha, descripción y botón ‘View Catalog’)【730927428773786†L34-L64】",
+          "Home → Auctions → Past (lista de subastas terminadas con enlace ‘View Catalog’)【378319149122206†L34-L100】",
+          "Cada página de subasta contiene un botón ‘View Catalog’ que lleva a un catálogo donde se listan los lotes con imágenes, estimados y precio de salida"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Subasta de los Sábados 1297",
+          "date": "2025-08-09 12:00",
+          "description": "Subasta semanal con más de 300 lotes que incluyen arte, joyas, antigüedades y objetos exclusivos【730927428773786†L40-L60】",
+          "source": "【730927428773786†L40-L60】"
+        },
+        {
+          "title": "Subasta de los Sábados 1298",
+          "date": "2025-08-16 12:00",
+          "description": "Subasta especial con la Colección Grimm y brunch para invitados【730927428773786†L73-L94】",
+          "source": "【730927428773786†L73-L94】"
+        },
+        {
+          "title": "Subasta Especial de la Cava de Pedro Poncelis",
+          "date": "2025-08-19 18:00",
+          "description": "Subasta dedicada a la colección de vinos de Pedro Poncelis, sommelier reconocido【730927428773786†L104-L126】",
+          "source": "【730927428773786†L104-L126】"
+        },
+        {
+          "title": "Subasta de Antigüedades y Libros",
+          "date": "2025-08-20 17:00",
+          "description": "Subasta de antigüedades y libros con cientos de lotes【730927428773786†L137-L144】",
+          "source": "【730927428773786†L137-L144】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Subasta General",
+          "date": "2025-08-07",
+          "description": "Subasta general cerrada que ofrecía diversas categorías; el catálogo permanece disponible【378319149122206†L34-L46】",
+          "source": "【378319149122206†L34-L46】"
+        },
+        {
+          "title": "Subasta de los Sábados 1296",
+          "date": "2025-08-02",
+          "description": "Subasta semanal con más de 300 lotes que incluían arte, joyas y antigüedades【378319149122206†L91-L99】",
+          "source": "【378319149122206†L91-L99】"
+        },
+        {
+          "title": "Subasta de Joyería y Relojes",
+          "date": "2025-07-23",
+          "description": "Subasta de joyería fina y relojería de alta gama【378319149122206†L185-L195】",
+          "source": "【378319149122206†L185-L195】"
+        }
+      ],
+      "scraping_notes": "La plataforma live.mortonsubastas.com utiliza HTML renderizado y enlaces estáticos para listar subastas y lotes. Cada subasta tiene un identificador en la URL (por ejemplo, ‘subasta-de-los-s-bados-1297-20199’). Las listas de lotes se cargan en la misma página y pueden paginarse mediante parámetros. Es posible extraer los datos con `requests` y `BeautifulSoup`. Para obtener información de pujas en tiempo real se requieren llamadas a endpoints JSON; estas se pueden descubrir inspeccionando las solicitudes de red."
+    },
+    {
+      "name": "Casa Saráchaga",
+      "country": "Argentina",
+      "website": "https://www.sarachaga.com.ar",
+      "description": "Casa Saráchaga es una de las casas de subastas más antiguas y reconocidas de Argentina. Fue fundada por Juan Daniel Saráchaga el 6 de julio de 1938 y al principio se dedicaba a remates judiciales. En 1958 su fundador detectó el potencial del arte y, a partir de los años sesenta, la casa comenzó a organizar importantes subastas de arte y objetos de lujo en grandes residencias de Buenos Aires【144024476160958†L17-L27】. Entre los eventos históricos destacan remates con obras de Picasso y Renoir, mobiliario de época y colecciones de platería colonial. La casa continúa operando en su sede de la calle Juncal y organiza exposiciones previas a cada remate【144024476160958†L51-L55】.",
+      "site_structure": {
+        "home": "https://www.sarachaga.com.ar",
+        "catalog_page": "https://www.sarachaga.com.ar/ (sección Catálogo)",
+        "history_page": "https://www.sarachaga.com.ar/history",
+        "past_auctions_page": "https://www.sarachaga.com.ar (menú ‘Remates anteriores’)",
+        "navigation": [
+          "Home → Catálogo online (permite ver las categorías de la próxima subasta y acceder a cada sección: Pintura, Platería colonial, Escultura, etc.)【601570247060497†L17-L61】",
+          "Home → Historia (describe la fundación en 1938 y la evolución de la casa【144024476160958†L17-L27】)",
+          "Home → Remates anteriores (lista de subastas históricas; no siempre disponible)",
+          "En la página principal también se anuncian las exposiciones (fechas de exposición y remate) y se ofrecen enlaces ‘Ver catálogo’ para cada categoría"
+        ]
+      },
+      "upcoming_auctions": [
+        {
+          "title": "Remate Agosto 2025 – Ponchos y Textiles",
+          "exhibition_dates": "2025-08-21 al 2025-08-25",
+          "auction_dates": "2025-08-26 al 2025-08-29",
+          "collection": "Colección Fernando Gomez Alzaga – Luisa Videla",
+          "source": "【601570247060497†L17-L31】"
+        },
+        {
+          "title": "Remate Agosto 2025 – Platería Colonial",
+          "exhibition_dates": "2025-08-21 al 2025-08-25",
+          "auction_dates": "2025-08-26 al 2025-08-29",
+          "collection": "Colección Fernando Gomez Alzaga – Luisa Videla",
+          "source": "【601570247060497†L17-L31】"
+        },
+        {
+          "title": "Remate Agosto 2025 – Julio Le Parc",
+          "exhibition_dates": "2025-08-21 al 2025-08-25",
+          "auction_dates": "2025-08-26 al 2025-08-29",
+          "collection": "Colección Fernando Gomez Alzaga – Luisa Videla",
+          "source": "【601570247060497†L46-L58】"
+        }
+      ],
+      "past_auctions": [
+        {
+          "title": "Remate de la colección Moretón",
+          "description": "Remate realizado en la década de 1990 que incluyó la colección de pintura argentina de Moretón; destacó la venta del óleo ‘La canción del pueblo’ de Emilio Petorutti por US$ 324 000【144024476160958†L61-L65】.",
+          "source": "【144024476160958†L61-L65】"
+        },
+        {
+          "title": "Remates de carruajes (1994-1996)",
+          "description": "En la década de 1990 la casa realizó remates de carruajes con colecciones de las familias Anasagasti, Santamarina, Guerrero y Mihanovich【144024476160958†L68-L70】",
+          "source": "【144024476160958†L68-L70】"
+        }
+      ],
+      "scraping_notes": "El sitio de Sarachaga es relativamente estático. Las secciones de catálogo presentan enlaces a cada categoría; cada uno abre una galería con imágenes y descripciones. La mayoría de los contenidos se cargan directamente en HTML, por lo que `requests` y `BeautifulSoup` son suficientes. Algunas páginas podrían necesitar desplazamiento (infinite scroll) para cargar más lotes, en cuyo caso se puede simular peticiones HTTP a endpoints JSON."
+    }
+  ]
+}
