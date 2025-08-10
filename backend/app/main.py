@@ -7,7 +7,8 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
-from app.core.database import engine, get_db
+from app.core.database import engine, get_db, database
+from app.api.v1 import api_router
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +30,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API routers
+app.include_router(api_router, prefix=settings.API_V1_STR)
 
 def initialize_database_if_needed():
     """Initialize database with schema and seed data if needed"""
@@ -81,16 +85,26 @@ def initialize_database_if_needed():
 async def startup():
     """Initialize database on startup"""
     try:
-        # Test database connection
+        # Connect async database
+        await database.connect()
+        logger.info("Async database connected successfully")
+        
+        # Test sync database connection
         with engine.connect() as connection:
             connection.execute(text("SELECT 1"))
-        logger.info("Database connected successfully")
+        logger.info("Sync database connected successfully")
         
         # Run database initialization if needed (for Render)
         initialize_database_if_needed()
             
     except Exception as e:
         logger.error(f"Database connection failed: {e}")
+
+@app.on_event("shutdown")
+async def shutdown():
+    """Disconnect database on shutdown"""
+    await database.disconnect()
+    logger.info("Database disconnected")
 
 @app.get("/")
 async def root():
@@ -120,25 +134,7 @@ def health_check():
         "version": "1.0.0"
     }
 
-# Basic auction houses endpoint
-@app.get("/api/v1/houses/")
-def get_auction_houses(db: Session = Depends(get_db)):
-    """Get all auction houses"""
-    try:
-        result = db.execute(text("SELECT id, name, country, website, description FROM auction_houses"))
-        houses = []
-        for row in result:
-            houses.append({
-                "id": row[0],
-                "name": row[1], 
-                "country": row[2],
-                "website": row[3],
-                "description": row[4]
-            })
-        return houses
-    except Exception as e:
-        logger.error(f"Error fetching auction houses: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
+# API endpoints are included via routers
 
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):

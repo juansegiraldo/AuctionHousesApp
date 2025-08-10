@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import declarative_base, sessionmaker
+from databases import Database
 
 from app.core.config import settings
 
@@ -18,7 +19,10 @@ Base = declarative_base(metadata=metadata)
 # Create session maker
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Dependency to get database session
+# Create async database connection
+database = Database(settings.DATABASE_URL.replace('postgres://', 'postgresql://'))
+
+# Dependency to get database session (sync)
 def get_db():
     """Get database session"""
     db = SessionLocal()
@@ -26,3 +30,8 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# Dependency to get async database connection
+def get_database() -> Database:
+    """Get async database connection"""
+    return database
