@@ -38,7 +38,11 @@ services:
       - "8000:8000"
     environment:
       DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
-      REDIS_URL: redis://redis:6379
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      SCRAPING_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      SCRAPING_TIMEOUT: "30"
+      SCRAPING_DELAY: "1.0"
       ENVIRONMENT: development
     depends_on:
       - postgres
@@ -57,7 +61,11 @@ services:
     container_name: auction_houses_worker
     environment:
       DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
-      REDIS_URL: redis://redis:6379
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      SCRAPING_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      SCRAPING_TIMEOUT: "30"
+      SCRAPING_DELAY: "1.0"
       ENVIRONMENT: development
     depends_on:
       - postgres
@@ -76,7 +84,11 @@ services:
     container_name: auction_houses_scheduler
     environment:
       DATABASE_URL: postgresql://auction_user:auction_pass@postgres:5432/auction_houses
-      REDIS_URL: redis://redis:6379
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+      SCRAPING_USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      SCRAPING_TIMEOUT: "30"
+      SCRAPING_DELAY: "1.0"
       ENVIRONMENT: development
     depends_on:
       - postgres

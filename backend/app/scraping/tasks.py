@@ -1,6 +1,7 @@
 from celery import Task
 from typing import Dict, Any, List, Optional
 import logging
+import asyncio
 from datetime import datetime
 from databases import Database
 
@@ -29,6 +30,12 @@ class ScrapingTask(Task):
 
 @celery_app.task(base=ScrapingTask, bind=True, max_retries=3)
 def scrape_house_data(self, house_id: int) -> Dict[str, Any]:
+    """
+    Celery task wrapper that runs async scraping logic
+    """
+    return asyncio.run(_scrape_house_data_async(self, house_id))
+
+async def _scrape_house_data_async(task_instance, house_id: int) -> Dict[str, Any]:
     """
     Main task to scrape all data for a specific auction house
     """
@@ -135,10 +142,10 @@ def scrape_house_data(self, house_id: int) -> Dict[str, Any]:
             pass  # Don't fail on logging failure
         
         # Retry logic
-        if self.request.retries < self.max_retries:
+        if task_instance.request.retries < task_instance.max_retries:
             logger.info(f"Retrying scraping task for house {house_id} "
-                       f"(attempt {self.request.retries + 1}/{self.max_retries})")
-            raise self.retry(countdown=60 * (self.request.retries + 1))
+                       f"(attempt {task_instance.request.retries + 1}/{task_instance.max_retries})")
+            raise task_instance.retry(countdown=60 * (task_instance.request.retries + 1))
     
     finally:
         await database.disconnect()
@@ -182,6 +189,10 @@ def schedule_weekly_scraping():
 @celery_app.task
 def scrape_single_auction(auction_url: str, house_id: int) -> Dict[str, Any]:
     """Scrape a single auction and its lots"""
+    return asyncio.run(_scrape_single_auction_async(auction_url, house_id))
+
+async def _scrape_single_auction_async(auction_url: str, house_id: int) -> Dict[str, Any]:
+    """Async implementation for scraping single auction"""
     try:
         await database.connect()
         

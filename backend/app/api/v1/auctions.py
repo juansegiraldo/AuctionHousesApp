@@ -4,12 +4,12 @@ from datetime import datetime
 from databases import Database
 
 from app.core.database import get_database
-from app.models.schemas import Auction, AuctionCreate, AuctionUpdate, AuctionFilters
+from app.models.schemas import Auction, AuctionCreate, AuctionUpdate, AuctionFilters, PaginatedResponse
 from app.services.auctions import AuctionService
 
 router = APIRouter()
 
-@router.get("/", response_model=List[Auction])
+@router.get("/", response_model=PaginatedResponse)
 async def get_auctions(
     house_id: Optional[int] = Query(None, description="Filter by auction house"),
     status: Optional[str] = Query(None, description="Filter by status"),
@@ -31,7 +31,16 @@ async def get_auctions(
         start_date_to=start_date_to
     )
     
-    return await AuctionService.get_auctions(db, filters, limit, offset)
+    auctions = await AuctionService.get_auctions(db, filters, limit, offset)
+    total = await AuctionService.count_auctions(db, filters)
+    
+    return PaginatedResponse(
+        items=auctions,
+        total=total,
+        page=(offset // limit) + 1,
+        per_page=limit,
+        pages=(total + limit - 1) // limit
+    )
 
 @router.get("/{auction_id}", response_model=Auction)
 async def get_auction(
@@ -100,3 +109,33 @@ async def get_auction_stats(
         raise HTTPException(status_code=404, detail="Auction not found")
     
     return await AuctionService.get_auction_stats(db, auction_id)
+
+@router.get("/upcoming/", response_model=List[Auction])
+async def get_upcoming_auctions(
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    db: Database = Depends(get_database)
+):
+    """Get upcoming auctions"""
+    filters = AuctionFilters(status="upcoming")
+    return await AuctionService.get_auctions(db, filters, limit, offset)
+
+@router.get("/recent/", response_model=List[Auction])
+async def get_recent_auctions(
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    db: Database = Depends(get_database)
+):
+    """Get recently completed auctions"""
+    filters = AuctionFilters(status="completed")
+    return await AuctionService.get_recent_auctions(db, limit, offset)
+
+@router.get("/live/", response_model=List[Auction])
+async def get_live_auctions(
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    db: Database = Depends(get_database)
+):
+    """Get currently active (live) auctions"""
+    filters = AuctionFilters(status="active")
+    return await AuctionService.get_auctions(db, filters, limit, offset)

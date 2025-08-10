@@ -221,6 +221,67 @@ class PDFSeleniumAdapter(ScrapingAdapter):
 
 ---
 
+## Estado actual del proyecto
+
+### Resumen por componente
+- Infraestructura: Completada en gran parte. `docker-compose.yml` define `postgres`, `redis`, `backend`, `celery_worker`, `celery_beat` y perfil `frontend`. Pendiente: variables de entorno de Celery en `settings` y compose; healthchecks.
+- Base de datos: Esquema SQL completo con índices y `scraping_logs` (archivo `database/migrations/001_initial_schema.sql`). Seed inicial de casas/categorías/artistas (`database/seeds/002_auction_houses_data.sql`). Pendiente: migraciones con Alembic; alinear inicialización ad-hoc de BD en `backend/app/main.py` (remover/condicionar `initialize_database_if_needed`).
+- Backend API: Routers funcionales para `houses`, `auctions`, `lots`, `artists`, `analytics` con servicios SQL. Pendiente: endpoints adicionales que el frontend espera (`/auctions/upcoming`, `/auctions/recent`, `/auctions/live`, `/lots/recent`, respuestas paginadas); hoy varios endpoints devuelven listas simples.
+- Scraping & tareas: `BaseScrapingAdapter` y adaptador de Bogotá implementados; tareas Celery y scheduling definidos. Pendiente: configuración de Celery (faltan `CELERY_BROKER_URL` y `CELERY_RESULT_BACKEND` en `settings`), y corregir un bug en `app/scraping/tasks.py` donde se usa `await` dentro de una función `def` (convertir a `async def` o envolver corutinas con `asyncio.run`). Faltan adaptadores para Durán, Setdart y Morton.
+- Frontend: Estructura Next.js con `Navigation` y `HomeContent`. Hooks (`useHouses`, `useAuctions`, `useLots`) definidos, pero faltan `frontend/src/lib/api` y `frontend/src/lib/query-client`. Además, los hooks asumen respuestas paginadas que el backend aún no expone.
+- Scripts y herramientas: `scripts/test_api.py` existe y prueba endpoints principales. `scripts/populate_test_data.py` no coincide con el esquema actual (usa columnas como `city`, `specialties`, `verified` que no existen en `auction_houses`).
+- Observabilidad: Endpoint `/health` operativo; logs básicos. Pendiente: logging estructurado y métricas coherentes para scraping.
+
+### Gaps y riesgos detectados
+- Configuración incompleta en `Settings`: faltan `CELERY_BROKER_URL`, `CELERY_RESULT_BACKEND`, `SCRAPING_USER_AGENT`, `SCRAPING_TIMEOUT`, `SCRAPING_DELAY` usados por Celery y el scraper.
+- Desalineación schema/datos: `scripts/populate_test_data.py` no coincide con el esquema SQL actual y fallará.
+- Inconsistencias API/Frontend: el frontend consume endpoints y contratos paginados no implementados en el backend.
+- Inicialización de BD duplicada: `initialize_database_if_needed()` en `main.py` entra en conflicto con migraciones.
+
+### Estado contra Fase 1 (MVP)
+- Infraestructura base: 80% (falta cerrar Celery + healthchecks)
+- BD (schema + datos iniciales): 90% (falta Alembic y quitar init ad-hoc)
+- Scraping MVP (1 adaptador): 40% (solo Bogotá; falta robustecer tareas/config)
+- API Backend: 85% (faltan endpoints de soporte al frontend y paginación)
+- Frontend MVP: 30% (layout y hooks; faltan lib/api, páginas y ajuste de contratos)
+- Monitoreo y logging: 20% (health OK; falta logging estructurado y métricas)
+
+## Próximos pasos priorizados (1-2 semanas)
+
+1) Configuración y estabilidad
+   - Añadir a `backend/app/core/config.py` las variables: `CELERY_BROKER_URL`, `CELERY_RESULT_BACKEND`, `SCRAPING_USER_AGENT`, `SCRAPING_TIMEOUT`, `SCRAPING_DELAY` con defaults seguros.
+   - Actualizar `docker-compose.yml` para exportar dichas variables (p.ej. `redis://redis:6379/0` y `redis://redis:6379/1`).
+   - Añadir healthchecks para `postgres`, `redis` y `backend`; condicionar arranque de `celery_worker/beat` a redis.
+   - Deshabilitar o proteger `initialize_database_if_needed()` bajo flag de entorno (p.ej. `RENDER_COMPAT=true`) y usar migraciones/seed por defecto.
+
+2) Corregir tareas Celery y scraping
+   - En `app/scraping/tasks.py`, convertir funciones que usan `await` a `async def` o envolver llamadas async con `asyncio.run(...)` dentro de tareas Celery síncronas.
+   - Definir helper para ejecutar servicios async desde Celery.
+   - Validar inserciones en tablas `scraping_logs` y actualización de `last_scrape`.
+
+3) Alinear API con el frontend y añadir paginación
+   - Implementar endpoints: `GET /api/v1/auctions/upcoming`, `GET /api/v1/auctions/recent`, `GET /api/v1/auctions/live` y `GET /api/v1/lots/recent` reutilizando métodos existentes en `AuctionService`/`LotService`.
+   - Estandarizar respuestas paginadas (`PaginatedResponse`) para listas en `houses`, `auctions`, `lots`, manteniendo compatibilidad con los hooks actuales.
+
+4) Frontend mínimo funcional
+   - Crear `frontend/src/lib/api.ts` y `frontend/src/lib/query-client.ts` apuntando a `NEXT_PUBLIC_API_URL`.
+   - Implementar páginas base para `/houses`, `/auctions`, `/lots` usando los hooks existentes.
+   - Ajustar componentes para el contrato final de la API (paginación y nombres de campos).
+
+5) Datos de prueba consistentes
+   - Actualizar `scripts/populate_test_data.py` para usar solo columnas existentes en el schema actual o ampliar el schema de `auction_houses` si se requieren esos campos.
+   - Añadir comando de make/script para ejecutar migraciones + seed de forma idempotente.
+
+6) Monitoreo y DX
+   - Configurar logging estructurado (JSON) para scraping y API.
+   - Añadir endpoint `/health/extended` con chequeos de Redis y conteos básicos.
+
+7) Scraping: nuevos adaptadores
+   - Esqueleto para Durán y Setdart (HTML estático/AJAX) con pruebas contra HTML guardado.
+   - Scheduler: activar `daily` para Bogotá/Setdart/Morton y `weekly` para Durán.
+
+Entregables de este bloque: API y frontend alineados con paginación, Celery operando, un adaptador de scraping estable en producción de desarrollo y datos de prueba consistentes.
+
 # FASE 1: MVP DETALLADO (2-3 meses)
 
 ## Objetivo de la Fase 1

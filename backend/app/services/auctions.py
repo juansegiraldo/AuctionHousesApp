@@ -96,6 +96,46 @@ class AuctionService:
         ]
     
     @staticmethod
+    async def count_auctions(db: Database, filters: AuctionFilters) -> int:
+        """Count auctions with optional filters"""
+        
+        query = """
+            SELECT COUNT(*)
+            FROM auctions a
+            JOIN auction_houses h ON a.house_id = h.id
+            WHERE 1=1
+        """
+        
+        params = {}
+        
+        if filters.house_id:
+            query += " AND a.house_id = :house_id"
+            params["house_id"] = filters.house_id
+            
+        if filters.status:
+            query += " AND a.status = :status"
+            params["status"] = filters.status
+            
+        if filters.auction_type:
+            query += " AND a.auction_type = :auction_type"
+            params["auction_type"] = filters.auction_type
+            
+        if filters.country:
+            query += " AND h.country ILIKE :country"
+            params["country"] = f"%{filters.country}%"
+            
+        if filters.start_date_from:
+            query += " AND a.start_date >= :start_date_from"
+            params["start_date_from"] = filters.start_date_from
+            
+        if filters.start_date_to:
+            query += " AND a.start_date <= :start_date_to"
+            params["start_date_to"] = filters.start_date_to
+        
+        result = await db.fetch_one(query, params)
+        return result[0] if result else 0
+    
+    @staticmethod
     async def get_auction_by_id(db: Database, auction_id: int) -> Optional[Auction]:
         """Get auction by ID with house information"""
         
@@ -452,6 +492,61 @@ class AuctionService:
                 sale_rate=None,
                 created_at=datetime.utcnow(),
                 updated_at=datetime.utcnow()
+            )
+            for row in rows
+        ]
+    
+    @staticmethod
+    async def get_recent_auctions(
+        db: Database,
+        limit: int = 20,
+        offset: int = 0
+    ) -> List[Auction]:
+        """Get recently completed auctions ordered by end date"""
+        
+        query = """
+            SELECT 
+                a.id, a.house_id, a.title, a.description, 
+                a.start_date, a.end_date, a.exhibition_start, a.exhibition_end,
+                a.status, a.location, a.auction_type, a.slug, a.external_id,
+                a.total_lots, a.total_estimate_min, a.total_estimate_max, 
+                a.total_realized, a.currency, a.sale_rate,
+                a.created_at, a.updated_at,
+                h.name as house_name, h.country as house_country
+            FROM auctions a
+            JOIN auction_houses h ON a.house_id = h.id
+            WHERE a.status = 'completed'
+            ORDER BY a.end_date DESC NULLS LAST
+            LIMIT :limit OFFSET :offset
+        """
+        
+        rows = await db.fetch_all(query, {"limit": limit, "offset": offset})
+        
+        return [
+            Auction(
+                id=row["id"],
+                house_id=row["house_id"],
+                title=row["title"],
+                description=row["description"],
+                start_date=row["start_date"],
+                end_date=row["end_date"],
+                exhibition_start=row["exhibition_start"],
+                exhibition_end=row["exhibition_end"],
+                status=row["status"],
+                location=row["location"],
+                auction_type=row["auction_type"],
+                slug=row["slug"],
+                external_id=row["external_id"],
+                total_lots=row["total_lots"] or 0,
+                total_estimate_min=row["total_estimate_min"],
+                total_estimate_max=row["total_estimate_max"],
+                total_realized=row["total_realized"],
+                currency=row["currency"],
+                sale_rate=row["sale_rate"],
+                created_at=row["created_at"],
+                updated_at=row["updated_at"],
+                house_name=row["house_name"],
+                house_country=row["house_country"]
             )
             for row in rows
         ]

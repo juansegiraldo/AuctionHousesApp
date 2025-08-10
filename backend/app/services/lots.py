@@ -358,8 +358,9 @@ class LotService:
     @staticmethod
     async def get_recent_lots(
         db: Database,
-        days: int = 30,
-        limit: int = 50
+        limit: int = 50,
+        offset: int = 0,
+        days: int = 30
     ) -> List[Lot]:
         """Get recently added/sold lots"""
         
@@ -381,10 +382,10 @@ class LotService:
             LEFT JOIN auction_houses h ON au.house_id = h.id
             WHERE l.created_at >= NOW() - INTERVAL '%d days'
             ORDER BY l.created_at DESC
-            LIMIT :limit
+            LIMIT :limit OFFSET :offset
         """ % days
         
-        rows = await db.fetch_all(query, {"limit": limit})
+        rows = await db.fetch_all(query, {"limit": limit, "offset": offset})
         
         return [LotService._row_to_lot(row) for row in rows]
     

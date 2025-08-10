@@ -6,7 +6,11 @@
       "Bash(docker-compose:*)",
       "Bash(curl:*)",
       "Bash(python:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npm install:*)",
+      "Bash(make:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pip install:*)"
     ],
     "deny": []
   }

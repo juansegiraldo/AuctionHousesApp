@@ -104,6 +104,15 @@ async def delete_lot(
     if not deleted:
         raise HTTPException(status_code=404, detail="Lot not found")
 
+@router.get("/recent/", response_model=List[Lot])
+async def get_recent_lots(
+    limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+    db: Database = Depends(get_database)
+):
+    """Get recently added lots"""
+    return await LotService.get_recent_lots(db, limit, offset)
+
 @router.get("/similar/{lot_id}/", response_model=List[Lot])
 async def get_similar_lots(
     lot_id: int,
