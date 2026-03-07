@@ -1,0 +1,30 @@
+metrics:
+  - name: lots_offered
+    expression: count(dedupe_key)
+    source: silver.lots
+    grain: [house, auction, time]
+
+  - name: lots_sold
+    expression: count_if(price_sold is not null)
+    source: silver.lots
+    grain: [house, auction, time]
+
+  - name: sell_through_rate
+    expression: lots_sold / nullif(lots_offered, 0)
+    source: gold.agg_house_metrics
+    grain: [house, time]
+
+  - name: revenue
+    expression: sum(price_sold)
+    source: silver.lots
+    grain: [house, auction, time]
+
+  - name: avg_sold_price
+    expression: revenue / nullif(lots_sold, 0)
+    source: gold.agg_house_metrics
+    grain: [house, time]
+
+  - name: avg_estimate
+    expression: avg((price_estimate_min + price_estimate_max) / 2)
+    source: silver.lots
+    grain: [house, auction, category, time]

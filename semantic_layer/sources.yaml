@@ -1,0 +1,13 @@
+sources:
+  silver:
+    lots: data/silver/lots.jsonl
+    auctions: data/silver/auctions.jsonl
+
+  gold:
+    agg_house_metrics: data/gold/agg_house_metrics.jsonl
+
+  enrichments:
+    currency_normalized: data/enrichments/currency_normalized.jsonl
+    artist_canonicalized: data/enrichments/artist_canonicalized.jsonl
+    category_tags: data/enrichments/category_tags.jsonl
+    embeddings_stub: data/enrichments/embeddings_stub.jsonl

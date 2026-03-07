@@ -1,0 +1,10 @@
+{
+  "houses": [
+    {
+      "slug": "bogota_auctions",
+      "name": "Bogota Auctions",
+      "module": "scraping.houses.bogota_auctions",
+      "output_dir": "scraping/houses/bogota_auctions/output"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+dimensions:
+  - name: house
+    key: house_slug
+    source: gold.agg_house_metrics
+    description: Auction house identifier
+
+  - name: auction
+    key: auction_id
+    source: silver.auctions
+    description: Auction event identifier
+
+  - name: artist
+    key: artist_id
+    source: enrichments.artist_canonicalized
+    description: Canonical artist identifier
+
+  - name: time
+    key: auction_start_date
+    source: silver.auctions
+    description: Auction time dimension
+
+  - name: category
+    key: category
+    source: enrichments.category_tags
+    description: Enriched lot category

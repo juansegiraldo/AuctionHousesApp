@@ -1,0 +1,4 @@
+houses:
+  - slug: bogota_auctions
+    name: Bogota Auctions
+    output_dir: scraping/houses/bogota_auctions/output
