@@ -2,3 +2,6 @@ houses:
   - slug: bogota_auctions
     name: Bogota Auctions
     output_dir: scraping/houses/bogota_auctions/output
+  - slug: duran_subastas
+    name: Duran Arte y Subastas
+    output_dir: scraping/houses/duran_subastas/output

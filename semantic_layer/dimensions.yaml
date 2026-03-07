@@ -23,3 +23,9 @@ dimensions:
     key: category
     source: enrichments.category_tags
     description: Enriched lot category
+
+  - name: focus_category
+    key: category
+    source: enrichments.category_tags
+    filter: category in ('obra_grafica','pintura')
+    description: Focus categories for Duran rollout

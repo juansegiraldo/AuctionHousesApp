@@ -18,6 +18,7 @@ venv/
 /output/
 scraping/output/
 scraping/houses/*/output/*.jsonl
+scraping/houses/*/output/checkpoints/
 
 # Data lake / medallion local data
 data/bronze/**

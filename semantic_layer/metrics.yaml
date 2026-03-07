@@ -28,3 +28,15 @@ metrics:
     expression: avg((price_estimate_min + price_estimate_max) / 2)
     source: silver.lots
     grain: [house, auction, category, time]
+
+  - name: duran_focus_lots_offered
+    expression: count(dedupe_key)
+    source: silver.lots
+    filter: house_slug='duran_subastas' and category in ('obra_grafica','pintura')
+    grain: [auction, category, time]
+
+  - name: duran_focus_revenue
+    expression: sum(price_sold)
+    source: silver.lots
+    filter: house_slug='duran_subastas' and category in ('obra_grafica','pintura')
+    grain: [auction, category, time]

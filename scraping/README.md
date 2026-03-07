@@ -17,6 +17,12 @@ scraping/
       run_auction_list.py
       run_historic.py
       output/
+    duran_subastas/
+      parsers.py
+      run_one_auction.py
+      run_auction_list.py
+      run_historic.py
+      output/
 ```
 
 ## Run a house scraper
@@ -27,6 +33,7 @@ Use module execution from repo root:
 python -m scraping.houses.bogota_auctions.run_one_auction "<AUCTION_URL>"
 python -m scraping.houses.bogota_auctions.run_auction_list --file urls.txt
 python -m scraping.houses.bogota_auctions.run_historic
+python -m scraping.houses.duran_subastas.run_historic --list-only
 ```
 
 ## Add a new auction house

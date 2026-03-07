@@ -5,6 +5,12 @@
       "name": "Bogota Auctions",
       "module": "scraping.houses.bogota_auctions",
       "output_dir": "scraping/houses/bogota_auctions/output"
+    },
+    {
+      "slug": "duran_subastas",
+      "name": "Duran Arte y Subastas",
+      "module": "scraping.houses.duran_subastas",
+      "output_dir": "scraping/houses/duran_subastas/output"
     }
   ]
 }
