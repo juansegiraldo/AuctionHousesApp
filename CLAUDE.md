@@ -109,12 +109,21 @@ Data flows one direction through `data/`, and each stage reads the previous laye
    (currency normalize, artist canonicalize, category tag, embeddings stub) → `data/enrichments/`.
 4. **gold** (`gold/build_gold.py`): aggregates silver into analytics facts
    (`agg_house_metrics`, `agg_lots_by_year`, …) plus `quality_flags.jsonl` in `data/gold/`.
+   `gold/build_insights.py` runs **after** it and adds the second-level aggregates the report
+   needs (`agg_artist_metrics`, `agg_category_metrics`, `agg_month_metrics`,
+   `agg_price_distribution`, `agg_estimate_accuracy`). Unlike `build_gold.py` it reads **Silver +
+   enrichments**, not Gold — it needs per-lot artist/category/estimate fields that the basic
+   aggregates drop. It excludes non-authors (`Escuela Española`, `Taller de…`, `Atribuido a…`)
+   from the artist ranking and requires `MIN_LOTS_FOR_ARTIST_RANK` sales to rank an artist.
 5. **quality_gates** (`silver/quality_gates.py`): coverage report (% with price/artist/image/url)
    over silver, optionally per house. Reports by default; `--fail-on-violation` exits non-zero
    for CI. `--allowed-categories` must match the **English** tags emitted by `category_tag.py`
    (`painting`, `prints`, …) — the old Spanish defaults matched nothing and flagged 100% of rows.
 6. **analytics** (`analytics/report_gold.py`): renders the Gold layer to JSON + HTML. Reads Gold
-   only — never bronze/silver.
+   only — never bronze/silver. It decides *what* goes in the report; `analytics/render_html.py`
+   decides *how it looks* (design system, CSS, Plotly config), so the report can be restyled
+   without touching aggregation logic. The insight aggregates are optional: if
+   `build_insights.py` hasn't run, those sections are omitted rather than raising.
 
 Run the whole chain with `.\scripts\run_all.ps1`. Running stages piecemeal is how the layers
 previously drifted out of sync (enrichments built in March over a Silver rebuilt in May).
@@ -173,9 +182,12 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   refactor. The legacy [scraping/parsers.py](scraping/parsers.py) still does, and its final
   `if not status and price_sold: status = "VENDIDO"` is where Bogotá's inferred status comes from.
   Current Bogotá status data was produced by the legacy scraper.
-- **Mojibake in scraped text**: `Álvaro` surfaces as `\udc81lvaro` in `artist_name`/`lot_title`.
-  Encoding issue at scrape time; surviving into Silver. Flagged in the report, not fixed — a real
-  fix means re-scraping or a repair pass over Bronze.
+- **The "mojibake" is a console artifact, not a data defect** (verified 2026-08-01). Scanning all
+  49,541 Silver lots for surrogates (`\udc80`–`\udcff`) returns **zero**: `artist_name` holds a
+  clean `Álvaro Barrios`, and the HTML report renders accents correctly. What looks like mojibake
+  is the Windows console failing to print UTF-8 — reproduce it with
+  `python -c "import sys; sys.stdout.reconfigure(encoding='utf-8')"` and it disappears. Don't
+  "fix" the data or re-scrape over this; only reconfigure stdout in scripts that print names.
 - **`subasta-541-marzo-2107`** is a typo on Duran's own site (2107 for 2017). `extract_year()`
   only accepts `19xx`/`20xx`, so those 315 lots land in `unknown` rather than a fabricated year.
 - Bronze holds overlapping partitions (March and August ingests). Safe — Silver dedupes on

@@ -19,6 +19,7 @@ $stages = @(
     @{ Name = "Enrich  (artistas)";             Module = "pipelines.enrichments.artist_canonicalize" },
     @{ Name = "Enrich  (categorias)";           Module = "pipelines.enrichments.category_tag" },
     @{ Name = "Gold    (agregados)";            Module = "pipelines.gold.build_gold" },
+    @{ Name = "Gold    (artistas/categorias)";  Module = "pipelines.gold.build_insights" },
     @{ Name = "Informe (JSON + HTML)";          Module = "pipelines.analytics.report_gold" }
 )
 
