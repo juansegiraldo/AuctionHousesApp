@@ -1,0 +1,18 @@
+# Tasas de cambio APROXIMADAS y ESTATICAS hacia EUR.
+#
+# IMPORTANTE: no son tasas historicas por fecha de subasta. Es una unica tasa
+# aplicada a todos los anios (los datos van de 2014 a 2026, periodo en el que el
+# COP se movio mucho). Sirven para COMPARAR casas entre si, NO para valoracion
+# contable ni para analisis financiero por anio.
+#
+# Para cambiar una tasa, editala aqui: es el unico sitio donde se define.
+# La leen pipelines/gold/build_gold.py y pipelines/enrichments/currency_normalize.py.
+
+base_currency: EUR
+as_of: "2026-08-01"
+source: "manual / aproximado"
+
+rates_to_eur:
+  EUR: 1.0
+  COP: 0.000232   # ~1 EUR = 4300 COP
+  USD: 0.92

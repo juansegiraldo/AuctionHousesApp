@@ -51,10 +51,7 @@ def fetch_with_retry(
     last_error = None
     for attempt in range(max_retries + 1):
         try:
-            try:
-                return Fetcher.get(url, timeout=timeout_seconds)
-            except TypeError:
-                return Fetcher.get(url)
+            return Fetcher.get(url, timeout=timeout_seconds)
         except Exception as exc:  # pragma: no cover - network failures
             last_error = exc
             if attempt >= max_retries:
@@ -63,6 +60,9 @@ def fetch_with_retry(
             log_event("retry_fetch", url=url, attempt=attempt + 1, backoff=backoff, error_type=type(exc).__name__)
             sleep(backoff)
     raise RuntimeError(f"Failed to fetch {url}: {last_error}")
+
+
+RATE_LIMIT_EXTRA_RETRIES = 3  # extra retries when we get 429
 
 
 def post_with_retry(
@@ -74,11 +74,38 @@ def post_with_retry(
     sleep: Callable[[float], None] = time.sleep,
 ) -> str:
     last_error = None
-    for attempt in range(max_retries + 1):
+    effective_max = max_retries + 1
+    max_attempts = max_retries + 1 + RATE_LIMIT_EXTRA_RETRIES
+    for attempt in range(max_attempts):
         try:
             response = session.post(url, data=data, timeout=timeout_seconds)
             response.raise_for_status()
             return response.text
+        except requests.HTTPError as exc:
+            last_error = exc
+            if exc.response is not None and exc.response.status_code == 429:
+                effective_max = max_retries + 1 + RATE_LIMIT_EXTRA_RETRIES
+            if attempt >= effective_max - 1:
+                break
+            # 429 Too Many Requests: use longer backoff and respect Retry-After
+            if exc.response is not None and exc.response.status_code == 429:
+                retry_after = exc.response.headers.get("Retry-After")
+                if retry_after and retry_after.isdigit():
+                    backoff = min(120.0, float(retry_after))
+                else:
+                    backoff = 20.0
+                log_event(
+                    "retry_post",
+                    url=url,
+                    attempt=attempt + 1,
+                    backoff=backoff,
+                    error_type="HTTPError",
+                    status_code=429,
+                )
+            else:
+                backoff = min(8.0, 1.0 * (2**attempt))
+                log_event("retry_post", url=url, attempt=attempt + 1, backoff=backoff, error_type=type(exc).__name__)
+            sleep(backoff)
         except Exception as exc:  # pragma: no cover - network failures
             last_error = exc
             if attempt >= max_retries:

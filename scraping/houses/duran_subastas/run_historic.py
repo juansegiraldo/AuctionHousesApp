@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import logging
 import time
@@ -46,6 +47,49 @@ def write_checkpoint(checkpoint_dir: Path, auction_id: str, payload: dict) -> No
         json.dump(payload, handle, ensure_ascii=False, indent=2)
 
 
+def _auction_output_path(auction: AuctionMeta) -> Path:
+    auction_id = _auction_id_from_url(auction.auction_url)
+    return DEFAULT_OUTPUT_DIR / f"{auction_id}.jsonl"
+
+
+def _scrape_pending_auction(
+    auction: AuctionMeta,
+    output_path: Path,
+    *,
+    delay: float,
+    quick: bool,
+    max_lots_per_auction: int | None,
+    max_retries: int,
+    timeout_seconds: float,
+) -> int:
+    lots = scrape_auction(
+        auction.auction_url,
+        output_path,
+        delay=delay,
+        skip_lot_detail=quick,
+        auction_meta=auction,
+        max_lots_per_auction=max_lots_per_auction,
+        max_retries=max_retries,
+        timeout_seconds=timeout_seconds,
+    )
+    return len(lots)
+
+
+def _merge_outputs(auctions: list[AuctionMeta], merged_path: Path) -> int:
+    merged_path.parent.mkdir(parents=True, exist_ok=True)
+    merged_lots = 0
+    with open(merged_path, "wb") as merged:
+        for auction in auctions:
+            individual_path = _auction_output_path(auction)
+            if not individual_path.exists():
+                continue
+            with open(individual_path, "rb") as input_handle:
+                payload = input_handle.read()
+                merged.write(payload)
+            merged_lots += payload.count(b"\n")
+    return merged_lots
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Scrape Duran historic auctions.")
     parser.add_argument("--url", default=DEFAULT_HISTORIC_URL)
@@ -58,7 +102,18 @@ def main() -> None:
     parser.add_argument("--max-lots-per-auction", type=int, default=None)
     parser.add_argument("--max-retries", type=int, default=2)
     parser.add_argument("--timeout", type=float, default=20.0)
+    parser.add_argument("--workers", type=int, default=1, help="Parallel auctions to scrape")
+    parser.add_argument(
+        "--auction-timeout",
+        type=float,
+        default=None,
+        help="Per-auction timeout in seconds when workers > 1 (default: 600)",
+    )
     args = parser.parse_args()
+    workers = max(1, args.workers)
+    auction_timeout = args.auction_timeout if args.auction_timeout is not None else (600.0 if workers > 1 else None)
+    if workers > 16:
+        log.warning("High worker count (%s) may trigger rate limiting (HTTP 419). Consider 8-16 if unstable.", workers)
 
     DEFAULT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     checkpoint_dir = DEFAULT_OUTPUT_DIR / "checkpoints"
@@ -81,12 +136,11 @@ def main() -> None:
             print(f"{auction.auction_id} -> {auction.auction_url}")
         return
 
-    merged_path.parent.mkdir(parents=True, exist_ok=True)
     total_lots = 0
-    with open(merged_path, "ab") as merged:
+    if workers == 1:
         for auction in auctions:
             auction_id = _auction_id_from_url(auction.auction_url)
-            individual_path = DEFAULT_OUTPUT_DIR / f"{auction_id}.jsonl"
+            individual_path = _auction_output_path(auction)
             if individual_path.exists():
                 write_checkpoint(
                     checkpoint_dir,
@@ -120,11 +174,84 @@ def main() -> None:
                     log_event("auction_failed", auction_id=auction_id, error_type=type(exc).__name__, message=str(exc))
                     continue
                 time.sleep(args.delay * 2)
-
+    else:
+        existing = []
+        pending: list[tuple[AuctionMeta, Path]] = []
+        for auction in auctions:
+            auction_id = _auction_id_from_url(auction.auction_url)
+            individual_path = _auction_output_path(auction)
             if individual_path.exists():
-                with open(individual_path, "rb") as input_handle:
-                    merged.write(input_handle.read())
+                existing.append((auction_id, individual_path))
+            else:
+                pending.append((auction, individual_path))
 
+        for auction_id, individual_path in existing:
+            write_checkpoint(
+                checkpoint_dir,
+                auction_id,
+                {"status": "skipped_existing", "auction_id": auction_id, "output": str(individual_path)},
+            )
+
+        futures: dict[concurrent.futures.Future[int], AuctionMeta] = {}
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+            for auction, output_path in pending:
+                future = pool.submit(
+                    _scrape_pending_auction,
+                    auction,
+                    output_path,
+                    delay=args.delay,
+                    quick=args.quick,
+                    max_lots_per_auction=args.max_lots_per_auction,
+                    max_retries=args.max_retries,
+                    timeout_seconds=args.timeout,
+                )
+                futures[future] = auction
+
+            for future, auction in futures.items():
+                auction_id = _auction_id_from_url(auction.auction_url)
+                try:
+                    if auction_timeout is not None:
+                        accepted = future.result(timeout=auction_timeout)
+                    else:
+                        accepted = future.result()
+                    total_lots += accepted
+                    write_checkpoint(
+                        checkpoint_dir,
+                        auction_id,
+                        {"status": "done", "auction_id": auction_id, "accepted_lots": accepted},
+                    )
+                except concurrent.futures.TimeoutError:
+                    write_checkpoint(
+                        checkpoint_dir,
+                        auction_id,
+                        {
+                            "status": "failed",
+                            "auction_id": auction_id,
+                            "error_type": "TimeoutError",
+                            "error": "auction_timeout",
+                            "timeout_seconds": auction_timeout,
+                        },
+                    )
+                    log_event(
+                        "auction_failed",
+                        auction_id=auction_id,
+                        error_type="TimeoutError",
+                        message="auction_timeout",
+                    )
+                    future.cancel()
+                except Exception as exc:  # pragma: no cover - network dependent
+                    write_checkpoint(
+                        checkpoint_dir,
+                        auction_id,
+                        {"status": "failed", "auction_id": auction_id, "error_type": type(exc).__name__, "error": str(exc)},
+                    )
+                    log_event("auction_failed", auction_id=auction_id, error_type=type(exc).__name__, message=str(exc))
+                    continue
+
+        log_event("parallel_done", workers=workers, pending=len(pending), skipped_existing=len(existing))
+
+    merged_count = _merge_outputs(auctions, merged_path)
+    total_lots = merged_count
     log_event("historic_done", total_lots=total_lots, merged_output=str(merged_path))
 
 

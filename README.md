@@ -1,204 +1,96 @@
-# Auction Houses Database Application
+# AuctionHousesApp
 
-La base de datos más completa de subastas de arte del mundo, con scraping automatizado y analytics avanzados.
+Pipeline de datos que scrapea casas de subastas latinoamericanas y españolas, y refina los
+resultados por capas (bronce → plata → oro) hasta producir un **informe HTML de analítica**.
 
-## 🚀 Quick Start
+**No es una aplicación web.** No hay servidor que arrancar, ni API, ni base de datos. El
+producto final es un fichero HTML que abres en el navegador. Si buscas el `backend/` o el
+`frontend/`, lee [ESTADO.md](ESTADO.md).
 
-### Prerequisites
+## Empezar
 
-- Docker & Docker Compose
-- Python 3.11+ (for local development)
-- Node.js 18+ (for frontend development)
+```powershell
+python -m venv venv; venv\Scripts\activate
+pip install -r scraping/requirements.txt
+pip install requests pyyaml pytest
 
-### Development Setup
-
-1. **Clone and setup environment**
-```bash
-git clone <repository-url>
-cd AuctionHousesApp
-cp .env.example .env
+.\scripts\run_all.ps1                    # reconstruye todo el pipeline
+start data\gold\analytics_report.html    # abre el informe
 ```
 
-2. **Start services with Docker**
-```bash
-# Start all services
-docker-compose up -d
+Todos los comandos se ejecutan **desde la raíz del repo**. Requiere Python 3.13.
 
-# Start without frontend (for backend-only development)
-docker-compose up -d postgres redis backend celery_worker celery_beat
+## El informe
+
+`data/gold/analytics_report.html` es la interfaz: KPIs, treemap de ingresos por casa y
+subasta, gráficos por año, tablas de detalle y un **panel de avisos de calidad** que declara
+qué cifras son aproximadas y por qué.
+
+Cifras actuales (2014-2026):
+
+| Casa | Lotes | Vendidos | Tasa | Ingresos (nativa) | ≈ EUR |
+|---|---|---|---|---|---|
+| duran_subastas | 40.442 | 18.624 | 46,1% | 23.450.015 EUR | 23,45 M € |
+| bogota_auctions | 9.099 | 9.045 | 99,4% | 31.215.260.000 COP | 7,24 M € |
+| **Total** | **49.541** | **27.669** | — | **—** | **30,69 M €** |
+
+> **Dos salvedades importantes.** Cada casa cotiza en su propia moneda: los totales en EUR
+> usan una tasa **estática y aproximada** ([pipelines/config/fx.yaml](pipelines/config/fx.yaml)),
+> válida para comparar casas pero no para valoración contable. Y la **tasa de venta no es
+> comparable entre casas**: Bogotá publica casi solo lotes vendidos, Durán publica también
+> los no vendidos. El informe avisa de ambas cosas.
+
+## Comandos
+
+```powershell
+python -m pytest                         # 56 tests
+.\scripts\run_all.ps1                    # pipeline completo, en orden
+
+# Etapas sueltas (como módulos: importan de pipelines.shared)
+python -m pipelines.bronze.ingest
+python -m pipelines.silver.build_silver
+python -m pipelines.enrichments.currency_normalize
+python -m pipelines.gold.build_gold
+python -m pipelines.analytics.report_gold
+
+# Puertas de calidad (informan; con --fail-on-violation abortan)
+python pipelines/silver/quality_gates.py --house-slug duran_subastas
+
+# Scrapers (también como módulos)
+python -m scraping.houses.duran_subastas.run_historic --list-only
+python -m scraping.houses.bogota_auctions.run_auction_list --file urls.txt
 ```
 
-3. **Access the application**
-- **API Documentation**: http://localhost:8000/docs
-- **API Base**: http://localhost:8000/api/v1
-- **Frontend** (when enabled): http://localhost:3000
-
-### Database Setup
-
-The database will be automatically initialized with:
-- Schema creation (tables, indexes, triggers)
-- Initial auction houses data
-- Sample categories and artists
-
-## 📊 Current Status - Phase 1 MVP
-
-### ✅ Completed (Phase 1 MVP)
-- [x] Complete project structure and Docker setup
-- [x] PostgreSQL database with full schema, indexes, and triggers  
-- [x] FastAPI backend with 27 endpoints across 5 routers
-- [x] Complete Service Layer with business logic (5 services)
-- [x] Pydantic models with validation (25+ schemas)
-- [x] Scraping system with base adapter and Bogotá Auctions implementation
-- [x] Celery task system for automated scraping
-- [x] Complete API documentation with Swagger
-- [x] Testing scripts and development tools
-- [x] Makefile with 20+ development commands
-
-### 🎯 Ready for Use
-- API is fully functional with all CRUD operations
-- Database seeded with 12 auction houses and sample data
-- Automated testing suite for all endpoints
-- Production-ready Docker containerization
-
-### 📋 API Endpoints
-
-#### Auction Houses
-- `GET /api/v1/houses/` - List auction houses
-- `GET /api/v1/houses/{id}` - Get house details
-- `GET /api/v1/houses/{id}/auctions/` - Get house auctions
-- `GET /api/v1/houses/{id}/stats/` - Get house statistics
-
-#### Auctions  
-- `GET /api/v1/auctions/` - List auctions (with filters)
-- `GET /api/v1/auctions/{id}` - Get auction details
-- `GET /api/v1/auctions/{id}/lots/` - Get auction lots
-- `GET /api/v1/auctions/{id}/stats/` - Get auction statistics
-
-#### Lots
-- `GET /api/v1/lots/` - List lots (with filters)
-- `GET /api/v1/lots/search/` - Full-text search lots
-- `GET /api/v1/lots/{id}` - Get lot details
-- `GET /api/v1/lots/similar/{id}/` - Get similar lots
-
-#### Artists
-- `GET /api/v1/artists/` - List artists
-- `GET /api/v1/artists/search/` - Search artists
-- `GET /api/v1/artists/{id}` - Get artist details
-- `GET /api/v1/artists/{id}/lots/` - Get artist lots
-- `GET /api/v1/artists/{id}/stats/` - Get artist statistics
-
-#### Analytics
-- `GET /api/v1/analytics/summary/` - Summary statistics
-- `GET /api/v1/analytics/trends/prices/` - Price trends
-- `GET /api/v1/analytics/trends/volume/` - Volume trends
-- `GET /api/v1/analytics/top-artists/` - Top artists
-- `GET /api/v1/analytics/market-insights/` - Market insights
-
-## 🏛️ Covered Auction Houses
-
-### Phase 1 Priority (4 houses)
-- **Bogotá Auctions** (Colombia) - HTML Static
-- **Durán Subastas** (España) - HTML Static  
-- **Setdart** (España) - HTML + AJAX
-- **Morton Subastas** (México) - HTML Static
-
-### Full Coverage (12 houses)
-- Lefebre Subastas (Colombia)
-- Ansorena (España)
-- Christie's (Estados Unidos)
-- Sotheby's (Estados Unidos)
-- Bonhams (Reino Unido)
-- Casa Saráchaga (Argentina)
-
-## 🛠️ Development Commands
-
-```bash
-# View logs
-docker-compose logs -f backend
-
-# Run database migrations
-docker-compose exec backend alembic upgrade head
-
-# Access database
-docker-compose exec postgres psql -U auction_user -d auction_houses
-
-# Essential commands
-make up-backend          # Start all backend services
-make logs-api           # View API logs
-make test-api          # Test all API endpoints
-make populate-test-data # Add sample data
-
-# Database operations
-make db-shell          # Access PostgreSQL shell
-make db-reset         # Reset database (WARNING: deletes data)
-
-# Code quality
-make format           # Format Python code
-make lint            # Run code linting
-
-# Monitoring
-make status          # Check service status
-make health         # Check API health
-make logs           # View all service logs
-
-# Cleanup
-make down           # Stop all services
-make clean         # Remove containers and volumes
-```
-
-## 📁 Project Structure
+## Estructura
 
 ```
-AuctionHousesApp/
-├── backend/
-│   ├── app/
-│   │   ├── api/v1/          # API endpoints
-│   │   ├── core/            # Configuration, database
-│   │   ├── models/          # Pydantic schemas  
-│   │   ├── services/        # Business logic
-│   │   ├── scraping/        # Scraping adapters
-│   │   └── main.py          # FastAPI application
-│   ├── Dockerfile
-│   └── requirements.txt
-├── frontend/                # Next.js application (TBD)
-├── database/
-│   ├── migrations/          # SQL schema files
-│   └── seeds/              # Initial data
-├── docker-compose.yml
-└── docs/                   # Documentation
+scraping/          Un subpaquete por casa + framework común (scraping/common/)
+  houses/
+    registry.json  Fuente de verdad: slug → módulo → carpeta de salida
+pipelines/         Transformación medallion sobre data/
+  bronze/          Aterrizaje crudo, inmutable
+  silver/          Normaliza + deduplica por lot_url
+  enrichments/     Trabajos independientes por dedupe_key
+  gold/            Agregados analíticos + avisos de calidad
+  analytics/       Renderiza el informe (solo lee gold)
+  shared/          fx.py (monedas), schema.py (año, vendido)
+  config/          houses.yaml, fx.yaml
+semantic_layer/    Definiciones de negocio en YAML (metadatos, no se ejecutan)
+data/              Salidas del pipeline — todo gitignored
+tests/             56 tests; los de parsers usan fixtures HTML offline
 ```
 
-## 🔧 Architecture
+## Documentación
 
-- **Backend**: FastAPI + PostgreSQL + Redis
-- **Scraping**: Celery + Scrapy + Selenium/Playwright  
-- **Frontend**: Next.js + React
-- **Database**: PostgreSQL with full-text search
-- **Cache/Queue**: Redis
-- **Deployment**: Docker containers
+- [ESTADO.md](ESTADO.md) — qué existe, qué se borró y dónde está, salvedades de los datos,
+  deuda técnica conocida.
+- [CLAUDE.md](CLAUDE.md) — guía de arquitectura para trabajar en el repo.
+- [docs/SCALING_CHECKLIST.md](docs/SCALING_CHECKLIST.md) — añadir casas y ejecuciones masivas.
+- [scraping/README.md](scraping/README.md) — detalle de los scrapers.
 
-## 📈 Roadmap
+## Añadir una casa de subastas
 
-### Phase 2 (3-4 months)
-- Complete scraping system for all 12 houses
-- Advanced search and filtering
-- Real-time auction updates
-- Performance optimization
-
-### Phase 3 (4-6 months)  
-- Machine learning price predictions
-- Market analysis dashboard
-- Public API with authentication
-- Mobile application
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`  
-5. Open Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Es una operación de registro, no de código de pipeline: creas
+`scraping/houses/<slug>/` con `parsers.py` y los tres runners de interfaz común, y añades
+la entrada en `scraping/houses/registry.json`. El pipeline la descubre sola. Detalle en
+[docs/SCALING_CHECKLIST.md](docs/SCALING_CHECKLIST.md).

@@ -4,23 +4,40 @@ metrics:
     source: silver.lots
     grain: [house, auction, time]
 
+  # Prioriza el estado explicito; "tiene precio" solo se usa cuando la casa no
+  # publica estado. Debe coincidir con pipelines.shared.schema.is_sold().
   - name: lots_sold
-    expression: count_if(price_sold is not null)
+    expression: count_if(case when status is not null then upper(status) = 'VENDIDO' else price_sold is not null end)
     source: silver.lots
     grain: [house, auction, time]
 
+  # OJO: no comparable entre casas. Bogota no publica los lotes no vendidos,
+  # asi que su tasa se acerca al 100% por sesgo de supervivencia, no por exito.
   - name: sell_through_rate
     expression: lots_sold / nullif(lots_offered, 0)
     source: gold.agg_house_metrics
     grain: [house, time]
 
-  - name: revenue
+  # Moneda nativa de la casa: exacta, pero NO sumable entre casas.
+  - name: revenue_native
     expression: sum(price_sold)
     source: silver.lots
     grain: [house, auction, time]
 
-  - name: avg_sold_price
-    expression: revenue / nullif(lots_sold, 0)
+  # Convertido con tasa estatica de pipelines/config/fx.yaml: aproximado,
+  # pero es el unico que puede sumarse cuando se cruzan casas.
+  - name: revenue_eur
+    expression: sum(price_sold * fx_rate_to_eur(currency))
+    source: gold.agg_house_metrics
+    grain: [house, auction, time]
+
+  - name: avg_sold_price_native
+    expression: revenue_native / nullif(lots_sold, 0)
+    source: gold.agg_house_metrics
+    grain: [house, time]
+
+  - name: avg_sold_price_eur
+    expression: revenue_eur / nullif(lots_sold, 0)
     source: gold.agg_house_metrics
     grain: [house, time]
 

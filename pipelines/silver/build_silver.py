@@ -15,6 +15,7 @@ from pipelines.shared.schema import normalize_lot
 
 BRONZE_ROOT = ROOT / "data" / "bronze"
 SILVER_ROOT = ROOT / "data" / "silver"
+NON_LOT_FILES = {"auction_index.jsonl"}
 
 
 def iter_bronze_rows():
@@ -26,12 +27,17 @@ def iter_bronze_rows():
             if not partition_dir.is_dir():
                 continue
             for file_path in partition_dir.glob("*.jsonl"):
+                if file_path.name in NON_LOT_FILES:
+                    continue
                 with open(file_path, encoding="utf-8") as handle:
                     for line in handle:
                         line = line.strip()
                         if not line:
                             continue
-                        yield normalize_lot(json.loads(line), house_slug, str(file_path.relative_to(ROOT)))
+                        record = json.loads(line)
+                        if not record.get("lot_url"):
+                            continue
+                        yield normalize_lot(record, house_slug, str(file_path.relative_to(ROOT)))
 
 
 def main() -> None:

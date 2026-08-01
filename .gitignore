@@ -30,6 +30,13 @@ data/gold/**
 data/enrichments/**
 !data/enrichments/.gitkeep
 
+# Copias de seguridad locales de resultados de scraping (pesan MB, no se suben)
+backups/
+
+# Configuracion local de editores
+.vscode/
+.cursor/
+
 # OS
 .DS_Store
 Thumbs.db

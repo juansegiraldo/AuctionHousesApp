@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+# -p no:postgresql: el plugin pytest-postgresql (herencia del backend borrado)
+#   revienta al importar psycopg -> libpq. Desactivarlo evita instalar Postgres.
+# testpaths: excluye scraping/test_info_url.py y su gemelo en houses/bogota_auctions/,
+#   restos de un refactor que ya no importan (_info_url_from_auction_url no existe).
+# pythonpath: permite ejecutar pytest sin estar obligatoriamente en la raiz.
+addopts = "-p no:postgresql -p no:cacheprovider"
+testpaths = ["tests"]
+pythonpath = ["."]

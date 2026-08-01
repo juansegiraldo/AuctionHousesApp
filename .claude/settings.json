@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/usr/bin/ls scraping *)",
+      "Bash(/usr/bin/ls pipelines *)",
+      "Bash(/usr/bin/ls semantic_layer)",
+      "Bash(/usr/bin/ls scripts *)",
+      "Bash(/usr/bin/ls tests *)"
+    ]
+  }
+}
