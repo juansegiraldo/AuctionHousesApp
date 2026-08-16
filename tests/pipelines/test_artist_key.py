@@ -300,3 +300,46 @@ def test_city_rule_does_not_eat_real_names(name):
     a una persona. Un simple startswith("ciudad ") habria borrado a este autor.
     """
     assert attribution_type(name) == "autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # Duran lista muchos lotes como '"Titulo". Oleo sobre lienzo. 130 x 99...'
+        # y el scraper corta por el primer punto, quedandose con el TITULO como
+        # artista (ver _infer_artist_from_title en
+        # scraping/houses/duran_subastas/parsers.py). Son 721 lotes en 452
+        # variantes; el mas caro, '"Madre Superiora"', es un Botero de 120.000
+        # EUR que rankeaba como artista propio y sin pais.
+        '"Madre Superiora"',
+        '"Vendedoras de frutas"',
+        '"Resurrección"',
+        '"Bust de Noia"',
+        '"Retrato de Isabel II con su hijo"',
+        # Con punto final, tal y como a veces llega de la casa.
+        '"Arboleda".',
+        # Comillas tipograficas, no solo las rectas.
+        "\u201cAnimus\u201d",
+    ],
+)
+def test_fully_quoted_titles_are_not_authors(name):
+    """Un nombre que es ENTERAMENTE un titulo entrecomillado no es una persona."""
+    assert attribution_type(name) == "no_autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # Estos EMPIEZAN por comilla pero llevan el artista de verdad detras:
+        # si la regla mirase solo el primer caracter, se borrarian 29 lotes con
+        # autor real identificable.
+        '"Au merite" art nouveau. Henri Louis Levasseur',
+        '"Marina" Segrelles',
+        '"Toros en la dehesa" J',
+        # Un titulo entrecomillado DENTRO de un nombre no lo convierte en ruido.
+        'Shepard Fairey "Obey"',
+    ],
+)
+def test_quoted_prefix_with_real_name_survives(name):
+    """La regla exige que TODO el nombre sea el entrecomillado, no que empiece por comilla."""
+    assert attribution_type(name) != "no_autor"

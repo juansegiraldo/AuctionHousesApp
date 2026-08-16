@@ -206,9 +206,8 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-08-16: 897 artists**, resolving **18,364 lots with a country** (29.4% of all
-lots, 44.4% of lots that have an author) and **658 of the 1,521 ranked artists (43.3%)** across
-**42 countries**. Everything else stays `fold_only` with no country, and the report publishes the
+**Populated as of 2026-08-16: 990 artists**, resolving **20,515 lots with a country** (31.8% of all
+lots, 49.0% of lots that have an author) across **44 countries**. Everything else stays `fold_only` with no country, and the report publishes the
 real coverage rather than looking complete. To extend it:
 `python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
 
@@ -236,6 +235,18 @@ It got there in four passes, best source first — see
    Spanish name). `Guinovart` turned out to be an **alias of an existing entry**, not a new
    artist. `*Mingorance` was deliberately left unresolved: two different Mingorance painters
    exist and its 10 lots carry no year to tell them apart.
+5. **15 entries + 3 aliases closing the top-200 gaps** — lowering `MIN_LOTS_FOR_ARTIST_RANK`
+   to 1 lets single-lot artists into the ranking, so the top 200 by revenue filled with
+   expensive names that never used to reach the cutoff. Of the 20 gaps: **2 weren't artists**
+   (a quoted work title — see the Durán parser bug below), **3 were already in the master and
+   only lacked an alias** (`Oswaldo Guaysamín`, a Durán typo; `Salvatore Mangione (Salvo)`;
+   `ANDRES DE SANTAMARIA`, which Lefebre writes unspaced and unaccented), and 15 were
+   researched and verified. The payoff was again in **correcting the obvious**: Santa María
+   was born in Bogotá despite dying in Brussels, Justiniano Asunción is Filipino selling into
+   the Spanish market, and Oller gets `PR` — ISO does code Puerto Rico, so neither `ES` nor
+   `US` needs forcing. Lempicka and Juan de Juanes stay `confidence: medium` (disputed
+   birthplace; the house's 1523 contradicts the c.1503 consensus). **Top 200 now has zero
+   artists without a country.**
 
 The master also **merges variants that don't share a fold** — that is work only the alias list can
 do. `Joaquín Sorolla` / `Joaquín Sorolla y Bastida`, `Pablo Picasso` / `Pablo Ruiz Picasso`,
@@ -391,6 +402,20 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   `Ciudad Real, Antonio` survives — with a closed list of country/city tails so
   `Ciudad Cádiz, España` still gets caught. Anyone re-profiling "top unresolved artists" hits these
   first: they are not researchable, they are noise.
+- **Durán's parser prefers a guess over the real author, and it costs a Botero.**
+  `_infer_artist_from_title()` in [scraping/houses/duran_subastas/parsers.py](scraping/houses/duran_subastas/parsers.py)
+  takes everything before the first `.` as the artist, so a lot published as
+  `"Madre Superiora". Óleo sobre lienzo. 130 x 99…` lands with the **work's title** as
+  its artist — 721 lots in 452 variants. The detail page *does* publish an `autor` field
+  (`BOTERO, FERNANDO (1932 - 2023)` for that one, a 120.000 € lot that ranked #39 as an
+  artist of its own with no country), but line 515 only uses it
+  `if artist_from_detail and not artist_raw` — **the guess wins over the good data**.
+  Fixing it properly means inverting that precedence and re-scraping Durán. Until then
+  `_QUOTED_TITLE_RE` in `pipelines/shared/artist_key.py` marks them `not_an_author`, which
+  keeps them out of the artist ranking without inventing an attribution; the revenue still
+  counts for the house. The rule matches only names that are *entirely* a quoted title —
+  29 lots like `"Au merite" art nouveau. Henri Louis Levasseur` carry the real artist
+  behind the title and must survive.
 - **Book authors were deliberately NOT filtered.** 2,528 lots carry the `Autor : Título` pattern in
   `artist_raw` with an inverted name — García Márquez (55), Bolívar (19), Humboldt (14) are writers,
   not painters. But Antonio Caro, Beatriz González and Ana Mercedes Hoyos match the same pattern and

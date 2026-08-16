@@ -795,3 +795,29 @@ artists:
     aliases:
       - "Frederico Vigil"
     notes: "Maestro fresquista estadounidense contemporáneo, nacido Santa Fe, Nuevo México. Discípulo de Luciene Block y Stephen Pope Dimitroff (aprendices de Diego Rivera). Especializado en frescos buon fresco a escala monumental. ALERTA: artista vivo/contemporáneo, NO histórico de subastas españolas/latinoamericanas."
+
+  - artist_id: francisco_oller
+    display_name: "Francisco Oller"
+    country_birth: "PR"
+    nationalities: ["PR"]
+    birth_year: 1833
+    death_year: 1917
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Oller y Cestero"
+    notes: "2 lotes | casas: duran_subastas | fuente: Wikipedia. Nacido en Bayamon cuando Puerto Rico era colonia espaniola: el pais de nacimiento es PR, que ISO si codifica, no ES ni US. Fundador de la pintura puertorriquenia; unico impresionista latinoamericano del circulo de Pissarro y Courbet."
+
+  - artist_id: francisco_bayeu
+    display_name: "Francisco Bayeu"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1734
+    death_year: 1795
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Bayeu"
+    notes: "2 lotes | casas: duran_subastas | fuente: Museo del Prado. Nacido en Zaragoza, cuniado de Goya. OJO: sus hermanos Ramon y fray Manuel Bayeu tambien fueron pintores y ya aparecen en el catalogo ('Ramon Bayeu', 'BAYEU , RAMON'), asi que este alias lleva el nombre de pila obligatorio."

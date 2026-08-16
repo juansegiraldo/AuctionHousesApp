@@ -100,6 +100,9 @@ artists:
     confidence: high
     aliases:
       - "Oswaldo Guayasamín"
+      # Errata de la propia ficha de Duran ("Guaysamín", sin la segunda "a").
+      # Rankeaba aparte con 1 lote de 30.000 EUR y sin pais.
+      - "Oswaldo Guaysamín"
     notes: "38 lotes | casas: bogota_auctions, duran_subastas"
   - artist_id: oscar_garcia_reino
     display_name: "Óscar García Reino"

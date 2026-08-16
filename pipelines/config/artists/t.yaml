@@ -112,3 +112,18 @@ artists:
       - "Tomás Martín Rebollo"
       - "Tomás MArtín Rebollo"
     notes: "15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; RAH | Born Granada; died Madrid"
+
+  - artist_id: tamara_de_lempicka
+    display_name: "Tamara de Lempicka"
+    country_birth: "PL"
+    nationalities: ["PL", "US"]
+    birth_year: 1894
+    death_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Tamara de Lempicka"
+      - "TAMARA DE LEMPICKA"
+      - "TAMARA LEMPICKA"
+    notes: "3 lotes en 3 grafias | casas: duran_subastas, lefebre_subastas | fuente: Wikipedia, investigacion de 2024 (de Young / FAMSF). PAIS DISPUTADO A TRES BANDAS, de ahi confidence medium: ella misma decia Varsovia o San Petersburgo segun la ocasion y su biografa Laura Claridge sostiene Moscu. PL es el consenso, no un hecho limpio. La investigacion de 2024 corrigio sobre todo la FECHA (16 jun 1894, no 1898 ni 1905) y el nombre real (Tamara Rosa Hurwitz), destapando un origen judio que probablemente motivo la reinvencion de la identidad polaca."

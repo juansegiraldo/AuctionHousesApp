@@ -503,3 +503,16 @@ artists:
       - "Pedro Trapero"
       - "Pedro María Trapero"
     notes: "Pintor español nacido en Navalcarnero, Madrid, 1918. Fallecido en Madrid 2005. Registrado en bases de datos españolas de arte."
+
+  - artist_id: paja_jovanovic
+    display_name: "Paja Jovanović"
+    country_birth: "RS"
+    nationalities: ["RS"]
+    birth_year: 1859
+    death_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paja Jovanovic"
+    notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Vrsac, entonces Imperio austriaco (Banato, austrohungaro desde 1867), hoy Serbia: RS por el lugar literal. Serbio de etnia y autoidentificacion. Murio en Viena a los 98 tras vivir alli casi toda su vida adulta, pero NO consta que adquiriera la ciudadania austriaca, asi que no se le aniade AT."

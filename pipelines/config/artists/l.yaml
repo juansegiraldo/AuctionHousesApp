@@ -722,3 +722,16 @@ artists:
       - "Boliche"
       - "Lorenzo Aparicio"
     notes: "Pintor madrileño, maestro del arte naif español. Legó obras al Museo Internacional de Arte Naïf 'Manuel Moral' de Jaén."
+
+  - artist_id: leon_augustin_lhermitte
+    display_name: "Léon-Augustin Lhermitte"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1844
+    death_year: 1925
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Léon-Augustin Lhermitte"
+    notes: "1 lote de 90.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Mont-Saint-Pere, pintor naturalista de escenas campesinas."

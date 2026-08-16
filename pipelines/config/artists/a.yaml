@@ -388,7 +388,11 @@ artists:
     confidence: high
     aliases:
       - "Andrés de Santa María"
-    notes: "4 lotes | casas: bogota_auctions"
+      # Lefebre escribe el apellido junto y sin tildes: no comparte fold con la
+      # forma separada, asi que rankeaba aparte y sin pais.
+      - "ANDRES DE SANTAMARIA"
+      - "ANDRÉS DE SANTAMARÍA"
+    notes: "7 lotes | casas: bogota_auctions, lefebre_subastas | Nacido en BOGOTA pese a formarse en Bruselas y Paris y morir en Bruselas: el perfil que un heuristico 'por mercado' clasificaria mal. NO fusionar con 'Navas Sanz de Santamaria, Pablo' ni 'Sanz de Santamaria, Carlos', que son otras personas."
 
   - artist_id: andy_warhol
     display_name: "Andy Warhol"
@@ -1681,3 +1685,35 @@ artists:
       - "Albert Gonzalo Carbó"
       - "Albert Gonzalo"
     notes: "Catalan painter born in Tarragona, died in Barcelona. Traveled North Africa and Far East. Collected primitive and ancient objects. Specialized in exoticism and ancient cultures."
+
+  - artist_id: alvaro_alcala_galiano
+    display_name: "Álvaro Alcalá Galiano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1873
+    death_year: 1936
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Álvaro Alcalá Galiano"
+      - "Álvaro Alcala Galiano"
+      - "Álvaro Alcalá Galiano y Vildosola"
+      # Duran lista este lote con el TITULO de la obra en vez del autor: el
+      # scraper corta por el primer punto y se queda con '"Vendedoras de
+      # frutas"'. La pagina de detalle si dice ALCALA GALIANO Y VILDOSOLA.
+      # Ver el defecto en _infer_artist_from_title (duran_subastas/parsers.py).
+      - '"Vendedoras de frutas"'
+    notes: "4 lotes (3 variantes de grafia + 1 titulo mal parseado) | casas: duran_subastas | fuente: Bilbao Museoa, Auniamendi. Nacido en Bilbao. OJO: existe otro Alvaro Alcala-Galiano y Osma, persona distinta, de ahi que el apellido compuesto sea imprescindible. El lugar de muerte discrepa (Madrid o Paracuellos del Jarama, 1936); el anio es firme."
+
+  - artist_id: anselm_kiefer
+    display_name: "Anselm Kiefer"
+    country_birth: "DE"
+    nationalities: ["DE", "AT", "FR"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Anselm Kiefer"
+    notes: "1 lote de 100.000 EUR | casas: duran_subastas | fuente: Wikidata Q170344. Nacido en Donaueschingen, Alemania. Artista VIVO: sin death_year. Tiene tres nacionalidades, no dos: la austriaca la obtuvo en 2018 y vive en Francia desde 1992."

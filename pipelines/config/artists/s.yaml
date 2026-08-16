@@ -47,6 +47,9 @@ artists:
     confidence: high
     aliases:
       - "Salvo"
+      # Nombre civil + seudonimo en la misma cadena: es la forma con la que
+      # Duran lista sus 2 lotes de mas valor, y no comparte fold con "Salvo".
+      - "Salvatore Mangione (Salvo)"
     notes: "4 lotes | casas: duran_subastas"
 
   - artist_id: santiago_cardenas
@@ -416,3 +419,17 @@ artists:
     aliases:
       - "Sebastián Ramis"
     notes: "Pintor y grabador nacido en Palma de Mallorca (1947). Especializado en paisajes, naturalezas muertas y escenas de playa. Pasteles y técnicas de grabado. Exposiciones en Barcelona, Madrid, París, Toulouse."
+
+  - artist_id: simon_vouet
+    display_name: "Simon Vouet"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1590
+    death_year: 1649
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Simon Vouet"
+      - "VOUET, SIMON"
+    notes: "4 lotes (1 vendido en 42.500 EUR) | casas: duran_subastas | fuente: National Gallery. Nacido en Paris, introductor del barroco italiano en Francia. La forma invertida 'VOUET, SIMON' no comparte fold y rankeaba aparte."

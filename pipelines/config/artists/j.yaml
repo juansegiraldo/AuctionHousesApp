@@ -2504,3 +2504,70 @@ artists:
     aliases:
       - "Lambert, Jean - Clarence"
     notes: "French poet, art critic, and art historian. Born in Paris 1930. Represented in Metropolitan Museum and MoMA collections."
+
+  - artist_id: jan_van_ravesteyn
+    display_name: "Jan Anthonisz van Ravesteyn"
+    country_birth: "NL"
+    nationalities: ["NL"]
+    birth_year: 1572
+    death_year: 1657
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      # El catalogo de Duran escribe "Ravensteyn" con "n" de mas; el apellido
+      # real es "Ravesteyn". Se registra la errata, que es la forma que llega.
+      - "Jan Anthonisz van Ravensteyn"
+    notes: "1 lote de 120.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en La Haya, Provincias Unidas: es neerlandes del norte, NO flamenco. El nombre de pila es obligatorio en el alias porque existen Dirck de Quade van Ravesteyn y Arnold van Ravesteyn, pintores distintos."
+
+  - artist_id: juan_de_arellano
+    display_name: "Juan de Arellano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1614
+    death_year: 1676
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan DE ARELLANO"
+    notes: "2 lotes | casas: zorrilla_subastas | fuente: Museo del Prado. Maestro del bodegon floral espaniol. NO se fusiona 'Seguidor de Juan de Arellano' (2 lotes de Duran): es obra de seguidor, no suya, igual que el caso 'Despues de Pablo Picasso'. Tampoco 'Jose de Arellano' ni 'Ramirez de Arellano', que son otras personas."
+
+  - artist_id: juana_frances
+    display_name: "Juana Francés"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1924
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juana Francés"
+    notes: "2 lotes | casas: duran_subastas | fuente: MACA Alicante. Nacida en Alicante, unica mujer fundadora del grupo El Paso."
+
+  - artist_id: juan_de_juanes
+    display_name: "Juan de Juanes"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1503
+    death_year: 1579
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Juan de Juanes"
+    notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia ES. Vicente Juan Masip. La ficha de la casa da 1523 como nacimiento y es ERRATA: el consenso academico es c.1503-1505. No hay partida (los libros bautismales de Fuente la Higuera empiezan en 1535), de ahi confidence medium en la fecha; el pais no esta en duda. Su padre Vicente Masip tambien fue pintor y la atribucion de obra anterior a 1550 es problematica incluso para especialistas."
+
+  - artist_id: justiniano_asuncion
+    display_name: "Justiniano Asunción"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1816
+    death_year: 1901
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Justiniano Asunción"
+    notes: "1 lote de 35.000 EUR | casas: duran_subastas | fuente: Wikipedia. Justiniano Asuncion y Molo, 'Capitan Ting', nacido en Santa Cruz (Manila) en las Filipinas espaniolas: vende en mercado espaniol pero NO es espaniol. El anio de muerte discrepa entre fuentes (1901 en Wikipedia y Bonhams, 1896 en Geni); el nacimiento no esta en duda."

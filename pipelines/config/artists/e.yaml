@@ -988,3 +988,16 @@ artists:
     aliases:
       - "EDILBERTO CALDERON"
     notes: "Colombian painter born in Venadillo, Tolima. Master in Plastic Arts from Universidad Nacional de Colombia. Student of Fernando Botero. Over 70 years artistic trajectory with themes in folklore, love/eroticism, social protest. Works in mixed media (oil, pastel, acrylic). Exhibited internationally including Museo Regional de La Laguna (Mexico)."
+
+  - artist_id: evaristo_valle
+    display_name: "Evaristo Valle"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1873
+    death_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Evaristo Valle"
+    notes: "2 lotes | casas: duran_subastas | fuente: Fundacion Museo Evaristo Valle. Nacido en Gijon, Asturias. NO se fusiona con 'Cesar del Valle', que ya esta en el maestro y es otra persona."

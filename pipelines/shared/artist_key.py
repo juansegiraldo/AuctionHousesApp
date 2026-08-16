@@ -151,6 +151,25 @@ _NON_ARTIST_AUTHORS = frozenset(
     }
 )
 
+# El nombre es ENTERAMENTE el titulo entrecomillado de la obra. Duran publica
+# muchos lotes como '"Madre Superiora". Oleo sobre lienzo. 130 x 99. Obra
+# realizada hacia 1965...' y el scraper corta por el primer punto y se queda con
+# el titulo (ver _infer_artist_from_title en
+# scraping/houses/duran_subastas/parsers.py, que ademas prefiere esa conjetura
+# al campo "autor" de la pagina de detalle, que si trae el nombre bueno).
+# Son 721 lotes en 452 variantes, y no es ruido barato: el mas caro,
+# '"Madre Superiora"', es un Botero de 120.000 EUR que rankeaba como si fuera un
+# artista sin pais en vez de sumar al autor real.
+#
+# La regla exige que TODO el nombre sea el entrecomillado, no que EMPIECE por
+# comilla: hay 29 lotes tipo '"Au merite" art nouveau. Henri Louis Levasseur' o
+# '"Marina" Segrelles' donde el artista de verdad viene detras del titulo, y un
+# match por prefijo los borraria. Misma cautela que la coma de _CITY_FIELD_RE.
+#
+# Se comprueba sobre el nombre ORIGINAL: artist_fold() quita la puntuacion y
+# para entonces las comillas ya no existen.
+_QUOTED_TITLE_RE = re.compile(r'^\s*["“”][^"“”]+["“”]\s*\.?\s*$')
+
 # Parentesis biografico final: "Ever Astudillo (Colombia, 1948 - 2015)".
 # Se recorta ANTES de mirar si hay digitos, porque si no 552 nombres que si son
 # artistas caerian en no_autor y perderiamos justo los que llevan el pais dentro.
@@ -255,6 +274,10 @@ def attribution_type(name: Optional[str]) -> str:
 
     # Campo "Ciudad" de la ficha del libro, no una persona.
     if _CITY_FIELD_RE.match(core):
+        return "no_autor"
+
+    # El nombre es solo el titulo entrecomillado de la obra: 721 lotes de Duran.
+    if _QUOTED_TITLE_RE.match(raw):
         return "no_autor"
 
     # Ya sin biografia, un digito restante delata un titulo o un lote agrupado

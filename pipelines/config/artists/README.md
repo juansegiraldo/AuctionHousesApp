@@ -9,11 +9,10 @@ Lo lee `pipelines/shared/artist_master.py`, que a su vez usa
 
 ## Estado actual (2026-08-16)
 
-**897 artistas poblados**, que resuelven **18.364 lotes con pais (29,4% del total,
-44,4% de los lotes con autor)** y **658 de los 1.521 artistas del ranking (43,3%)**,
-repartidos en **42 paises**.
+**990 artistas poblados**, que resuelven **20.515 lotes con pais (31,8% del total,
+49,0% de los lotes con autor)**, repartidos en **44 paises**.
 
-Se llego ahi en cuatro tandas, de mejor a peor fuente:
+Se llego ahi en cinco tandas, de mejor a peor fuente:
 
 | Tanda | Altas | Lotes que aporta | Fuente |
 |---|---|---|---|
@@ -21,6 +20,42 @@ Se llego ahi en cuatro tandas, de mejor a peor fuente:
 | Alias por inversion de coma | 93 alias | +228 | ninguna: union de variantes ya presentes |
 | Investigacion en fuentes publicas | 140 | +2.050 | Wikipedia, Wikidata, Prado, Reina Sofia, MACBA, Artnet |
 | Seudonimos de una palabra | 6 + 1 alias | +104 | Wikidata, Wikipedia |
+| Huecos del top 200 por valor | 15 + 3 alias | +19 filas del top 200 | Prado, National Gallery, Wikidata, Banrepcultural, Bilbao Museoa |
+
+### La tanda del top 200: bajar el corte a 1 lote cambia que hay que investigar
+
+Con `MIN_LOTS_FOR_ARTIST_RANK = 1` entran al ranking artistas de un solo lote, y
+el top 200 por ingresos se llena de nombres carisimos con **una** venta que antes
+no llegaban al corte. De los 20 huecos que aparecieron:
+
+- **2 no eran artistas**, sino el titulo de la obra (ver abajo).
+- **3 ya estaban en el maestro** y solo les faltaba el alias: `Oswaldo Guaysamín`
+  (errata de Duran, sin la segunda "a"), `Salvatore Mangione (Salvo)` y
+  `ANDRES DE SANTAMARIA` (Lefebre escribe el apellido junto y sin tildes).
+  Cero investigacion, tres artistas que rankeaban partidos.
+- **15 se investigaron** y los 15 se verificaron con fuente concreta.
+
+Lo que rindio, otra vez, no fue rellenar huecos sino **corregir lo obvio**:
+
+| Artista | Se diria | Nacio en | Por que importa |
+|---|---|---|---|
+| Andres de Santa Maria | Belgica (murio en Bruselas) | `CO`, Bogota | Se formo y murio en Europa; es colombiano de nacimiento |
+| Justiniano Asuncion | Espania (vende en Duran) | `PH`, Manila | Filipinas espaniolas: mercado espaniol, pintor filipino |
+| Francisco Oller | Espania o EEUU | `PR`, Bayamon | ISO **si** codifica Puerto Rico; no hay que forzar `ES` ni `US` |
+| Jan Anthonisz van Ravesteyn | Flandes | `NL`, La Haya | Es neerlandes del norte, no flamenco |
+| Marten van Valckenborch | Belgica moderna | `BE`, Lovaina | Paises Bajos espanioles; el estado belga no existia |
+| Paja Jovanovic | Austria (murio en Viena) | `RS`, Vrsac | Imperio austriaco entonces, Serbia hoy |
+
+Dos entradas quedaron en `confidence: medium` a proposito: **Tamara de Lempicka**
+(el nacimiento se disputa a tres bandas — Varsovia, San Petersburgo o Moscu segun
+la fuente; `PL` es consenso, no hecho) y **Juan de Juanes**, donde la ficha de la
+casa da 1523 y el consenso academico es c.1503-1505, sin partida posible porque
+los libros bautismales de Fuente la Higuera empiezan en 1535.
+
+Y tres alias se dejaron **sin** fusionar aunque el fold invitaba:
+`Seguidor de Juan de Arellano` (obra de seguidor, como `Despues de Pablo
+Picasso`), `Cesar del Valle` frente a `Evaristo Valle`, y
+`Navas Sanz de Santamaria, Pablo` frente a Andres de Santa Maria.
 
 La tercera tanda ataco los artistas con mas lotes que seguian sin resolver, casi
 todos pintores espanioles del XIX-XX de Duran. De **176 fichas investigadas se
@@ -125,6 +160,39 @@ pero con dos cautelas que costaron dos iteraciones:
 - **`Ciudad Real, Antonio` es un apellido espaniol**, asi que la coma excluye.
 - ...salvo que detras venga un pais o ciudad conocidos (`Ciudad Cádiz, España`),
   que son 4 lotes que si son ficha. De ahi la lista cerrada `_CITY_TAIL`.
+
+### El titulo de la obra en el campo del artista: 721 lotes
+
+Duran publica el lote como `"Madre Superiora". Oleo sobre lienzo. 130 x 99...` y
+`_infer_artist_from_title()` (en `scraping/houses/duran_subastas/parsers.py`)
+**corta por el primer punto** y se queda con el titulo entrecomillado como
+artista. Son **721 lotes en 452 variantes**, y no es ruido barato:
+
+- `"Madre Superiora"` rankeaba **el puesto 39 del top 200 con 120.000 EUR** — y
+  es un **Botero**: la ficha de detalle dice `BOTERO, FERNANDO (1932 - 2023)` y
+  la descripcion cita un certificado firmado por el propio Botero.
+- `"Vendedoras de frutas"` (40.000 EUR) es de **Alvaro Alcala Galiano**, que
+  ademas estaba en la misma lista de huecos con su nombre bien escrito: el mismo
+  artista rankeaba dos veces, una de ellas bajo el titulo de su cuadro.
+
+Se filtra en `pipelines/shared/artist_key.py` (`_QUOTED_TITLE_RE`), donde vive
+esa clasificacion, no en el maestro: un titulo de obra **no puede ser un alias**,
+porque el alias afirma identidad y aqui lo unico cierto es que ese texto *no* es
+una persona.
+
+**La regla exige que TODO el nombre sea el entrecomillado, no que empiece por
+comilla.** Hay 29 lotes tipo `"Au merite" art nouveau. Henri Louis Levasseur`,
+`"Marina" Segrelles` o `"Retrato femenino" Juan Cardona` donde el artista real
+va **detras** del titulo; un match por prefijo los habria borrado. Es la misma
+cautela que la coma de `_CITY_FIELD_RE` con `Ciudad Real, Antonio`. Hay un test
+para cada mitad de la regla.
+
+**Esto es un parche aguas abajo, no el arreglo.** El dato bueno existe: la pagina
+de detalle publica el campo `autor`, pero el parser solo lo usa
+`if artist_from_detail and not artist_raw`, asi que **la conjetura del titulo le
+gana al dato real**. Arreglarlo de verdad es invertir esa precedencia y
+re-scrapear Duran; mientras tanto esos lotes quedan como `not_an_author` — su
+ingreso sigue contando para la casa, y ninguno finge ser un artista sin pais.
 
 ### Lo que se decidio NO filtrar
 

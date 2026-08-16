@@ -1320,3 +1320,16 @@ artists:
     aliases:
       - "Max Ernst"
     notes: "German-born (Brühl), settled in France. Leading Surrealist and Dada artist."
+
+  - artist_id: marten_van_valckenborch
+    display_name: "Marten van Valckenborch"
+    country_birth: "BE"
+    nationalities: ["BE"]
+    birth_year: 1535
+    death_year: 1612
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Martin van Valckenborch"
+    notes: "2 lotes (1 vendido en 60.000 EUR) | casas: duran_subastas | fuente: Wikipedia. Nacido en Lovaina, entonces Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik y Gillis); un 'van Valckenborch' sin nombre de pila NO debe resolverse aqui."
