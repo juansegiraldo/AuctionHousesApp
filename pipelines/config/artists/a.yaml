@@ -1699,12 +1699,11 @@ artists:
       - "Álvaro Alcalá Galiano"
       - "Álvaro Alcala Galiano"
       - "Álvaro Alcalá Galiano y Vildosola"
-      # Duran lista este lote con el TITULO de la obra en vez del autor: el
-      # scraper corta por el primer punto y se queda con '"Vendedoras de
-      # frutas"'. La pagina de detalle si dice ALCALA GALIANO Y VILDOSOLA.
-      # Ver el defecto en _infer_artist_from_title (duran_subastas/parsers.py).
-      - '"Vendedoras de frutas"'
-    notes: "4 lotes (3 variantes de grafia + 1 titulo mal parseado) | casas: duran_subastas | fuente: Bilbao Museoa, Auniamendi. Nacido en Bilbao. OJO: existe otro Alvaro Alcala-Galiano y Osma, persona distinta, de ahi que el apellido compuesto sea imprescindible. El lugar de muerte discrepa (Madrid o Paracuellos del Jarama, 1936); el anio es firme."
+      # La forma con la que Duran publica el campo "Autor" de la ficha, que es
+      # la que llega desde _lot_author_fixes.yaml para sus 2 lotes mal
+      # parseados. El titulo de la obra NO va aqui: un alias afirma identidad.
+      - "ALCALA GALIANO Y VILDOSOLA, ALVARO"
+    notes: "4 lotes (3 variantes de grafia + 2 lotes recuperados por _lot_author_fixes.yaml) | casas: duran_subastas | fuente: Bilbao Museoa, Auniamendi. Nacido en Bilbao. OJO: existe otro Alvaro Alcala-Galiano y Osma, persona distinta, de ahi que el apellido compuesto sea imprescindible. El lugar de muerte discrepa (Madrid o Paracuellos del Jarama, 1936); el anio es firme."
 
   - artist_id: anselm_kiefer
     display_name: "Anselm Kiefer"
@@ -1717,3 +1716,16 @@ artists:
     aliases:
       - "Anselm Kiefer"
     notes: "1 lote de 100.000 EUR | casas: duran_subastas | fuente: Wikidata Q170344. Nacido en Donaueschingen, Alemania. Artista VIVO: sin death_year. Tiene tres nacionalidades, no dos: la austriaca la obtuvo en 2018 y vive en Francia desde 1992."
+
+  - artist_id: antonio_palacios
+    display_name: "Antonio Palacios"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1874
+    death_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PALACIOS, ANTONIO"
+    notes: "Alta desde _lot_author_fixes.yaml: sus 2 lotes llegaban con el titulo '\"Circulo de Bellas Artes\"' como artista | casas: duran_subastas | fuente: Wikipedia ES. ARQUITECTO, no pintor: los lotes son dibujos suyos del proyecto del Circulo de Bellas Artes de Madrid. La ficha de Duran da 1876 como nacimiento; Wikipedia da 1874 (8 de enero), y se toma la fuente sobre la casa. Nacido en Porrinio, Pontevedra."

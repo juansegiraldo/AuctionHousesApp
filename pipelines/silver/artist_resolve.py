@@ -46,7 +46,11 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict
 
-from pipelines.shared.artist_master import normalize_country, resolve_artist
+from pipelines.shared.artist_master import (
+    load_lot_author_fixes,
+    normalize_country,
+    resolve_artist,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
@@ -69,12 +73,26 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     resultado, porque siempre se recalcula desde artist_name.
     """
     resolved = dict(row)
-    resolved.update(resolve_artist(row.get("artist_name")))
+
+    # El scraper de Duran dejo el TITULO de la obra en artist_name en 721 lotes
+    # (_infer_artist_from_title corta por el primer punto). Cuando el lote esta
+    # en la tabla de reparacion, se usa el campo "Autor" que la casa SI publica
+    # en su ficha de detalle. Va por lot_url y no por nombre porque un titulo no
+    # identifica a nadie: "Paisaje" son 45 lotes de 45 pintores distintos.
+    #
+    # El nombre reparado se resuelve como cualquier otro, asi que una atribucion
+    # a escuela sigue clasificandose como `escuela` y no asciende a autor.
+    name = row.get("artist_name")
+    lot_url = row.get("lot_url")
+    if lot_url:
+        name = load_lot_author_fixes().get(lot_url, name)
+
+    resolved.update(resolve_artist(name))
 
     # El display name cae al nombre crudo cuando el artista no esta en el
     # maestro, para que el informe siga mostrando algo legible.
     if resolved["artist_display_name"] is None:
-        raw = (row.get("artist_name") or "").strip()
+        raw = (name or "").strip()
         resolved["artist_display_name"] = raw or None
 
     return resolved

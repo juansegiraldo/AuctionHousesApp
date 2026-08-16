@@ -9,7 +9,7 @@ Lo lee `pipelines/shared/artist_master.py`, que a su vez usa
 
 ## Estado actual (2026-08-16)
 
-**990 artistas poblados**, que resuelven **20.515 lotes con pais (31,8% del total,
+**993 artistas poblados**, que resuelven **20.515 lotes con pais (31,8% del total,
 49,0% de los lotes con autor)**, repartidos en **44 paises**.
 
 Se llego ahi en cinco tandas, de mejor a peor fuente:
@@ -21,6 +21,7 @@ Se llego ahi en cinco tandas, de mejor a peor fuente:
 | Investigacion en fuentes publicas | 140 | +2.050 | Wikipedia, Wikidata, Prado, Reina Sofia, MACBA, Artnet |
 | Seudonimos de una palabra | 6 + 1 alias | +104 | Wikidata, Wikipedia |
 | Huecos del top 200 por valor | 15 + 3 alias | +19 filas del top 200 | Prado, National Gallery, Wikidata, Banrepcultural, Bilbao Museoa |
+| Autores recuperados por `lot_url` | 3 + 4 alias | +14 lotes, +120.000 EUR a Botero | ficha de detalle de la propia casa |
 
 ### La tanda del top 200: bajar el corte a 1 lote cambia que hay que investigar
 
@@ -187,12 +188,40 @@ va **detras** del titulo; un match por prefijo los habria borrado. Es la misma
 cautela que la coma de `_CITY_FIELD_RE` con `Ciudad Real, Antonio`. Hay un test
 para cada mitad de la regla.
 
-**Esto es un parche aguas abajo, no el arreglo.** El dato bueno existe: la pagina
-de detalle publica el campo `autor`, pero el parser solo lo usa
-`if artist_from_detail and not artist_raw`, asi que **la conjetura del titulo le
-gana al dato real**. Arreglarlo de verdad es invertir esa precedencia y
-re-scrapear Duran; mientras tanto esos lotes quedan como `not_an_author` — su
-ingreso sigue contando para la casa, y ninguno finge ser un artista sin pais.
+**Y los mas valiosos si se recuperan, sin re-scrapear.** El campo `autor` de la
+ficha de detalle es publico: se consulta en la web del lote y se anota en
+[`_lot_author_fixes.yaml`](_lot_author_fixes.yaml), un mapa `lot_url -> autor`
+que lee `load_lot_author_fixes()` y aplica `resolve_row()` en Silver.
+
+La clave es el **lot_url y no el nombre**, y esa es toda la diferencia: un titulo
+no identifica a nadie (`"Paisaje"` son 45 lotes de 45 pintores distintos), asi
+que no puede ser un alias del maestro, donde un alias afirma identidad. El
+`lot_url` si es unico — es la misma clave con la que Silver deduplica.
+
+El valor se anota **tal cual lo publica la casa** y vuelve a pasar por
+`attribution_type()` y por el maestro como cualquier otro nombre. Por eso dos de
+los 14 lotes reparados son `ESCUELA ESPANIOLA S. XVI` y `S. XIX` y salen
+clasificados como `escuela`, no ascendidos a autor: la casa atribuye a una
+escuela y esa es la respuesta correcta. Estan en el fichero a proposito, para que
+nadie vuelva a investigarlos creyendo que son un hueco.
+
+Resultado: el Botero pasa de 32 a **33 lotes y de 611.590 a 731.590 EUR**, con
+"Madre Superiora" como su venta mas alta. Reparar esos 14 lotes destapo ademas
+**4 alias por inversion de coma** que faltaban (`MORAGO, CARLOS`, `VALLS, DINO`,
+`NAVARRO LLORENS, JOSE`, `MARIN RAMOS, EUSTAQUIO`) y **3 artistas nuevos**
+(Luis Graner, Ricard Canals, Antonio Palacios — este ultimo arquitecto, no
+pintor: sus lotes son dibujos del proyecto del Circulo de Bellas Artes).
+
+**Sigue siendo un parche aguas abajo.** El parser deberia preferir el campo
+`autor` a la conjetura del titulo (hoy hace lo contrario:
+`if artist_from_detail and not artist_raw`) y re-scrapearse. Los lotes no
+reparados siguen como `not_an_author`: su ingreso cuenta para la casa y ninguno
+finge ser un artista sin pais.
+
+Al anadir aqui, ojo con una trampa: `artist_fold()` **no** recorta el parentesis
+biografico, asi que `BOTERO, FERNANDO (1932 - 2023)` pliega a
+`botero fernando 1932 2023` y no casaria con el alias `BOTERO, FERNANDO`. Por eso
+`load_lot_author_fixes()` aplica `strip_biography()` al cargar.
 
 ### Lo que se decidio NO filtrar
 

@@ -206,7 +206,7 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-08-16: 990 artists**, resolving **20,515 lots with a country** (31.8% of all
+**Populated as of 2026-08-16: 993 artists**, resolving **20,515 lots with a country** (31.8% of all
 lots, 49.0% of lots that have an author) across **44 countries**. Everything else stays `fold_only` with no country, and the report publishes the
 real coverage rather than looking complete. To extend it:
 `python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
@@ -415,7 +415,17 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   keeps them out of the artist ranking without inventing an attribution; the revenue still
   counts for the house. The rule matches only names that are *entirely* a quoted title —
   29 lots like `"Au merite" art nouveau. Henri Louis Levasseur` carry the real artist
-  behind the title and must survive.
+  behind the title and must survive. **The highest-value ones are recovered without a
+  re-scrape** via `pipelines/config/artists/_lot_author_fixes.yaml`, a curated
+  `lot_url → autor` map read by `load_lot_author_fixes()` and applied in
+  `silver/artist_resolve.py`. It is keyed by **`lot_url`, never by name** — a title
+  identifies nobody (`"Paisaje"` is 45 lots by 45 different painters), so it can't be a
+  master alias, where an alias asserts identity. Values are stored exactly as the house
+  prints them and re-enter `attribution_type()` normally, so `ESCUELA ESPAÑOLA S. XIX`
+  stays `escuela` instead of being promoted to an author. That recovered the Botero
+  (32 → 33 lots, 611,590 → 731,590 €). Note `artist_fold()` does *not* strip the
+  biographical parenthesis, so `load_lot_author_fixes()` applies `strip_biography()` on
+  load or `BOTERO, FERNANDO (1932 - 2023)` would never match the `BOTERO, FERNANDO` alias.
 - **Book authors were deliberately NOT filtered.** 2,528 lots carry the `Autor : Título` pattern in
   `artist_raw` with an inverted name — García Márquez (55), Bolívar (19), Humboldt (14) are writers,
   not painters. But Antonio Caro, Beatriz González and Ana Mercedes Hoyos match the same pattern and

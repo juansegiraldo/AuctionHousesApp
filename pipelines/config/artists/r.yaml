@@ -976,3 +976,16 @@ artists:
       - "RENE MAGRITTE"
       - "René Magritte"
     notes: "Belgian surrealist painter born in Lessines. Full name: René François Ghislain Magritte. Known for depicting ordinary objects in unfamiliar contexts. Died of pancreatic cancer in Brussels."
+
+  - artist_id: ricardo_canals
+    display_name: "Ricard Canals i Llambí"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1876
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CANALS Y LLAMBI, RICARDO"
+    notes: "Alta desde _lot_author_fixes.yaml: su lote llegaba con el titulo '\"Bust de Noia\"' como artista | casas: duran_subastas | fuente: Wikipedia ES (Ricard Canals). Nacido y muerto en Barcelona. OJO homonimo: hay un Ricardo Canals uruguayo (n. 1970), representante de futbolistas, que NO es este pintor."

@@ -735,3 +735,16 @@ artists:
     aliases:
       - "Léon-Augustin Lhermitte"
     notes: "1 lote de 90.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Mont-Saint-Pere, pintor naturalista de escenas campesinas."
+
+  - artist_id: luis_graner
+    display_name: "Luis Graner"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1863
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GRANER, LUIS"
+    notes: "Alta desde _lot_author_fixes.yaml: su lote llegaba con el titulo '\"Entrando en el puerto\"' como artista | casas: duran_subastas | fuente: Wikipedia ES. Nacido y muerto en Barcelona."
