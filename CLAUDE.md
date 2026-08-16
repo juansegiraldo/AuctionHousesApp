@@ -211,6 +211,11 @@ lots, 49.0% of lots that have an author) across **44 countries**. Everything els
 real coverage rather than looking complete. To extend it:
 `python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
 
+**Continuing this work?** [docs/PLAN_MAESTRO_ARTISTAS.md](docs/PLAN_MAESTRO_ARTISTAS.md) is the
+handover plan: what to do next in priority order (fix the Durán parser *before* adding entries),
+the mistakes the last pass made, and the checks to run before calling a batch done. Read it before
+adding artists.
+
 It got there in four passes, best source first — see
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md) for the full account:
 
