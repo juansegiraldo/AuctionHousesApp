@@ -245,9 +245,8 @@ def revenue_total(cells: list[dict]) -> float:
 def generation_bars(generations: list[dict]) -> list[dict]:
     """Barras por decada de nacimiento, con la fila sin fecha marcada y al final.
 
-    La fila sentinela es la mayor del conjunto (986 artistas, 5,56 M EUR) y no
-    es una decada: si se dibujara como una mas, el grafico diria que existe una
-    generacion enorme que en realidad es "no sabemos cuando nacieron".
+    La fila sentinela no es una decada: los renderers la separan del eje para no
+    presentar "no sabemos cuando nacieron" como si fuera una generacion real.
     """
     bars = []
     for g in generations:
@@ -265,6 +264,51 @@ def generation_bars(generations: list[dict]) -> list[dict]:
         )
     bars.sort(key=lambda b: (b["is_sentinel"], b["decade"] or 0))
     return bars
+
+
+def generation_coverage(generations: list[dict]) -> dict:
+    """Cobertura de fechas separada del eje generacional.
+
+    ``decade=None`` conserva todos sus artistas, lotes e ingresos, pero no es
+    una generacion. Mezclar ese sentinela con decadas reales convierte la
+    ausencia de dato en una categoria temporal y domina visualmente la lectura.
+    Los renderers usan este resumen para mostrar la cobertura en una banda
+    proporcional junto al grafico, sin ocultar ni redistribuir el faltante.
+    """
+    rows = generation_bars(generations)
+    dated = [r for r in rows if not r["is_sentinel"]]
+    missing = [r for r in rows if r["is_sentinel"]]
+
+    def total(group: list[dict], key: str) -> float:
+        return sum(r.get(key) or 0 for r in group)
+
+    dated_revenue = total(dated, "revenue_eur")
+    missing_revenue = total(missing, "revenue_eur")
+    revenue_total = dated_revenue + missing_revenue
+    dated_artists = int(total(dated, "artists"))
+    missing_artists = int(total(missing, "artists"))
+    artists_total = dated_artists + missing_artists
+
+    return {
+        "dated_revenue_eur": round(dated_revenue, 2),
+        "missing_revenue_eur": round(missing_revenue, 2),
+        "total_revenue_eur": round(revenue_total, 2),
+        "dated_revenue_pct": round(dated_revenue / revenue_total * 100, 1)
+        if revenue_total
+        else 0.0,
+        "missing_revenue_pct": round(missing_revenue / revenue_total * 100, 1)
+        if revenue_total
+        else 0.0,
+        "dated_artists": dated_artists,
+        "missing_artists": missing_artists,
+        "total_artists": artists_total,
+        "dated_artists_pct": round(dated_artists / artists_total * 100, 1)
+        if artists_total
+        else 0.0,
+        "missing_artists_pct": round(missing_artists / artists_total * 100, 1)
+        if artists_total
+        else 0.0,
+    }
 
 
 # --------------------------------------------------------------------------
@@ -341,9 +385,9 @@ CAVEAT_SCATTER_LOWN = (
 
 CAVEAT_GENERATIONS_COVERAGE = (
     "La década sale del año de nacimiento del maestro de artistas, que no lo tiene para "
-    "todos. La barra “sin fecha de nacimiento” son los artistas sin ficha datada y "
-    "<strong>no se reparte entre las décadas</strong>: repartirla sería inventar. Por eso "
-    "es la más alta del gráfico, y mide desconocimiento, no una generación."
+    "todos. El gráfico compara solo décadas reales; el tramo “sin fecha” se muestra "
+    "aparte como cobertura y <strong>no se reparte entre las décadas</strong>: repartirlo "
+    "sería inventar. Mide desconocimiento, no una generación."
 )
 
 

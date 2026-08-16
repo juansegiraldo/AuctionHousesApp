@@ -43,9 +43,10 @@ dimensions:
     source: gold.agg_artist_metrics
     description: Year of death from the artist master; null when unknown or alive
 
-  # Decada de nacimiento (1874 -> 1870). La fila decade=null son los 986
+  # Decada de nacimiento (1874 -> 1870). La fila decade=null conserva los
   # artistas del ranking sin fecha en el maestro: no se reparten entre decadas
-  # ni se ocultan, porque repartirlos seria inventar.
+  # porque repartirlos seria inventar. Los renderers muestran esa cobertura
+  # fuera del eje temporal, sin eliminarla del agregado.
   - name: birth_decade
     key: decade
     source: gold.agg_artist_generation_metrics

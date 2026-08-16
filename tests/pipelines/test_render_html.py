@@ -263,11 +263,30 @@ def test_both_renderers_draw_the_four_charts(local_html, artifact_html):
     assert "class='pt" in artifact_html, "falta el scatter"
 
 
+def test_missing_birth_dates_are_coverage_not_a_fake_generation_bar(
+    local_html, artifact_html
+):
+    """La ausencia de dato sigue visible, pero queda fuera del eje temporal."""
+    for html in (local_html, artifact_html):
+        assert "class='generation-coverage'" in html
+        assert "Cobertura de fechas del ranking completo" in html
+        assert "<strong>Sin fecha</strong>" in html
+        # Fixture: 400.000 EUR datados y 5.000 sin fecha.
+        assert "style='width:98.8%'" in html
+        assert "style='width:1.2%'" in html
+
+    # Plotly filtra el sentinela antes de construir x/y.
+    assert "DATA.generations.filter(r => !r.is_sentinel)" in local_html
+    # El SVG no puede volver a dibujarlo como una barra normal.
+    assert "<title>Sin fecha de nacimiento:" not in artifact_html
+
+
 def test_narrative_caveats_reach_both_renderers(local_html, artifact_html):
     """Los avisos son parte del grafico, no un adorno opcional."""
     for html in (local_html, artifact_html):
         assert narrative.CAVEAT_PARETO_SCOPE in html
         assert narrative.CAVEAT_SCATTER_LOWN in html
+        assert narrative.CAVEAT_GENERATIONS_COVERAGE in html
 
 
 def test_fx_caveat_is_next_to_the_time_series(local_html):

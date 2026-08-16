@@ -182,6 +182,33 @@ def test_generation_bars_keep_the_sentinel_last_and_flagged():
     assert bars[0]["is_sentinel"] is False
 
 
+def test_generation_coverage_separates_missing_without_losing_totals():
+    rows = [
+        {"decade": 1920, "decade_label": "1920s", "revenue_eur": 750,
+         "artists": 3, "lots_sold": 8},
+        {"decade": 1930, "decade_label": "1930s", "revenue_eur": 50,
+         "artists": 1, "lots_sold": 1},
+        {"decade": None, "decade_label": "Sin fecha de nacimiento",
+         "revenue_eur": 200, "artists": 6, "lots_sold": 7},
+    ]
+    cov = narrative.generation_coverage(rows)
+    assert cov["dated_revenue_eur"] == 800
+    assert cov["missing_revenue_eur"] == 200
+    assert cov["total_revenue_eur"] == 1000
+    assert cov["dated_revenue_pct"] == 80.0
+    assert cov["missing_revenue_pct"] == 20.0
+    assert cov["dated_artists"] == 4
+    assert cov["missing_artists"] == 6
+    assert cov["dated_artists_pct"] == 40.0
+
+
+def test_generation_coverage_handles_an_empty_aggregate():
+    cov = narrative.generation_coverage([])
+    assert cov["total_revenue_eur"] == 0
+    assert cov["total_artists"] == 0
+    assert cov["dated_revenue_pct"] == 0.0
+
+
 # --------------------------------------------------------------------------
 # Casas: mismo mercado vs mercados distintos
 # --------------------------------------------------------------------------
