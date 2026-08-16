@@ -7,6 +7,7 @@ Claude bloquea todo host externo, asi que la geometria se testea como codigo.
 from pipelines.analytics.build_fx_report import (
     TEMPLATE,
     _area,
+    _coverage_pct,
     _hero,
     _path,
     _rows,
@@ -57,6 +58,22 @@ def test_rows_flags_a_house_with_fallback():
     )
     assert "52 est" in html
     assert "pill warn" in html
+
+
+def test_coverage_is_100_only_when_nothing_fell_back():
+    full = [{"fx_method_counts": {"monthly": 10}, "fx_fallback_lots": 0}]
+    assert _coverage_pct(full) == "100"
+
+
+def test_coverage_never_rounds_a_near_miss_up_to_100():
+    # 9.999 de 10.000 es 99,99%: redondear a "100" esconderia justo el lote
+    # que hay que mirar.
+    near = [{"fx_method_counts": {"monthly": 9999}, "fx_fallback_lots": 1}]
+    assert _coverage_pct(near) != "100"
+
+
+def test_coverage_with_no_lots_does_not_divide_by_zero():
+    assert _coverage_pct([]) == "0"
 
 
 def test_template_defines_all_three_theme_states():

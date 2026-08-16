@@ -101,6 +101,18 @@ def _spark(vals: List[float], cls: str) -> str:
     )
 
 
+def _coverage_pct(houses: List[Dict]) -> str:
+    """% de lotes vendidos convertidos con la tasa de su mes."""
+    monthly = sum((h.get("fx_method_counts") or {}).get("monthly", 0) for h in houses)
+    fallback = sum(h.get("fx_fallback_lots", 0) for h in houses)
+    total = monthly + fallback
+    if not total:
+        return "0"
+    pct = 100.0 * monthly / total
+    # 99,9% no debe redondearse a 100: la diferencia es justo lo que hay que ver.
+    return "100" if monthly == total else f"{pct:.1f}".replace(".", ",")
+
+
 def _rows(houses: List[Dict], series: Dict[str, List[float]]) -> str:
     out = ""
     for h in sorted(houses, key=lambda x: -x["revenue_eur"]):
@@ -156,6 +168,7 @@ def main() -> None:
         rows=_rows(houses, {"COP": cop, "USD": usd}),
         tot_eur=f"{sum(h['revenue_eur'] for h in houses)/1e6:.1f}",
         tot_fb=sum(h.get("fx_fallback_lots", 0) for h in houses),
+        cov=_coverage_pct(houses),
         last=months[-1],
     )
     OUTPUT.write_text(html, encoding="utf-8")

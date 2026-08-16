@@ -99,6 +99,7 @@ footer{{border-top:1px solid var(--line);padding-top:16px;color:var(--dim);font-
   <div class="kpi acc"><span class="v">1,84&#215;</span><span class="l">desv&#237;o m&#225;x. COP</span></div>
   <div class="kpi"><span class="v">{tot_eur}M</span><span class="l">EUR reconvertidos</span></div>
   <div class="kpi"><span class="v">{tot_fb}</span><span class="l">lotes a tasa est&#225;tica</span></div>
+  <div class="kpi"><span class="v">{cov}%</span><span class="l">cobertura mensual</span></div>
 </div>
 
 <section>
@@ -132,8 +133,9 @@ footer{{border-top:1px solid var(--line);padding-top:16px;color:var(--dim);font-
       <p>El BCE no publica el peso colombiano. El puente es
       <code>COP&#8594;EUR = (1/TRM) &#215; (1/EURUSD)</code>, con la fuente can&#243;nica de cada lado.</p></div>
     <div class="card"><h3>Fecha ausente &#8800; moneda ausente</h3>
-      <p>Sin mes utilizable el lote cae a la tasa est&#225;tica y <strong>se cuenta</strong>.
-      Una moneda sin tasa devuelve <code>None</code>: nunca 1.0.</p></div>
+      <p>Sin mes utilizable el lote caer&#237;a a la tasa est&#225;tica y <strong>se contar&#237;a</strong>.
+      Hoy no le pasa a ninguno: los 52 que fallaban ven&#237;an de dos ficheros de prueba que
+      Bronze ingiri&#243; como datos. Una moneda sin tasa devuelve <code>None</code>: nunca 1.0.</p></div>
     <div class="card"><h3>EUR corta antes</h3>
       <p class="big">40.442</p>
       <p>lotes de Dur&#225;n que habr&#237;an falseado el contador de fallback si el euro
