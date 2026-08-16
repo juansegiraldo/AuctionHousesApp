@@ -28,7 +28,7 @@ import orjson
 from pipelines.shared.artist_key import artist_fold, attribution_type
 from pipelines.shared.artist_master import artist_years, country_es, format_life_years
 from pipelines.shared.fx import to_eur
-from pipelines.shared.schema import is_sold
+from pipelines.shared.schema import extract_year, is_sold
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -38,6 +38,17 @@ GOLD_ROOT = ROOT / "data" / "gold"
 # Por debajo de este numero de lotes vendidos, un "precio medio" de artista es
 # ruido estadistico. El informe muestra el corte para que no se lea como ranking.
 MIN_LOTS_FOR_ARTIST_RANK = 3
+
+# Etiqueta de la fila sin decada. Solo 535 de los 1.521 artistas del ranking
+# tienen fecha de nacimiento en el maestro, asi que los otros 986 necesitan una
+# fila propia: repartirlos entre decadas seria inventar, y ocultarlos haria que
+# el grafico pareciera cubrir todo el ranking cuando cubre un tercio.
+NO_BIRTH_YEAR_LABEL = "Sin fecha de nacimiento"
+
+
+def birth_decade(year: int | None) -> int | None:
+    """Decada de nacimiento (1874 -> 1870). None si no consta la fecha."""
+    return None if year is None else (year // 10) * 10
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -122,6 +133,8 @@ def build_insights() -> dict:
             "nationalities": set(),
             "resolution": None,
             "houses": set(),
+            # Anios con al menos un lote, para el rango de actividad de la ficha.
+            "years": set(),
         }
     )
     # Agregado por pais de nacimiento del artista. Cuenta un lote una sola vez.
@@ -136,13 +149,21 @@ def build_insights() -> dict:
             "top_artist_revenue": 0.0,
         }
     )
+    # Pais de nacimiento x anio de subasta: la matriz del mapa de calor. El anio
+    # sale de extract_year(), que entiende el formato de cada casa; un slice de
+    # los 4 primeros caracteres solo leeria el ISO de Bogota y tiraria en
+    # silencio los 40.442 lotes de Duran ("Octubre 2014").
+    country_year: dict[tuple, dict] = defaultdict(
+        lambda: {"lots_offered": 0, "lots_sold": 0, "revenue_eur": 0.0, "houses": set()}
+    )
     cats: dict[str, dict] = defaultdict(
         lambda: {"lots_offered": 0, "lots_sold": 0, "revenue_eur": 0.0}
     )
     # Detalle lote a lote de los artistas con identidad, para que el informe
     # pueda exportar el drill-down y cualquiera audite de donde sale cada euro
-    # en vez de tener que fiarse del agregado.
-    lot_details: list[dict] = []
+    # en vez de tener que fiarse del agregado. Se agrupa por artista porque el
+    # corte del ranking no se conoce hasta despues de leer todo el Silver.
+    lots_by_artist: dict[str, list[dict]] = defaultdict(list)
     # Fiabilidad de la estimacion: solo tiene sentido con estimacion Y precio.
     est = {"below": 0, "within": 0, "above": 0}
     est_by_house: dict[str, dict] = defaultdict(
@@ -198,19 +219,31 @@ def build_insights() -> dict:
                 r.get("artist_name")
             )
             key, display = artist_identity(r)
+            year, year_method = extract_year(
+                r.get("auction_start_date"), r.get("auction_id")
+            )
             if attribution == "autor" and key:
                 a = artists[key]
                 a["lots_offered"] += 1
                 a["houses"].add(house)
+                a["years"].add(year)
                 if not a["artist_name"]:
                     a["artist_name"] = display
+                # Identidad y pais: gana el primer valor NO nulo, no el primer
+                # lote visto. Cuando estas asignaciones vivian dentro del
+                # `if not a["artist_name"]` de arriba, un artista cuyo primer
+                # lote llegara sin resolver se quedaba sin pais para siempre
+                # aunque los siguientes lo trajeran.
+                if a["artist_id"] is None:
                     a["artist_id"] = r.get("artist_id")
+                if a["resolution"] is None:
                     a["resolution"] = r.get("artist_resolution")
-                    # El pais sale SOLO del maestro (artist_country_birth), nunca
-                    # del texto libre artist_country de la casa: ese campo esta
-                    # poblado en el 2% de los lotes y mezcla ciudades con paises.
+                # El pais sale SOLO del maestro (artist_country_birth), nunca
+                # del texto libre artist_country de la casa: ese campo esta
+                # poblado en el 2% de los lotes y mezcla ciudades con paises.
+                if a["country_birth"] is None:
                     a["country_birth"] = r.get("artist_country_birth")
-                    a["nationalities"].update(r.get("artist_nationalities") or [])
+                a["nationalities"].update(r.get("artist_nationalities") or [])
                 if sold:
                     a["lots_sold"] += 1
                     if eur:
@@ -233,32 +266,47 @@ def build_insights() -> dict:
                     if eur:
                         c_row["revenue_eur"] += eur
 
+                # --- pais x anio, para el mapa de calor ---
+                # Mismo grano que el agregado de paises de arriba, partido por
+                # anio. Se acumula aqui dentro para que las dos vistas cuadren
+                # siempre: si una filtrase algo que la otra no, el mapa dejaria
+                # de sumar lo que dice la tabla que tiene justo debajo.
+                cy = country_year[(r.get("artist_country_birth"), year, year_method)]
+                cy["lots_offered"] += 1
+                cy["houses"].add(house)
+                if sold:
+                    cy["lots_sold"] += 1
+                    if eur:
+                        cy["revenue_eur"] += eur
+
                 # --- detalle para el drill-down ---
-                # Solo los lotes con pais: son los que alimentan las descargas
-                # del informe. Sin este filtro serian 39.511 filas embebidas en
-                # el HTML en vez de 13.733.
-                if r.get("artist_country_birth"):
-                    lot_details.append(
-                        {
-                            "artist_key": key,
-                            "artist_name": display,
-                            "country": r.get("artist_country_birth"),
-                            "house_slug": house,
-                            "auction_id": r.get("auction_id"),
-                            "auction_start_date": r.get("auction_start_date"),
-                            "lot_number": r.get("lot_number"),
-                            "lot_title": r.get("lot_title"),
-                            "status": r.get("status"),
-                            "sold": sold,
-                            # Nativo Y en EUR: el nativo es exacto, el EUR es el
-                            # unico comparable entre casas. Nunca se suman los
-                            # nativos entre monedas distintas.
-                            "price_sold": price,
-                            "currency": currency,
-                            "price_sold_eur": eur,
-                            "lot_url": r.get("lot_url"),
-                        }
-                    )
+                # Antes solo entraban los lotes con artist_country_birth, y eso
+                # dejaba a los 863 artistas fold_only sin un solo lote que
+                # ensenar en su ficha aunque el ranking dijera que habian
+                # vendido 40 veces. Ahora entra todo artista que pase el corte
+                # del ranking, con pais o sin el; el corte se mantiene porque
+                # sin el son ~39.500 filas embebidas en cada informe.
+                lots_by_artist[key].append(
+                    {
+                        "artist_key": key,
+                        "artist_name": display,
+                        "country": r.get("artist_country_birth"),
+                        "house_slug": house,
+                        "auction_id": r.get("auction_id"),
+                        "auction_start_date": r.get("auction_start_date"),
+                        "lot_number": r.get("lot_number"),
+                        "lot_title": r.get("lot_title"),
+                        "status": r.get("status"),
+                        "sold": sold,
+                        # Nativo Y en EUR: el nativo es exacto, el EUR es el
+                        # unico comparable entre casas. Nunca se suman los
+                        # nativos entre monedas distintas.
+                        "price_sold": price,
+                        "currency": currency,
+                        "price_sold_eur": eur,
+                        "lot_url": r.get("lot_url"),
+                    }
+                )
 
             # --- fiabilidad de estimacion ---
             emin, emax = r.get("price_estimate_min"), r.get("price_estimate_max")
@@ -301,6 +349,11 @@ def build_insights() -> dict:
         # artista en fold_only no tiene id, asi que se queda sin fechas: no se
         # deducen del texto del lote (artist_raw viene truncado a 60 chars).
         years = artist_years(a["artist_id"])
+        # Rango de actividad en subasta. Es del LOTE (cuando se vendio), no del
+        # artista: nada que ver con birth_year/death_year, que salen del maestro.
+        # "unknown" no es un anio, asi que no puede marcar ni el primero ni el
+        # ultimo; sin descartarlo, un lote sin fecha fiable ordenaria al final.
+        active = sorted(y for y in a["years"] if y.isdigit())
         artist_rows.append(
             {
                 "artist_name": a["artist_name"] or key,
@@ -311,8 +364,12 @@ def build_insights() -> dict:
                 "life_years": format_life_years(
                     years["birth_year"], years["death_year"]
                 ),
-                # "country" se mantiene por compatibilidad con el informe, pero
-                # ahora vale el codigo ISO del maestro, no el texto libre.
+                "first_year": active[0] if active else None,
+                "last_year": active[-1] if active else None,
+                "years_active": len(active),
+                # DEPRECADA: duplicado exacto de country_birth, conservada por
+                # compatibilidad con consumidores externos del JSONL. No leerla
+                # en codigo nuevo; los dos renderers ya usan country_birth.
                 "country": a["country_birth"],
                 "country_birth": a["country_birth"],
                 "country_birth_es": country_es(a["country_birth"]),
@@ -363,6 +420,71 @@ def build_insights() -> dict:
     # Los no resueltos (country=None) van al final, pero NO se ocultan: taparlos
     # haria que el informe pareciera completo cuando no lo esta.
     country_rows.sort(key=lambda r: (r["country"] is None, -r["revenue_eur"]))
+
+    country_year_rows = [
+        {
+            "country": code,
+            "country_es": country_es(code),
+            "year": year,
+            # El metodo viaja hasta el informe para que la celda pueda marcar
+            # el anio que se dedujo del slug en vez de leerse de una fecha.
+            "year_method": method,
+            "lots_offered": v["lots_offered"],
+            "lots_sold": v["lots_sold"],
+            "revenue_eur": round(v["revenue_eur"], 2),
+            "houses": sorted(h for h in v["houses"] if h),
+        }
+        for (code, year, method), v in country_year.items()
+    ]
+    country_year_rows.sort(key=lambda r: (r["country"] is None, r["country"] or "", r["year"]))
+
+    # --- generaciones: decada de nacimiento del artista ---
+    # Se construye sobre artist_rows (el ranking ya filtrado), no sobre un
+    # acumulador propio, para que los totales cuadren con la tabla por
+    # definicion y no por coincidencia.
+    gens: dict[int | None, dict] = defaultdict(
+        lambda: {
+            "artists": 0,
+            "alive": 0,
+            "lots_offered": 0,
+            "lots_sold": 0,
+            "revenue_eur": 0.0,
+            "top_artist": None,
+        }
+    )
+    for row in artist_rows:
+        g = gens[birth_decade(row["birth_year"])]
+        g["artists"] += 1
+        # Sin death_year: vivo, o muerto sin fecha registrada. La etiqueta del
+        # informe lo dice asi; afirmar "vivo" seria pasarse de lo que se sabe.
+        if row["birth_year"] and not row["death_year"]:
+            g["alive"] += 1
+        g["lots_offered"] += row["lots_offered"]
+        g["lots_sold"] += row["lots_sold"]
+        g["revenue_eur"] += row["revenue_eur"]
+        # artist_rows ya viene ordenado por ingresos, asi que el primero que
+        # cae en cada decada es el de mayor volumen.
+        if g["top_artist"] is None:
+            g["top_artist"] = row["artist_name"]
+
+    generation_rows = [
+        {
+            "decade": dec,
+            "decade_label": f"{dec}s" if dec is not None else NO_BIRTH_YEAR_LABEL,
+            "artists": v["artists"],
+            "alive": v["alive"],
+            "lots_offered": v["lots_offered"],
+            "lots_sold": v["lots_sold"],
+            "revenue_eur": round(v["revenue_eur"], 2),
+            "avg_sold_price_eur": round(v["revenue_eur"] / v["lots_sold"], 2)
+            if v["lots_sold"]
+            else None,
+            "top_artist": v["top_artist"],
+        }
+        for dec, v in gens.items()
+    ]
+    # La fila sin decada va al final, visible, igual que la de pais desconocido.
+    generation_rows.sort(key=lambda r: (r["decade"] is None, r["decade"] or 0))
 
     cat_rows = [
         {
@@ -440,9 +562,11 @@ def build_insights() -> dict:
         ],
     }
 
-    # El detalle se ordena como el ranking (artista por ingresos, y dentro por
-    # precio descendente) para que el CSV exportado se lea sin reordenar.
+    # El detalle se vuelca solo para los artistas que entraron en el ranking, y
+    # se ordena como el (artista por ingresos, y dentro por precio descendente)
+    # para que el CSV exportado se lea sin reordenar.
     orden = {row["artist_key"]: i for i, row in enumerate(artist_rows)}
+    lot_details = [d for k in orden for d in lots_by_artist.get(k, [])]
     lot_details.sort(
         key=lambda d: (
             orden.get(d["artist_key"], len(orden)),
@@ -452,6 +576,8 @@ def build_insights() -> dict:
 
     write_jsonl(GOLD_ROOT / "agg_artist_metrics.jsonl", artist_rows)
     write_jsonl(GOLD_ROOT / "agg_country_metrics.jsonl", country_rows)
+    write_jsonl(GOLD_ROOT / "agg_country_year_metrics.jsonl", country_year_rows)
+    write_jsonl(GOLD_ROOT / "agg_artist_generation_metrics.jsonl", generation_rows)
     write_jsonl(GOLD_ROOT / "lot_details.jsonl", lot_details)
     write_jsonl(GOLD_ROOT / "agg_category_metrics.jsonl", cat_rows)
     write_jsonl(GOLD_ROOT / "agg_month_metrics.jsonl", month_rows)
@@ -459,6 +585,11 @@ def build_insights() -> dict:
     write_jsonl(GOLD_ROOT / "agg_estimate_accuracy.jsonl", [estimate_accuracy])
 
     ranked_with_country = sum(1 for r in artist_rows if r["country_birth"])
+    # Los agregados por pais NO aplican el corte del ranking, asi que suman mas
+    # lotes que la tabla de artistas. La diferencia se publica para que el aviso
+    # del informe lleve la cifra real en vez de una vaguedad.
+    country_lots = sum(r["lots_offered"] for r in country_rows)
+    ranked_lots = sum(r["lots_offered"] for r in artist_rows)
     return {
         "lots_read": total,
         "artists_ranked": len(artist_rows),
@@ -467,6 +598,9 @@ def build_insights() -> dict:
         if artist_rows
         else None,
         "countries": sum(1 for r in country_rows if r["country"]),
+        "country_year_cells": len(country_year_rows),
+        "generations": len(generation_rows),
+        "country_lots_below_rank_cutoff": country_lots - ranked_lots,
         "lot_details": len(lot_details),
         "categories": len(cat_rows),
         "priced_lots": len(prices_eur),

@@ -259,7 +259,24 @@ def main() -> None:
             "code": "fx_static",
             "message": fx_note(),
             "fx_as_of": fx_as_of(),
-        }
+        },
+        {
+            # El informe publica series temporales por anio y pais. La tasa
+            # unica no es solo "aproximada": aplicada a doce anios, mete en la
+            # serie un movimiento que es del tipo de cambio y se lee como si
+            # fuera del mercado. Es warn y no info porque afecta a la lectura,
+            # no solo a la precision.
+            "level": "warn",
+            "code": "fx_static_timeseries",
+            "fx_as_of": fx_as_of(),
+            "message": (
+                f"Las series por año en euros usan la tasa única de {fx_as_of()} para "
+                "todo el periodo. En las casas que no cotizan en euros (COP, USD) eso "
+                "distorsiona la evolución: comparar años dentro de esas series no es "
+                "válido; comparar casas o países dentro de un mismo año, sí. El importe "
+                "en moneda nativa es siempre el exacto."
+            ),
+        },
     ]
 
     for house, m in sorted(per_house.items()):

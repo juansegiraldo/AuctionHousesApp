@@ -173,6 +173,19 @@ def country_es(code: Optional[str]) -> Optional[str]:
     return entry.get("es") if entry else None
 
 
+def demonym_es(code: Optional[str]) -> Optional[str]:
+    """Codigo ISO -> gentilicio en espaniol ("ES" -> "espaniol"). None si falta.
+
+    El dato ya estaba en _countries.yaml para los 42 paises pero no tenia
+    getter, asi que el informe no podia escribir "pintor colombiano" y se
+    limitaba a poner el nombre del pais al lado de las fechas.
+    """
+    if not code:
+        return None
+    entry = load_countries()["countries"].get(str(code).upper())
+    return entry.get("demonym_es") if entry else None
+
+
 def artist_years(artist_id: Optional[str]) -> Dict[str, Any]:
     """artist_id -> anios de nacimiento y muerte del maestro.
 

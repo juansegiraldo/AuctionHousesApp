@@ -22,6 +22,20 @@ import html
 import json
 from pathlib import Path
 
+from pipelines.analytics.narrative import (
+    CAVEAT_COUNTRY_IS_HOUSE,
+    CAVEAT_FX_TIMESERIES,
+    CAVEAT_GENERATIONS_COVERAGE,
+    CAVEAT_MIN_LOTS,
+    CAVEAT_PARETO_SCOPE,
+    CAVEAT_SCATTER_LOWN,
+    country_metrics_caveat,
+    generation_bars,
+    heatmap_matrix,
+    multi_house_kind,
+    pareto_points,
+    scatter_points,
+)
 from pipelines.shared.artist_master import country_es
 from pipelines.shared.fx import fx_as_of, fx_note
 
@@ -235,7 +249,7 @@ def build_house_table(houses: list[dict]) -> str:
 
 
 def build_artist_table(artists: list[dict], coverage: dict | None = None,
-                       limit: int = 200) -> str:
+                       limit: int = 200, generations: list[dict] | None = None) -> str:
     """Ranking de artistas con filtro por nombre y por pais.
 
     Se renderizan hasta `limit` filas y el filtrado es JS de cliente sobre el
@@ -288,25 +302,78 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
             meta += f" · {esc(life)}"
         # Las cifras viajan tambien como datos para que el totalizador pueda
         # sumarlas al filtrar sin volver a parsear el texto ya formateado.
+        key = a.get("artist_key") or ""
+        card_id = f"ficha-{i}"
         rows.append(
             f"<tr data-country='{esc(code or '__none__')}' "
             f"data-name='{esc((a.get('artist_name') or '').lower())}' "
+            f"data-key='{esc(key)}' "
+            f"data-card='{card_id}' "
             f"data-sold='{a.get('lots_sold') or 0}' "
             f"data-offered='{a.get('lots_offered') or 0}' "
             f"data-birth='{a.get('birth_year') or ''}' "
             f"data-death='{a.get('death_year') or ''}' "
+            f"data-avg='{a.get('avg_sold_price_eur') or 0}' "
+            f"data-first='{esc(a.get('first_year') or '')}' "
+            f"data-last='{esc(a.get('last_year') or '')}' "
+            f"data-active='{a.get('years_active') or 0}' "
+            f"data-resolution='{esc(a.get('resolution') or '')}' "
+            f"data-houses='{esc(','.join(a.get('houses') or []))}' "
+            f"data-kind='{esc(multi_house_kind(a.get('houses') or []))}' "
             f"data-revenue='{a.get('revenue_eur') or 0}'>"
             f"<td class='rank'>{i}</td>"
-            f"<th scope='row'><span class='artist-name'>{esc(a['artist_name'])}</span>"
-            f"<span class='house-meta{'' if label else ' muted'}'>{meta}</span></th>"
+            # Boton, no fila clicable: un <tr> con handler no recibe foco ni se
+            # anuncia, y esta fila ya tiene un <a> (el record) que un click
+            # global secuestraria.
+            f"<th scope='row'>"
+            f"<button type='button' class='artist-toggle' aria-expanded='false' "
+            f"aria-controls='{card_id}'>"
+            f"<span class='artist-name'>{esc(a['artist_name'])}</span>"
+            f"<span class='house-meta{'' if label else ' muted'}'>{meta}</span>"
+            f"</button></th>"
             f"<td class='n'>{num(a.get('lots_sold'))}<span class='sub'>de {num(a.get('lots_offered'))}</span></td>"
             f"<td class='n'>{pct(st)}</td>"
             f"<td class='n strong'>{esc(eur(a.get('revenue_eur')))}</td>"
             f"<td class='n'>{top_cell}</td>"
             "</tr>"
+            # La ficha se rellena en cliente la primera vez que se abre, pero la
+            # fila existe ya en el HTML: asi wire() la puede filtrar junto a su
+            # artista en vez de dejarla flotando bajo un filtro que la excluye.
+            f"<tr class='artist-card' id='{card_id}' hidden>"
+            f"<td colspan='6'></td></tr>"
         )
 
     shown = min(limit, len(artists))
+
+    # Titular de la seccion: la tesis con las cifras del propio informe, no un
+    # texto generico. Se calcula aqui y no se escribe a mano para que siga
+    # siendo cierto cuando cambien los datos.
+    pareto = pareto_points(artists)
+    top_cut = next((p for p in pareto if p["n"] == 25), None)
+    gens = generation_bars(generations or [])
+    top_gen = next((g for g in gens if not g["is_sentinel"]), None)
+    if gens:
+        top_gen = max(
+            (g for g in gens if not g["is_sentinel"]),
+            key=lambda g: g["revenue_eur"],
+            default=None,
+        )
+    total_rev = sum(a.get("revenue_eur") or 0 for a in artists)
+    frases = [
+        f"{num(len(artists))} artistas con nombre propio reparten "
+        f"{esc(eur(total_rev))} en martillo."
+    ]
+    if top_cut:
+        frases.append(
+            f"Los 25 primeros se llevan el {pct(top_cut['share_pct'])} de ese dinero."
+        )
+    if top_gen and top_gen["revenue_eur"]:
+        frases.append(
+            f"La generación nacida en los {esc(top_gen['label'])} es la que más mueve, "
+            f"con {esc(eur(top_gen['revenue_eur']))} en {num(top_gen['artists'])} artistas."
+        )
+    lead = f"<p class='panel-lead'>{' '.join(frases)}</p>"
+
     # Cobertura de fechas: la de la tabla visible y la del ranking entero. Basta
     # birth_year, porque un artista vivo no tiene death_year y eso no es un hueco.
     dated_shown = sum(1 for a in artists[:limit] if a.get("birth_year"))
@@ -358,16 +425,54 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
     return (
         "<section class='panel'>"
         "<h2>Quién mueve el dinero</h2>"
+        f"{lead}"
+        # --- Acto 1: la forma del mercado ---
+        "<h3>Un puñado de nombres concentra el dinero</h3>"
+        "<figure class='fig'>"
+        "<div id='chart-pareto' class='chart' style='height:320px'></div>"
+        f"<figcaption class='caveat'>{CAVEAT_PARETO_SCOPE}</figcaption>"
+        "</figure>"
+        # --- Acto 2: el mecanismo ---
+        "<h3>Vender caro o vender mucho</h3>"
+        "<p class='panel-lead'>Cada burbuja es un artista: a la derecha los que venden "
+        "muchos lotes, arriba los que los venden caros, y el tamaño es el volumen total. "
+        "Las diagonales unen a quienes facturan lo mismo por caminos opuestos.</p>"
+        "<figure class='fig'>"
+        "<div id='chart-scatter' class='chart' style='height:420px'></div>"
+        f"<figcaption class='caveat'>{CAVEAT_SCATTER_LOWN}</figcaption>"
+        "</figure>"
+        # --- Acto 3: quienes son ---
+        "<h3>La generación que mueve el mercado</h3>"
+        "<figure class='fig'>"
+        "<div id='chart-generations' class='chart' style='height:300px'></div>"
+        f"<figcaption class='caveat'>{CAVEAT_GENERATIONS_COVERAGE}</figcaption>"
+        "</figure>"
+        # --- Acto 5: el detalle nominal (el 4 lo pone build_country_table) ---
+        "<h3>El ranking, nombre a nombre</h3>"
         f"<p class='panel-lead'>Los {num(shown)} artistas con mayor volumen adjudicado. "
-        "Se excluyen escuelas, talleres y atribuciones (“Escuela Española”, “Atribuido a…”), "
-        "que agrupan cientos de lotes de autoría distinta y falsearían el ranking. "
-        "Mínimo 3 lotes vendidos para entrar.</p>"
+        "Pulsa en un nombre para ver su ficha y sus lotes. "
+        # El corte sale de MIN_LOTS_FOR_ARTIST_RANK, no de un "3" escrito a mano
+        # aqui y otro en build_artifact.py: cambiar la constante los dejaba a los
+        # dos informes publicando un numero que ya no era el del pipeline.
+        f"{CAVEAT_MIN_LOTS}</p>"
         "<div class='filters'>"
         "<label>Buscar artista"
         "<input type='search' id='artist-search' placeholder='p. ej. Botero' "
         "autocomplete='off'></label>"
         "<label>País de nacimiento"
         f"<select id='country-filter'><option value=''>Todos</option>{options}{unknown_option}</select></label>"
+        # Presencia en varias casas. Se separa "cruza mercados" de "mismo
+        # mercado" porque Bogota y Lefebre son las dos colombianas: sin esa
+        # distincion, 104 artistas que repiten en su propio mercado se leerian
+        # como internacionales.
+        "<label>Presencia"
+        "<select id='kind-filter'>"
+        "<option value=''>Todos</option>"
+        "<option value='multi'>En más de una casa</option>"
+        "<option value='cross_market'>· cruzando mercados</option>"
+        "<option value='same_market'>· en el mismo mercado</option>"
+        "<option value='single'>En una sola casa</option>"
+        "</select></label>"
         "<button type='button' class='filter-reset' id='artist-reset'>Limpiar</button>"
         "<span class='downloads'>"
         "<button type='button' class='dl' id='artist-dl-view' "
@@ -411,7 +516,8 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
     )
 
 
-def build_country_table(countries: list[dict], limit: int = 25) -> str:
+def build_country_table(countries: list[dict], limit: int = 25,
+                        gap: int = 0) -> str:
     """De donde viene el arte que se vende, por pais de nacimiento del artista."""
     if not countries:
         return ""
@@ -457,6 +563,10 @@ def build_country_table(countries: list[dict], limit: int = 25) -> str:
         "no publica un campo de artista separado —el título del lote es la descripción del "
         "objeto—, así que sus lotes no tienen <code>artist_name</code> que atribuir.</p>"
     )
+    # El agregado por pais no aplica el corte de lotes vendidos y el ranking si,
+    # asi que los dos no cuadran. Sin decirlo, parece un error de suma.
+    if gap:
+        caveat += f"<p class='caveat'>{country_metrics_caveat(gap)}</p>"
     if unknown and unknown.get("lots_offered"):
         caveat += (
             f"<p class='caveat'>Quedan {num(unknown.get('lots_offered'))} lotes de artistas "
@@ -469,6 +579,15 @@ def build_country_table(countries: list[dict], limit: int = 25) -> str:
         "<h2>De dónde viene el arte</h2>"
         "<p class='panel-lead'>Volumen adjudicado por país de nacimiento del artista, "
         "según el maestro de artistas.</p>"
+        # Acto 4 de la seccion anterior: el mapa va antes de la tabla porque
+        # ensena de un vistazo lo que la tabla solo deja deducir fila a fila.
+        "<h3>Doce años, país por país</h3>"
+        "<figure class='fig'>"
+        "<div id='chart-heatmap' class='chart' style='height:400px'></div>"
+        f"<figcaption class='caveat'>{CAVEAT_COUNTRY_IS_HOUSE}</figcaption>"
+        f"<figcaption class='caveat'>{CAVEAT_FX_TIMESERIES}</figcaption>"
+        "</figure>"
+        "<h3>El detalle por país</h3>"
         "<div class='filters'>"
         "<label>Buscar país"
         "<input type='search' id='country-search' placeholder='p. ej. Colombia' "
@@ -846,6 +965,54 @@ td.n,.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-spa
 .house-meta{display:block;font-size:.76rem;color:var(--c-fg-soft);font-weight:400}
 .house-meta.muted{opacity:.6;font-style:italic}
 
+/* Actos de la seccion narrativa. Un solo panel con separadores mantiene el
+   bloque cohesionado; partirlo en cinco paneles lo volveria a fragmentar. */
+.panel h3{margin:var(--space-5) 0 var(--space-1);padding-top:var(--space-3);
+  border-top:1px solid var(--c-border);font-size:1.05rem;letter-spacing:-.01em}
+.panel h3:first-of-type{margin-top:var(--space-4)}
+.fig{margin:0 0 var(--space-3)}
+.fig figcaption{margin-top:var(--space-1)}
+
+/* Ficha de artista. El desplegable va en un boton dentro de la celda, no en la
+   fila entera: la fila ya tiene un enlace (el record) y ademas un <tr> con
+   handler no recibe foco ni se anuncia como control. */
+.artist-toggle{display:block;width:100%;text-align:left;background:none;border:0;
+  padding:0;font:inherit;color:inherit;cursor:pointer;border-radius:var(--radius-sm)}
+.artist-toggle:hover .artist-name{color:var(--c-primary);text-decoration:underline}
+.artist-toggle:focus-visible{outline:2px solid var(--c-primary);outline-offset:2px}
+.artist-toggle .artist-name::after{content:'';display:inline-block;margin-left:.4rem;
+  border:.28rem solid transparent;border-top-color:currentColor;
+  transform:translateY(.15rem);opacity:.5}
+.artist-toggle[aria-expanded="true"] .artist-name::after{
+  transform:translateY(-.1rem) rotate(180deg);opacity:1}
+.artist-card>td{padding:0;background:var(--c-muted)}
+.card{padding:var(--space-3);border-left:3px solid var(--c-primary)}
+.card-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-1);
+  justify-content:space-between;margin-bottom:var(--space-2)}
+.card-head h4{margin:0;font-size:1.05rem}
+.card-res{font-size:.74rem;color:var(--c-fg-soft)}
+.card-note{margin:var(--space-1) 0;font-size:.82rem;color:var(--c-fg-soft)}
+.ministats{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-bottom:var(--space-2)}
+.ministat{display:flex;flex-direction:column}
+.ministat-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--c-fg-soft)}
+.ministat-value{font-family:var(--font-mono);font-size:1rem;font-weight:600}
+.chip{display:inline-block;padding:.1rem .5rem;margin-right:.3rem;border-radius:999px;
+  background:var(--c-surface);border:1px solid var(--c-border);font-size:.74rem}
+/* Sparkline: resumen visual del volumen por anio, no un grafico con ejes. */
+.spark{margin:var(--space-2) 0}
+.spark-bars{display:flex;align-items:flex-end;gap:2px;height:36px}
+.spark-bar{flex:1;min-width:3px;max-width:14px;background:var(--c-secondary);
+  border-radius:1px 1px 0 0}
+.spark-axis{display:flex;justify-content:space-between;font-size:.7rem;
+  color:var(--c-fg-soft);margin-top:2px}
+.card-lots{overflow-x:auto;margin-top:var(--space-2)}
+.card-lots table{font-size:.82rem}
+.card-lots th{font-size:.7rem}
+.muted{color:var(--c-fg-soft);opacity:.7}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 /* Filtros de artista y pais. El informe HTML es el producto: el filtrado es JS
    de cliente sobre el DOM, no hay servicio que consultar. */
 .filters{display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:flex-end;
@@ -957,6 +1124,10 @@ footer p{margin:0 0 6px;max-width:80ch}
   body{background:#fff}
   .panel{break-inside:avoid;box-shadow:none;border-color:#ccc}
   .theme-toggle{display:none}
+  /* Ninguna ficha se imprime: abrir una y mandar a imprimir daria una hoja con
+     un artista arbitrario expandido en medio de la tabla. */
+  .artist-card{display:none}
+  .artist-toggle .artist-name::after{display:none}
 }
 """
 
@@ -1075,7 +1246,199 @@ function drawHouseYear() {
   Plotly.newPlot(el, traces, L, CONFIG);
 }
 
-function drawAll() { drawYear(); drawMonth(); drawHouseYear(); }
+// Paleta de series. Los cuatro primeros slots son los ya validados en
+// drawHouseYear (dataviz validate_palette.js, seis checks, ambos modos); los dos
+// ultimos se anaden para los seis grupos del scatter. Se lee en cada dibujo, no
+// se guarda en una constante: drawAll() corre otra vez al cambiar de tema.
+function seriesPalette() {
+  return isDark()
+    ? ['#3B82F6', '#D67329', '#0EA5A5', '#8B5CF6', '#E0B341', '#EC4899']
+    : ['#2563EB', '#C2410C', '#0D9488', '#7C3AED', '#A16207', '#DB2777'];
+}
+
+function drawPareto() {
+  const el = document.getElementById('chart-pareto');
+  if (!el || !DATA.pareto || !DATA.pareto.length) return;
+  const rows = DATA.pareto;
+  // Barras por TRAMO, no acumuladas: el acumulado ya lo cuenta la linea, y
+  // repetirlo en las barras haria que la ultima ocupara todo el grafico.
+  const labels = [], increments = [];
+  let prev = 0, prevN = 0;
+  rows.forEach(r => {
+    labels.push(prevN ? (prevN + 1) + '–' + r.n : 'Top ' + r.n);
+    increments.push(r.revenue_eur - prev);
+    prev = r.revenue_eur; prevN = r.n;
+  });
+  const L = baseLayout();
+  L.margin.r = 56;
+  L.yaxis.title = { text: 'Volumen (EUR)', font: { size: 11, color: css('--c-fg-soft') } };
+  L.yaxis2 = { overlaying: 'y', side: 'right', range: [0, 100], gridcolor: 'rgba(0,0,0,0)',
+    tickfont: { color: css('--c-fg-soft') }, ticksuffix: '%',
+    title: { text: '% acumulado', font: { size: 11, color: css('--c-fg-soft') } } };
+  // Un Pareto sin cifras escritas es una curva bonita que nadie retiene.
+  const mark = rows.filter(r => r.n === 25 || r.n === 200)[0];
+  if (mark) {
+    L.annotations = rows.filter(r => r.n === 25 || r.n === 200).map(r => ({
+      x: labels[rows.indexOf(r)], y: r.share_pct, yref: 'y2',
+      text: 'Top ' + r.n + ': ' + r.share_pct.toFixed(0) + '%',
+      showarrow: true, arrowhead: 0, ax: 0, ay: -26,
+      font: { size: 10.5, color: css('--c-fg') },
+      bgcolor: css('--c-surface'), bordercolor: css('--c-border'), borderpad: 3
+    }));
+  }
+  Plotly.newPlot(el, [
+    { x: labels, y: increments, type: 'bar', name: 'Volumen del tramo',
+      marker: { color: css('--c-secondary') },
+      hovertemplate: '%{x}<br>%{y:,.0f} €<extra></extra>' },
+    { x: labels, y: rows.map(r => r.share_pct), type: 'scatter',
+      mode: 'lines+markers', name: '% acumulado', yaxis: 'y2',
+      line: { color: css('--c-accent'), width: 2.5 }, marker: { size: 6 },
+      hovertemplate: 'Top %{customdata}: %{y:.1f}% del total<extra></extra>',
+      customdata: rows.map(r => r.n) }
+  ], L, CONFIG);
+}
+
+function drawScatter() {
+  const el = document.getElementById('chart-scatter');
+  if (!el || !DATA.scatter || !DATA.scatter.length) return;
+  const pts = DATA.scatter;
+  const palette = seriesPalette();
+  const soft = css('--c-fg-soft');
+
+  // Un trazo por grupo para que la leyenda filtre por pais al hacer clic.
+  const groups = [];
+  pts.forEach(p => { if (groups.indexOf(p.group) < 0) groups.push(p.group); });
+  // Los sin pais al fondo: son 863 y taparian a los demas.
+  groups.sort((a, b) => (a === '__none__' ? -1 : 0) - (b === '__none__' ? -1 : 0));
+
+  const maxSize = Math.max.apply(null, pts.map(p => p.size)) || 1;
+  const traces = groups.map((g, i) => {
+    const sub = pts.filter(p => p.group === g);
+    const label = g === '__none__' ? 'Sin país informado (' + sub.length + ')'
+                : g === '__other__' ? 'Otros países (' + sub.length + ')'
+                : (sub[0].country_es || g);
+    return {
+      x: sub.map(p => p.x), y: sub.map(p => p.y), type: 'scatter', mode: 'markers',
+      name: label,
+      marker: {
+        // Area proporcional al volumen, no radio: el radio duplica el error
+        // de percepcion. sizemode:'area' es lo que hace esa cuenta en Plotly.
+        size: sub.map(p => p.size), sizemode: 'area',
+        sizeref: 2 * maxSize / (34 * 34), sizemin: 3,
+        color: g === '__none__' ? soft : palette[i % palette.length],
+        opacity: g === '__none__' ? 0.35 : 0.75,
+        line: { width: 0 }
+      },
+      customdata: sub.map(p => [p.name, p.country_es || 'sin país', p.offered, p.size]),
+      hovertemplate: '<b>%{customdata[0]}</b> (%{customdata[1]})<br>'
+        + '%{x:,} vendidos de %{customdata[2]:,}<br>'
+        + 'precio medio %{y:,.0f} €<br>volumen %{customdata[3]:,.0f} €<extra></extra>'
+    };
+  });
+
+  const L = baseLayout();
+  L.xaxis.type = 'log';
+  L.yaxis.type = 'log';
+  L.xaxis.title = { text: 'Lotes vendidos', font: { size: 11, color: soft } };
+  L.yaxis.title = { text: 'Precio medio (EUR)', font: { size: 11, color: soft } };
+  L.showlegend = true;
+  L.legend = { orientation: 'h', y: -0.22, font: { color: soft, size: 10.5 } };
+  L.margin = { l: 64, r: 20, t: 16, b: 66 };
+
+  // Diagonales de isovolumen: lotes x precio medio = constante. Son lo que
+  // convierte el grafico en informativo, porque dejan leer "este artista
+  // factura como aquel pero por el camino contrario".
+  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+  const xMin = Math.max(1, Math.min.apply(null, xs)), xMax = Math.max.apply(null, xs);
+  L.shapes = [1e5, 1e6].map(v => ({
+    type: 'line', layer: 'below',
+    x0: xMin, x1: xMax, y0: v / xMin, y1: v / xMax,
+    line: { color: soft, width: 1, dash: 'dot' }, opacity: 0.45
+  }));
+  L.annotations = [1e5, 1e6].map(v => ({
+    x: Math.log10(xMax), y: Math.log10(v / xMax), xanchor: 'right', yanchor: 'bottom',
+    text: v >= 1e6 ? '1 M€' : '100 k€', showarrow: false,
+    font: { size: 9.5, color: soft }
+  }));
+
+  // Solo los tres mayores llevan nombre: etiquetar mas es ilegible.
+  pts.slice(0, 3).forEach(p => {
+    L.annotations.push({
+      x: Math.log10(p.x), y: Math.log10(p.y), text: p.name,
+      showarrow: true, arrowhead: 0, arrowcolor: soft, ax: 14, ay: -14,
+      xanchor: 'left', font: { size: 10, color: css('--c-fg') }
+    });
+  });
+
+  Plotly.newPlot(el, traces, L, CONFIG);
+}
+
+function drawGenerations() {
+  const el = document.getElementById('chart-generations');
+  if (!el || !DATA.generations || !DATA.generations.length) return;
+  const rows = DATA.generations;
+  const L = baseLayout();
+  L.yaxis.title = { text: 'Volumen (EUR)', font: { size: 11, color: css('--c-fg-soft') } };
+  L.margin.b = 56;
+  // La fila "sin fecha" no es una decada: va en gris para que no se lea como
+  // una generacion mas siendo, como es, la barra mas alta del grafico.
+  const colors = rows.map(r => r.is_sentinel ? css('--c-fg-soft') : css('--c-primary'));
+  const opacity = rows.map(r => r.is_sentinel ? 0.45 : 1);
+  Plotly.newPlot(el, [{
+    x: rows.map(r => r.label), y: rows.map(r => r.revenue_eur), type: 'bar',
+    marker: { color: colors, opacity: opacity },
+    customdata: rows.map(r => [r.artists, r.top_artist || '—']),
+    hovertemplate: '<b>%{x}</b><br>%{y:,.0f} €<br>%{customdata[0]:,} artistas'
+      + '<br>destacado: %{customdata[1]}<extra></extra>'
+  }], L, CONFIG);
+}
+
+function drawHeatmap() {
+  const el = document.getElementById('chart-heatmap');
+  if (!el || !DATA.heatmap || !DATA.heatmap.rows.length) return;
+  const hm = DATA.heatmap;
+  const years = hm.years;
+  // Escala logaritmica: Espania mueve 11,8 M y la mediana de los demas anda en
+  // decenas de miles. En lineal, 40 de 42 paises salen del mismo tono.
+  const z = hm.rows.map(r => r.cells.map(c => c.revenue_eur ? Math.log10(c.revenue_eur) : null));
+  const text = hm.rows.map(r => r.cells.map(c => (
+    c.revenue_eur === null ? 'sin lotes'
+      : c.revenue_eur.toLocaleString('es-ES', { maximumFractionDigits: 0 }) + ' €'
+        + '\\n' + c.lots_sold.toLocaleString('es-ES') + ' vendidos de '
+        + c.lots_offered.toLocaleString('es-ES')
+        + (c.inferred ? '\\n(año inferido del identificador)' : '')
+  )));
+  const L = baseLayout();
+  L.margin = { l: 108, r: 20, t: 16, b: 44 };
+  L.xaxis.gridcolor = 'rgba(0,0,0,0)';
+  L.yaxis.gridcolor = 'rgba(0,0,0,0)';
+  L.yaxis.autorange = 'reversed';
+  Plotly.newPlot(el, [{
+    z: z, x: years, y: hm.rows.map(r => r.label), type: 'heatmap',
+    // Escala de un solo tono: es una magnitud, no una divergencia.
+    colorscale: isDark()
+      ? [[0, 'rgba(59,130,246,0.10)'], [1, '#60A5FA']]
+      : [[0, 'rgba(37,99,235,0.08)'], [1, '#1E40AF']],
+    hoverongaps: false,
+    xgap: 2, ygap: 2,
+    text: text, hovertemplate: '<b>%{y}</b> · %{x}<br>%{text}<extra></extra>',
+    colorbar: {
+      title: { text: 'Volumen', font: { size: 10, color: css('--c-fg-soft') } },
+      thickness: 10, len: 0.8, outlinewidth: 0,
+      tickfont: { color: css('--c-fg-soft'), size: 9.5 },
+      // Los valores del eje son log10: se re-etiquetan a euros para que la
+      // leyenda diga dinero y no exponentes.
+      tickmode: 'array',
+      tickvals: [3, 4, 5, 6, 7],
+      ticktext: ['1 k€', '10 k€', '100 k€', '1 M€', '10 M€']
+    }
+  }], L, CONFIG);
+}
+
+function drawAll() {
+  drawYear(); drawMonth(); drawHouseYear();
+  drawPareto(); drawScatter(); drawGenerations(); drawHeatmap();
+}
 
 // Toggle de tema: el usuario manda sobre la preferencia del sistema.
 const toggle = document.getElementById('theme-toggle');
@@ -1139,7 +1502,11 @@ if (!toggle.textContent.trim()) {
   function wire(cfg) {
     const table = document.getElementById(cfg.table);
     if (!table) return;
-    const rows = Array.from(table.tBodies[0].rows);
+    // Las filas de ficha quedan fuera del array: son detalle de la fila de
+    // arriba, no filas de datos. Si entraran, contarian como artista en los
+    // totales y "n !== rows.length" nunca daria falso.
+    const rows = Array.from(table.tBodies[0].rows)
+      .filter((r) => !r.classList.contains('artist-card'));
     const empty = document.getElementById(cfg.empty);
     const totals = document.getElementById(cfg.totals);
     const inputs = cfg.inputs.map((id) => document.getElementById(id)).filter(Boolean);
@@ -1150,11 +1517,31 @@ if (!toggle.textContent.trim()) {
       const sel = cfg.select ? (document.getElementById(cfg.select) || {}).value : '';
       let n = 0, sold = 0, offered = 0, revenue = 0, artists = 0, dated = 0;
 
+      // Filtro extra opcional (presencia en varias casas). Va aparte del
+      // selector de pais para que wire() siga sirviendo a las dos tablas.
+      const extraEl = cfg.extra ? document.getElementById(cfg.extra) : null;
+      const extra = extraEl ? extraEl.value : '';
+
       for (const row of rows) {
         const okName = !q || fold(row.dataset.name).includes(q);
         const okSel = !sel || row.dataset.country === sel;
-        const visible = okName && okSel;
+        // 'multi' agrupa los dos tipos de presencia en varias casas; los
+        // valores concretos filtran uno u otro.
+        const okExtra = !extra
+          || (extra === 'multi' ? row.dataset.kind !== 'single'
+                                : row.dataset.kind === extra);
+        const visible = okName && okSel && okExtra;
         row.hidden = !visible;
+        // La ficha sigue a su fila: al ocultarse el artista se cierra, o
+        // quedaria abierta bajo un filtro que ya no la incluye.
+        if (row.dataset.card) {
+          const card = document.getElementById(row.dataset.card);
+          if (card && !visible && !card.hidden) {
+            card.hidden = true;
+            const btn = row.querySelector('.artist-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        }
         if (!visible) continue;
         n++;
         sold += Number(row.dataset.sold) || 0;
@@ -1287,13 +1674,25 @@ if (!toggle.textContent.trim()) {
 
   const LOT_HEAD = ['Artista', 'Pais', 'Casa', 'Subasta', 'Fecha', 'Lote',
                     'Titulo', 'Estado', 'Vendido', 'Precio', 'Moneda',
-                    'Precio EUR', 'URL'];
+                    'Precio EUR', 'URL', 'Clave artista'];
   function lotLine(l) {
     return [l.artist_name, l.country, l.house_slug, l.auction_id,
             l.auction_start_date, l.lot_number, l.lot_title, l.status,
             l.sold ? 'si' : 'no', l.price_sold, l.currency, l.price_sold_eur,
-            l.lot_url];
+            l.lot_url, l.artist_key];
   }
+
+  // Lotes por artista, indexados una sola vez: la ficha los pide al abrirse y
+  // recorrer las 22.888 filas en cada clic se notaria.
+  const LOTS_BY_ARTIST = (() => {
+    const m = new Map();
+    LOTS.forEach((l) => {
+      if (!l.artist_key) return;
+      if (!m.has(l.artist_key)) m.set(l.artist_key, []);
+      m.get(l.artist_key).push(l);
+    });
+    return m;
+  })();
 
   function wireDownloads(cfg, visibleRows, filterLabel) {
     const view = document.getElementById(cfg.dlView);
@@ -1310,8 +1709,7 @@ if (!toggle.textContent.trim()) {
       const keys = new Set(visibleRows().map(cfg.matchKey));
       const sel = LOTS.filter((l) => keys.has(cfg.lotKey(l)));
       if (!sel.length) {
-        say('No hay detalle de lotes para esta selección: solo se exportan los '
-            + 'lotes de artistas con país en el maestro.', true);
+        say('No hay detalle de lotes para esta selección.', true);
         return;
       }
       save(cfg.prefix + '-lotes-' + slug(filterLabel()) + '.csv',
@@ -1322,7 +1720,8 @@ if (!toggle.textContent.trim()) {
   const artistCfg = {
     table: 'artist-table', empty: 'artist-empty', totals: 'artist-totals',
     search: 'artist-search', select: 'country-filter', reset: 'artist-reset',
-    inputs: ['artist-search', 'country-filter'],
+    extra: 'kind-filter',
+    inputs: ['artist-search', 'country-filter', 'kind-filter'],
     ids: { count: 't-artists', sold: 't-sold', offered: 't-offered',
            rate: 't-rate', revenue: 't-revenue', avg: 't-avg',
            dated: 't-dated', datedNote: 't-dated-note' },
@@ -1344,8 +1743,11 @@ if (!toggle.textContent.trim()) {
                 : ''),
               row.dataset.revenue, cells[5].textContent.trim()];
     },
-    matchKey: (row) => fold(row.dataset.name),
-    lotKey: (l) => fold(l.artist_name),
+    // Cruce por la clave del pipeline, no por el nombre plegado: el fold junta
+    // a dos personas distintas que se llaman igual, que es justo lo que el
+    // maestro existe para separar.
+    matchKey: (row) => row.dataset.key,
+    lotKey: (l) => l.artist_key,
   };
 
   const countryCfg = {
@@ -1374,6 +1776,171 @@ if (!toggle.textContent.trim()) {
 
   wire(artistCfg);
   wire(countryCfg);
+
+  // ---------------------------------------------------------------------
+  // Ficha de artista
+  // ---------------------------------------------------------------------
+  (function wireArtistCards() {
+    const table = document.getElementById('artist-table');
+    if (!table) return;
+
+    const HOUSE_LABELS_JS = (typeof DATA !== 'undefined' && DATA.house_labels) || {};
+    const RESOLUTION_LABEL = {
+      master: 'Ficha del maestro de artistas',
+      fold_only: 'Agrupado por nombre, sin ficha en el maestro',
+    };
+    const KIND_NOTE = {
+      cross_market: 'Vende en casas de países distintos: cruza mercados.',
+      same_market: 'Vende en varias casas del mismo mercado.',
+      single: '',
+    };
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+      ));
+    }
+
+    // Mini barras de volumen por anio. Es un resumen visual, no un grafico con
+    // ejes: el detalle exacto esta en la tabla de lotes justo debajo.
+    function sparkline(lots) {
+      const byYear = new Map();
+      lots.forEach((l) => {
+        if (!l.sold || !l.price_sold_eur) return;
+        const m = /(19|20)\d{2}/.exec(l.auction_start_date || l.auction_id || '');
+        if (!m) return;
+        byYear.set(m[0], (byYear.get(m[0]) || 0) + l.price_sold_eur);
+      });
+      if (!byYear.size) return '';
+      const years = Array.from(byYear.keys()).sort();
+      const max = Math.max.apply(null, Array.from(byYear.values()));
+      const bars = years.map((y) => {
+        const v = byYear.get(y);
+        const h = Math.max(2, Math.round(v / max * 34));
+        return '<span class="spark-bar" style="height:' + h + 'px" title="'
+             + esc(y) + ': ' + money(v) + '"><span class="sr-only">'
+             + esc(y) + ': ' + money(v) + '</span></span>';
+      }).join('');
+      return '<div class="spark"><div class="spark-bars">' + bars + '</div>'
+           + '<div class="spark-axis"><span>' + esc(years[0]) + '</span>'
+           + '<span>' + esc(years[years.length - 1]) + '</span></div></div>';
+    }
+
+    function lotTable(lots) {
+      const sold = lots.slice().sort((a, b) => (b.price_sold_eur || 0) - (a.price_sold_eur || 0));
+      const top = sold.slice(0, 10);
+      if (!top.length) return '';
+      const body = top.map((l) => {
+        const title = l.lot_url
+          ? '<a href="' + esc(l.lot_url) + '" target="_blank" rel="noopener">'
+            + esc(l.lot_title || 'Ver lote') + '</a>'
+          : esc(l.lot_title || '');
+        // El precio nativo es el exacto; el EUR es el comparable. Se muestran
+        // los dos, como en el resto del informe.
+        const price = l.price_sold
+          ? miles(l.price_sold) + ' ' + esc(l.currency || '')
+            + (l.price_sold_eur ? '<span class="sub">= ' + money(l.price_sold_eur) + '</span>' : '')
+          : '<span class="muted">no vendido</span>';
+        return '<tr><td>' + esc((l.auction_start_date || '').slice(0, 10) || '—') + '</td>'
+             + '<td>' + esc(HOUSE_LABELS_JS[l.house_slug] || l.house_slug || '') + '</td>'
+             + '<td>' + title + '</td>'
+             + '<td class="n">' + price + '</td></tr>';
+      }).join('');
+      const more = sold.length > top.length
+        ? '<p class="caveat">Se muestran los ' + top.length + ' lotes más caros de '
+          + miles(sold.length) + '. El resto está en la descarga de lotes.</p>'
+        : '';
+      return '<div class="card-lots"><table><thead><tr><th>Fecha</th><th>Casa</th>'
+           + '<th>Lote</th><th>Precio</th></tr></thead><tbody>' + body
+           + '</tbody></table></div>' + more;
+    }
+
+    function render(row) {
+      const d = row.dataset;
+      const name = row.querySelector('.artist-name').textContent;
+      const lots = LOTS_BY_ARTIST.get(d.key) || [];
+      const houses = (d.houses || '').split(',').filter(Boolean);
+
+      const chips = houses.map((h) => '<span class="chip">'
+        + esc(HOUSE_LABELS_JS[h] || h) + '</span>').join('');
+      const kindNote = houses.length > 1 ? (KIND_NOTE[d.kind] || '') : '';
+
+      const stats = [
+        ['Lotes vendidos', miles(d.sold) + '<span class="sub">de ' + miles(d.offered) + '</span>'],
+        ['Tasa de venta', Number(d.offered) ? (d.sold / d.offered * 100).toFixed(1) + '%' : '—'],
+        ['Volumen', money(Number(d.revenue))],
+        ['Precio medio', Number(d.avg) ? unit(Number(d.avg)) : '—'],
+      ].map((s) => '<div class="ministat"><span class="ministat-label">' + s[0]
+        + '</span><span class="ministat-value">' + s[1] + '</span></div>').join('');
+
+      const activity = d.first
+        ? '<p class="card-note">En subasta entre ' + esc(d.first) + ' y ' + esc(d.last)
+          + ' · ' + esc(d.active) + (d.active === '1' ? ' año' : ' años') + ' con lotes.</p>'
+        : '';
+
+      // Un artista sin ficha en el maestro no recibe pais: se explica por que,
+      // en vez de dejar el hueco y que parezca un fallo de datos.
+      const foldNote = d.resolution === 'fold_only'
+        ? '<p class="caveat">Este artista no está en el maestro curado, así que no consta '
+          + 'su país ni sus fechas. Sus lotes se agrupan por una clave determinista del '
+          + 'nombre, que <strong>agrupa pero no identifica</strong>: dos personas distintas '
+          + 'con el mismo nombre compartirían esta ficha.</p>'
+        : '';
+
+      return '<div class="card" role="region" aria-label="Ficha de ' + esc(name) + '">'
+        + '<div class="card-head"><h4>' + esc(name) + '</h4>'
+        + '<span class="card-res">' + esc(RESOLUTION_LABEL[d.resolution] || '') + '</span></div>'
+        + '<div class="ministats">' + stats + '</div>'
+        + activity
+        + (chips ? '<p class="card-note">' + chips + ' ' + esc(kindNote) + '</p>' : '')
+        + sparkline(lots)
+        + lotTable(lots)
+        + foldNote
+        + '<p class="caveat">Los importes en EUR usan una tasa única; el precio nativo es '
+        + 'el exacto.</p>'
+        + '</div>';
+    }
+
+    let openBtn = null;
+
+    function close(btn) {
+      if (!btn) return;
+      const card = document.getElementById(btn.getAttribute('aria-controls'));
+      if (card) card.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      if (openBtn === btn) openBtn = null;
+    }
+
+    table.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.artist-toggle');
+      if (!btn) return;
+      const row = btn.closest('tr');
+      const card = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!card) return;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // Acordeon: dos fichas abiertas en una tabla de 200 filas hacen perder
+      // el sitio al leer.
+      if (openBtn && openBtn !== btn) close(openBtn);
+      if (isOpen) { close(btn); return; }
+      const cell = card.cells[0];
+      if (!cell.dataset.built) {
+        cell.innerHTML = render(row);
+        cell.dataset.built = '1';
+      }
+      card.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      openBtn = btn;
+    });
+
+    // Escape cierra y DEVUELVE EL FOCO al boton: sin esto, quien navega con
+    // teclado se queda huerfano al final de la tabla.
+    table.addEventListener('keydown', (ev) => {
+      if (ev.key !== 'Escape' || !openBtn) return;
+      const btn = openBtn;
+      close(btn);
+      btn.focus();
+    });
+  })();
 })();
 """
 
@@ -1387,11 +1954,19 @@ def build_chart_data(report: dict) -> dict:
         }
         for m in report.get("by_month", [])
     ]
+    artists = report.get("by_artist") or []
     return {
         "by_year": report.get("by_year", []),
         "by_year_by_house": report.get("by_year_by_house", []),
         "by_month": months,
         "house_labels": HOUSE_LABELS,
+        # Los cuatro calculos van por narrative.py, el mismo modulo que usa el
+        # artifact: si cada renderer los hiciera por su cuenta, las dos
+        # versiones del informe acabarian publicando cifras distintas.
+        "pareto": pareto_points(artists),
+        "scatter": scatter_points(artists),
+        "heatmap": heatmap_matrix(report.get("by_country_year") or []),
+        "generations": generation_bars(report.get("by_generation") or []),
         "lot_details": pack_lot_details(report.get("lot_details") or []),
     }
 
@@ -1402,6 +1977,11 @@ LOT_DETAIL_COLUMNS = (
     "artist_name", "country", "house_slug", "auction_id", "auction_start_date",
     "lot_number", "lot_title", "status", "sold", "price_sold", "currency",
     "price_sold_eur", "lot_url",
+    # Va al FINAL a proposito: anadirla en medio moveria los indices de las
+    # columnas ya existentes y habria que tocar los dos lotLine() a la vez.
+    # Es la clave real de cruce ficha-lotes; el fold del nombre agrupa a dos
+    # personas distintas que se llaman igual (los dos Francisco Toledo).
+    "artist_key",
 )
 
 
@@ -1416,8 +1996,11 @@ def pack_lot_details(details: list[dict]) -> dict:
     if not details:
         return {"cols": list(LOT_DETAIL_COLUMNS), "dict": {}, "rows": []}
 
-    # Columnas de baja cardinalidad: merece la pena indexarlas.
-    indexed = ("artist_name", "country", "house_slug", "auction_id", "status", "currency")
+    # Columnas de baja cardinalidad: merece la pena indexarlas. artist_key entra
+    # aqui porque hay ~1.500 claves para 22.888 filas: repetirla en cada fila
+    # costaria mas que el diccionario entero.
+    indexed = ("artist_name", "country", "house_slug", "auction_id", "status",
+               "currency", "artist_key")
     tables: dict[str, list] = {c: [] for c in indexed}
     lookup: dict[str, dict] = {c: {} for c in indexed}
 
@@ -1482,9 +2065,13 @@ def write_html(report: dict, path: Path) -> None:
             build_charts_section(),
             build_house_table(report.get("by_house", [])),
             build_artist_table(
-                report.get("by_artist", []), report.get("artist_coverage")
+                report.get("by_artist", []), report.get("artist_coverage"),
+                generations=report.get("by_generation"),
             ),
-            build_country_table(report.get("by_country", [])),
+            build_country_table(
+                report.get("by_country", []),
+                gap=report.get("country_lots_below_rank_cutoff") or 0,
+            ),
             build_category_table(report.get("by_category", [])),
             build_top_auctions(report.get("by_auction", [])),
             "<footer>",
