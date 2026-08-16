@@ -36,7 +36,14 @@ def test_none_currency_returns_none():
     assert to_eur(100, None) is None
 
 
-def test_note_mentions_it_is_approximate():
+def test_note_describes_monthly_conversion():
+    # La nota ya no habla de una tasa estatica unica: desde fx_history.yaml la
+    # conversion usa la tasa del MES de cada subasta.
     note = fx_note()
-    assert fx_as_of() in note
-    assert "estatica" in note.lower()
+    assert "MES" in note or "mes" in note
+
+
+def test_note_mentions_fallback_count_when_given():
+    # El fallback existe, pero queda contado en la nota, no invisible.
+    assert "1,234" in fx_note(1234)
+    assert fx_as_of() in fx_note(1234)
