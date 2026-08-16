@@ -905,6 +905,22 @@ artists:
       - "Roda, Juan Antonio"
     notes: "24 lotes | casas: bogota_auctions"
 
+  # Fechas aproximadas en la fuente ("Ca 1795 - Ca 1865"), de ahi confidence: medium.
+  # La identidad y el pais si estan verificados; lo incierto son los anios.
+  - artist_id: juan_arzeo
+    display_name: "Juan Arzeo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1795
+    death_year: 1865
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Juan Arzeo"
+      - "ARZEO, JUAN"
+    notes: "3 lotes en Silver | fuente: Wikidata Q3269841; counterarchive.org | Nacido en Manila, vende en mercado espaniol (Duran): otro caso de pais de nacimiento != pais de la casa. Anios aproximados. Contemporaneo de Damian Domingo; retratos de la familia Azcarraga."
+
   - artist_id: juan_barba
     display_name: "Juan Barba"
     country_birth: "ES"

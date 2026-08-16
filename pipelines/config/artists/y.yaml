@@ -21,6 +21,20 @@ artists:
       - "YAYOI KUSAMA"
     notes: "3 lotes | casas: duran_subastas | n. 22-03-1929 en Matsumoto; viva, sin death_year. Fuentes: Wikipedia, Guggenheim Bilbao."
 
+  - artist_id: yoshitomo_nara
+    display_name: "Yoshitomo Nara"
+    country_birth: "JP"
+    nationalities: ["JP"]
+    birth_year: 1959
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Yoshitomo Nara"
+      - "YOSHITOMO NARA"
+      - "NARA, YOSHITOMO"
+    notes: "2 lotes | casas: bogota_auctions, duran_subastas | n. 05-12-1959 en Hirosaki (Aomori); vivo, sin death_year. Fuentes: Wikipedia, Aomori Museum of Art, David Zwirner."
+
   - artist_id: yuri_rodkin
     display_name: "Yuri Rodkin"
     country_birth: "RU"
