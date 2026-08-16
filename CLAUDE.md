@@ -330,7 +330,8 @@ These are load-bearing. Breaking one silently corrupts the report:
     small delta — re-derive it from the data before believing any number in the old design doc.
   - **The fallback is for a missing *date*, never a missing *currency*.** A lot with no usable
     month converts with the static `fx.yaml` rate and is **counted** in `quality_flags`
-    (`code: "fx_historical"`, 52 lots) — visible, not silent. An unknown currency still returns
+    (`code: "fx_historical"`). It currently reads **0 lots** — every lot in every house converts
+    at its own month's rate. An unknown currency still returns
     `None`. **EUR short-circuits before the history** and is always `monthly`: without that,
     Durán's 40,442 EUR lots with no parseable date would have flooded the fallback counter with
     lots that are not approximated at all. A test pins it.
@@ -388,6 +389,20 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   refactor. The legacy [scraping/parsers.py](scraping/parsers.py) still does, and its final
   `if not status and price_sold: status = "VENDIDO"` is where Bogotá's inferred status comes from.
   Current Bogotá status data was produced by the legacy scraper.
+- **Bronze skips test-run leftovers, and that filter is load-bearing** (fixed 2026-08-16).
+  `bronze/ingest.py` used to copy every `*.jsonl` in a house's `output/` blindly. Two files left
+  over from development — `2245_test.jsonl` and `test_info_url.jsonl` in Bogotá — were **catalog
+  runs that never fetched the lot detail pages**, so all 300 rows carried `auction_start_date`,
+  `artist_name`, `artist_raw`, `medium`, `provenance`, `dimensions` and `price_estimate_max` as
+  `None`. Silver dedupes on `lot_url` and **the first file to land wins**, so they silently
+  overwrote the complete records: 67 lots of auction 2245 arrived mutilated even though the good
+  file held all 127 with full data. It surfaced as the FX layer's 52 `fallback_static` lots —
+  the sold subset of those 67. `is_ingestable()` now rejects any filename with `test` as a
+  **segment** (`_`/`-`/`.`-delimited), never as a substring, so a real auction slug like
+  `arte-contest-2024` or `protesta-social` still ingests. Tests pin both directions. After the
+  fix Bogotá's FX coverage is **100%** and total fallback across all houses is **0**.
+  Note `2245_full.jsonl` is *not* filtered: it is redundant (a 60-lot subset) but not mutilated,
+  and filtering it by name would be guessing.
 - **The "mojibake" is a console artifact, not a data defect** (verified 2026-08-01). Scanning all
   49,541 Silver lots for surrogates (`\udc80`–`\udcff`) returns **zero**: `artist_name` holds a
   clean `Álvaro Barrios`, and the HTML report renders accents correctly. What looks like mojibake
