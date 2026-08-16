@@ -33,6 +33,13 @@ data/enrichments/**
 # Copias de seguridad locales de resultados de scraping (pesan MB, no se suben)
 backups/
 
+# Fuente de Lefebre, curada a mano en 2024 (1,8 MB). Se queda fuera del repo por
+# decision explicita. OJO: es la unica fuente de esa casa (1.711 lotes) y de 303
+# fichas del maestro de artistas, y no se puede regenerar scrapeando. Quien clone
+# el repo no podra ejecutar scraping.houses.lefebre_subastas.from_excel sin
+# pedirle el fichero al dueno del repo.
+FINALL.xlsx
+
 # Configuracion local de editores
 .vscode/
 .cursor/

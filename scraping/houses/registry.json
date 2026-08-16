@@ -11,6 +11,18 @@
       "name": "Duran Arte y Subastas",
       "module": "scraping.houses.duran_subastas",
       "output_dir": "scraping/houses/duran_subastas/output"
+    },
+    {
+      "slug": "zorrilla_subastas",
+      "name": "Zorrilla Subastas",
+      "module": "scraping.houses.zorrilla_subastas",
+      "output_dir": "scraping/houses/zorrilla_subastas/output"
+    },
+    {
+      "slug": "lefebre_subastas",
+      "name": "Lefebre Subastas",
+      "module": "scraping.houses.lefebre_subastas",
+      "output_dir": "scraping/houses/lefebre_subastas/output"
     }
   ]
 }

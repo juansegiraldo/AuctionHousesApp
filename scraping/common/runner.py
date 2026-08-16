@@ -35,6 +35,16 @@ from scraping.common.models import AuctionMeta, LotItem
 # ---------------------------------------------------------------------------
 
 def _lot_from_preview(preview: dict, meta: AuctionMeta, currency: str) -> LotItem:
+    """Construye el lote solo con el preview (ruta --quick / skip_lot_detail).
+
+    Copia TAMBIEN los campos descriptivos (description, artist_*, medium,
+    dimensions, provenance) cuando el preview los trae. Antes solo los copiaba
+    _merge_lot, asi que una casa cuyo listado ya incluye la descripcion —
+    Zorrilla via LiveAuctioneers— la perdia entera al correr con --quick: el
+    parser la extraia y el engine la tiraba. Un `.get()` de mas aqui no cuesta
+    nada y evita re-scrapear 11.000 lotes para recuperar un dato que ya estaba
+    descargado.
+    """
     return LotItem(
         auction_id=meta.auction_id,
         auction_title=meta.auction_title,
@@ -47,12 +57,21 @@ def _lot_from_preview(preview: dict, meta: AuctionMeta, currency: str) -> LotIte
         lot_url=preview["lot_url"],
         lot_title=preview.get("lot_title"),
         lot_year=preview.get("lot_year"),
-        image_url=preview.get("thumbnail_url"),
+        image_url=preview.get("image_url") or preview.get("thumbnail_url"),
         price_estimate_min=preview.get("price_estimate_min"),
         price_estimate_max=preview.get("price_estimate_max"),
         price_sold=preview.get("price_sold"),
         status=preview.get("status"),
         currency=currency,
+        artist_name=preview.get("artist_name"),
+        artist_birth_year=preview.get("artist_birth_year"),
+        artist_death_year=preview.get("artist_death_year"),
+        artist_country=preview.get("artist_country"),
+        artist_raw=preview.get("artist_raw"),
+        description=preview.get("description"),
+        medium=preview.get("medium"),
+        dimensions=preview.get("dimensions"),
+        provenance=preview.get("provenance"),
     )
 
 
