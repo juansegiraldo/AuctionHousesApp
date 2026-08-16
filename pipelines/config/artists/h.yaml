@@ -170,3 +170,15 @@ artists:
       - "Hipólito Hidalgo de Caviedes"
       - "Hipólito hidalgo de Caviedes"
     notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
+
+  - artist_id: horacio_silva_sebastian
+    display_name: "Horacio Silva Sebastián"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Horacio Silva"
+    notes: "Pintor español nacido en Valencia el 29 de marzo de 1950. Profesor en la Facultad de Bellas Artes de la Universidad Politécnica de Valencia. Ha evolucionado del realismo al cubismo cromático."

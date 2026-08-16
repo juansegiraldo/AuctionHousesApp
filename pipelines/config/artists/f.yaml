@@ -17,6 +17,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Fanny Sanín (Colombia, 1938)"
+      - "Fanny Sanín - Colombia, 1938."
       - "Fanny Sanín"
     notes: "8 lotes | casas: bogota_auctions"
 
@@ -75,6 +77,7 @@ artists:
   - artist_id: feliza_bursztyn
     display_name: "Feliza Bursztyn"
     country_birth: "CO"
+    death_year: 1982
     nationalities: ["CO"]
     birth_year: 1933
     attribution_type: autor
@@ -148,12 +151,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Fernando de Szyszlo (Perú, 1925 - 2017.)"
+      - "Fernando de Szyszlo (Perú, 1925 - 2007.)"
       - "Fernando de Szyszlo"
     notes: "14 lotes | casas: bogota_auctions"
 
   - artist_id: fernando_verdugo
     display_name: "Fernando Verdugo"
     country_birth: "ES"
+    birth_year: 1942
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -172,6 +178,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Fernando Zóbel (Después)"
+      - "Fernando Zóbel de Ayala"
       - "Fernando Zóbel"
     notes: "47 lotes | casas: duran_subastas"
 
@@ -218,6 +226,7 @@ artists:
   - artist_id: francisco_arjona
     display_name: "Francisco Arjona"
     country_birth: "ES"
+    birth_year: 1944
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -242,6 +251,7 @@ artists:
   - artist_id: francisco_calabuig
     display_name: "Francisco Calabuig"
     country_birth: "ES"
+    birth_year: 1946
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -275,6 +285,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Francisco Echáuz Buisan"
       - "Francisco Echauz"
     notes: "37 lotes | casas: duran_subastas"
 
@@ -322,6 +333,7 @@ artists:
   - artist_id: francisco_peinado
     display_name: "Francisco Peinado"
     country_birth: "ES"
+    birth_year: 1941
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -373,12 +385,14 @@ artists:
   - artist_id: francisco_sobrino
     display_name: "Francisco Sobrino"
     country_birth: "ES"
-    nationalities: ["ES"]
+    birth_year: 1932
     death_year: 2014
+    nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Francisco Sobrino (España, 1932 - Francia, 2014)"
       - "Francisco Sobrino"
       - "SOBRINO, FRANCISCO"
     notes: "38 lotes | casas: bogota_auctions, duran_subastas"
@@ -386,6 +400,7 @@ artists:
   - artist_id: francisco_vadillo
     display_name: "Francisco Vadillo"
     country_birth: "ES"
+    birth_year: 1933
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -397,14 +412,16 @@ artists:
   - artist_id: freda_sargent
     display_name: "Freda Sargent"
     country_birth: "GB"
-    nationalities: ["GB"]
+    nationalities: ["GB", "CO"]
     birth_year: 1928
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Freda Sargent (Inglaterra, 1928)"
       - "Freda Sargent"
-    notes: "14 lotes | casas: bogota_auctions"
+      - "Freda Sargent de Obregón"
+    notes: "14 lotes | casas: bogota_auctions | n. 16-08-1928 (Wikidata Q99456319, pintora britanica); SIN fecha de muerte registrada alli. Tercera esposa de Alejandro Obregon y docente en Barranquilla, que es por lo que sus lotes salen en Bogota pese a ser inglesa: de ahi nationalities [GB, CO]. Tendria 98 anios; no se le pone death_year porque no consta, no porque este confirmada viva."
 
   - artist_id: federico_uribe
     display_name: "Federico Uribe"
@@ -487,8 +504,9 @@ artists:
   - artist_id: fidolo_alfonso_gonzalez_camargo
     display_name: "Fídolo Alfonso González Camargo"
     country_birth: "CO"
+    death_year: 1942
     nationalities: ["CO"]
-    birth_year: 1930
+    birth_year: 1883
     attribution_type: autor
     source: manual
     confidence: high
@@ -496,7 +514,7 @@ artists:
       - "FIDOLO ALFONSO GONZALEZ CAMARGO"
       - "Fídolo Alfonso González Camargo"
       - "Fidolo Alfonso González Camargo"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1930 y nacio el 20-09-1883 en Bogota; murio el 23-08-1942 en Sibate. Con 1930 el informe lo publicaba como vivo de 96 anios. Fuentes: Enciclopedia Banrepcultural, Wikidata Q137727316."
 
   - artist_id: francisco_antonio_cano
     display_name: "Francisco Antonio Cano"
@@ -655,6 +673,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Fernando Sáez González"
+      - "Fernando Saez Gonzalez"
       - "Fernando Sáez"
       - "Fernando Saez"
     notes: "16 lotes en Silver | fuente: MutualArt; Bilbao Museoa | Laredo, Cantabria"
@@ -669,6 +689,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Francisco Gimeno Barón"
       - "Francisco Gimeno"
     notes: "14 lotes en Silver | fuente: Wikipedia ES | Tortosa"
 
@@ -725,3 +746,52 @@ artists:
       - "Francisco Rodríguez Sanclement"
       - "Francisco Rodriguez Sanclement"
     notes: "13 lotes en Silver | fuente: Artnet"
+
+  - artist_id: fernando_pagola
+    display_name: "Fernando Pagola"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Pagola"
+    notes: "Spanish architect and visual artist born 1955 in Donostia-San Sebastián, Guipúzcoa (Basque Country). Professor at University of Navarra. Works in impressionist figuration and abstraction."
+
+  - artist_id: francisco_lozano
+    display_name: "Francisco Lozano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1912
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Lozano Sanchís"
+    notes: "Pintor y acuarelista nacido en Antella (Valencia) el 19 de septiembre de 1912. Falleció en Valencia el 29 de mayo de 2000. Ganador del primer premio de la Exposición Nacional de Bellas Artes en 1952."
+
+  - artist_id: felipe_criado
+    display_name: "Felipe Criado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1928
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Felipe Criado Martín"
+    notes: "Pintor español nacido en Gijón el 8 de enero de 1928, falleció en Mera (A Coruña) el 22 de noviembre de 2013. Estudió en la Real Academia de Bellas Artes de San Fernando. Miembro de la Real Academia de Bellas Artes de Galicia (1996)."
+
+  - artist_id: frederico_vigil
+    display_name: "Frederico Vigil"
+    country_birth: "US"
+    nationalities: ["US"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Frederico Vigil"
+    notes: "Maestro fresquista estadounidense contemporáneo, nacido Santa Fe, Nuevo México. Discípulo de Luciene Block y Stephen Pope Dimitroff (aprendices de Diego Rivera). Especializado en frescos buon fresco a escala monumental. ALERTA: artista vivo/contemporáneo, NO histórico de subastas españolas/latinoamericanas."

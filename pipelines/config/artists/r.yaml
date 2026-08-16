@@ -11,6 +11,8 @@ artists:
   - artist_id: rafael_amezaga
     display_name: "Rafael Amezaga"
     country_birth: "ES"
+    birth_year: 1928
+    death_year: 1997
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -22,6 +24,7 @@ artists:
   - artist_id: rafael_canogar
     display_name: "Rafael Canogar"
     country_birth: "ES"
+    birth_year: 1935
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -47,18 +50,21 @@ artists:
   - artist_id: rafael_echeverri
     display_name: "Rafael Echeverri"
     country_birth: "CO"
+    death_year: 1996
     nationalities: ["CO"]
     birth_year: 1952
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Rafael Echeverri (Colombia, 1952 - 1996)"
       - "Rafael Echeverri"
     notes: "7 lotes | casas: bogota_auctions"
 
   - artist_id: rafael_fuster_insa
     display_name: "Rafael Fuster Insa"
     country_birth: "ES"
+    birth_year: 1934
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -77,6 +83,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Rafael Pellicer Galetoe"
       - "Rafael Pellicer"
       - "Rafael Pellicer Galeote"
       - "PELLICER GALEOTE, RAFAEL"
@@ -137,6 +144,8 @@ artists:
   - artist_id: ramon_gaya
     display_name: "Ramón Gaya"
     country_birth: "ES"
+    birth_year: 1910
+    death_year: 2005
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -155,6 +164,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ramón Lapayese Bruna"
+      - "Ramón Lapayese y Laura Llorens"
+      - "Ramón Lapayese y Ricardo Macarrón"
       - "Ramón Lapayese"
     notes: "24 lotes | casas: duran_subastas"
 
@@ -181,6 +193,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "René Portocarrero (Cuba, 1912 - 1985)"
       - "René Portocarrero"
     notes: "24 lotes | casas: bogota_auctions, duran_subastas"
 
@@ -194,6 +207,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ricardo Baroja y Nessi"
       - "Ricardo Baroja"
       - "Ricardo Baroja Nessi"
       - "BAROJA NESSI, RICARDO"
@@ -215,12 +229,14 @@ artists:
   - artist_id: ricardo_gomez_campuzano
     display_name: "Ricardo Gómez Campuzano"
     country_birth: "CO"
-    nationalities: ["CO"]
+    birth_year: 1891
     death_year: 1981
+    nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Ricardo Gómez Campuzano (Colombia, 1893 - 1981)"
       - "Ricardo Gómez Campuzano"
     notes: "8 lotes | casas: bogota_auctions"
 
@@ -234,6 +250,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ricardo Montesinos Mora"
       - "Ricardo Montesinos"
     notes: "38 lotes | casas: duran_subastas"
 
@@ -412,6 +429,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ramón Torres Méndez: dos titulos"
       - "RAMON TORRES MENDEZ"
       - "Ramón Torres Méndez"
       - "Ramon Torres Mendez"
@@ -442,6 +460,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ricardo Acevedo Bernal (Colombia, 1867 - 1930)"
       - "RICARDO ACEVEDO BERNAL"
       - "Ricardo Acevedo Bernal"
     notes: "14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -505,6 +524,8 @@ artists:
   - artist_id: richard_lin_show_you
     display_name: "Richard Lin Show You"
     country_birth: "TW"
+    birth_year: 1933
+    death_year: 2011
     nationalities: ["TW"]
     attribution_type: autor
     source: manual
@@ -523,6 +544,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Richard Smith (Gran Bretaña, 1931 - 2016)"
       - "RICHARD SMITH"
       - "Richard Smith"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -550,6 +572,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Roberto Fabelo - Cuba, 1951."
       - "ROBERTO FABELO"
       - "Roberto Fabelo"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -564,6 +587,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Roberto Matta (Chile, 1911 - Italia, 2002.)"
+      - "Roberto Matta - Chile, 1911 - Italia 2002"
       - "ROBERTO MATTA"
       - "Roberto Matta"
       - "MATTA, ROBERTO"
@@ -608,6 +633,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Rodolfo Abularach (Guatemala, 1933 - 2020.)"
       - "RODOLFO ABULARACH"
       - "Rodolfo Abularach"
     notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -675,6 +701,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "RONNY VAYDA ADLER"
       - "RONNY VAYDA"
       - "Ronny Vayda"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -729,6 +756,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Rufino Tamayo - México, 1899 - 1991."
       - "RUFINO TAMAYO"
       - "Rufino Tamayo"
     notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -900,7 +928,51 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Rembrandt (después de)"
+      - "REMBRANDT, HARMENSZ VAN RIJN"
+      - "REMBRANDT VAN RIJN"
+      - "Rembrandt VAN RIJN"
       - "Rembrandt"
       - "REMBRANDT"
       - "REMBRANDT\""
     notes: "15 lotes en Silver | fuente: Wikipedia | Rembrandt Harmenszoon van Rijn, Leiden; aguafuertes"
+
+  - artist_id: regina_gimenez
+    display_name: "Regina Giménez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Regina Giménez"
+    notes: "Spanish painter and graphic artist born Barcelona 1966. Studied Fine Arts Barcelona. Contemporary Catalan artist. Works evolve from industrial landscapes to cosmology and geometry-based pieces."
+
+  - artist_id: roberto_fernandez_soravilla
+    display_name: "Roberto Fernández Soravilla"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1945
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roberto Fernández Soravilla"
+      - "Roberto Fernandez Soravilla"
+    notes: "Nació en Madrid (26/3/1945, murió 2012). Pintor realista. Abogado (UCM), comenzó a pintar en 1980. Senador de Madrid (1989, PP). Estilo realista característico."
+
+  - artist_id: rene_magritte
+    display_name: "René Magritte"
+    country_birth: "BE"
+    nationalities: ["BE"]
+    birth_year: 1898
+    death_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RENE MAGRITTE"
+      - "René Magritte"
+    notes: "Belgian surrealist painter born in Lessines. Full name: René François Ghislain Magritte. Known for depicting ordinary objects in unfamiliar contexts. Died of pancreatic cancer in Brussels."

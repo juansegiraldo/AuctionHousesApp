@@ -31,19 +31,22 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Daniel Vázquez Díaz y Eva Aggerholm"
       - "Daniel Vázquez Díaz"
     notes: "83 lotes | casas: duran_subastas"
 
   - artist_id: dario_basso
     display_name: "Darío Basso"
-    country_birth: "ES"
-    nationalities: ["ES"]
+    country_birth: "VE"
+    birth_year: 1966
+    nationalities: ["ES", "VE"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Darío Basso"
-    notes: "33 lotes | casas: duran_subastas"
+      - "Darío Álvarez Basso"
+    notes: "33 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Caracas (VE) en 1966, de padre gallego; se traslado a Vigo en 1969. Firma tambien como Dario Alvarez Basso, de ahi el alias. Fuentes: masdearte, Afundacion, ArteInformado."
 
   - artist_id: dario_de_regoyos
     display_name: "Darío de Regoyos"
@@ -80,6 +83,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "David Manzur (Colombia, 1929.)"
       - "David Manzur"
     notes: "34 lotes | casas: bogota_auctions"
 
@@ -107,17 +111,21 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Débora Arango - Colombia, 1907 - 2005."
+      - "Débora Arango Pérez"
       - "Débora Arango"
     notes: "4 lotes | casas: bogota_auctions"
 
   - artist_id: delcy_morelos
     display_name: "Delcy Morelos"
     country_birth: "CO"
+    birth_year: 1967
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Delcy Morelos - Colombia, 1967."
       - "Delcy Morelos"
     notes: "4 lotes | casas: bogota_auctions"
 
@@ -137,6 +145,7 @@ artists:
   - artist_id: dino_valls
     display_name: "Dino Valls"
     country_birth: "ES"
+    birth_year: 1959
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -148,6 +157,7 @@ artists:
   - artist_id: dis_berlin
     display_name: "Dis Berlin"
     country_birth: "ES"
+    birth_year: 1959
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -186,12 +196,14 @@ artists:
   - artist_id: dario_villalba
     display_name: "Darío Villalba"
     country_birth: "PY"
+    death_year: 2018
     nationalities: ["PY"]
     birth_year: 1939
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Dario Villalba (España, 1939 - 2018.)"
       - "DARIO VILLALBA"
       - "Darío Villalba"
     notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -233,6 +245,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Diego Chaves \"Lesivo\" (Colombia)"
       - "DIEGO CHAVES \"LESIVO\""
       - "Diego Chaves \"Lesivo\""
     notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -302,3 +315,16 @@ artists:
     aliases:
       - "Domingo Huetos"
     notes: "14 lotes en Silver"
+
+  - artist_id: daniel_salamanca
+    display_name: "Daniel Salamanca"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1983
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Daniel Salamanca"
+      - "Daniel Salamanca Núñez"
+    notes: "Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC Chicago (2019). Works as artist, graphic designer, essayist, lecturer. Won Cultural Ministry of Colombia grant for emerging artists (2015)."

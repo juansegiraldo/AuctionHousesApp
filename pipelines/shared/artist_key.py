@@ -119,6 +119,38 @@ _OBJECT_NAMES = frozenset(
     }
 )
 
+# Proceres, militares y cartografos que firman el TEXTO de un lote de libro o
+# mapa, nunca una obra plastica. Salian en el ranking de artistas: Simon Bolivar
+# aparecia con 19 lotes y "sin pais informado", cuando esos 19 lotes son sus
+# proclamas impresas (Angostura 1819, Bogota 1828, la ultima de 1830).
+#
+# Por que una lista cerrada y no una regla: el CLAUDE.md documenta que los
+# autores de libros se dejaron a proposito, porque el patron "Autor : Titulo" lo
+# cumplen tambien Antonio Caro, Beatriz Gonzalez y Ana Mercedes Hoyos, que SI
+# son pintores. La ficha bibliografica en `description` separa los dos grupos
+# limpiamente en los datos de hoy (proceres 14-92%, esos tres pintores 0,0%),
+# pero es una senial del scraper de Bogota, no una verdad del dominio: en cuanto
+# otra casa deje de emitir esa ficha, la regla borraria artistas reales en
+# silencio. Con una lista cerrada el fallo posible es dejar entrar a un procer
+# nuevo, que se ve en el ranking; el otro fallo, borrar a un pintor, no se ve.
+#
+# Se comparan por IGUALDAD con el fold entero, como _OBJECT_NAMES: hay artistas
+# reales apellidados Bolivar o Santander.
+_NON_ARTIST_AUTHORS = frozenset(
+    {
+        # Proceres de la independencia: los lotes son proclamas y decretos.
+        "bolivar simon",                 # Caracas 1783 - Santa Marta 1830
+        "santander francisco de paula",
+        "restrepo jose manuel",
+        # Naturalistas y cientificos: laminas y libros de viaje.
+        "humboldt alexander von",
+        # Cartografos: mapas grabados.
+        "bellin jacques nicolas",
+        # Escritores: primeras ediciones y manuscritos.
+        "acosta de samper soledad",
+    }
+)
+
 # Parentesis biografico final: "Ever Astudillo (Colombia, 1948 - 2015)".
 # Se recorta ANTES de mirar si hay digitos, porque si no 552 nombres que si son
 # artistas caerian en no_autor y perderiamos justo los que llevan el pais dentro.
@@ -215,6 +247,10 @@ def attribution_type(name: Optional[str]) -> str:
 
     # Igualdad exacta contra el fold entero: "Collar" es ruido, "Ana Collar" no.
     if fold in _OBJECT_NAMES:
+        return "no_autor"
+
+    # Firma el texto del lote (proclama, mapa, libro), no una obra plastica.
+    if fold in _NON_ARTIST_AUTHORS:
         return "no_autor"
 
     # Campo "Ciudad" de la ficha del libro, no una persona.

@@ -18,6 +18,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ignacio Gómez Jaramillo - Colombia, 1910 - 1970."
       - "Ignacio Gómez Jaramillo"
     notes: "8 lotes | casas: bogota_auctions"
 
@@ -45,12 +46,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ignacio Zuloaga, El Mozo"
+      - "Ignacio Zuloaga Zabaleta"
       - "Ignacio Zuloaga"
     notes: "12 lotes | casas: duran_subastas"
 
   - artist_id: isabel_guerra
     display_name: "Isabel Guerra"
     country_birth: "ES"
+    birth_year: 1947
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -62,6 +66,7 @@ artists:
   - artist_id: isabel_villar
     display_name: "Isabel Villar"
     country_birth: "ES"
+    birth_year: 1934
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -134,3 +139,28 @@ artists:
     aliases:
       - "Ismael Blat"
     notes: "11 lotes en Silver | fuente: Wikipedia ES | Benimamet, Valencia"
+
+  - artist_id: isidro_lopez_murias
+    display_name: "Isidro López Murías"
+    country_birth: "MA"
+    nationalities: ["ES", "MA"]
+    birth_year: 1939
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Isidro López Murias"
+    notes: "14 lotes | nacido en 1939 en Tetuan, entonces Protectorado espaniol de Marruecos; pintor y Doctor en Bellas Artes, tesis sobre Vicente Berdusan. Mismo patron que Saenz de Tejada (Tanger): nace en el Protectorado y vende en el mercado espaniol. Fuentes: murias.org (web del propio pintor), ArteInformado, Ayuntamiento de Pamplona."
+
+  - artist_id: ignacio_gil_sala
+    display_name: "Ignacio Gil Sala"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1913
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ignacio Gil Sala"
+    notes: "Pintor y viajero aventurero español (1913-2003). Escuela de BBAA Barcelona con maestros Mestres y Borrás. Estilo Impresionista, paisajes catalanes y baleares. Exposiciones en España, Francia, Filipinas, Suiza, EEUU, Canadá, Colombia. Premios nacionales e internacionales."

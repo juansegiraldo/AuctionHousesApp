@@ -160,19 +160,27 @@ def test_explicit_status_beats_price_presence(gold):
     assert artists[0]["revenue_eur"] == 300.0
 
 
-def test_artists_below_minimum_are_not_ranked(gold):
-    """Con 1-2 ventas un 'precio medio' es ruido, no un dato."""
+def test_a_single_sale_is_enough_to_rank(gold):
+    """Vender una sola vez basta para entrar: la cola no se recorta.
+
+    El corte estuvo en 3 ventas para que el "precio medio" por artista no fuera
+    ruido. Costaba mas de lo que arreglaba: dejaba fuera ventas reales (Fidolo
+    Gonzalez Camargo, con ficha verificada, no salia por tener 2 lotes), y en
+    arte una pieza puede facturar mas que veinte de otro autor. El ranking
+    ordena por facturacion, asi que el de un lote cae donde le toca; lo que se
+    hace con la media corta es avisar en el informe, no ocultar la venta.
+    """
     silver, _, goldd = gold
     rows = [
         _lot(lot_url=f"x{i}", dedupe_key=f"x{i}", artist_name="Prolifico")
-        for i in range(build_insights.MIN_LOTS_FOR_ARTIST_RANK)
+        for i in range(3)
     ]
     rows.append(_lot(lot_url="y", dedupe_key="y", artist_name="Puntual"))
     _write(silver / "lots.jsonl", rows)
     build_insights.build_insights()
     names = {a["artist_name"] for a in _read(goldd / "agg_artist_metrics.jsonl")}
     assert "Prolifico" in names
-    assert "Puntual" not in names
+    assert "Puntual" in names
 
 
 def test_price_bands_partition_without_double_counting(gold):
@@ -503,22 +511,24 @@ def test_lot_details_include_fold_only_artists(gold):
     assert all(d["country"] is None for d in details)
 
 
-def test_lot_details_exclude_artists_below_rank_cutoff(gold):
-    """El corte del ranking acota el detalle embebido en el HTML.
+def test_lot_details_follow_the_ranking(gold):
+    """El detalle embebido lleva los lotes de TODO artista rankeado.
 
-    Sin corte serian ~39.500 filas en cada informe en vez de ~22.900. Se fija
-    aqui para que nadie lo quite "para que no falten datos".
+    Va atado al ranking, no a un umbral propio: si un artista aparece en la
+    tabla, sus lotes tienen que poder abrirse. Con el corte en 1 eso significa
+    que la cola tambien entra y el HTML crece; el tamanio se controla en el
+    renderer, no escondiendo ventas del agregado.
     """
     silver, _, goldd = gold
     rows = [
         _resolved("Prolifico", lot_url=f"p{i}", dedupe_key=f"p{i}")
-        for i in range(build_insights.MIN_LOTS_FOR_ARTIST_RANK)
+        for i in range(3)
     ]
     rows.append(_resolved("Puntual", lot_url="y", dedupe_key="y"))
     _write(silver / "lots.jsonl", rows)
     build_insights.build_insights()
     details = _read(goldd / "lot_details.jsonl")
-    assert {d["artist_name"] for d in details} == {"Prolifico"}
+    assert {d["artist_name"] for d in details} == {"Prolifico", "Puntual"}
 
 
 def test_lot_details_carry_artist_key(gold):

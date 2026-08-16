@@ -100,6 +100,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Gastó VIlanova"
       - "Pedro Gastó"
     notes: "30 lotes | casas: duran_subastas"
 
@@ -119,11 +120,14 @@ artists:
   - artist_id: pedro_nel_gomez
     display_name: "Pedro Nel Gómez"
     country_birth: "CO"
+    birth_year: 1899
+    death_year: 1984
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Pedro Nel Gómez (Colombia, 1899 - 1984)"
       - "Pedro Nel Gómez"
       - "Gómez, Pedro Nel"
     notes: "14 lotes | casas: bogota_auctions"
@@ -137,23 +141,27 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Ruiz Ortega"
+      - "Pedro Ruiz (Colombia, 1957)"
       - "Pedro Ruíz"
     notes: "24 lotes | casas: bogota_auctions"
 
   - artist_id: pedro_sandoval
     display_name: "Pedro Sandoval"
-    country_birth: "ES"
-    nationalities: ["ES"]
+    country_birth: "VE"
+    nationalities: ["ES", "VE"]
+    birth_year: 1966
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Pedro Sandoval"
-    notes: "7 lotes | casas: duran_subastas"
+    notes: "7 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Ciudad Bolivar (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA)."
 
   - artist_id: pedro_sobrado
     display_name: "Pedro Sobrado"
     country_birth: "ES"
+    birth_year: 1936
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -165,6 +173,7 @@ artists:
   - artist_id: perico_pastor
     display_name: "Perico Pastor"
     country_birth: "ES"
+    birth_year: 1953
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -287,6 +296,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Alcántara Herrán y Virginia Amaya"
       - "PEDRO ALCANTARA HERRAN"
       - "Pedro Alcántara Herrán"
     notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -384,6 +394,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Alcántara - Colombia, 1942."
       - "Pedro Alcántara"
       - "PEDRO ALCANTARA"
     notes: "15 lotes en Silver | fuente: MoMA; Art Institute Chicago | colombiano; en museos de EEUU"
@@ -466,3 +477,29 @@ artists:
     aliases:
       - "Pere Pruna"
     notes: "12 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: paco_leal
+    display_name: "Paco Leal"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paco Leal"
+    notes: "Spanish painter born 1952. Works sold at auction. Note: there is also a Mexican portrait artist named Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist."
+
+  - artist_id: pedro_maria_trapero
+    display_name: "Pedro María Trapero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1918
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Trapero"
+      - "Pedro María Trapero"
+    notes: "Pintor español nacido en Navalcarnero, Madrid, 1918. Fallecido en Madrid 2005. Registrado en bases de datos españolas de arte."

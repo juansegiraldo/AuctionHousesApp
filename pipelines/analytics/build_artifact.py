@@ -1041,7 +1041,7 @@ def build_artist_table(artists: list[dict], cov: dict,
     )
     # Las dos coberturas de fechas: la de la tabla visible y la del ranking
     # entero. Publicar solo la primera daria una idea falsa del maestro, porque
-    # los artistas que mas venden son justo los mejor documentados.
+    # la curaduria se prioriza por facturacion y la cola queda peor cubierta.
     dated_shown = sum(1 for a in shown if a.get("birth_year"))
     dated_tot = sum(1 for a in artists if a.get("birth_year"))
     if shown and tot:
@@ -1049,8 +1049,15 @@ def build_artist_table(artists: list[dict], cov: dict,
             f"<p class='caveat'>Las fechas salen del mismo maestro: las tienen "
             f"{num(dated_shown)} de los {num(len(shown))} artistas de esta tabla "
             f"({pct(dated_shown / len(shown) * 100)}), pero solo {num(dated_tot)} de "
-            f"{num(tot)} en el ranking completo ({pct(dated_tot / tot * 100)}). "
-            "Un artista vivo aparece como “n. 1954”, sin año de muerte.</p>"
+            f"{num(tot)} en el ranking completo ({pct(dated_tot / tot * 100)}): la "
+            "curaduría se ha priorizado por facturación.</p>"
+        )
+        # "n. 1954" no equivale a "vivo": ver la misma nota en render_html.py.
+        caveats += (
+            "<p class='caveat'>“n. 1954” significa <strong>nacido en 1954 y sin año de "
+            "muerte registrado</strong>, que no es lo mismo que estar vivo: puede ser una "
+            "ficha incompleta. Cuando el artista tendría más de 105 años se marca "
+            "“n. 1905 (?)”, porque ahí el hueco es casi seguro un dato que falta.</p>"
         )
     return (
         "<section><h2>Quién mueve el dinero</h2>"

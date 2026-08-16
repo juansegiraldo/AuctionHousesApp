@@ -36,14 +36,15 @@ artists:
   - artist_id: teresa_cuellar_teye
     display_name: "Teresa Cuellar - Teye"
     country_birth: "CO"
+    death_year: 2023
     nationalities: ["CO"]
-    birth_year: 1937
+    birth_year: 1935
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "TERESA CUELLAR - TEYE"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1937 y nacio en 1935; murio el 02-07-2023. Fuente: Wikidata Q6142541."
 
   - artist_id: teresa_sanchez
     display_name: "Teresa Sánchez"

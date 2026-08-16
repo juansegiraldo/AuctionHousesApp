@@ -37,6 +37,7 @@ artists:
   - artist_id: carlos_franco
     display_name: "Carlos Franco"
     country_birth: "ES"
+    birth_year: 1951
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -48,6 +49,8 @@ artists:
   - artist_id: carlos_granada
     display_name: "Carlos Granada"
     country_birth: "CO"
+    birth_year: 1933
+    death_year: 2015
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
@@ -59,17 +62,20 @@ artists:
   - artist_id: carlos_jacanamijoy
     display_name: "Carlos Jacanamijoy"
     country_birth: "CO"
+    birth_year: 1964
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Carlos Jacanamijoy (Colombia, 1964)"
       - "Carlos Jacanamijoy"
     notes: "7 lotes | casas: bogota_auctions"
 
   - artist_id: carlos_leon_escudero
     display_name: "Carlos León Escudero"
     country_birth: "ES"
+    birth_year: 1948
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -81,6 +87,7 @@ artists:
   - artist_id: carlos_morago
     display_name: "Carlos Morago"
     country_birth: "ES"
+    birth_year: 1954
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -93,13 +100,15 @@ artists:
     display_name: "Carlos Rojas"
     country_birth: "CO"
     nationalities: ["CO"]
-    birth_year: 1923
+    birth_year: 1933
+    death_year: 1997
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Carlos Rojas - Colombia, 1923 - 1997."
       - "Carlos Rojas"
-    notes: "25 lotes | casas: bogota_auctions"
+    notes: "25 lotes | casas: bogota_auctions | n. 18-04-1933 en Facatativa, m. 03-05-1997 en Bogota. OJO: el alias de la casa (y la ficha antigua) decian 1923; Wikipedia da 1933-1997 y la aritmetica lo confirma (murio a los 64). El alias se conserva con el anio erroneo porque es el texto que entra por el scraper. Fuente: Wikipedia ES."
 
   - artist_id: carmelo_garcia_barrena
     display_name: "Carmelo García Barrena"
@@ -118,6 +127,7 @@ artists:
   - artist_id: carmen_calvo
     display_name: "Carmen Calvo"
     country_birth: "ES"
+    birth_year: 1950
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -175,6 +185,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "CASTRO GIL, MANUEL"
+      - "Castro, Gil de"
       - "Castro Gil"
     notes: "21 lotes | casas: duran_subastas"
 
@@ -201,6 +213,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Cecilio Pla y Gallardo"
       - "Cecilio Pla"
     notes: "54 lotes | casas: duran_subastas"
 
@@ -274,6 +287,7 @@ artists:
   - artist_id: cesar_saldivar
     display_name: "César Saldívar"
     country_birth: "MX"
+    birth_year: 1960
     nationalities: ["MX"]
     attribution_type: autor
     source: manual
@@ -324,6 +338,7 @@ artists:
   - artist_id: cristina_iglesias
     display_name: "Cristina Iglesias"
     country_birth: "ES"
+    birth_year: 1956
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -335,6 +350,8 @@ artists:
   - artist_id: cristino_de_vera
     display_name: "Cristino de Vera"
     country_birth: "ES"
+    birth_year: 1931
+    death_year: 2026
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -346,6 +363,7 @@ artists:
   - artist_id: cristobal_gabarron
     display_name: "Cristóbal Gabarrón"
     country_birth: "ES"
+    birth_year: 1945
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -358,6 +376,7 @@ artists:
   - artist_id: cristobal_toral
     display_name: "Cristóbal Toral"
     country_birth: "ES"
+    birth_year: 1940
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -444,6 +463,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Camilo Bojacá (Colombia, 1985)"
       - "CAMILO BOJACA"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
@@ -563,6 +583,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "CARLOS SALAZAR ARENAS"
       - "CARLOS SALAZAR"
       - "Carlos Salazar"
     notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -619,6 +640,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Carrie Mae Weems (EE.UU., 1953)"
       - "CARRIE MAE WEEMS"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
@@ -660,18 +682,21 @@ artists:
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
   - artist_id: christo_vladimirov_javacheff
-    display_name: "Christo Vladimirov Javacheff"
+    display_name: "Christo"
     country_birth: "BG"
-    nationalities: ["BG"]
+    nationalities: ["BG", "US"]
     birth_year: 1935
     death_year: 2020
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Christo Vladimirov Javacheff (Bulgaria, 1935 - EE.UU. 2020.)"
       - "CHRISTO VLADIMIROV JAVACHEFF"
       - "Christo Vladimirov Javacheff"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+      - "Christo"
+      - "Christo and Jeanne-Claude"
+    notes: "7 lotes en Silver | n. 13-06-1935 en Gabrovo (BG), m. 31-05-2020; nacionalizado estadounidense en 1973. Se firmaba solo 'Christo' y trabajaba con su mujer Jeanne-Claude, de ahi los alias. FUSIONADA con una ficha duplicada 'christo' que se dio de alta en la tanda de artistas de renombre: misma persona, mismos datos. Fuente: Wikipedia."
 
   - artist_id: claudia_hakim
     display_name: "Claudia Hakim"
@@ -728,6 +753,7 @@ artists:
   - artist_id: carlos_laharrague
     display_name: "Carlos Laharrague"
     country_birth: "ES"
+    death_year: 2018
     nationalities: ["ES"]
     birth_year: 1936
     attribution_type: autor
@@ -775,3 +801,94 @@ artists:
     aliases:
       - "Concha Hermosilla"
     notes: "13 lotes en Silver | fuente: Wikipedia ES | Madrid"
+
+  - artist_id: carlos_cobian
+    display_name: "Carlos Cobián"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Cobián"
+      - "Carlos Cobian"
+    notes: "Pintor español contemporáneo. Nace en Asturias, España. Especializado en paisajes marinos del litoral cantábrico. Comparado con Sorolla del norte."
+
+  - artist_id: chinorris_cardenas
+    display_name: "Chinorris Cárdenas"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Chinorris Cárdenas"
+    notes: "Artista español vinculado a la Academia López Izquierdo en Madrid (c. 1949-1950), parte del grupo de estudiantes de bellas artes en San Fernando junto a Elena Santonja, Carmen Santonja y otros. Detalles biográficos limitados pero confirmado como artista visual español."
+
+  - artist_id: costa_lefkochir
+    display_name: "Costa Lefkochir"
+    country_birth: "GR"
+    nationalities: ["GR"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Costa Lefkochir"
+    notes: "Nació en Heraklion, Grecia. Estudió en Royal Academy of Fine Arts, Lieja. Vive en Bélgica y Paros (Grecia). Más de 80 exposiciones personales desde 1979."
+
+  - artist_id: carlos_alonso_perez
+    display_name: "Carlos Alonso-Pérez"
+    country_birth: "IT"
+    nationalities: ["ES"]
+    birth_year: 1882
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Alonso Pérez"
+    notes: "Pintor español (nacido en Roma 1882, muerte en Madrid 1949). Apellido Alonso-Pérez Berdugo. Obra en subastas internacionales."
+
+  - artist_id: celedonio_perellon_cardona
+    display_name: "Celedonio Perellón Cardona"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Celedonio Perellón Cardona"
+    notes: "Painter, illustrator, comic artist, and engraver. Born in Madrid (Lavapiés). Won Lazarillo Prize (1963) and Bratislava Biennial Medal (1967). Linked to Toledo."
+
+  - artist_id: chema_cobo
+    display_name: "Chema Cobo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Chema Cobo"
+      - "José Manuel Cobo"
+    notes: "Contemporary painter born in Tarifa (Cádiz). Part of Madrid New Figuration. Work in Metropolitan Museum, Reina Sofía, MCA Chicago. Conceptual + figurative painting."
+
+  - artist_id: cristino_mallo
+    display_name: "Cristino Mallo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1905
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cristino Mallo"
+      - "Cristino Gómez González"
+    notes: "Escultor español nacido en Tuy (Pontevedra). Hermano de la pintora Maruja Mallo. Estudió Academia San Fernando desde 1923. Ganó Premio Nacional Escultura 1933 y 1954. Académico RAH 1973, Medalla Oro Bellas Artes 1983."
+

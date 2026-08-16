@@ -33,6 +33,7 @@ countries:
   GR: {es: Grecia, demonym_es: griego}
   GT: {es: Guatemala, demonym_es: guatemalteco}
   HN: {es: Honduras, demonym_es: hondureño}
+  HT: {es: Haití, demonym_es: haitiano}
   HU: {es: Hungría, demonym_es: húngaro}
   IE: {es: Irlanda, demonym_es: irlandés}
   IL: {es: Israel, demonym_es: israelí}

@@ -301,9 +301,11 @@ def nationalities_es(codes: list[str]) -> str:
 # --------------------------------------------------------------------------
 
 CAVEAT_MIN_LOTS = (
-    f"Entran en el ranking los artistas con al menos {MIN_LOTS_FOR_ARTIST_RANK} lotes "
-    "vendidos. Por debajo de esa cifra un “precio medio” es ruido estadístico, no un dato. "
-    "Se excluyen además escuelas, talleres y atribuciones (“Escuela Española”, "
+    f"Entra en el ranking todo artista con al menos {MIN_LOTS_FOR_ARTIST_RANK} lote vendido: "
+    "no se recorta la cola, porque una sola pieza puede facturar más que veinte de otro autor. "
+    "Eso sí, <strong>el “precio medio” de quien tiene una o dos ventas no es una media</strong>, "
+    "es el precio de esas piezas: para comparar precios medios, mírese la columna de lotes. "
+    "Se excluyen escuelas, talleres y atribuciones (“Escuela Española”, "
     "“Atribuido a…”), que agrupan cientos de lotes de autoría distinta."
 )
 
@@ -326,16 +328,15 @@ CAVEAT_FX_TIMESERIES = (
 CAVEAT_PARETO_SCOPE = (
     "Los porcentajes son sobre el volumen de los artistas rankeados, "
     "<strong>no sobre el total del mercado</strong>: quedan fuera los lotes sin autor, las "
-    "escuelas y atribuciones, y las joyas de Zorrilla, que no llevan artista. El corte de "
-    f"{MIN_LOTS_FOR_ARTIST_RANK} ventas recorta además la cola, así que la concentración "
-    "real es algo mayor que la que dibuja esta curva."
+    "escuelas y atribuciones, y las joyas de Zorrilla, que no llevan artista. La cola sí "
+    "entra entera, así que la curva no está recortada por abajo."
 )
 
 CAVEAT_SCATTER_LOWN = (
     "Los dos ejes van en escala logarítmica: sin ella, 9 de cada 10 artistas se solapan en "
-    "una esquina. <strong>El precio medio de un artista con 3 ventas no es comparable con "
+    "una esquina. <strong>El precio medio de un artista con una venta no es comparable con "
     "el de uno con 200</strong>: cuanto más a la izquierda está un punto, más ruido tiene "
-    "su altura."
+    "su altura. Con una sola venta, la altura <em>es</em> el precio de esa pieza, no una media."
 )
 
 CAVEAT_GENERATIONS_COVERAGE = (
@@ -349,12 +350,14 @@ CAVEAT_GENERATIONS_COVERAGE = (
 def country_metrics_caveat(lots_below_cutoff: int) -> str:
     """Aviso de que los totales por pais y el ranking no cuadran, con la cifra.
 
-    El agregado por pais NO aplica el corte de lotes vendidos; el ranking si. La
-    diferencia es real y sin declararla parece un error de suma.
+    Antes la diferencia era sobre todo el corte de 3 ventas. Con el corte en 1
+    lo que queda son los lotes con autoria que NO llegan al ranking por otras
+    razones (sin venta registrada, o el artista no resuelve a una identidad).
+    Sin declararlo parece un error de suma.
     """
     return (
-        f"Los totales por país incluyen a todos los artistas con autoría, también a los "
-        f"{lots_below_cutoff:,.0f} lotes de artistas que no llegan a "
-        f"{MIN_LOTS_FOR_ARTIST_RANK} ventas y por eso no aparecen en el ranking. Es la "
-        "razón de que la suma de la tabla de artistas no cuadre con estas cifras."
+        f"Los totales por país incluyen a todos los artistas con autoría, también los "
+        f"{lots_below_cutoff:,.0f} lotes que no llegan a la tabla de artistas (sin precio "
+        "de venta registrado, o con un nombre que no resuelve a una identidad concreta). "
+        "Es la razón de que la suma de la tabla no cuadre con estas cifras."
     ).replace(",", ".")

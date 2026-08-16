@@ -50,6 +50,8 @@ artists:
   - artist_id: victor_vasarely
     display_name: "Victor Vasarely"
     country_birth: "HU"
+    birth_year: 1906
+    death_year: 1997
     nationalities: ["FR", "HU"]
     attribution_type: autor
     source: manual
@@ -119,6 +121,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Vicente López Portaña"
       - "Vicente López"
     notes: "11 lotes en Silver | fuente: Wikipedia | Vicente Lopez Portana, Valencia; pintor de camara"
 
@@ -173,3 +176,28 @@ artists:
     aliases:
       - "Vicente Vela"
     notes: "13 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: vicente_arnas_lozano
+    display_name: "Vicente Arnás Lozano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Vicente Arnás"
+    notes: "Pintor madrileño nacido en 1949. Estudió Artes y Oficios en Madrid, se define como autodidacta. Comenzó carrera en publicidad como ilustrador y delineante. Primera exposición individual 1976 (galería Macarrón, Madrid). Realismo mágico y surrealismo crítico. Especialista en serie Tauromaquia. Múltiples premios: Medalla de Honor BMW (1987, 1990), Premio La Maestranza Sevilla (1993), Premio de Grabado Cebreros (1996)."
+
+  - artist_id: victor_jerez
+    display_name: "Víctor Jerez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Víctor Jerez"
+      - "Victor Jerez"
+    notes: "Pintor español contemporáneo. Nacido 1981 Algeciras, Cádiz. Conocido como 'pintor de deportistas'. Especializado en live painting de eventos internacionales de tenis."

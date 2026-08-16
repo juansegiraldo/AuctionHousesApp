@@ -11,6 +11,8 @@ artists:
   - artist_id: urbano_lugris_vadillo
     display_name: "Urbano Lugris Vadillo"
     country_birth: "ES"
+    birth_year: 1942
+    death_year: 2018
     nationalities: ["ES"]
     attribution_type: autor
     source: manual

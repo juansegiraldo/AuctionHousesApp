@@ -30,6 +30,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Gabriel Morcillo Raya"
       - "Gabriel Morcillo"
     notes: "7 lotes | casas: duran_subastas"
 
@@ -109,6 +110,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Gonzalo Ariza (Colombia, 1912 - 1995)"
+      - "Gonzalo Ariza (Colombia, 1912 - 1995.)"
       - "Gonzalo Ariza"
     notes: "9 lotes | casas: bogota_auctions"
 
@@ -169,18 +172,20 @@ artists:
 
   - artist_id: guillermo_munoz_vera
     display_name: "Guillermo Muñoz Vera"
-    country_birth: "ES"
-    nationalities: ["ES"]
+    country_birth: "CL"
+    birth_year: 1956
+    nationalities: ["ES", "CL"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Guillermo Muñoz Vera"
-    notes: "21 lotes | casas: duran_subastas"
+    notes: "21 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Concepcion (CL) el 28-04-1956; llego a Espania en 1979 y se nacionalizo en 1985. Vende en el mercado espaniol y funda la Escuela de Chinchon, de ahi que ES vaya primero en nationalities, pero el nacimiento es CL. Fuentes: Wikipedia ES, Artistas Visuales Chilenos (MNBA)."
 
   - artist_id: guillermo_perez_villalta
     display_name: "Guillermo Pérez Villalta"
     country_birth: "ES"
+    birth_year: 1948
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -206,6 +211,7 @@ artists:
   - artist_id: guillermo_wiedemann
     display_name: "Guillermo Wiedemann"
     country_birth: "DE"
+    death_year: 1969
     nationalities: ["CO", "DE"]
     birth_year: 1905
     attribution_type: autor
@@ -238,6 +244,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Gustavo Zalamea (Argentina 1951 - Brasil, 2011)"
+      - "Gustavo Zalamea (Argentina, 1951 - Brasil, 2011.)"
+      - "Gustavo Zalamea - Argentina, 1951- Brasil, 2011."
       - "Gustavo Zalamea"
       - "Zalamea, Gustavo"
     notes: "14 lotes | casas: bogota_auctions"
@@ -278,6 +287,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "George Segal (EE.UU., 1924 - 2000.)"
       - "GEORGE SEGAL"
       - "George Segal"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -424,3 +434,16 @@ artists:
     aliases:
       - "Grete Stern"
     notes: "13 lotes en Silver | fuente: Wikipedia | nacida en Elberfeld, Alemania; emigro a Argentina"
+
+  - artist_id: gonzalo_bilbao_martinez
+    display_name: "Gonzalo Bilbao Martínez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1860
+    death_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gonzalo Bilbao Martínez"
+    notes: "Costumbrista painter, professor at Escuela Superior de Artes e Industrias de Sevilla. Born in Seville; studied orientalism in Tánger and Tetuán 1883."

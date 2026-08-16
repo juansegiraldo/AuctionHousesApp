@@ -207,11 +207,47 @@ def test_object_names_are_not_authors(name):
 @pytest.mark.parametrize(
     "name",
     [
+        # Sus lotes son proclamas impresas, mapas y primeras ediciones: firman
+        # el TEXTO, no una obra plastica. Bolivar salia en el ranking de
+        # artistas con 19 lotes y "sin pais informado".
+        "Bolívar, Simón",
+        "[Bolívar, Simón]",
+        "Santander, Francisco de Paula",
+        "Restrepo, José Manuel",
+        "Humboldt, Alexander von",
+        "Bellin, Jacques Nicolas",
+        "Acosta de Samper, Soledad",
+    ],
+)
+def test_text_authors_are_not_visual_artists(name):
+    assert attribution_type(name) == "no_autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # Cumplen el MISMO patron "Autor : Titulo" en artist_raw y SI son
+        # pintores. Son la razon de que el filtro sea una lista cerrada y no
+        # una regla sobre el patron: una heuristica los borraria en silencio.
+        "Antonio Caro",
+        "Beatriz González",
+        "Ana Mercedes Hoyos",
+        "García Márquez, Gabriel",   # escritor, pero se deja entrar a proposito
+    ],
+)
+def test_book_pattern_painters_survive(name):
+    assert attribution_type(name) == "autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
         "Manuel Rivera",          # apellido Rivera, no el objeto
         "Ana Marina Gómez",       # Marina como nombre propio
         "Carlos Prado",
         "Paisajes de Castilla, Juan Ruiz",
         "Mesa Bolívar, Carlos",   # Mesa como apellido
+        "Simón Bolívar Restrepo",  # apellido Bolivar: NO es el Libertador
     ],
 )
 def test_real_names_containing_object_words_survive(name):

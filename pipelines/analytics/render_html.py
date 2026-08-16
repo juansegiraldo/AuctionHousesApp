@@ -418,8 +418,19 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
                     f"Las tienen {num(dated_shown)} de los {num(shown)} artistas de esta tabla "
                     f"({pct(dated_shown / shown * 100)}), pero solo {num(dated_ranked)} de los "
                     f"{num(ranked)} del ranking completo ({pct(dated_ranked / ranked * 100)}): "
-                    "los artistas que más venden son también los mejor documentados. "
-                    "Un artista vivo aparece como “n. 1954”, sin año de muerte.</p>"
+                    "la curaduría se ha priorizado por facturación, así que los artistas que "
+                    "más mueven están mejor documentados que la cola.</p>"
+                )
+                # Sin esto, "n. 1954" se lee como "vivo" y no lo es: puede ser
+                # una ficha a la que le falta la muerte. Se publico a Julio Le
+                # Parc como vivo despues de morir, y a Fidolo Gonzalez Camargo
+                # (1883-1942) como si tuviera 96 anios.
+                caveat += (
+                    "<p class='caveat'>“n. 1954” significa <strong>nacido en 1954 y sin año de "
+                    "muerte registrado</strong>, que no es lo mismo que estar vivo: puede ser "
+                    "una ficha incompleta. Se prefiere esa forma a “1954–”, que sí lo afirmaría. "
+                    "Cuando el artista tendría más de 105 años se marca “n. 1905 (?)”: ahí el "
+                    "hueco es casi seguro un dato que falta, no una vida muy larga.</p>"
                 )
 
     return (

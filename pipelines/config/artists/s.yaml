@@ -18,6 +18,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Salvador Dalí y Domenech"
+      - "Salvador Dalí Domenech"
       - "Salvador Dalí"
     notes: "53 lotes | casas: bogota_auctions, duran_subastas"
 
@@ -50,12 +52,14 @@ artists:
   - artist_id: santiago_cardenas
     display_name: "Santiago Cárdenas"
     country_birth: "CO"
+    death_year: 2006
     nationalities: ["CO"]
     birth_year: 1937
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Santiago Cárdenas (Colombia, 1937.)"
       - "Santiago Cárdenas"
     notes: "24 lotes | casas: bogota_auctions"
 
@@ -69,6 +73,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Saturnino Ramírez (Colombia, 1946 - 2002.)"
       - "Saturnino Ramírez"
     notes: "17 lotes | casas: bogota_auctions"
 
@@ -93,12 +98,14 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Segundo Matilla Marina"
       - "Segundo Matilla"
     notes: "27 lotes | casas: duran_subastas"
 
   - artist_id: serge_marshennikov
     display_name: "Serge Marshennikov"
     country_birth: "RU"
+    birth_year: 1971
     nationalities: ["RU"]
     attribution_type: autor
     source: manual
@@ -123,6 +130,7 @@ artists:
   - artist_id: soledad_sevilla
     display_name: "Soledad Sevilla"
     country_birth: "ES"
+    birth_year: 1944
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -215,6 +223,8 @@ artists:
   - artist_id: senex_john
     display_name: "Senex, John"
     country_birth: "GB"
+    birth_year: 1678
+    death_year: 1740
     nationalities: ["GB"]
     attribution_type: autor
     source: manual
@@ -394,3 +404,15 @@ artists:
     aliases:
       - "Serny"
     notes: "10 lotes en Silver | fuente: Wikidata Q6108492 | seudonimo de Ricardo Summers Ysern"
+
+  - artist_id: sebastia_ramis
+    display_name: "Sebastià Ramis"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Sebastián Ramis"
+    notes: "Pintor y grabador nacido en Palma de Mallorca (1947). Especializado en paisajes, naturalezas muertas y escenas de playa. Pasteles y técnicas de grabado. Exposiciones en Barcelona, Madrid, París, Toulouse."

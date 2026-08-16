@@ -35,15 +35,32 @@ SILVER_ROOT = ROOT / "data" / "silver"
 ENRICH_ROOT = ROOT / "data" / "enrichments"
 GOLD_ROOT = ROOT / "data" / "gold"
 
-# Por debajo de este numero de lotes vendidos, un "precio medio" de artista es
-# ruido estadistico. El informe muestra el corte para que no se lea como ranking.
-MIN_LOTS_FOR_ARTIST_RANK = 3
+# Minimo de lotes VENDIDOS para entrar en el ranking de artistas.
+#
+# Estuvo en 3 para que el "precio medio" por artista no fuera ruido estadistico.
+# El coste era peor que el problema: dejaba fuera ventas reales. Fidolo Gonzalez
+# Camargo (1883-1942), con ficha completa y verificada, no aparecia por tener 2
+# lotes vendidos; y en un mercado de arte una sola pieza puede mover mas dinero
+# que veinte de otro autor (Olga de Amaral: 553.062 EUR).
+#
+# El ranking se ordena por facturacion, no por precio medio, asi que un artista
+# de un solo lote se coloca donde le corresponde sin distorsionar nada. La
+# cautela sobre la media con pocas ventas sigue siendo valida, pero es un aviso
+# de lectura, no una razon para ocultar la venta.
+MIN_LOTS_FOR_ARTIST_RANK = 1
 
 # Etiqueta de la fila sin decada. Solo 535 de los 1.521 artistas del ranking
 # tienen fecha de nacimiento en el maestro, asi que los otros 986 necesitan una
 # fila propia: repartirlos entre decadas seria inventar, y ocultarlos haria que
 # el grafico pareciera cubrir todo el ranking cuando cubre un tercio.
 NO_BIRTH_YEAR_LABEL = "Sin fecha de nacimiento"
+
+
+def _this_year() -> int:
+    """Anio en curso, para juzgar si una ficha sin death_year es plausible."""
+    from datetime import date
+
+    return date.today().year
 
 
 def birth_decade(year: int | None) -> int | None:
@@ -361,8 +378,11 @@ def build_insights() -> dict:
                 "artist_key": key,
                 "birth_year": years["birth_year"],
                 "death_year": years["death_year"],
+                # Se pasa el anio en curso para que una ficha sin death_year y
+                # con mas de 105 anios salga como "n. 1905 (?)" y no como una
+                # persona viva. Ver MAX_PLAUSIBLE_AGE en shared/artist_master.
                 "life_years": format_life_years(
-                    years["birth_year"], years["death_year"]
+                    years["birth_year"], years["death_year"], _this_year()
                 ),
                 "first_year": active[0] if active else None,
                 "last_year": active[-1] if active else None,

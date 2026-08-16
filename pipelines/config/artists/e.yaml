@@ -18,6 +18,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "[Edgar Negret] Colección de fotografías de artistas"
       - "Edgar Negret"
       - "Edgar Negret (Colombia, 1920 - 2012)"
       - "Negret, Edgar"
@@ -26,6 +27,7 @@ artists:
   - artist_id: edgar_plans
     display_name: "Edgar Plans"
     country_birth: "ES"
+    birth_year: 1977
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -59,12 +61,14 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Eduardo Chillida Belzunce"
       - "Eduardo Chillida"
     notes: "88 lotes | casas: duran_subastas"
 
   - artist_id: eduardo_naranjo
     display_name: "Eduardo Naranjo"
     country_birth: "ES"
+    birth_year: 1944
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -84,12 +88,17 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Eduardo Ramírez Villamizar (Colombia, 1922 - 2004)"
+      - "Eduardo Ramírez Villamizar - Colombia, 1922 - 2004."
+      - "Eduardo Ramírez Villamizar (Colombia, 1922 - 2004.)"
       - "Eduardo Ramírez Villamizar"
     notes: "35 lotes | casas: bogota_auctions"
 
   - artist_id: eduardo_rosales
     display_name: "Eduardo Rosales"
     country_birth: "ES"
+    birth_year: 1836
+    death_year: 1873
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -108,12 +117,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Eduardo Santonja Rosales"
       - "Eduardo Santonja"
     notes: "68 lotes | casas: duran_subastas"
 
   - artist_id: eduardo_sanz
     display_name: "Eduardo Sanz"
     country_birth: "ES"
+    birth_year: 1928
+    death_year: 2013
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -164,6 +176,8 @@ artists:
   - artist_id: elena_santonja
     display_name: "Elena Santonja"
     country_birth: "ES"
+    birth_year: 1932
+    death_year: 2016
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -202,6 +216,7 @@ artists:
   - artist_id: emilia_castaneda
     display_name: "Emilia Castañeda"
     country_birth: "ES"
+    birth_year: 1943
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -213,6 +228,8 @@ artists:
   - artist_id: emilio_grau_sala
     display_name: "Emilio Grau Sala"
     country_birth: "ES"
+    birth_year: 1911
+    death_year: 1975
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -258,12 +275,16 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Emma Reyes - Colombia, 1919 - Francia, 2003."
+      - "Emma Reyes (Colombia, 1919 - Francia, 2003)"
       - "Emma Reyes"
     notes: "31 lotes | casas: bogota_auctions"
 
   - artist_id: enrique_atalaya
     display_name: "Enrique Atalaya"
     country_birth: "ES"
+    birth_year: 1851
+    death_year: 1913
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -276,6 +297,7 @@ artists:
   - artist_id: enrique_brinkmann
     display_name: "Enrique Brinkmann"
     country_birth: "ES"
+    birth_year: 1938
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -295,6 +317,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Enrique Grau (Panamá, 1920 - Colombia, 2004)"
+      - "Enrique Grau - Panamá, 1920 - Colombia, 2004."
+      - "Enrique Grau - Panamá, 1920, Colombia, 2004."
       - "Enrique Grau"
       - "Grau, Enrique"
     notes: "32 lotes | casas: bogota_auctions"
@@ -309,6 +334,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Enrique MARTÍNEZ CUBELLS Y RUIZ"
+      - "Enrique Martínez Cubells Ruiz"
+      - "Enrique Martinez Cubells Ruiz"
       - "Enrique Martínez Cubells"
     notes: "19 lotes | casas: duran_subastas"
 
@@ -348,6 +376,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Equipo Crónica (Después)"
       - "Equipo Crónica"
     notes: "73 lotes | casas: duran_subastas"
 
@@ -420,12 +449,14 @@ artists:
   - artist_id: eusebio_sempere
     display_name: "Eusebio Sempere"
     country_birth: "ES"
-    nationalities: ["ES"]
+    birth_year: 1923
     death_year: 1985
+    nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Eusebio Sempere (España, 1923 - 1985)"
       - "Eusebio Sempere"
       - "SEMPERE, EUSEBIO"
     notes: "42 lotes | casas: bogota_auctions, duran_subastas"
@@ -446,11 +477,14 @@ artists:
   - artist_id: eva_lootz
     display_name: "Eva Lootz"
     country_birth: "ES"
+    birth_year: 1940
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Eva Lootz - Regalé un libro a P"
+      - "Eva Lootz - Simbolón, decía"
       - "Eva Lootz"
       - "LOOTZ, EVA"
     notes: "37 lotes | casas: duran_subastas"
@@ -458,6 +492,7 @@ artists:
   - artist_id: evaristo_guerra
     display_name: "Evaristo Guerra"
     country_birth: "ES"
+    birth_year: 1942
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -476,6 +511,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ever Astudillo (Colombia, 1948 - 2015)"
+      - "Ever Astudillo (Colombia, 1948 - 2015.)"
       - "Ever Astudillo"
     notes: "11 lotes | casas: bogota_auctions"
   - artist_id: edgardo_ribeiro
@@ -611,6 +648,11 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Emilio Sánchez Díaz"
+      - "Emilio Sanchez Cayuela (Gutxi)"
+      - "Emilio Sánchez Cayuela (Gutxi)"
+      - "Emilio Sánchez Perrier"
+      - "Emilio Sanchez (Cuba, 1921 - EE.UU., 1999.)"
       - "EMILIO SANCHEZ"
       - "Emilio Sánchez"
     notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -656,15 +698,16 @@ artists:
   - artist_id: erwin_kraus
     display_name: "Erwin Kraus"
     country_birth: "CO"
+    death_year: 1998
     nationalities: ["CO"]
-    birth_year: 1934
+    birth_year: 1911
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "ERWIN KRAUS"
       - "Erwin Kraus"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1934 y nacio en 1911; murio en 1998. Fotografo y montaniista colombo-aleman. Fuente: registro del Cementerio Aleman de Bogota."
 
   - artist_id: ethel_gilmour
     display_name: "Ethel Gilmour"
@@ -798,3 +841,150 @@ artists:
       - "Eustaquio Marin Ramos"
       - "Eustaquio Marín Ramos"
     notes: "12 lotes en Silver | fuente: Wikidata | Sevilla"
+
+  - artist_id: eugenio_lopez_berron
+    display_name: "Eugenio López Berrón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1941
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio López Berrón"
+    notes: "Nacido en Gotarrendura, Ávila 1941. Profesor de dibujo, Licenciado en Bellas Artes Complutense Madrid. Especialidad: paisajes urbanos, especialmente Gran Vía de Madrid. Múltiples premios incluyendo Medalla de Oro Academia Europea Artes y Letras 1993."
+
+  - artist_id: enrique_navarro
+    display_name: "Enrique Navarro"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1924
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Navarro"
+    notes: "Spanish painter from Madrid. Known for costumbrista scenes depicting beggars from Retiro Park. Trained at School of San Fernando Madrid."
+
+  - artist_id: enrique_vega
+    display_name: "Enrique Vega"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Vega"
+    notes: "Pintor nacido en Salamanca, 1953. Residente entre Madrid y Valencia. Estudió en San Fernando, obras en Reina Sofía, Museo Provincial de Huelva."
+
+  - artist_id: emilia_fedriani_y_camps
+    display_name: "Emilia Fedriani y Camps"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilia Fedriani Y Camps"
+    notes: "Pintora española del siglo XIX, activa hasta 1883. Registrada en Artprice con 16 lotes de subasta. Obras de temática religiosa."
+
+  - artist_id: enrique_valero_perez
+    display_name: "Enrique Valero Pérez"
+    country_birth: "MA"
+    nationalities: ["ES", "MA"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Valero Perez"
+    notes: "Pintor español nacido en Marruecos, con origen español. Radicado en Madrid. Especializado en acuarelas, paisajes y naturaleza. Presencia en galerías francesas y británicas."
+
+  - artist_id: efrain_zuniga_tovar
+    display_name: "Efraín Zúñiga Tovar"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "EFRAIN ZUÑIGA"
+      - "Efraín Zúñiga Tovar"
+    notes: "Nacido en Santiago de Cali, Colombia. Estudios en instituciones colombianas. Profesor en Amor y Arte Fundación (2016-2018). Obras en colecciones privadas Colombia, México, USA, China; Beijing Art Museum of Imperial City (BAMOIC)."
+
+  - artist_id: eugenio_hermoso
+    display_name: "Eugenio Hermoso"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1883
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio Hermoso Martínez"
+    notes: "Pintor extremeño (Fregenal de la Sierra, 1883-1963). Maestro del realismo extremeño, académico de la Real Academia de Bellas Artes de San Fernando (1941)."
+
+  - artist_id: enrique_salamanca
+    display_name: "Enrique Salamanca"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1943
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Enrique Fernández y Enríquez de Salamanca"
+    notes: "Pintor y escultor español (Cádiz, 1943-). Pionero en arte computacional y formas plásticas cinéticas. Colecciones BBVA, Reina Sofía, Juan March."
+
+  - artist_id: enrique_melida_y_alinari
+    display_name: "Enrique Mélida y Alinari"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1838
+    death_year: 1892
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Mélida y Alinari"
+    notes: "Pintor y crítico de arte español, hermano del escultor Arturo Mélida. Nació Madrid, murió en París. Estudió Derecho pero se dedicó a la pintura a partir de 1867. Crítica en El Arte en España."
+
+  - artist_id: enrique_simonet_lombardo
+    display_name: "Enrique Simonet Lombardo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1866
+    death_year: 1927
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Simonet Lombardo"
+      - "Enrique SImonet Lombardo"
+    notes: "Pintor español nacido en Valencia. Estudió en Academia San Carlos de Valencia. Viajó Italia (1887), París (múltiples veces), Marruecos (1893-1894). Ganó primer medal en Exposición Internacional Madrid 1892, premios Chicago 1894, Barcelona 1896, París 1900."
+
+  - artist_id: ernst_boerschmann
+    display_name: "Ernst Boerschmann"
+    country_birth: "DE"
+    nationalities: ["DE"]
+    birth_year: 1873
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Boerschmann, Ernst"
+    notes: "German architect and photographer specializing in Chinese architecture documentation."
+
+  - artist_id: edilberto_calderon
+    display_name: "Edilberto Calderón"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "EDILBERTO CALDERON"
+    notes: "Colombian painter born in Venadillo, Tolima. Master in Plastic Arts from Universidad Nacional de Colombia. Student of Fernando Botero. Over 70 years artistic trajectory with themes in folklore, love/eroticism, social protest. Works in mixed media (oil, pastel, acrylic). Exhibited internationally including Museo Regional de La Laguna (Mexico)."

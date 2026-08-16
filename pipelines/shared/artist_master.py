@@ -210,18 +210,35 @@ def artist_years(artist_id: Optional[str]) -> Dict[str, Any]:
     }
 
 
+# Edad por encima de la cual "sin fecha de muerte" ya no se puede leer como
+# "vivo": es que falta el dato. El informe llego a publicar a Fidolo Gonzalez
+# Camargo (n. 1883, m. 1942) como si tuviera 96 anios porque su ficha decia
+# 1930, y a Julia Acunia Guillen con 121. Un supercentenario es posible pero
+# rarisimo; una ficha incompleta es lo normal, asi que se dice lo segundo.
+MAX_PLAUSIBLE_AGE = 105
+
+
 def format_life_years(
-    birth: Optional[int], death: Optional[int]
+    birth: Optional[int],
+    death: Optional[int],
+    this_year: Optional[int] = None,
 ) -> Optional[str]:
     """(1920, 1992) -> "1920-1992"; (1954, None) -> "n. 1954"; sin datos -> None.
 
     Un artista vivo y uno sin fecha de muerte registrada son indistinguibles en
     el maestro, asi que se usa "n." (nacido) en vez de "1954-" : esa forma
     afirmaria que sigue vivo, y el dato no da para tanto.
+
+    Pasado MAX_PLAUSIBLE_AGE ni siquiera "n." se sostiene, porque el lector lo
+    lee como una persona viva: ahi se marca "n. 1905 (?)" para que el hueco se
+    vea como hueco. No se inventa una muerte, que es la regla de siempre; se
+    deja de afirmar implicitamente algo que casi seguro es falso.
     """
     if birth and death:
         return f"{birth}-{death}"
     if birth:
+        if this_year and this_year - int(birth) > MAX_PLAUSIBLE_AGE:
+            return f"n. {birth} (?)"
         return f"n. {birth}"
     if death:
         return f"m. {death}"

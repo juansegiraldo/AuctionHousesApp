@@ -11,11 +11,13 @@ artists:
   - artist_id: abel_cuerda
     display_name: "Abel Cuerda"
     country_birth: "ES"
+    birth_year: 1943
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Abel Cuerda Martínez"
       - "Abel Cuerda"
     notes: "19 lotes | casas: duran_subastas"
 
@@ -42,17 +44,22 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Adolfo Bernal (Colombia, 1954 - 2008)"
+      - "Adolfo Bernal - Colombia, 1954 - 2008."
       - "Adolfo Bernal"
     notes: "17 lotes | casas: bogota_auctions"
 
   - artist_id: agustin_ibarrola
     display_name: "Agustín Ibarrola"
     country_birth: "ES"
+    birth_year: 1930
+    death_year: 2023
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Agustín Ibarrola Goicoechea"
       - "Agustín Ibarrola"
       - "IBARROLA GOICOECHEA, AGUSTÍN"
     notes: "6 lotes | casas: duran_subastas"
@@ -87,6 +94,7 @@ artists:
   - artist_id: ahmed_ben_yessef
     display_name: "Ahmed Ben Yessef"
     country_birth: "MA"
+    birth_year: 1945
     nationalities: ["ES", "MA"]
     attribution_type: autor
     source: manual
@@ -118,6 +126,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alberto Corazon Huida a Egipto"
       - "Alberto Corazón"
       - "CORAZÓN, ALBERTO"
     notes: "67 lotes | casas: duran_subastas"
@@ -159,12 +168,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alejandro Obregón (España, 1920 - Colombia, 1992)"
+      - "Alejandro Obregón - España, 1920 . Colombia 1992."
       - "Alejandro Obregón"
     notes: "34 lotes | casas: bogota_auctions"
 
   - artist_id: alex_katz
     display_name: "Alex Katz"
     country_birth: "US"
+    birth_year: 1927
     nationalities: ["US"]
     attribution_type: autor
     source: manual
@@ -176,6 +188,7 @@ artists:
   - artist_id: alfonso_albacete
     display_name: "Alfonso Albacete"
     country_birth: "ES"
+    birth_year: 1950
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -202,6 +215,7 @@ artists:
   - artist_id: alfredo_alcain
     display_name: "Alfredo Alcaín"
     country_birth: "ES"
+    birth_year: 1936
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -221,6 +235,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alfredo Opisso Cardona"
       - "Alfredo Opisso"
     notes: "18 lotes | casas: duran_subastas"
 
@@ -240,11 +255,14 @@ artists:
   - artist_id: alicia_martin
     display_name: "Alicia Martín"
     country_birth: "ES"
+    birth_year: 1964
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Alicia Martín Villanueva"
+      - "Alicia Martín-Pozuelo"
       - "Alicia Martín"
     notes: "21 lotes | casas: duran_subastas"
 
@@ -258,6 +276,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alipio Jaramillo (Colombia, 1913 - 1999.)"
       - "Alipio Jaramillo"
     notes: "5 lotes | casas: bogota_auctions"
 
@@ -270,6 +289,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Álvaro Barrios (Colombia, 1945)"
+      - "Álvaro Barrios - Colombia, 1945."
       - "Álvaro Barrios"
     notes: "35 lotes | casas: bogota_auctions"
 
@@ -316,12 +337,15 @@ artists:
   - artist_id: ana_mercedes_hoyos
     display_name: "Ana Mercedes Hoyos"
     country_birth: "CO"
-    nationalities: ["CO"]
+    birth_year: 1942
     death_year: 2014
+    nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Ana Mercedes Hoyos (Colombia, 1942 - 2014)"
+      - "Ana Mercedes Hoyos - Colombia, 1942 - 2014."
       - "Ana Mercedes Hoyos"
     notes: "35 lotes | casas: bogota_auctions, duran_subastas"
 
@@ -335,6 +359,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Andrés Barajas Díez"
+      - "Andrés Barajas Díaz"
       - "Andrés Barajas"
     notes: "28 lotes | casas: duran_subastas"
 
@@ -374,12 +400,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Andy Warhol (EE.UU., 1928 - 1987)"
+      - "Andy Warhol (EE.UU., 1928 - 1987.)"
       - "Andy Warhol"
     notes: "51 lotes | casas: bogota_auctions, duran_subastas"
 
   - artist_id: angel_orcajo
     display_name: "Ángel Orcajo"
     country_birth: "ES"
+    birth_year: 1934
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -411,6 +440,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Antoni Tàpies y otros autores"
+      - "Antoni Tàpies y Joan Brossa"
+      - "Antoni Tápies (España, 1923 - 2012.)"
       - "Antoni Tàpies"
       - "TÀPIES, ANTONI"
     notes: "187 lotes | casas: bogota_auctions, duran_subastas"
@@ -418,6 +450,8 @@ artists:
   - artist_id: antonio_barrera
     display_name: "Antonio Barrera"
     country_birth: "CO"
+    birth_year: 1948
+    death_year: 1990
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
@@ -429,12 +463,15 @@ artists:
   - artist_id: antonio_caro
     display_name: "Antonio Caro"
     country_birth: "CO"
+    death_year: 2021
     nationalities: ["CO"]
     birth_year: 1950
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Antonio Caro - Colombia, 1950-2020."
+      - "Antonio Caro (Colombia, 1950 - 2021)"
       - "Antonio Caro"
     notes: "33 lotes | casas: bogota_auctions"
 
@@ -448,6 +485,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Antonio Casero Sanz"
       - "Antonio Casero"
     notes: "21 lotes | casas: duran_subastas"
 
@@ -497,17 +535,21 @@ artists:
   - artist_id: antonio_lopez
     display_name: "Antonio López"
     country_birth: "ES"
+    birth_year: 1936
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Antonio Lopez Torres"
+      - "Antonio López Torres"
       - "Antonio López"
     notes: "18 lotes | casas: duran_subastas"
 
   - artist_id: antonio_lopez_garcia
     display_name: "Antonio López García"
     country_birth: "ES"
+    birth_year: 1936
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -527,6 +569,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Antonio Lorenzo Carrón"
       - "Antonio Lorenzo"
     notes: "48 lotes | casas: duran_subastas"
 
@@ -599,18 +642,22 @@ artists:
   - artist_id: antonio_samudio
     display_name: "Antonio Samudio"
     country_birth: "CO"
+    death_year: 2026
     nationalities: ["CO"]
     birth_year: 1934
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Antonio Samudio - Colombia, 1934."
       - "Antonio Samudio"
     notes: "23 lotes | casas: bogota_auctions"
 
   - artist_id: antonio_santos_viana
     display_name: "Antonio Santos Viana"
     country_birth: "ES"
+    birth_year: 1942
+    death_year: 2007
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -629,6 +676,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Antonio Saura (España, 1932 - 1998.)"
       - "Antonio Saura"
     notes: "130 lotes | casas: duran_subastas"
 
@@ -649,6 +697,8 @@ artists:
   - artist_id: antonio_zarco
     display_name: "Antonio Zarco"
     country_birth: "ES"
+    birth_year: 1930
+    death_year: 2018
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -722,6 +772,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Augusto Torres Piña"
       - "Augusto Torres"
       - "Augusto TORRES"
     notes: "8 lotes | casas: zorrilla_subastas"
@@ -760,6 +811,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ai Weiwei & Ai Lao"
       - "AI WEIWEI"
       - "Ai Weiwei"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -894,6 +946,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alfonso Quijano (Colombia, 1927.)"
       - "ALFONSO QUIJANO"
       - "Alfonso Quijano"
     notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -922,6 +975,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alfred Manessier (Francia, 1911 - 1993.)"
       - "ALFRED MANESSIER"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
@@ -956,12 +1010,14 @@ artists:
   - artist_id: alicia_tafur
     display_name: "Alicia Tafur"
     country_birth: "CO"
+    death_year: 2023
     nationalities: ["CO"]
     birth_year: 1934
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Alicia Tafur (Colombia, 1934)"
       - "ALICIA TAFUR"
       - "Alicia Tafur"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1051,6 +1107,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ana María Rueda (Colombia, 1954)"
+      - "Ana María Rueda - Colombia, 1954."
       - "ANA MARIA RUEDA"
       - "Ana María Rueda"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1143,6 +1201,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Andreu Alfaro (España, 1929 - 2012.)"
       - "ANDREU ALFARO"
       - "Andreu Alfaro"
     notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1184,6 +1243,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Antonio Grass - Colombia, 1937."
       - "ANTONIO GRASS"
       - "Antonio Grass"
       - "Grass, Antonio"
@@ -1219,6 +1279,7 @@ artists:
   - artist_id: antonio_segui
     display_name: "Antonio Seguí"
     country_birth: "AR"
+    death_year: 2022
     nationalities: ["AR"]
     birth_year: 1934
     attribution_type: autor
@@ -1266,6 +1327,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Arles Herrera \"Calarcá\""
       - "ARLES HERRERA"
       - "Arles Herrera"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1322,6 +1384,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "AUGUSTO RIVERA GARCES"
       - "AUGUSTO RIVERA"
       - "Augusto Rivera"
     notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1362,6 +1425,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Alberto Duce Vaquero"
       - "Alberto Duce"
     notes: "11 lotes en Silver | fuente: Wikipedia ES | Zaragoza"
 
@@ -1441,6 +1505,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Ángel Lizcano y Monedero"
+      - "Ángel LIZCANO Y MONEDERO"
       - "Ángel Lizcano"
     notes: "12 lotes en Silver | fuente: Wikipedia | Alcazar de San Juan"
 
@@ -1525,3 +1591,93 @@ artists:
       - "Albrecht Durero"
       - "Alberto Durero"
     notes: "12 lotes en Silver | fuente: Wikipedia | Albrecht Durer, Nuremberg; el catalogo usa la forma castellanizada"
+
+  - artist_id: antonio_posada_ranz
+    display_name: "Antonio Posada Ranz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Posada"
+    notes: "Artista español nacido en Valladolid, 1952. Residente en Valladolid. Representado por Galería Doña Sancha. Nota: es artista español, no colombiano, aunque el catálogo pueda incluir obras de él en casas de subastas latinoamericanas."
+
+  - artist_id: antonio_rojas_peinado
+    display_name: "Antonio Rojas Peinado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Rojas Peinado"
+      - "Antonio Rojas"
+    notes: "Spanish painter born 1962 in Tarifa (Cádiz). Resides in Madrid. Influenced by magical realism and surrealism. Geometrical style inspired by Giorgio de Chirico. Scholarship from Spanish Academy Rome 1993."
+
+  - artist_id: alejandro_gomez_marco
+    display_name: "Alejandro Gómez Marco"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1942
+    death_year: 2020
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alejandro Gómez Marco"
+    notes: "Pintor español nacido en Madrid, 1942. Formado en San Fernando. Residente en New Jersey (1968-1971). Profesor en Jersey City State College y en Complutense. Pintor de arte figurativo de vanguardia. Fallecido 2020."
+
+  - artist_id: andres_conejo
+    display_name: "Andrés Conejo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1914
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés Conejo Merino"
+    notes: "Pintor madrileño (1914-1992). Su obra está documentada en la Real Academia de Bellas Artes de San Fernando. Trabajó con óleo, temas variados incluyendo naturalezas muertas, paisajes y figuras."
+
+  - artist_id: aurelio_arteta
+    display_name: "Aurelio Arteta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1879
+    death_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Aurelio Arteta"
+    notes: "Pintor vasco. Nacido 2 diciembre 1879 Bilbao, fallecido 1940. Considerado el pintor vasco más importante del siglo XX. Fundó Asociación de Artistas Vascos 1911."
+
+  - artist_id: antonio_escobar
+    display_name: "Antonio Escobar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Escobar Moreno"
+    notes: "Pintor español. Nacido 1952 Madrid. Estudió Bellas Artes San Fernando, Nueva York 1978 (Pratt Graphics Center). Exposiciones desde 1971. Especializado en paisaje."
+
+  - artist_id: albert_gonzalo
+    display_name: "Albert Gonzalo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1954
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Albert Gonzalo Carbó"
+      - "Albert Gonzalo"
+    notes: "Catalan painter born in Tarragona, died in Barcelona. Traveled North Africa and Far East. Collected primitive and ancient objects. Specialized in exoticism and ancient cultures."
