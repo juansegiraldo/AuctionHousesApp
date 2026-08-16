@@ -9,7 +9,8 @@ fiabilidad de la estimacion, distribucion de precios y estacionalidad.
 
 Reglas que se respetan aqui (ver CLAUDE.md, son load-bearing):
   - NUNCA se suman precios entre casas en moneda nativa. Todo agregado
-    cross-house va en EUR via pipelines.shared.fx.to_eur().
+    cross-house va en EUR via pipelines.shared.fx.to_eur_at(), con la tasa
+    del MES de la subasta y no una tasa unica.
   - "Vendido" se decide con pipelines.shared.schema.is_sold(), no con
     "tiene precio", salvo donde la casa no publica estado.
   - El anio se extrae con extract_year(), que es especifico por casa.
@@ -27,8 +28,8 @@ import orjson
 
 from pipelines.shared.artist_key import artist_fold, attribution_type
 from pipelines.shared.artist_master import artist_years, country_es, format_life_years
-from pipelines.shared.fx import to_eur
-from pipelines.shared.schema import extract_year, is_sold
+from pipelines.shared.fx import to_eur_at
+from pipelines.shared.schema import extract_month, extract_year, is_sold
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -49,10 +50,9 @@ GOLD_ROOT = ROOT / "data" / "gold"
 # de lectura, no una razon para ocultar la venta.
 MIN_LOTS_FOR_ARTIST_RANK = 1
 
-# Etiqueta de la fila sin decada. Solo 535 de los 1.521 artistas del ranking
-# tienen fecha de nacimiento en el maestro, asi que los otros 986 necesitan una
-# fila propia: repartirlos entre decadas seria inventar, y ocultarlos haria que
-# el grafico pareciera cubrir todo el ranking cuando cubre un tercio.
+# Etiqueta de la fila sin decada. La cobertura cambia al crecer el maestro y el
+# corpus, por eso no se fija aqui una cifra: la fila conserva siempre todo lo
+# que no puede asignarse a una decada sin inventar.
 NO_BIRTH_YEAR_LABEL = "Sin fecha de nacimiento"
 
 
@@ -216,9 +216,18 @@ def build_insights() -> dict:
             currency = r.get("currency") or "COP"
             price = r.get("price_sold")
             sold = is_sold(r.get("status"), price)
-            # to_eur devuelve None si la moneda no tiene tasa: no lo tratamos
-            # como euros, se queda fuera de los agregados monetarios.
-            eur = to_eur(price, currency) if (sold and price) else None
+            # Tasa del mes de la subasta: agg_artist_metrics compara artistas
+            # ENTRE casas, y con una tasa unica un artista vendido en Bogota en
+            # un anio de peso fuerte salia mas barato de lo que se vendio.
+            # to_eur_at devuelve None si la moneda no tiene tasa: no lo
+            # tratamos como euros, se queda fuera de los agregados monetarios.
+            if sold and price:
+                month, _ = extract_month(
+                    r.get("auction_start_date"), r.get("auction_id") or ""
+                )
+                eur, _fx_method = to_eur_at(price, currency, month)
+            else:
+                eur = None
 
             # --- categorias ---
             cat = key2cat.get(r.get("dedupe_key")) or "other"
