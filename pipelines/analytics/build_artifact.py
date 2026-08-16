@@ -38,6 +38,7 @@ from pipelines.analytics.narrative import (
     CAVEAT_SCATTER_LOWN,
     country_metrics_caveat,
     generation_bars,
+    generation_coverage,
     heatmap_matrix,
     multi_house_kind,
     nationalities_es,
@@ -50,7 +51,7 @@ from pipelines.analytics.render_html import (
     MONTH_LABELS,
     pack_lot_details,
 )
-from pipelines.shared.fx import fx_as_of, fx_note
+from pipelines.shared.fx import fx_note
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLD_ROOT = ROOT / "data" / "gold"
@@ -92,6 +93,35 @@ def eur(v, decimals: int = 0) -> str:
 
 def pct(v, decimals: int = 1) -> str:
     return "—" if v is None else f"{v:.{decimals}f}".replace(".", ",") + "%"
+
+
+def generation_coverage_block(generations: list[dict]) -> str:
+    """Banda de cobertura equivalente a la del informe Plotly."""
+    cov = generation_coverage(generations)
+    if not cov["total_revenue_eur"] and not cov["total_artists"]:
+        return ""
+    dated_w = min(100.0, max(0.0, cov["dated_revenue_pct"]))
+    missing_w = min(100.0, max(0.0, cov["missing_revenue_pct"]))
+    return (
+        "<div class='generation-coverage'>"
+        "<div class='generation-coverage-head'>"
+        "<span>Cobertura de fechas del ranking completo</span>"
+        f"<strong>{esc(pct(cov['dated_revenue_pct']))} del volumen con década</strong>"
+        "</div>"
+        "<div class='generation-track' aria-hidden='true'>"
+        f"<span class='generation-dated' style='width:{dated_w:.1f}%'></span>"
+        f"<span class='generation-missing' style='width:{missing_w:.1f}%'></span>"
+        "</div>"
+        "<div class='generation-legend'>"
+        "<span><i class='generation-key generation-key-dated'></i>"
+        f"<strong>Con década</strong> {esc(eur(cov['dated_revenue_eur']))} · "
+        f"{esc(num(cov['dated_artists']))} artistas</span>"
+        "<span><i class='generation-key generation-key-missing'></i>"
+        f"<strong>Sin fecha</strong> {esc(eur(cov['missing_revenue_eur']))} · "
+        f"{esc(num(cov['missing_artists']))} artistas "
+        f"({esc(pct(cov['missing_artists_pct']))})</span>"
+        "</div></div>"
+    )
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -619,6 +649,24 @@ section h3{margin:var(--s3) 0 6px;padding-top:var(--s2);
   border-top:1px solid var(--line);font-family:var(--serif);font-size:1.02rem}
 .chart-box{margin-bottom:var(--s2)}
 .chart-box .caveat{margin-top:6px}
+.generation-coverage{margin-top:var(--s2);padding:12px var(--s2);
+  border:1px solid var(--line);background:var(--raised)}
+.generation-coverage-head{display:flex;justify-content:space-between;gap:var(--s2);
+  align-items:baseline;flex-wrap:wrap;font-size:.75rem;color:var(--fg-soft)}
+.generation-coverage-head>span{font-family:var(--mono);text-transform:uppercase;
+  letter-spacing:.07em}
+.generation-coverage-head strong{font-family:var(--mono);color:var(--fg)}
+.generation-track{display:flex;height:9px;margin:8px 0;border-radius:99px;overflow:hidden;
+  background:var(--line)}
+.generation-dated{background:var(--accent)}
+.generation-missing{background:var(--fg-soft);opacity:.48}
+.generation-legend{display:flex;justify-content:space-between;gap:var(--s2);
+  flex-wrap:wrap;font-size:.75rem;color:var(--fg-soft)}
+.generation-legend span{display:flex;align-items:center;gap:5px}
+.generation-legend strong{color:var(--fg);font-weight:600}
+.generation-key{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.generation-key-dated{background:var(--accent)}
+.generation-key-missing{background:var(--fg-soft);opacity:.48}
 .chart .bar{fill:var(--accent)}
 .chart .bar.s1{fill:var(--sold)}
 .chart .bar.s2{fill:var(--gold)}
@@ -714,7 +762,7 @@ def build_kpis(rep: dict) -> str:
         ("Lotes vendidos", num(s["total_sold"]),
          f"{pct(s['sell_through_pct'])} de lo ofertado", False),
         ("Volumen adjudicado", eur(s["total_revenue_eur"]),
-         f"Convertido a EUR - tasa {fx_as_of()}", True),
+         "Convertido a EUR - tasa del mes de subasta", True),
         ("Precio mediano", eur(dist.get("median")),
          f"La media ({eur(s.get('avg_sold_price_eur'))}) va inflada por la cola alta", False),
         ("Supera la estimacion", pct(est.get("pct_above")),
@@ -914,7 +962,13 @@ def build_artist_charts(artists: list[dict], generations: list[dict]) -> str:
     ]
 
     gens = generation_bars(generations or [])
-    gen_items = [{"label": g["label"], "revenue_eur": g["revenue_eur"]} for g in gens]
+    # ``decade=None`` permanece en la banda de cobertura; no se dibuja como si
+    # fuera una generacion real.
+    gen_items = [
+        {"label": g["label"], "revenue_eur": g["revenue_eur"]}
+        for g in gens
+        if not g["is_sentinel"]
+    ]
 
     # El scatter SVG se recorta: 1.492 circulos son ~250 KB de marcado en un
     # fichero que ya roza el limite del visor, y a 320 unidades de ancho la cola
@@ -944,11 +998,12 @@ def build_artist_charts(artists: list[dict], generations: list[dict]) -> str:
          "están todos en la tabla y en la descarga.</p>" if len(pts) < len(all_pts) else ""),
         "</div>",
     ]
-    if gen_items:
+    if gens:
         out += [
             "<h3>La generación que mueve el mercado</h3>",
             "<div class='chart-box'>",
             bar_chart(gen_items, "revenue_eur", "label"),
+            generation_coverage_block(gens),
             f"<p class='caveat'>{CAVEAT_GENERATIONS_COVERAGE}</p></div>",
         ]
     return "".join(out)

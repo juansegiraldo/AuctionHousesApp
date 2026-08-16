@@ -31,13 +31,14 @@ from pipelines.analytics.narrative import (
     CAVEAT_SCATTER_LOWN,
     country_metrics_caveat,
     generation_bars,
+    generation_coverage,
     heatmap_matrix,
     multi_house_kind,
     pareto_points,
     scatter_points,
 )
 from pipelines.shared.artist_master import country_es
-from pipelines.shared.fx import fx_as_of, fx_note
+from pipelines.shared.fx import fx_note
 
 # Nombres legibles: los slugs son claves tecnicas, no etiquetas de interfaz.
 HOUSE_LABELS = {
@@ -106,6 +107,35 @@ def pct(value, decimals: int = 1) -> str:
     return "—" if value is None else f"{value:.{decimals}f}%"
 
 
+def generation_coverage_block(generations: list[dict]) -> str:
+    """Banda de cobertura: visible, proporcional y fuera del eje temporal."""
+    cov = generation_coverage(generations)
+    if not cov["total_revenue_eur"] and not cov["total_artists"]:
+        return ""
+    dated_w = min(100.0, max(0.0, cov["dated_revenue_pct"]))
+    missing_w = min(100.0, max(0.0, cov["missing_revenue_pct"]))
+    return (
+        "<div class='generation-coverage'>"
+        "<div class='generation-coverage-head'>"
+        "<span>Cobertura de fechas del ranking completo</span>"
+        f"<strong>{esc(pct(cov['dated_revenue_pct']))} del volumen con década</strong>"
+        "</div>"
+        "<div class='generation-track' aria-hidden='true'>"
+        f"<span class='generation-dated' style='width:{dated_w:.1f}%'></span>"
+        f"<span class='generation-missing' style='width:{missing_w:.1f}%'></span>"
+        "</div>"
+        "<div class='generation-legend'>"
+        "<span><i class='generation-key generation-key-dated'></i>"
+        f"<strong>Con década</strong> {esc(eur(cov['dated_revenue_eur']))} · "
+        f"{esc(num(cov['dated_artists']))} artistas</span>"
+        "<span><i class='generation-key generation-key-missing'></i>"
+        f"<strong>Sin fecha</strong> {esc(eur(cov['missing_revenue_eur']))} · "
+        f"{esc(num(cov['missing_artists']))} artistas "
+        f"({esc(pct(cov['missing_artists_pct']))})</span>"
+        "</div></div>"
+    )
+
+
 # --------------------------------------------------------------------------
 # Bloques
 # --------------------------------------------------------------------------
@@ -132,7 +162,7 @@ def build_kpis(report: dict) -> str:
         {
             "label": "Volumen adjudicado",
             "value": eur(s["total_revenue_eur"]),
-            "note": f"Convertido a EUR · tasa {fx_as_of()}",
+            "note": "Convertido a EUR · tasa del mes de subasta",
             "accent": True,
         },
         {
@@ -294,9 +324,8 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
         meta = label or "Sin país informado"
         if extra:
             meta += " · tb. " + ", ".join(esc(country_es(n) or n) for n in extra)
-        # Fechas del maestro. Solo 755 de 897 fichas las tienen, asi que la
-        # linea se construye con lo que haya en vez de reservar el hueco: un
-        # "(?-?)" en la mitad de las filas es ruido, no informacion.
+        # Fechas del maestro. La linea se construye solo cuando hay dato en vez
+        # de reservar un hueco: un "(?-?)" es ruido, no informacion.
         life = a.get("life_years")
         if life:
             meta += f" · {esc(life)}"
@@ -456,6 +485,7 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
         "<h3>La generación que mueve el mercado</h3>"
         "<figure class='fig'>"
         "<div id='chart-generations' class='chart' style='height:300px'></div>"
+        f"{generation_coverage_block(gens)}"
         f"<figcaption class='caveat'>{CAVEAT_GENERATIONS_COVERAGE}</figcaption>"
         "</figure>"
         # --- Acto 5: el detalle nominal (el 4 lo pone build_country_table) ---
@@ -984,6 +1014,26 @@ td.n,.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-spa
 .fig{margin:0 0 var(--space-3)}
 .fig figcaption{margin-top:var(--space-1)}
 
+/* La ausencia de fecha no es una generacion: se conserva como cobertura
+   proporcional, fuera del eje de decadas y con sus cifras completas. */
+.generation-coverage{margin-top:var(--space-2);padding:var(--space-2);
+  border:1px solid var(--c-border);border-radius:var(--radius-sm);background:var(--c-muted)}
+.generation-coverage-head{display:flex;justify-content:space-between;gap:var(--space-2);
+  align-items:baseline;flex-wrap:wrap;font-size:.78rem;color:var(--c-fg-soft)}
+.generation-coverage-head>span{text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.generation-coverage-head strong{font-family:var(--font-mono);color:var(--c-fg)}
+.generation-track{display:flex;height:9px;margin:8px 0;border-radius:99px;overflow:hidden;
+  background:var(--c-border)}
+.generation-dated{background:var(--c-primary)}
+.generation-missing{background:var(--c-fg-soft);opacity:.48}
+.generation-legend{display:flex;justify-content:space-between;gap:var(--space-2);
+  flex-wrap:wrap;font-size:.78rem;color:var(--c-fg-soft)}
+.generation-legend span{display:flex;align-items:center;gap:5px}
+.generation-legend strong{color:var(--c-fg);font-weight:600}
+.generation-key{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.generation-key-dated{background:var(--c-primary)}
+.generation-key-missing{background:var(--c-fg-soft);opacity:.48}
+
 /* Ficha de artista. El desplegable va en un boton dentro de la celda, no en la
    fila entera: la fila ya tiene un enlace (el record) y ademas un <tr> con
    handler no recibe foco ni se anuncia como control. */
@@ -1387,17 +1437,16 @@ function drawScatter() {
 function drawGenerations() {
   const el = document.getElementById('chart-generations');
   if (!el || !DATA.generations || !DATA.generations.length) return;
-  const rows = DATA.generations;
+  // El sentinela sin fecha se conserva en la banda de cobertura que hay bajo
+  // el grafico. No entra en este eje porque no es una decada.
+  const rows = DATA.generations.filter(r => !r.is_sentinel);
+  if (!rows.length) return;
   const L = baseLayout();
   L.yaxis.title = { text: 'Volumen (EUR)', font: { size: 11, color: css('--c-fg-soft') } };
   L.margin.b = 56;
-  // La fila "sin fecha" no es una decada: va en gris para que no se lea como
-  // una generacion mas siendo, como es, la barra mas alta del grafico.
-  const colors = rows.map(r => r.is_sentinel ? css('--c-fg-soft') : css('--c-primary'));
-  const opacity = rows.map(r => r.is_sentinel ? 0.45 : 1);
   Plotly.newPlot(el, [{
     x: rows.map(r => r.label), y: rows.map(r => r.revenue_eur), type: 'bar',
-    marker: { color: colors, opacity: opacity },
+    marker: { color: css('--c-primary') },
     customdata: rows.map(r => [r.artists, r.top_artist || '—']),
     hovertemplate: '<b>%{x}</b><br>%{y:,.0f} €<br>%{customdata[0]:,} artistas'
       + '<br>destacado: %{customdata[1]}<extra></extra>'
