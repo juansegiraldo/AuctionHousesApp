@@ -103,17 +103,48 @@ Two layers connected by the `data/` directory and the **house registry**.
   "See Sold Price" instead of the number. Run it with `--quick`: the catalog payload already has
   price, estimates, status and title, so per-lot detail fetches add nothing. See
   [scraping/houses/zorrilla_subastas/README.md](scraping/houses/zorrilla_subastas/README.md).
-- **Lefebre (`lefebre_subastas`) is the only house that is not scraped at all.** Its data exists
-  only in a spreadsheet curated by hand in 2024 (`FINALL.xlsx`, sheet `FINAL`), so instead of
-  `parsers.py` + runners it ships a single converter, `from_excel.py`, run once by hand:
-  `python -m scraping.houses.lefebre_subastas.from_excel --excel FINALL.xlsx` (1,711 lots, 15
-  auctions, 2021→2024, COP). It works because `bronze/ingest.py` only copies `*.jsonl` from
-  `output_dir` and **never imports the registry's `module`** — that is the seam any non-scraped
-  source plugs into. The sheet mixes two houses; the 4,073 Bogotá rows are dropped on purpose
-  (that house has its own scraper). Four traps of this source — `Pasado` and `0` both meaning
-  *not sold*, `Order` being a row number in 11 of 15 auctions, only 674 of 1,711 rows having a
-  lot URL, and `Title` arriving in two different formats — are documented with tests in
+- **Lefebre (`lefebre_subastas`) is the only house with two sources in one `output/`**, and that
+  is deliberate — each covers a period the other cannot. `from_excel.py` converts a spreadsheet
+  curated by hand in 2024 (1,037 lots, 11 auctions, 2021→2023); `parsers.py` + the three runners
+  scrape the **Auction Mobility API** for everything from Subasta 27 on (2,821 lots, 19 auctions,
+  2023→2026). **3,858 lots total, 30 auctions, COP.** They coexist because `bronze/ingest.py` only
+  copies `*.jsonl` from `output_dir` and **never imports the registry's `module`** — that is the
+  seam a non-scraped source plugs into. Full account in
   [scraping/houses/lefebre_subastas/README.md](scraping/houses/lefebre_subastas/README.md).
+  - **The site looks empty but isn't.** It is an Angular SPA: `curl /auctions/past` returns "no
+    past auctions" — the same trap as Zorrilla. No headless browser needed, though: the auction
+    list is **server-rendered** inside the page's `viewVars` blob (page 1 holds only 20 of 29 —
+    pass `?page=2`), and the lots come from the site's own **unauthenticated AJAX proxy**,
+    `GET /ajax/lots/<code>?limit=100`. The upstream backend
+    (`production4-server.auctionmobility.com/v1/…`) returns **401** with every header tried,
+    including the `amRegistrationKey` the page itself publishes, so `next_page_url()` rewrites
+    the JSON's `next_page` back to the proxy.
+  - **Free validation oracle**: each auction summary publishes `total_hammer_price` and
+    `sold_lot_count`, and the sum of lot prices matches **exactly** — 19/19 auctions. Run
+    `python scripts/verify_lefebre_scrape.py`; it catches partial files left by a timeout.
+  - **The `lot_url` double slash is intentional.** `BASE_URL + "/" + _detail_url` yields
+    `…com//lots/view/…`, reproducing 89/89 of the URLs already in Silver. A "correct" `urljoin`
+    would give a single slash, match nothing already ingested, and **duplicate every re-scraped
+    lot**. A test pins it. Same reason `_auction_id_from_url()` returns the slug (`subasta-30`)
+    and not the code (`4-DLG0WK`): the runner names the output file with it.
+  - **The 11 Excel auctions are never scraped**, and not merely to avoid duplicate `excel://`
+    keys. The web holds 890 more lots for them, but that is **not missing data**: 93.4% of the
+    1,037 kept rows carry a biographical parenthesis versus 0.9% of the 890 dropped ones. That
+    is a deliberate curation — keep the art with an attributed artist — and 51% of what was
+    dropped is furniture, jewellery and decorative objects (Christofle cutlery, Rosenthal china,
+    Versace chairs, mirrors, trunks), plus 5% anonymous `Escuela Quiteña`/`colonial` works.
+    Scraping them would turn an art dataset into a generalist catalogue. See
+    `parsers.EXCEL_ONLY_AUCTIONS`.
+  - **An artist is only recorded when the biographical parenthesis is present.** Lefebre also
+    sells jewellery, watches, furniture and vinyl, so "first line is the artist" invents painters
+    called `Solitario de Diamante`, `Anillo Tiffany's en oro blanco` and `DURA DURAN` — the very
+    defect `_OBJECT_NAMES` filters for Bogotá. 1,564 of 2,821 scraped lots get an artist; the
+    other 1,257 **still enter the pipeline** with `artist_name=None`, keeping the house's real
+    revenue without polluting the artist ranking. This is the same rule the curator applied by
+    hand in 2024.
+  - Four traps of the **Excel** source — `Pasado` and `0` both meaning *not sold*, `Order` being
+    a row number in 11 of 15 auctions, only 674 of 1,711 rows having a lot URL, and `Title`
+    arriving in two formats — are documented with tests in the same README.
 - `scraping/` root still holds the original single-house (Bogotá) scripts — the `houses/` layout
   is the current structure; prefer it for new work.
 
@@ -264,10 +295,10 @@ These are load-bearing. Breaking one silently corrupts the report:
   is absent.
 - **Sell-through is not comparable across houses.** Bogotá reads ~99% because its site publishes
   almost exclusively sold lots (~1,764 lot numbers missing from otherwise contiguous sequences);
-  Duran publishes `NO VENDIDO` too and reads ~46%, Zorrilla ~62% and Lefebre ~47%. Those three
+  Duran publishes `NO VENDIDO` too and reads ~46%, Zorrilla ~62% and Lefebre ~42%. Those three
   are comparable with each other; Bogotá is not. This is a source-data property, not a bug —
   surface it as a warning, never "fix" it by computation. Lefebre carries an extra caveat of its
-  own: 1,037 of its lots have no lot number in the source, so the missing-sequence check that
+  own: 1,037 of its lots (all from the Excel source) have no lot number, so the missing-sequence check that
   detects this bias cannot run on them (flag `partial_lot_numbers`).
 - `quality_flags.jsonl` carries these caveats into the report's warnings panel. When adding a
   caveat, emit a flag there rather than hardcoding text in the HTML.
@@ -341,7 +372,11 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   in `lefebre_subastas/from_excel.py` (total revenue read 57,848 M COP instead of 5,784 M), because
   the sell-through rate — a boolean test — stayed correct and looked plausible. `_to_int()` now
   short-circuits real numbers before the string path, and a test pins the exact total. Ground truth
-  for that house: **5,784,850,000 COP ≈ 1.34 M EUR over 806 sold lots.**
+  for the **Excel-sourced 11 auctions**: **4,118,600,000 COP over 499 sold lots** (the old
+  5,784,850,000 / 806 figure covered 15 auctions, before 27–30 were re-scraped from the API).
+  Whole house after the scraper: **12,361,725,000 COP over 1,600 sold lots of 3,858**. Every
+  scraped auction is independently checkable against the house's own `total_hammer_price` with
+  `python scripts/verify_lefebre_scrape.py` — 19/19 match exactly.
 - **Lefebre's country data is richer than the master's, and that is not a licence to use it.** The
   curated sheet has a country for 1,396 lots vs the 734 the master resolves. It still lands in
   `artist_country` (diagnostics only) — the way to exploit it is proposing master entries, not

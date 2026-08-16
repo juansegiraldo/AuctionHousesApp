@@ -1,0 +1,402 @@
+{
+ "responseCode": 200,
+ "result_page": [
+  {
+   "row_id": "4-L2XY9W",
+   "type": "auction-lot-summary",
+   "self_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XY9W/summary",
+   "watch_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XY9W/watch",
+   "detail_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XY9W/",
+   "lot_number": 1,
+   "status": "expired",
+   "title": "OMAR RAYO (1928-2010)\nSin título, 1954\nTécnica mixta sobre papel\n19 x 14.5 cm",
+   "last_updated": "2026-06-06T22:24:33Z",
+   "lot_number_extension": "",
+   "starting_price": "5000000.00",
+   "hide_estimate": false,
+   "estimate_low": null,
+   "estimate_high": null,
+   "quantity": null,
+   "condition": null,
+   "highlight": false,
+   "bid_table": null,
+   "truncated_description": "Firmado y fechado \"Omar Rayo/54\" en la parte inferior izquierda.\n\nBuen estado de conservacion.\nColección privada, Medellín.",
+   "bidding_enabled": true,
+   "lot_symbols": null,
+   "estimate_symbols": null,
+   "buyers_premium_amount": "0.00",
+   "commodity_type": null,
+   "commodity_quantity": null,
+   "perfect_condition": false,
+   "artist": null,
+   "dimensions": null,
+   "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/Uj22-4-2F83XX/4-L2XY9W/1.jpg",
+   "auction_lot_group": null,
+   "currency_code": "COP",
+   "artist_records": [],
+   "when_produced": null,
+   "package_type": null,
+   "color": null,
+   "is_mixed_lot": false,
+   "estimate_low_hk": null,
+   "estimate_high_hk": null,
+   "preferred_order": null,
+   "lot_group": null,
+   "external_info_url": null,
+   "minimum_autosell_amount": null,
+   "extended_end_time": null,
+   "timed_auction_bid": null,
+   "monthly_revenue": null,
+   "auction": {
+    "row_id": "4-L2X0QX",
+    "type": "auction-summary",
+    "self_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/summary",
+    "detail_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/",
+    "auction_type": "timed_then_live",
+    "title": "SUBASTA 38",
+    "time_start": "2026-05-20T15:00:00Z",
+    "time_start_live_auction": "2026-06-06T22:00:00Z",
+    "time_start_proxy_bidding": null,
+    "duration": "P17DT13H",
+    "timezone": "America/Bogota",
+    "truncated_description": "Subasta #38 en asocio con Sedwick & Associates, Sedwick & Associates, LLC, Río de la Plata (Argentina) y Andrés Cortazar",
+    "last_updated": "2026-05-07T16:43:20Z",
+    "auction_code": null,
+    "banner": null,
+    "subtitle": null,
+    "viewing_information": null,
+    "publication_status": "full",
+    "bidder_registration_allowed": true,
+    "location_name": "Bogotá",
+    "percentage_bidding": false,
+    "bid_table": {
+     "0.00": [
+      "100000.00"
+     ],
+     "3000000.00": [
+      "200000.00"
+     ],
+     "5000000.00": [
+      "500000.00"
+     ],
+     "10000000.00": [
+      "1000000.00"
+     ],
+     "24000000.00": [
+      "2000000.00"
+     ],
+     "50000000.00": [
+      "5000000.00"
+     ],
+     "100000000.00": [
+      "10000000.00"
+     ],
+     "250000000.00": [
+      "20000000.00"
+     ]
+    },
+    "active_lot_count": 1,
+    "lot_count": 171,
+    "sold_lot_count": 106,
+    "effective_end_time": "2026-06-07T04:00:00Z",
+    "require_approval": null,
+    "extend_by_auction": false,
+    "extended_end_time": null,
+    "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/OWBY-4-2F83XX/4-L4XU8X/47f0330b-eb09-4703-970e-080550e6045d",
+    "total_sold_value": "2945000000.00",
+    "total_hammer_price": "2945000000.00",
+    "minimum_buyers_premium": "0.00",
+    "default_buyers_premium": null,
+    "currency_code": "COP",
+    "realtime_server_url": null,
+    "conditions_of_sale_url": null,
+    "contact_notes": null,
+    "contact_condition_report_email": null,
+    "is_times_the_money": false,
+    "lot_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/lots",
+    "_detail_url": "/auctions/4-L2X0QX/subasta-38",
+    "_slug": "subasta-38"
+   },
+   "absentee_bid": null,
+   "sold_price": null,
+   "highest_live_bid": null,
+   "state_sequence_number": 4,
+   "_detail_url": "/lots/view/4-L2XY9W/omar-rayo-1928-2010sin-ttulo-1954tcnica-mixta-sobre-papel19-x-145-cm",
+   "_slug": "omar-rayo-1928-2010sin-ttulo-1954tcnica-mixta-sobre-papel19-x-145-cm"
+  },
+  {
+   "row_id": "4-L2XYDB",
+   "type": "auction-lot-summary",
+   "self_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XYDB/summary",
+   "watch_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XYDB/watch",
+   "detail_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-L2XYDB/",
+   "lot_number": 62,
+   "status": "expired",
+   "title": "GRAFICARIO DE LA LUCHA POPULAR EN COLOMBIA, 1977\nArtistas varios\nObra gráfica\nVarias medidas\nEd. varias",
+   "last_updated": "2026-06-06T23:20:52Z",
+   "lot_number_extension": "",
+   "starting_price": "35000000.00",
+   "hide_estimate": false,
+   "estimate_low": null,
+   "estimate_high": null,
+   "quantity": null,
+   "condition": null,
+   "highlight": false,
+   "bid_table": null,
+   "truncated_description": "La carpeta realizada en 1977 cuenta originalmente con 32 obras.\n\nBuen estado de conservacion.\nColección privada, Bogotá.",
+   "bidding_enabled": true,
+   "lot_symbols": null,
+   "estimate_symbols": null,
+   "buyers_premium_amount": "0.00",
+   "commodity_type": null,
+   "commodity_quantity": null,
+   "perfect_condition": false,
+   "artist": null,
+   "dimensions": null,
+   "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/evtj-4-2F83XX/4-L2XYDB/62.jpg",
+   "auction_lot_group": null,
+   "currency_code": "COP",
+   "artist_records": [],
+   "when_produced": null,
+   "package_type": null,
+   "color": null,
+   "is_mixed_lot": false,
+   "estimate_low_hk": null,
+   "estimate_high_hk": null,
+   "preferred_order": null,
+   "lot_group": null,
+   "external_info_url": null,
+   "minimum_autosell_amount": null,
+   "extended_end_time": null,
+   "timed_auction_bid": null,
+   "monthly_revenue": null,
+   "auction": {
+    "row_id": "4-L2X0QX",
+    "type": "auction-summary",
+    "self_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/summary",
+    "detail_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/",
+    "auction_type": "timed_then_live",
+    "title": "SUBASTA 38",
+    "time_start": "2026-05-20T15:00:00Z",
+    "time_start_live_auction": "2026-06-06T22:00:00Z",
+    "time_start_proxy_bidding": null,
+    "duration": "P17DT13H",
+    "timezone": "America/Bogota",
+    "truncated_description": "Subasta #38 en asocio con Sedwick & Associates, Sedwick & Associates, LLC, Río de la Plata (Argentina) y Andrés Cortazar",
+    "last_updated": "2026-05-07T16:43:20Z",
+    "auction_code": null,
+    "banner": null,
+    "subtitle": null,
+    "viewing_information": null,
+    "publication_status": "full",
+    "bidder_registration_allowed": true,
+    "location_name": "Bogotá",
+    "percentage_bidding": false,
+    "bid_table": {
+     "0.00": [
+      "100000.00"
+     ],
+     "3000000.00": [
+      "200000.00"
+     ],
+     "5000000.00": [
+      "500000.00"
+     ],
+     "10000000.00": [
+      "1000000.00"
+     ],
+     "24000000.00": [
+      "2000000.00"
+     ],
+     "50000000.00": [
+      "5000000.00"
+     ],
+     "100000000.00": [
+      "10000000.00"
+     ],
+     "250000000.00": [
+      "20000000.00"
+     ]
+    },
+    "active_lot_count": 1,
+    "lot_count": 171,
+    "sold_lot_count": 106,
+    "effective_end_time": "2026-06-07T04:00:00Z",
+    "require_approval": null,
+    "extend_by_auction": false,
+    "extended_end_time": null,
+    "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/OWBY-4-2F83XX/4-L4XU8X/47f0330b-eb09-4703-970e-080550e6045d",
+    "total_sold_value": "2945000000.00",
+    "total_hammer_price": "2945000000.00",
+    "minimum_buyers_premium": "0.00",
+    "default_buyers_premium": null,
+    "currency_code": "COP",
+    "realtime_server_url": null,
+    "conditions_of_sale_url": null,
+    "contact_notes": null,
+    "contact_condition_report_email": null,
+    "is_times_the_money": false,
+    "lot_url": "https://production4-server.auctionmobility.com/v1/auction/4-L2X0QX/lots",
+    "_detail_url": "/auctions/4-L2X0QX/subasta-38",
+    "_slug": "subasta-38"
+   },
+   "absentee_bid": null,
+   "sold_price": null,
+   "highest_live_bid": null,
+   "state_sequence_number": 3,
+   "_detail_url": "/lots/view/4-L2XYDB/graficario-de-la-lucha-popular-en-colombia-1977artistas-variosobra-grficavarias-medidased-varias",
+   "_slug": "graficario-de-la-lucha-popular-en-colombia-1977artistas-variosobra-grficavarias-medidased-varias"
+  },
+  {
+   "row_id": "4-DNKN05",
+   "type": "auction-lot-summary",
+   "self_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-DNKN05/summary",
+   "watch_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-DNKN05/watch",
+   "detail_url": "https://production4-server.auctionmobility.com/v1/auction-lot/4-DNKN05/",
+   "lot_number": 2,
+   "status": "sold",
+   "title": "IGNACIO GOMEZ JARAMILLO (1910 - 1970)\nS/T, sf.\nTinta sobre papel\nMedidas: 49 x32 cm",
+   "last_updated": "2024-06-13T01:11:07Z",
+   "lot_number_extension": "",
+   "starting_price": "1500000.00",
+   "hide_estimate": false,
+   "estimate_low": null,
+   "estimate_high": null,
+   "quantity": null,
+   "condition": null,
+   "highlight": false,
+   "bid_table": null,
+   "truncated_description": "Firmado.\n\nBuen estado de conservación.\nProcedencia: Colección particular.",
+   "bidding_enabled": true,
+   "lot_symbols": null,
+   "estimate_symbols": null,
+   "buyers_premium_amount": "0.00",
+   "commodity_type": null,
+   "commodity_quantity": null,
+   "perfect_condition": false,
+   "artist": null,
+   "dimensions": null,
+   "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/M8Zn-4-2F83XX/4-DNKN05/2.jpg",
+   "auction_lot_group": null,
+   "currency_code": "COP",
+   "artist_records": [],
+   "when_produced": null,
+   "package_type": null,
+   "color": null,
+   "is_mixed_lot": false,
+   "estimate_low_hk": null,
+   "estimate_high_hk": null,
+   "preferred_order": null,
+   "lot_group": null,
+   "external_info_url": null,
+   "minimum_autosell_amount": null,
+   "extended_end_time": null,
+   "timed_auction_bid": {
+    "row_id": "4967ef8b-0989-4359-b5cb-f90136f00add",
+    "absentee_bid_id": null,
+    "amount": "1500000.00",
+    "amount_percentage": null,
+    "created_at": "2024-06-13T01:10:54.624Z",
+    "updated_at": "2024-06-13T01:11:07.612Z",
+    "registration": {
+     "paddle": "19",
+     "row_id": "4-DWJI97",
+     "customer": {
+      "paddle": null,
+      "row_id": "4-2F83YE",
+      "owner_alias": null,
+      "username_alias": null,
+      "is_admin_customer": true
+     },
+     "created_at": "2024-06-12T22:01:14Z",
+     "updated_at": "2024-06-13T02:41:59Z"
+    }
+   },
+   "monthly_revenue": null,
+   "auction": {
+    "row_id": "4-DLG0WK",
+    "type": "auction-summary",
+    "self_url": "https://production4-server.auctionmobility.com/v1/auction/4-DLG0WK/summary",
+    "detail_url": "https://production4-server.auctionmobility.com/v1/auction/4-DLG0WK/",
+    "auction_type": "timed_then_live",
+    "title": "Subasta 30",
+    "time_start": "2024-05-31T00:00:00Z",
+    "time_start_live_auction": "2024-06-13T00:00:00Z",
+    "time_start_proxy_bidding": null,
+    "duration": "P13DT3H",
+    "timezone": "America/Bogota",
+    "truncated_description": "Exhibición abierta Lunes a viernes 10:00 am a 7:00 pm, Sábados de 11:00 a 5:00pm",
+    "last_updated": "2024-05-09T15:46:38Z",
+    "auction_code": null,
+    "banner": null,
+    "subtitle": null,
+    "viewing_information": null,
+    "publication_status": "full",
+    "bidder_registration_allowed": true,
+    "location_name": "Bogotá, Colombia",
+    "percentage_bidding": false,
+    "bid_table": {
+     "0.00": [
+      "50000.00"
+     ],
+     "1000000.00": [
+      "100000.00"
+     ],
+     "5000000.00": [
+      "500000.00"
+     ],
+     "10000000.00": [
+      "1000000.00"
+     ],
+     "24000000.00": [
+      "2000000.00"
+     ],
+     "50000000.00": [
+      "5000000.00"
+     ],
+     "100000000.00": [
+      "10000000.00"
+     ],
+     "250000000.00": [
+      "25000000.00"
+     ]
+    },
+    "active_lot_count": 6,
+    "lot_count": 89,
+    "sold_lot_count": 37,
+    "effective_end_time": "2024-06-13T03:00:00Z",
+    "require_approval": null,
+    "extend_by_auction": false,
+    "extended_end_time": null,
+    "cover_thumbnail": "https://images4-cdn.auctionmobility.com/is3/auctionmobility-static4/0R6b-4-2F83XX/4-DNAOP9/74a2c51a-5f9e-4478-90a0-cbb757de8ffe",
+    "total_sold_value": "864800000.00",
+    "total_hammer_price": "864800000.00",
+    "minimum_buyers_premium": "0.00",
+    "default_buyers_premium": null,
+    "currency_code": "COP",
+    "realtime_server_url": null,
+    "conditions_of_sale_url": null,
+    "contact_notes": null,
+    "contact_condition_report_email": null,
+    "is_times_the_money": false,
+    "lot_url": "https://production4-server.auctionmobility.com/v1/auction/4-DLG0WK/lots",
+    "_detail_url": "/auctions/4-DLG0WK/subasta-30",
+    "_slug": "subasta-30"
+   },
+   "absentee_bid": null,
+   "sold_price": "1500000.00",
+   "highest_live_bid": null,
+   "state_sequence_number": null,
+   "_detail_url": "/lots/view/4-DNKN05/ignacio-gomez-jaramillo-1910-1970st-sftinta-sobre-papelmedidas-49-x32-cm",
+   "_slug": "ignacio-gomez-jaramillo-1910-1970st-sftinta-sobre-papelmedidas-49-x32-cm"
+  }
+ ],
+ "query_info": {
+  "base_query": "https://production4-server.auctionmobility.com/v1/auction/4-DLG0WK/lots",
+  "next_page": null,
+  "prev_page": "https://production4-server.auctionmobility.com/v1/auction/4-DLG0WK/lots?n=4&o=0",
+  "page_size": 4,
+  "page_start_offset": 4,
+  "total_num_results": 6
+ }
+}
