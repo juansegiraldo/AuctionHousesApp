@@ -37,7 +37,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest
 ```
 
-Run tests (56 pass, 1 skipped):
+Run tests (201 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -56,9 +56,11 @@ python -m scraping.houses.bogota_auctions.run_auction_list --file urls.txt
 
 python -m pipelines.bronze.ingest
 python -m pipelines.silver.build_silver
+python -m pipelines.silver.artist_resolve            # identidad de artista + pais
 python -m pipelines.enrichments.currency_normalize   # also: artist_canonicalize, category_tag
 python -m pipelines.gold.build_gold
 python -m pipelines.analytics.report_gold            # writes data/gold/analytics_report.{json,html}
+python -m pipelines.analytics.build_artifact         # writes data/gold/artifact_report.html
 ```
 
 `quality_gates.py` is the exception — still a file path, and it takes arguments:
@@ -76,9 +78,9 @@ Two layers connected by the `data/` directory and the **house registry**.
 - `scraping/common/models.py` — shared Pydantic schema for **all** houses: `AuctionMeta` and
   `LotItem`. The schema is intentionally **Dublin Core (DCMI)–compatible** (fields annotated with
   `dcterms:*` mappings) and prices are integers in the house's own currency, which differs per
-  house (`COP` for Bogotá, `EUR` for Duran — the model defaults to `COP`, so each house sets
-  `currency` explicitly when building `LotItem`s). Changing this schema affects every house and
-  every downstream pipeline stage.
+  house (`COP` for Bogotá and Lefebre, `EUR` for Duran, `USD` for Zorrilla — the model defaults
+  to `COP`, so each house sets `currency` explicitly when building `LotItem`s). Changing this
+  schema affects every house and every downstream pipeline stage.
 - `scraping/houses/<slug>/` — each house has `parsers.py` (HTML → models) plus three runners with
   the **same interface across houses**: `run_one_auction.py`, `run_auction_list.py`,
   `run_historic.py`. Runners write JSONL into the house's own `output/` directory.
@@ -92,6 +94,26 @@ Two layers connected by the `data/` directory and the **house registry**.
 - Duran discovers lots via an **AJAX endpoint**, not the static page. Its `historic_all_lots.jsonl`
   is a superset of the per-auction files (40,442 lots, 2014→2026) and is safe to re-ingest —
   Silver dedupes on `lot_url`.
+- **Zorrilla (`zorrilla_subastas`) is the only house built on the `scraping/common/` framework**
+  (frozen `House` + injected `discover`/`fetcher`); Bogotá and Duran stay on their legacy
+  duplicated code. Copy Zorrilla, not them, when adding a house. Two things make it unusual:
+  its source is **LiveAuctioneers, not the house's own site** (zorrilla.com.uy unpublishes lots
+  after each sale — all 70 historic pages return "No se encontraron resultados"), and its parsers
+  read the embedded **`window.__data` JSON** rather than the DOM, because the React UI shows
+  "See Sold Price" instead of the number. Run it with `--quick`: the catalog payload already has
+  price, estimates, status and title, so per-lot detail fetches add nothing. See
+  [scraping/houses/zorrilla_subastas/README.md](scraping/houses/zorrilla_subastas/README.md).
+- **Lefebre (`lefebre_subastas`) is the only house that is not scraped at all.** Its data exists
+  only in a spreadsheet curated by hand in 2024 (`FINALL.xlsx`, sheet `FINAL`), so instead of
+  `parsers.py` + runners it ships a single converter, `from_excel.py`, run once by hand:
+  `python -m scraping.houses.lefebre_subastas.from_excel --excel FINALL.xlsx` (1,711 lots, 15
+  auctions, 2021→2024, COP). It works because `bronze/ingest.py` only copies `*.jsonl` from
+  `output_dir` and **never imports the registry's `module`** — that is the seam any non-scraped
+  source plugs into. The sheet mixes two houses; the 4,073 Bogotá rows are dropped on purpose
+  (that house has its own scraper). Four traps of this source — `Pasado` and `0` both meaning
+  *not sold*, `Order` being a row number in 11 of 15 auctions, only 674 of 1,711 rows having a
+  lot URL, and `Title` arriving in two different formats — are documented with tests in
+  [scraping/houses/lefebre_subastas/README.md](scraping/houses/lefebre_subastas/README.md).
 - `scraping/` root still holds the original single-house (Bogotá) scripts — the `houses/` layout
   is the current structure; prefer it for new work.
 
@@ -105,21 +127,38 @@ Data flows one direction through `data/`, and each stage reads the previous laye
    `pipelines.shared.schema.normalize_lot` (adds `house_slug`, `ingested_at`, `source_file`, and a
    `dedupe_key = "<house>|<lot_url>"`), dedupes on that key, and emits `data/silver/lots.jsonl`
    plus a derived `data/silver/auctions.jsonl`. `auction_index.jsonl` files are skipped here.
-3. **enrichments** (`enrichments/*.py`): optional, independent jobs keyed by `dedupe_key`
+3. **artist_resolve** (`silver/artist_resolve.py`): runs right after `build_silver` and rewrites
+   `lots.jsonl` in place (temp file + atomic replace), adding **seven fields to every lot**:
+   `artist_id`, `artist_fold`, `artist_display_name`, `attribution_type`, `artist_country_birth`,
+   `artist_nationalities`, `artist_resolution`. Everything downstream assumes they are present.
+   It is the single place where artist identity is cleaned — see "El maestro de artistas" below.
+4. **enrichments** (`enrichments/*.py`): optional, independent jobs keyed by `dedupe_key`
    (currency normalize, artist canonicalize, category tag, embeddings stub) → `data/enrichments/`.
-4. **gold** (`gold/build_gold.py`): aggregates silver into analytics facts
+5. **gold** (`gold/build_gold.py`): aggregates silver into analytics facts
    (`agg_house_metrics`, `agg_lots_by_year`, …) plus `quality_flags.jsonl` in `data/gold/`.
    `gold/build_insights.py` runs **after** it and adds the second-level aggregates the report
-   needs (`agg_artist_metrics`, `agg_category_metrics`, `agg_month_metrics`,
-   `agg_price_distribution`, `agg_estimate_accuracy`). Unlike `build_gold.py` it reads **Silver +
-   enrichments**, not Gold — it needs per-lot artist/category/estimate fields that the basic
-   aggregates drop. It excludes non-authors (`Escuela Española`, `Taller de…`, `Atribuido a…`)
-   from the artist ranking and requires `MIN_LOTS_FOR_ARTIST_RANK` sales to rank an artist.
-5. **quality_gates** (`silver/quality_gates.py`): coverage report (% with price/artist/image/url)
-   over silver, optionally per house. Reports by default; `--fail-on-violation` exits non-zero
-   for CI. `--allowed-categories` must match the **English** tags emitted by `category_tag.py`
-   (`painting`, `prints`, …) — the old Spanish defaults matched nothing and flagged 100% of rows.
-6. **analytics** (`analytics/report_gold.py`): renders the Gold layer to JSON + HTML. Reads Gold
+   needs (`agg_artist_metrics`, `agg_country_metrics`, `agg_category_metrics`,
+   `agg_month_metrics`, `agg_price_distribution`, `agg_estimate_accuracy`). Unlike
+   `build_gold.py` it reads **Silver + enrichments**, not Gold — it needs per-lot
+   artist/category/estimate fields that the basic aggregates drop. It groups artists by
+   `artist_id or artist_fold` (never the raw name), keeps only `attribution_type == "autor"`,
+   and requires `MIN_LOTS_FOR_ARTIST_RANK` sales to rank an artist.
+6. **quality_gates** (`silver/quality_gates.py`): coverage report over silver, optionally per
+   house. Reports by default; `--fail-on-violation` exits non-zero for CI. `--allowed-categories`
+   must match the **English** tags emitted by `category_tag.py` (`painting`, `prints`, …) — the
+   old Spanish defaults matched nothing and flagged 100% of rows. Also reports
+   `artist_resolution_rate`, `artist_country_coverage`, `attribution_autor_pct` and
+   `unmapped_country_values`; the artist gates default to `0.0` (informative, not blocking) and
+   skip `HOUSES_WITHOUT_ARTISTS` (Zorrilla is jewellery — 0% forever, not a defect).
+7. **analytics/build_artifact.py**: a second renderer producing `data/gold/artifact_report.html`,
+   the version that can be **published as a Claude Artifact**. It exists because an Artifact is
+   served under a strict CSP that blocks every external host — the normal report loads Plotly from
+   `cdn.plot.ly` and its fonts from Google Fonts, so published as-is it would render with no charts
+   and fallback type. Here the three charts are **SVG generated in Python** (no client library,
+   ~20 KB instead of Plotly's 3.5 MB) and the fonts are system stacks. It keeps the filters,
+   totals bar and CSV downloads. `<a href>` links to the source lots are content, not resource
+   loads, so they are fine under the CSP.
+8. **analytics** (`analytics/report_gold.py`): renders the Gold layer to JSON + HTML. Reads Gold
    only — never bronze/silver. It decides *what* goes in the report; `analytics/render_html.py`
    decides *how it looks* (design system, CSS, Plotly config), so the report can be restyled
    without touching aggregation logic. The insight aggregates are optional: if
@@ -129,12 +168,89 @@ Run the whole chain with `.\scripts\run_all.ps1`. Running stages piecemeal is ho
 previously drifted out of sync (enrichments built in March over a Silver rebuilt in May).
 The Duran "massive run" runbook lives in [docs/SCALING_CHECKLIST.md](docs/SCALING_CHECKLIST.md).
 
+### El maestro de artistas (`pipelines/config/artists/`)
+
+Curated YAML, versioned in git — it lives outside `data/` precisely because `data/**` is
+gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/shared/artist_master.py),
+the same single-source-of-truth pattern as `fx.py`. See
+[pipelines/config/artists/README.md](pipelines/config/artists/README.md).
+
+**Populated as of 2026-08-16: 897 artists**, resolving **18,364 lots with a country** (29.4% of all
+lots, 44.4% of lots that have an author) and **658 of the 1,521 ranked artists (43.3%)** across
+**42 countries**. Everything else stays `fold_only` with no country, and the report publishes the
+real coverage rather than looking complete. To extend it:
+`python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
+
+It got there in four passes, best source first — see
+[pipelines/config/artists/README.md](pipelines/config/artists/README.md) for the full account:
+
+1. **303 entries from the `Artistas` sheet of `FINALL.xlsx`** (+927 lots) — the same hand-curated
+   source as the Lefebre house. A curated source still needs auditing: 29 artists with no country
+   were dropped rather than added empty, and duos/collectives had their dates stripped because the
+   sheet stores **two birth years** in the birth/death columns (publishing Leidy Chávez as dead
+   since 1984 was the near-miss).
+2. **93 comma-inversion aliases** (+228 lots, no research at all) — `ALCALDE, JUAN` and
+   `MIRÓ FERRÁ, JOAN` pointed at artists *already* in the master, just missing that alias, so they
+   ranked twice with half their lots countryless. `García Márquez, Gabriel` deliberately stays
+   unmerged: 55 book lots by the writer, and the reason inversion is reviewed rather than applied.
+3. **140 entries researched in public sources** (+2,050 lots) — Wikipedia, Wikidata, Museo del
+   Prado, Reina Sofía, MACBA, Artnet, for the highest-volume unresolved names (mostly 19th–20th c.
+   Spanish painters from Durán). Of 176 researched, **36 could not be verified and were left with
+   no country**. The payoff isn't only filling gaps: it corrects what a heuristic would call
+   obvious — Sáenz de Tejada was born in Tangier, Steinlen in Lausanne, Pinazo Martínez in Rome,
+   Gardy Artigas in France, all of them selling into the Spanish market. A test pins those.
+4. **6 single-word pseudonyms + 1 alias** (+104 lots) — `Jano`, `Marola`, `Serny`, `Monir`,
+   `Rembrandt`, `Durero` looked like one-word noise and are people (Francisco Fernández-Zarza,
+   Manuel Rodríguez Lana, Ricardo Summers Ysern, Monir Farmanfarmaian, and Dürer under his
+   Spanish name). `Guinovart` turned out to be an **alias of an existing entry**, not a new
+   artist. `*Mingorance` was deliberately left unresolved: two different Mingorance painters
+   exist and its 10 lots carry no year to tell them apart.
+
+The master also **merges variants that don't share a fold** — that is work only the alias list can
+do. `Joaquín Sorolla` / `Joaquín Sorolla y Bastida`, `Pablo Picasso` / `Pablo Ruiz Picasso`,
+`Fernando Botero` / `Fernando Botero (Colombia, 1932)`, and comma inversions like
+`ÚBEDA, AGUSTÍN` / `Agustín Úbeda`. Merging those dropped the ranking from 1,530 to 1,489 rows.
+Two lookalikes are deliberately **not** merged: `Después de Pablo Picasso` (a work "after" Picasso,
+not by him) and `García Márquez, Gabriel` (a writer in book lots, not a painter).
+
+- **Two-tier resolution, and the difference matters.** Tier 1 is the **explicit alias list** in the
+  master (a human decided these names are the same person). Tier 2 is `artist_fold()` — a
+  deterministic NFKD+casefold+depunct key that *groups* variants but **never grants a country and
+  never asserts identity**. The master keys on aliases, not the fold, because `Francisco Toledo` is
+  two different real people sharing one fold; fold-keying would make that error unfixable by
+  construction. Same reason `propose_inversion()` (`GARCIA OCHOA, LUIS` → `luis garcia ochoa`) is a
+  *suggestion* for `scripts/artist_master_propose.py` and is deliberately **not** in `artist_fold`:
+  `García Márquez, Gabriel` is a writer in book lots, not a painter.
+- **Never invent a country.** An artist missing from the master gets `artist_country_birth: None` —
+  never a guess, and never the auction house's country. Same discipline as `to_eur()` returning
+  `None` instead of `1.0`. `HOUSE_COUNTRY` in `render_html.py` is where the *sale* happens; using it
+  as nationality would already be wrong for the 46 Spanish, 26 German and 25 Panamanian artists
+  Bogotá has sold. There is a test forbidding it.
+- **The master wins over the house's free text**, and the disagreement is counted, not silently
+  resolved. Neither first-write-wins (the old `build_insights` bug) nor majority vote: Alejandro
+  Obregón's raw data says `España` ×17 and `Colombia` ×3, and the right answer is neither alone —
+  it's `country_birth: ES` + `nationalities: [CO, ES]`.
+- **Countries are ISO 3166-1 alpha-2**, normalized through `_countries.yaml`; the Spanish label is
+  resolved at render time. The raw text is unusable as a key (`Inglaterra` and `Reino Unido` for the
+  same artist, cities where countries belong). `normalize_country()` returns `None` for unknown
+  values instead of passing them through, and `quality_gates` counts them as
+  `unmapped_country_values` — that feedback loop is what stops `_countries.yaml` rotting the way
+  `houses.yaml` did.
+- **Quote `NO` in YAML.** `NO:` (Noruega) parses as boolean `False` under YAML 1.1, which silently
+  dropped Norway from the table. `_iso()` in the loader coerces it back, and a test pins it.
+- **`agg_country_metrics` groups by country of *birth*** so each lot counts once. A
+  by-nationality view would be **non-additive** (a dual-national's lots land in two rows) — label it
+  as such, or someone will "fix" the double count by dropping the second nationality and destroy
+  the feature. The `country: null` row is kept visible on purpose.
+
 ### Data rules that hold up every Gold figure
 
 These are load-bearing. Breaking one silently corrupts the report:
 
 - **Never sum prices across houses.** Each house quotes in its own currency (`COP` for Bogotá,
-  `EUR` for Duran). Gold emits `revenue_native` + `currency` (exact) alongside `revenue_eur`
+  `EUR` for Duran, `USD` for Zorrilla — este último **normalizado en origen** por
+  LiveAuctioneers, no es la moneda de martillo; ver el flag `currency_normalized_at_source`).
+  Gold emits `revenue_native` + `currency` (exact) alongside `revenue_eur`
   (approximate). Any cross-house total must sum `revenue_eur`. Conversion goes through
   `pipelines/shared/fx.py`, whose rates live in `pipelines/config/fx.yaml` — the single source
   of truth, read by both Gold and the currency enrichment. `to_eur()` returns `None` for an
@@ -148,8 +264,11 @@ These are load-bearing. Breaking one silently corrupts the report:
   is absent.
 - **Sell-through is not comparable across houses.** Bogotá reads ~99% because its site publishes
   almost exclusively sold lots (~1,764 lot numbers missing from otherwise contiguous sequences);
-  Duran publishes `NO VENDIDO` too and reads ~46%. This is a source-data property, not a bug —
-  surface it as a warning, never "fix" it by computation.
+  Duran publishes `NO VENDIDO` too and reads ~46%, Zorrilla ~62% and Lefebre ~47%. Those three
+  are comparable with each other; Bogotá is not. This is a source-data property, not a bug —
+  surface it as a warning, never "fix" it by computation. Lefebre carries an extra caveat of its
+  own: 1,037 of its lots have no lot number in the source, so the missing-sequence check that
+  detects this bias cannot run on them (flag `partial_lot_numbers`).
 - `quality_flags.jsonl` carries these caveats into the report's warnings panel. When adding a
   caveat, emit a flag there rather than hardcoding text in the HTML.
 
@@ -160,6 +279,12 @@ These are load-bearing. Breaking one silently corrupts the report:
 Intended to be consumed by BI tools / future analytics endpoints — it's metadata, not executed
 by the pipelines. Because nothing executes it, it can silently drift from the pipeline: when you
 change how a metric is computed in `build_gold.py`, update `metrics.yaml` in the same edit.
+
+The drift is not hypothetical — two instances were found and fixed while adding the artist master:
+the `artist` dimension still pointed at the dead `enrichments.artist_canonicalized`, and
+`focus_category` filtered on Spanish category names (`'obra_grafica','pintura'`) that match nothing,
+the same dead-string bug already fixed in `quality_gates.py`. Metrics that are **non-additive**
+(`lots_by_nationality`) carry `additive: false`.
 
 ## Conventions
 
@@ -194,3 +319,46 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   `lot_url` — but it roughly doubles Bronze disk usage.
 - Legacy single-house scripts still sit at the `scraping/` root beside the current
   `scraping/houses/` layout.
+- **`artist_country` (the house's own free text) is populated on ~2% of lots and only by Bogotá.**
+  Duran and Zorrilla never set it. It is diagnostics only — it feeds `unmapped_country_values` and
+  the master-vs-house conflict counter, and never writes `artist_country_birth`.
+- **Zorrilla has no artists at all** (3,437 jewellery lots, `artist_name` null in every one), so it
+  is exempt from the artist quality gates via `HOUSES_WITHOUT_ARTISTS`.
+- **The house universes are nearly disjoint**: only 59 of ~15,000 artist names overlap between Duran
+  (Spanish market) and Bogotá (Colombian). Any "Spain vs Colombia" chart is therefore largely
+  re-plotting `house_slug` under another name — the report says so, next to the sell-through caveat.
+- **`artist_raw` is truncated to 60 chars**, so it can't be re-parsed for full identity — though the
+  country, which comes early in `Name (Country, birth - death) : Title`, usually survives.
+- A comma form (`ÚBEDA, AGUSTÍN`) ranks separately from `Agustín Úbeda` until an alias is added to
+  the master. That is deliberate, not a bug — see the `García Márquez` case above. The main ones
+  are already merged; new houses will surface more.
+- `scripts/artist_master_propose.py` skips folds the master already covers, so regenerating
+  candidates *after* populating returns only the gaps. Pass a patched `_known_folds()` if you need
+  the full list again.
+- **Reading numbers out of an Excel: never stringify the cell first.** `openpyxl` returns numeric
+  cells as `float` (`1250000.0`), so a "strip the thousands separators" regex reads the decimal
+  point as a separator and multiplies **every** amount by 10. It cost a full pipeline run to spot
+  in `lefebre_subastas/from_excel.py` (total revenue read 57,848 M COP instead of 5,784 M), because
+  the sell-through rate — a boolean test — stayed correct and looked plausible. `_to_int()` now
+  short-circuits real numbers before the string path, and a test pins the exact total. Ground truth
+  for that house: **5,784,850,000 COP ≈ 1.34 M EUR over 806 sold lots.**
+- **Lefebre's country data is richer than the master's, and that is not a licence to use it.** The
+  curated sheet has a country for 1,396 lots vs the 734 the master resolves. It still lands in
+  `artist_country` (diagnostics only) — the way to exploit it is proposing master entries, not
+  writing `artist_country_birth` from house text.
+- **The scraper put object types and catalogue fields in `artist_name`, and they ranked as
+  artists.** Two populations, both filtered in `pipelines/shared/artist_key.py`: 467 lots of object
+  types via `_OBJECT_NAMES` (`Cartel` 85 lots, `Collar`, `Florero`, `"Paisaje"`) matched by
+  **equality against the whole fold, never a substring** — real artists are surnamed Rivera,
+  Marina, Mesa and Prado; and 144 lots of Bogotá's bibliographic `Ciudad` field via
+  `_CITY_FIELD_RE` (`Ciudad Bogotá` was the dataset's second-largest "artist"), by prefix because
+  it sometimes drags the whole record behind it, but excluding a trailing comma so
+  `Ciudad Real, Antonio` survives — with a closed list of country/city tails so
+  `Ciudad Cádiz, España` still gets caught. Anyone re-profiling "top unresolved artists" hits these
+  first: they are not researchable, they are noise.
+- **Book authors were deliberately NOT filtered.** 2,528 lots carry the `Autor : Título` pattern in
+  `artist_raw` with an inverted name — García Márquez (55), Bolívar (19), Humboldt (14) are writers,
+  not painters. But Antonio Caro, Beatriz González and Ana Mercedes Hoyos match the same pattern and
+  *are* painters. Neither `medium` (empty for writers, but only statistically) nor `category_tag`
+  (Humboldt classifies as `prints` from his books' engravings) separates them reliably, so they stay.
+  Filtering on a non-deterministic signal would erase real artists, which is worse.
