@@ -50,6 +50,7 @@ def run_report() -> dict:
     # opcionales: si no se han construido, el informe se degrada y omite esas
     # secciones en vez de fallar.
     artists = load_jsonl(GOLD_ROOT / "agg_artist_metrics.jsonl")
+    countries = load_jsonl(GOLD_ROOT / "agg_country_metrics.jsonl")
     categories = load_jsonl(GOLD_ROOT / "agg_category_metrics.jsonl")
     months = load_jsonl(GOLD_ROOT / "agg_month_metrics.jsonl")
     price_dist_rows = load_jsonl(GOLD_ROOT / "agg_price_distribution.jsonl")
@@ -63,6 +64,19 @@ def run_report() -> dict:
     sell_through_pct = (total_sold / total_lots * 100) if total_lots else 0
     avg_sold = (total_revenue / total_sold) if total_sold else None
 
+    # Cobertura del maestro de artistas. Se publica aunque sea 0: si el filtro
+    # por pais aparece vacio, el informe debe decir por que en vez de parecer
+    # roto. Ver pipelines/config/artists/README.md.
+    artists_with_country = sum(1 for r in artists if r.get("country_birth"))
+    artist_coverage = {
+        "artists_ranked": len(artists),
+        "artists_with_country": artists_with_country,
+        "country_coverage_pct": round(artists_with_country / len(artists) * 100, 1)
+        if artists
+        else 0.0,
+        "countries": sum(1 for r in countries if r.get("country")),
+    }
+
     report = {
         "source": str(GOLD_ROOT),
         "summary": {
@@ -75,6 +89,7 @@ def run_report() -> dict:
             "avg_sold_price_eur": round(avg_sold, 2) if avg_sold is not None else None,
         },
         "quality_flags": quality_flags,
+        "artist_coverage": artist_coverage,
         "by_house": [
             {
                 "house_slug": r.get("house_slug"),
@@ -93,6 +108,7 @@ def run_report() -> dict:
         "by_year": [],
         "by_year_by_house": [],
         "by_artist": artists,
+        "by_country": countries,
         "by_category": categories,
         "by_month": months,
         "price_distribution": price_dist_rows[0] if price_dist_rows else None,
@@ -151,8 +167,15 @@ def main() -> None:
     out_json.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Report JSON: {out_json}")
 
+    # El detalle lote a lote alimenta las descargas del HTML, pero NO entra en
+    # analytics_report.json: son 13.733 filas que multiplicarian por cinco el
+    # tamanio de un fichero pensado para leerse de un vistazo. Quien lo quiera
+    # en bruto tiene data/gold/lot_details.jsonl.
+    report_html = dict(report)
+    report_html["lot_details"] = load_jsonl(GOLD_ROOT / "lot_details.jsonl")
+
     out_html = GOLD_ROOT / "analytics_report.html"
-    write_html(report, out_html)
+    write_html(report_html, out_html)
     print(f"Report HTML: {out_html}")
 
     print("\n--- Resumen ---")

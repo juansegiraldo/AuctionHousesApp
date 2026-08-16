@@ -1,0 +1,304 @@
+# Maestro de artistas - shard "d"
+#
+# Entradas cuyo artist_id empieza por "d". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: daniel_merino
+    display_name: "Daniel Merino"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1941
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Daniel Merino"
+    notes: "38 lotes | casas: duran_subastas"
+
+  - artist_id: daniel_vazquez_diaz
+    display_name: "Daniel Vázquez Díaz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1881
+    death_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Daniel Vázquez Díaz"
+    notes: "83 lotes | casas: duran_subastas"
+
+  - artist_id: dario_basso
+    display_name: "Darío Basso"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Darío Basso"
+    notes: "33 lotes | casas: duran_subastas"
+
+  - artist_id: dario_de_regoyos
+    display_name: "Darío de Regoyos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1857
+    death_year: 1913
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Darío de Regoyos"
+    notes: "13 lotes | casas: duran_subastas"
+
+  - artist_id: dario_morales
+    display_name: "Darío Morales"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1944
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Darío Morales"
+    notes: "6 lotes | casas: bogota_auctions"
+
+  - artist_id: david_manzur
+    display_name: "David Manzur"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "David Manzur"
+    notes: "34 lotes | casas: bogota_auctions"
+
+  - artist_id: david_roberts
+    display_name: "David Roberts"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1796
+    death_year: 1864
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "David Roberts"
+      - "ROBERTS, DAVID"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: debora_arango
+    display_name: "Débora Arango"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1907
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Débora Arango"
+    notes: "4 lotes | casas: bogota_auctions"
+
+  - artist_id: delcy_morelos
+    display_name: "Delcy Morelos"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Delcy Morelos"
+    notes: "4 lotes | casas: bogota_auctions"
+
+  - artist_id: demetrio_salgado
+    display_name: "Demetrio Salgado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1916
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Demetrio Salgado"
+    notes: "77 lotes | casas: duran_subastas"
+
+  - artist_id: dino_valls
+    display_name: "Dino Valls"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Dino Valls"
+    notes: "28 lotes | casas: duran_subastas"
+
+  - artist_id: dis_berlin
+    display_name: "Dis Berlin"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Dis Berlin"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: danilo_duenas
+    display_name: "Danilo Dueñas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DANILO DUEÑAS"
+      - "Danilo Dueñas"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: dario_ortiz
+    display_name: "Darío Ortiz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DARIO ORTIZ"
+      - "Darío Ortiz"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: dario_villalba
+    display_name: "Darío Villalba"
+    country_birth: "PY"
+    nationalities: ["PY"]
+    birth_year: 1939
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DARIO VILLALBA"
+      - "Darío Villalba"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: david_alfaro_siqueiros
+    display_name: "David Alfaro Siqueiros"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1896
+    death_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DAVID ALFARO SIQUEIROS"
+      - "David Alfaro Siqueiros"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: dicken_castro
+    display_name: "Dicken Castro"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1922
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DICKEN CASTRO"
+      - "Dicken Castro"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: diego_chaves_lesivo
+    display_name: "Diego Chaves \"Lesivo\""
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1984
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DIEGO CHAVES \"LESIVO\""
+      - "Diego Chaves \"Lesivo\""
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: diva_teresa_ramirez
+    display_name: "Diva Teresa Ramírez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DIVA TERESA RAMIREZ"
+      - "Diva Teresa Ramírez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: domingo_izquierdo
+    display_name: "Domingo Izquierdo"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DOMINGO IZQUIERDO"
+      - "Domingo Izquierdo"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: domingo_moreno_otero
+    display_name: "Domingo Moreno Otero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1882
+    death_year: 1948
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DOMINGO MORENO OTERO"
+      - "Domingo Moreno Otero"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: doris_salcedo
+    display_name: "Doris Salcedo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1958
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "DORIS SALCEDO"
+      - "Doris Salcedo"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: domingo_huetos
+    display_name: "Domingo Huetos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1928
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Domingo Huetos"
+    notes: "14 lotes en Silver"

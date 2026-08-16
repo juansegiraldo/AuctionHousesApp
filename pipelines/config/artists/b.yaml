@@ -1,0 +1,305 @@
+# Maestro de artistas - shard "b"
+#
+# Entradas cuyo artist_id empieza por "b". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: baldomero_romero_ressendi
+    display_name: "Baldomero Romero Ressendi"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Baldomero Romero Ressendi"
+      - "ROMERO RESSENDI, BALDOMERO"
+    notes: "57 lotes | casas: duran_subastas"
+
+  - artist_id: beatriz_gonzalez
+    display_name: "Beatriz González"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Beatriz González"
+      - "Beatriz González (Colombia, 1938)"
+      - "González, Beatriz"
+    notes: "60 lotes | casas: bogota_auctions"
+
+  - artist_id: bengt_lindstrom
+    display_name: "Bengt Lindström"
+    country_birth: "SE"
+    nationalities: ["SE"]
+    birth_year: 1925
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bengt Lindström"
+    notes: "20 lotes | casas: duran_subastas"
+
+  - artist_id: benjamin_palencia
+    display_name: "Benjamín Palencia"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1900
+    death_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Benjamín Palencia"
+    notes: "102 lotes | casas: duran_subastas"
+
+  - artist_id: bernardo_salcedo
+    display_name: "Bernardo Salcedo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1939
+    death_year: 2007
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bernardo Salcedo"
+    notes: "16 lotes | casas: bogota_auctions"
+
+  - artist_id: bibi_zogbe
+    display_name: "Bibi Zogbé"
+    country_birth: "AR"
+    nationalities: ["AR", "PY"]
+    birth_year: 1890
+    death_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bibi Zogbé"
+    notes: "27 lotes | casas: duran_subastas"
+
+  - artist_id: bonifacio
+    display_name: "Bonifacio"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1934
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bonifacio"
+    notes: "55 lotes | casas: duran_subastas"
+
+  - artist_id: bosco_sodi
+    display_name: "Bosco Sodi"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bosco Sodi"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: bairo_martinez
+    display_name: "Bairo Martinez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BAIRO MARTINEZ"
+      - "Bairo Martinez"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: banco_bajo
+    display_name: "Banco Bajo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BANCO BAJO"
+      - "Banco Bajo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: banksy
+    display_name: "Banksy"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BANKSY"
+      - "Banksy"
+    notes: "11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: barbara_kruger
+    display_name: "Barbara Kruger"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BARBARA KRUGER"
+      - "Barbara Kruger"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: barbarita_cardozo
+    display_name: "Barbarita Cardozo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1975
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BARBARITA CARDOZO"
+      - "Barbarita Cardozo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: beatriz_daza
+    display_name: "Beatriz Daza"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BEATRIZ DAZA"
+      - "Beatriz Daza"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: beltran
+    display_name: "Beltran"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BELTRAN"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: bernado_salcedo
+    display_name: "Bernado Salcedo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    death_year: 2007
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BERNADO SALCEDO"
+      - "Bernado Salcedo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: bernard_buffet
+    display_name: "Bernard Buffet"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1928
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BERNARD BUFFET"
+      - "Bernard Buffet"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: bernardo_ortiz
+    display_name: "Bernardo Ortiz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1972
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BERNARDO ORTIZ"
+      - "Bernardo Ortiz"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: blanca_moreno
+    display_name: "Blanca Moreno"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BLANCA MORENO"
+      - "Blanca Moreno"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: brian_donnelly_kaws
+    display_name: "Brian Donnelly \"Kaws\""
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BRIAN DONNELLY \"KAWS\""
+      - "Brian Donnelly \"Kaws\""
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: bernardo_perez_torrens
+    display_name: "Bernardo Perez Torrens"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Bernardo Perez Torrens"
+      - "Bernardo Pérez Torrens"
+    notes: "45 lotes en Silver | fuente: Askart; Artnet | Madrid"
+
+  - artist_id: bohigas_oriol
+    display_name: "Oriol Bohigas"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1925
+    death_year: 2021
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "BOHIGAS, Oriol"
+    notes: "11 lotes en Silver | fuente: Wikipedia | ARQUITECTO, no pintor; Barcelona"
+
+  - artist_id: bonifacio_alfonso
+    display_name: "Bonifacio Alfonso"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1933
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Bonifacio Alfonso"
+    notes: "12 lotes en Silver | fuente: Wikidata"

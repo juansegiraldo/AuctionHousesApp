@@ -1,0 +1,172 @@
+# Maestro de artistas - shard "h"
+#
+# Entradas cuyo artist_id empieza por "h". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: hans_hartung
+    display_name: "Hans Hartung"
+    country_birth: "DE"
+    nationalities: ["DE", "FR"]
+    birth_year: 1904
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Hans Hartung"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: hernando_vines
+    display_name: "Hernando Viñes"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1904
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Hernando Viñes"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: hugo_zapata
+    display_name: "Hugo Zapata"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1945
+    death_year: 2025
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Hugo Zapata"
+      - "Hugo Zapata (Colombia, 1945)"
+    notes: "11 lotes | casas: bogota_auctions"
+
+  - artist_id: henry_moore
+    display_name: "Henry Moore"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1898
+    death_year: 1986
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HENRY MOORE"
+      - "Henry Moore"
+    notes: "9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hernan_diaz
+    display_name: "Hernán Díaz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HERNAN DIAZ"
+      - "Hernán Díaz"
+      - "Díaz, Hernán"
+    notes: "12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hernando_momo_del_villar
+    display_name: "Hernando \"Momo\" del Villar"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1944
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HERNANDO \"MOMO\" DEL VILLAR"
+      - "Hernando \"Momo\" del Villar"
+    notes: "9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hernando_tejada
+    display_name: "Hernando Tejada"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1924
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HERNANDO TEJADA"
+      - "Hernando Tejada"
+    notes: "8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hugo_demarco
+    display_name: "Hugo Demarco"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HUGO DEMARCO"
+      - "Hugo Demarco"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hugo_martinez
+    display_name: "Hugo Martínez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HUGO MARTINEZ"
+      - "Hugo Martínez"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: humberto_chaves
+    display_name: "Humberto Chaves"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1891
+    death_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HUMBERTO CHAVES"
+      - "Humberto Chaves"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: humberto_valencia_chavez
+    display_name: "Humberto Valencia Chavez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "HUMBERTO VALENCIA CHAVEZ"
+      - "Humberto Valencia Chavez"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: hipolito_hidalgo_de_caviedes
+    display_name: "Hipólito Hidalgo de Caviedes"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1902
+    death_year: 1994
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Hipólito Hidalgo de Caviedes"
+      - "Hipólito hidalgo de Caviedes"
+    notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"

@@ -1,0 +1,113 @@
+# Maestro de artistas - shard "t"
+#
+# Entradas cuyo artist_id empieza por "t". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: tomas_campuzano_y_aguirre
+    display_name: "Tomás Campuzano y Aguirre"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1857
+    death_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Tomás Campuzano y Aguirre"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: takeshi_hara
+    display_name: "Takeshi Hara"
+    country_birth: "JP"
+    nationalities: ["JP"]
+    birth_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "TAKESHI HARA"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: teresa_cuellar_teye
+    display_name: "Teresa Cuellar - Teye"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "TERESA CUELLAR - TEYE"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: teresa_sanchez
+    display_name: "Teresa Sánchez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1943
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "TERESA SANCHEZ"
+      - "Teresa Sánchez"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: tomas_sanchez
+    display_name: "Tomás Sánchez"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1948
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "TOMAS SANCHEZ"
+      - "Tomás Sánchez"
+      - "Tomas Sánchez"
+    notes: "8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: theophile_alexandre_steinlen
+    display_name: "Théophile Alexandre Steinlen"
+    country_birth: "CH"
+    nationalities: ["CH"]
+    birth_year: 1859
+    death_year: 1923
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Théophile Alexandre Steinlen"
+    notes: "12 lotes en Silver | fuente: Wikipedia | nacido en Lausana, Suiza; trabajo en Paris"
+
+  - artist_id: tomas_campuzano
+    display_name: "Tomás Campuzano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1857
+    death_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Tomás Campuzano"
+    notes: "15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; Wikidata | Born Santander; died Becerril de la Sierra"
+
+  - artist_id: tomas_martin_rebollo
+    display_name: "Tomás Martín Rebollo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1858
+    death_year: 1919
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Tomás Martín Rebollo"
+      - "Tomás MArtín Rebollo"
+    notes: "15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; RAH | Born Granada; died Madrid"

@@ -1,0 +1,426 @@
+# Maestro de artistas - shard "g"
+#
+# Entradas cuyo artist_id empieza por "g". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: gabriel_bernaldo_de_quiros
+    display_name: "Gabriel Bernaldo de Quirós"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gabriel Bernaldo de Quirós"
+      - "BERNALDO DE QUIROS, GABRIEL"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: gabriel_morcillo
+    display_name: "Gabriel Morcillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1888
+    death_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gabriel Morcillo"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: gabriel_puig_roda
+    display_name: "Gabriel Puig Roda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1865
+    death_year: 1919
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gabriel Puig Roda"
+    notes: "6 lotes | casas: duran_subastas"
+
+  - artist_id: gaspar_montes_iturrioz
+    display_name: "Gaspar Montes Iturrioz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1901
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gaspar Montes Iturrioz"
+    notes: "16 lotes | casas: duran_subastas"
+
+  - artist_id: genaro_perez_villaamil
+    display_name: "Genaro Pérez Villaamil"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1807
+    death_year: 1854
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Genaro Pérez Villaamil"
+      - "PÉREZ VILLAAMIL, GENARO"
+    notes: "12 lotes | casas: duran_subastas"
+
+  - artist_id: gerardo_rueda
+    display_name: "Gerardo Rueda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 1996
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gerardo Rueda"
+    notes: "34 lotes | casas: duran_subastas"
+
+  - artist_id: gines_parra
+    display_name: "Ginés Parra"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1899
+    death_year: 1961
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ginés Parra"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: gonzalo_ariza
+    display_name: "Gonzalo Ariza"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1912
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gonzalo Ariza"
+    notes: "9 lotes | casas: bogota_auctions"
+
+  - artist_id: goya
+    display_name: "Goya"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1746
+    death_year: 1828
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Goya"
+      - "Francisco de Goya y Lucientes"
+      - "Francisco de Goya"
+      - "GOYA Y LUCIENTES, FRANCISCO DE"
+    notes: "44 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: gregorio_del_olmo
+    display_name: "Gregorio del Olmo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1921
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gregorio del Olmo"
+    notes: "27 lotes | casas: duran_subastas"
+
+  - artist_id: gregorio_prieto
+    display_name: "Gregorio Prieto"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1899
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gregorio Prieto"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: guillermo_gomez_gil
+    display_name: "Guillermo Gómez Gil"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1862
+    death_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Guillermo Gómez Gil"
+    notes: "32 lotes | casas: duran_subastas"
+
+  - artist_id: guillermo_munoz_vera
+    display_name: "Guillermo Muñoz Vera"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Guillermo Muñoz Vera"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: guillermo_perez_villalta
+    display_name: "Guillermo Pérez Villalta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Guillermo Pérez Villalta"
+      - "PÉREZ VILLALTA, GUILLERMO"
+    notes: "43 lotes | casas: duran_subastas"
+
+  - artist_id: guillermo_vargas_ruiz
+    display_name: "Guillermo Vargas Ruiz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1910
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Guillermo Vargas Ruiz"
+    notes: "63 lotes | casas: duran_subastas"
+
+  - artist_id: guillermo_wiedemann
+    display_name: "Guillermo Wiedemann"
+    country_birth: "DE"
+    nationalities: ["CO", "DE"]
+    birth_year: 1905
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Guillermo Wiedemann"
+    notes: "12 lotes | casas: bogota_auctions"
+
+  - artist_id: gustavo_torner
+    display_name: "Gustavo Torner"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1925
+    death_year: 2025
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gustavo Torner"
+    notes: "33 lotes | casas: duran_subastas"
+
+  - artist_id: gustavo_zalamea
+    display_name: "Gustavo Zalamea"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1951
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gustavo Zalamea"
+      - "Zalamea, Gustavo"
+    notes: "14 lotes | casas: bogota_auctions"
+
+  - artist_id: gaviria
+    display_name: "Gaviria"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GAVIRIA"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: george_rouault
+    display_name: "George Rouault"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1871
+    death_year: 1958
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GEORGE ROUAULT"
+      - "George Rouault"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: george_segal
+    display_name: "George Segal"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1924
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GEORGE SEGAL"
+      - "George Segal"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: german_arrubla
+    display_name: "Germán Arrubla"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1939
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GERMAN ARRUBLA"
+      - "Germán Arrubla"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: german_botero
+    display_name: "Germán Botero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1946
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GERMAN BOTERO"
+      - "Germán Botero"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: gilbert_george_gilbert_proesch_george_passmore_y_david_hockney
+    display_name: "Gilbert & George (gilbert Proesch & George Passmore) y David Hockney"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "GILBERT & GEORGE (GILBERT PROESCH & GEORGE PASSMORE) Y DAVID HOCKNEY"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
+
+  - artist_id: gonzalo_diaz
+    display_name: "Gonzalo Díaz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GONZALO DIAZ"
+      - "Gonzalo Díaz"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: graciela_sacco
+    display_name: "Graciela Sacco"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1956
+    death_year: 2017
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GRACIELA SACCO"
+      - "Graciela Sacco"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: gustavo_garavato_bernal
+    display_name: "Gustavo \"garavato\" Bernal"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GUSTAVO \"GARAVATO\" BERNAL"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: gustavo_otero_munoz
+    display_name: "Gustavo Otero Muñoz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1979
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GUSTAVO OTERO MUÑOZ"
+      - "Otero Muñoz, Gustavo"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: gustavo_vejarano
+    display_name: "Gustavo Vejarano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1932
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GUSTAVO VEJARANO"
+      - "Gustavo Vejarano"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: genaro_lahuerta
+    display_name: "Genaro Lahuerta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1905
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Genaro Lahuerta"
+    notes: "11 lotes en Silver | fuente: Wikipedia ES | Valencia"
+
+  - artist_id: godofredo_ortega_munoz
+    display_name: "Godofredo Ortega Muñoz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1899
+    death_year: 1982
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Godofredo Ortega Muñoz"
+      - "GODOFREDO ORTEGA MUÑOZ"
+    notes: "11 lotes en Silver | fuente: Wikidata | San Vicente de Alcantara; CORRIGE 1905 -> 1899"
+
+  - artist_id: grete_stern
+    display_name: "Grete Stern"
+    country_birth: "DE"
+    nationalities: ["DE"]
+    birth_year: 1904
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Grete Stern"
+    notes: "13 lotes en Silver | fuente: Wikipedia | nacida en Elberfeld, Alemania; emigro a Argentina"

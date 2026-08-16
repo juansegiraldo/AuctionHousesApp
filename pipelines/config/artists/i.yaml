@@ -1,0 +1,136 @@
+# Maestro de artistas - shard "i"
+#
+# Entradas cuyo artist_id empieza por "i". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: ignacio_gomez_jaramillo
+    display_name: "Ignacio Gómez Jaramillo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1910
+    death_year: 1970
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ignacio Gómez Jaramillo"
+    notes: "8 lotes | casas: bogota_auctions"
+
+  - artist_id: ignacio_pinazo_camarlench
+    display_name: "Ignacio Pinazo Camarlench"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1849
+    death_year: 1916
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ignacio Pinazo Camarlench"
+      - "PINAZO CAMARLENCH, IGNACIO"
+    notes: "14 lotes | casas: duran_subastas"
+
+  - artist_id: ignacio_zuloaga
+    display_name: "Ignacio Zuloaga"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1870
+    death_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ignacio Zuloaga"
+    notes: "12 lotes | casas: duran_subastas"
+
+  - artist_id: isabel_guerra
+    display_name: "Isabel Guerra"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Isabel Guerra"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: isabel_villar
+    display_name: "Isabel Villar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Isabel Villar"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: ismael_gonzalez_de_la_serna
+    display_name: "Ismael González de la Serna"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1897
+    death_year: 1970
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ismael González de la Serna"
+    notes: "29 lotes | casas: duran_subastas"
+  - artist_id: ignacio_iturria
+    display_name: "Ignacio Iturria"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ignacio Iturria"
+      - "Ignacio ITURRIA"
+      - "ITURRIA, IGNACIO"
+    notes: "7 lotes | casas: zorrilla_subastas"
+
+  - artist_id: ivan_argote
+    display_name: "Iván Argote"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1983
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "IVAN ARGOTE"
+      - "Iván Argote"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ivan_rickenmann
+    display_name: "Ivan  Rickenmann"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "IVAN RICKENMANN"
+      - "Ivan  Rickenmann"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ismael_blat
+    display_name: "Ismael Blat"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1901
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ismael Blat"
+    notes: "11 lotes en Silver | fuente: Wikipedia ES | Benimamet, Valencia"

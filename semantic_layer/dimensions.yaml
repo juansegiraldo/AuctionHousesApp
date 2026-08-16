@@ -9,10 +9,51 @@ dimensions:
     source: silver.auctions
     description: Auction event identifier
 
+  # La identidad del artista la resuelve pipelines/silver/artist_resolve.py y
+  # vive en Silver, no en el enrichment: artist_canonicalized.jsonl solo lleva
+  # el fold y no lo consume nadie aguas abajo.
   - name: artist
     key: artist_id
-    source: enrichments.artist_canonicalized
-    description: Canonical artist identifier
+    source: silver.lots
+    description: Canonical artist identifier from pipelines/config/artists/
+
+  # Clave de agrupacion cuando el artista no esta en el maestro. Agrupa, pero
+  # no identifica: "Francisco Toledo" son dos personas con el mismo fold.
+  - name: artist_fold
+    key: artist_fold
+    source: silver.lots
+    description: Deterministic grouping key for unmastered artist names
+
+  - name: country_birth
+    key: artist_country_birth
+    source: silver.lots
+    description: ISO 3166-1 alpha-2 country of birth, from the artist master
+
+  # OJO: estas dos viven en GOLD, no en Silver. Son un dato por artista, no por
+  # lote, asi que build_insights.py las lee del maestro por artist_id al montar
+  # el ranking en vez de escribirlas en los 62.420 lotes. Un artista fuera del
+  # maestro (fold_only) no tiene fecha: nunca se infiere del texto del lote.
+  - name: birth_year
+    key: birth_year
+    source: gold.agg_artist_metrics
+    description: Year of birth from the artist master; null when unknown
+
+  - name: death_year
+    key: death_year
+    source: gold.agg_artist_metrics
+    description: Year of death from the artist master; null when unknown or alive
+
+  # OJO: no aditiva. Un artista con doble nacionalidad suma en dos paises, asi
+  # que los totales por nacionalidad no cuadran con los totales por casa.
+  - name: nationality
+    key: artist_nationalities
+    source: silver.lots
+    description: ISO alpha-2 nationalities (multi-valued, NON-ADDITIVE)
+
+  - name: attribution_type
+    key: attribution_type
+    source: silver.lots
+    description: autor | escuela | circulo | taller | seguidor | copia | atribuido | anonimo | no_autor | desconocido
 
   - name: time
     key: auction_start_date
@@ -24,8 +65,11 @@ dimensions:
     source: enrichments.category_tags
     description: Enriched lot category
 
+  # Las categorias que emite category_tag.py estan en INGLES. El filtro llevaba
+  # los nombres en espaniol ('obra_grafica','pintura'), que no coinciden con
+  # ninguna fila: el mismo bug que ya se corrigio en quality_gates.py.
   - name: focus_category
     key: category
     source: enrichments.category_tags
-    filter: category in ('obra_grafica','pintura')
+    filter: category in ('painting','prints')
     description: Focus categories for Duran rollout

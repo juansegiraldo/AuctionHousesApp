@@ -1,0 +1,468 @@
+# Maestro de artistas - shard "p"
+#
+# Entradas cuyo artist_id empieza por "p". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: pablo_palazuelo
+    display_name: "Pablo Palazuelo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1916
+    death_year: 2007
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pablo Palazuelo"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: pablo_picasso
+    display_name: "Pablo Picasso"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1881
+    death_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pablo Picasso"
+      - "Pablo Ruiz Picasso"
+      - "Picasso, Pablo"
+      - "PICASSO, PABLO RUIZ"
+    notes: "13 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: pablo_serrano
+    display_name: "Pablo Serrano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1910
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pablo Serrano"
+    notes: "34 lotes | casas: duran_subastas"
+
+  - artist_id: pancho_cossio
+    display_name: "Pancho Cossío"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1894
+    death_year: 1970
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pancho Cossío"
+      - "COSSÍO, PANCHO"
+    notes: "9 lotes | casas: duran_subastas"
+
+  - artist_id: patricia_gadea
+    display_name: "Patricia Gadea"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1960
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Patricia Gadea"
+    notes: "20 lotes | casas: duran_subastas"
+
+  - artist_id: pedro_bueno
+    display_name: "Pedro Bueno"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1910
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Bueno"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: pedro_gasto
+    display_name: "Pedro Gastó"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1908
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Gastó"
+    notes: "30 lotes | casas: duran_subastas"
+
+  - artist_id: pedro_mozos
+    display_name: "Pedro Mozos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1915
+    death_year: 1983
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Mozos"
+    notes: "34 lotes | casas: duran_subastas"
+
+  - artist_id: pedro_nel_gomez
+    display_name: "Pedro Nel Gómez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Nel Gómez"
+      - "Gómez, Pedro Nel"
+    notes: "14 lotes | casas: bogota_auctions"
+
+  - artist_id: pedro_ruiz
+    display_name: "Pedro Ruíz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Ruíz"
+    notes: "24 lotes | casas: bogota_auctions"
+
+  - artist_id: pedro_sandoval
+    display_name: "Pedro Sandoval"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Sandoval"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: pedro_sobrado
+    display_name: "Pedro Sobrado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Sobrado"
+    notes: "54 lotes | casas: duran_subastas"
+
+  - artist_id: perico_pastor
+    display_name: "Perico Pastor"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Perico Pastor"
+    notes: "25 lotes | casas: duran_subastas"
+  - artist_id: pedro_blanes_viale
+    display_name: "Pedro Blanes Viale"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1878
+    death_year: 1926
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Blanes Viale"
+      - "Pedro BLANES VIALE"
+    notes: "15 lotes | casas: zorrilla_subastas"
+
+  - artist_id: pedro_figari
+    display_name: "Pedro Figari"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1861
+    death_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Figari"
+      - "Pedro FIGARI"
+    notes: "24 lotes | casas: zorrilla_subastas"
+
+  - artist_id: petrona_viera
+    display_name: "Petrona Viera"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1895
+    death_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Petrona Viera"
+      - "Petrona VIERA"
+    notes: "9 lotes | casas: zorrilla_subastas"
+
+  - artist_id: pablo_atchugarry
+    display_name: "Pablo Atchugarry"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1954
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PABLO ATCHUGARRY"
+      - "Pablo Atchugarry"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pablo_gilberto_montoya
+    display_name: "Pablo Gilberto Montoya"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PABLO GILBERTO MONTOYA"
+      - "Pablo Gilberto Montoya"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pablo_munoz
+    display_name: "Pablo Muñoz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PABLO MUÑOZ"
+      - "Pablo Muñoz"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pablo_obelar
+    display_name: "Pablo Obelar"
+    country_birth: "CL"
+    nationalities: ["CL"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PABLO OBELAR"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: patricia_tavera
+    display_name: "Patricia Tavera"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PATRICIA TAVERA"
+      - "Patricia Tavera"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pedro_alcantara_herran
+    display_name: "Pedro Alcántara Herrán"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PEDRO ALCANTARA HERRAN"
+      - "Pedro Alcántara Herrán"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pedro_alcantara_quijano
+    display_name: "Pedro Alcántara Quijano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1878
+    death_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PEDRO ALCANTARA QUIJANO"
+      - "Pedro Alcántara Quijano"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pedro_hanne_gallo
+    display_name: "Pedro Hanne Gallo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1930
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PEDRO HANNE GALLO"
+      - "Pedro Hanne Gallo"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pereira_gamba_prospero
+    display_name: "Pereira Gamba, Próspero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1793
+    death_year: 1855
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PEREIRA GAMBA, PROSPERO"
+      - "Pereira Gamba, Próspero"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: peter_downsbrough
+    display_name: "Peter Downsbrough"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PETER DOWNSBROUGH"
+      - "Peter Downsbrough"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: phanor_leon
+    display_name: "Phanor León"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1944
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PHANOR LEON"
+      - "Phanor León"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pierre_daguet
+    display_name: "Pierre Daguet"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1903
+    death_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "PIERRE DAGUET"
+      - "Pierre Daguet"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: pedro_alcantara
+    display_name: "Pedro Alcántara"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1942
+    death_year: 2019
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Alcántara"
+      - "PEDRO ALCANTARA"
+    notes: "15 lotes en Silver | fuente: MoMA; Art Institute Chicago | colombiano; en museos de EEUU"
+
+  - artist_id: pedro_castrortega
+    display_name: "Pedro Castrortega"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1956
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Pedro Castrortega"
+    notes: "12 lotes en Silver | fuente: Artnet"
+
+  - artist_id: pedro_flores
+    display_name: "Pedro Flores"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1897
+    death_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Flores"
+    notes: "11 lotes en Silver | fuente: Wikipedia ES | Murcia"
+
+  - artist_id: pedro_marcos_bustamante
+    display_name: "Pedro Marcos Bustamante"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1921
+    death_year: 2001
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Marcos Bustamante"
+    notes: "48 lotes en Silver | fuente: Invaluable; Artnet | Bilbao; murio en Rota, Cadiz"
+
+  - artist_id: pedro_serra_farnes
+    display_name: "Pedro Serra Farnés"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1890
+    death_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Serra Farnés"
+      - "PEdro Serra Farnés"
+      - "Pedro Serra Farnes"
+    notes: "16 lotes en Silver | fuente: Askart; Artprice | Barcelona; paisajista catalan"
+
+  - artist_id: pepi_sanchez
+    display_name: "Pepi Sánchez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1929
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pepi Sánchez"
+    notes: "14 lotes en Silver | fuente: Wikipedia | Sevilla"
+
+  - artist_id: pere_pruna
+    display_name: "Pere Pruna"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1904
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pere Pruna"
+    notes: "12 lotes en Silver | fuente: Wikidata"

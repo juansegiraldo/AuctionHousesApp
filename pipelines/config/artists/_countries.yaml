@@ -1,0 +1,208 @@
+# Tabla de normalizacion de paises. Fuente unica, leida por
+# pipelines/shared/artist_master.py.
+#
+# Por que codigos ISO 3166-1 alpha-2 y no el texto que ya trae Silver:
+# artist_country es texto libre en espaniol e inconsistente. En los datos reales
+# el mismo artista (Henry Moore) aparece con "Inglaterra" y con "Reino Unido",
+# y hay "EE.UU." junto a "Estados Unidos". Sin una clave canonica, el filtro por
+# pais reparte un mismo pais en varios cubos.
+#
+# El nombre en espaniol se resuelve al renderizar (country_es), no se almacena.
+
+countries:
+  AR: {es: Argentina, demonym_es: argentino}
+  AT: {es: Austria, demonym_es: austriaco}
+  BE: {es: Bélgica, demonym_es: belga}
+  BG: {es: Bulgaria, demonym_es: búlgaro}
+  BO: {es: Bolivia, demonym_es: boliviano}
+  BR: {es: Brasil, demonym_es: brasileño}
+  CA: {es: Canadá, demonym_es: canadiense}
+  CH: {es: Suiza, demonym_es: suizo}
+  CL: {es: Chile, demonym_es: chileno}
+  CN: {es: China, demonym_es: chino}
+  CO: {es: Colombia, demonym_es: colombiano}
+  CR: {es: Costa Rica, demonym_es: costarricense}
+  CU: {es: Cuba, demonym_es: cubano}
+  DE: {es: Alemania, demonym_es: alemán}
+  DK: {es: Dinamarca, demonym_es: danés}
+  DO: {es: República Dominicana, demonym_es: dominicano}
+  EC: {es: Ecuador, demonym_es: ecuatoriano}
+  ES: {es: España, demonym_es: español}
+  FR: {es: Francia, demonym_es: francés}
+  GB: {es: Reino Unido, demonym_es: británico}
+  GR: {es: Grecia, demonym_es: griego}
+  GT: {es: Guatemala, demonym_es: guatemalteco}
+  HN: {es: Honduras, demonym_es: hondureño}
+  HU: {es: Hungría, demonym_es: húngaro}
+  IE: {es: Irlanda, demonym_es: irlandés}
+  IL: {es: Israel, demonym_es: israelí}
+  IR: {es: Irán, demonym_es: iraní}
+  IT: {es: Italia, demonym_es: italiano}
+  JP: {es: Japón, demonym_es: japonés}
+  LT: {es: Lituania, demonym_es: lituano}
+  MA: {es: Marruecos, demonym_es: marroquí}
+  MX: {es: México, demonym_es: mexicano}
+  NI: {es: Nicaragua, demonym_es: nicaragüense}
+  NL: {es: Países Bajos, demonym_es: neerlandés}
+  # Entrecomillado obligatorio: YAML 1.1 lee NO sin comillas como el booleano
+  # False, y Noruega desaparecia de la tabla convertida en la clave False.
+  "NO": {es: Noruega, demonym_es: noruego}
+  PA: {es: Panamá, demonym_es: panameño}
+  PE: {es: Perú, demonym_es: peruano}
+  PH: {es: Filipinas, demonym_es: filipino}
+  PL: {es: Polonia, demonym_es: polaco}
+  PT: {es: Portugal, demonym_es: portugués}
+  PY: {es: Paraguay, demonym_es: paraguayo}
+  RO: {es: Rumanía, demonym_es: rumano}
+  RU: {es: Rusia, demonym_es: ruso}
+  SE: {es: Suecia, demonym_es: sueco}
+  SV: {es: El Salvador, demonym_es: salvadoreño}
+  # Estado historico. Se conserva como codigo propio en vez de repartirlo entre
+  # Chequia y Eslovaquia: la fuente dice "Checoslovaquia" y no sabemos cual.
+  CS: {es: Checoslovaquia, demonym_es: checoslovaco}
+  US: {es: Estados Unidos, demonym_es: estadounidense}
+  UY: {es: Uruguay, demonym_es: uruguayo}
+  VE: {es: Venezuela, demonym_es: venezolano}
+  # Aparecen en el Excel curado de Lefebre. Puerto Rico y Aruba no son estados
+  # independientes, pero ISO 3166-1 les da codigo propio y la fuente los nombra
+  # asi: convertirlos a US o NL falsearia la nacionalidad del artista.
+  PR: {es: Puerto Rico, demonym_es: puertorriqueño}
+  AW: {es: Aruba, demonym_es: arubeño}
+  AU: {es: Australia, demonym_es: australiano}
+  UA: {es: Ucrania, demonym_es: ucraniano}
+  IQ: {es: Irak, demonym_es: iraquí}
+  RS: {es: Serbia, demonym_es: serbio}
+  TW: {es: Taiwán, demonym_es: taiwanés}
+  EG: {es: Egipto, demonym_es: egipcio}
+
+# Todo lo que Silver escribe hoy en artist_country, mapeado a ISO.
+# Las claves se comparan plegadas (sin acentos, en minusculas), asi que
+# "Panamá" y "panama" entran ambas por "panama".
+#
+# Incluye ciudades: en 136 lotes el parentesis biografico trae la ciudad donde
+# deberia ir el pais (Bogota 69, Barranquilla 37, Cartagena 30). Se resuelven al
+# pais en vez de tirarlas.
+aliases:
+  # --- America Latina ---
+  colombia: CO
+  bogota: CO
+  barranquilla: CO
+  cartagena: CO
+  medellin: CO
+  cali: CO
+  pereira: CO
+  bucaramanga: CO
+  manizales: CO
+  popayan: CO
+  argentina: AR
+  argentine: AR
+  escuela argentina: AR
+  buenos aires: AR
+  bolivia: BO
+  brasil: BR
+  brazil: BR
+  chile: CL
+  costa rica: CR
+  cuba: CU
+  la habana: CU
+  ecuador: EC
+  quito: EC
+  guayaquil: EC
+  el salvador: SV
+  guatemala: GT
+  honduras: HN
+  mexico: MX
+  ciudad de mexico: MX
+  nicaragua: NI
+  panama: PA
+  paraguay: PY
+  peru: PE
+  lima: PE
+  republica dominicana: DO
+  uruguay: UY
+  uruguayan: UY      # gentilicio ingles: Zorrilla lo publica asi ("Uruguayan school")
+  escuela uruguaya: UY
+  montevideo: UY
+  venezuela: VE
+  caracas: VE
+
+  # --- Europa ---
+  espana: ES
+  spain: ES
+  spanish: ES        # gentilicios ingleses: llegan de agregadores como LiveAuctioneers
+  escuela espanola: ES
+  escuela española: ES
+  madrid: ES
+  barcelona: ES
+  valencia: ES
+  sevilla: ES
+  bilbao: ES
+  alemania: DE
+  germany: DE
+  german: DE
+  escuela alemana: DE
+  austria: AT
+  belgica: BE
+  dinamarca: DK
+  escocia: GB
+  francia: FR
+  france: FR
+  french: FR
+  escuela francesa: FR
+  paris: FR
+  gales: GB
+  grecia: GR
+  holanda: NL
+  dutch: NL
+  netherlands: NL
+  hungria: HU
+  inglaterra: GB
+  english: GB
+  england: GB
+  british: GB
+  irlanda: IE
+  italia: IT
+  italy: IT
+  italian: IT
+  escuela italiana: IT
+  roma: IT
+  noruega: "NO"   # ver la nota de arriba: sin comillas YAML lo lee como False
+  paises bajos: NL
+  polonia: PL
+  portugal: PT
+  reino unido: GB
+  gran bretana: GB
+  united kingdom: GB
+  rumania: RO
+  rusia: RU
+  suecia: SE
+  suiza: CH
+
+  # --- Resto ---
+  bulgaria: BG
+  canada: CA
+  checoslovaquia: CS
+  china: CN
+  estados unidos: US
+  filipinas: PH
+  iran: IR
+  lituania: LT
+  marruecos: MA
+  tetuan: MA
+  "ee uu": US
+  "ee.uu.": US
+  usa: US
+  united states: US
+  israel: IL
+  japon: JP
+  # Del Excel curado de Lefebre.
+  puerto rico: PR
+  aruba: AW
+  australia: AU
+  ucrania: UA
+  iraq: IQ
+  irak: IQ
+  serbia: RS
+  taiwan: TW
+  egipto: EG
+  greece: GR   # la hoja escribe algunos paises en ingles ('grecia' ya esta arriba)

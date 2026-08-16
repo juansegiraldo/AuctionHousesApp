@@ -1,0 +1,800 @@
+# Maestro de artistas - shard "e"
+#
+# Entradas cuyo artist_id empieza por "e". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: edgar_negret
+    display_name: "Edgar Negret"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1920
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Edgar Negret"
+      - "Edgar Negret (Colombia, 1920 - 2012)"
+      - "Negret, Edgar"
+    notes: "45 lotes | casas: bogota_auctions"
+
+  - artist_id: edgar_plans
+    display_name: "Edgar Plans"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Edgar Plans"
+      - "PLANS, EDGAR"
+    notes: "9 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_arroyo
+    display_name: "Eduardo Arroyo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1937
+    death_year: 2018
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Arroyo"
+      - "ARROYO, EDUARDO"
+    notes: "80 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_chillida
+    display_name: "Eduardo Chillida"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1924
+    death_year: 2002
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Chillida"
+    notes: "88 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_naranjo
+    display_name: "Eduardo Naranjo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Naranjo"
+      - "NARANJO, EDUARDO"
+    notes: "49 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_ramirez_villamizar
+    display_name: "Eduardo Ramírez Villamizar"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1922
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Ramírez Villamizar"
+    notes: "35 lotes | casas: bogota_auctions"
+
+  - artist_id: eduardo_rosales
+    display_name: "Eduardo Rosales"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Rosales"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_santonja
+    display_name: "Eduardo Santonja"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1899
+    death_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Santonja"
+    notes: "68 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_sanz
+    display_name: "Eduardo Sanz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Sanz"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_urculo
+    display_name: "Eduardo Úrculo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1938
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Úrculo"
+    notes: "67 lotes | casas: duran_subastas"
+
+  - artist_id: eduardo_vicente
+    display_name: "Eduardo Vicente"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1900
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Vicente"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: elena_asins
+    display_name: "Elena Asins"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1940
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Elena Asins"
+    notes: "10 lotes | casas: duran_subastas"
+
+  - artist_id: elena_santonja
+    display_name: "Elena Santonja"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Elena Santonja"
+    notes: "97 lotes | casas: duran_subastas"
+
+  - artist_id: elias_garralda_alzugaray
+    display_name: "Elías Garralda Alzugaray"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Elías Garralda Alzugaray"
+      - "GARRALDA ALZUGARAY, ELÍAS"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: eliseo_meifren
+    display_name: "Eliseo Meifrén"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1859
+    death_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eliseo Meifrén"
+    notes: "20 lotes | casas: duran_subastas"
+
+  - artist_id: emilia_castaneda
+    display_name: "Emilia Castañeda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilia Castañeda"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: emilio_grau_sala
+    display_name: "Emilio Grau Sala"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilio Grau Sala"
+    notes: "62 lotes | casas: duran_subastas"
+
+  - artist_id: emilio_prieto
+    display_name: "Emilio Prieto"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1940
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilio Prieto"
+      - "PRIETO, EMILIO"
+    notes: "67 lotes | casas: duran_subastas"
+
+  - artist_id: emilio_sala_frances
+    display_name: "Emilio Sala Francés"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1850
+    death_year: 1910
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilio Sala Francés"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: emma_reyes
+    display_name: "Emma Reyes"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1919
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emma Reyes"
+    notes: "31 lotes | casas: bogota_auctions"
+
+  - artist_id: enrique_atalaya
+    display_name: "Enrique Atalaya"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Atalaya"
+      - "ATALAYA, ENRIQUE"
+    notes: "6 lotes | casas: duran_subastas"
+
+  - artist_id: enrique_brinkmann
+    display_name: "Enrique Brinkmann"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Brinkmann"
+      - "BRINKMANN, ENRIQUE"
+    notes: "24 lotes | casas: duran_subastas"
+
+  - artist_id: enrique_grau
+    display_name: "Enrique Grau"
+    country_birth: "PA"
+    nationalities: ["CO", "PA"]
+    birth_year: 1920
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Grau"
+      - "Grau, Enrique"
+    notes: "32 lotes | casas: bogota_auctions"
+
+  - artist_id: enrique_martinez_cubells
+    display_name: "Enrique Martínez Cubells"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1874
+    death_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Martínez Cubells"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: enrique_monis_mora
+    display_name: "Enrique Monis Mora"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1914
+    death_year: 1982
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Monis Mora"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: enrique_segura
+    display_name: "Enrique Segura"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1906
+    death_year: 1994
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Segura"
+    notes: "28 lotes | casas: duran_subastas"
+
+  - artist_id: equipo_cronica
+    display_name: "Equipo Crónica"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1963
+    death_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Equipo Crónica"
+    notes: "73 lotes | casas: duran_subastas"
+
+  - artist_id: erwin_bechtold
+    display_name: "Erwin Bechtold"
+    country_birth: "DE"
+    nationalities: ["DE", "ES"]
+    birth_year: 1925
+    death_year: 2022
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Erwin Bechtold"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: eugenio_chicano
+    display_name: "Eugenio Chicano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1935
+    death_year: 2019
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio Chicano"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: eugenio_granell
+    display_name: "Eugenio Granell"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1912
+    death_year: 2001
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio Granell"
+    notes: "14 lotes | casas: duran_subastas"
+
+  - artist_id: eugenio_lucas_velazquez
+    display_name: "Eugenio Lucas Velázquez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1817
+    death_year: 1870
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio Lucas Velázquez"
+    notes: "37 lotes | casas: duran_subastas"
+
+  - artist_id: eugenio_lucas_villaamil
+    display_name: "Eugenio Lucas Villaamil"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1858
+    death_year: 1918
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eugenio Lucas Villaamil"
+      - "LUCAS VILLAAMIL, EUGENIO"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: eusebio_sempere
+    display_name: "Eusebio Sempere"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eusebio Sempere"
+      - "SEMPERE, EUSEBIO"
+    notes: "42 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: eustaquio_segrelles
+    display_name: "Eustaquio Segrelles"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1936
+    death_year: 2025
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eustaquio Segrelles"
+    notes: "85 lotes | casas: duran_subastas"
+
+  - artist_id: eva_lootz
+    display_name: "Eva Lootz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eva Lootz"
+      - "LOOTZ, EVA"
+    notes: "37 lotes | casas: duran_subastas"
+
+  - artist_id: evaristo_guerra
+    display_name: "Evaristo Guerra"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Evaristo Guerra"
+    notes: "33 lotes | casas: duran_subastas"
+
+  - artist_id: ever_astudillo
+    display_name: "Ever Astudillo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1948
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ever Astudillo"
+    notes: "11 lotes | casas: bogota_auctions"
+  - artist_id: edgardo_ribeiro
+    display_name: "Edgardo Ribeiro"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1921
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Edgardo Ribeiro"
+      - "Edgardo RIBEIRO"
+    notes: "7 lotes | casas: zorrilla_subastas"
+
+  - artist_id: enrique_broglia
+    display_name: "Enrique Broglia"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1942
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Broglia"
+      - "Enrique BROGLIA"
+    notes: "5 lotes | casas: zorrilla_subastas"
+
+  - artist_id: enrique_castells_capurro
+    display_name: "Enrique Castells Capurro"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1913
+    death_year: 1987
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Castells Capurro"
+      - "Enrique CASTELLS CAPURRO"
+    notes: "16 lotes | casas: zorrilla_subastas"
+
+  - artist_id: ernesto_cristiani
+    display_name: "Ernesto Cristiani"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1928
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ernesto Cristiani"
+      - "Ernesto CRISTIANI"
+    notes: "5 lotes | casas: zorrilla_subastas"
+
+  - artist_id: ernesto_laroche
+    display_name: "Ernesto Laroche"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1879
+    death_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ernesto Laroche"
+      - "Ernesto LAROCHE"
+    notes: "9 lotes | casas: zorrilla_subastas"
+
+  - artist_id: edwin_monsalve
+    display_name: "Edwin Monsalve"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1984
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "EDWIN MONSALVE"
+      - "Edwin Monsalve"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CONFLICTO nacimiento en la hoja: 1984x1, 1986x1"
+
+  - artist_id: efrain_arrieta
+    display_name: "Efrain Arrieta"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1927
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "EFRAIN ARRIETA"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: eladio_velez
+    display_name: "Eladio Vélez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1897
+    death_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ELADIO VELEZ"
+      - "Eladio Vélez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: elsa_zambrano
+    display_name: "Elsa Zambrano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ELSA ZAMBRANO"
+      - "Elsa Zambrano"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: emilio_sanchez
+    display_name: "Emilio Sánchez"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1921
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "EMILIO SANCHEZ"
+      - "Emilio Sánchez"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: enrique_galdos_rivas
+    display_name: "Enrique Galdos Rivas"
+    country_birth: "PE"
+    nationalities: ["PE"]
+    birth_year: 1933
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ENRIQUE GALDOS RIVAS"
+      - "Enrique Galdos Rivas"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ernesto_restrepo
+    display_name: "Ernesto Restrepo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ERNESTO RESTREPO"
+      - "Ernesto Restrepo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ernesto_yerena
+    display_name: "Ernesto Yerena"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1986
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ERNESTO YERENA"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: erwin_kraus
+    display_name: "Erwin Kraus"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ERWIN KRAUS"
+      - "Erwin Kraus"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ethel_gilmour
+    display_name: "Ethel Gilmour"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1912
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ETHEL GILMOUR"
+      - "Ethel Gilmour"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: eduardo_arranz_bravo
+    display_name: "Eduardo Arranz Bravo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1941
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Arranz Bravo"
+    notes: "11 lotes en Silver | fuente: Wikipedia | Barcelona"
+
+  - artist_id: eduardo_martinez_vazquez
+    display_name: "Eduardo Martínez Vázquez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1886
+    death_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Martínez Vázquez"
+      - "Eduardo Martínez Vazquez"
+      - "Eduardo Martinez Vazquez"
+    notes: "11 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: eduardo_sanz_fraile
+    display_name: "Eduardo Sanz Fraile"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1928
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo Sanz Fraile"
+    notes: "16 lotes en Silver | fuente: MutualArt; Wikidata | Santander"
+
+  - artist_id: elena_blasco
+    display_name: "Elena Blasco"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Elena Blasco"
+    notes: "14 lotes en Silver | fuente: Wikipedia | Madrid"
+
+  - artist_id: emiliano_ramos
+    display_name: "Emiliano Ramos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1953
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Emiliano Ramos"
+    notes: "17 lotes en Silver | fuente: Arteinformado | Zamora"
+
+  - artist_id: emilio_poy_dalmau
+    display_name: "Emilio Poy Dalmau"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1876
+    death_year: 1933
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Emilio Poy Dalmau"
+    notes: "16 lotes en Silver | fuente: Artprice; MutualArt | Madrid"
+
+  - artist_id: emilio_ros_benet
+    display_name: "Emilio Ros Benet"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1918
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Emilio Ros Benet"
+    notes: "14 lotes en Silver | fuente: registros de subasta"
+
+  - artist_id: enrique_serra_auque
+    display_name: "Enrique Serra Auqué"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1858
+    death_year: 1918
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Enrique Serra Auqué"
+    notes: "12 lotes en Silver | fuente: Wikipedia | Barcelona; murio en Roma"
+
+  - artist_id: eustaquio_marin_ramos
+    display_name: "Eustaquio Marin Ramos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1873
+    death_year: 1959
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eustaquio Marin Ramos"
+      - "Eustaquio Marín Ramos"
+    notes: "12 lotes en Silver | fuente: Wikidata | Sevilla"

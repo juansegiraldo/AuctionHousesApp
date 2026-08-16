@@ -1,0 +1,1527 @@
+# Maestro de artistas - shard "a"
+#
+# Entradas cuyo artist_id empieza por "a". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: abel_cuerda
+    display_name: "Abel Cuerda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Abel Cuerda"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: adelardo_covarsi
+    display_name: "Adelardo Covarsí"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1885
+    death_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Adelardo Covarsí"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: adolfo_bernal
+    display_name: "Adolfo Bernal"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1954
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Adolfo Bernal"
+    notes: "17 lotes | casas: bogota_auctions"
+
+  - artist_id: agustin_ibarrola
+    display_name: "Agustín Ibarrola"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Agustín Ibarrola"
+      - "IBARROLA GOICOECHEA, AGUSTÍN"
+    notes: "6 lotes | casas: duran_subastas"
+
+  - artist_id: agustin_redondela
+    display_name: "Agustín Redondela"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Agustín Redondela"
+    notes: "77 lotes | casas: duran_subastas"
+
+  - artist_id: agustin_ubeda
+    display_name: "Agustín Úbeda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1925
+    death_year: 2007
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Agustín Úbeda"
+      - "ÚBEDA, AGUSTÍN"
+    notes: "368 lotes | casas: duran_subastas"
+
+  - artist_id: ahmed_ben_yessef
+    display_name: "Ahmed Ben Yessef"
+    country_birth: "MA"
+    nationalities: ["ES", "MA"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ahmed Ben Yessef"
+    notes: "9 lotes | casas: duran_subastas"
+
+  - artist_id: alberto_arboleda
+    display_name: "Alberto Arboleda"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1925
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Arboleda"
+    notes: "10 lotes | casas: bogota_auctions"
+
+  - artist_id: alberto_corazon
+    display_name: "Alberto Corazón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1942
+    death_year: 2021
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Corazón"
+      - "CORAZÓN, ALBERTO"
+    notes: "67 lotes | casas: duran_subastas"
+
+  - artist_id: alberto_pla_rubio
+    display_name: "Alberto Pla Rubio"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1867
+    death_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Pla Rubio"
+    notes: "9 lotes | casas: duran_subastas"
+
+  - artist_id: alberto_rafols_casamada
+    display_name: "Alberto Rafols Casamada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1923
+    death_year: 2009
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Rafols Casamada"
+      - "Albert Rafols Casamada"
+    notes: "31 lotes | casas: duran_subastas"
+
+  - artist_id: alejandro_obregon
+    display_name: "Alejandro Obregón"
+    country_birth: "ES"
+    nationalities: ["CO", "ES"]
+    birth_year: 1920
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alejandro Obregón"
+    notes: "34 lotes | casas: bogota_auctions"
+
+  - artist_id: alex_katz
+    display_name: "Alex Katz"
+    country_birth: "US"
+    nationalities: ["US"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alex Katz"
+    notes: "4 lotes | casas: duran_subastas"
+
+  - artist_id: alfonso_albacete
+    display_name: "Alfonso Albacete"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfonso Albacete"
+      - "ALBACETE, ALFONSO"
+    notes: "86 lotes | casas: duran_subastas"
+
+  - artist_id: alfonso_sanchez_portela
+    display_name: "Alfonso Sánchez Portela"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1902
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfonso Sánchez Portela"
+      - "SÁNCHEZ PORTELA, ALFONSO"
+    notes: "184 lotes | casas: duran_subastas"
+
+  - artist_id: alfredo_alcain
+    display_name: "Alfredo Alcaín"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfredo Alcaín"
+      - "ALCAÍN, ALFREDO"
+    notes: "46 lotes | casas: duran_subastas"
+
+  - artist_id: alfredo_opisso
+    display_name: "Alfredo Opisso"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1907
+    death_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfredo Opisso"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: alfredo_palmero
+    display_name: "Alfredo Palmero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1901
+    death_year: 1991
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfredo Palmero"
+    notes: "29 lotes | casas: duran_subastas"
+
+  - artist_id: alicia_martin
+    display_name: "Alicia Martín"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alicia Martín"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: alipio_jaramillo
+    display_name: "Alipio Jaramillo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1913
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alipio Jaramillo"
+    notes: "5 lotes | casas: bogota_auctions"
+
+  - artist_id: alvaro_barrios
+    display_name: "Álvaro Barrios"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Álvaro Barrios"
+    notes: "35 lotes | casas: bogota_auctions"
+
+  - artist_id: alvaro_delgado
+    display_name: "Álvaro Delgado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Álvaro Delgado"
+      - "DELGADO, ÁLVARO"
+    notes: "177 lotes | casas: duran_subastas"
+
+  - artist_id: amadeo_gabino
+    display_name: "Amadeo Gabino"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Amadeo Gabino"
+    notes: "44 lotes | casas: duran_subastas"
+
+  - artist_id: amalia_avia
+    display_name: "Amalia Avia"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1930
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Amalia Avia"
+    notes: "24 lotes | casas: duran_subastas"
+
+  - artist_id: ana_mercedes_hoyos
+    display_name: "Ana Mercedes Hoyos"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ana Mercedes Hoyos"
+    notes: "35 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: andres_barajas
+    display_name: "Andrés Barajas"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1941
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés Barajas"
+    notes: "28 lotes | casas: duran_subastas"
+
+  - artist_id: andres_cortes_y_aguilar
+    display_name: "Andrés Cortés y Aguilar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1810
+    death_year: 1879
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés Cortés y Aguilar"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: andres_de_santa_maria
+    display_name: "Andrés de Santa María"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1860
+    death_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés de Santa María"
+    notes: "4 lotes | casas: bogota_auctions"
+
+  - artist_id: andy_warhol
+    display_name: "Andy Warhol"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1928
+    death_year: 1987
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andy Warhol"
+    notes: "51 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: angel_orcajo
+    display_name: "Ángel Orcajo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ángel Orcajo"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: antoni_clave
+    display_name: "Antoni Clavé"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1913
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antoni Clavé"
+    notes: "78 lotes | casas: duran_subastas"
+
+  - artist_id: antoni_tapies
+    display_name: "Antoni Tàpies"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1923
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antoni Tàpies"
+      - "TÀPIES, ANTONI"
+    notes: "187 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: antonio_barrera
+    display_name: "Antonio Barrera"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Barrera"
+    notes: "20 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: antonio_caro
+    display_name: "Antonio Caro"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Caro"
+    notes: "33 lotes | casas: bogota_auctions"
+
+  - artist_id: antonio_casero
+    display_name: "Antonio Casero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1898
+    death_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Casero"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_guijarro
+    display_name: "Antonio Guijarro"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1923
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Guijarro"
+      - "Antonio Guijarro Gutiérrez"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_iglesias_sanz
+    display_name: "Antonio Iglesias Sanz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1935
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Iglesias Sanz"
+      - "IGLESIAS SANZ, ANTONIO"
+    notes: "33 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_lago
+    display_name: "Antonio Lago"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1916
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Lago"
+      - "Antonio Lago Rivera"
+      - "LAGO RIVERA, ANTONIO"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_lopez
+    display_name: "Antonio López"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio López"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_lopez_garcia
+    display_name: "Antonio López García"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio López García"
+      - "LÓPEZ GARCÍA, ANTONIO"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_lorenzo
+    display_name: "Antonio Lorenzo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 2009
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Lorenzo"
+    notes: "48 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_lorenzo_carrion
+    display_name: "Antonio Lorenzo Carrión"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1922
+    death_year: 2009
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Lorenzo Carrión"
+      - "LORENZO CARRIÓN, ANTONIO"
+    notes: "16 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_maria_esquivel
+    display_name: "Antonio María Esquivel"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1806
+    death_year: 1857
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio María Esquivel"
+    notes: "12 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_mingote
+    display_name: "Antonio Mingote"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1919
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Mingote"
+    notes: "32 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_munoz_degrain
+    display_name: "Antonio Muñoz Degrain"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1843
+    death_year: 1924
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Muñoz Degrain"
+    notes: "15 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_quiros
+    display_name: "Antonio Quirós"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1912
+    death_year: 1984
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Quirós"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_samudio
+    display_name: "Antonio Samudio"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Samudio"
+    notes: "23 lotes | casas: bogota_auctions"
+
+  - artist_id: antonio_santos_viana
+    display_name: "Antonio Santos Viana"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Santos Viana"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_saura
+    display_name: "Antonio Saura"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1930
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Saura"
+    notes: "130 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_suarez
+    display_name: "Antonio Suárez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1923
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Suárez"
+      - "SUÁREZ, ANTONIO"
+    notes: "43 lotes | casas: duran_subastas"
+
+  - artist_id: antonio_zarco
+    display_name: "Antonio Zarco"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Zarco"
+    notes: "57 lotes | casas: duran_subastas"
+
+  - artist_id: aureliano_de_beruete
+    display_name: "Aureliano de Beruete"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1845
+    death_year: 1912
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Aureliano de Beruete"
+      - "BERUETE, AURELIANO DE"
+    notes: "8 lotes | casas: duran_subastas"
+  - artist_id: alberto_dura
+    display_name: "Alberto Dura"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1888
+    death_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Dura"
+      - "Alberto DURA"
+    notes: "7 lotes | casas: zorrilla_subastas"
+
+  - artist_id: alceu_ribeiro
+    display_name: "Alceu Ribeiro"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1919
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alceu Ribeiro"
+      - "Alceu RIBEIRO"
+    notes: "8 lotes | casas: zorrilla_subastas"
+
+  - artist_id: alfredo_zorrilla_de_san_martin
+    display_name: "Alfredo Zorrilla De San Martín"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1927
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfredo Zorrilla De San Martín"
+      - "Alfredo ZORRILLA DE SAN MARTÍN"
+    notes: "19 lotes | casas: zorrilla_subastas"
+
+  - artist_id: augusto_torres
+    display_name: "Augusto Torres"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1913
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Augusto Torres"
+      - "Augusto TORRES"
+    notes: "8 lotes | casas: zorrilla_subastas"
+
+  - artist_id: a_rojas
+    display_name: "A Rojas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "A ROJAS"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: adriana_duque
+    display_name: "Adriana Duque"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ADRIANA DUQUE"
+      - "Adriana Duque"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ai_weiwei
+    display_name: "Ai Weiwei"
+    country_birth: "CN"
+    nationalities: ["CN"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "AI WEIWEI"
+      - "Ai Weiwei"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alberto_baraya
+    display_name: "Alberto Baraya"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALBERTO BARAYA"
+      - "Alberto Baraya"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alberto_riano
+    display_name: "Alberto Riaño"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1920
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALBERTO RIAÑO"
+      - "Alberto Riaño"
+    notes: "11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alberto_saldarriaga
+    display_name: "Alberto Saldarriaga"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1930
+    death_year: 2001
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALBERTO SALDARRIAGA"
+      - "Alberto Saldarriaga"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alec_soth
+    display_name: "Alec Soth"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEC SOTH"
+      - "Alec Soth"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alejandro_cartagena
+    display_name: "Alejandro Cartagena"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEJANDRO CARTAGENA"
+      - "Alejandro Cartagena"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alejandro_gomez_leal
+    display_name: "Alejandro Gómez Leal"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1903
+    death_year: 1979
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEJANDRO GOMEZ LEAL"
+      - "Alejandro Gómez Leal"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alejandro_leal
+    display_name: "Alejandro Leal"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEJANDRO LEAL"
+      - "Alejandro Leal"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alejandro_sanchez
+    display_name: "Alejandro Sánchez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEJANDRO SANCHEZ"
+      - "Alejandro Sánchez"
+    notes: "17 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alexander_calder
+    display_name: "Alexander Calder"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1898
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALEXANDER CALDER"
+      - "Alexander Calder"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alfonso_quijano
+    display_name: "Alfonso Quijano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1927
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALFONSO QUIJANO"
+      - "Alfonso Quijano"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alfonso_quijano_acero
+    display_name: "Alfonso Quijano Acero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1920
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALFONSO QUIJANO ACERO"
+      - "Alfonso Quijano Acero"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alfred_manessier
+    display_name: "Alfred Manessier"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1911
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALFRED MANESSIER"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alfredo_grenas
+    display_name: "Alfredo Greñas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1857
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALFREDO GREÑAS"
+      - "Alfredo Greñas"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alfredo_ramos_martinez
+    display_name: "Alfredo Ramos Martínez"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1871
+    death_year: 1946
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALFREDO RAMOS MARTINEZ"
+      - "Alfredo Ramos Martínez"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alicia_tafur
+    display_name: "Alicia Tafur"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALICIA TAFUR"
+      - "Alicia Tafur"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alonso_quijano
+    display_name: "Alonso Quijano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1927
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALONSO QUIJANO"
+      - "Alonso Quijano"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alvaro_barriosmanolo_vellojin
+    display_name: "Álvaro Barriosmanolo Vellojin"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ÁLVARO BARRIOSMANOLO VELLOJIN"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alvaro_herran
+    display_name: "Álvaro Herrán"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALVARO HERRAN"
+      - "Álvaro Herrán"
+      - "Alvaro Herran"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: alvaro_marin
+    display_name: "Álvaro Marín"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1946
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ALVARO MARIN"
+      - "Álvaro Marín"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: amaya
+    display_name: "Amaya"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "AMAYA"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: amhos
+    display_name: "Amhos"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "AMHOS"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ana_maria_rueda
+    display_name: "Ana María Rueda"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1954
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANA MARIA RUEDA"
+      - "Ana María Rueda"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ana_mercedes
+    display_name: "Ana Mercedes"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1942
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANA MERCEDES"
+      - "Ana Mercedes"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ana_patricia_palacios
+    display_name: "Ana Patricia Palacios"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANA PATRICIA PALACIOS"
+      - "Ana Patricia Palacios"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: andres_holguin
+    display_name: "Andres Holguin"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANDRES HOLGUIN"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: andres_matias_pinilla
+    display_name: "Andrés Matías Pinilla"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANDRES MATIAS PINILLA"
+      - "Andrés Matías Pinilla"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: andres_montoya_toxicomano
+    display_name: "Andrés Montoya \"Toxicómano\""
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANDRES MONTOYA \"TOXICOMANO\""
+      - "Andrés Montoya \"Toxicómano\""
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: andres_orjuela
+    display_name: "Andrés Orjuela"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANDRES ORJUELA"
+      - "Andrés Orjuela"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: andreu_alfaro
+    display_name: "Andreu Alfaro"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1929
+    death_year: 2012
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANDREU ALFARO"
+      - "Andreu Alfaro"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: anibal_gomescasseres
+    display_name: "Aníbal Gomescasseres"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANIBAL GOMESCASSERES"
+      - "Aníbal Gomescasseres"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_asis
+    display_name: "Antonio Asis"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1892
+    death_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO ASIS"
+      - "Antonio Asis"
+      - "Antonio Asís"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_grass
+    display_name: "Antonio Grass"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO GRASS"
+      - "Antonio Grass"
+      - "Grass, Antonio"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_grau
+    display_name: "Antonio Grau"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1913
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO GRAU"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_henrique_amaral
+    display_name: "Antonio Henrique Amaral"
+    country_birth: "BR"
+    nationalities: ["BR"]
+    birth_year: 1935
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO HENRIQUE AMARAL"
+      - "Antonio Henrique Amaral"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_segui
+    display_name: "Antonio Seguí"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO SEGUI"
+      - "Antonio Seguí"
+      - "Antonio  Seguí"
+      - "ANTONIO SEGUÍ"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: antonio_valencia_mejia
+    display_name: "Antonio Valencia Mejía"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ANTONIO VALENCIA MEJIA"
+      - "Antonio Valencia Mejía"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: argemiro_velez
+    display_name: "Argemiro Vélez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    death_year: 1972
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ARGEMIRO VELEZ"
+      - "Argemiro Vélez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: arles_herrera
+    display_name: "Arles Herrera"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ARLES HERRERA"
+      - "Arles Herrera"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: armando_morales
+    display_name: "Armando Morales"
+    country_birth: "NI"
+    nationalities: ["NI"]
+    birth_year: 1927
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ARMANDO MORALES"
+      - "Armando Morales"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: armando_villegas
+    display_name: "Armando Villegas"
+    country_birth: "PE"
+    nationalities: ["PE"]
+    birth_year: 1926
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ARMANDO VILLEGAS"
+      - "Armando Villegas"
+    notes: "14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: augusto_rendon
+    display_name: "Augusto Rendón"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1863
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "AUGUSTO RENDON"
+      - "Augusto Rendón"
+    notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: augusto_rivera
+    display_name: "Augusto Rivera"
+    country_birth: "PR"
+    nationalities: ["PR"]
+    birth_year: 1895
+    death_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "AUGUSTO RIVERA"
+      - "Augusto Rivera"
+    notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: adolfo_estrada
+    display_name: "Adolfo Estrada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1927
+    death_year: 2020
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Adolfo Estrada"
+    notes: "27 lotes en Silver | fuente: Artsy; Invaluable | Santander"
+
+  - artist_id: adriano_bordellini_livetti
+    display_name: "Adriano Bordellini Livetti"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1859
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Adriano Bordellini Livetti"
+    notes: "15 lotes en Silver | fuente: Artprice; Wikidata | Italian painter"
+
+  - artist_id: alberto_duce
+    display_name: "Alberto Duce"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1915
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alberto Duce"
+    notes: "11 lotes en Silver | fuente: Wikipedia ES | Zaragoza"
+
+  - artist_id: alejandro_ferrant
+    display_name: "Alejandro Ferrant"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1843
+    death_year: 1917
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alejandro Ferrant"
+    notes: "15 lotes en Silver | fuente: Wikipedia; Museo Prado; Wikidata | Born Madrid"
+
+  - artist_id: alfonso_bonifacio
+    display_name: "Alfonso Bonifacio"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1933
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Alfonso Bonifacio"
+    notes: "16 lotes en Silver | fuente: Askart; Artnet | San Sebastian - CORRIGE el 1934 del dato de subasta"
+
+  - artist_id: andres_martinez_de_leon
+    display_name: "Andrés Martínez de León"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1895
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés Martínez de León"
+    notes: "15 lotes en Silver | fuente: Wikidata; Askart; MutualArt | Spanish caricaturist born April 5, 1895"
+
+  - artist_id: andres_nagel
+    display_name: "Andrés Nagel"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Andrés Nagel"
+      - "Andres Nagel"
+    notes: "12 lotes en Silver | fuente: Wikipedia ES | San Sebastian"
+
+  - artist_id: angel_gonzalez_marcos
+    display_name: "Ángel González Marcos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1900
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Ángel González Marcos"
+      - "Angel Gonzalez Marcos"
+    notes: "12 lotes en Silver | fuente: Artnet"
+
+  - artist_id: angel_lizcano
+    display_name: "Ángel Lizcano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1846
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ángel Lizcano"
+    notes: "12 lotes en Silver | fuente: Wikipedia | Alcazar de San Juan"
+
+  - artist_id: angel_oliveras_guart
+    display_name: "Ángel Oliveras Guart"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1900
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ángel Oliveras Guart"
+      - "Angel Oliveras Guart"
+    notes: "13 lotes en Silver | fuente: Wikipedia ES | Barcelona"
+
+  - artist_id: antonio_alegre_cremades
+    display_name: "Antonio Alegre Cremades"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1939
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Alegre Cremades"
+    notes: "12 lotes en Silver | fuente: Wikipedia | Alginet, Valencia"
+
+  - artist_id: antonio_guanse
+    display_name: "Antonio Guansé"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Antonio Guansé"
+      - "Antonio Guanse"
+    notes: "14 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: antonio_rizzi
+    display_name: "Antonio Rizzi"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1869
+    death_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Antonio Rizzi"
+    notes: "15 lotes en Silver | fuente: Wikidata; Capitolium Art; Arcadja | Born Cremona, Italy"
+
+  - artist_id: arturo_peyrot
+    display_name: "Arturo Peyrot"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1908
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Arturo Peyrot"
+    notes: "29 lotes en Silver | fuente: Wikipedia; Artnet | Roma; murio en Madrid; discipulo de Morandi"
+
+  - artist_id: albrecht_durer
+    display_name: "Durero"
+    country_birth: "DE"
+    nationalities: ["DE"]
+    birth_year: 1471
+    death_year: 1528
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Durero"
+      - "Albrecht Durero"
+      - "Alberto Durero"
+    notes: "12 lotes en Silver | fuente: Wikipedia | Albrecht Durer, Nuremberg; el catalogo usa la forma castellanizada"

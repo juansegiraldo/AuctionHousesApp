@@ -10,6 +10,7 @@ import json
 import pytest
 
 from pipelines.gold import build_insights
+from pipelines.shared.artist_key import artist_fold
 
 
 # --------------------------------------------------------------------------
@@ -250,3 +251,168 @@ def test_categories_come_from_enrichment_and_default_to_other(gold):
     cats = {c["category"]: c for c in _read(goldd / "agg_category_metrics.jsonl")}
     assert cats["painting"]["lots_offered"] == 1
     assert cats["other"]["lots_offered"] == 1
+
+
+# --------------------------------------------------------------------------
+# Identidad de artista y pais
+# --------------------------------------------------------------------------
+
+def _resolved(name, **kw):
+    """Lote tal como lo deja pipelines/silver/artist_resolve.py."""
+    row = _lot(artist_name=name, **kw)
+    row.setdefault("attribution_type", "autor")
+    row.setdefault("artist_fold", artist_fold(name))
+    row.setdefault("artist_display_name", name)
+    row.setdefault("artist_id", None)
+    row.setdefault("artist_country_birth", None)
+    row.setdefault("artist_nationalities", [])
+    row.setdefault("artist_resolution", "fold_only")
+    return row
+
+
+def test_artist_variants_merge_into_one_row(gold):
+    """Las 4 grafias de Agustin Ubeda son un artista, no cuatro.
+
+    Antes se agrupaba por el nombre CRUDO, asi que sus 368 lotes reales salian
+    partidos en 4 filas del ranking y ninguna reflejaba su volumen real.
+    """
+    silver, _, goldd = gold
+    variantes = ["Agustín Úbeda", "Agustin Úbeda", "Agustín Ubeda", "Agustin Ubeda"]
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved(v, lot_url=f"v{i}", dedupe_key=f"v{i}")
+            for i, v in enumerate(variantes)
+        ],
+    )
+    build_insights.build_insights()
+    artists = _read(goldd / "agg_artist_metrics.jsonl")
+    assert len(artists) == 1
+    assert artists[0]["lots_offered"] == 4
+
+
+def test_two_people_same_fold_stay_separate_when_master_says_so(gold):
+    """Francisco Toledo son dos personas distintas con el mismo fold.
+
+    El maestro las separa via artist_id; si Gold agrupara solo por fold, este
+    error seria irreparable por construccion.
+    """
+    silver, _, goldd = gold
+    rows = []
+    for i in range(3):
+        rows.append(_resolved("Francisco Toledo", lot_url=f"mx{i}", dedupe_key=f"mx{i}",
+                              artist_id="francisco_toledo_mx", artist_resolution="master",
+                              artist_country_birth="MX"))
+        rows.append(_resolved("Francisco Toledo", lot_url=f"es{i}", dedupe_key=f"es{i}",
+                              artist_id="francisco_toledo_es", artist_resolution="master",
+                              artist_country_birth="ES"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    artists = _read(goldd / "agg_artist_metrics.jsonl")
+    assert len(artists) == 2
+    assert {a["country_birth"] for a in artists} == {"MX", "ES"}
+
+
+def test_non_authors_never_reach_the_ranking(gold):
+    """attribution_type de Silver decide, no un prefijo recalculado en Gold."""
+    silver, _, goldd = gold
+    rows = []
+    for i in range(4):
+        rows.append(_resolved("Escuela Española S. XVII", lot_url=f"e{i}",
+                              dedupe_key=f"e{i}", attribution_type="escuela"))
+        rows.append(_resolved("Anónimo", lot_url=f"a{i}", dedupe_key=f"a{i}",
+                              attribution_type="anonimo"))
+        rows.append(_resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    names = {a["artist_name"] for a in _read(goldd / "agg_artist_metrics.jsonl")}
+    assert names == {"Fernando Botero"}
+
+
+def test_country_comes_from_master_not_from_house_free_text(gold):
+    """artist_country (texto libre de la casa) no puede conceder pais.
+
+    Solo lo hace artist_country_birth, que escribe el maestro. El campo crudo
+    esta poblado en el 2% de los lotes y mezcla ciudades con paises.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}",
+                      artist_country="Colombia")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    artist = _read(goldd / "agg_artist_metrics.jsonl")[0]
+    assert artist["country_birth"] is None
+    assert artist["nationalities"] == []
+
+
+def test_country_metrics_keep_unresolved_visible(gold):
+    """La fila de no resueltos existe: ocultarla falsearia la cobertura."""
+    silver, _, goldd = gold
+    rows = [
+        _resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                  artist_id="fernando_botero", artist_resolution="master",
+                  artist_country_birth="CO", artist_nationalities=["CO"])
+        for i in range(3)
+    ]
+    rows += [
+        _resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}")
+        for i in range(3)
+    ]
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    countries = {c["country"]: c for c in _read(goldd / "agg_country_metrics.jsonl")}
+    assert countries["CO"]["lots_offered"] == 3
+    assert countries["CO"]["country_es"] == "Colombia"
+    assert countries["CO"]["top_artist"] == "Fernando Botero"
+    assert None in countries, "los no resueltos deben verse, no ocultarse"
+    assert countries[None]["lots_offered"] == 3
+
+
+def test_country_lots_are_counted_once(gold):
+    """Un lote suma en un solo pais aunque el artista tenga doble nacionalidad.
+
+    Por eso el agregado va por pais de NACIMIENTO. Un agregado por nacionalidad
+    seria no aditivo y los totales por pais no cuadrarian con los de la casa.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Alejandro Obregón", lot_url=f"o{i}", dedupe_key=f"o{i}",
+                      artist_id="alejandro_obregon", artist_resolution="master",
+                      artist_country_birth="ES", artist_nationalities=["CO", "ES"])
+            for i in range(4)
+        ],
+    )
+    build_insights.build_insights()
+    countries = _read(goldd / "agg_country_metrics.jsonl")
+    assert sum(c["lots_offered"] for c in countries) == 4
+    assert {c["country"] for c in countries} == {"ES"}
+    artist = _read(goldd / "agg_artist_metrics.jsonl")[0]
+    assert artist["nationalities"] == ["CO", "ES"]
+
+
+def test_stats_report_country_coverage(gold):
+    silver, _, _ = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                      artist_id="fernando_botero", artist_resolution="master",
+                      artist_country_birth="CO")
+            for i in range(3)
+        ]
+        + [
+            _resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}")
+            for i in range(3)
+        ],
+    )
+    stats = build_insights.build_insights()
+    assert stats["artists_ranked"] == 2
+    assert stats["artists_with_country"] == 1
+    assert stats["country_coverage_rate"] == 0.5

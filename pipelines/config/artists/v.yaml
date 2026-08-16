@@ -1,0 +1,175 @@
+# Maestro de artistas - shard "v"
+#
+# Entradas cuyo artist_id empieza por "v". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: valentin_de_zubiaurre
+    display_name: "Valentín de Zubiaurre"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1879
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Valentín de Zubiaurre"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: victor_mira
+    display_name: "Victor Mira"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1949
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Victor Mira"
+    notes: "29 lotes | casas: duran_subastas"
+
+  - artist_id: victor_patricio_landaluze
+    display_name: "Victor Patricio Landaluze"
+    country_birth: "ES"
+    nationalities: ["CU", "ES"]
+    birth_year: 1828
+    death_year: 1889
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Victor Patricio Landaluze"
+    notes: "4 lotes | casas: duran_subastas"
+
+  - artist_id: victor_vasarely
+    display_name: "Victor Vasarely"
+    country_birth: "HU"
+    nationalities: ["FR", "HU"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Victor Vasarely"
+    notes: "15 lotes | casas: bogota_auctions, duran_subastas"
+  - artist_id: vicente_martin
+    display_name: "Vicente Martín"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1911
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Vicente Martín"
+      - "Vicente MARTÍN"
+    notes: "6 lotes | casas: zorrilla_subastas"
+
+  - artist_id: veronica_cardenas
+    display_name: "Verónica Cárdenas"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "VERONICA CARDENAS"
+      - "Verónica Cárdenas"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: victor_laignelet
+    display_name: "Victor Laignelet"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "VICTOR LAIGNELET"
+      - "Victor Laignelet"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: vik_muniz
+    display_name: "Vik Muniz"
+    country_birth: "BR"
+    nationalities: ["BR"]
+    birth_year: 1961
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "VIK MUNIZ"
+      - "Vik Muniz"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: vicente_lopez
+    display_name: "Vicente López"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1772
+    death_year: 1850
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Vicente López"
+    notes: "11 lotes en Silver | fuente: Wikipedia | Vicente Lopez Portana, Valencia; pintor de camara"
+
+  - artist_id: vicente_palmaroli
+    display_name: "Vicente Palmaroli"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1834
+    death_year: 1896
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Vicente Palmaroli"
+    notes: "15 lotes en Silver | fuente: Wikipedia; Museo Prado | Zarzalejo; director del Prado"
+
+  - artist_id: vicente_pastor_calpena
+    display_name: "Vicente Pastor Calpena"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1918
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Vicente Pastor Calpena"
+      - "VIcente Pastor Calpena"
+    notes: "11 lotes en Silver | fuente: Artnet"
+
+  - artist_id: vicente_ruiz
+    display_name: "Vicente Ruiz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1941
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Vicente Ruiz"
+    notes: "15 lotes en Silver | fuente: Region de Murcia Digital; BNE | Born Lorca, Murcia"
+
+  - artist_id: vicente_vela
+    display_name: "Vicente Vela"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1931
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Vicente Vela"
+    notes: "13 lotes en Silver | fuente: Wikidata"

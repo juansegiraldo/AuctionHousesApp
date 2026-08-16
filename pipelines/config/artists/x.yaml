@@ -1,0 +1,10 @@
+# Maestro de artistas - shard "x"
+#
+# Entradas cuyo artist_id empieza por "x". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists: []

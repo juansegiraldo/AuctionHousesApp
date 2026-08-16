@@ -67,6 +67,7 @@ def main() -> None:
             "null_status": 0,
             "explicit_status": 0,
             "lot_numbers": defaultdict(set),
+            "lots_without_number": 0,
         }
     )
     per_auction: dict[tuple[str, str], dict] = defaultdict(
@@ -128,6 +129,11 @@ def main() -> None:
         lot_number = row.get("lot_number")
         if lot_number is not None:
             h["lot_numbers"][row.get("auction_id") or ""].add(lot_number)
+        else:
+            # Sin numero de lote no se pueden buscar huecos de secuencia, que es
+            # como se estima si la casa publica los no vendidos. Se cuenta aparte
+            # porque lot_numbers solo guarda los que si lo traen.
+            h["lots_without_number"] += 1
 
         aid = row.get("auction_id") or ""
         a = per_auction[(house, aid)]
@@ -335,6 +341,64 @@ def main() -> None:
                         ),
                     }
                 )
+
+    # Zorrilla se scrapea desde LiveAuctioneers, que normaliza los importes a USD
+    # en origen. La casa remata en Montevideo y pudo cotizar en UYU: ese importe
+    # NO existe en la fuente. Se avisa para que nadie lea los USD como moneda de
+    # martillo original. Ver scraping/houses/zorrilla_subastas/parsers.py.
+    # OJO: per_house es un defaultdict; usar 'in' y no .get() para no crear la clave.
+    if "zorrilla_subastas" in per_house:
+        flags.append(
+            {
+                "level": "warn",
+                "code": "currency_normalized_at_source",
+                "house_slug": "zorrilla_subastas",
+                "count": per_house["zorrilla_subastas"]["lots_offered"],
+                "message": (
+                    "Los importes de zorrilla_subastas vienen en USD normalizados por "
+                    "el agregador (LiveAuctioneers), no en la moneda de martillo. "
+                    "La casa opera en Montevideo y pudo rematar en UYU; ese dato no "
+                    "esta publicado en la fuente."
+                ),
+            }
+        )
+
+    # Lefebre no se scrapea: sale de una hoja de calculo curada a mano en 2024
+    # (FINALL.xlsx). No se actualiza sola y su cobertura es la que se transcribio,
+    # no la que publico la casa. Ver scraping/houses/lefebre_subastas/README.md.
+    # OJO: per_house es un defaultdict; usar 'in' y no .get() para no crear la clave.
+    if "lefebre_subastas" in per_house:
+        flags.append(
+            {
+                "level": "warn",
+                "code": "source_is_manual_dataset",
+                "house_slug": "lefebre_subastas",
+                "count": per_house["lefebre_subastas"]["lots_offered"],
+                "message": (
+                    "Los lotes de lefebre_subastas vienen de un Excel curado a mano "
+                    "en 2024, no de un scraper: el dato esta congelado en esa fecha "
+                    "y la cobertura depende de lo que se transcribio."
+                ),
+            }
+        )
+        # Solo 4 de las 15 subastas traen numero de lote real; en el resto la
+        # hoja guarda el numero de fila. Sin numeracion no se pueden detectar
+        # huecos de secuencia, que es como se estima el sesgo de tasa de venta.
+        without_number = per_house["lefebre_subastas"]["lots_without_number"]
+        if without_number:
+            flags.append(
+                {
+                    "level": "warn",
+                    "code": "partial_lot_numbers",
+                    "house_slug": "lefebre_subastas",
+                    "count": without_number,
+                    "message": (
+                        f"{without_number:,} lotes de lefebre_subastas no tienen numero "
+                        "de lote en la fuente: en esas subastas no se puede comprobar "
+                        "si faltan lotes por huecos en la secuencia."
+                    ),
+                }
+            )
 
     for currency, count in sorted(unconvertible.items()):
         flags.append(

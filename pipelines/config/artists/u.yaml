@@ -1,0 +1,34 @@
+# Maestro de artistas - shard "u"
+#
+# Entradas cuyo artist_id empieza por "u". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: urbano_lugris_vadillo
+    display_name: "Urbano Lugris Vadillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Urbano Lugris Vadillo"
+    notes: "11 lotes | casas: duran_subastas"
+
+  - artist_id: umberto_giangrandi
+    display_name: "Umberto Giangrandi"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1943
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "UMBERTO GIANGRANDI"
+      - "Umberto Giangrandi"
+      - "Giangrandi, Umberto"
+    notes: "12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"

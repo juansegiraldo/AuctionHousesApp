@@ -1,0 +1,906 @@
+# Maestro de artistas - shard "r"
+#
+# Entradas cuyo artist_id empieza por "r". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: rafael_amezaga
+    display_name: "Rafael Amezaga"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Amezaga"
+    notes: "53 lotes | casas: duran_subastas"
+
+  - artist_id: rafael_canogar
+    display_name: "Rafael Canogar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Canogar"
+      - "CANOGAR, RAFAEL"
+    notes: "166 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: rafael_durancamps
+    display_name: "Rafael Durancamps"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1891
+    death_year: 1979
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Durancamps"
+    notes: "28 lotes | casas: duran_subastas"
+
+  - artist_id: rafael_echeverri
+    display_name: "Rafael Echeverri"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Echeverri"
+    notes: "7 lotes | casas: bogota_auctions"
+
+  - artist_id: rafael_fuster_insa
+    display_name: "Rafael Fuster Insa"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Fuster Insa"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: rafael_pellicer
+    display_name: "Rafael Pellicer"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1906
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Pellicer"
+      - "Rafael Pellicer Galeote"
+      - "PELLICER GALEOTE, RAFAEL"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: rafael_zabaleta
+    display_name: "Rafael Zabaleta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1907
+    death_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Zabaleta"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: raimundo_de_madrazo
+    display_name: "Raimundo de Madrazo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1841
+    death_year: 1920
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Raimundo de Madrazo"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: ramon_calderon
+    display_name: "Ramón Calderón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1932
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Calderón"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: ramon_de_zubiaurre
+    display_name: "Ramón de Zubiaurre"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1882
+    death_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón de Zubiaurre"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: ramon_gaya
+    display_name: "Ramón Gaya"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Gaya"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: ramon_lapayese
+    display_name: "Ramón Lapayese"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1928
+    death_year: 1994
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Lapayese"
+    notes: "24 lotes | casas: duran_subastas"
+
+  - artist_id: ramon_lopez_morello
+    display_name: "Ramón López Morelló"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1903
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón López Morelló"
+    notes: "36 lotes | casas: duran_subastas"
+
+  - artist_id: rene_portocarrero
+    display_name: "René Portocarrero"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1912
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "René Portocarrero"
+    notes: "24 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: ricardo_baroja
+    display_name: "Ricardo Baroja"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1871
+    death_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Baroja"
+      - "Ricardo Baroja Nessi"
+      - "BAROJA NESSI, RICARDO"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: ricardo_de_villodas
+    display_name: "Ricardo de Villodas"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1846
+    death_year: 1904
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo de Villodas"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: ricardo_gomez_campuzano
+    display_name: "Ricardo Gómez Campuzano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    death_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Gómez Campuzano"
+    notes: "8 lotes | casas: bogota_auctions"
+
+  - artist_id: ricardo_montesinos
+    display_name: "Ricardo Montesinos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1914
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Montesinos"
+    notes: "38 lotes | casas: duran_subastas"
+
+  - artist_id: rigoberto_soler
+    display_name: "Rigoberto Soler"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1896
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rigoberto Soler"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: roberto_domingo_y_fallola
+    display_name: "Roberto Domingo y Fallola"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1883
+    death_year: 1956
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roberto Domingo y Fallola"
+      - "Roberto Domingo"
+      - "DOMINGO Y FALLOLA, ROBERTO"
+    notes: "93 lotes | casas: duran_subastas"
+
+  - artist_id: roy_lichtenstein
+    display_name: "Roy Lichtenstein"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1923
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roy Lichtenstein"
+    notes: "7 lotes | casas: duran_subastas"
+  - artist_id: rafael_barradas
+    display_name: "Rafael Barradas"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1890
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Barradas"
+      - "Rafael BARRADAS"
+    notes: "26 lotes | casas: zorrilla_subastas"
+
+  - artist_id: raul_javiel_cabrera
+    display_name: "Raúl Javiel Cabrera"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1919
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Raúl Javiel Cabrera"
+      - "Raúl Javiel CABRERA"
+    notes: "5 lotes | casas: zorrilla_subastas"
+
+  - artist_id: roberto_castellanos
+    display_name: "Roberto Castellanos"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1871
+    death_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roberto Castellanos"
+      - "Roberto CASTELLANOS"
+    notes: "9 lotes | casas: zorrilla_subastas"
+
+  - artist_id: rodolfo_visca
+    display_name: "Rodolfo Visca"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1934
+    death_year: 2009
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rodolfo Visca"
+      - "Rodolfo VISCA"
+    notes: "9 lotes | casas: zorrilla_subastas"
+
+  - artist_id: rafael_dussan
+    display_name: "Rafael Dussan"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1920
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAFAEL DUSSAN"
+      - "Rafael Dussan"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rafael_gomez_barros
+    display_name: "Rafaél Gómez Barros"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1972
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAFAEL GOMEZ-BARROS"
+      - "Rafaél Gómez Barros"
+      - "Rafael Gómez-Barros"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rafael_mena_g
+    display_name: "Rafael Mena G."
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAFAEL MENA G"
+      - "Rafael Mena G."
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rafael_saenz_moreno
+    display_name: "Rafael Sáenz Moreno"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1910
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAFAEL SAENZ MORENO"
+      - "Rafael Sáenz Moreno"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ramiro_gomez
+    display_name: "Ramiro Gómez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1923
+    death_year: 2004
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAMIRO GOMEZ"
+      - "Ramiro Gómez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ramon_torres_mendez
+    display_name: "Ramón Torres Méndez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1809
+    death_year: 1885
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAMON TORRES MENDEZ"
+      - "Ramón Torres Méndez"
+      - "Ramon Torres Mendez"
+      - "Torres Méndez, Ramón"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: raul_martinez
+    display_name: "Raúl Martínez"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1927
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RAUL MARTINEZ"
+      - "Raúl Martínez"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ricardo_acevedo_bernal
+    display_name: "Ricardo Acevedo Bernal"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1867
+    death_year: 1930
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICARDO ACEVEDO BERNAL"
+      - "Ricardo Acevedo Bernal"
+    notes: "14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ricardo_borrero_alvarez
+    display_name: "Ricardo Borrero Álvarez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1874
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICARDO BORRERO ALVAREZ"
+      - "Ricardo Borrero Álvarez"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ricardo_cardenas
+    display_name: "Ricardo Cárdenas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICARDO CARDENAS"
+      - "Ricardo Cárdenas"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ricardo_moros_urbina
+    display_name: "Ricardo Moros Urbina"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1865
+    death_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICARDO MOROS URBINA"
+      - "Ricardo Moros Urbina"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ricardo_rendon
+    display_name: "Ricardo Rendón"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1894
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICARDO RENDON"
+      - "Ricardo Rendón"
+      - "Rendon, Ricardo"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: richard_lin_show_you
+    display_name: "Richard Lin Show You"
+    country_birth: "TW"
+    nationalities: ["TW"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICHARD LIN SHOW YOU"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja: 1905-1905"
+
+  - artist_id: richard_smith
+    display_name: "Richard Smith"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1931
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RICHARD SMITH"
+      - "Richard Smith"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: robert_motherwell
+    display_name: "Robert Motherwell"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1915
+    death_year: 1991
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROBERT MOTHERWELL"
+      - "Robert Motherwell"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: roberto_fabelo
+    display_name: "Roberto Fabelo"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROBERTO FABELO"
+      - "Roberto Fabelo"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: roberto_matta
+    display_name: "Roberto Matta"
+    country_birth: "CL"
+    nationalities: ["CL"]
+    birth_year: 1911
+    death_year: 2002
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROBERTO MATTA"
+      - "Roberto Matta"
+      - "MATTA, ROBERTO"
+    notes: "15 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: roberto_paramo_tirado
+    display_name: "Roberto Páramo Tirado"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1859
+    death_year: 1939
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROBERTO PARAMO TIRADO"
+      - "Roberto Páramo Tirado"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: roberto_pizano
+    display_name: "Roberto Pizano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1939
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROBERTO PIZANO"
+      - "Roberto Pizano"
+      - "Pizano, Roberto"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rodolfo_abularach
+    display_name: "Rodolfo Abularach"
+    country_birth: "GT"
+    nationalities: ["GT"]
+    birth_year: 1933
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RODOLFO ABULARACH"
+      - "Rodolfo Abularach"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rodolfo_nieto
+    display_name: "Rodolfo Nieto"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1936
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RODOLFO NIETO"
+      - "Rodolfo Nieto"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rodrigo_echeverri_calero
+    display_name: "Rodrigo Echeverri Calero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1975
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RODRIGO ECHEVERRI CALERO"
+      - "Rodrigo Echeverri Calero"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rodrigo_trujillo
+    display_name: "Rodrigo Trujillo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1959
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RODRIGO TRUJILLO"
+      - "Rodrigo Trujillo"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: romulo_rozo
+    display_name: "Rómulo Rozo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1858
+    death_year: 1928
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROMULO ROZO"
+      - "Rómulo Rozo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ronny_vayda
+    display_name: "Ronny Vayda"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1954
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RONNY VAYDA"
+      - "Ronny Vayda"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rosario_lopez_parra
+    display_name: "Rosario Lopez Parra"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROSARIO LOPEZ PARRA"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rossina_bossio_bossa
+    display_name: "Rossina Bossio Bossa"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1986
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ROSSINA BOSSIO BOSSA"
+      - "Rossina Bossio Bossa"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rubens_gerchman
+    display_name: "Rubens Gerchman"
+    country_birth: "BR"
+    nationalities: ["BR"]
+    birth_year: 1942
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RUBENS GERCHMAN"
+      - "Rubens Gerchman"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rufino_tamayo
+    display_name: "Rufino Tamayo"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1899
+    death_year: 1991
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RUFINO TAMAYO"
+      - "Rufino Tamayo"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rupert_jasen_smith
+    display_name: "Rupert Jasen Smith"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1953
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "RUPERT JASEN SMITH"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: rafael_alberti
+    display_name: "Rafael Alberti"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1902
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Alberti"
+    notes: "15 lotes en Silver | fuente: Wikipedia ES; Britannica | Born El Puerto de Santa Maria, Cadiz; poeta que tambien hizo obra grafica"
+
+  - artist_id: rafael_gonzalez_zapatero
+    display_name: "Rafael González Zapatero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Rafael González Zapatero"
+      - "Rafael Gonzalez Zapatero"
+    notes: "16 lotes en Silver | fuente: Askart; Arteinformado | Sevilla"
+
+  - artist_id: ramiro_tapia
+    display_name: "Ramiro Tapia"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1931
+    death_year: 2024
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramiro Tapia"
+    notes: "14 lotes en Silver | fuente: Wikipedia ES | Santander"
+
+  - artist_id: ramon_munoz_rubio
+    display_name: "Ramón Muñoz Rubio"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1867
+    death_year: 1910
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Muñoz Rubio"
+    notes: "16 lotes en Silver | fuente: Askart; MutualArt | Jaen"
+
+  - artist_id: ricardo_alario
+    display_name: "Ricardo Alario"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1959
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Alario"
+    notes: "16 lotes en Silver | fuente: Artelista; Artnet | Valencia"
+
+  - artist_id: ricardo_sacristan
+    display_name: "Ricardo Sacristán"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1921
+    death_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Sacristán"
+      - "RIcardo Sacristán"
+    notes: "17 lotes en Silver | fuente: Artprice; Askart | Sacristan Arrieta, Vitoria"
+
+  - artist_id: ricardo_verdugo_landi
+    display_name: "Ricardo Verdugo Landi"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1871
+    death_year: 1930
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo Verdugo Landi"
+    notes: "16 lotes en Silver | fuente: Museo Prado; Wikidata | Malaga; marinista en el Prado"
+
+  - artist_id: roberto_diaz_de_orosia
+    display_name: "Roberto Díaz de Orósia"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1948
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roberto Díaz de Orósia"
+      - "Roberto Díaz de Orosia"
+      - "Roberto Diaz de Orosia"
+      - "Roberto díaz de Orósia"
+      - "Roberto Diáz de Orósia"
+    notes: "33 lotes en Silver | fuente: Arteinformado; Invaluable | Gijon, Asturias"
+
+  - artist_id: roberto_liang
+    display_name: "Roberto Liang"
+    country_birth: "TW"
+    nationalities: ["TW"]
+    birth_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Roberto Liang"
+    notes: "12 lotes en Silver | fuente: Artnet"
+
+  - artist_id: roccheggiani_lorenzo
+    display_name: "Lorenzo Roccheggiani"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1788
+    death_year: 1817
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "ROCCHEGGIANI, LORENZO"
+    notes: "12 lotes en Silver | fuente: Artnet"
+
+  - artist_id: rosa_torres
+    display_name: "Rosa Torres"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1948
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rosa Torres"
+    notes: "17 lotes en Silver | fuente: Wikidata; Wikipedia ES | Rosa Torres Molina, Valencia"
+
+  - artist_id: rembrandt
+    display_name: "Rembrandt"
+    country_birth: "NL"
+    nationalities: ["NL"]
+    birth_year: 1606
+    death_year: 1669
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rembrandt"
+      - "REMBRANDT"
+      - "REMBRANDT\""
+    notes: "15 lotes en Silver | fuente: Wikipedia | Rembrandt Harmenszoon van Rijn, Leiden; aguafuertes"

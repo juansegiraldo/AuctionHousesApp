@@ -1,0 +1,203 @@
+# Maestro de artistas - shard "o"
+#
+# Entradas cuyo artist_id empieza por "o". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: olga_de_amaral
+    display_name: "Olga de Amaral"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1932
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Olga de Amaral"
+    notes: "6 lotes | casas: bogota_auctions"
+
+  - artist_id: omar_rayo
+    display_name: "Omar Rayo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    death_year: 2010
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Omar Rayo"
+      - "Rayo, Omar"
+    notes: "29 lotes | casas: bogota_auctions"
+
+  - artist_id: orlando_pelayo
+    display_name: "Orlando Pelayo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1920
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Orlando Pelayo"
+    notes: "81 lotes | casas: duran_subastas"
+
+  - artist_id: oscar_dominguez
+    display_name: "Óscar Domínguez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1904
+    death_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Óscar Domínguez"
+    notes: "6 lotes | casas: duran_subastas"
+
+  - artist_id: oscar_estruga
+    display_name: "Óscar Estruga"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Óscar Estruga"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: oscar_munoz
+    display_name: "Oscar Muñoz"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Oscar Muñoz"
+    notes: "21 lotes | casas: bogota_auctions"
+
+  - artist_id: oswaldo_guayasamin
+    display_name: "Oswaldo Guayasamín"
+    country_birth: "EC"
+    nationalities: ["EC"]
+    birth_year: 1919
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Oswaldo Guayasamín"
+    notes: "38 lotes | casas: bogota_auctions, duran_subastas"
+  - artist_id: oscar_garcia_reino
+    display_name: "Óscar García Reino"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1910
+    death_year: 1993
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Óscar García Reino"
+      - "Óscar GARCÍA REINO"
+    notes: "21 lotes | casas: zorrilla_subastas"
+
+  - artist_id: ofelia_rodriguez
+    display_name: "Ofelia Rodriguez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1946
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OFELIA RODRIGUEZ"
+      - "Ofelia Rodriguez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: oscar_martinez_vasquez
+    display_name: "Oscar Martínez Vásquez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OSCAR MARTINEZ VASQUEZ"
+      - "Oscar Martínez Vásquez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: oscar_rodriguez_naranjo
+    display_name: "Oscar Rodríguez Naranjo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1907
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OSCAR RODRIGUEZ NARANJO"
+      - "Oscar Rodríguez Naranjo"
+      - "Rodríguez Naranjo, Oscar"
+    notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: oskar_kokoschka
+    display_name: "Oskar Kokoschka"
+    country_birth: "AT"
+    nationalities: ["AT"]
+    birth_year: 1886
+    death_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OSKAR KOKOSCHKA"
+      - "Oskar Kokoschka"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: oswaldo_vigas
+    display_name: "Oswaldo Vigas"
+    country_birth: "VE"
+    nationalities: ["VE"]
+    birth_year: 1923
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OSWALDO VIGAS"
+      - "Oswaldo Vigas"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: oswaldo_viteri
+    display_name: "Oswaldo Viteri"
+    country_birth: "EC"
+    nationalities: ["EC"]
+    birth_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "OSWALDO VITERI"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ouka_leele
+    display_name: "Ouka Leele"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1957
+    death_year: 2022
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ouka Leele"
+    notes: "12 lotes en Silver | fuente: Wikipedia | seudonimo de Barbara Allende Gil de Biedma, Madrid"

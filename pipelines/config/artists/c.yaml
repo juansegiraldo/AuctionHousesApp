@@ -1,0 +1,777 @@
+# Maestro de artistas - shard "c"
+#
+# Entradas cuyo artist_id empieza por "c". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: carlos_cruz_diez
+    display_name: "Carlos Cruz-Diez"
+    country_birth: "VE"
+    nationalities: ["VE"]
+    birth_year: 1923
+    death_year: 2019
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Cruz-Diez"
+    notes: "16 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: carlos_de_haes
+    display_name: "Carlos de Haes"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1829
+    death_year: 1898
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos de Haes"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: carlos_franco
+    display_name: "Carlos Franco"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Franco"
+    notes: "35 lotes | casas: duran_subastas"
+
+  - artist_id: carlos_granada
+    display_name: "Carlos Granada"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Granada"
+    notes: "10 lotes | casas: bogota_auctions"
+
+  - artist_id: carlos_jacanamijoy
+    display_name: "Carlos Jacanamijoy"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Jacanamijoy"
+    notes: "7 lotes | casas: bogota_auctions"
+
+  - artist_id: carlos_leon_escudero
+    display_name: "Carlos León Escudero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos León Escudero"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: carlos_morago
+    display_name: "Carlos Morago"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Morago"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: carlos_rojas
+    display_name: "Carlos Rojas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1923
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Rojas"
+    notes: "25 lotes | casas: bogota_auctions"
+
+  - artist_id: carmelo_garcia_barrena
+    display_name: "Carmelo García Barrena"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carmelo García Barrena"
+      - "GARCÍA BARRENA, CARMELO"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: carmen_calvo
+    display_name: "Carmen Calvo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carmen Calvo"
+    notes: "19 lotes | casas: duran_subastas"
+
+  - artist_id: carmen_laffon
+    display_name: "Carmen Laffon"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1934
+    death_year: 2021
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carmen Laffon"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: carmen_santonja
+    display_name: "Carmen Santonja"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1930
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carmen Santonja"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: carnicero
+    display_name: "Carnicero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1748
+    death_year: 1814
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carnicero"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: castro_gil
+    display_name: "Castro Gil"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1890
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Castro Gil"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: cecilia_porras
+    display_name: "Cecilia Porras"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1920
+    death_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cecilia Porras"
+    notes: "5 lotes | casas: bogota_auctions"
+
+  - artist_id: cecilio_pla
+    display_name: "Cecilio Pla"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1860
+    death_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cecilio Pla"
+    notes: "54 lotes | casas: duran_subastas"
+
+  - artist_id: ceferino_olive
+    display_name: "Ceferino Olivé"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1907
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ceferino Olivé"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: celedonio_perellon
+    display_name: "Celedonio Perellón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2015
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Celedonio Perellón"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: celso_lagar
+    display_name: "Celso Lagar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1891
+    death_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Celso Lagar"
+      - "LAGAR, CELSO"
+    notes: "23 lotes | casas: duran_subastas"
+
+  - artist_id: cesar_fernandez_ardavin
+    display_name: "Cesar Fernandez Ardavin"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1883
+    death_year: 1974
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cesar Fernandez Ardavin"
+      - "FERNÁNDEZ ARDAVÍN, CESAR"
+    notes: "49 lotes | casas: duran_subastas"
+
+  - artist_id: cesar_manrique
+    display_name: "César Manrique"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1920
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "César Manrique"
+    notes: "66 lotes | casas: duran_subastas"
+
+  - artist_id: cesar_saldivar
+    display_name: "César Saldívar"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "César Saldívar"
+    notes: "117 lotes | casas: duran_subastas"
+
+  - artist_id: chatelain_henry_abraham
+    display_name: "CHATELAIN, HENRY ABRAHAM"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1648
+    death_year: 1743
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CHATELAIN, HENRY ABRAHAM"
+    notes: "32 lotes | casas: duran_subastas"
+
+  - artist_id: cirilo_martinez_novillo
+    display_name: "Cirilo Martínez Novillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1921
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cirilo Martínez Novillo"
+    notes: "37 lotes | casas: duran_subastas"
+
+  - artist_id: claudio_bravo
+    display_name: "Claudio Bravo"
+    country_birth: "CL"
+    nationalities: ["CL"]
+    birth_year: 1936
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Claudio Bravo"
+    notes: "12 lotes | casas: duran_subastas"
+
+  - artist_id: cristina_iglesias
+    display_name: "Cristina Iglesias"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cristina Iglesias"
+    notes: "42 lotes | casas: duran_subastas"
+
+  - artist_id: cristino_de_vera
+    display_name: "Cristino de Vera"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cristino de Vera"
+    notes: "8 lotes | casas: duran_subastas"
+
+  - artist_id: cristobal_gabarron
+    display_name: "Cristóbal Gabarrón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cristóbal Gabarrón"
+      - "GABARRON, CRISTOBAL"
+    notes: "48 lotes | casas: duran_subastas"
+
+  - artist_id: cristobal_toral
+    display_name: "Cristóbal Toral"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cristóbal Toral"
+    notes: "27 lotes | casas: duran_subastas"
+  - artist_id: carlo_corsetti
+    display_name: "Carlo Corsetti"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1823
+    death_year: 1903
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlo Corsetti"
+      - "Carlo CORSETTI"
+    notes: "5 lotes | casas: zorrilla_subastas"
+
+  - artist_id: carlos_alberto_castellanos
+    display_name: "Carlos Alberto Castellanos"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1881
+    death_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Alberto Castellanos"
+      - "Carlos Alberto CASTELLANOS"
+    notes: "16 lotes | casas: zorrilla_subastas"
+
+  - artist_id: carlos_federico_saez
+    display_name: "Carlos Federico Sáez"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1878
+    death_year: 1901
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Federico Sáez"
+      - "Carlos Federico SÁEZ"
+    notes: "8 lotes | casas: zorrilla_subastas"
+
+  - artist_id: carlos_paez_vilaro
+    display_name: "Carlos Páez Vilaró"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1923
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Páez Vilaró"
+      - "Carlos PÁEZ VILARÓ"
+    notes: "33 lotes | casas: zorrilla_subastas"
+
+  - artist_id: carmelo_de_arzadun
+    display_name: "Carmelo De Arzadun"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1888
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carmelo De Arzadun"
+      - "Carmelo DE ARZADUN"
+    notes: "24 lotes | casas: zorrilla_subastas"
+
+  - artist_id: camilo_bojaca
+    display_name: "Camilo Bojaca"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CAMILO BOJACA"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: candido_portinari
+    display_name: "Candido Portinari"
+    country_birth: "BR"
+    nationalities: ["BR"]
+    birth_year: 1903
+    death_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CANDIDO PORTINARI"
+      - "Candido Portinari"
+      - "Cándido Portinari"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_caicedo
+    display_name: "Carlos Caicedo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1946
+    death_year: 1999
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS CAICEDO"
+      - "Carlos Caicedo"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_castro
+    display_name: "Carlos Castro"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS CASTRO"
+      - "Carlos Castro"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_correa
+    display_name: "Carlos Correa"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1912
+    death_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS CORREA"
+      - "Carlos Correa"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_echeverry
+    display_name: "Carlos Echeverry"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS ECHEVERRY"
+      - "Carlos Echeverry"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_garaicoa
+    display_name: "Carlos Garaicoa"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS GARAICOA"
+      - "Carlos Garaicoa"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_salas
+    display_name: "Carlos Salas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS SALAS"
+      - "Carlos Salas"
+    notes: "15 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_salas_nadin_ospina
+    display_name: "Carlos Salas / Nadin Ospina"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "CARLOS SALAS / NADIN OSPINA"
+      - "Carlos Salas / Nadin Ospina"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
+
+  - artist_id: carlos_salazar
+    display_name: "Carlos Salazar"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS SALAZAR"
+      - "Carlos Salazar"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_valenzuela
+    display_name: "Carlos Valenzuela"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1876
+    death_year: 1934
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARLOS VALENZUELA"
+      - "Carlos Valenzuela"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carmen_herrera
+    display_name: "Carmen  Herrera"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1915
+    death_year: 2022
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARMEN HERRERA"
+      - "Carmen  Herrera"
+      - "Carmen Herrera"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carolina_cardenas_nunez
+    display_name: "Carolina Cárdenas Núñez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1903
+    death_year: 1936
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CAROLINA CARDENAS NUÑEZ"
+      - "Carolina Cárdenas Núñez"
+    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carrie_mae_weems
+    display_name: "Carrie Mae Weems"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CARRIE MAE WEEMS"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: catalina_cabrera
+    display_name: "Catalina Cabrera"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CATALINA CABRERA"
+      - "Catalina Cabrera"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: cesar_del_valle
+    display_name: "Cesar del Valle"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CESAR DEL VALLE"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: christian_abusaid
+    display_name: "Christian Abusaid"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1980
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CHRISTIAN ABUSAID"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: christo_vladimirov_javacheff
+    display_name: "Christo Vladimirov Javacheff"
+    country_birth: "BG"
+    nationalities: ["BG"]
+    birth_year: 1935
+    death_year: 2020
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CHRISTO VLADIMIROV JAVACHEFF"
+      - "Christo Vladimirov Javacheff"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: claudia_hakim
+    display_name: "Claudia Hakim"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CLAUDIA HAKIM"
+      - "Claudia Hakim"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: clemencia_echeverri
+    display_name: "Clemencia Echeverri"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CLEMENCIA ECHEVERRI"
+      - "Clemencia Echeverri"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: conrad_marca_relli
+    display_name: "Conrad Marca-relli"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1913
+    death_year: 2000
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CONRAD MARCA-RELLI"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: cristina_ghetti
+    display_name: "Cristina Ghetti"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1956
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "CRISTINA GHETTI"
+      - "Cristina Ghetti"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: carlos_laharrague
+    display_name: "Carlos Laharrague"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1936
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Carlos Laharrague"
+    notes: "13 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: carlos_saenz_de_tejada
+    display_name: "Carlos Sáenz de Tejada"
+    country_birth: "MA"
+    nationalities: ["MA"]
+    birth_year: 1897
+    death_year: 1958
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos Sáenz de Tejada"
+      - "Carlos Saenz de Tejada"
+    notes: "13 lotes en Silver | fuente: Wikipedia ES | nacido en Tanger, Marruecos"
+
+  - artist_id: carolina_del_castillo
+    display_name: "Carolina del Castillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1867
+    death_year: 1933
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carolina del Castillo"
+    notes: "15 lotes en Silver | fuente: Wikipedia ES | Gijon, Asturias"
+
+  - artist_id: concha_hermosilla
+    display_name: "Concha Hermosilla"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Concha Hermosilla"
+    notes: "13 lotes en Silver | fuente: Wikipedia ES | Madrid"

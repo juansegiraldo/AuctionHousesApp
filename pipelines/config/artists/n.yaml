@@ -1,0 +1,202 @@
+# Maestro de artistas - shard "n"
+#
+# Entradas cuyo artist_id empieza por "n". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: nacho_criado
+    display_name: "Nacho Criado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nacho Criado"
+      - "CRIADO, NACHO"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: nadin_ospina
+    display_name: "Nadín Ospina"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nadín Ospina"
+    notes: "10 lotes | casas: bogota_auctions"
+
+  - artist_id: nicola_de_maria
+    display_name: "Nicola de Maria"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nicola de Maria"
+    notes: "14 lotes | casas: duran_subastas"
+
+  - artist_id: nicolas_martinez_ortiz_de_zarate
+    display_name: "Nicolás Martínez Ortíz de Zárate"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1907
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nicolás Martínez Ortíz de Zárate"
+    notes: "34 lotes | casas: duran_subastas"
+
+  - artist_id: noe_leon
+    display_name: "Noé León"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1907
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Noé León"
+    notes: "8 lotes | casas: bogota_auctions"
+  - artist_id: nelson_ramos
+    display_name: "Nelson Ramos"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1932
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nelson Ramos"
+      - "Nelson RAMOS"
+    notes: "9 lotes | casas: zorrilla_subastas"
+
+  - artist_id: norberto_berdia
+    display_name: "Norberto Berdia"
+    country_birth: "UY"
+    nationalities: ["UY"]
+    birth_year: 1900
+    death_year: 1983
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Norberto Berdia"
+      - "Norberto BERDIA"
+    notes: "5 lotes | casas: zorrilla_subastas"
+
+  - artist_id: nancy_friedman
+    display_name: "Nancy Friedman"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1945
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "NANCY FRIEDMAN"
+      - "Nancy Friedman"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: natalia_mendieta
+    display_name: "Natalia Mendieta"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "NATALIA MENDIETA"
+      - "Natalia Mendieta"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: nirma_zarate
+    display_name: "Nirma Zárate"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "NIRMA ZARATE"
+      - "Nirma Zárate"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: nohemi_perez
+    display_name: "Nohemí Pérez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1984
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "NOHEMI PEREZ"
+      - "Nohemí Pérez"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: norman_mejia
+    display_name: "Norman Mejía"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1979
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "NORMAN MEJIA"
+      - "Norman Mejía"
+      - "Norman  Mejía"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: nelson_dominguez
+    display_name: "Nelson Domínguez"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nelson Domínguez"
+      - "Nelson Dominguez"
+    notes: "17 lotes en Silver | fuente: MutualArt; Askart | Santiago de Cuba"
+
+  - artist_id: nicanor_pinole
+    display_name: "Nicanor Piñole"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1878
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nicanor Piñole"
+    notes: "13 lotes en Silver | fuente: Wikipedia ES | Gijon"
+
+  - artist_id: nicolas_gless
+    display_name: "Nicolás Gless"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nicolás Gless"
+      - "Nicolas Gless"
+    notes: "16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila"

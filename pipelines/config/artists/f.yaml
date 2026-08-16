@@ -1,0 +1,727 @@
+# Maestro de artistas - shard "f"
+#
+# Entradas cuyo artist_id empieza por "f". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: fanny_sanin
+    display_name: "Fanny Sanín"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fanny Sanín"
+    notes: "8 lotes | casas: bogota_auctions"
+
+  - artist_id: faustino_manchado
+    display_name: "Faustino Manchado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Faustino Manchado"
+    notes: "20 lotes | casas: duran_subastas"
+
+  - artist_id: federico_beltran_masses
+    display_name: "Federico Beltrán Masses"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1885
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Federico Beltrán Masses"
+    notes: "15 lotes | casas: duran_subastas"
+
+  - artist_id: federico_de_madrazo
+    display_name: "Federico de Madrazo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1815
+    death_year: 1894
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Federico de Madrazo"
+      - "Federico de Madrazo y Kuntz"
+    notes: "5 lotes | casas: duran_subastas"
+
+  - artist_id: felix_resurreccion_hidalgo
+    display_name: "Félix Resurrección Hidalgo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1855
+    death_year: 1913
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Félix Resurrección Hidalgo"
+      - "Félix Resurreción Hidalgo"
+    notes: "11 lotes | casas: duran_subastas"
+
+  - artist_id: feliza_bursztyn
+    display_name: "Feliza Bursztyn"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1933
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Feliza Bursztyn"
+    notes: "5 lotes | casas: bogota_auctions"
+
+  - artist_id: fermin_santos
+    display_name: "Fermín Santos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1915
+    death_year: 1997
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fermín Santos"
+    notes: "45 lotes | casas: duran_subastas"
+
+  - artist_id: fernando_alvarez_de_sotomayor
+    display_name: "Fernando Álvarez de Sotomayor"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1875
+    death_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Álvarez de Sotomayor"
+    notes: "21 lotes | casas: duran_subastas"
+
+  - artist_id: fernando_bellver
+    display_name: "Fernando Bellver"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Bellver"
+    notes: "41 lotes | casas: duran_subastas"
+
+  - artist_id: fernando_botero
+    display_name: "Fernando Botero"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1932
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Botero"
+      - "Fernando Botero (Colombia, 1932)"
+      - "BOTERO, FERNANDO"
+    notes: "19 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: fernando_de_szyszlo
+    display_name: "Fernando de Szyszlo"
+    country_birth: "PE"
+    nationalities: ["PE"]
+    birth_year: 1925
+    death_year: 2017
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando de Szyszlo"
+    notes: "14 lotes | casas: bogota_auctions"
+
+  - artist_id: fernando_verdugo
+    display_name: "Fernando Verdugo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Verdugo"
+    notes: "22 lotes | casas: duran_subastas"
+
+  - artist_id: fernando_zobel
+    display_name: "Fernando Zóbel"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1924
+    death_year: 1984
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Zóbel"
+    notes: "47 lotes | casas: duran_subastas"
+
+  - artist_id: fernell_franco
+    display_name: "Fernell Franco"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1942
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernell Franco"
+    notes: "7 lotes | casas: bogota_auctions"
+
+  - artist_id: francis_bacon
+    display_name: "Francis Bacon"
+    country_birth: "IE"
+    nationalities: ["GB", "IE"]
+    birth_year: 1909
+    death_year: 1992
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francis Bacon"
+    notes: "3 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_arias
+    display_name: "Francisco Arias"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1912
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Arias"
+      - "ARIAS, FRANCISCO"
+    notes: "25 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_arjona
+    display_name: "Francisco Arjona"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Arjona"
+    notes: "47 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_bores
+    display_name: "Francisco Bores"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1898
+    death_year: 1972
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Bores"
+    notes: "26 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_calabuig
+    display_name: "Francisco Calabuig"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Calabuig"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_domingo_marques
+    display_name: "Francisco Domingo Marqués"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1842
+    death_year: 1920
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Domingo Marqués"
+      - "Francisco Domingo"
+      - "DOMINGO MARQUÉS, FRANCISCO"
+    notes: "184 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_echauz
+    display_name: "Francisco Echauz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1927
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Echauz"
+    notes: "37 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_farreras
+    display_name: "Francisco Farreras"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1927
+    death_year: 2021
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Farreras"
+      - "FARRERAS, FRANCISCO"
+    notes: "51 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_iturrino
+    display_name: "Francisco Iturrino"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1864
+    death_year: 1924
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Iturrino"
+    notes: "12 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_mateos
+    display_name: "Francisco Mateos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1897
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Mateos"
+      - "MATEOS, FRANCISCO"
+    notes: "55 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_peinado
+    display_name: "Francisco Peinado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Peinado"
+    notes: "18 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_pradilla_ortiz
+    display_name: "Francisco Pradilla Ortiz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1848
+    death_year: 1921
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Pradilla Ortiz"
+    notes: "35 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_sales
+    display_name: "Francisco Sales"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1904
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Sales"
+    notes: "17 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_san_jose
+    display_name: "Francisco San José"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1919
+    death_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco San José"
+      - "SAN JOSÉ, FRANCISCO"
+    notes: "39 lotes | casas: duran_subastas"
+
+  - artist_id: francisco_sobrino
+    display_name: "Francisco Sobrino"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Sobrino"
+      - "SOBRINO, FRANCISCO"
+    notes: "38 lotes | casas: bogota_auctions, duran_subastas"
+
+  - artist_id: francisco_vadillo
+    display_name: "Francisco Vadillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Vadillo"
+    notes: "30 lotes | casas: duran_subastas"
+
+  - artist_id: freda_sargent
+    display_name: "Freda Sargent"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1928
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Freda Sargent"
+    notes: "14 lotes | casas: bogota_auctions"
+
+  - artist_id: federico_uribe
+    display_name: "Federico Uribe"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FEDERICO URIBE"
+      - "Federico Uribe"
+    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: felipe_bonilla
+    display_name: "Felipe Bonilla"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1987
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FELIPE BONILLA"
+      - "Felipe Bonilla"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fernando_arias
+    display_name: "Fernando Arias"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FERNANDO ARIAS"
+      - "Fernando Arias"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fernando_oramas
+    display_name: "Fernando Oramas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1925
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FERNANDO ORAMAS"
+      - "Fernando Oramas"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fernando_pareja_y_leidy_chavez
+    display_name: "Fernando Pareja y Leidy Chavez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "FERNANDO PAREJA Y LEIDY CHAVEZ"
+      - "Fernando Pareja y Leidy Chavez"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
+
+  - artist_id: fernando_uhia
+    display_name: "Fernando Uhía"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FERNANDO UHIA"
+      - "Fernando Uhía"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fidolo_alfonso_gonzalez_camargo
+    display_name: "Fídolo Alfonso González Camargo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1930
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FIDOLO ALFONSO GONZALEZ CAMARGO"
+      - "Fídolo Alfonso González Camargo"
+      - "Fidolo Alfonso González Camargo"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: francisco_antonio_cano
+    display_name: "Francisco Antonio Cano"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1865
+    death_year: 1935
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANCISCO ANTONIO CANO"
+      - "Francisco Antonio Cano"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: francisco_fernandez
+    display_name: "Francisco Fernández"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1895
+    death_year: 1953
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANCISCO FERNANDEZ"
+      - "Francisco Fernández"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: francisco_mejia_guinand
+    display_name: "Francisco Mejía Guinand"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANCISCO MEJIA GUINAND"
+      - "Francisco Mejía Guinand"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: francisco_paez
+    display_name: "Francisco Paez"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANCISCO PAEZ"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: francisco_toledo
+    display_name: "Francisco Toledo"
+    country_birth: "MX"
+    nationalities: ["MX"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANCISCO TOLEDO"
+      - "Francisco Toledo"
+    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: franklin_aguirre
+    display_name: "Franklin Aguirre"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FRANKLIN AGUIRRE"
+      - "Franklin Aguirre"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fredy_alzate
+    display_name: "Fredy Alzate"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1975
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FREDY ALZATE"
+      - "Fredy Alzate"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: fredy_serna
+    display_name: "Fredy Serna"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1971
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "FREDY SERNA"
+      - "Fredy Serna"
+    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: federico_jimenez_fernandez
+    display_name: "Federico Jiménez Fernández"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1841
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Federico Jiménez Fernández"
+      - "Federico Jimenez Fernández"
+      - "Federico Jiménez Fernandez"
+      - "Federico Jimenez Fernandez"
+    notes: "14 lotes en Silver | fuente: Wikipedia ES | Madrid; CORRIGE muerte 1910 -> 1931"
+
+  - artist_id: federico_ribas_montenegro
+    display_name: "Federico Ribas Montenegro"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1890
+    death_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Federico Ribas Montenegro"
+    notes: "13 lotes en Silver | fuente: Wikipedia ES | Vigo, Galicia"
+
+  - artist_id: fernando_calderon
+    display_name: "Fernando Calderón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1928
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Fernando Calderón"
+    notes: "13 lotes en Silver | fuente: Wikidata | Badajoz"
+
+  - artist_id: fernando_saez
+    display_name: "Fernando Sáez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1921
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Sáez"
+      - "Fernando Saez"
+    notes: "16 lotes en Silver | fuente: MutualArt; Bilbao Museoa | Laredo, Cantabria"
+
+  - artist_id: francisco_gimeno
+    display_name: "Francisco Gimeno"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1858
+    death_year: 1927
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Gimeno"
+    notes: "14 lotes en Silver | fuente: Wikipedia ES | Tortosa"
+
+  - artist_id: francisco_hohenleiter
+    display_name: "Francisco Hohenleiter"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1889
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Hohenleiter"
+    notes: "12 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: francisco_lopez_sancho
+    display_name: "Francisco López Sancho"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco López Sancho"
+      - "Francisco Lopez Sancho"
+    notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
+
+  - artist_id: francisco_nunez_losada
+    display_name: "Francisco Nuñez Losada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1889
+    death_year: 1973
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Francisco Nuñez Losada"
+      - "Francisco Núñez Losada"
+    notes: "15 lotes en Silver | fuente: Wikidata; Askart; MutualArt | Spanish painter"
+
+  - artist_id: francisco_rodriguez_sanclement
+    display_name: "Francisco Rodríguez Sanclement"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1893
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Francisco Rodríguez Sanclement"
+      - "Francisco Rodriguez Sanclement"
+    notes: "13 lotes en Silver | fuente: Artnet"

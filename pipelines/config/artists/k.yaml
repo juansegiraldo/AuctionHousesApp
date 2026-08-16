@@ -1,0 +1,33 @@
+# Maestro de artistas - shard "k"
+#
+# Entradas cuyo artist_id empieza por "k". Ver README.md en este
+# directorio para la forma de una entrada y las reglas (nunca inventar pais,
+# alias como decision humana, un alias solo pertenece a un artista).
+#
+# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
+# ON, OFF e YES sin comillas como booleanos.
+
+artists:
+  - artist_id: karel_appel
+    display_name: "Karel Appel"
+    country_birth: "NL"
+    nationalities: ["NL"]
+    birth_year: 1921
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Karel Appel"
+    notes: "7 lotes | casas: duran_subastas"
+
+  - artist_id: kevin_mancera_paulo_licona_colombia_1982_colombia_1977
+    display_name: "Kevin Mancera / Paulo Licona (colombia, 1982 / Colombia, 1977)"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "KEVIN MANCERA / PAULO LICONA (COLOMBIA, 1982 / COLOMBIA, 1977)"
+    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona | fechas descartadas por imposibles en la hoja: 1982-1977"

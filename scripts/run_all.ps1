@@ -15,12 +15,18 @@ $ErrorActionPreference = "Stop"
 $stages = @(
     @{ Name = "Bronze  (landing crudo)";        Module = "pipelines.bronze.ingest" },
     @{ Name = "Silver  (normaliza + dedupe)";   Module = "pipelines.silver.build_silver" },
+    # Va justo despues de build_silver: reescribe lots.jsonl anadiendo identidad
+    # de artista, tipo de autoria y pais. Todo lo que viene detras lo da por hecho.
+    @{ Name = "Silver  (artistas + paises)";    Module = "pipelines.silver.artist_resolve" },
     @{ Name = "Enrich  (moneda -> EUR)";        Module = "pipelines.enrichments.currency_normalize" },
     @{ Name = "Enrich  (artistas)";             Module = "pipelines.enrichments.artist_canonicalize" },
     @{ Name = "Enrich  (categorias)";           Module = "pipelines.enrichments.category_tag" },
     @{ Name = "Gold    (agregados)";            Module = "pipelines.gold.build_gold" },
     @{ Name = "Gold    (artistas/categorias)";  Module = "pipelines.gold.build_insights" },
-    @{ Name = "Informe (JSON + HTML)";          Module = "pipelines.analytics.report_gold" }
+    @{ Name = "Informe (JSON + HTML)";          Module = "pipelines.analytics.report_gold" },
+    # Version sin CDN para publicar como Artifact de Claude (ver el docstring
+    # del modulo: un Artifact bloquea todo host externo).
+    @{ Name = "Informe (version Artifact)";     Module = "pipelines.analytics.build_artifact" }
 )
 
 $total = $stages.Count
@@ -38,7 +44,7 @@ foreach ($stage in $stages) {
 
 Write-Host ""
 Write-Host "Puertas de calidad (informativas, no rompen el pipeline)" -ForegroundColor Cyan
-foreach ($house in @("bogota_auctions", "duran_subastas")) {
+foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas")) {
     python pipelines/silver/quality_gates.py --house-slug $house
 }
 

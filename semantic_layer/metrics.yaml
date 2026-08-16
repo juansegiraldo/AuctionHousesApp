@@ -46,14 +46,44 @@ metrics:
     source: silver.lots
     grain: [house, auction, category, time]
 
+  # --- artistas y paises ---
+
+  - name: artists_ranked
+    expression: count(distinct artist_key)
+    source: gold.agg_artist_metrics
+    filter: lots_sold >= 3
+    grain: [artist, country_birth, house]
+
+  # Que fraccion de los artistas del ranking tiene pais. Mientras el maestro de
+  # pipelines/config/artists/ este vacio esto vale 0: es el indicador de avance
+  # del poblado, y el informe lo publica en vez de aparentar estar completo.
+  - name: country_coverage_rate
+    expression: count_if(country_birth is not null) / nullif(count(artist_key), 0)
+    source: gold.agg_artist_metrics
+    grain: [country_birth]
+
+  # Aditiva: agrupa por pais de NACIMIENTO, asi que cada lote cuenta una vez.
+  - name: lots_by_country_birth
+    expression: sum(lots_offered)
+    source: gold.agg_country_metrics
+    grain: [country_birth, house]
+
+  # NO ADITIVA: un artista con doble nacionalidad suma en varios paises. No
+  # totalizar esta metrica ni compararla con lots_offered de la casa.
+  - name: lots_by_nationality
+    expression: sum(lots_offered)
+    source: silver.lots
+    grain: [nationality, house]
+    additive: false
+
   - name: duran_focus_lots_offered
     expression: count(dedupe_key)
     source: silver.lots
-    filter: house_slug='duran_subastas' and category in ('obra_grafica','pintura')
+    filter: house_slug='duran_subastas' and category in ('painting','prints')
     grain: [auction, category, time]
 
   - name: duran_focus_revenue
     expression: sum(price_sold)
     source: silver.lots
-    filter: house_slug='duran_subastas' and category in ('obra_grafica','pintura')
+    filter: house_slug='duran_subastas' and category in ('painting','prints')
     grain: [auction, category, time]
