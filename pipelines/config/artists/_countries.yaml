@@ -75,6 +75,12 @@ countries:
   RS: {es: Serbia, demonym_es: serbio}
   TW: {es: Taiwán, demonym_es: taiwanés}
   EG: {es: Egipto, demonym_es: egipcio}
+  # Aparecen en artist_country de Duran y Bogota. Chequia va como CZ, el estado
+  # actual, y no se mezcla con CS (Checoslovaquia): la fuente que dice
+  # "Republica Checa" habla del pais de hoy, la que dice "Checoslovaquia" no.
+  BY: {es: Bielorrusia, demonym_es: bielorruso}
+  CZ: {es: Chequia, demonym_es: checo}
+  TR: {es: Turquía, demonym_es: turco}
 
 # Todo lo que Silver escribe hoy en artist_country, mapeado a ISO.
 # Las claves se comparan plegadas (sin acentos, en minusculas), asi que
@@ -207,3 +213,55 @@ aliases:
   taiwan: TW
   egipto: EG
   greece: GR   # la hoja escribe algunos paises en ingles ('grecia' ya esta arriba)
+
+  # --- Gentilicios y nombres de pais en ingles ---
+  # Mismo caso que 'spanish' y 'uruguayan', que ya estaban arriba: llegan de
+  # agregadores (LiveAuctioneers) y de fichas de Duran escritas en ingles.
+  # Sin esto quedaban en unmapped_country_values, que es justo el aviso que
+  # esta tabla debe atender en vez de dejarlo crecer.
+  argentinean: AR
+  austrian: AT
+  belgian: BE
+  brazilian: BR
+  chinese: CN
+  czech: CZ
+  danish: DK
+  honduran: HN
+  hungarian: HU
+  hungary: HU
+  israeli: IL
+  japanese: JP
+  norwegian: "NO"   # ver la nota de Noruega: sin comillas YAML lo lee como False
+  paraguayan: PY
+  peruvian: PE
+  philippine: PH
+  portuguese: PT
+  russian: RU
+  ukrainian: UA
+  # Holanda es la region, no el estado, pero en estas fichas se usa como
+  # sinonimo del pais. Igual que 'Inglaterra' -> GB, que ya se hacia arriba.
+  holland: NL
+  the netherlands: NL
+  # 'Flemish' (flamenco) es una escuela pictorica repartida entre Belgica y
+  # Paises Bajos. Se mapea a BE, que es donde cae el grueso de Flandes hoy,
+  # y con la misma logica que 'escuela espanola' -> ES: la escuela dice de
+  # donde sale la obra. Si algun dia estorba, quitarlo es una linea.
+  flemish: BE
+
+  # --- Paises en espaniol que faltaban ---
+  bielorrusia: BY
+  republica checa: CZ
+  turquia: TR
+  haiti: HT
+
+  # --- Escuelas y regiones dentro de un pais ---
+  # 'sevilla' y 'escuela espanola' ya estaban arriba; estas son las mismas dos
+  # formas para los mismos lotes. Catalunia es region, no estado: va a ES.
+  escuela sevillana: ES
+  catalan: ES
+
+  # --- Ciudades ---
+  # Misma regla que Bogota o La Habana, ya arriba: la ficha pone la ciudad
+  # donde toca el pais.
+  viena: AT
+  nueva york: US

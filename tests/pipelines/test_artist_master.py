@@ -237,6 +237,40 @@ def test_country_normalization(master_dir, text, expected):
     assert artist_master.normalize_country(text) == expected
 
 
+def test_norwegian_demonym_resolves_to_norway(tmp_path, monkeypatch):
+    """Un alias que vale NO devuelve Noruega, con comillas y sin ellas.
+
+    YAML 1.1 lee NO sin comillas como el booleano False, asi que 'norwegian: NO'
+    llega al loader como False. Aqui no rompe nada porque _iso() lo convierte de
+    vuelta a "NO" — esa coercion es la que sostiene el caso, no las comillas del
+    fichero. Se prueban las dos formas para que quitar la coercion falle, que es
+    lo unico que puede volver a borrar Noruega de la tabla.
+    """
+    for literal in ('"NO"', "NO"):
+        d = tmp_path / f"artists_{len(literal)}"
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "_countries.yaml").write_text(
+            textwrap.dedent(
+                f"""
+                countries:
+                  "NO": {{es: Noruega, demonym_es: noruego}}
+                aliases:
+                  norwegian: {literal}
+                """
+            ),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr(artist_master, "ARTISTS_DIR", d)
+        artist_master.reset_caches()
+        try:
+            got = artist_master.normalize_country("Norwegian")
+            assert got == "NO", f"con 'norwegian: {literal}' llego {got!r}"
+            assert got is not False
+            assert artist_master.country_es(got) == "Noruega"
+        finally:
+            artist_master.reset_caches()
+
+
 def test_yaml_boolean_country_codes_survive_loading(tmp_path, monkeypatch):
     """NO (Noruega) no puede acabar siendo el booleano False.
 
@@ -328,6 +362,52 @@ def test_real_countries_table_is_loadable():
             {code for code in data["aliases"].values() if code not in data["countries"]}
         )
         assert unknown == [], f"alias apuntando a paises no declarados: {unknown}"
+    finally:
+        artist_master.reset_caches()
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        # Gentilicios y nombres en ingles. Llegan de agregadores y de fichas de
+        # Duran escritas en ingles, y se contaban como unmapped_country_values
+        # aunque 'spanish' y 'uruguayan' ya estuvieran mapeados desde el principio.
+        ("Argentinean", "AR"),
+        ("Japanese", "JP"),
+        ("Philippine", "PH"),
+        ("Hungarian", "HU"),
+        ("Czech", "CZ"),
+        ("Norwegian", "NO"),
+        # Holanda es la region y no el estado, pero la ficha la usa como el pais,
+        # igual que 'Inglaterra' -> GB.
+        ("The Netherlands", "NL"),
+        ("Holland", "NL"),
+        # Paises en espaniol que faltaban en la tabla.
+        ("Turquía", "TR"),
+        ("Bielorrusia", "BY"),
+        ("República Checa", "CZ"),
+        # Ciudad y region donde deberia ir el pais, como el caso de Bogota.
+        ("Viena", "AT"),
+        ("Catalan", "ES"),
+        ("escuela sevillana", "ES"),
+        # Un siglo no es un pais: se queda en None a proposito, para que siga
+        # contando como unmapped en vez de inventarse una procedencia.
+        ("19th century", None),
+        ("18th century", None),
+        ("Europa", None),
+    ],
+)
+def test_real_table_maps_the_values_silver_actually_writes(text, expected):
+    """Contra el _countries.yaml del repo, no contra el fixture reducido.
+
+    Los casos de test_country_normalization usan una tabla de cuatro paises, asi
+    que no dicen nada sobre lo que Silver escribe de verdad en artist_country.
+    Estos valores salieron de contar unmapped_country_values sobre los 64.567
+    lotes reales.
+    """
+    artist_master.reset_caches()
+    try:
+        assert artist_master.normalize_country(text) == expected
     finally:
         artist_master.reset_caches()
 
