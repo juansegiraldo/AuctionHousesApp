@@ -45,6 +45,32 @@ PARETO_CUTS = (10, 25, 50, 100, 200, 500)
 # Se agrupa la cola del mapa de calor a partir de este numero de paises.
 HEATMAP_TOP_N = 12
 
+# Cuantos puntos del scatter llevan nombre por volumen. Etiquetar mas es
+# ilegible, sobre todo en el SVG del artifact, que mide 320 unidades de ancho.
+SCATTER_AUTO_LABELS = 3
+
+# Artistas que se etiquetan SIEMPRE, ademas de los mayores por volumen. El top
+# automatico son los tres primeros por facturacion y sale entero masculino
+# (Romero de Torres, Botero, Obregon), asi que la nube quedaba sin una sola
+# referencia femenina pese a que hay mujeres en el mismo orden de magnitud.
+# Estas tres se eligen porque OCUPAN REGIONES DISTINTAS del grafico, que es lo
+# que el scatter mide: Gonzalez vende mucho y barato (90 lotes a 3,3 k€), Amaral
+# poco y caro (13 a 40 k€) y Kusama es el extremo de precio (3 a 100 k€). Las
+# tres facturan entre 293 k€ y 523 k€, o sea la banda de los etiquetados
+# automaticos, no un rincon anecdotico del grafico.
+#
+# Se comparan por NOMBRE MOSTRADO, que es lo unico que los dos renderers tienen
+# en el punto. Es fragil por definicion: si el maestro de artistas cambia la
+# forma canonica del nombre, la etiqueta desaparece en silencio. Por eso hay un
+# test que comprueba que las tres siguen resolviendose contra Gold, y por eso
+# NO se cuelan como puntos nuevos: si una no esta en el ranking (le faltan
+# ventas, o pierde el pais), no se dibuja nada inventado.
+SCATTER_ALWAYS_LABEL = (
+    "Beatriz González",
+    "Olga de Amaral",
+    "Yayoi Kusama",
+)
+
 
 # --------------------------------------------------------------------------
 # Concentracion (Pareto)
@@ -128,6 +154,12 @@ def scatter_points(artists: list[dict], top_countries: int = 5) -> list[dict]:
     # De mayor a menor volumen: las burbujas grandes se dibujan primero y las
     # pequenias encima, para que ninguna quede tapada del todo.
     out.sort(key=lambda p: -p["size"])
+
+    # Que punto lleva nombre se decide AQUI y no en cada renderer: los dos lo
+    # tenian escrito como points[:3] por su cuenta, que es exactamente el patron
+    # que ya hizo divergir los avisos (ver la cabecera del modulo).
+    for i, p in enumerate(out):
+        p["label"] = i < SCATTER_AUTO_LABELS or p["name"] in SCATTER_ALWAYS_LABEL
     return out
 
 

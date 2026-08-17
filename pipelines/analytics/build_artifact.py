@@ -327,9 +327,11 @@ def scatter_chart(points: list[dict]) -> str:
             f"{esc(eur(p['size']))} total</title></circle>"
         )
 
-    # Solo los tres mayores llevan nombre: mas seria ilegible a este tamanio.
-    for p in points[:3]:
-        if p["x"] <= 0 or p["y"] <= 0:
+    # Quien lleva nombre lo decide narrative.scatter_points (p["label"]): los
+    # mayores por volumen mas las referencias fijas. Se lee el flag en vez de
+    # recortar aqui para que el HTML de Plotly etiquete los mismos nombres.
+    for p in points:
+        if not p.get("label") or p["x"] <= 0 or p["y"] <= 0:
             continue
         x, y = px(p["x"]), py(p["y"])
         anchor = "end" if x > SC_W * 0.6 else "start"

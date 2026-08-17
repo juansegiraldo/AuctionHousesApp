@@ -1422,8 +1422,10 @@ function drawScatter() {
     font: { size: 9.5, color: soft }
   }));
 
-  // Solo los tres mayores llevan nombre: etiquetar mas es ilegible.
-  pts.slice(0, 3).forEach(p => {
+  // Quien lleva nombre lo decide narrative.py (p.label): los mayores por
+  // volumen mas las referencias fijas. No se recalcula aqui para que el SVG del
+  // artifact etiquete exactamente los mismos.
+  pts.filter(p => p.label).forEach(p => {
     L.annotations.push({
       x: Math.log10(p.x), y: Math.log10(p.y), text: p.name,
       showarrow: true, arrowhead: 0, arrowcolor: soft, ax: 14, ay: -14,

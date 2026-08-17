@@ -102,6 +102,62 @@ def test_scatter_marks_top_countries_and_groups_the_rest():
     assert pts["Raro"]["group"] == "__other__"
 
 
+def test_scatter_labels_the_biggest_by_volume():
+    artists = [_artist(f"A{i}", 1000 - i * 10) for i in range(10)]
+    pts = narrative.scatter_points(artists)
+    labelled = [p["name"] for p in pts if p["label"]]
+    assert labelled == ["A0", "A1", "A2"], labelled
+
+
+def test_scatter_always_labels_the_reference_artists():
+    """Las referencias fijas se etiquetan aunque no entren en el top por volumen.
+
+    El top automatico sale entero masculino, y sin esto la nube no tenia una sola
+    referencia femenina. Ver SCATTER_ALWAYS_LABEL.
+    """
+    artists = [_artist(f"A{i}", 10_000 - i) for i in range(20)]
+    artists.append(_artist("Yayoi Kusama", 5, sold=1, country="JP"))
+    pts = {p["name"]: p for p in narrative.scatter_points(artists)}
+    assert pts["Yayoi Kusama"]["label"] is True
+    # Y sigue etiquetando el top por volumen, no lo sustituye.
+    assert pts["A0"]["label"] is True
+    assert pts["A5"]["label"] is False
+
+
+def test_scatter_never_invents_a_reference_artist():
+    """Una referencia que no esta en el ranking no se dibuja como punto nuevo.
+
+    Misma disciplina que el resto del pipeline: si Kusama pierde las ventas o el
+    pais, desaparece del grafico; no se le fabrica una burbuja.
+    """
+    pts = narrative.scatter_points([_artist("A0", 1000)])
+    assert [p["name"] for p in pts] == ["A0"]
+
+
+def test_reference_artists_still_resolve_against_gold():
+    """La etiqueta se compara por nombre mostrado, asi que puede romperse sola.
+
+    Si el maestro de artistas renombra a una de las tres, el flag deja de casar y
+    la etiqueta desaparece EN SILENCIO. Este test es la alarma. Se salta si no hay
+    Gold construido (data/** esta gitignored, CI limpio no lo tiene).
+    """
+    import json
+    from pathlib import Path
+
+    path = Path("data/gold/agg_artist_metrics.jsonl")
+    if not path.exists():
+        pytest.skip("Gold no construido: nada que comprobar")
+
+    with path.open(encoding="utf-8") as fh:
+        names = {json.loads(line).get("artist_name") for line in fh}
+
+    missing = [n for n in narrative.SCATTER_ALWAYS_LABEL if n not in names]
+    assert not missing, (
+        f"referencias que ya no existen en Gold con ese nombre exacto: {missing}. "
+        "Actualiza SCATTER_ALWAYS_LABEL con la forma canonica del maestro."
+    )
+
+
 # --------------------------------------------------------------------------
 # Heatmap
 # --------------------------------------------------------------------------
