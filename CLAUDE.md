@@ -402,7 +402,13 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   `arte-contest-2024` or `protesta-social` still ingests. Tests pin both directions. After the
   fix Bogotá's FX coverage is **100%** and total fallback across all houses is **0**.
   Note `2245_full.jsonl` is *not* filtered: it is redundant (a 60-lot subset) but not mutilated,
-  and filtering it by name would be guessing.
+  and filtering it by name would be guessing. The two offending files now live in
+  `scraping/houses/bogota_auctions/_discarded/` (outside the registry's `output_dir`, with a
+  README explaining why) — kept for scraper debugging, double-protected by `is_ingestable()`.
+  Unrelated despite the name: Lefebre's `subasta-de-prueba-17-de-febrero-de-2022.jsonl` is
+  **real data** the house itself titled "Subasta de prueba" — 5 fully populated lots by Jim
+  Amaral, Le Parc, Acevedo Bernal and Shepard Fairey. The filter matches the English `test` as
+  a segment, so the Spanish `prueba` is correctly left alone.
 - **The "mojibake" is a console artifact, not a data defect** (verified 2026-08-01). Scanning all
   49,541 Silver lots for surrogates (`\udc80`–`\udcff`) returns **zero**: `artist_name` holds a
   clean `Álvaro Barrios`, and the HTML report renders accents correctly. What looks like mojibake
