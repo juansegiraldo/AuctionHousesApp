@@ -119,6 +119,58 @@ _OBJECT_NAMES = frozenset(
     }
 )
 
+# Filas residuales comprobadas una a una en Silver: el valor de artist_name es
+# un objeto, un titulo, una institucion o una atribucion, no la identidad de un
+# autor. La lista es cerrada y se compara por igualdad contra el fold COMPLETO;
+# no se generalizan palabras como "carta", "taller" o "virgen", que tambien
+# pueden aparecer dentro del nombre legitimo de una persona.
+#
+# Se conserva separada de _OBJECT_NAMES porque incluye errores concretos del
+# parser (marcadores bibliograficos y atribuciones cualificadas), no solo tipos
+# genericos de objeto. En particular, "Castro, Jose Gil de (atrib.)" debe caer
+# aqui sin borrar la forma no cualificada del pintor.
+_NON_ARTIST_NAMES = frozenset(
+    {
+        # Documentos, publicaciones e instituciones.
+        "carta de gonzalo jimenez de quesada al rey carlos v",
+        "manuscritos sobre esclavitud siglo xviii xix",
+        "comercio de esclavos",
+        "real academia de la lengua",
+        "incunable venezolano bello andres red",
+        "firmado primera edicion",
+        "noticioso de ambos mundos",
+        # Atribuciones y talleres, no autores directos.
+        "obrador de zurbaran",
+        "despues de pablo picasso",
+        "taller olga de amaral",
+        "castro jose gil de atrib",
+        # Objetos y titulos que aun sobrevivian a _OBJECT_NAMES.
+        "pair of chinese guangxu period vases",
+        "tapete lapices",
+        "reloj de pared estilo luis xv de patek philippe",
+        "tapete",
+        "anonim",
+        "escritorio",
+        "sillas plegables",
+        "grupo escultorico de salvador dali",
+        "par de candelabros",
+        "portaplatos",
+        "sillas de comedor",
+        "mascara yelmo goli glen cultura baoule h",
+        "figuras de pesebre",
+        "escritorio bargueno",
+        "sofa",
+        "poltrona con reposapies otomana de charles eames",
+        "buffet",
+        "virgen con el nino",
+        "comoda",
+        "juego de cubiertos",
+        "alfombra san marcos",
+        "sofa imperio",
+        "centro de mesa",
+    }
+)
+
 # Proceres, militares y cartografos que firman el TEXTO de un lote de libro o
 # mapa, nunca una obra plastica. Salian en el ranking de artistas: Simon Bolivar
 # aparecia con 19 lotes y "sin pais informado", cuando esos 19 lotes son sus
@@ -151,15 +203,12 @@ _NON_ARTIST_AUTHORS = frozenset(
     }
 )
 
-# El nombre es ENTERAMENTE el titulo entrecomillado de la obra. Duran publica
-# muchos lotes como '"Madre Superiora". Oleo sobre lienzo. 130 x 99. Obra
-# realizada hacia 1965...' y el scraper corta por el primer punto y se queda con
-# el titulo (ver _infer_artist_from_title en
-# scraping/houses/duran_subastas/parsers.py, que ademas prefiere esa conjetura
-# al campo "autor" de la pagina de detalle, que si trae el nombre bueno).
-# Son 721 lotes en 452 variantes, y no es ruido barato: el mas caro,
-# '"Madre Superiora"', es un Botero de 120.000 EUR que rankeaba como si fuera un
-# artista sin pais en vez de sumar al autor real.
+# El nombre es ENTERAMENTE el titulo entrecomillado de la obra. Historicamente,
+# Duran publicaba muchos lotes como '"Madre Superiora". Oleo sobre lienzo...' y
+# _infer_artist_from_title() dejaba ese titulo en artist_name. El parser ya
+# prioriza el campo estructurado "Autor" y el reproceso recupero 710 de los 721
+# lotes afectados; esta regla permanece como red de seguridad para las 11
+# fichas que no publican Autor y para cualquier output legado.
 #
 # La regla exige que TODO el nombre sea el entrecomillado, no que EMPIECE por
 # comilla: hay 29 lotes tipo '"Au merite" art nouveau. Henri Louis Levasseur' o
@@ -248,6 +297,13 @@ def attribution_type(name: Optional[str]) -> str:
 
     raw = name.strip()
 
+    # Esta lista se comprueba ANTES de strip_biography(): el parentesis final
+    # puede ser justo lo que cualifica la atribucion. Si se quitase primero,
+    # "Castro, Jose Gil de (atrib.)" se confundiria con el autor directo.
+    raw_fold = artist_fold(raw)
+    if raw_fold in _NON_ARTIST_NAMES:
+        return "no_autor"
+
     # El parentesis biografico se recorta antes de cualquier heuristica de
     # longitud o digitos: "Ever Astudillo (Colombia, 1948 - 2015)" es un autor.
     core = strip_biography(raw)
@@ -276,7 +332,7 @@ def attribution_type(name: Optional[str]) -> str:
     if _CITY_FIELD_RE.match(core):
         return "no_autor"
 
-    # El nombre es solo el titulo entrecomillado de la obra: 721 lotes de Duran.
+    # Red de seguridad: titulo entrecomillado aislado sin un Autor estructurado.
     if _QUOTED_TITLE_RE.match(raw):
         return "no_autor"
 
