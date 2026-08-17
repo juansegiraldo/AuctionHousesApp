@@ -66,3 +66,12 @@ def test_parse_lot_page_extracts_reference_breadcrumb_and_artist_years():
     assert detail["price_estimate_min"] == 500
     assert detail["price_sold"] == 1200
 
+
+def test_parse_lot_page_prefers_detail_author_over_title_guess():
+    html = Path(__file__).parent / "fixtures" / "lot_page_botero_504_154.html"
+    detail = parse_lot_page(html.read_text(encoding="utf-8"))
+
+    assert detail["lot_number"] == 154
+    assert detail["artist_raw"] == "BOTERO, FERNANDO (1932 - 2023)"
+    assert detail["artist_name"] == "BOTERO, FERNANDO"
+    assert detail["artist_name"] != '"Madre Superiora"'

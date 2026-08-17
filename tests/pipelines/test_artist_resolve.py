@@ -286,83 +286,87 @@ def test_original_fields_are_preserved(silver):
         assert row[key] == value
 
 
-# --- Reparacion del autor por lot_url ---
+# --- Red de seguridad para titulos y configuracion retirada ---
 
 @pytest.fixture
-def real_master():
-    """Estos tests leen el maestro REAL, no un fixture.
-
-    Otros tests del fichero redirigen ARTISTS_DIR a un tmp_path, y los caches
-    quedan con su contenido. Sin este reset el resultado depende del orden de
-    ejecucion.
-    """
+def real_artist_config():
+    """Lee la configuracion real sin depender de caches de otros tests."""
     artist_master.reset_caches()
     yield
     artist_master.reset_caches()
 
 
-# El scraper de Duran dejo el TITULO de la obra en artist_name en 721 lotes
-# (_infer_artist_from_title corta por el primer punto). _lot_author_fixes.yaml
-# recupera el campo "Autor" que la casa si publica en la ficha de detalle.
+def test_lot_author_fix_map_is_empty(real_artist_config):
+    """El output corregido de Duran ya no necesita excepciones por lot_url."""
+    assert artist_master.load_lot_author_fixes() == {}
 
 
-def test_lot_author_fix_recovers_the_real_artist(real_master):
-    """El lote del Botero de 120.000 EUR deja de ser '"Madre Superiora"'."""
-    url = (
-        "https://www.duran-subastas.com/es/subasta-lote/"
-        "madre-superiora-oleo-sobre-lienzo-130-x-99-ob/504-154"
+def test_lefebre_multiline_title_only_uses_a_master_backed_prefix(silver):
+    """Un titulo en la segunda linea no se convierte en alias ni en artista."""
+    _, master = silver
+    _seed_master(
+        master,
+        [
+            {
+                "artist_id": "santiago_cardenas",
+                "display_name": "Santiago Cárdenas Arroyo",
+                "country_birth": "CO",
+                "nationalities": ["CO"],
+                "birth_year": 1937,
+                "attribution_type": "autor",
+                "source": "manual",
+                "confidence": "high",
+                "aliases": ["SANTIAGO CÁRDENAS", "SANTIAGO CARDENAS ARROYO"],
+            },
+            {
+                "artist_id": "eduardo_ramirez_villamizar",
+                "display_name": "Eduardo Ramírez Villamizar",
+                "country_birth": "CO",
+                "nationalities": ["CO"],
+                "attribution_type": "autor",
+                "source": "manual",
+                "confidence": "high",
+                "aliases": ["EDUARDO RAMÍREZ VILLAMIZAR"],
+            },
+        ],
     )
-    row = {"lot_url": url, "artist_name": '"Madre Superiora"'}
 
-    resolved = artist_resolve.resolve_row(row)
-
-    assert resolved["attribution_type"] == "autor"
-    assert resolved["artist_id"] == "fernando_botero"
-    assert resolved["artist_country_birth"] == "CO"
-
-
-def test_lot_author_fix_keeps_school_attributions_as_school(real_master):
-    """La casa atribuye a ESCUELA ESPANIOLA S. XVI: no es un autor, y esta bien.
-
-    El valor reparado vuelve a pasar por attribution_type(), asi que una escuela
-    NO se convierte en artista solo por estar en el fichero de reparacion.
-    """
-    url = (
-        "https://www.duran-subastas.com/es/subasta-lote/"
-        "resurreccion-oleo-sobre-tabla-74-x-161-tabla/505-117"
+    santiago = artist_resolve.resolve_row(
+        _lot(
+            house_slug="lefebre_subastas",
+            artist_name="SANTIAGO CÁRDENAS\nBlack Tie",
+        )
     )
-    resolved = artist_resolve.resolve_row({"lot_url": url, "artist_name": '"Resurrección"'})
+    assert santiago["artist_id"] == "santiago_cardenas"
+    assert santiago["artist_country_birth"] == "CO"
+    assert "Black Tie" not in artist_master.load_master()["santiago_cardenas"]["aliases"]
 
-    assert resolved["attribution_type"] == "escuela"
-    assert resolved["artist_id"] is None
-    assert resolved["artist_country_birth"] is None
+    # El nombre completo ya resuelve y no se trunca por contener un salto.
+    ramirez = artist_resolve.resolve_row(
+        _lot(
+            house_slug="lefebre_subastas",
+            artist_name="EDUARDO RAMÍREZ\nVILLAMIZAR",
+        )
+    )
+    assert ramirez["artist_id"] == "eduardo_ramirez_villamizar"
+
+    for raw in (
+        "1 Real 1821 M\nFernando VII",
+        "MADONNA\nLike a prayer, 1989",
+        "HERNANDO VERGARA\nS",
+    ):
+        unresolved = artist_resolve.resolve_row(
+            _lot(house_slug="lefebre_subastas", artist_name=raw)
+        )
+        assert unresolved["artist_id"] is None
 
 
-def test_unrepaired_quoted_title_stays_not_an_author(real_master):
-    """Un titulo sin reparar NO se inventa un autor: sigue fuera del ranking."""
+def test_isolated_quoted_title_stays_not_an_author(real_artist_config):
+    """Un titulo aislado no inventa un autor aunque no haya excepciones."""
     resolved = artist_resolve.resolve_row(
         {"lot_url": "https://example.com/lote/sin-reparar", "artist_name": '"Paisaje"'}
     )
 
     assert resolved["artist_resolution"] == "not_an_author"
+    assert resolved["artist_id"] is None
     assert resolved["artist_country_birth"] is None
-
-
-def test_lot_author_fix_does_not_touch_lots_with_a_good_artist(real_master):
-    """La reparacion va por lot_url, asi que no puede pisar un lote sano."""
-    row = {"lot_url": "https://example.com/lote/sano", "artist_name": "Joan Miró"}
-
-    assert artist_resolve.resolve_row(row)["artist_display_name"] == artist_resolve.resolve_row(row)["artist_display_name"]
-    assert artist_resolve.resolve_row(row)["attribution_type"] == "autor"
-
-
-def test_lot_author_fix_is_idempotent(real_master):
-    """Reprocesar Silver ya resuelto da el mismo resultado."""
-    url = (
-        "https://www.duran-subastas.com/es/subasta-lote/"
-        "madre-superiora-oleo-sobre-lienzo-130-x-99-ob/504-154"
-    )
-    once = artist_resolve.resolve_row({"lot_url": url, "artist_name": '"Madre Superiora"'})
-    twice = artist_resolve.resolve_row(once)
-
-    assert twice["artist_id"] == once["artist_id"] == "fernando_botero"
