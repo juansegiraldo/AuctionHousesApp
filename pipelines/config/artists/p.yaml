@@ -516,3 +516,29 @@ artists:
     aliases:
       - "Paja Jovanovic"
     notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Vrsac, entonces Imperio austriaco (Banato, austrohungaro desde 1867), hoy Serbia: RS por el lugar literal. Serbio de etnia y autoidentificacion. Murio en Viena a los 98 tras vivir alli casi toda su vida adulta, pero NO consta que adquiriera la ciudadania austriaca, asi que no se le aniade AT."
+
+  - artist_id: paul_francois_quinsac
+    display_name: "Paul François Quinsac"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1858
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paul François Quinsac"
+    notes: "2 lotes | casas: duran_subastas | nacido en Burdeos, Francia, en 1858. Duran publica muerte en 1932, pero el repertorio documental actualizado del Musee d'Orsay fija 1929; se toma la fuente institucional. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/paul-quinsac-20471"
+
+  - artist_id: pedro_antonio_martinez_exposito
+    display_name: "Pedro Antonio Martínez Expósito"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1886
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Antonio Martínez"
+      - "Pedro Antonio Martínez Expósito"
+    notes: "1 lote | casas: duran_subastas | el catalogo identifica Majas con Mantilla, 1929, como obra de Pedro Antonio Martinez, Pulpi 1886-?. Prado y el Ayuntamiento desarrollan el nombre como Pedro Antonio Martinez Exposito. Se omite death_year porque las fuentes fiables lo desconocen y las secundarias discrepan. Fuentes: https://www.museodelprado.es/en/aprende/enciclopedia/voz/martinez-exposito-pedro-antonio/dfb21d0e-00aa-40fe-9fdb-8dbb35b1f646 ; https://www.dipalme.org/Servicios/cmsdipro/index.nsf/noticias.xsp?documentId=E99A261D7B707D3EC1258B11003E06B7&p=espaciosescenicospulpi ; https://www.duran-subastas.com/files/001/625/001_420.pdf"

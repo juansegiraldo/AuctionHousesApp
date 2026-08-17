@@ -97,7 +97,8 @@ artists:
     aliases:
       - "Lucio Muñoz"
       - "MUÑOZ, LUCIO"
-    notes: "62 lotes | casas: duran_subastas"
+      - "MUÑOZ MARTÍNEZ, LUCIO"
+    notes: "62 lotes | casas: duran_subastas | pintor nacido en Madrid en 1929 y fallecido en 1998. Fuente: https://www.museoreinasofia.es/exposicion/lucio-munoz"
 
   - artist_id: luis_alberto_acuna
     display_name: "Luis Alberto Acuña"
@@ -747,4 +748,75 @@ artists:
     confidence: high
     aliases:
       - "GRANER, LUIS"
-    notes: "Alta desde _lot_author_fixes.yaml: su lote llegaba con el titulo '\"Entrando en el puerto\"' como artista | casas: duran_subastas | fuente: Wikipedia ES. Nacido y muerto en Barcelona."
+      - "Luis Graner Arrufi"
+      - "Lluís Graner"
+      - "Lluís Graner Arrufí"
+    notes: "Su lote se recupero al re-scrapear el Autor de la ficha de Duran; antes llegaba con el titulo '\"Entrando en el puerto\"' como artista | casas: duran_subastas | Lluís Graner Arrufí, nacido y fallecido en Barcelona, 1863-1929. Fuentes: https://www.museunacional.cat/es/lluis-graner ; https://www.museodelprado.es/coleccion/artista/graner-y-arrufi-luis/917cde91-7779-40b3-a6ba-9878e75d8427"
+
+  - artist_id: lazzaro_baldi
+    display_name: "Lazzaro Baldi"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1623
+    death_year: 1703
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Lazzaro Baldi"
+    notes: "1 lote vendido por 27.500 EUR | casas: duran_subastas | nacido en Pistoia hacia 1623 y fallecido en Roma en 1703; la ficha de la casa escribe Pistoria. Fuente: https://www.museodelprado.es/coleccion/artista/baldi-lazzaro/a634d7a7-e69a-4b68-a65a-b82ee339e97d"
+
+  - artist_id: luca_giordano
+    display_name: "Luca Giordano"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1634
+    death_year: 1705
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luca Giordano"
+    notes: "5 lotes | casas: duran_subastas | nacido y fallecido en Napoles, 1634-1705; fechas coincidentes con Silver. No fusionar obras de escuela/circulo o atribuciones tradicionales. Fuente: https://www.museodelprado.es/coleccion/obra-de-arte/viaje-de-jacob-a-cana/d2b47b0a-1df8-425c-8563-88c67419674b"
+
+  - artist_id: lorenzo_guerrero_y_leogardo
+    display_name: "Lorenzo Guerrero y Leogardo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1835
+    death_year: 1904
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Lorenzo Guerrero y Leogardo"
+      - "GUERRERO Y LEOGARDO, LORENZO"
+    notes: "1 lote | casas: duran_subastas | pintor filipino nacido en Ermita, Manila, en 1835 y fallecido en Paco en 1904; maestro de Juan Luna. Fuente de ficha y catalogo abierta: https://www.duran-subastas.com/es/subasta-lote/lorenzo-guerrero-y-leogardo-44-dibujos-filipinos/631-310"
+
+  - artist_id: luis_alvarez_catala
+    display_name: "Luis Álvarez Catalá"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1836
+    death_year: 1901
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis Álvarez Catalá"
+    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Madrid, 1836-1901; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/alvarez-catala-luis/99cba151-7974-40e6-ad8a-4a2cab2fb63e"
+
+  - artist_id: luis_saez_diez
+    display_name: "Luis Sáez Díez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1925
+    death_year: 2010
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis Sáez"
+      - "Luis Sáez Díez"
+      - "SAEZ, LUIS"
+    notes: "10 lotes | casas: duran_subastas | Duran identifica al autor como SAEZ, LUIS (1925); Bañistas, La llegada y Los musicos pertenecen al mismo conjunto de lotes. Luis Saez Diez nacio en Mazuelo de Muño, Burgos, en 1925 y fallecio en Burgos en 2010. El lot_year 1925 de 8 filas es el nacimiento filtrado desde la ficha del autor, no la fecha de la obra. No confundir con Luis Saenz de la Calzada (1912-1994). Fuentes: https://museodeburgos.net/exposiciones/luis-saez/ ; https://museodeburgos.net/project/bellamente-aterrados-un-siglo-de-luis-saez-1925-2025/ ; https://www.duran-subastas.com/es/subasta-lote/luis-saez-la-llegada/592-254"

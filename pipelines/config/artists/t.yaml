@@ -127,3 +127,45 @@ artists:
       - "TAMARA DE LEMPICKA"
       - "TAMARA LEMPICKA"
     notes: "3 lotes en 3 grafias | casas: duran_subastas, lefebre_subastas | fuente: Wikipedia, investigacion de 2024 (de Young / FAMSF). PAIS DISPUTADO A TRES BANDAS, de ahi confidence medium: ella misma decia Varsovia o San Petersburgo segun la ocasion y su biografa Laura Claridge sostiene Moscu. PL es el consenso, no un hecho limpio. La investigacion de 2024 corrigio sobre todo la FECHA (16 jun 1894, no 1898 ni 1905) y el nombre real (Tamara Rosa Hurwitz), destapando un origen judio que probablemente motivo la reinvencion de la identidad polaca."
+
+  - artist_id: tsuguharu_foujita
+    display_name: "Tsuguharu Foujita"
+    country_birth: "JP"
+    nationalities: ["JP", "FR"]
+    birth_year: 1886
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Tsuguharu Foujita"
+      - "Foujita"
+      - "FOUJITA"
+      - "Tsuguharu FOUJITA"
+    notes: "9 lotes en dos folds actualmente separados | casas: duran_subastas, lefebre_subastas, zorrilla_subastas | nacido en Tokio en 1886; naturalizado frances en 1955; fallecido en Zurich en 1968. Fuente: https://www.fondation-foujita.org/leonard-tsuguharu-foujita/"
+
+  - artist_id: takesada_matsutani
+    display_name: "Takesada Matsutani"
+    country_birth: "JP"
+    nationalities: ["JP"]
+    birth_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Takesada Matsutani"
+    notes: "1 lote | casas: duran_subastas | nacido en Osaka en 1937; vivo, sin death_year. Fuente: https://www.metmuseum.org/art/collection/search/932125"
+
+  - artist_id: tito_cittadini
+    display_name: "Tito Cittadini"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1886
+    death_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Tito Cittadini"
+      - "CITTADINI, TITO"
+    notes: "5 lotes | casas: duran_subastas | nacido en Buenos Aires en 1886 y fallecido en Pollensa en 1960; fechas coincidentes con Silver. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/1732/"

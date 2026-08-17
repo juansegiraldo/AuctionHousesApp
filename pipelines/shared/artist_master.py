@@ -38,10 +38,9 @@ ARTISTS_DIR = ROOT / "pipelines" / "config" / "artists"
 # solo monkeypatch.
 COUNTRIES_FILENAME = "_countries.yaml"
 
-# Reparacion del autor por lot_url para los lotes en los que el scraper de Duran
-# metio el TITULO de la obra en el campo del artista. No es un shard: no lleva
-# `artists:` y se salta igual que la tabla de paises. Ver el propio fichero para
-# el porque de que la clave sea el lote y no el nombre.
+# Punto de compatibilidad del antiguo parche por lot_url. El parser de Duran ya
+# prioriza el campo Autor y el mapa esta deliberadamente vacio. No es un shard:
+# no lleva `artists:` y se salta igual que la tabla de paises.
 LOT_AUTHOR_FIXES_FILENAME = "_lot_author_fixes.yaml"
 
 # Ficheros de pipelines/config/artists/ que NO son shards de artistas.
@@ -129,26 +128,11 @@ def load_master() -> Dict[str, Dict[str, Any]]:
 
 @lru_cache(maxsize=1)
 def load_lot_author_fixes() -> Dict[str, str]:
-    """lot_url -> nombre del autor tal y como lo publica la casa.
+    """Carga el mapa legado lot_url -> autor; en produccion debe estar vacio.
 
-    Repara los lotes en los que el scraper de Duran dejo el TITULO de la obra en
-    el campo del artista (721 lotes; ver _lot_author_fixes.yaml). El dato no es
-    investigacion: es el campo "Autor" de la ficha de detalle de la propia casa,
-    que el scraper descarga y descarta.
-
-    La clave es el lot_url y NO el nombre porque un titulo no identifica a nadie:
-    "Paisaje" son 45 lotes de 45 pintores distintos. Por eso esto no puede vivir
-    como alias del maestro, donde un alias afirma identidad.
-
-    El valor sale de aqui y vuelve a pasar por attribution_type() y por el
-    maestro como cualquier otro nombre, asi que un "ESCUELA ESPANIOLA S. XIX" se
-    clasifica como `escuela` y no como autor, que es lo correcto.
-
-    Se le quita el parentesis biografico al cargar. La ficha de Duran publica
-    "BOTERO, FERNANDO (1932 - 2023)" y artist_fold() NO recorta la biografia, asi
-    que el fold seria "botero fernando 1932 2023" y no casaria con el alias
-    "BOTERO, FERNANDO" que el maestro ya tiene. Recortarlo aqui evita tener que
-    dar de alta un alias por cada combinacion de fechas que imprima la casa.
+    Se conserva para compatibilidad con datos/configuraciones antiguas. Las
+    reparaciones nuevas deben hacerse en el parser y reprocesando el output, no
+    ampliando este mapa ni convirtiendo titulos en aliases del maestro.
     """
     data = _load_yaml(ARTISTS_DIR / LOT_AUTHOR_FIXES_FILENAME)
     fixes = data.get("lot_authors") or {}

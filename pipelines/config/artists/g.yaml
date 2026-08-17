@@ -447,3 +447,71 @@ artists:
     aliases:
       - "Gonzalo Bilbao Martínez"
     notes: "Costumbrista painter, professor at Escuela Superior de Artes e Industrias de Sevilla. Born in Seville; studied orientalism in Tánger and Tetuán 1883."
+
+  - artist_id: george_owen_wynne_apperley
+    display_name: "George Owen Wynne Apperley"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1884
+    death_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "George Wynne Apperley"
+      - "George Owen Wynne Apperley"
+    notes: "6 lotes | casas: duran_subastas | pintor britanico nacido en Ventnor, isla de Wight, el 17-06-1884 y fallecido en Tanger el 10-09-1960; fechas coincidentes con Silver. Fuente: https://historia-hispanica.rah.es/biografias/3049-george-owen-wynne-apperley"
+
+  - artist_id: giuseppe_bonito
+    display_name: "Giuseppe Bonito"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1707
+    death_year: 1789
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Giuseppe Bonito"
+    notes: "1 lote | casas: duran_subastas | pintor italiano nacido en Castellammare di Stabia en 1707 y fallecido en Napoles en 1789; fechas coincidentes con Silver. Fuentes: https://www.museodelprado.es/aprende/enciclopedia/voz/bonito-giuseppe/e3a1ab69-8a1b-4288-9707-a72c62daf69a ; https://catalogo.beniculturali.it/Agent/9bef403399d329850eb3b782c2f8f5d7"
+
+  - artist_id: grip_face
+    display_name: "Grip Face"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GRIP FACE"
+    notes: "1 lote vendido por 9.000 EUR | casas: duran_subastas | la memoria institucional de la Fundació Miró identifica Grip Face como pseudónimo de David Oliver, nacido en Palma en 1989. David Oliver no se añade como alias por riesgo de homonimia y porque esa forma no aparece como artista crudo en Silver. Fuentes: https://miromallorca.com/uploads/2026/04/memoria2025.pdf ; https://miromallorca.com/es/exhibition/grip-face-utopia-del-lodo-y-sashimi-de-bruma/"
+
+  - artist_id: gustavo_de_maeztu
+    display_name: "Gustavo de Maeztu"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1887
+    death_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Gustavo de Maeztu"
+    notes: "6 lotes | casas: duran_subastas | nacido en Vitoria en 1887 y fallecido en Estella en 1947; Silver coincide. Fuente: https://www.museogustavodemaeztu.com/biografia-gustavo-de-maeztu/"
+
+  - artist_id: giuseppe_maraschini
+    display_name: "Giuseppe Maraschini"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1839
+    death_year: 1903
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Giuseppe Maraschini"
+      - "Guiseppe MARASCHINI"
+      - "MARASCHINI, Guiseppe"
+      - "MARASCHINI, Guiseppe (Italian school, 1839-1903)"
+    notes: "1 lote con autor extraido en Silver; otros 2 lotes solo tienen el nombre en lot_title y siguen fuera del resolver | Giuseppe Maraschini nacio en Posina, Vicenza, en 1839 y murio en Florencia en 1903; Guiseppe es una errata de la casa. Fuente institucional: https://www.museicivicivicenza.it/file/doc-10796.pdf ; archivo: https://www.museicivicivicenza.it/file/doc1-13340.pdf"

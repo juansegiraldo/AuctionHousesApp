@@ -234,3 +234,29 @@ artists:
       - "Nicolás García Uriburu"
       - "NICOLAS GARCIA URIBURU"
     notes: "4 lotes | n. 1937 en Buenos Aires, m. 2016. Arquitecto y pionero del Land Art; coloreo el Gran Canal de Venecia (1968) y el Rin con Beuys (1981). Fuentes: Wikipedia, Centre Pompidou, Museo Moderno de Buenos Aires."
+
+  - artist_id: nikos_hadjikyriakos_ghika
+    display_name: "Nikos Hadjikyriakos-Ghika"
+    country_birth: "GR"
+    nationalities: ["GR"]
+    birth_year: 1906
+    death_year: 1994
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nikos Hadjikyriakos Ghika"
+    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Atenas, 1906-1994. Fuente: https://www.nationalgallery.gr/en/artist/hatzikyriakos-ghika-nikos/"
+
+  - artist_id: norah_borges
+    display_name: "Norah Borges"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1901
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Norah Borges"
+    notes: "2 lotes | casas: duran_subastas | artista plastica argentina, 1901-1998; fechas coincidentes con Silver. No confundir con su hermano Jorge Luis Borges ni con Jacobo Borges. Fuente: https://www.bellasartes.gob.ar/exhibiciones/norah-borges-una-mujer-en-la-vanguardia/"

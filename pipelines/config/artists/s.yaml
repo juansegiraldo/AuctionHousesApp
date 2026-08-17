@@ -53,9 +53,8 @@ artists:
     notes: "4 lotes | casas: duran_subastas"
 
   - artist_id: santiago_cardenas
-    display_name: "Santiago Cárdenas"
+    display_name: "Santiago Cárdenas Arroyo"
     country_birth: "CO"
-    death_year: 2006
     nationalities: ["CO"]
     birth_year: 1937
     attribution_type: autor
@@ -64,7 +63,9 @@ artists:
     aliases:
       - "Santiago Cárdenas (Colombia, 1937.)"
       - "Santiago Cárdenas"
-    notes: "24 lotes | casas: bogota_auctions"
+      - "SANTIAGO CARDENAS ARROYO"
+      - "Santiago Cárdenas Arroyo"
+    notes: "Las formas corta y completa pertenecen al mismo pintor, nacido en Bogota el 04-12-1937; se consolida aqui el antiguo ID duplicado santiago_cardenas_arroyo. Se retira death_year 2006: es el ano de una retrospectiva, y hay obra posterior. La ficha institucional documenta tambien La corbata y su trabajo con corbatas. Fuente: https://enciclopedia.banrepcultural.org/Santiago_C%C3%A1rdenas ; identificador Getty ULAN: http://vocab.getty.edu/page/ulan/500201873"
 
   - artist_id: saturnino_ramirez
     display_name: "Saturnino Ramírez"
@@ -169,19 +170,6 @@ artists:
       - "Sair García"
     notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
-  - artist_id: santiago_cardenas_arroyo
-    display_name: "Santiago Cárdenas Arroyo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1937
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SANTIAGO CARDENAS ARROYO"
-      - "Santiago Cárdenas Arroyo"
-    notes: "13 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
   - artist_id: santiago_martinez_delgado
     display_name: "Santiago Martínez Delgado"
     country_birth: "CO"
@@ -281,7 +269,7 @@ artists:
   - artist_id: sofia_urrutia_holguin
     display_name: "Sofía Urrutia Holguín"
     country_birth: "BO"
-    nationalities: ["BO"]
+    nationalities: ["CO", "BO"]
     birth_year: 1912
     death_year: 2002
     attribution_type: autor
@@ -290,7 +278,9 @@ artists:
     aliases:
       - "SOFIA URRUTIA HOLGUIN"
       - "Sofía Urrutia Holguín"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+      - "Sofía Urrutia"
+      - "Sofía Urrutia - Colombia, 1910 - 2002."
+    notes: "11 lotes | casas: bogota_auctions, lefebre_subastas | una ficha publica erroneamente Colombia, 1910-2002. Banrepcultural confirma La Paz, Bolivia, 1912-Bogota, 2002 y nacionalidad colombo-boliviana. Fuente: https://enciclopedia.banrepcultural.org/index.php?title=Sof%C3%ADa_Urrutia_Holgu%C3%ADn"
 
   - artist_id: sol_lewitt
     display_name: "Sol Lewitt"
@@ -433,3 +423,46 @@ artists:
       - "Simon Vouet"
       - "VOUET, SIMON"
     notes: "4 lotes (1 vendido en 42.500 EUR) | casas: duran_subastas | fuente: National Gallery. Nacido en Paris, introductor del barroco italiano en Francia. La forma invertida 'VOUET, SIMON' no comparte fold y rankeaba aparte."
+
+  - artist_id: salvador_sanchez_barbudo
+    display_name: "Salvador Sánchez Barbudo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1857
+    death_year: 1917
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "SÁNCHEZ-BARBUDO Y MORALES, SALVADOR"
+      - "Salvador Sanchez Barbudo"
+      - "Salvador Sanchez-Barbudo"
+      - "Salvador Sánchez Barbudo"
+      - "Salvador Sánchez Barbudo y Morales"
+      - "Salvador Sánchez-Barbudo y Morales"
+    notes: "12 filas en Silver | nacido en Jerez de la Frontera, Cadiz, en 1857 y fallecido en Roma en 1917. Fuente: https://www.museodelprado.es/coleccion/artista/sanchez-barbudo-morales-salvador/f1df7ec1-9803-40e3-888b-b11c69db50bc"
+
+  - artist_id: santiago_rusinol
+    display_name: "Santiago Rusiñol"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1861
+    death_year: 1931
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Santiago Rusiñol"
+    notes: "2 lotes, reofertas de la misma obra | casas: duran_subastas | Santiago Rusinol Prats, nacido en Barcelona en 1861 y fallecido en Aranjuez en 1931. Fuente: https://www.museunacional.cat/es/santiago-rusinol"
+
+  - artist_id: sebastian_de_llanos_y_valdes
+    display_name: "Sebastián de Llanos y Valdés"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Sebastián de Llanos y Valdés"
+      - "Sebastián Llanos y Valdés"
+    notes: "3 lotes de autor y 1 de circulo | casas: duran_subastas | nacido en Sevilla. Se omiten los anos por discrepancia institucional: Louvre publica ca. 1605-1677 y CER.es/Museo del Greco 1617-1675. Fuentes: https://collections.louvre.fr/ark:/53355/cl010064730 ; https://ceres.mcu.es/pages/ResultSearch?Museo=MGTO&MuseumsRolSearch=28&MuseumsSearch=MGTO%7C&hipertextSearch=1&listaMuseos=%5BMuseo+del+Greco%5D&search=simple&simpleSearch=0&txtSimpleSearch=Cabeza+de+San+Dionisio"

@@ -353,7 +353,9 @@ artists:
     confidence: high
     aliases:
       - "Francisco Pradilla Ortiz"
-    notes: "35 lotes | casas: duran_subastas"
+      - "Francisco Pradilla"
+      - "Francisco Pradilla y Ortiz"
+    notes: "38 lotes tras unificar variantes | casas: duran_subastas, zorrilla_subastas | nacido en Villanueva de Gallego, Zaragoza, en 1848 y fallecido en Madrid en 1921. No confundir con Miguel Pradilla. Fuente: https://www.museodelprado.es/coleccion/artista/pradilla-y-ortiz-francisco/b71fa5b2-2cc6-4195-a7c0-0c850280c6f4"
 
   - artist_id: francisco_sales
     display_name: "Francisco Sales"
@@ -821,3 +823,99 @@ artists:
     aliases:
       - "Francisco Bayeu"
     notes: "2 lotes | casas: duran_subastas | fuente: Museo del Prado. Nacido en Zaragoza, cuniado de Goya. OJO: sus hermanos Ramon y fray Manuel Bayeu tambien fueron pintores y ya aparecen en el catalogo ('Ramon Bayeu', 'BAYEU , RAMON'), asi que este alias lleva el nombre de pila obligatorio."
+
+  - artist_id: fernando_amorsolo
+    display_name: "Fernando Amorsolo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1892
+    death_year: 1972
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernando Amorsolo"
+    notes: "1 lote vendido por 27.500 EUR | casas: duran_subastas | Fernando Cueto Amorsolo, nacido en Paco, Manila, el 30-05-1892 y fallecido el 24-04-1972; fechas coincidentes con Silver. Fuente: https://www.nationalmuseum.gov.ph/2022/05/30/birth-anniversary-of-fernando-cueto-amorsolomay-30-1892-april-24-1972/"
+
+  - artist_id: fernand_leger
+    display_name: "Fernand Léger"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1881
+    death_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fernand Léger"
+      - "Fernand Leger"
+      - "FERNAND LEGER"
+    notes: "5 lotes | casas: bogota_auctions, duran_subastas, lefebre_subastas | nacido en Argentan, Francia, 1881-1955. Un lote de Lefebre imprime 1881-1995: 1995 es errata; la muerte correcta es 1955. Fuente: https://www.centrepompidou.fr/en/ressources/personne/co4a7kG"
+
+  - artist_id: francisco_de_paula_mendoza_y_moreno
+    display_name: "Francisco de Paula Mendoza y Moreno"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1812
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Francisco de Paula Mendoza y Moreno"
+    notes: "2 lotes | casas: duran_subastas | nacido en Madrid en 1812. Silver publica 1812-1885, mientras la Real Academia de Bellas Artes de San Fernando marca la muerte como dudosa (¿1885?); se omite death_year. Fuente: https://www.academiacolecciones.com/pinturas/mostrar-autores.php?id=mendoza-y-moreno-francisco-de-paula"
+
+  - artist_id: felix_pardo_de_tavera_y_gorricho
+    display_name: "Félix Pardo de Tavera y Gorricho"
+    country_birth: "PH"
+    nationalities: ["PH", "AR"]
+    birth_year: 1859
+    death_year: 1932
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Felix Pardo de Tavera y Gorricho"
+      - "Félix Pardo de Tavera y Gorricho"
+    notes: "1 lote | casas: duran_subastas | escultor nacido en Manila en 1859 y fallecido en Paris en 1932; no confundir con su padre homonimo. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/5764/"
+
+  - artist_id: fermin_aguayo
+    display_name: "Fermín Aguayo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1926
+    death_year: 1977
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Fermín Aguayo"
+    notes: "4 lotes | casas: duran_subastas | nacido en Sotillo de la Ribera, Burgos, en 1926 y fallecido en Paris en 1977; fechas coincidentes con Silver. Fuente: https://www.museoreinasofia.es/colecciones/artista/aguayo-fermin/"
+
+  - artist_id: francisco_bonnin_guerin
+    display_name: "Francisco Bonnín Guerín"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1874
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Francisco Bonnin Guerin"
+      - "BONNIN GUERIN, FRANCISCO"
+    notes: "5 lotes | casas: duran_subastas | nacido en Santa Cruz de Tenerife en 1874; Silver y ambas fuentes coinciden en 1874-1963. Prado sitúa la muerte en Barcelona y RSEAPT en Puerto de la Cruz, dato no almacenado. No fusionar con Francisco Bonnin Miranda. Fuentes: https://www.museodelprado.es/coleccion/artista/francisco-bonnin-guerin/621b7691-21de-4e9c-b23e-d9aee643383e ; https://www.rseapt.es/es/personalidades/item/26-pintores/347-francisco-bonnin-guerin"
+
+  - artist_id: francisco_jose_de_caldas
+    display_name: "Francisco José de Caldas"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1768
+    death_year: 1816
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Caldas, Francisco José de"
+      - "Caldas, Francisco José"
+      - "Caldas, Francisco José de (dir.)"
+    notes: "5 lotes nominales | casas: bogota_auctions | científico, autor y editor histórico nacido en Popayán, Virreinato de Nueva Granada, actual Colombia, en 1768 y fallecido en Santafé en 1816. No fusionar la coautoría Humboldt-Caldas; la fila Lote 115 permanece not_an_author porque el nombre solo está en artist_raw. Fuentes: https://enciclopedia.banrepcultural.org/Francisco_Jos%C3%A9_de_Caldas ; https://www.museonacional.gov.co/micrositios1/2018/Caldas/index.html"

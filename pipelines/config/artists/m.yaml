@@ -285,7 +285,7 @@ artists:
     display_name: "Mariano Bertuchi Nieto"
     country_birth: "ES"
     nationalities: ["ES"]
-    birth_year: 1885
+    birth_year: 1884
     death_year: 1955
     attribution_type: autor
     source: manual
@@ -294,7 +294,8 @@ artists:
       - "MARIANO BERTUCHI NIETO Y CARLOS MOREU GISBERT"
       - "Mariano Bertuchi Nieto"
       - "BERTUCHI NIETO, MARIANO"
-    notes: "12 lotes | casas: duran_subastas"
+      - "Mariano Bertuchi"
+    notes: "23 lotes individuales y 1 atribucion conjunta en Silver | casas: duran_subastas | Duran publica 1885, pero RABASF confirma Granada 1884-Tetuan 1955. Fuente: https://www.academiacolecciones.com/dibujos/mostrar-autores.php?id=bertuchi-nieto-mariano"
 
   - artist_id: mariano_de_blas
     display_name: "Mariano de Blas"
@@ -1150,7 +1151,8 @@ artists:
     confidence: high
     aliases:
       - "Miquel Navarro"
-    notes: "15 lotes en Silver | fuente: Wikipedia; Guggenheim Bilbao | Born Mislata, Valencia"
+      - "NAVARRO, MIQUEL"
+    notes: "15 lotes en Silver | nacido en Mislata, Valencia, en 1945. Fuente: https://www.guggenheim-bilbao.eus/la-coleccion/artistas/miquel-navarro"
 
   - artist_id: modest_cuixart
     display_name: "Modest Cuixart"
@@ -1333,3 +1335,123 @@ artists:
     aliases:
       - "Martin van Valckenborch"
     notes: "2 lotes (1 vendido en 60.000 EUR) | casas: duran_subastas | fuente: Wikipedia. Nacido en Lovaina, entonces Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik y Gillis); un 'van Valckenborch' sin nombre de pila NO debe resolverse aqui."
+
+  - artist_id: markus_lupertz
+    display_name: "Markus Lüpertz"
+    country_birth: "CZ"
+    nationalities: ["DE", "CZ"]
+    birth_year: 1941
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Markus Lüpertz"
+    notes: "1 lote | casas: duran_subastas | artista aleman nacido en Reichenberg, hoy Liberec (Chequia), en 1941. La nacionalidad de mercado va primero; country_birth usa el pais moderno del lugar de nacimiento. Fuente: https://zkm.de/en/persons/markus-lupertz"
+
+  - artist_id: manuel_losada
+    display_name: "Manuel Losada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1865
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Losada"
+    notes: "8 lotes | casas: duran_subastas | Manuel Losada Perez de Nenin, nacido y fallecido en Bilbao, 1865-1949; fechas coincidentes con Silver. Fuente: https://bilbaomuseoa.eus/explora/artista/manuel-losada-perez-de-nenin/9e396d4a-23b7-4a09-8386-3afb0f595d80"
+
+  - artist_id: marcelo_pogolotti
+    display_name: "Marcelo Pogolotti"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1902
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Marcelo Pogolotti"
+    notes: "2 lotes | casas: duran_subastas | nacido y fallecido en La Habana, 1902-1988; fechas coincidentes con Silver. El listado oficial de prestamo identifica las obras del Museo Nacional de Bellas Artes de La Habana. Fuente: https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2007F/48450.pdf"
+
+  - artist_id: maruja_mallo
+    display_name: "Maruja Mallo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1902
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Maruja Mallo"
+    notes: "3 lotes | casas: duran_subastas | nacida en Viveiro, Lugo, en 1902 y fallecida en Madrid en 1995. No confundir con Cristino Mallo. Fuente: https://www.museoreinasofia.es/prensa/nota-de-prensa/maruja-mallo-mascara-y-compas-redescubre-en-el-reina-sofia-una-de-las-figuras/"
+
+  - artist_id: manuel_benedito_vives
+    display_name: "Manuel Benedito Vives"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1875
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Benedito Vives"
+      - "Manuel Benedito"
+      - "BENEDITO VIVES, MANUEL"
+    notes: "12 lotes | casas: duran_subastas | nacido en Valencia en 1875 y fallecido en Madrid en 1963. No confundir con Jose Meseguer Benedito. Fuente: https://www.museodelprado.es/coleccion/artista/benedito-vives-manuel/c7796335-1300-4209-b3e0-2354f51fa09f"
+
+  - artist_id: maurice_utrillo
+    display_name: "Maurice Utrillo"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1883
+    death_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Maurice Utrillo"
+    notes: "2 lotes | casas: duran_subastas | nacido en Paris en 1883 y fallecido en Dax en 1955; fechas coincidentes con Silver. Fuente: https://www.centrepompidou.fr/fr/ressources/personne/cgBg7M"
+
+  - artist_id: manuel_barbadillo
+    display_name: "Manuel Barbadillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1929
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Barbadillo"
+    notes: "6 lotes | casas: duran_subastas | nacido en Cazalla de la Sierra, Sevilla, en 1929 y fallecido en Malaga en 2003. Fuente: https://www.museoreinasofia.es/en/collections/artist/barbadillo-manuel/"
+
+  - artist_id: mimmo_rotella
+    display_name: "Mimmo Rotella"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1918
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Mimmo Rotella"
+      - "ROTELLA, MIMMO"
+    notes: "10 lotes | casas: duran_subastas | Domenico 'Mimmo' Rotella, nacido en Catanzaro en 1918 y fallecido en Milan en 2006. Las obras de decollage de Silver coinciden con su produccion documentada. Fuentes: https://contemporaneo.quirinale.it/opera/profili ; https://fondazionemimmorotella.net/en/biography/"
+
+  - artist_id: marceliano_santa_maria
+    display_name: "Marceliano Santa María"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1866
+    death_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Marceliano Santa María"
+      - "Marceliano Santa Maria"
+    notes: "9 lotes | casas: duran_subastas | nombre institucional completo Marceliano Santa María Sedano; nacido en Burgos en 1866 y fallecido en Madrid en 1952; Silver coincide. No atribuir las dos filas Escuela Española S que solo dicen Posible obra de Marceliano Santamaría. Fuente: https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/marceliano-santa-maria-sedano-804.html"

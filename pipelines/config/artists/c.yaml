@@ -695,9 +695,10 @@ artists:
       - "Christo Vladimirov Javacheff (Bulgaria, 1935 - EE.UU. 2020.)"
       - "CHRISTO VLADIMIROV JAVACHEFF"
       - "Christo Vladimirov Javacheff"
+      - "Christo Javacheff"
       - "Christo"
       - "Christo and Jeanne-Claude"
-    notes: "7 lotes en Silver | n. 13-06-1935 en Gabrovo (BG), m. 31-05-2020; nacionalizado estadounidense en 1973. Se firmaba solo 'Christo' y trabajaba con su mujer Jeanne-Claude, de ahi los alias. FUSIONADA con una ficha duplicada 'christo' que se dio de alta en la tanda de artistas de renombre: misma persona, mismos datos. Fuente: Wikipedia."
+    notes: "16 lotes | casas: bogota_auctions, duran_subastas, lefebre_subastas | 6 usan la variante corta Christo Javacheff. Nacido en Gabrovo, Bulgaria, el 13-06-1935 y fallecido en Nueva York el 31-05-2020. Fuente primaria, oficina de Christo: https://christojeanneclaude.net/downloads/?pr=31"
 
   - artist_id: claudia_hakim
     display_name: "Claudia Hakim"
@@ -842,7 +843,7 @@ artists:
   - artist_id: carlos_alonso_perez
     display_name: "Carlos Alonso-Pérez"
     country_birth: "IT"
-    nationalities: ["ES"]
+    nationalities: ["ES", "IT"]
     birth_year: 1882
     death_year: 1949
     attribution_type: autor
@@ -850,7 +851,7 @@ artists:
     confidence: high
     aliases:
       - "Carlos Alonso Pérez"
-    notes: "Pintor español (nacido en Roma 1882, muerte en Madrid 1949). Apellido Alonso-Pérez Berdugo. Obra en subastas internacionales."
+    notes: "Pintor español nacido en Roma en 1882, hijo de Mariano Alonso-Pérez; se incluye IT junto a ES conforme al invariante que incorpora el país de nacimiento a nationalities. Fuente: https://zaguan.unizar.es/record/119778/files/texto_completo.pdf"
 
   - artist_id: celedonio_perellon_cardona
     display_name: "Celedonio Perellón Cardona"
@@ -892,4 +893,59 @@ artists:
       - "Cristino Mallo"
       - "Cristino Gómez González"
     notes: "Escultor español nacido en Tuy (Pontevedra). Hermano de la pintora Maruja Mallo. Estudió Academia San Fernando desde 1923. Ganó Premio Nacional Escultura 1933 y 1954. Académico RAH 1973, Medalla Oro Bellas Artes 1983."
+
+  - artist_id: carmelo_ortiz_de_elgea
+    display_name: "Carmelo Ortiz de Elgea"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1944
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "ORTIZ DE ELGEA, CARMELO"
+      - "Carmelo Ortiz de Elgea"
+      - "Carmelo Ortiz de Elguea"
+    notes: "1 lote | casas: duran_subastas | la descripcion de la casa desarrolla el nombre como Carmelo Ortiz de Elguea. Artium Museoa documenta su nacimiento en Aretxabaleta, Alava, en 1944. Fuente: https://www.artium.eus/eu/erakusketak/item/55790-carmelo-ortiz-de-elgea%2C-jose-luis-zumeta.-argia-barrura"
+
+  - artist_id: carlos_jose_alfonzo_espina
+    display_name: "Carlos José Alfonzo Espina"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1950
+    death_year: 1991
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Carlos José Alfonzo Espina"
+      - "Alfonzo Espina"
+      - "Alfonzo"
+    notes: "5 filas en Silver | nacido en La Habana, Cuba, en 1950; fallecido en Miami en 1991. La ficha de Duran confirma que las formas cortas Alfonzo Espina y Alfonzo corresponden al nombre completo. Fuentes: https://americanart.si.edu/artist/carlos-alfonzo-7498 ; https://www.wikidata.org/wiki/Q5750663 ; https://www.duran-subastas.com/es/subasta-lote/alfonzo-sin-titulo/598-210"
+
+  - artist_id: cundo_bermudez
+    display_name: "Cundo Bermúdez"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1914
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Cundo Bermúdez"
+    notes: "4 lotes | casas: duran_subastas | artista cubano nacido en La Habana, 1914-2008. En Silver, Dos figuras con flor trae lot_year=1914 por error; la descripcion fecha la obra en 1965. Fuente: https://art.nelson-atkins.org/people/7071/cundo-bermudez"
+
+  - artist_id: cornelis_de_vos
+    display_name: "Cornelis de Vos"
+    country_birth: "NL"
+    nationalities: ["BE", "NL"]
+    birth_year: 1584
+    death_year: 1651
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Cornelis de Vos"
+    notes: "1 lote | casas: duran_subastas | pintor flamenco nacido en Hulst, actual Paises Bajos. La fuente da 1584 como nacimiento preferente y 1585 como alternativa; fallecido en 1651. No fusionar con Paul o Marten de Vos ni atribuciones de seguidor/circulo. Fuente: https://www.wikidata.org/wiki/Q474934"
 

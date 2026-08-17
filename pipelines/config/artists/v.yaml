@@ -201,3 +201,16 @@ artists:
       - "Víctor Jerez"
       - "Victor Jerez"
     notes: "Pintor español contemporáneo. Nacido 1981 Algeciras, Cádiz. Conocido como 'pintor de deportistas'. Especializado en live painting de eventos internacionales de tenis."
+
+  - artist_id: vicente_macip
+    display_name: "Vicente Macip"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1475
+    death_year: 1551
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Vicente Macip"
+    notes: "2 lotes | casas: duran_subastas | nacido en Valencia. Prado: h.1473/75-1551; CER.es y Duran: ca.1475-1545. Se prioriza la fecha de muerte de la ficha actual del Prado. Fuentes: https://www.museodelprado.es/coleccion/artista/vicente-macip/fa32efe6-41f8-4585-b8d0-797fc0e90698 ; https://ceres.mcu.es/pages/Main?idt=132571&inventary=08448&museum=MLGM&table=FMUS"

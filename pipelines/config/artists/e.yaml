@@ -734,7 +734,9 @@ artists:
     confidence: high
     aliases:
       - "Eduardo Arranz Bravo"
-    notes: "11 lotes en Silver | fuente: Wikipedia | Barcelona"
+      - "ARRANZ BRAVO, EDUARDO"
+      - "Eduard Arranz-Bravo"
+    notes: "11 lotes en Silver | casas: duran_subastas | el MACBA usa la forma institucional Eduard Arranz-Bravo y confirma Barcelona, 1941-2023. Fuente: https://www.macba.cat/es/actor/eduardo-arranz-bravo/"
 
   - artist_id: eduardo_martinez_vazquez
     display_name: "Eduardo Martínez Vázquez"
@@ -964,7 +966,8 @@ artists:
     aliases:
       - "Enrique Simonet Lombardo"
       - "Enrique SImonet Lombardo"
-    notes: "Pintor español nacido en Valencia. Estudió en Academia San Carlos de Valencia. Viajó Italia (1887), París (múltiples veces), Marruecos (1893-1894). Ganó primer medal en Exposición Internacional Madrid 1892, premios Chicago 1894, Barcelona 1896, París 1900."
+      - "Enrique Simonet"
+    notes: "13 lotes tras fusionar la forma corta | casas: duran_subastas | nacido en Valencia en 1866 y fallecido en Madrid en 1927. La variante corta trae exactamente las mismas fechas y una obra titulada La buenaventura, tambien documentada por la Academia. Fuente: https://www.academiacolecciones.com/dibujos/inventario.php?id=L-733"
 
   - artist_id: ernst_boerschmann
     display_name: "Ernst Boerschmann"
@@ -1002,3 +1005,57 @@ artists:
     aliases:
       - "Evaristo Valle"
     notes: "2 lotes | casas: duran_subastas | fuente: Fundacion Museo Evaristo Valle. Nacido en Gijon, Asturias. NO se fusiona con 'Cesar del Valle', que ya esta en el maestro y es otra persona."
+
+  - artist_id: emile_fabry
+    display_name: "Émile Fabry"
+    country_birth: "BE"
+    nationalities: ["BE"]
+    birth_year: 1865
+    death_year: 1966
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Émile Fabry"
+      - "Emile Fabry"
+    notes: "1 lote | casas: duran_subastas | nacido en Verviers, Belgica, en 1865 y fallecido en Woluwe-Saint-Pierre en 1966; fechas coincidentes con Silver. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/emile-fabry-28615"
+
+  - artist_id: el_hortelano
+    display_name: "El Hortelano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1954
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "El Hortelano"
+    notes: "5 lotes | casas: duran_subastas | seudonimo del pintor Jose Alfonso Morera Ortiz, nacido en Valencia en 1954 y fallecido en 2016. Fuentes: https://www.casareal.es/ES/actividades/Paginas/actividades_actividades_detalle.aspx?data=8548 ; https://archivolafuente.com/obra-artistica/1945-1989/espana/el-hortelano/"
+
+  - artist_id: eduardo_leon_garrido
+    display_name: "Eduardo León Garrido"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1856
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Eduardo León Garrido"
+    notes: "10 lotes | casas: duran_subastas | nacido en Madrid el 20-02-1856 y fallecido en Caen, Francia, el 24-02-1949; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/garrido-eduardo-leon/3b3cd7fc-2a28-44a8-bd52-a68820e8039c"
+
+  - artist_id: edouard_leon_cortes
+    display_name: "Édouard Léon Cortès"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1882
+    death_year: 1969
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Édouard Léon Cortès"
+      - "Eduouard Leon Cortes"
+    notes: "1 lote | casas: duran_subastas | el raw escribe Eduouard; corresponde al pintor frances Edouard Leon Cortes, nacido y fallecido en Lagny, 1882-1969, conocido por sus paisajes de Paris. No confundir con Andres Cortes y Aguilar ni con Antonio Cortes y Aguilar. Fuentes: https://archives.seine-et-marne.fr/sites/archives.seine-et-marne.fr/files/media/downloads/catalogue_acquisitions_2022_vf.pdf ; https://data.bnf.fr/ark%3A/12148/cb14420030r"

@@ -43,19 +43,30 @@ Casas nuevas: usar el framework `scraping/common/` (las legacy `bogota_auctions`
 
 ## Standard run order
 
-1. Scrape per house.
-2. `python pipelines/bronze/ingest.py`
-3. `python pipelines/silver/build_silver.py`
-4. Run selected enrichments.
-5. `python pipelines/gold/build_gold.py`
+Tras terminar los scrapes, reconstruir la cadena completa desde la raiz del repo:
+
+```powershell
+.\scripts\run_all.ps1
+```
+
+Ese script es la secuencia canonica: Bronze, Silver, resolucion de artistas, moneda,
+canonizacion de artistas, categorias, Gold, insights e informes. Ejecuta las etapas como
+modulos (`python -m ...`), porque varias importan `pipelines.*`. Las puertas de calidad del
+final son informativas. `embeddings.py` no forma parte de la cadena: hoy es un stub y Gold
+no lo consume.
 
 ## Duran (#2) massive runbook
 
-### Historic full run (focus categories only)
+### Historic run (reanuda por defecto)
 
 ```powershell
 python -m scraping.houses.duran_subastas.run_historic --max-retries 3 --timeout 25 --delay 1.5
 ```
+
+`run_historic` considera terminada una subasta por la mera existencia de
+`scraping/houses/duran_subastas/output/<auction_id>.jsonl`. No comprueba el checkpoint, el
+numero de lotes ni la version del parser. Por tanto, el comando anterior descarga solo los
+ficheros que faltan; **no** reprocesa el historico tras cambiar el parser.
 
 ### Incremental resume run
 
@@ -63,22 +74,43 @@ python -m scraping.houses.duran_subastas.run_historic --max-retries 3 --timeout 
 python -m scraping.houses.duran_subastas.run_historic --start-from 652 --max-retries 3 --timeout 25
 ```
 
-### Backfill sample run
+Antes de reintentar cualquier checkpoint `failed`, apartar el JSONL individual de esa
+subasta si existe. `scrape_auction` crea el fichero antes de recorrer todos los lotes, de
+modo que un fallo puede dejar un JSONL parcial que el siguiente run marcaria como
+`skipped_existing`.
 
-```powershell
-python -m scraping.houses.duran_subastas.run_historic --max-auctions 10 --max-lots-per-auction 100
-```
+### Reproceso real despues de cambiar el parser
+
+1. Copiar a un directorio de backup todo `scraping/houses/duran_subastas/output/`, incluidos
+   checkpoints, indice, agregado y JSONL individuales.
+2. Apartar los JSONL individuales que se quieran reprocesar. Conservarlos en el backup: no
+   sobrescribir la unica evidencia de una salida parcial.
+3. Ejecutar el historic run sin `--quick` y revisar que no queden checkpoints `failed`.
+4. Verificar el numero de ficheros individuales y de lineas del agregado antes de ingerir.
+5. Apartar las particiones Bronze antiguas **solo de Duran** en
+   `data/bronze/duran_subastas/`. `build_silver` recorre todas las particiones y conserva la
+   primera fila deduplicada; dejar una particion vieja puede anular silenciosamente el
+   re-scrape nuevo.
+6. Ejecutar `.\scripts\run_all.ps1`. Bronze ingiere las cuatro casas registradas en
+   `scraping/houses/registry.json`, no solo Duran, asi que no retirar datos de las otras
+   casas.
+
+### Muestras y limites
+
+No usar `--quick`, `--max-auctions` ni `--max-lots-per-auction` sobre el output historico
+activo. En Duran, `--quick` omite la ficha de detalle y con ella el campo estructurado
+`Autor`; los limites pueden crear JSONL truncados que luego parecen completos al resume.
+Para una prueba aislada, usar `run_one_auction` con un `--output` explicito fuera del
+directorio activo.
 
 ### Post-run checklist
 
-1. `python pipelines/bronze/ingest.py`
-2. `python pipelines/silver/build_silver.py`
-3. `python pipelines/enrichments/currency_normalize.py`
-4. `python pipelines/enrichments/artist_canonicalize.py`
-5. `python pipelines/enrichments/category_tag.py`
-6. `python pipelines/enrichments/embeddings.py`
-7. `python pipelines/gold/build_gold.py`
-8. `python pipelines/silver/quality_gates.py --house-slug duran_subastas`
+1. Ejecutar `.\scripts\run_all.ps1`.
+2. Confirmar que la puerta de Duran termina en `OK`; si se quiere repetirla:
+   `python pipelines/silver/quality_gates.py --house-slug duran_subastas`.
+3. Comparar lotes, vendidos e ingreso contra el mismo corpus anterior. Un full fresh scrape
+   puede descubrir subastas nuevas, por lo que el total de un snapshot viejo no es un
+   invariante valido entre corpus distintos.
 
 ## Zorrilla (#3) massive runbook
 

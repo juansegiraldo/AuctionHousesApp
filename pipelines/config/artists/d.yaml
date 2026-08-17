@@ -329,3 +329,73 @@ artists:
       - "Daniel Salamanca"
       - "Daniel Salamanca Núñez"
     notes: "Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC Chicago (2019). Works as artist, graphic designer, essayist, lecturer. Won Cultural Ministry of Colombia grant for emerging artists (2015)."
+
+  - artist_id: david_teniers_el_joven
+    display_name: "David Teniers el Joven"
+    country_birth: "BE"
+    nationalities: ["BE"]
+    birth_year: 1610
+    death_year: 1690
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "David Teniers El Joven"
+      - "David Teniers el Joven"
+      - "David \"The Younger\" TENIERS"
+    notes: "5 lotes de autor en Silver | nacido en Amberes, actual Belgica, en 1610; fallecido en Bruselas en 1690. No fusionar las atribuciones Seguidor/Circulo. Fuente: https://www.museodelprado.es/coleccion/artista/teniers-el-joven-david/a23a8d0c-2f36-4b88-8802-7e0ad599c91e"
+
+  - artist_id: domingo_fernandez_gonzalez
+    display_name: "Domingo Fernández González"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1862
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Domingo Fernández González"
+      - "Domingo Fernández y González"
+    notes: "5 lotes | casas: duran_subastas | nacido en Sevilla en 1862. Silver y Duran publican muerte en Buenos Aires en 1918, pero Frick solo lo documenta activo hasta 1918 y el catalogo del Museo de Sevilla citado alli usa c.1920; se omite death_year. Fuentes: https://research.frick.org/spanish/detail/1607 ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_581.pdf"
+
+  - artist_id: damien_hirst
+    display_name: "Damien Hirst"
+    country_birth: "GB"
+    nationalities: ["GB"]
+    birth_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Damien Hirst"
+    notes: "9 lotes | casas: duran_subastas | artista britanico nacido en Bristol en 1965. British Council documenta el nacimiento y su produccion de spin paintings, coincidente con los lotes de Silver. Fuentes: https://collection.britishcouncil.org/author/hirst-damien/6495b265425178137a390e43?_locale=en ; https://www.npg.org.uk/collections/search/person/mp14191/damien-hirst"
+
+  - artist_id: dionis_bennassar
+    display_name: "Dionís Bennàssar"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1904
+    death_year: 1967
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Dionís Bennassar"
+      - "Dionís Bennasar"
+      - "Dionis Bennassar"
+    notes: "3 lotes | casas: duran_subastas | nacido en Pollença, Mallorca; Silver coincide en 1904-1967. No fusionar con Joan Bennassar ni Pere Bennassar. Fuente: https://fdionis.org/about-dionis-bennassar/"
+
+  - artist_id: dennis_oppenheim
+    display_name: "Dennis Oppenheim"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1938
+    death_year: 2011
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Dennis Oppenheim"
+      - "OPPENHEIM, DENNIS"
+      - "Denis Oppenheim"
+    notes: "5 lotes nominales | casas: duran_subastas | nacido en Electric City, Washington, EE. UU., en 1938 y fallecido en Nueva York en 2011. Denis Oppenheim es errata confirmada por el campo Autor de la propia ficha. El afiche de Bogota Auctions no es alias y Victor Oppenheim es otra persona. Fuentes: https://www.museoreinasofia.es/en/collections/artist/oppenheim-dennis/ ; https://www.duran-subastas.com/es/subasta-lote/denis-oppenheim-ricardo-zamora/630-27"

@@ -747,3 +747,66 @@ def test_artist_years_never_invents_a_date():
         }
     finally:
         artist_master.reset_caches()
+
+
+def test_juan_romero_does_not_publish_a_false_death_year():
+    """El catálogo antiguo decía 1996, pero el artista estaba activo en 2023."""
+    artist_master.reset_caches()
+    try:
+        years = artist_master.artist_years("juan_romero")
+    finally:
+        artist_master.reset_caches()
+    assert years == {"birth_year": 1932, "death_year": None}
+
+
+def test_jose_catala_omits_the_disputed_birth_year():
+    """Las fuentes secundarias discrepan entre 1958 y 1959."""
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("CATALÁ , JOSÉ")
+        years = artist_master.artist_years("jose_catala")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_id"] == "jose_catala"
+    assert resolved["artist_country_birth"] == "ES"
+    assert years == {"birth_year": None, "death_year": None}
+
+
+def test_jorge_damiani_uses_birth_country_and_real_death_year():
+    """El MNAV fija Nervi, Italia (1931), y Montevideo (2017)."""
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("Jorge DAMIANI")
+        years = artist_master.artist_years("jorge_damiani")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_country_birth"] == "IT"
+    assert set(resolved["artist_nationalities"]) == {"IT", "UY"}
+    assert years == {"birth_year": 1931, "death_year": 2017}
+
+
+def test_santiago_cardenas_short_and_full_names_are_one_living_artist():
+    """El sufijo Arroyo no crea otro ID y 2006 no era una muerte."""
+    artist_master.reset_caches()
+    try:
+        short = artist_master.resolve_artist("Santiago Cárdenas")
+        full = artist_master.resolve_artist("SANTIAGO CARDENAS ARROYO")
+        years = artist_master.artist_years("santiago_cardenas")
+        master = artist_master.load_master()
+    finally:
+        artist_master.reset_caches()
+    assert short["artist_id"] == full["artist_id"] == "santiago_cardenas"
+    assert "santiago_cardenas_arroyo" not in master
+    assert years == {"birth_year": 1937, "death_year": None}
+
+
+def test_giuseppe_maraschini_house_typo_resolves():
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("Guiseppe MARASCHINI")
+        years = artist_master.artist_years("giuseppe_maraschini")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_id"] == "giuseppe_maraschini"
+    assert resolved["artist_country_birth"] == "IT"
+    assert years == {"birth_year": 1839, "death_year": 1903}

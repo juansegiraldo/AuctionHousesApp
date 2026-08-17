@@ -59,3 +59,16 @@ artists:
       - "Alexis Leiva Machado"
       - "Kcho (Alexis Leiva Machado)"
     notes: "Full name: Alexis Leiva Machado. Contemporary Cuban artist born in Isla de la Juventud (Isle of Pines). Grand prize winner at Gwangju Biennale 1995. Works in sculpture, installation, and mixed media."
+
+  - artist_id: konrad_klapheck
+    display_name: "Konrad Klapheck"
+    country_birth: "DE"
+    nationalities: ["DE"]
+    birth_year: 1935
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Konrad Klapheck"
+    notes: "2 lotes vendidos por 27.500 EUR | casas: duran_subastas | pintor aleman nacido en Dusseldorf el 10-02-1935 y fallecido alli el 30-07-2023. Silver deja vacias las fechas biograficas; lot_year=1935 en un lote es arrastre del nacimiento, no fecha de la obra. Fuente: https://www.wikidata.org/wiki/Q315875"

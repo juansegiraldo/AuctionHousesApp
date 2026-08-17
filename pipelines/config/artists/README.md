@@ -9,10 +9,14 @@ Lo lee `pipelines/shared/artist_master.py`, que a su vez usa
 
 ## Estado actual (2026-08-16)
 
-**993 artistas poblados**, que resuelven **20.515 lotes con pais (31,8% del total,
-49,0% de los lotes con autor)**, repartidos en **44 paises**.
+**1.088 artistas poblados**, que resuelven **21.037 lotes con pais (32,6% del
+total, 49,7% de los lotes con autor)**, repartidos en **46 paises**. En el
+ranking, **1.053 de 9.885 artistas (10,7%) cubren el 84,47% del ingreso
+atribuido a artistas** (25.231.853,12 de 29.870.550,04 EUR), equivalente al
+**67,15% del ingreso total de subastas**. Las dos coberturas se publican juntas:
+la primera mide trabajo pendiente y la segunda, su importancia economica.
 
-Se llego ahi en cinco tandas, de mejor a peor fuente:
+Este es el historial de tandas, de mejor a peor fuente:
 
 | Tanda | Altas | Lotes que aporta | Fuente |
 |---|---|---|---|
@@ -21,7 +25,8 @@ Se llego ahi en cinco tandas, de mejor a peor fuente:
 | Investigacion en fuentes publicas | 140 | +2.050 | Wikipedia, Wikidata, Prado, Reina Sofia, MACBA, Artnet |
 | Seudonimos de una palabra | 6 + 1 alias | +104 | Wikidata, Wikipedia |
 | Huecos del top 200 por valor | 15 + 3 alias | +19 filas del top 200 | Prado, National Gallery, Wikidata, Banrepcultural, Bilbao Museoa |
-| Autores recuperados por `lot_url` | 3 + 4 alias | +14 lotes, +120.000 EUR a Botero | ficha de detalle de la propia casa |
+| Parser `Autor` de Duran + reproceso dirigido | - | 710 autores recuperados de 721 lotes objetivo | ficha de detalle de la propia casa |
+| Plan top 500 del 2026-08-16 | 96 altas, alias y 1 ID duplicado consolidado (neto +95) | +522 lotes con pais frente al snapshot; 495/500 del top con pais | museos, archivos, catalogos institucionales y ficha de la casa |
 
 ### La tanda del top 200: bajar el corte a 1 lote cambia que hay que investigar
 
@@ -188,40 +193,29 @@ va **detras** del titulo; un match por prefijo los habria borrado. Es la misma
 cautela que la coma de `_CITY_FIELD_RE` con `Ciudad Real, Antonio`. Hay un test
 para cada mitad de la regla.
 
-**Y los mas valiosos si se recuperan, sin re-scrapear.** El campo `autor` de la
-ficha de detalle es publico: se consulta en la web del lote y se anota en
-[`_lot_author_fixes.yaml`](_lot_author_fixes.yaml), un mapa `lot_url -> autor`
-que lee `load_lot_author_fixes()` y aplica `resolve_row()` en Silver.
+**El parche por `lot_url` ya esta retirado.** El parser de Duran prioriza ahora
+el campo `autor` de la ficha y el output crudo fue regenerado. El fichero
+[`_lot_author_fixes.yaml`](_lot_author_fixes.yaml) se conserva vacio como punto
+de compatibilidad para `load_lot_author_fixes()`; no se deben anadir excepciones
+ni convertir titulos de obras en aliases del maestro.
 
-La clave es el **lot_url y no el nombre**, y esa es toda la diferencia: un titulo
-no identifica a nadie (`"Paisaje"` son 45 lotes de 45 pintores distintos), asi
-que no puede ser un alias del maestro, donde un alias afirma identidad. El
-`lot_url` si es unico — es la misma clave con la que Silver deduplica.
+El reproceso fue dirigido a los **721 lotes** afectados: **710** devolvieron un
+`Autor` real y **11** fichas validas no publicaban autor. Tras reconstruir toda
+la cadena, Fernando Botero conserva **36 lotes ofrecidos, 33 vendidos y
+731.589,80 EUR**; el lote 504-154 llega a Silver como `BOTERO, FERNANDO`, no
+como `"Madre Superiora"`. El ingreso total del corpus sigue exactamente en
+**37.575.775,80 EUR**.
 
-El valor se anota **tal cual lo publica la casa** y vuelve a pasar por
-`attribution_type()` y por el maestro como cualquier otro nombre. Por eso dos de
-los 14 lotes reparados son `ESCUELA ESPANIOLA S. XVI` y `S. XIX` y salen
-clasificados como `escuela`, no ascendidos a autor: la casa atribuye a una
-escuela y esa es la respuesta correcta. Estan en el fichero a proposito, para que
-nadie vuelva a investigarlos creyendo que son un hueco.
+### Cierre del top 500
 
-Resultado: el Botero pasa de 32 a **33 lotes y de 611.590 a 731.590 EUR**, con
-"Madre Superiora" como su venta mas alta. Reparar esos 14 lotes destapo ademas
-**4 alias por inversion de coma** que faltaban (`MORAGO, CARLOS`, `VALLS, DINO`,
-`NAVARRO LLORENS, JOSE`, `MARIN RAMOS, EUSTAQUIO`) y **3 artistas nuevos**
-(Luis Graner, Ricard Canals, Antonio Palacios — este ultimo arquitecto, no
-pintor: sus lotes son dibujos del proyecto del Circulo de Bellas Artes).
-
-**Sigue siendo un parche aguas abajo.** El parser deberia preferir el campo
-`autor` a la conjetura del titulo (hoy hace lo contrario:
-`if artist_from_detail and not artist_raw`) y re-scrapearse. Los lotes no
-reparados siguen como `not_an_author`: su ingreso cuenta para la casa y ninguno
-finge ser un artista sin pais.
-
-Al anadir aqui, ojo con una trampa: `artist_fold()` **no** recorta el parentesis
-biografico, asi que `BOTERO, FERNANDO (1932 - 2023)` pliega a
-`botero fernando 1932 2023` y no casaria con el alias `BOTERO, FERNANDO`. Por eso
-`load_lot_author_fixes()` aplica `strip_biography()` al cargar.
+Despues de limpiar 34 nombres que eran objetos/documentos, incorporar las
+inversiones de coma seguras e investigar cada candidato con fuente concreta,
+**495 de las 500 primeras filas tienen pais**. Los cinco huecos restantes son
+deliberados: Jose Taviel de Andrade no tiene lugar de nacimiento verificable;
+Juan de la Abadia "El Viejo" y Juan I de la Abadia no permiten fijar pais de
+nacimiento con seguridad; Garcia Marquez, Gabriel y Duran y Diaz, Joaquin (ed.)
+siguen la politica documentada de no borrar autores/editoriales mediante una
+heuristica de forma. Un hueco verificable es preferible a un pais inventado.
 
 ### Lo que se decidio NO filtrar
 

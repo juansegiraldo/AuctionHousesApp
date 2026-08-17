@@ -365,7 +365,7 @@ artists:
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
   - artist_id: rafael_gomez_barros
-    display_name: "Rafaél Gómez Barros"
+    display_name: "Rafael Gómezbarros"
     country_birth: "CO"
     nationalities: ["CO"]
     birth_year: 1972
@@ -376,7 +376,8 @@ artists:
       - "RAFAEL GOMEZ-BARROS"
       - "Rafaél Gómez Barros"
       - "Rafael Gómez-Barros"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+      - "Rafael GomezBarros"
+    notes: "5 lotes | casas: bogota_auctions, lefebre_subastas | nacido en Santa Marta, Colombia, en 1972 segun el Museo Bolivariano y el Rijksmuseum; Coleccion FEMSA discrepa en la ciudad, pero no en pais o ano. Fuentes: https://www.museobolivariano.org.co/rafael-gomezbarros-sonajeros/ ; https://www.rijksmuseum.nl/nl/pers/persberichten/honderden-gigantische-mieren-in-het-rijksmuseum"
 
   - artist_id: rafael_mena_g
     display_name: "Rafael Mena G."
@@ -988,4 +989,73 @@ artists:
     confidence: high
     aliases:
       - "CANALS Y LLAMBI, RICARDO"
-    notes: "Alta desde _lot_author_fixes.yaml: su lote llegaba con el titulo '\"Bust de Noia\"' como artista | casas: duran_subastas | fuente: Wikipedia ES (Ricard Canals). Nacido y muerto en Barcelona. OJO homonimo: hay un Ricardo Canals uruguayo (n. 1970), representante de futbolistas, que NO es este pintor."
+    notes: "Su lote se recupero al re-scrapear el Autor de la ficha de Duran; antes llegaba con el titulo '\"Bust de Noia\"' como artista | casas: duran_subastas | Ricard Canals i Llambí, nacido y fallecido en Barcelona, 1876-1931. No confundir con el homónimo uruguayo nacido en 1970. Fuente: https://www.museunacional.cat/ca/ricard-canals"
+
+  - artist_id: ramon_marti_y_alsina
+    display_name: "Ramón Martí y Alsina"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1826
+    death_year: 1894
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Martí y Alsina"
+      - "Ramon Martí i Alsina"
+    notes: "7 lotes | casas: duran_subastas | nacido y fallecido en Barcelona, 1826-1894; fechas coincidentes con Silver. Fuente: https://www.museunacional.cat/sites/default/files/dossier-de-prensa_1.pdf"
+
+  - artist_id: ricardo_de_madrazo_y_garreta
+    display_name: "Ricardo de Madrazo y Garreta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1852
+    death_year: 1917
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ricardo de Madrazo y Garreta"
+    notes: "5 lotes | casas: duran_subastas | nacido y fallecido en Madrid; las fechas 1852-1917 coinciden en las cinco fichas de Duran. No confundir con otros miembros de la familia Madrazo. Fuente: https://coleccion.bde.es/wca/es/secciones/coleccion/artistas/ricardo-de-madrazo-y-garreta-249.html"
+
+  - artist_id: rafael_enriquez_y_villanueva
+    display_name: "Rafael Enríquez y Villanueva"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1850
+    death_year: 1937
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rafael Enríquez y Villanueva"
+      - "Rafael Enriquez"
+    notes: "2 lotes | casas: duran_subastas | el catalogo PDF 532 expande explicitamente Rafael Enriquez al nombre completo. Pintor filipino, 1850-1937; UP College of Fine Arts confirma a Rafael V. Enriquez como su primer director. Fuentes: https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_532.pdf ; https://cfa.upd.edu.ph/need-to-know/about-up-cfa/"
+
+  - artist_id: rogelio_polesello
+    display_name: "Rogelio Polesello"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1939
+    death_year: 2014
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Rogelio Polesello"
+      - "ROGELIO POLESELLO"
+    notes: "2 lotes | casas: lefebre_subastas | nacido en Buenos Aires en 1939 y fallecido en 2014; fechas coincidentes con Silver. Fuente: https://malba.org.ar/evento/rogelio-polesello/"
+
+  - artist_id: ramon_casas
+    display_name: "Ramon Casas"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1866
+    death_year: 1932
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ramón Casas Carbó"
+      - "Ramón Casas"
+    notes: "7 lotes de autor y 2 atribuidos | casas: duran_subastas | el MNAC identifica a Ramon Casas con los apellidos Casas Carbó, nacido en Barcelona en 1866 y fallecido en 1932; fechas coincidentes con Silver. Las 2 filas Atribuido a Ramón Casas permanecen como atribuido/not_an_author. Fuente: https://www.museunacional.cat/es/ramon-casas"
