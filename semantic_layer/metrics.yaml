@@ -27,9 +27,12 @@ metrics:
   # Convertido con tasa estatica de pipelines/config/fx.yaml: aproximado,
   # pero es el unico que puede sumarse cuando se cruzan casas.
   - name: revenue_eur
-    expression: sum(price_sold * fx_rate_to_eur(currency))
+    expression: sum(price_sold * fx_rate_to_eur(currency, auction_month))
     source: gold.agg_house_metrics
     grain: [house, auction, time]
+    notes: >
+      La tasa es la media del mes de la subasta, no la de hoy. Los lotes sin
+      fecha usable caen a la tasa estatica y se cuentan en quality_flags.
 
   - name: avg_sold_price_native
     expression: revenue_native / nullif(lots_sold, 0)
@@ -51,7 +54,7 @@ metrics:
   - name: artists_ranked
     expression: count(distinct artist_key)
     source: gold.agg_artist_metrics
-    filter: lots_sold >= 3
+    filter: lots_sold >= 1
     grain: [artist, country_birth, house]
 
   # Que fraccion de los artistas del ranking tiene pais. Mientras el maestro de
@@ -74,6 +77,31 @@ metrics:
     expression: sum(lots_offered)
     source: silver.lots
     grain: [nationality, house]
+    additive: false
+
+  # Aditiva, mismo grano que lots_by_country_birth partido por anio de subasta.
+  # OJO al leer la serie temporal: la conversion a EUR usa una tasa unica (ver
+  # pipelines/config/fx.yaml) aplicada a todo 2014-2026, asi que comparar anios
+  # dentro de una fila en moneda no-EUR (COP, USD) no es valido. Comparar paises
+  # dentro de un mismo anio si lo es.
+  - name: revenue_by_country_year
+    expression: sum(price_sold * fx_rate_to_eur(currency))
+    source: gold.agg_country_year_metrics
+    grain: [country_birth, time]
+
+  # Aditiva sobre el ranking de artistas. La decada sale del maestro; lo que no
+  # tiene fecha vive en la fila decade=null y NO se reparte entre decadas.
+  - name: revenue_by_birth_decade
+    expression: sum(revenue_eur)
+    source: gold.agg_artist_generation_metrics
+    grain: [birth_decade]
+
+  # NO ADITIVA por construccion: es una fraccion acumulada sobre un ranking
+  # ordenado. No sumar entre tramos ni entre cortes distintos de N.
+  - name: revenue_concentration_top_n
+    expression: sum(revenue_eur) over (order by revenue_eur desc rows n preceding) / nullif(sum(revenue_eur), 0)
+    source: gold.agg_artist_metrics
+    grain: [artist]
     additive: false
 
   - name: duran_focus_lots_offered

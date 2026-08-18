@@ -28,7 +28,7 @@ from typing import Any, Dict, List, Optional
 
 import yaml
 
-from pipelines.shared.artist_key import artist_fold, attribution_type
+from pipelines.shared.artist_key import artist_fold, attribution_type, strip_biography
 
 ROOT = Path(__file__).resolve().parents[2]
 ARTISTS_DIR = ROOT / "pipelines" / "config" / "artists"
@@ -37,6 +37,14 @@ ARTISTS_DIR = ROOT / "pipelines" / "config" / "artists"
 # cada lectura para que los tests puedan redirigir el directorio entero con un
 # solo monkeypatch.
 COUNTRIES_FILENAME = "_countries.yaml"
+
+# Punto de compatibilidad del antiguo parche por lot_url. El parser de Duran ya
+# prioriza el campo Autor y el mapa esta deliberadamente vacio. No es un shard:
+# no lleva `artists:` y se salta igual que la tabla de paises.
+LOT_AUTHOR_FIXES_FILENAME = "_lot_author_fixes.yaml"
+
+# Ficheros de pipelines/config/artists/ que NO son shards de artistas.
+_NON_SHARD_FILENAMES = frozenset({COUNTRIES_FILENAME, LOT_AUTHOR_FIXES_FILENAME})
 
 VALID_SOURCES = ("manual", "llm", "parsed")
 VALID_CONFIDENCE = ("high", "medium", "low")
@@ -101,7 +109,7 @@ def load_master() -> Dict[str, Dict[str, Any]]:
         return master
 
     for shard in sorted(ARTISTS_DIR.glob("*.yaml")):
-        if shard.name == COUNTRIES_FILENAME:
+        if shard.name in _NON_SHARD_FILENAMES:
             continue
         for entry in _load_yaml(shard).get("artists") or []:
             artist_id = (entry or {}).get("artist_id")
@@ -116,6 +124,23 @@ def load_master() -> Dict[str, Dict[str, Any]]:
             record["_shard"] = shard.name
             master[artist_id] = record
     return master
+
+
+@lru_cache(maxsize=1)
+def load_lot_author_fixes() -> Dict[str, str]:
+    """Carga el mapa legado lot_url -> autor; en produccion debe estar vacio.
+
+    Se conserva para compatibilidad con datos/configuraciones antiguas. Las
+    reparaciones nuevas deben hacerse en el parser y reprocesando el output, no
+    ampliando este mapa ni convirtiendo titulos en aliases del maestro.
+    """
+    data = _load_yaml(ARTISTS_DIR / LOT_AUTHOR_FIXES_FILENAME)
+    fixes = data.get("lot_authors") or {}
+    return {
+        str(url): strip_biography(str(author))
+        for url, author in fixes.items()
+        if url and author
+    }
 
 
 @lru_cache(maxsize=1)
@@ -173,6 +198,19 @@ def country_es(code: Optional[str]) -> Optional[str]:
     return entry.get("es") if entry else None
 
 
+def demonym_es(code: Optional[str]) -> Optional[str]:
+    """Codigo ISO -> gentilicio en espaniol ("ES" -> "espaniol"). None si falta.
+
+    El dato ya estaba en _countries.yaml para los 42 paises pero no tenia
+    getter, asi que el informe no podia escribir "pintor colombiano" y se
+    limitaba a poner el nombre del pais al lado de las fechas.
+    """
+    if not code:
+        return None
+    entry = load_countries()["countries"].get(str(code).upper())
+    return entry.get("demonym_es") if entry else None
+
+
 def artist_years(artist_id: Optional[str]) -> Dict[str, Any]:
     """artist_id -> anios de nacimiento y muerte del maestro.
 
@@ -197,18 +235,35 @@ def artist_years(artist_id: Optional[str]) -> Dict[str, Any]:
     }
 
 
+# Edad por encima de la cual "sin fecha de muerte" ya no se puede leer como
+# "vivo": es que falta el dato. El informe llego a publicar a Fidolo Gonzalez
+# Camargo (n. 1883, m. 1942) como si tuviera 96 anios porque su ficha decia
+# 1930, y a Julia Acunia Guillen con 121. Un supercentenario es posible pero
+# rarisimo; una ficha incompleta es lo normal, asi que se dice lo segundo.
+MAX_PLAUSIBLE_AGE = 105
+
+
 def format_life_years(
-    birth: Optional[int], death: Optional[int]
+    birth: Optional[int],
+    death: Optional[int],
+    this_year: Optional[int] = None,
 ) -> Optional[str]:
     """(1920, 1992) -> "1920-1992"; (1954, None) -> "n. 1954"; sin datos -> None.
 
     Un artista vivo y uno sin fecha de muerte registrada son indistinguibles en
     el maestro, asi que se usa "n." (nacido) en vez de "1954-" : esa forma
     afirmaria que sigue vivo, y el dato no da para tanto.
+
+    Pasado MAX_PLAUSIBLE_AGE ni siquiera "n." se sostiene, porque el lector lo
+    lee como una persona viva: ahi se marca "n. 1905 (?)" para que el hueco se
+    vea como hueco. No se inventa una muerte, que es la regla de siempre; se
+    deja de afirmar implicitamente algo que casi seguro es falso.
     """
     if birth and death:
         return f"{birth}-{death}"
     if birth:
+        if this_year and this_year - int(birth) > MAX_PLAUSIBLE_AGE:
+            return f"n. {birth} (?)"
         return f"n. {birth}"
     if death:
         return f"m. {death}"
@@ -342,4 +397,5 @@ def reset_caches() -> None:
     """Limpia los caches. Solo para tests que cambian ARTISTS_DIR."""
     load_countries.cache_clear()
     load_master.cache_clear()
+    load_lot_author_fixes.cache_clear()
     _alias_index.cache_clear()

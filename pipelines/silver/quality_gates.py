@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipelines.shared.artist_master import normalize_country
+from pipelines.shared.schema import extract_month
 
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
 CATEGORY_TAGS = ROOT / "data" / "enrichments" / "category_tags.jsonl"
@@ -126,6 +127,16 @@ def main() -> None:
     pct_resolution = resolved / len(authors) if authors else 0.0
     pct_country = with_country / len(authors) if authors else 0.0
 
+    # Cobertura de tasa historica: % de lotes cuya fecha permite elegir la tasa
+    # del mes. Informativa, como las de artistas: los lotes sin fecha caen a la
+    # tasa estatica, no se pierden.
+    with_month = sum(
+        1
+        for r in rows
+        if extract_month(r.get("auction_start_date"), r.get("auction_id") or "")[0]
+    )
+    pct_fx_month = with_month / total if total else 0.0
+
     print(f"house={args.house_slug} total={total}")
     print(f"lot_url_coverage={pct_url:.4f}")
     print(f"lot_title_coverage={pct_title:.4f}")
@@ -134,6 +145,7 @@ def main() -> None:
     print(f"attribution_autor_pct={pct_autor:.4f}")
     print(f"artist_resolution_rate={pct_resolution:.4f}")
     print(f"artist_country_coverage={pct_country:.4f}")
+    print(f"fx_historical_coverage={pct_fx_month:.4f}")
     print(f"unmapped_country_values={len(unmapped)}")
     for value, count in unmapped.most_common(5):
         print(f"  unmapped_country: {value!r} ({count} lotes)")

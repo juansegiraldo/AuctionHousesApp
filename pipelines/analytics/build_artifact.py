@@ -29,13 +29,29 @@ import html
 import json
 from pathlib import Path
 
+from pipelines.analytics.narrative import (
+    CAVEAT_COUNTRY_IS_HOUSE,
+    CAVEAT_FX_TIMESERIES,
+    CAVEAT_GENERATIONS_COVERAGE,
+    CAVEAT_MIN_LOTS,
+    CAVEAT_PARETO_SCOPE,
+    CAVEAT_SCATTER_LOWN,
+    country_metrics_caveat,
+    generation_bars,
+    generation_coverage,
+    heatmap_matrix,
+    multi_house_kind,
+    nationalities_es,
+    pareto_points,
+    scatter_points,
+)
 from pipelines.analytics.render_html import (
     HOUSE_COUNTRY,
     HOUSE_LABELS,
     MONTH_LABELS,
     pack_lot_details,
 )
-from pipelines.shared.fx import fx_as_of, fx_note
+from pipelines.shared.fx import fx_note
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLD_ROOT = ROOT / "data" / "gold"
@@ -52,6 +68,12 @@ CATEGORY_LABELS = {
 # Cuantos artistas se listan. Mas alla el HTML crece sin que nadie los lea:
 # el detalle completo se descarga en CSV.
 ARTIST_LIMIT = 200
+
+# Cuantos puntos entran en el scatter SVG. Cada circulo son ~170 bytes de
+# marcado, y el Artifact tiene un limite practico de tamanio; ademas, a 320
+# unidades de ancho la cola larga se solapa en una mancha sin informacion. El
+# recorte se declara al pie del grafico, con el volumen que deja fuera.
+SCATTER_LIMIT = 600
 
 
 def esc(v) -> str:
@@ -71,6 +93,35 @@ def eur(v, decimals: int = 0) -> str:
 
 def pct(v, decimals: int = 1) -> str:
     return "—" if v is None else f"{v:.{decimals}f}".replace(".", ",") + "%"
+
+
+def generation_coverage_block(generations: list[dict]) -> str:
+    """Banda de cobertura equivalente a la del informe Plotly."""
+    cov = generation_coverage(generations)
+    if not cov["total_revenue_eur"] and not cov["total_artists"]:
+        return ""
+    dated_w = min(100.0, max(0.0, cov["dated_revenue_pct"]))
+    missing_w = min(100.0, max(0.0, cov["missing_revenue_pct"]))
+    return (
+        "<div class='generation-coverage'>"
+        "<div class='generation-coverage-head'>"
+        "<span>Cobertura de fechas del ranking completo</span>"
+        f"<strong>{esc(pct(cov['dated_revenue_pct']))} del volumen con década</strong>"
+        "</div>"
+        "<div class='generation-track' aria-hidden='true'>"
+        f"<span class='generation-dated' style='width:{dated_w:.1f}%'></span>"
+        f"<span class='generation-missing' style='width:{missing_w:.1f}%'></span>"
+        "</div>"
+        "<div class='generation-legend'>"
+        "<span><i class='generation-key generation-key-dated'></i>"
+        f"<strong>Con década</strong> {esc(eur(cov['dated_revenue_eur']))} · "
+        f"{esc(num(cov['dated_artists']))} artistas</span>"
+        "<span><i class='generation-key generation-key-missing'></i>"
+        f"<strong>Sin fecha</strong> {esc(eur(cov['missing_revenue_eur']))} · "
+        f"{esc(num(cov['missing_artists']))} artistas "
+        f"({esc(pct(cov['missing_artists_pct']))})</span>"
+        "</div></div>"
+    )
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -99,9 +150,16 @@ def _svg(inner: str) -> str:
     )
 
 
-def _axis_labels(labels: list[str], n: int) -> str:
-    """Etiquetas del eje X, saltando las que no caben."""
-    slot = CH_W / n
+def _axis_labels(labels: list[str], n: int, width: float = CH_W,
+                 y: float | None = None, x0: float = 0.0) -> str:
+    """Etiquetas del eje X, saltando las que no caben.
+
+    width/y/x0 se parametrizan porque el mapa de calor tiene geometria propia:
+    con CH_W y CH_H fijos, sus etiquetas de anio saldrian calculadas sobre el
+    ancho equivocado y no cuadrarian con las columnas.
+    """
+    y = CH_H - 9 if y is None else y
+    slot = width / n
     # Cada etiqueta necesita ~26 unidades para no tocar a la vecina.
     step = max(1, int(26 / slot + 0.999))
     out = []
@@ -109,8 +167,8 @@ def _axis_labels(labels: list[str], n: int) -> str:
         if idx % step and idx != n - 1:
             continue
         out.append(
-            f"<text class='axis' x='{idx * slot + slot / 2:.2f}' "
-            f"y='{CH_H - 9:.1f}' text-anchor='middle'>{esc(lab)}</text>"
+            f"<text class='axis' x='{x0 + idx * slot + slot / 2:.2f}' "
+            f"y='{y:.1f}' text-anchor='middle'>{esc(lab)}</text>"
         )
     return "".join(out)
 
@@ -137,6 +195,225 @@ def bar_chart(items, value_key, label_key, *, fmt=eur) -> str:
         )
     parts.append(_axis_labels([str(i.get(label_key)) for i in items], n))
     return _svg("".join(parts))
+
+
+def bar_line_chart(bars: list[dict], line: list[float], *, labels: list[str],
+                   notes: list[tuple[int, str]] | None = None) -> str:
+    """Barras con una linea de porcentaje acumulado sobre un eje derecho.
+
+    El eje derecho es implicito: 0-100 mapeado a la altura de trazado. Es el
+    Pareto; sin la linea, las barras solas no dicen cuanto se concentra.
+    """
+    if not bars:
+        return ""
+    top = max((b.get("value") or 0) for b in bars) or 1
+    n = len(bars)
+    slot = CH_W / n
+    bw = max(2.0, slot * 0.62)
+    base_y = CH_H - CH_PAD_B
+    parts = [f"<line class='base' x1='0' y1='{base_y:.1f}' x2='{CH_W:.0f}' y2='{base_y:.1f}'/>"]
+    for idx, b in enumerate(bars):
+        v = b.get("value") or 0
+        h = (v / top) * PLOT_H
+        parts.append(
+            f"<rect class='bar' x='{idx * slot + (slot - bw) / 2:.2f}' "
+            f"y='{base_y - h:.2f}' width='{bw:.2f}' height='{h:.2f}' rx='1'>"
+            f"<title>{esc(b.get('label'))}: {esc(eur(v))}</title></rect>"
+        )
+    pts = " ".join(
+        f"{idx * slot + slot / 2:.2f},{base_y - (p / 100.0) * PLOT_H:.2f}"
+        for idx, p in enumerate(line)
+    )
+    parts.append(f"<polyline class='cum' points='{pts}'/>")
+    for idx, p in enumerate(line):
+        cx = idx * slot + slot / 2
+        cy = base_y - (p / 100.0) * PLOT_H
+        parts.append(
+            f"<circle class='cum-dot' cx='{cx:.2f}' cy='{cy:.2f}' r='2'>"
+            f"<title>{esc(labels[idx])}: {p:.1f}% acumulado</title></circle>"
+        )
+    # Las anotaciones son la mitad del mensaje: un Pareto sin cifras escritas
+    # es una curva que nadie retiene.
+    for idx, text in (notes or []):
+        if idx >= len(line):
+            continue
+        cx = idx * slot + slot / 2
+        cy = base_y - (line[idx] / 100.0) * PLOT_H
+        anchor = "end" if idx > n / 2 else "start"
+        dx = -4 if anchor == "end" else 4
+        parts.append(
+            f"<text class='note' x='{cx + dx:.2f}' y='{cy - 5:.2f}' "
+            f"text-anchor='{anchor}'>{esc(text)}</text>"
+        )
+    parts.append(_axis_labels(labels, n))
+    return _svg("".join(parts))
+
+
+# Geometria del scatter: mas alto que las barras porque un nube de puntos
+# aplastada no se lee.
+SC_W, SC_H = 320.0, 240.0
+SC_PAD_L, SC_PAD_B, SC_PAD_T, SC_PAD_R = 34.0, 26.0, 8.0, 6.0
+
+
+def scatter_chart(points: list[dict]) -> str:
+    """Precio medio (y) contra lotes vendidos (x), area = volumen.
+
+    Los dos ejes en logaritmo: en lineal, 9 de cada 10 artistas se apilan en la
+    esquina inferior izquierda y el grafico no dice nada.
+    """
+    if not points:
+        return ""
+    import math
+
+    xs = [p["x"] for p in points if p["x"] > 0]
+    ys = [p["y"] for p in points if p["y"] > 0]
+    if not xs or not ys:
+        return ""
+    lx0, lx1 = math.log10(min(xs)), math.log10(max(xs))
+    ly0, ly1 = math.log10(min(ys)), math.log10(max(ys))
+    if lx1 - lx0 < 1e-9:
+        lx1 = lx0 + 1
+    if ly1 - ly0 < 1e-9:
+        ly1 = ly0 + 1
+    pw = SC_W - SC_PAD_L - SC_PAD_R
+    ph = SC_H - SC_PAD_B - SC_PAD_T
+    max_size = max((p["size"] or 0) for p in points) or 1
+
+    def px(v):
+        return SC_PAD_L + (math.log10(v) - lx0) / (lx1 - lx0) * pw
+
+    def py(v):
+        return SC_PAD_T + ph - (math.log10(v) - ly0) / (ly1 - ly0) * ph
+
+    parts = [
+        f"<line class='base' x1='{SC_PAD_L:.1f}' y1='{SC_PAD_T + ph:.1f}' "
+        f"x2='{SC_W - SC_PAD_R:.1f}' y2='{SC_PAD_T + ph:.1f}'/>",
+        f"<line class='base' x1='{SC_PAD_L:.1f}' y1='{SC_PAD_T:.1f}' "
+        f"x2='{SC_PAD_L:.1f}' y2='{SC_PAD_T + ph:.1f}'/>",
+    ]
+
+    # Diagonales de isovolumen: lotes x precio = constante.
+    for v, lab in ((1e5, "100 k€"), (1e6, "1 M€")):
+        x_a, x_b = min(xs), max(xs)
+        y_a, y_b = v / x_a, v / x_b
+        if not (min(ys) <= y_a <= max(ys) or min(ys) <= y_b <= max(ys)):
+            continue
+        y_a = min(max(y_a, min(ys)), max(ys))
+        y_b = min(max(y_b, min(ys)), max(ys))
+        parts.append(
+            f"<line class='iso' x1='{px(x_a):.2f}' y1='{py(y_a):.2f}' "
+            f"x2='{px(x_b):.2f}' y2='{py(y_b):.2f}'/>"
+        )
+        parts.append(
+            f"<text class='axis' x='{SC_W - SC_PAD_R:.1f}' y='{py(y_b) - 2:.2f}' "
+            f"text-anchor='end'>{esc(lab)}</text>"
+        )
+
+    # Grupos discretos: aqui SI funcionan las clases del CSS, a diferencia del
+    # mapa de calor, que necesita una escala continua.
+    groups = []
+    for p in points:
+        if p["group"] not in groups:
+            groups.append(p["group"])
+    for p in points:
+        if p["x"] <= 0 or p["y"] <= 0:
+            continue
+        r = max(1.2, (p["size"] / max_size) ** 0.5 * 9)
+        cls = "pt none" if p["group"] == "__none__" else f"pt s{groups.index(p['group']) % len(SERIES_COLORS)}"
+        parts.append(
+            f"<circle class='{cls}' cx='{px(p['x']):.2f}' cy='{py(p['y']):.2f}' "
+            f"r='{r:.2f}'><title>{esc(p['name'])} ({esc(p['country_es'] or 'sin país')}): "
+            f"{esc(p['x'])} vendidos, {esc(eur(p['y']))} de media, "
+            f"{esc(eur(p['size']))} total</title></circle>"
+        )
+
+    # Quien lleva nombre lo decide narrative.scatter_points (p["label"]): los
+    # mayores por volumen mas las referencias fijas. Se lee el flag en vez de
+    # recortar aqui para que el HTML de Plotly etiquete los mismos nombres.
+    for p in points:
+        if not p.get("label") or p["x"] <= 0 or p["y"] <= 0:
+            continue
+        x, y = px(p["x"]), py(p["y"])
+        anchor = "end" if x > SC_W * 0.6 else "start"
+        parts.append(
+            f"<text class='note' x='{x + (-5 if anchor == 'end' else 5):.2f}' "
+            f"y='{y - 5:.2f}' text-anchor='{anchor}'>{esc(p['name'])}</text>"
+        )
+
+    parts.append(
+        f"<text class='axis' x='{SC_PAD_L + pw / 2:.1f}' y='{SC_H - 4:.1f}' "
+        f"text-anchor='middle'>Lotes vendidos (escala log)</text>"
+    )
+    return (
+        f"<svg class='chart' viewBox='0 0 {SC_W:.0f} {SC_H:.0f}' "
+        f"preserveAspectRatio='xMidYMid meet' role='img'>{''.join(parts)}</svg>"
+    )
+
+
+def heatmap_chart(matrix: dict) -> str:
+    """Mapa de calor pais x anio.
+
+    El color va con fill-opacity sobre un solo tono y no con 9 clases CSS: son
+    valores continuos, y definir 9 tokens x 3 bloques de tema para una escala
+    seria mucho mas fragil que calcular la opacidad aqui.
+    """
+    import math
+
+    rows = matrix.get("rows") or []
+    years = matrix.get("years") or []
+    if not rows or not years:
+        return ""
+    pad_l, pad_t, pad_b = 74.0, 12.0, 18.0
+    cell_h = 13.0
+    w = CH_W
+    cell_w = (w - pad_l) / len(years)
+    h = pad_t + cell_h * len(rows) + pad_b
+
+    top = matrix.get("max_revenue_eur") or 1
+    low = matrix.get("min_revenue_eur") or 1
+    ltop, llow = math.log10(max(top, 1)), math.log10(max(low, 1))
+    span = (ltop - llow) or 1
+
+    parts = []
+    for ri, row in enumerate(rows):
+        y = pad_t + ri * cell_h
+        parts.append(
+            f"<text class='axis hm-label' x='0' y='{y + cell_h * 0.72:.2f}'>"
+            f"{esc(row['label'])}</text>"
+        )
+        for ci, cell in enumerate(row["cells"]):
+            x = pad_l + ci * cell_w
+            v = cell["revenue_eur"]
+            if not v:
+                # Sin lotes NO es volumen cero: se marca como hueco, no con el
+                # extremo claro de la escala, que se leeria como "vendio poco".
+                parts.append(
+                    f"<rect class='hm empty' x='{x:.2f}' y='{y:.2f}' "
+                    f"width='{cell_w - 1:.2f}' height='{cell_h - 1:.2f}'>"
+                    f"<title>{esc(row['label'])} {esc(cell['year'])}: sin lotes</title></rect>"
+                )
+                continue
+            o = 0.10 + (math.log10(v) - llow) / span * 0.90
+            parts.append(
+                f"<rect class='hm' x='{x:.2f}' y='{y:.2f}' "
+                f"width='{cell_w - 1:.2f}' height='{cell_h - 1:.2f}' "
+                f"fill-opacity='{min(1.0, o):.3f}'>"
+                f"<title>{esc(row['label'])} {esc(cell['year'])}: {esc(eur(v))} · "
+                f"{esc(cell['lots_sold'])} vendidos de {esc(cell['lots_offered'])}"
+                f"{' · año inferido' if cell['inferred'] else ''}</title></rect>"
+            )
+            if cell["inferred"]:
+                parts.append(
+                    f"<path class='hm-inferred' d='M{x:.2f},{y + cell_h - 1:.2f} "
+                    f"L{x + cell_w - 1:.2f},{y:.2f}'/>"
+                )
+    parts.append(
+        _axis_labels(years, len(years), width=w - pad_l, y=h - 6, x0=pad_l)
+    )
+    return (
+        f"<svg class='chart' viewBox='0 0 {w:.0f} {h:.0f}' "
+        f"preserveAspectRatio='xMidYMid meet' role='img'>{''.join(parts)}</svg>"
+    )
 
 
 # Un color por serie, en el mismo orden que las clases .s0/.s1/... del CSS.
@@ -299,6 +576,36 @@ tbody tr:hover{background:var(--raised)}
 .meta{display:block;font-size:.74rem;color:var(--fg-soft)}
 .meta.none{opacity:.65;font-style:italic}
 
+/* Ficha de artista. Boton dentro de la celda y no fila clicable: la fila ya
+   lleva un enlace al lote record y un <tr> con handler no recibe foco. */
+.artist-toggle{display:block;width:100%;text-align:left;background:none;border:0;
+  padding:0;font:inherit;color:inherit;cursor:pointer}
+.artist-toggle:hover .name{color:var(--accent);text-decoration:underline}
+.artist-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.artist-toggle .name::after{content:'';display:inline-block;margin-left:.4rem;
+  border:.28rem solid transparent;border-top-color:currentColor;
+  transform:translateY(.15rem);opacity:.5}
+.artist-toggle[aria-expanded="true"] .name::after{
+  transform:translateY(-.1rem) rotate(180deg);opacity:1}
+.artist-card>td{padding:0;background:var(--raised)}
+.acard{padding:var(--s2);border-left:3px solid var(--accent)}
+.acard-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;
+  justify-content:space-between;margin-bottom:var(--s1)}
+.acard-head h4{margin:0;font-family:var(--serif);font-size:1.05rem}
+.acard-res{font-size:.72rem;color:var(--fg-soft)}
+.acard-note{margin:6px 0;font-size:.8rem;color:var(--fg-soft)}
+.ministats{display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s1)}
+.ministat{display:flex;flex-direction:column}
+.ministat-label{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--fg-soft)}
+.ministat-value{font-family:var(--mono);font-size:.95rem;font-weight:600}
+.chip{display:inline-block;padding:.1rem .5rem;margin-right:.3rem;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);font-size:.72rem}
+.acard-lots{overflow-x:auto;margin-top:var(--s1)}
+.acard-lots table{font-size:.8rem}
+.none{color:var(--fg-soft);opacity:.7}
+@media print{.artist-card{display:none}.artist-toggle .name::after{display:none}}
+
 /* Controles */
 .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:var(--s2)}
 .controls label{display:flex;flex-direction:column;gap:5px;font-family:var(--mono);
@@ -338,6 +645,30 @@ tbody tr:hover{background:var(--raised)}
 .card h3{font-size:1rem;margin-bottom:2px}
 .card p{font-size:.8rem;color:var(--fg-soft);margin:0 0 var(--s2)}
 .chart{display:block;width:100%;height:auto}
+/* Actos de la seccion narrativa: separadores dentro de una misma seccion, no
+   secciones nuevas, para que el bloque siga leyendose como un argumento. */
+section h3{margin:var(--s3) 0 6px;padding-top:var(--s2);
+  border-top:1px solid var(--line);font-family:var(--serif);font-size:1.02rem}
+.chart-box{margin-bottom:var(--s2)}
+.chart-box .caveat{margin-top:6px}
+.generation-coverage{margin-top:var(--s2);padding:12px var(--s2);
+  border:1px solid var(--line);background:var(--raised)}
+.generation-coverage-head{display:flex;justify-content:space-between;gap:var(--s2);
+  align-items:baseline;flex-wrap:wrap;font-size:.75rem;color:var(--fg-soft)}
+.generation-coverage-head>span{font-family:var(--mono);text-transform:uppercase;
+  letter-spacing:.07em}
+.generation-coverage-head strong{font-family:var(--mono);color:var(--fg)}
+.generation-track{display:flex;height:9px;margin:8px 0;border-radius:99px;overflow:hidden;
+  background:var(--line)}
+.generation-dated{background:var(--accent)}
+.generation-missing{background:var(--fg-soft);opacity:.48}
+.generation-legend{display:flex;justify-content:space-between;gap:var(--s2);
+  flex-wrap:wrap;font-size:.75rem;color:var(--fg-soft)}
+.generation-legend span{display:flex;align-items:center;gap:5px}
+.generation-legend strong{color:var(--fg);font-weight:600}
+.generation-key{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.generation-key-dated{background:var(--accent)}
+.generation-key-missing{background:var(--fg-soft);opacity:.48}
 .chart .bar{fill:var(--accent)}
 .chart .bar.s1{fill:var(--sold)}
 .chart .bar.s2{fill:var(--gold)}
@@ -345,6 +676,23 @@ tbody tr:hover{background:var(--raised)}
 .chart .bar:hover{opacity:.72}
 .chart .base{stroke:var(--line);stroke-width:1}
 .chart .axis{font-family:var(--mono);font-size:9px;fill:var(--fg-soft)}
+/* Pareto: la linea acumulada sobre las barras del tramo. */
+.chart .cum{fill:none;stroke:var(--gold);stroke-width:1.6}
+.chart .cum-dot{fill:var(--gold)}
+.chart .note{font-family:var(--mono);font-size:8.5px;fill:var(--fg)}
+/* Scatter: categorias discretas, aqui las clases si sirven. */
+.chart .pt{fill:var(--accent);fill-opacity:.72}
+.chart .pt.s1{fill:var(--sold)}
+.chart .pt.s2{fill:var(--gold)}
+.chart .pt.s3{fill:var(--house4)}
+.chart .pt.none{fill:var(--fg-soft);fill-opacity:.3}
+.chart .iso{stroke:var(--fg-soft);stroke-width:.6;stroke-dasharray:2 2;opacity:.5}
+/* Mapa de calor: escala continua por opacidad sobre un solo tono. Nueve tokens
+   de color x tres bloques de tema seria mucho mas fragil que esto. */
+.chart .hm{fill:var(--accent)}
+.chart .hm.empty{fill:none;stroke:var(--line);stroke-width:.5;stroke-dasharray:1 2}
+.chart .hm-inferred{stroke:var(--surface);stroke-width:.8;opacity:.7}
+.chart .hm-label{font-size:8px}
 .legend{display:flex;gap:var(--s2);flex-wrap:wrap;font-size:.75rem;
   color:var(--fg-soft);margin-top:10px}
 .key{display:inline-flex;align-items:center;gap:6px}
@@ -416,7 +764,7 @@ def build_kpis(rep: dict) -> str:
         ("Lotes vendidos", num(s["total_sold"]),
          f"{pct(s['sell_through_pct'])} de lo ofertado", False),
         ("Volumen adjudicado", eur(s["total_revenue_eur"]),
-         f"Convertido a EUR - tasa {fx_as_of()}", True),
+         "Convertido a EUR - tasa del mes de subasta", True),
         ("Precio mediano", eur(dist.get("median")),
          f"La media ({eur(s.get('avg_sold_price_eur'))}) va inflada por la cola alta", False),
         ("Supera la estimacion", pct(est.get("pct_above")),
@@ -461,6 +809,11 @@ def build_flags(flags: list[dict]) -> str:
     )
 
 
+# Cardinales para el titulo de la tabla de casas. Solo hasta seis: si el
+# proyecto pasa de ahi, sale el numero y no una palabra inventada.
+_CARDINAL = {1: "una", 2: "dos", 3: "tres", 4: "cuatro", 5: "cinco", 6: "seis"}
+
+
 def build_house_table(houses: list[dict]) -> str:
     rows = []
     for h in sorted(houses, key=lambda r: -(r.get("revenue_eur") or 0)):
@@ -479,8 +832,11 @@ def build_house_table(houses: list[dict]) -> str:
             f"<td class='n'>{num(h.get('avg_sold_price_native'))} {esc(cur)}"
             f"<span class='sub'>= {esc(eur(h.get('avg_sold_price_eur')))}</span></td></tr>"
         )
+    # El titulo se deriva del dato: estuvo escrito como "Las tres casas" cuando
+    # ya eran cuatro, y un numero equivocado en un H2 de un informe publicable
+    # desacredita todo lo que hay debajo.
     return (
-        "<section><h2>Las tres casas</h2>"
+        f"<section><h2>Las {esc(_CARDINAL.get(len(rows), len(rows)))} casas</h2>"
         "<p class='lead'>Cada casa cotiza en su moneda. Se muestran las dos cifras: "
         "la nativa es exacta, la convertida a EUR es la unica comparable entre casas.</p>"
         "<div class='scroll'><table><thead><tr><th>Casa</th><th>Ofertados</th>"
@@ -489,9 +845,178 @@ def build_house_table(houses: list[dict]) -> str:
     )
 
 
-def build_artist_table(artists: list[dict], cov: dict) -> str:
+RESOLUTION_LABEL = {
+    "master": "Ficha del maestro de artistas",
+    "fold_only": "Agrupado por nombre, sin ficha en el maestro",
+}
+KIND_NOTE = {
+    "cross_market": "Vende en casas de países distintos: cruza mercados.",
+    "same_market": "Vende en varias casas del mismo mercado.",
+    "single": "",
+}
+
+
+def artist_card(a: dict, lots: list[dict]) -> str:
+    """Ficha desplegable de un artista, con sus lotes y su actividad."""
+    houses = a.get("houses") or []
+    chips = "".join(
+        f"<span class='chip'>{esc(HOUSE_LABELS.get(h, h))}</span>" for h in houses
+    )
+    kind = multi_house_kind(houses)
+    stats = [
+        ("Lotes vendidos",
+         f"{num(a.get('lots_sold'))}<span class='sub'>de {num(a.get('lots_offered'))}</span>"),
+        ("Tasa de venta", pct((a.get("sell_through_rate") or 0) * 100)),
+        ("Volumen", esc(eur(a.get("revenue_eur")))),
+        ("Precio medio", esc(eur(a.get("avg_sold_price_eur")))),
+    ]
+    ministats = "".join(
+        f"<div class='ministat'><span class='ministat-label'>{esc(k)}</span>"
+        f"<span class='ministat-value'>{v}</span></div>"
+        for k, v in stats
+    )
+
+    activity = ""
+    if a.get("first_year"):
+        years = a.get("years_active") or 0
+        activity = (
+            f"<p class='acard-note'>En subasta entre {esc(a['first_year'])} y "
+            f"{esc(a.get('last_year'))} · {num(years)} "
+            f"{'año' if years == 1 else 'años'} con lotes.</p>"
+        )
+
+    top = sorted(lots, key=lambda l: -(l.get("price_sold_eur") or 0))[:10]
+    lot_rows = []
+    for l in top:
+        title = (
+            f"<a href='{esc(l.get('lot_url'))}' target='_blank' rel='noopener'>"
+            f"{esc(l.get('lot_title') or 'Ver lote')}</a>"
+            if l.get("lot_url") else esc(l.get("lot_title") or "")
+        )
+        if l.get("price_sold"):
+            price = f"{num(l['price_sold'])} {esc(l.get('currency') or '')}"
+            if l.get("price_sold_eur"):
+                price += f"<span class='sub'>= {esc(eur(l['price_sold_eur']))}</span>"
+        else:
+            price = "<span class='none'>no vendido</span>"
+        lot_rows.append(
+            f"<tr><td>{esc((l.get('auction_start_date') or '')[:10] or '—')}</td>"
+            f"<td>{esc(HOUSE_LABELS.get(l.get('house_slug'), l.get('house_slug') or ''))}</td>"
+            f"<td>{title}</td><td class='n'>{price}</td></tr>"
+        )
+    lot_table = ""
+    if lot_rows:
+        more = (
+            f"<p class='caveat'>Se muestran los {len(top)} lotes más caros de "
+            f"{num(len(lots))}. El resto está en la descarga de lotes.</p>"
+            if len(lots) > len(top) else ""
+        )
+        lot_table = (
+            "<div class='acard-lots'><table><thead><tr><th>Fecha</th><th>Casa</th>"
+            "<th>Lote</th><th>Precio</th></tr></thead>"
+            f"<tbody>{''.join(lot_rows)}</tbody></table></div>{more}"
+        )
+
+    # Un artista sin ficha no recibe pais: se explica por que, en vez de dejar
+    # el hueco y que parezca un fallo de datos.
+    fold_note = (
+        "<p class='caveat'>Este artista no está en el maestro curado, así que no consta "
+        "su país ni sus fechas. Sus lotes se agrupan por una clave determinista del "
+        "nombre, que <strong>agrupa pero no identifica</strong>: dos personas distintas "
+        "con el mismo nombre compartirían esta ficha.</p>"
+        if a.get("resolution") == "fold_only" else ""
+    )
+
+    return (
+        f"<div class='acard' role='region' aria-label='Ficha de {esc(a.get('artist_name'))}'>"
+        f"<div class='acard-head'><h4>{esc(a.get('artist_name'))}</h4>"
+        f"<span class='acard-res'>{esc(RESOLUTION_LABEL.get(a.get('resolution'), ''))}</span></div>"
+        f"<div class='ministats'>{ministats}</div>"
+        f"{activity}"
+        + (f"<p class='acard-note'>{chips} {esc(KIND_NOTE.get(kind, ''))}</p>" if chips else "")
+        + lot_table
+        + fold_note
+        + "<p class='caveat'>Los importes en EUR usan una tasa única; el precio nativo es "
+          "el exacto.</p>"
+        "</div>"
+    )
+
+
+def build_artist_charts(artists: list[dict], generations: list[dict]) -> str:
+    """Los tres graficos de artistas, en SVG. Mismos datos que la version Plotly.
+
+    El calculo va por narrative.py: si cada renderer lo hiciera por su cuenta,
+    las dos versiones del informe acabarian publicando cifras distintas.
+    """
     if not artists:
         return ""
+    pareto = pareto_points(artists)
+    bars, line, labels, prev, prev_n = [], [], [], 0.0, 0
+    for p in pareto:
+        labels.append(f"{prev_n + 1}–{p['n']}" if prev_n else f"Top {p['n']}")
+        bars.append({"value": p["revenue_eur"] - prev, "label": labels[-1]})
+        line.append(p["share_pct"])
+        prev, prev_n = p["revenue_eur"], p["n"]
+    notes = [
+        (i, f"Top {p['n']}: {p['share_pct']:.0f}%")
+        for i, p in enumerate(pareto)
+        if p["n"] in (25, 200)
+    ]
+
+    gens = generation_bars(generations or [])
+    # ``decade=None`` permanece en la banda de cobertura; no se dibuja como si
+    # fuera una generacion real.
+    gen_items = [
+        {"label": g["label"], "revenue_eur": g["revenue_eur"]}
+        for g in gens
+        if not g["is_sentinel"]
+    ]
+
+    # El scatter SVG se recorta: 1.492 circulos son ~250 KB de marcado en un
+    # fichero que ya roza el limite del visor, y a 320 unidades de ancho la cola
+    # se solapa en una mancha. Se dibujan los de mas volumen y se dice cuantos
+    # quedan fuera y cuanto pesan.
+    all_pts = scatter_points(artists)
+    pts = all_pts[:SCATTER_LIMIT]
+    total_size = sum(p["size"] for p in all_pts) or 1
+    tail_pct = sum(p["size"] for p in all_pts[SCATTER_LIMIT:]) / total_size * 100
+
+    out = [
+        "<h3>Un puñado de nombres concentra el dinero</h3>",
+        "<div class='chart-box'>",
+        bar_line_chart(bars, line, labels=labels, notes=notes),
+        f"<p class='caveat'>{CAVEAT_PARETO_SCOPE}</p></div>",
+        "<h3>Vender caro o vender mucho</h3>",
+        "<p class='lead'>Cada burbuja es un artista: a la derecha los que venden muchos "
+        "lotes, arriba los que los venden caros, y el tamaño es el volumen total.</p>",
+        "<div class='chart-box'>",
+        scatter_chart(pts),
+        f"<p class='caveat'>{CAVEAT_SCATTER_LOWN}</p>",
+        # El recorte se declara: un grafico que dice "los artistas" habiendo
+        # dibujado la mitad es un grafico que miente por omision.
+        (f"<p class='caveat'>Se dibujan los {len(pts)} artistas de mayor volumen de "
+         f"{len(all_pts)}. Los restantes aportan menos del "
+         f"{tail_pct:.1f}% del total y a este tamaño se solapan en un borrón; "
+         "están todos en la tabla y en la descarga.</p>" if len(pts) < len(all_pts) else ""),
+        "</div>",
+    ]
+    if gens:
+        out += [
+            "<h3>La generación que mueve el mercado</h3>",
+            "<div class='chart-box'>",
+            bar_chart(gen_items, "revenue_eur", "label"),
+            generation_coverage_block(gens),
+            f"<p class='caveat'>{CAVEAT_GENERATIONS_COVERAGE}</p></div>",
+        ]
+    return "".join(out)
+
+
+def build_artist_table(artists: list[dict], cov: dict,
+                       lots_by_artist: dict[str, list[dict]] | None = None,
+                       generations: list[dict] | None = None) -> str:
+    if not artists:
+        return ""
+    lots_by_artist = lots_by_artist or {}
     shown = artists[:ARTIST_LIMIT]
     pares = sorted(
         {(a.get("country_birth"), a.get("country_birth_es") or a.get("country_birth"))
@@ -510,7 +1035,9 @@ def build_artist_table(artists: list[dict], cov: dict) -> str:
         extra = [n for n in (a.get("nationalities") or []) if n != code]
         meta = label or "Sin país informado"
         if extra:
-            meta += " · tb. " + ", ".join(extra)
+            # Traducidas: aqui se imprimian los codigos ISO crudos ("tb. FR, IT")
+            # mientras el informe local ya escribia "tb. Francia, Italia".
+            meta += " · tb. " + nationalities_es(extra)
         # Fechas del maestro, como en report_gold.py: si solo hay una, se dice
         # cual es ("n." / "m."), nunca "1954-", que afirmaria que sigue vivo.
         life = a.get("life_years")
@@ -523,22 +1050,38 @@ def build_artist_table(artists: list[dict], cov: dict) -> str:
             f"title='{esc(a.get('top_lot_title') or '')}'>{esc(rec)}</a>"
             if url else esc(rec)
         )
+        card_id = f"ficha-{i}"
         rows.append(
             f"<tr data-country='{esc(code or '__none__')}' "
             f"data-name='{esc((a.get('artist_name') or '').lower())}' "
+            f"data-key='{esc(a.get('artist_key') or '')}' "
+            f"data-card='{card_id}' "
+            f"data-kind='{esc(multi_house_kind(a.get('houses') or []))}' "
             f"data-sold='{a.get('lots_sold') or 0}' "
             f"data-offered='{a.get('lots_offered') or 0}' "
             f"data-birth='{a.get('birth_year') or ''}' "
             f"data-death='{a.get('death_year') or ''}' "
             f"data-revenue='{a.get('revenue_eur') or 0}'>"
             f"<td class='rank'>{i}</td>"
-            f"<th scope='row'><span class='name'>{esc(a['artist_name'])}</span>"
-            f"<span class='meta{'' if label else ' none'}'>{esc(meta)}</span></th>"
+            # Boton y no fila clicable, por la misma razon que en el informe
+            # local: la fila ya lleva un enlace y un <tr> no recibe foco.
+            f"<th scope='row'>"
+            f"<button type='button' class='artist-toggle' aria-expanded='false' "
+            f"aria-controls='{card_id}'>"
+            f"<span class='name'>{esc(a['artist_name'])}</span>"
+            f"<span class='meta{'' if label else ' none'}'>{esc(meta)}</span>"
+            f"</button></th>"
             f"<td class='n'>{num(a.get('lots_sold'))}"
             f"<span class='sub'>de {num(a.get('lots_offered'))}</span></td>"
             f"<td class='n'>{pct(st)}</td>"
             f"<td class='n strong'>{esc(eur(a.get('revenue_eur')))}</td>"
             f"<td class='n'>{rec_cell}</td></tr>"
+            # La ficha va renderizada desde Python y oculta, no construida en
+            # cliente: el visor del Artifact puede restringir JS y una ficha que
+            # solo existe si el script corre es una ficha que puede no existir.
+            f"<tr class='artist-card' id='{card_id}' hidden>"
+            f"<td colspan='6'>{artist_card(a, lots_by_artist.get(a.get('artist_key')) or [])}</td>"
+            "</tr>"
         )
 
     con, tot = cov.get("artists_with_country") or 0, cov.get("artists_ranked") or 0
@@ -555,7 +1098,7 @@ def build_artist_table(artists: list[dict], cov: dict) -> str:
     )
     # Las dos coberturas de fechas: la de la tabla visible y la del ranking
     # entero. Publicar solo la primera daria una idea falsa del maestro, porque
-    # los artistas que mas venden son justo los mejor documentados.
+    # la curaduria se prioriza por facturacion y la cola queda peor cubierta.
     dated_shown = sum(1 for a in shown if a.get("birth_year"))
     dated_tot = sum(1 for a in artists if a.get("birth_year"))
     if shown and tot:
@@ -563,20 +1106,39 @@ def build_artist_table(artists: list[dict], cov: dict) -> str:
             f"<p class='caveat'>Las fechas salen del mismo maestro: las tienen "
             f"{num(dated_shown)} de los {num(len(shown))} artistas de esta tabla "
             f"({pct(dated_shown / len(shown) * 100)}), pero solo {num(dated_tot)} de "
-            f"{num(tot)} en el ranking completo ({pct(dated_tot / tot * 100)}). "
-            "Un artista vivo aparece como “n. 1954”, sin año de muerte.</p>"
+            f"{num(tot)} en el ranking completo ({pct(dated_tot / tot * 100)}): la "
+            "curaduría se ha priorizado por facturación.</p>"
+        )
+        # "n. 1954" no equivale a "vivo": ver la misma nota en render_html.py.
+        caveats += (
+            "<p class='caveat'>“n. 1954” significa <strong>nacido en 1954 y sin año de "
+            "muerte registrado</strong>, que no es lo mismo que estar vivo: puede ser una "
+            "ficha incompleta. Cuando el artista tendría más de 105 años se marca "
+            "“n. 1905 (?)”, porque ahí el hueco es casi seguro un dato que falta.</p>"
         )
     return (
         "<section><h2>Quién mueve el dinero</h2>"
+        + build_artist_charts(artists, generations or [])
+        + "<h3>El ranking, nombre a nombre</h3>"
         f"<p class='lead'>Los {num(len(shown))} artistas con mayor volumen adjudicado. "
-        "Se excluyen escuelas, talleres y atribuciones (“Escuela Española”, "
-        "“Atribuido a…”), que agrupan lotes de autoría distinta y falsearían el "
-        "ranking. Mínimo 3 lotes vendidos para entrar.</p>"
+        "Pulsa en un nombre para ver su ficha y sus lotes. "
+        # El corte sale de la constante del pipeline: estaba escrito a mano aqui
+        # y en render_html.py, asi que cambiarlo dejaba mintiendo a los dos.
+        f"{CAVEAT_MIN_LOTS}</p>"
         "<div class='controls'>"
         "<label>Buscar artista<input type='search' id='artist-search' "
         "placeholder='p. ej. Botero' autocomplete='off'></label>"
         "<label>País de nacimiento<select id='country-filter'>"
         f"<option value=''>Todos</option>{options}</select></label>"
+        # Presencia en varias casas. "Mismo mercado" y "cruza mercados" van
+        # separados porque Bogota y Lefebre son las dos colombianas.
+        "<label>Presencia<select id='kind-filter'>"
+        "<option value=''>Todos</option>"
+        "<option value='multi'>En más de una casa</option>"
+        "<option value='cross_market'>· cruzando mercados</option>"
+        "<option value='same_market'>· en el mismo mercado</option>"
+        "<option value='single'>En una sola casa</option>"
+        "</select></label>"
         "<button type='button' class='btn' id='artist-reset'>Limpiar</button>"
         + dl_buttons("artist") + "</div>"
         + totals_block("artist-totals", [
@@ -595,7 +1157,9 @@ def build_artist_table(artists: list[dict], cov: dict) -> str:
     )
 
 
-def build_country_table(countries: list[dict]) -> str:
+def build_country_table(countries: list[dict],
+                        country_year: list[dict] | None = None,
+                        gap: int = 0) -> str:
     known = [c for c in countries if c.get("country")]
     unknown = next((c for c in countries if not c.get("country")), None)
     if not known:
@@ -638,10 +1202,27 @@ def build_country_table(countries: list[dict]) -> str:
             "artistas sin país en el maestro. No se reparten entre los países conocidos: "
             "se dejan fuera para no inflar ninguno.</p>"
         )
+    # Los totales por pais no aplican el corte del ranking y la tabla de
+    # artistas si: sin decirlo, la diferencia parece un error de suma.
+    if gap:
+        caveats += f"<p class='caveat'>{country_metrics_caveat(gap)}</p>"
+    heat = heatmap_matrix(country_year or [])
+    heat_block = ""
+    if heat.get("rows"):
+        heat_block = (
+            "<h3>Doce años, país por país</h3>"
+            "<div class='chart-box'>"
+            + heatmap_chart(heat)
+            + f"<p class='caveat'>{CAVEAT_COUNTRY_IS_HOUSE}</p>"
+            + f"<p class='caveat'>{CAVEAT_FX_TIMESERIES}</p>"
+            "</div>"
+        )
     return (
         "<section><h2>De dónde viene el arte</h2>"
         "<p class='lead'>Volumen adjudicado por país de nacimiento del artista, según el "
         "maestro de artistas.</p>"
+        + heat_block
+        + "<h3>El detalle por país</h3>"
         "<div class='controls'>"
         "<label>Buscar país<input type='search' id='country-search' "
         "placeholder='p. ej. Colombia' autocomplete='off'></label>"
@@ -828,17 +1409,21 @@ JS = r"""
     });
   })();
   var LOT_HEAD = ['Artista', 'Pais', 'Casa', 'Subasta', 'Fecha', 'Lote', 'Titulo',
-                  'Estado', 'Vendido', 'Precio', 'Moneda', 'Precio EUR', 'URL'];
+                  'Estado', 'Vendido', 'Precio', 'Moneda', 'Precio EUR', 'URL',
+                  'Clave artista'];
   function lotLine(l) {
     return [l.artist_name, l.country, l.house_slug, l.auction_id, l.auction_start_date,
             l.lot_number, l.lot_title, l.status, l.sold ? 'si' : 'no', l.price_sold,
-            l.currency, l.price_sold_eur, l.lot_url];
+            l.currency, l.price_sold_eur, l.lot_url, l.artist_key];
   }
 
   function wire(cfg) {
     var table = document.getElementById(cfg.table);
     if (!table) return;
-    var rows = Array.prototype.slice.call(table.tBodies[0].rows);
+    // Las fichas quedan fuera: son detalle de la fila de arriba, no filas de
+    // datos. Si entraran, contarian como artista en los totales.
+    var rows = Array.prototype.slice.call(table.tBodies[0].rows)
+      .filter(function (r) { return r.className.indexOf('artist-card') < 0; });
     var empty = document.getElementById(cfg.empty);
     var totals = document.getElementById(cfg.totals);
     var inputs = cfg.inputs.map(function (id) { return document.getElementById(id); })
@@ -853,10 +1438,27 @@ JS = r"""
       var q = fold(cfg.search ? (document.getElementById(cfg.search) || {}).value : '');
       var sel = cfg.select ? (document.getElementById(cfg.select) || {}).value : '';
       var n = 0, sold = 0, offered = 0, revenue = 0, artists = 0, dated = 0;
+      // Filtro extra opcional (presencia en varias casas), aparte del selector
+      // de pais para que wire() siga sirviendo a las dos tablas.
+      var extraEl = cfg.extra ? document.getElementById(cfg.extra) : null;
+      var extra = extraEl ? extraEl.value : '';
       rows.forEach(function (row) {
+        var okExtra = !extra ||
+          (extra === 'multi' ? row.dataset.kind !== 'single'
+                             : row.dataset.kind === extra);
         var ok = (!q || fold(row.dataset.name).indexOf(q) >= 0) &&
-                 (!sel || row.dataset.country === sel);
+                 (!sel || row.dataset.country === sel) && okExtra;
         row.hidden = !ok;
+        // La ficha sigue a su fila: al ocultarse el artista se cierra, o
+        // quedaria abierta bajo un filtro que ya no la incluye.
+        if (row.dataset.card) {
+          var fcard = document.getElementById(row.dataset.card);
+          if (fcard && !ok && !fcard.hidden) {
+            fcard.hidden = true;
+            var fbtn = row.querySelector('.artist-toggle');
+            if (fbtn) fbtn.setAttribute('aria-expanded', 'false');
+          }
+        }
         if (!ok) return;
         n++;
         sold += Number(row.dataset.sold) || 0;
@@ -928,7 +1530,8 @@ JS = r"""
   wire({
     table: 'artist-table', empty: 'artist-empty', totals: 'artist-totals',
     search: 'artist-search', select: 'country-filter', reset: 'artist-reset',
-    inputs: ['artist-search', 'country-filter'],
+    extra: 'kind-filter',
+    inputs: ['artist-search', 'country-filter', 'kind-filter'],
     ids: {count: 't-artists', sold: 't-sold', rate: 't-rate',
           revenue: 't-revenue', avg: 't-avg', dated: 't-dated'},
     dlView: 'artist-dl-view', dlLots: 'artist-dl-lots', prefix: 'artistas',
@@ -944,8 +1547,10 @@ JS = r"""
               row.dataset.sold, row.dataset.offered, rate(row),
               row.dataset.revenue, row.cells[5].textContent.trim()];
     },
-    matchKey: function (row) { return fold(row.dataset.name); },
-    lotKey: function (l) { return fold(l.artist_name); },
+    // Por la clave del pipeline, no por el nombre plegado: el fold junta a dos
+    // personas distintas que se llaman igual.
+    matchKey: function (row) { return row.dataset.key; },
+    lotKey: function (l) { return l.artist_key; },
   });
 
   wire({
@@ -966,12 +1571,62 @@ JS = r"""
     matchKey: function (row) { return row.dataset.code; },
     lotKey: function (l) { return l.country; },
   });
+
+  // Fichas de artista. El contenido ya viene renderizado desde Python, asi que
+  // esto solo abre y cierra: si el visor restringiera el script, la ficha
+  // seguiria estando en el documento.
+  (function () {
+    var table = document.getElementById('artist-table');
+    if (!table) return;
+    var openBtn = null;
+
+    function close(btn) {
+      if (!btn) return;
+      var card = document.getElementById(btn.getAttribute('aria-controls'));
+      if (card) card.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      if (openBtn === btn) openBtn = null;
+    }
+
+    table.addEventListener('click', function (ev) {
+      var btn = ev.target;
+      while (btn && btn !== table && btn.className.indexOf('artist-toggle') < 0) {
+        btn = btn.parentNode;
+      }
+      if (!btn || btn === table) return;
+      var card = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!card) return;
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // Acordeon: dos fichas abiertas en 200 filas hacen perder el sitio.
+      if (openBtn && openBtn !== btn) close(openBtn);
+      if (isOpen) { close(btn); return; }
+      card.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      openBtn = btn;
+    });
+
+    // Escape cierra y devuelve el foco al boton: sin esto, quien navega con
+    // teclado se queda huerfano al final de la tabla.
+    table.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Escape' || !openBtn) return;
+      var btn = openBtn;
+      close(btn);
+      btn.focus();
+    });
+  })();
 })();
 """
 
 
 def build(rep: dict, details: list[dict]) -> str:
     s = rep["summary"]
+    # Lotes por artista para las fichas. Se indexa una vez: buscarlos por
+    # artista dentro del bucle seria O(artistas x lotes) sobre 22.888 filas.
+    lots_by_artist: dict[str, list[dict]] = {}
+    for d in details:
+        key = d.get("artist_key")
+        if key:
+            lots_by_artist.setdefault(key, []).append(d)
     dist = rep.get("price_distribution") or {}
     years = [r["year"] for r in rep.get("by_year", []) if str(r.get("year", "")).isdigit()]
     span = f"{min(years)}–{max(years)}" if years else "histórico"
@@ -1001,8 +1656,11 @@ def build(rep: dict, details: list[dict]) -> str:
         build_flags(rep.get("quality_flags", [])),
         build_charts(rep),
         build_house_table(rep.get("by_house", [])),
-        build_artist_table(rep.get("by_artist", []), rep.get("artist_coverage") or {}),
-        build_country_table(rep.get("by_country", [])),
+        build_artist_table(rep.get("by_artist", []), rep.get("artist_coverage") or {},
+                           lots_by_artist, rep.get("by_generation") or []),
+        build_country_table(rep.get("by_country", []),
+                            rep.get("by_country_year") or [],
+                            rep.get("country_lots_below_rank_cutoff") or 0),
         "<footer>",
         f"<p><strong>Conversión de moneda.</strong> {esc(fx_note())}</p>",
         "<p><strong>Procedencia.</strong> Datos extraídos de las webs públicas de las "

@@ -9,10 +9,15 @@ sources:
     agg_lots_by_year: data/gold/agg_lots_by_year.jsonl
     agg_artist_metrics: data/gold/agg_artist_metrics.jsonl
     agg_country_metrics: data/gold/agg_country_metrics.jsonl
+    agg_country_year_metrics: data/gold/agg_country_year_metrics.jsonl
+    agg_artist_generation_metrics: data/gold/agg_artist_generation_metrics.jsonl
     agg_category_metrics: data/gold/agg_category_metrics.jsonl
     agg_month_metrics: data/gold/agg_month_metrics.jsonl
     agg_price_distribution: data/gold/agg_price_distribution.jsonl
     agg_estimate_accuracy: data/gold/agg_estimate_accuracy.jsonl
+    # Detalle lote a lote de los artistas del ranking. Existia desde el inicio
+    # pero no estaba listado aqui; es la fuente del drill-down del informe.
+    lot_details: data/gold/lot_details.jsonl
     quality_flags: data/gold/quality_flags.jsonl
 
   enrichments:

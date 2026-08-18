@@ -284,3 +284,89 @@ def test_original_fields_are_preserved(silver):
     row = _read(lots)[0]
     for key, value in original.items():
         assert row[key] == value
+
+
+# --- Red de seguridad para titulos y configuracion retirada ---
+
+@pytest.fixture
+def real_artist_config():
+    """Lee la configuracion real sin depender de caches de otros tests."""
+    artist_master.reset_caches()
+    yield
+    artist_master.reset_caches()
+
+
+def test_lot_author_fix_map_is_empty(real_artist_config):
+    """El output corregido de Duran ya no necesita excepciones por lot_url."""
+    assert artist_master.load_lot_author_fixes() == {}
+
+
+def test_lefebre_multiline_title_only_uses_a_master_backed_prefix(silver):
+    """Un titulo en la segunda linea no se convierte en alias ni en artista."""
+    _, master = silver
+    _seed_master(
+        master,
+        [
+            {
+                "artist_id": "santiago_cardenas",
+                "display_name": "Santiago Cárdenas Arroyo",
+                "country_birth": "CO",
+                "nationalities": ["CO"],
+                "birth_year": 1937,
+                "attribution_type": "autor",
+                "source": "manual",
+                "confidence": "high",
+                "aliases": ["SANTIAGO CÁRDENAS", "SANTIAGO CARDENAS ARROYO"],
+            },
+            {
+                "artist_id": "eduardo_ramirez_villamizar",
+                "display_name": "Eduardo Ramírez Villamizar",
+                "country_birth": "CO",
+                "nationalities": ["CO"],
+                "attribution_type": "autor",
+                "source": "manual",
+                "confidence": "high",
+                "aliases": ["EDUARDO RAMÍREZ VILLAMIZAR"],
+            },
+        ],
+    )
+
+    santiago = artist_resolve.resolve_row(
+        _lot(
+            house_slug="lefebre_subastas",
+            artist_name="SANTIAGO CÁRDENAS\nBlack Tie",
+        )
+    )
+    assert santiago["artist_id"] == "santiago_cardenas"
+    assert santiago["artist_country_birth"] == "CO"
+    assert "Black Tie" not in artist_master.load_master()["santiago_cardenas"]["aliases"]
+
+    # El nombre completo ya resuelve y no se trunca por contener un salto.
+    ramirez = artist_resolve.resolve_row(
+        _lot(
+            house_slug="lefebre_subastas",
+            artist_name="EDUARDO RAMÍREZ\nVILLAMIZAR",
+        )
+    )
+    assert ramirez["artist_id"] == "eduardo_ramirez_villamizar"
+
+    for raw in (
+        "1 Real 1821 M\nFernando VII",
+        "MADONNA\nLike a prayer, 1989",
+        "HERNANDO VERGARA\nS",
+    ):
+        unresolved = artist_resolve.resolve_row(
+            _lot(house_slug="lefebre_subastas", artist_name=raw)
+        )
+        assert unresolved["artist_id"] is None
+
+
+def test_isolated_quoted_title_stays_not_an_author(real_artist_config):
+    """Un titulo aislado no inventa un autor aunque no haya excepciones."""
+    resolved = artist_resolve.resolve_row(
+        {"lot_url": "https://example.com/lote/sin-reparar", "artist_name": '"Paisaje"'}
+    )
+
+    assert resolved["artist_resolution"] == "not_an_author"
+    assert resolved["artist_id"] is None
+    assert resolved["artist_country_birth"] is None

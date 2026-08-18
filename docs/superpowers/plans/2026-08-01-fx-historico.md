@@ -1,5 +1,25 @@
 # Tasas FX históricas (COP/USD/EUR) — Implementation Plan
 
+> **EJECUTADO el 2026-08-16.** Las 8 tareas están completas y commiteadas. Tres cosas salieron
+> distintas de lo planeado y quedan anotadas aquí para que nadie las "arregle" de vuelta:
+>
+> 1. **El efecto es mucho menor de lo previsto, y el diseño se equivocaba en el porqué.** El
+>    documento de diseño esperaba +62% en las ventas de Bogotá de 2014. **Bogotá no tiene lotes
+>    de 2014**: sus datos empiezan en 2019, y los lotes de 2014 son de Durán, que es EUR y no
+>    convierte. Los totales por casa se mueven sólo −2% a −4%. El mecanismo sí funciona: un
+>    importe COP convierte a **1,61×** la tasa estática en 2014-01, y dentro de la ventana real
+>    de Bogotá (2019→2026) hay un **spread de 1,27×** entre el mes más fuerte y el más débil.
+> 2. **EUR tuvo que cortocircuitar antes del histórico.** Sin eso, un lote de Durán sin fecha
+>    parseable se marcaba `fallback_static`, y son 40.442 lotes: habrían dominado el contador de
+>    fallback del informe con lotes que no son aproximados en absoluto. Hay un test que lo fija.
+> 3. **El flag `fx_static_timeseries` (warn) pasó a `fx_timeseries` (info).** Avisaba de que
+>    comparar años no era válido por usar una tasa única — justo lo que esto arregla. Dejarlo
+>    habría contradicho al flag nuevo en el mismo panel.
+>
+> Extra fuera de plan: `pipelines/analytics/build_fx_report.py` → `data/gold/fx_report.html`,
+> el panel de la capa FX. Suite: **533 tests en verde** (la base eran 488, no los 201 que cita
+> este plan).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Convertir los importes a EUR usando la tasa del mes de la subasta en vez de una única tasa de hoy, que hoy infravalora ~62% las ventas de Bogotá de 2014.
@@ -53,7 +73,7 @@ Hermana de `extract_year()`. Es independiente de todo lo demás: se hace primero
 - Consumes: nada.
 - Produces: `extract_month(auction_start_date: Optional[str], auction_id: Optional[str] = None) -> Tuple[Optional[str], str]`. Devuelve `("YYYY-MM", method)` con method en `{"iso", "text", "auction_id", "unknown"}`, o `(None, "unknown")`.
 
-- [ ] **Step 1: Escribir los tests que fallan**
+- [x] **Step 1: Escribir los tests que fallan**
 
 Crear `tests/pipelines/test_extract_month.py`:
 
@@ -119,12 +139,12 @@ def test_month_without_year_is_unknown():
     assert extract_month("Enero") == (None, "unknown")
 ```
 
-- [ ] **Step 2: Ejecutar los tests para verificar que fallan**
+- [x] **Step 2: Ejecutar los tests para verificar que fallan**
 
 Run: `python -m pytest tests/pipelines/test_extract_month.py -v`
 Expected: FAIL con `ImportError: cannot import name 'extract_month'`
 
-- [ ] **Step 3: Implementar `extract_month`**
+- [x] **Step 3: Implementar `extract_month`**
 
 En `pipelines/shared/schema.py`, añadir junto a `_YEAR_RE` (línea 13):
 
@@ -186,17 +206,17 @@ def extract_month(
     return None, "unknown"
 ```
 
-- [ ] **Step 4: Ejecutar los tests para verificar que pasan**
+- [x] **Step 4: Ejecutar los tests para verificar que pasan**
 
 Run: `python -m pytest tests/pipelines/test_extract_month.py -v`
 Expected: PASS (11 tests)
 
-- [ ] **Step 5: Verificar que no se rompió nada**
+- [x] **Step 5: Verificar que no se rompió nada**
 
 Run: `python -m pytest -q`
 Expected: 201 tests previos + 11 nuevos, todos PASS
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add pipelines/shared/schema.py tests/pipelines/test_extract_month.py
@@ -219,7 +239,7 @@ Se construye el script con sus parsers testeables **antes** de descargar nada. L
 - Consumes: nada.
 - Produces: `parse_ecb_csv(text: str) -> dict[str, float]` (fecha ISO → EUR/USD), `parse_trm_json(text: str) -> dict[str, float]` (fecha ISO → COP por USD), `monthly_average(daily: dict[str, float]) -> dict[str, float]` ("YYYY-MM" → media), `build_rates(eurusd_monthly, trm_monthly) -> dict[str, dict[str, float]]` con claves `"USD"` y `"COP"`.
 
-- [ ] **Step 1: Crear las fixtures**
+- [x] **Step 1: Crear las fixtures**
 
 `tests/scripts/fixtures/ecb_sample.csv` — recorte real de la API del BCE (cabecera + 3 observaciones de dos meses distintos):
 
@@ -238,7 +258,7 @@ EXR.D.USD.EUR.SP00.A,D,USD,EUR,SP00,A,2014-02-03,1.3488,A
 ,{"valor":"1970.00","unidad":"COP","vigenciadesde":"2014-02-03T00:00:00.000","vigenciahasta":"2014-02-03T00:00:00.000"}]
 ```
 
-- [ ] **Step 2: Escribir los tests que fallan**
+- [x] **Step 2: Escribir los tests que fallan**
 
 Crear `tests/scripts/test_fx_fetch_parse.py`:
 
@@ -315,18 +335,18 @@ def test_build_rates_skips_month_missing_from_either_source():
     assert "2014-01" not in rates["COP"]
 ```
 
-- [ ] **Step 3: Ejecutar los tests para verificar que fallan**
+- [x] **Step 3: Ejecutar los tests para verificar que fallan**
 
 Run: `python -m pytest tests/scripts/test_fx_fetch_parse.py -v`
 Expected: FAIL con `ModuleNotFoundError: No module named 'scripts.fx_fetch_history'`
 
-- [ ] **Step 4: Crear `scripts/__init__.py` si no existe**
+- [x] **Step 4: Crear `scripts/__init__.py` si no existe**
 
 ```bash
 python -c "import pathlib; p=pathlib.Path('scripts/__init__.py'); p.exists() or p.write_text('')"
 ```
 
-- [ ] **Step 5: Implementar el script**
+- [x] **Step 5: Implementar el script**
 
 Crear `scripts/fx_fetch_history.py`:
 
@@ -482,12 +502,12 @@ if __name__ == "__main__":
     main()
 ```
 
-- [ ] **Step 6: Ejecutar los tests para verificar que pasan**
+- [x] **Step 6: Ejecutar los tests para verificar que pasan**
 
 Run: `python -m pytest tests/scripts/test_fx_fetch_parse.py -v`
 Expected: PASS (8 tests)
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add scripts/fx_fetch_history.py scripts/__init__.py tests/scripts/
@@ -507,12 +527,12 @@ git commit -m "feat(fx): script de descarga del historico BCE + TRM (parseo test
 - Consumes: `scripts.fx_fetch_history.main()` de la Task 2.
 - Produces: `pipelines/config/fx_history.yaml` con `rates_to_eur.USD` y `rates_to_eur.COP`, claves `"YYYY-MM"` de 2013-01 al mes actual.
 
-- [ ] **Step 1: Ejecutar la descarga**
+- [x] **Step 1: Ejecutar la descarga**
 
 Run: `python -m scripts.fx_fetch_history`
 Expected: escribe el fichero e imprime ~163 meses en USD y ~163 en COP.
 
-- [ ] **Step 2: Verificar el contenido a ojo**
+- [x] **Step 2: Verificar el contenido a ojo**
 
 ```bash
 python -c "
@@ -528,7 +548,7 @@ print('ratio 2014 vs hoy:', round(cop['2014-01']/0.000232, 2))
 
 Expected: 1 EUR ≈ 2.650 COP en 2014-01 y ≈ 3.500 COP hoy; ratio ≈ **1,6**. Si el ratio no está entre 1,4 y 1,8, **parar**: algo va mal en la composición.
 
-- [ ] **Step 3: Verificar que no hay huecos en el rango con datos**
+- [x] **Step 3: Verificar que no hay huecos en el rango con datos**
 
 ```bash
 python -c "
@@ -543,7 +563,7 @@ for cur in ('USD','COP'):
 
 Expected: rango 2013-01 → mes actual, 0 nulos.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add pipelines/config/fx_history.yaml
@@ -569,7 +589,7 @@ El corazón del cambio. `fx.py` sigue siendo el único punto de lectura de tasas
   - `fx_note(fallback_lots: Optional[int] = None) -> str` (firma ampliada, compatible)
 - `to_eur()`, `rate_for()`, `fx_as_of()` **sin cambios**.
 
-- [ ] **Step 1: Escribir los tests que fallan**
+- [x] **Step 1: Escribir los tests que fallan**
 
 Crear `tests/pipelines/test_fx_history.py`:
 
@@ -664,12 +684,12 @@ def test_legacy_to_eur_unchanged():
     assert to_eur(100, "XYZ") is None
 ```
 
-- [ ] **Step 2: Ejecutar los tests para verificar que fallan**
+- [x] **Step 2: Ejecutar los tests para verificar que fallan**
 
 Run: `python -m pytest tests/pipelines/test_fx_history.py -v`
 Expected: FAIL con `ImportError: cannot import name 'to_eur_at'`
 
-- [ ] **Step 3: Implementar en `pipelines/shared/fx.py`**
+- [x] **Step 3: Implementar en `pipelines/shared/fx.py`**
 
 Añadir tras `FX_CONFIG` (línea 19):
 
@@ -772,7 +792,7 @@ def fx_note(fallback_lots: Optional[int] = None) -> str:
     return note
 ```
 
-- [ ] **Step 4: Ejecutar los tests para verificar que pasan**
+- [x] **Step 4: Ejecutar los tests para verificar que pasan**
 
 Run: `python -m pytest tests/pipelines/test_fx_history.py tests/pipelines/test_fx.py -v`
 Expected: PASS. Ojo: `test_fx.py::test_note_mentions_as_of` puede fallar si asertaba que `fx_as_of()` sale en la nota. Actualizarlo para asertar sobre el nuevo texto:
@@ -788,12 +808,12 @@ def test_note_mentions_fallback_count_when_given():
     assert fx_as_of() in fx_note(1234)
 ```
 
-- [ ] **Step 5: Verificar la suite completa**
+- [x] **Step 5: Verificar la suite completa**
 
 Run: `python -m pytest -q`
 Expected: todo PASS
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add pipelines/shared/fx.py tests/pipelines/test_fx_history.py tests/pipelines/test_fx.py
@@ -811,7 +831,7 @@ git commit -m "feat(fx): to_eur_at() convierte con la tasa del mes de subasta"
 - Consumes: `to_eur_at()` (Task 4), `extract_month()` (Task 1), `fx_note(fallback_lots)` (Task 4).
 - Produces: `agg_house_metrics.jsonl` con `fx_method_counts: dict[str, int]` y `fx_fallback_lots: int`; `quality_flags.jsonl` con un flag `code: "fx_historical"`.
 
-- [ ] **Step 1: Actualizar el import (línea 29)**
+- [x] **Step 1: Actualizar el import (línea 29)**
 
 ```python
 from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur, to_eur_at
@@ -825,7 +845,7 @@ from pipelines.shared.schema import extract_month, extract_year, is_sold
 
 (Comprobar la línea exacta del import de `schema` con `grep -n "from pipelines.shared.schema" pipelines/gold/build_gold.py`.)
 
-- [ ] **Step 2: Añadir el acumulador de métodos**
+- [x] **Step 2: Añadir el acumulador de métodos**
 
 Junto a `unconvertible` (línea 96):
 
@@ -836,7 +856,7 @@ Junto a `unconvertible` (línea 96):
     fx_methods: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
 ```
 
-- [ ] **Step 3: Sustituir la conversión (líneas 115-118)**
+- [x] **Step 3: Sustituir la conversión (líneas 115-118)**
 
 Reemplazar:
 
@@ -863,7 +883,7 @@ por:
                 unconvertible[str(currency)] += 1
 ```
 
-- [ ] **Step 4: Sustituir `fx_rate_used` (línea 180)**
+- [x] **Step 4: Sustituir `fx_rate_used` (línea 180)**
 
 Reemplazar `"fx_rate_used": rate_for(currency),` por:
 
@@ -875,7 +895,7 @@ Reemplazar `"fx_rate_used": rate_for(currency),` por:
                 "fx_rate_static": rate_for(currency),
 ```
 
-- [ ] **Step 5: Actualizar el flag de quality (líneas 250-257)**
+- [x] **Step 5: Actualizar el flag de quality (líneas 250-257)**
 
 Reemplazar el bloque `flags = [...]` por:
 
@@ -892,7 +912,7 @@ Reemplazar el bloque `flags = [...]` por:
     ]
 ```
 
-- [ ] **Step 6: Ejecutar Gold y verificar el efecto**
+- [x] **Step 6: Ejecutar Gold y verificar el efecto**
 
 Run: `python -m pipelines.gold.build_gold`
 
@@ -907,12 +927,12 @@ for l in open('data/gold/agg_house_metrics.jsonl', encoding='utf-8'):
 
 Expected: `bogota_auctions` debe tener un `revenue_eur` **claramente mayor** que antes del cambio (sus lotes son de 2018-2024, con COP más fuerte). `fx_method_counts` mayoritariamente `monthly`.
 
-- [ ] **Step 7: Verificar la suite**
+- [x] **Step 7: Verificar la suite**
 
 Run: `python -m pytest -q`
 Expected: todo PASS
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add pipelines/gold/build_gold.py
@@ -933,13 +953,13 @@ Los dos consumidores restantes de `to_eur()`.
 - Consumes: `to_eur_at()` (Task 4), `extract_month()` (Task 1).
 - Produces: `currency_normalized.jsonl` con `fx_source` por lote (`"monthly_2014-01"` / `"static_2026-08-01"`).
 
-- [ ] **Step 1: `build_insights.py` — actualizar imports**
+- [x] **Step 1: `build_insights.py` — actualizar imports**
 
 Línea 30: `from pipelines.shared.fx import to_eur` → `from pipelines.shared.fx import to_eur_at`
 
 Añadir `extract_month` al import de `pipelines.shared.schema` (comprobar la línea con grep).
 
-- [ ] **Step 2: `build_insights.py` — sustituir la conversión (líneas 181-183)**
+- [x] **Step 2: `build_insights.py` — sustituir la conversión (líneas 181-183)**
 
 Reemplazar:
 
@@ -964,7 +984,7 @@ por:
                 eur = None
 ```
 
-- [ ] **Step 3: `currency_normalize.py` — reescribir el cuerpo**
+- [x] **Step 3: `currency_normalize.py` — reescribir el cuerpo**
 
 Línea 16: `from pipelines.shared.fx import fx_as_of, to_eur` → `from pipelines.shared.fx import fx_as_of, to_eur_at`
 
@@ -1010,7 +1030,7 @@ Declarar `fallback = 0` junto a `missing_rate = 0` (línea 27), y añadir al fin
         print(f"[enrichment] {fallback:,} lotes sin fecha usable -> tasa estatica")
 ```
 
-- [ ] **Step 4: Ejecutar ambos y verificar**
+- [x] **Step 4: Ejecutar ambos y verificar**
 
 ```bash
 python -m pipelines.enrichments.currency_normalize
@@ -1026,12 +1046,12 @@ print(c)
 
 Expected: mayoría `monthly`, minoría `static`.
 
-- [ ] **Step 5: Verificar la suite**
+- [x] **Step 5: Verificar la suite**
 
 Run: `python -m pytest -q`
 Expected: todo PASS
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add pipelines/gold/build_insights.py pipelines/enrichments/currency_normalize.py
@@ -1054,7 +1074,7 @@ Cierra la trazabilidad: el fallback se ve en el informe y la definición de la m
 - Consumes: `extract_month()` (Task 1), `quality_flags.jsonl` con `code: "fx_historical"` (Task 5).
 - Produces: métrica `fx_historical_coverage` en el informe de quality gates.
 
-- [ ] **Step 1: Añadir la métrica a `quality_gates.py`**
+- [x] **Step 1: Añadir la métrica a `quality_gates.py`**
 
 Localizar dónde se calculan las métricas por casa (`grep -n "artist_resolution_rate" pipelines/silver/quality_gates.py`) y añadir junto a ellas, siguiendo el patrón existente:
 
@@ -1070,7 +1090,7 @@ Localizar dónde se calculan las métricas por casa (`grep -n "artist_resolution
 
 Añadir `extract_month` al import de `pipelines.shared.schema` en ese fichero.
 
-- [ ] **Step 2: Actualizar los textos del informe**
+- [x] **Step 2: Actualizar los textos del informe**
 
 `pipelines/analytics/render_html.py:119` — reemplazar:
 
@@ -1100,7 +1120,7 @@ Las líneas 1418 y 960 (que llaman a `fx_note()`) **no se tocan**: ya recogen el
 
 Si `fx_as_of` queda sin usar en alguno de los dos ficheros, quitarlo del import.
 
-- [ ] **Step 3: Actualizar `semantic_layer/metrics.yaml:30`**
+- [x] **Step 3: Actualizar `semantic_layer/metrics.yaml:30`**
 
 Reemplazar:
 
@@ -1122,17 +1142,17 @@ Y añadir a la descripción de esa métrica (o crearla si no la hay):
       fecha usable caen a la tasa estatica y se cuentan en quality_flags.
 ```
 
-- [ ] **Step 4: Ejecutar quality gates**
+- [x] **Step 4: Ejecutar quality gates**
 
 Run: `python pipelines/silver/quality_gates.py`
 Expected: aparece `fx_historical_coverage` en el informe, sin fallo.
 
-- [ ] **Step 5: Verificar la suite**
+- [x] **Step 5: Verificar la suite**
 
 Run: `python -m pytest -q`
 Expected: todo PASS
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add pipelines/silver/quality_gates.py pipelines/analytics/render_html.py pipelines/analytics/build_artifact.py semantic_layer/metrics.yaml
@@ -1153,7 +1173,7 @@ git commit -m "feat(quality,report): cobertura FX historica y textos del informe
 - Consumes: todas las tareas anteriores.
 - Produces: informe regenerado con importes EUR correctos.
 
-- [ ] **Step 1: Guardar copia del informe actual antes de sobrescribirlo**
+- [x] **Step 1: Guardar copia del informe actual antes de sobrescribirlo**
 
 ```bash
 cp data/gold/analytics_report.html data/gold/analytics_report.PRE-FX.html
@@ -1167,13 +1187,13 @@ print('guardado:', tot)
 "
 ```
 
-- [ ] **Step 2: Rerun completo**
+- [x] **Step 2: Rerun completo**
 
 Run: `.\scripts\run_all.ps1`
 
 Expected: termina sin error. Es un rerun **completo**, no por etapas: ejecutar las etapas sueltas es como se desincronizaron antes las capas (enrichments de marzo sobre un Silver de mayo).
 
-- [ ] **Step 3: Comparar antes/después**
+- [x] **Step 3: Comparar antes/después**
 
 ```bash
 python -c "
@@ -1188,14 +1208,14 @@ for l in open('data/gold/agg_house_metrics.jsonl', encoding='utf-8'):
 
 Expected: `duran_subastas` ≈ 1,00x (es EUR, no debe moverse). `bogota_auctions` y `zorrilla_subastas` cambian. **Si Durán se mueve, hay un bug**: EUR nunca debe convertirse.
 
-- [ ] **Step 4: Verificar el informe**
+- [x] **Step 4: Verificar el informe**
 
 Abrir `data/gold/analytics_report.html` y comprobar:
 - El panel de avisos dice "tasa media del MES de cada subasta" y cita BCE + TRM.
 - Si hubo lotes en fallback, aparece el recuento.
 - Las tarjetas dicen "tasa del mes de subasta".
 
-- [ ] **Step 5: Limpiar los ficheros temporales de comparación**
+- [x] **Step 5: Limpiar los ficheros temporales de comparación**
 
 ```bash
 rm data/gold/_pre_fx_revenue.json
@@ -1203,7 +1223,7 @@ rm data/gold/_pre_fx_revenue.json
 
 Dejar `analytics_report.PRE-FX.html` hasta que el usuario confirme que el informe nuevo está bien.
 
-- [ ] **Step 6: Documentar en CLAUDE.md**
+- [x] **Step 6: Documentar en CLAUDE.md**
 
 En la sección "Data rules that hold up every Gold figure", reemplazar la parte de la regla de moneda que describe la tasa estática por:
 
@@ -1224,12 +1244,12 @@ En la sección "Data rules that hold up every Gold figure", reemplazar la parte 
   for a missing date only.
 ```
 
-- [ ] **Step 7: Verificación final**
+- [x] **Step 7: Verificación final**
 
 Run: `python -m pytest -q`
 Expected: 201 tests previos + ~30 nuevos, todos PASS.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add CLAUDE.md

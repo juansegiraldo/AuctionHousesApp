@@ -17,18 +17,23 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Olga de Amaral: Bosques, estelas, umbras"
+      - "Olga de Amaral (Colombia, 1932)"
       - "Olga de Amaral"
     notes: "6 lotes | casas: bogota_auctions"
 
   - artist_id: omar_rayo
     display_name: "Omar Rayo"
     country_birth: "CO"
-    nationalities: ["CO"]
+    birth_year: 1928
     death_year: 2010
+    nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Omar Rayo (Colombia, 1928 - 2010)"
+      - "Omar Rayo - Colombia, 1928 - 2010."
       - "Omar Rayo"
       - "Rayo, Omar"
     notes: "29 lotes | casas: bogota_auctions"
@@ -62,6 +67,7 @@ artists:
   - artist_id: oscar_estruga
     display_name: "Óscar Estruga"
     country_birth: "ES"
+    birth_year: 1933
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -79,6 +85,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Oscar Muñoz (Colombia, 1951)"
       - "Oscar Muñoz"
     notes: "21 lotes | casas: bogota_auctions"
 
@@ -93,6 +100,9 @@ artists:
     confidence: high
     aliases:
       - "Oswaldo Guayasamín"
+      # Errata de la propia ficha de Duran ("Guaysamín", sin la segunda "a").
+      # Rankeaba aparte con 1 lote de 30.000 EUR y sin pais.
+      - "Oswaldo Guaysamín"
     notes: "38 lotes | casas: bogota_auctions, duran_subastas"
   - artist_id: oscar_garcia_reino
     display_name: "Óscar García Reino"
@@ -180,6 +190,7 @@ artists:
   - artist_id: oswaldo_viteri
     display_name: "Oswaldo Viteri"
     country_birth: "EC"
+    death_year: 2023
     nationalities: ["EC"]
     birth_year: 1931
     attribution_type: autor

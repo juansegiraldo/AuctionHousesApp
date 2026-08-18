@@ -170,3 +170,59 @@ artists:
       - "Hipólito Hidalgo de Caviedes"
       - "Hipólito hidalgo de Caviedes"
     notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
+
+  - artist_id: horacio_silva_sebastian
+    display_name: "Horacio Silva Sebastián"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1950
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Horacio Silva"
+    notes: "Pintor español nacido en Valencia el 29 de marzo de 1950. Profesor en la Facultad de Bellas Artes de la Universidad Politécnica de Valencia. Ha evolucionado del realismo al cubismo cromático."
+
+  - artist_id: harry_humphrey_moore
+    display_name: "Harry Humphrey Moore"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1844
+    death_year: 1926
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Harry Humphrey Moore"
+    notes: "2 lotes duplicados en el corpus | casas: duran_subastas | nacido en Nueva York en 1844 y fallecido en Paris en 1926. El North Carolina Museum of Art confirma artista estadounidense y fechas; Hirschl & Adler documenta Nueva York como lugar de nacimiento. Fuentes: https://collection.ncartmuseum.org/objects/10286/in-a-japanese-garden ; https://www.hirschlandadler.com/galleries/harry-humphrey-moore"
+
+  - artist_id: henri_matisse
+    display_name: "Henri Matisse"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1869
+    death_year: 1954
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Henri Matisse"
+      - "Henry Matisse"
+      - "MATISSE, HENRI"
+    notes: "4 lotes | casas: duran_subastas | tres filas publican Henri Matisse y una escribe Henry Matisse; el catalogo de Duran identifica esta errata con Cateau-Cambresis 1869-Nice 1954 y la obra Femme sur canape. Centre Pompidou confirma nacimiento en Le Cateau-Cambresis, Francia, en 1869, muerte en Nice en 1954 y nacionalidad francesa. Fuentes: https://www.centrepompidou.fr/fr/ressources/personne/crb5Eg ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_540.pdf"
+
+  - artist_id: hiacynt_alchimowicz
+    display_name: "Hiacynt Alchimowicz"
+    country_birth: "BY"
+    nationalities: ["PL", "FR", "BY"]
+    birth_year: 1841
+    death_year: 1916
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Hiacynt Alchimowiz"
+      - "ALCHIMOWICZ, HIACYNT"
+      - "Hyacinthe Alchimowicz"
+      - "Hiacent Alchimowicz"
+    notes: "1 lote vendido por 8.500 EUR | casas: duran_subastas | la cabecera de Duran escribe Alchimowiz, pero el campo Autor da ALCHIMOWICZ, HIACYNT (1841 - 1900?). Nacido en Dziembrow/Dembrava, actual Bielorrusia; pintor polaco naturalizado frances en 1891. El acta de defuncion n. 565 de Perpignan (vista 81/129) fija 27-08-1916 y corrige 1897 de Orsay y 1900? de Duran. No confundir con su hermano mayor, el pintor Kazimierz Alchimowicz (1840-1916). Fuentes: https://www.duran-subastas.com/es/subasta-lote/hiacynt-alchimowiz-desnuda-en-la-hierba/600-133 ; https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/hyacinthe-alchimowicz-125515 ; https://archives.cd66.fr/mdr/index.php/docnumViewer/calculHierarchieDocNum/373927/322715%3A328312%3A328316%3A373927/864/1536 ; https://gallica.bnf.fr/ark:/12148/bpt6k42259400/f908.image.r=Alchimowicz?rk=815454;4 ; https://www.gov.pl/attachment/19fa85f9-65de-4bb0-8cc4-7dc552229b7d"

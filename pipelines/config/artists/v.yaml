@@ -50,6 +50,8 @@ artists:
   - artist_id: victor_vasarely
     display_name: "Victor Vasarely"
     country_birth: "HU"
+    birth_year: 1906
+    death_year: 1997
     nationalities: ["FR", "HU"]
     attribution_type: autor
     source: manual
@@ -119,6 +121,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Vicente López Portaña"
       - "Vicente López"
     notes: "11 lotes en Silver | fuente: Wikipedia | Vicente Lopez Portana, Valencia; pintor de camara"
 
@@ -173,3 +176,41 @@ artists:
     aliases:
       - "Vicente Vela"
     notes: "13 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: vicente_arnas_lozano
+    display_name: "Vicente Arnás Lozano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Vicente Arnás"
+    notes: "Pintor madrileño nacido en 1949. Estudió Artes y Oficios en Madrid, se define como autodidacta. Comenzó carrera en publicidad como ilustrador y delineante. Primera exposición individual 1976 (galería Macarrón, Madrid). Realismo mágico y surrealismo crítico. Especialista en serie Tauromaquia. Múltiples premios: Medalla de Honor BMW (1987, 1990), Premio La Maestranza Sevilla (1993), Premio de Grabado Cebreros (1996)."
+
+  - artist_id: victor_jerez
+    display_name: "Víctor Jerez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1981
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Víctor Jerez"
+      - "Victor Jerez"
+    notes: "Pintor español contemporáneo. Nacido 1981 Algeciras, Cádiz. Conocido como 'pintor de deportistas'. Especializado en live painting de eventos internacionales de tenis."
+
+  - artist_id: vicente_macip
+    display_name: "Vicente Macip"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1475
+    death_year: 1551
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Vicente Macip"
+    notes: "2 lotes | casas: duran_subastas | nacido en Valencia. Prado: h.1473/75-1551; CER.es y Duran: ca.1475-1545. Se prioriza la fecha de muerte de la ficha actual del Prado. Fuentes: https://www.museodelprado.es/coleccion/artista/vicente-macip/fa32efe6-41f8-4585-b8d0-797fc0e90698 ; https://ceres.mcu.es/pages/Main?idt=132571&inventary=08448&museum=MLGM&table=FMUS"

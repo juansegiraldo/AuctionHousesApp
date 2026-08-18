@@ -33,6 +33,7 @@ artists:
   - artist_id: jaume_plensa
     display_name: "Jaume Plensa"
     country_birth: "ES"
+    birth_year: 1955
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -44,6 +45,7 @@ artists:
   - artist_id: jaume_queralt
     display_name: "Jaume Queralt"
     country_birth: "ES"
+    birth_year: 1949
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -68,6 +70,7 @@ artists:
   - artist_id: javier_de_juan
     display_name: "Javier de Juan"
     country_birth: "ES"
+    birth_year: 1958
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -86,6 +89,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Jesús María Zamora - Colombia, 1871 - 1948."
       - "Jesús María Zamora"
     notes: "6 lotes | casas: bogota_auctions"
 
@@ -105,6 +109,8 @@ artists:
   - artist_id: jesus_villar
     display_name: "Jesús Villar"
     country_birth: "ES"
+    birth_year: 1930
+    death_year: 2015
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -122,6 +128,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Jim Amaral (EE.UU, 1933)"
       - "Jim Amaral"
     notes: "22 lotes | casas: bogota_auctions"
 
@@ -147,6 +154,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Joan Brotat Vilanova"
       - "Joan Brotat"
     notes: "61 lotes | casas: duran_subastas"
 
@@ -188,6 +196,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Joan Miró Ferrrá"
       - "Joan Miró"
       - "Joan Miró Ferrá"
       - "MIRÓ FERRÁ, JOAN"
@@ -209,6 +218,7 @@ artists:
   - artist_id: joao_parames
     display_name: "Joao Paramés"
     country_birth: "PT"
+    birth_year: 1978
     nationalities: ["PT"]
     attribution_type: autor
     source: manual
@@ -240,12 +250,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Joaquín Asensio Marine"
       - "Joaquín Asensio"
     notes: "28 lotes | casas: duran_subastas"
 
   - artist_id: joaquin_capa
     display_name: "Joaquín Capa"
     country_birth: "ES"
+    death_year: 2001
+    birth_year: 1941
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -325,18 +338,23 @@ artists:
   - artist_id: john_castles
     display_name: "John Castles"
     country_birth: "CO"
+    death_year: 2023
     nationalities: ["CO"]
     birth_year: 1946
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "John Castles (Colombia, 1946)"
+      - "John Castles (Colombia, 1946.)"
+      - "John Castles - Colombia, 1946."
       - "John Castles"
     notes: "14 lotes | casas: bogota_auctions"
 
   - artist_id: jordi_teixidor
     display_name: "Jordi Teixidor"
     country_birth: "ES"
+    birth_year: 1941
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -348,6 +366,8 @@ artists:
   - artist_id: jorge_castillo
     display_name: "Jorge Castillo"
     country_birth: "ES"
+    death_year: 2023
+    birth_year: 1933
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -365,6 +385,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "José Alejandro Restrepo - Colombia, 1959."
       - "José Alejandro Restrepo"
     notes: "8 lotes | casas: bogota_auctions"
 
@@ -384,6 +405,7 @@ artists:
   - artist_id: jose_bedia
     display_name: "José Bedia"
     country_birth: "CU"
+    birth_year: 1959
     nationalities: ["CU"]
     attribution_type: autor
     source: manual
@@ -456,6 +478,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "José Díaz Oliva"
+      - "Jose Diaz Oliva"
       - "José Díaz"
     notes: "26 lotes | casas: duran_subastas"
 
@@ -509,6 +533,12 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "José Hernández Calatayud"
+      - "José Hernández Mensuro (Mensu)"
+      - "José Hernandez Muñoz"
+      - "Jose Hernandez Muñoz"
+      - "José Hernández Pijoán"
+      - "José Hernández Pijoan"
       - "José Hernández"
       - "HERNÁNDEZ, JOSÉ"
     notes: "30 lotes | casas: duran_subastas"
@@ -556,6 +586,7 @@ artists:
   - artist_id: jose_luis_checa
     display_name: "Jose Luis Checa"
     country_birth: "ES"
+    birth_year: 1950
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -567,6 +598,7 @@ artists:
   - artist_id: jose_luis_fajardo
     display_name: "José Luis Fajardo"
     country_birth: "ES"
+    birth_year: 1941
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -578,6 +610,7 @@ artists:
   - artist_id: jose_manuel_broto
     display_name: "Jose Manuel Broto"
     country_birth: "ES"
+    birth_year: 1949
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -590,6 +623,7 @@ artists:
   - artist_id: jose_manuel_ciria
     display_name: "José Manuel Ciria"
     country_birth: "ES"
+    birth_year: 1960
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -602,6 +636,7 @@ artists:
   - artist_id: jose_maria_barreiro
     display_name: "Jose María Barreiro"
     country_birth: "ES"
+    birth_year: 1940
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -626,6 +661,7 @@ artists:
   - artist_id: jose_maria_sicilia
     display_name: "José María Sicilia"
     country_birth: "ES"
+    birth_year: 1954
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -652,6 +688,7 @@ artists:
   - artist_id: jose_maria_yturralde
     display_name: "José María Yturralde"
     country_birth: "ES"
+    birth_year: 1942
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -724,8 +761,10 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "NAVARRO LLORENS, JOSE"
       - "José Navarro Llorens"
-    notes: "19 lotes | casas: duran_subastas"
+      - "Navarro Llorens"
+    notes: "21 lotes tras fusionar la forma abreviada | casas: duran_subastas | nacido en Valencia en 1867 y fallecido en Godella en 1923. El lote abreviado trae ambas fechas y una escena de playa valenciana, por lo que no hay ambiguedad en este registro. Fuente: https://www.museodelprado.es/coleccion/artista/jose-navarro-llorens/2faaec91-1199-46e1-bc28-5a43e63f1fb7"
 
   - artist_id: jose_palmeiro
     display_name: "José Palmeiro"
@@ -743,6 +782,8 @@ artists:
   - artist_id: jose_paredes_jardiel
     display_name: "José Paredes Jardiel"
     country_birth: "ES"
+    birth_year: 1928
+    death_year: 2000
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -767,6 +808,7 @@ artists:
   - artist_id: jose_royo
     display_name: "José Royo"
     country_birth: "ES"
+    birth_year: 1941
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -778,6 +820,8 @@ artists:
   - artist_id: jose_suarez_gomez
     display_name: "José Suárez Gómez"
     country_birth: "ES"
+    birth_year: 1935
+    death_year: 2024
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -825,6 +869,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Josep Guinovart Bertán"
+      - "Josep Guinovart Bertan"
+      - "Josep Guinovart Bertrand"
       - "Josep Guinovart"
       - "Josep Guinovart Bertrán"
       - "GUINOVART BERTRÁN, JOSEP"
@@ -834,6 +881,8 @@ artists:
   - artist_id: juan_alcalde
     display_name: "Juan Alcalde"
     country_birth: "ES"
+    birth_year: 1918
+    death_year: 2020
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -853,9 +902,26 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Juan Antonio Roda (España, 1921 - Colombia, 2003.)"
       - "Juan Antonio Roda"
       - "Roda, Juan Antonio"
     notes: "24 lotes | casas: bogota_auctions"
+
+  # Fechas aproximadas en la fuente ("Ca 1795 - Ca 1865"), de ahi confidence: medium.
+  # La identidad y el pais si estan verificados; lo incierto son los anios.
+  - artist_id: juan_arzeo
+    display_name: "Juan Arzeo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1795
+    death_year: 1865
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Juan Arzeo"
+      - "ARZEO, JUAN"
+    notes: "3 lotes en Silver | fuente: Wikidata Q3269841; counterarchive.org | Nacido en Manila, vende en mercado espaniol (Duran): otro caso de pais de nacimiento != pais de la casa. Anios aproximados. Contemporaneo de Damian Domingo; retratos de la familia Azcarraga."
 
   - artist_id: juan_barba
     display_name: "Juan Barba"
@@ -897,6 +963,8 @@ artists:
   - artist_id: juan_cossio
     display_name: "Juan Cossío"
     country_birth: "ES"
+    birth_year: 1898
+    death_year: 1970
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -928,6 +996,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Juan Garcés Espinona"
       - "Juan Garcés"
       - "Juan Garcés Espinosa"
     notes: "55 lotes | casas: duran_subastas"
@@ -949,6 +1018,7 @@ artists:
   - artist_id: juan_gonzalez_alacreu
     display_name: "Juan González Alacreu"
     country_birth: "ES"
+    birth_year: 1937
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -976,17 +1046,20 @@ artists:
     country_birth: "PH"
     nationalities: ["PH"]
     birth_year: 1857
-    death_year: 1900
+    death_year: 1899
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Juan Luna y Novicio"
-    notes: "5 lotes | casas: duran_subastas"
+      - "Juan Luna Novicio"
+    notes: "6 lotes | casas: duran_subastas | nacido en Badoc, Ilocos Norte, en 1857 y fallecido en Hong Kong en 1899. Silver publica 1900 en una variante; se corrige con el marcador biografico de la National Historical Commission of the Philippines. Fuente: https://philhistoricsites.nhcp.gov.ph/registry_database/juan-luna-y-novicio-1857-1899/"
 
   - artist_id: juan_manuel_barrigon
     display_name: "Juan Manuel Barrigón"
     country_birth: "ES"
+    birth_year: 1935
+    death_year: 2021
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -1019,12 +1092,14 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Juan Montesinos Maldonado"
       - "Juan Montesinos"
     notes: "52 lotes | casas: duran_subastas"
 
   - artist_id: juan_ripolles
     display_name: "Juan Ripollés"
     country_birth: "ES"
+    birth_year: 1932
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -1036,18 +1111,23 @@ artists:
   - artist_id: juan_romero
     display_name: "Juan Romero"
     country_birth: "ES"
+    birth_year: 1932
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Juan Romero Fernández"
+      - "Juan Romero Fernandez"
       - "Juan Romero"
       - "ROMERO, JUAN"
-    notes: "18 lotes | casas: duran_subastas"
+      - "ROMERO FERNÁNDEZ, JUAN"
+    notes: "18 lotes | casas: duran_subastas | pintor nacido en Sevilla en 1932. Se elimina el death_year 1996 de un catálogo antiguo de Durán: la Diputación de Sevilla lo entrevistó y le encargó el cartel del Festival de Itálica en 2023; TEA también lo registra sin fecha de muerte. Fuentes: https://www.dipusevilla.es/comunicacion/noticias/El-pintor-Juan-Romero-transmite-a-la-Diputacion-su-ilusion-por-formar-parte-del-grupo-de-artistas-sevillanos-autores-de-carteles-del-Festival-de-Italica/ ; https://teatenerife.es/autor/romero-juan/486"
 
   - artist_id: juan_usle
     display_name: "Juan Uslé"
     country_birth: "ES"
+    birth_year: 1954
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -1059,6 +1139,7 @@ artists:
   - artist_id: julian_grau_santos
     display_name: "Julián Grau Santos"
     country_birth: "ES"
+    birth_year: 1937
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -1070,6 +1151,7 @@ artists:
   - artist_id: julio_le_parc
     display_name: "Julio Le Parc"
     country_birth: "AR"
+    death_year: 2026
     nationalities: ["AR"]
     birth_year: 1928
     attribution_type: autor
@@ -1077,7 +1159,8 @@ artists:
     confidence: high
     aliases:
       - "Julio Le Parc"
-    notes: "34 lotes | casas: bogota_auctions, duran_subastas"
+      - "Julio Leparc"
+    notes: "Variante sin espacio verificada en Duran y Lefebre | casas: bogota_auctions, duran_subastas, lefebre_subastas | nacido en Mendoza, Argentina, en 1928 y fallecido en 2026. Fuente: https://shop.tate.org.uk/julio-le-parc-th%C3%A8me-90-20252026/ed1162.html"
 
   - artist_id: julio_perez_torres
     display_name: "Julio Pérez Torres"
@@ -1121,17 +1204,17 @@ artists:
 
   - artist_id: jorge_damiani
     display_name: "Jorge Damiani"
-    country_birth: "UY"
-    nationalities: ["UY"]
+    country_birth: "IT"
+    nationalities: ["UY", "IT"]
     birth_year: 1931
-    death_year: 1917
+    death_year: 2017
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Jorge Damiani"
       - "Jorge DAMIANI"
-    notes: "24 lotes | casas: zorrilla_subastas"
+    notes: "24 lotes | casas: zorrilla_subastas | artista uruguayo nacido en Nervi, Italia, el 06-11-1931 y fallecido en Montevideo el 16-07-2017. Corrige country_birth UY y death_year 1917. Fuente: https://mnav.gub.uy/cms.php?a=592"
 
   - artist_id: jorge_paez_vilaro
     display_name: "Jorge Páez Vilaró"
@@ -1157,6 +1240,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Jose CUNEO PERINETTI"
+      - "JOSE CUNEO PERINETTI"
       - "Jose Cuneo"
       - "Jose CUNEO"
     notes: "31 lotes | casas: zorrilla_subastas"
@@ -1208,14 +1293,15 @@ artists:
     country_birth: "UY"
     nationalities: ["UY"]
     birth_year: 1927
-    death_year: 1997
+    death_year: 1995
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Juan Storm"
       - "Juan STORM"
-    notes: "6 lotes | casas: zorrilla_subastas"
+      - "JOHN STORM"
+    notes: "12 filas en Silver, 6 bajo JOHN STORM cuyo titulo es Juan Storm | casas: zorrilla_subastas | nacido y fallecido en Montevideo, 1927-1995. Se corrige el death_year 1997 del maestro; Silver trae variantes erroneas 1955/1997. Fuente: https://mnav.gub.uy/cms.php?a=673"
 
   - artist_id: jacobo_borges
     display_name: "Jacobo Borges"
@@ -1226,6 +1312,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Jacobo Borges (Venezuela, 1931.)"
       - "JACOBO BORGES"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
@@ -1343,6 +1430,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Johan Giraldo Camelo"
       - "JOHAN GIRALDO"
       - "Johan Giraldo"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1436,6 +1524,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Jorge Ortiz (Colombia, 1948)"
+      - "Jorge Ortiz (Colombia, 1948.)"
+      - "Jorge Ortíz - Colombia, 1948."
       - "JORGE ORTIZ"
       - "Jorge Ortiz"
       - "Jorge Ortíz"
@@ -1489,6 +1580,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "José Luis Cuevas (México, 1934 - 2017.)"
       - "JOSE LUIS CUEVAS"
       - "José Luis Cuevas"
     notes: "16 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1503,6 +1595,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "JOSE MARIA ESPINOSA PRIETO"
       - "JOSE MARIA ESPINOSA"
       - "José María Espinosa"
       - "Espinosa, José María"
@@ -1554,6 +1647,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Juan Cárdenas: dos Títulos"
       - "JUAN CARDENAS"
       - "Juan Cárdenas"
     notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -1626,14 +1720,13 @@ artists:
     display_name: "Julia Acuña Guillén"
     country_birth: "CO"
     nationalities: ["CO"]
-    birth_year: 1905
     attribution_type: autor
     source: manual
-    confidence: high
+    confidence: low
     aliases:
       - "JULIA ACUÑA GUILLEN"
       - "Julia Acuña Guillén"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "1 lote en Silver | fuente: FINALL.xlsx hoja Artistas | RETIRADO birth_year 1905: era el epoch de Excel, no una fecha. Tres indicios: (a) 1905 es justo el epoch al que la hoja convirtio 4 fichas mas, ya documentado en el README; (b) su unico lote NO trae anio en el catalogo (dice solo 'Julia Acuña Guillén : Sin título, 1966'), asi que nada lo corrobora fuera del Excel; (c) con 1905 el informe la publicaba viva a los 121 anios. No esta en Wikidata ni en Wikipedia y la Enciclopedia Banrepcultural bloquea el acceso automatizado, asi que no hay con que sustituirla: se deja sin fecha, que es el estado correcto. Contrastar con leonor_alarcon, cuyo 1918 SI lo confirma el catalogo."
 
   - artist_id: julian_pardo
     display_name: "Julian Pardo"
@@ -1804,7 +1897,9 @@ artists:
     aliases:
       - "Joaquín Mir Trinxet"
       - "Joaquin Mir Trinxet"
-    notes: "13 lotes en Silver | fuente: Wikipedia | Barcelona"
+      - "Joaquín Mir"
+      - "MIR TRINXET, JOAQUÍN"
+    notes: "27 lotes | casas: duran_subastas | el MNAC identifica a Joaquim Mir con los apellidos Mir Trinxet, nacido en Barcelona en 1873 y fallecido en 1940. No confundir con Joaquin Miro Argenter (1849-1914). Fuente: https://www.museunacional.cat/es/joaquim-mir"
 
   - artist_id: joaquin_terruella
     display_name: "Joaquín Terruella"
@@ -1842,7 +1937,8 @@ artists:
     confidence: high
     aliases:
       - "José Braulio Bedia Valdés"
-    notes: "13 lotes en Silver | fuente: Wikipedia | La Habana"
+      - "BEDIA VALDÉS, JOSÉ BRAULIO"
+    notes: "13 lotes en Silver | José Braulio Bedia Valdés nació en La Habana el 13-01-1959. Fuente: https://museoamparo.com/semblanzas/a/perfil/686/jose-bedia"
 
   - artist_id: jose_casanova
     display_name: "José Casanova"
@@ -1854,6 +1950,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "José Casanova Luján"
+      - "Jose Casanova Lujan"
       - "José Casanova"
     notes: "14 lotes en Silver | fuente: Wikipedia ES | Valencia"
 
@@ -2041,6 +2139,8 @@ artists:
     source: manual
     confidence: medium
     aliases:
+      - "José Vento González"
+      - "José Vento Ruiz"
       - "José Vento"
     notes: "13 lotes en Silver | fuente: Wikidata | Valencia"
 
@@ -2119,6 +2219,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Julián Ibáñez de Aldecoa y Arano"
       - "Julián Ibañez de Aldecoa"
       - "Julián Ibáñez de Aldecoa"
       - "Julian Ibañez de Aldecoa"
@@ -2150,3 +2251,592 @@ artists:
       - "Jano"
       - "JANO"
     notes: "15 lotes en Silver | fuente: Wikidata Q5865679 | seudonimo de Francisco Fernandez-Zarza Perez, ilustrador y cartelista"
+
+  - artist_id: juan_ramon_luzuriaga
+    display_name: "Juan Ramón Luzuriaga"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1938
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Ramón Luzuriaga"
+    notes: "Pintor vasco nacido en Deusto (Bilbao) 16.02.1938. Estudió en Academia San Jorge Barcelona y Escuela San Fernando Madrid. Especialidad: paisajes y marinas, especialmente estuario de Bilbao. Representante Escuela Vasca posguerra."
+
+  - artist_id: jose_sanjurjo_mantilla
+    display_name: "José Sanjurjo Mantilla"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1940
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jose Sanjurjo Mantilla"
+    notes: "Pintor español nacido en 1940. Obra reconida 'Entierro de la Sardina' (óleo sobre lienzo, 50 x 61 cm). Obras vendidas en Durán Subastas, Madrid. Presencia en principales plataformas de mercado de arte (Artprice, Mutual Art)."
+
+  - artist_id: jorge_salas_ampuero
+    display_name: "Jorge Salas Ampuero"
+    country_birth: "CL"
+    nationalities: ["CL"]
+    birth_year: 1946
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jorge Salas"
+    notes: "Pintor chileno nacido en Santiago en 1946. Arquitecto de profesión, participó en proyecto edificio UNCTAD (1971). Diseñador, ilustrador y pintor. Se mudó a Roma en 1974. Técnica en grabado y pintura. Ha exhibido en galerías de arte a nivel internacional."
+
+  - artist_id: juan_gomila_farres
+    display_name: "Juan Gomila Farres"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Gomila"
+    notes: "Artista de referencia en escena artística española post Pop Art. Nacido Barcelona 1942. Obra desde los 60s: reflexión sobre valor del color y signos en mundo saturado de códigos. Premio Primera Bienal X de Alejandría (1974), XIV Bienal Internacional São Paulo (1977) por 'cajas-ambiente'. Influencias Pop Art con colores planos y repetición de figuras. NOTA: existe otro Juan Gomila Moll (pintor mallorquín estilo impresionista) pero este es Barcelona 1942."
+
+  - artist_id: jose_carretero_lopez
+    display_name: "José Carretero López"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1962
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pepe Carretero"
+      - "José Carretero"
+    notes: "Spanish painter and poet born in Tomelloso. Career began 1984. Works in Museo Reina Sofía, Banco de España. Explores autobiography, dreamscapes, and Manchegan folklore."
+
+  - artist_id: jose_viera
+    display_name: "José Viera"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Vieiro"
+    notes: "Pintor, dibujante y grabador español. Nace en Aracena (Huelva), 23 sep 1949. Alias hallado como 'Vieiro' en catálogo (variante de Viera)."
+
+  - artist_id: jose_catala
+    display_name: "José Catalá"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jose Catala Yuste"
+      - "José Catalá Yuste"
+      - "José Catalá"
+      - "CATALÁ , JOSÉ"
+      - "José Adalberto Catalá Yuste"
+    notes: "Pintor madrileño especializado entre otros motivos en composiciones ferroviarias. Se omite birth_year: las fuentes institucionales no lo publican y las secundarias discrepan entre 1958 y 1959. Fuentes: https://ffe.es/RailArte/catalogoRailArte/files/downloads/catalogo_RailArte.pdf ; https://www.museodelferrocarril.org/pdf/BoletinMuseos/Boletin-Informativo-13.pdf"
+
+  - artist_id: jaime_morera_y_galicia
+    display_name: "Jaime Morera y Galicia"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1854
+    death_year: 1927
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jaime Morera"
+      - "Jaume Morera i Galicia"
+    notes: "Pintor paisajista español nacido en Lérida (1854) y fallecido en Madrid (1927). Estudió en la Real Academia de Bellas Artes de San Fernando bajo Carlos de Haes. Fundó el Museo de Arte Moderno de Lérida (después Museo de Arte Jaime Morera)."
+
+  - artist_id: jorge_peteiro
+    display_name: "Jorge Peteiro"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1959
+    death_year: 2013
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jorge Peteiro Vázquez"
+    notes: "Pintor y escultor gallego nacido en A Coruña en 1959. Falleció en Sada el 20 de febrero de 2013. Estudió en la Escuela de Bellas Artes de San Carlos de Valencia (especialidad Grabado). Referente de la pintura gallega contemporánea."
+
+  - artist_id: jose_rico_cejudo
+    display_name: "José Rico Cejudo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1864
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Rico Cejudo"
+    notes: "Pintor sevillano costumbrista. Nacido 27 marzo 1864 Sevilla, fallecido 25 octubre 1949 Sevilla. Estudió en Escuela de Bellas Artes de Sevilla, pensionado en Roma 1888-1895."
+
+  - artist_id: jordi_aluma
+    display_name: "Jordi Alumà"
+    country_birth: "ES"
+    death_year: 2021
+    nationalities: ["ES"]
+    birth_year: 1924
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jordi Alumà"
+      - "Jordi Alumà i Masvidal"
+    notes: "Pintor y ilustrador catalán. Nacido 26 febrero 1924 Barcelona. Familia de artistas: abuelo grabador, padre pintor. Dedicado a tema del deporte y Juegos Olímpicos. Creu de Sant Jordi 2000."
+
+  - artist_id: javier_caraballo
+    display_name: "Javier Caraballo"
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1985
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "JAVIER CARABALLO"
+      - "Javier Caraballo"
+    notes: "Master en Plastic Arts, Facultad de Bellas Artes, Universidad del Atlántico, Colombia. De Barranquilla. Serie 'Grandes Maestros'. En colecciones Royal Family de Mónaco y Private Collection del PM de Luxemburgo."
+
+  - artist_id: juan_esplandiu
+    display_name: "Juan Esplandiú"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1901
+    death_year: 1978
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Esplandiú"
+      - "Juan Esplandiu"
+    notes: "Painter, muralist, illustrator of Madrid. School of Painters El Paular. Studied at San Fernando, pupil of Cecilio Pla. Won National Painting Prize 1957 with 'Carnaval en Recoletos'."
+
+  - artist_id: jordi_curos
+    display_name: "Jordi Curós"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1930
+    death_year: 2017
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jordi Curós"
+      - "Jordi Curós Ventura"
+    notes: "Catalan painter and engraver born in Olot (Gerona), died in Barcelona. Worked initially in informalist style, moved to figuration mid-1960s. Featured at Sala Parés. Inspired by Costa Brava."
+
+  - artist_id: juan_valenzuela_y_chacon
+    display_name: "Juan Valenzuela y Chacón"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1932
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Valenzuela y Chacón"
+    notes: "Pintor español nacido 1932 en Madrid. Estudió Academia Bellas Artes, Facultad Medicina (doctorado, Profesor Histología) y Filosofía y Letras. Viajó Europa, África, América. Tercer premio engraving section Fall Salon XXVIII 1957."
+
+  - artist_id: jose_perez_gil
+    display_name: "José Pérez Gil"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1918
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Perezgil"
+      - "José Pérezgil"
+      - "Pérezgil"
+    notes: "Pintor español paisajista nacido 1918 en Caudete (Albacete), murió 1998 en Alicante. Estudió Academia San Fernando Madrid con beca provincial Alicante. Extendió estudios Francia, Suiza, Italia. Premio Salon Otoño Madrid 1947, Bienal Hispanoamericana 1961."
+
+  - artist_id: jesus_rafael_de_soto
+    display_name: "Jesús Rafael de Soto"
+    country_birth: "VE"
+    nationalities: ["VE"]
+    birth_year: 1923
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jesús Rafael de Soto"
+    notes: "Venezuelan kinetic artist and sculptor, born June 5, 1923 in Ciudad Bolívar, died January 14, 2005 in Paris. Founded kinetic art movement with 'penetrables' (interactive sculptures). Museum dedicated to him in his hometown."
+
+  - artist_id: josef_albers
+    display_name: "Josef Albers"
+    country_birth: "DE"
+    nationalities: ["DE", "US"]
+    birth_year: 1888
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "JOSEF ALBERS"
+    notes: "German-American artist, teacher, and color theorist, born March 19, 1888 in Bottrop, Germany, died 1976. Bauhaus professor, immigrated to US in 1933. Taught at Black Mountain College and Yale. Author of 'Interaction of Color' (1963). Famous for 'Homage to the Square' series."
+
+  - artist_id: jean_michel_basquiat
+    display_name: "Jean-Michel Basquiat"
+    country_birth: "US"
+    nationalities: ["US", "HT"]
+    birth_year: 1960
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "JEAN-MICHEL BASQUIAT"
+      - "Jean-Michel Basquiat"
+    notes: "American Neo-Expressionist painter and graffiti artist. Born December 22, 1960 in Brooklyn (Haitian-American father, Puerto Rican mother); died August 12, 1988. Rapid rise from street art (SAMO tag) to gallery success 1980-1988."
+
+  - artist_id: jean_clarence_lambert
+    display_name: "Jean-Clarence Lambert"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1930
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Lambert, Jean - Clarence"
+    notes: "French poet, art critic, and art historian. Born in Paris 1930. Represented in Metropolitan Museum and MoMA collections."
+
+  - artist_id: jan_van_ravesteyn
+    display_name: "Jan Anthonisz van Ravesteyn"
+    country_birth: "NL"
+    nationalities: ["NL"]
+    birth_year: 1572
+    death_year: 1657
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      # El catalogo de Duran escribe "Ravensteyn" con "n" de mas; el apellido
+      # real es "Ravesteyn". Se registra la errata, que es la forma que llega.
+      - "Jan Anthonisz van Ravensteyn"
+    notes: "1 lote de 120.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en La Haya, Provincias Unidas: es neerlandes del norte, NO flamenco. El nombre de pila es obligatorio en el alias porque existen Dirck de Quade van Ravesteyn y Arnold van Ravesteyn, pintores distintos."
+
+  - artist_id: juan_de_arellano
+    display_name: "Juan de Arellano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1614
+    death_year: 1676
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan DE ARELLANO"
+    notes: "2 lotes | casas: zorrilla_subastas | fuente: Museo del Prado. Maestro del bodegon floral espaniol. NO se fusiona 'Seguidor de Juan de Arellano' (2 lotes de Duran): es obra de seguidor, no suya, igual que el caso 'Despues de Pablo Picasso'. Tampoco 'Jose de Arellano' ni 'Ramirez de Arellano', que son otras personas."
+
+  - artist_id: juana_frances
+    display_name: "Juana Francés"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1924
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juana Francés"
+    notes: "2 lotes | casas: duran_subastas | fuente: MACA Alicante. Nacida en Alicante, unica mujer fundadora del grupo El Paso."
+
+  - artist_id: juan_de_juanes
+    display_name: "Juan de Juanes"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1503
+    death_year: 1579
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Juan de Juanes"
+    notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia ES. Vicente Juan Masip. La ficha de la casa da 1523 como nacimiento y es ERRATA: el consenso academico es c.1503-1505. No hay partida (los libros bautismales de Fuente la Higuera empiezan en 1535), de ahi confidence medium en la fecha; el pais no esta en duda. Su padre Vicente Masip tambien fue pintor y la atribucion de obra anterior a 1550 es problematica incluso para especialistas."
+
+  - artist_id: justiniano_asuncion
+    display_name: "Justiniano Asunción"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1816
+    death_year: 1901
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Justiniano Asunción"
+    notes: "1 lote de 35.000 EUR | casas: duran_subastas | fuente: Wikipedia. Justiniano Asuncion y Molo, 'Capitan Ting', nacido en Santa Cruz (Manila) en las Filipinas espaniolas: vende en mercado espaniol pero NO es espaniol. El anio de muerte discrepa entre fuentes (1901 en Wikipedia y Bonhams, 1896 en Geni); el nacimiento no esta en duda."
+
+  - artist_id: jose_luis_zumeta
+    display_name: "José Luis Zumeta"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1939
+    death_year: 2020
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Luis Zumeta"
+      - "ZUMETA, JOSÉ LUIS"
+      - "José Luiz Zumeta"
+    notes: "10 lotes | casas: duran_subastas | nacido en Usurbil, Gipuzkoa; fechas 1939-2020 coinciden con la biografia de la ficha de Duran. Fuentes: https://www.santelmomuseoa.eus/atlas/detalle.php?lang=es&ni=EP-1006 ; https://www.euskadi.eus/informacion/-/noticia/2020/jose-luis-zumeta-in-memorian/"
+
+  - artist_id: julio_larraz
+    display_name: "Julio Larraz"
+    country_birth: "CU"
+    nationalities: ["CU", "US"]
+    birth_year: 1944
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Julio Larraz"
+      - "JULIO LARRAZ"
+    notes: "3 lotes | casas: duran_subastas, lefebre_subastas | nacido en La Habana, Cuba, en 1944; la fecha coincide con la ficha de Lefebre. Artista cubano-estadounidense. Fuente: https://collection.nsuartmuseum.org/mwebcgi/mweb.exe?request=record%3Bid%3D16251%3Btype%3D101"
+
+  - artist_id: jose_risueno
+    display_name: "José Risueño"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1665
+    death_year: 1732
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Risueño"
+    notes: "7 lotes | casas: duran_subastas | nacido y fallecido en Granada. La ficha de Duran publica 1667-1721, pero el Museo del Prado documenta 1665-1732. Fuente: https://www.museodelprado.es/aprende/enciclopedia/voz/risueo-jose/a29d12a1-7169-4911-9dc1-41a1adc4fc62"
+
+  - artist_id: jose_maria_asuncion
+    display_name: "José María Asunción"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1869
+    death_year: 1925
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jose María Asunción"
+      - "José María Asunción"
+    notes: "1 lote | casas: duran_subastas | nacido el 14 de diciembre de 1869 en Santa Cruz, Manila; fallecido en 1925. Persona distinta de Justiniano Asuncion. Fuentes: https://www.nationalmuseum.gov.ph/wp-content/uploads/2021/09/The-Philippine-Colonial-Tradition-of-Sacred-Art-from-the-BSP-and-NMP-Rene-B.-Javellana-SJ.pdf ; https://philippineculturaleducation.com.ph/asuncion-jose-maria/"
+
+  - artist_id: juan_manuel_diaz_caneja
+    display_name: "Juan Manuel Díaz-Caneja"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1905
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Manuel Díaz Caneja"
+      - "Juan Manuel Díaz-Caneja"
+    notes: "5 lotes | casas: duran_subastas | nacido en Palencia en 1905 y fallecido en Madrid en 1988; la forma canonica institucional lleva guion. No confundir con su padre homonimo, escritor y jurista. Fuente: https://diaz-caneja.org/cronologia/"
+
+  - artist_id: josef_mandl
+    display_name: "Josef Mandl"
+    country_birth: "CZ"
+    nationalities: ["CZ"]
+    birth_year: 1874
+    death_year: 1933
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Josef Mandl"
+      - "Joseph Mandl"
+    notes: "1 lote | casas: duran_subastas | El beso, fechado en 1903, usa Joseph; la fuente municipal documenta al pintor Josef Mandl, nacido en Plzen en 1874 y fallecido en Praga en 1933. Fuentes: https://encyklopedie.plzen.eu/home-mup/?acc=profil_osobnosti&load=212 ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_523.pdf"
+
+  - artist_id: joan_cardona_i_llados
+    display_name: "Joan Cardona i Lladós"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1877
+    death_year: 1958
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Joan Cardona i Lladós"
+      - "Juan Cardona i LLadós"
+    notes: "3 lotes limpios | casas: duran_subastas | Prado: Barcelona 1877-1958; MNAC: 1877-1957; Duran registra erroneamente 1934. No confundir con Juan Cardona y Tio ni anadir el alias ambiguo Juan Cardona; la forma contaminada con el titulo Retrato femenino tampoco es alias. Fuentes: https://www.museodelprado.es/coleccion/artista/cardona-y-llados-juan/cdf3ed07-5dd8-46a3-a3dc-84ce37da5769 ; https://www.museunacional.cat/en/joan-cardona"
+
+  - artist_id: juan_gyenes
+    display_name: "Juan Gyenes"
+    country_birth: "HU"
+    nationalities: ["ES", "HU"]
+    birth_year: 1912
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Juan Gyenes"
+    notes: "1 lote | casas: duran_subastas | nacido en Kaposvar, Hungria, en 1912; fallecido en Madrid en 1995; nacionalizado espanol en 1948. RABASF y CDAEM discrepan solo en el mes de nacimiento. Fuentes: https://www.academiacolecciones.com/fotografias/mostrar-autores.php?id=gyenes-juan ; https://www.musicadanza.es/es/fondos-documentales/fondos-de-musica/fondo-juan-gyenes/fjg-biografia"
+
+  - artist_id: jesus_mari_lazkano
+    display_name: "Jesús Mari Lazkano"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1960
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jesús Mari Lazkano"
+      - "Jseús Mari Lazkano"
+    notes: "5 lotes | casas: duran_subastas | nacido en Bergara, Gipuzkoa, el 10-01-1960. El typo Jseus aparece en tres filas repetidas; Jesus sin tilde ya comparte fold con el alias canonico. Fuente: https://www.guggenheim-bilbao.eus/la-coleccion/artistas/jesus-mari-lazkano"
+
+  - artist_id: jose_aguiar
+    display_name: "José Aguiar"
+    country_birth: "CU"
+    nationalities: ["ES", "CU"]
+    birth_year: 1895
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Aguiar"
+    notes: "9 lotes | casas: duran_subastas | Duran publica 1898, pero la fuente institucional confirma Vueltas de Santa Clara, Cuba, 1895-Madrid, 1976. Padre de Waldo Aguiar, identidad separada. Fuente: https://www3.gobiernodecanarias.org/medusa/wiki/index.php?title=Jos%C3%A9_Aguiar_Garc%C3%ADa"
+
+  - artist_id: jose_villegas_y_cordero
+    display_name: "José Villegas y Cordero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1844
+    death_year: 1921
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Villegas"
+      - "José Villegas y Cordero"
+    notes: "12 lotes | casas: duran_subastas | Duran publica 1848; Prado y el registro general de academicos de RABASF confirman Sevilla 1844-Madrid 1921. No confundir con Ricardo Villegas Cordero ni Armando Villegas. Fuentes: https://www.museodelprado.es/coleccion/artista/villegas-y-cordero-jose/f8ba0a1d-2150-48ca-9790-395c0f7b2fb8 ; https://www.realacademiabellasartessanfernando.com/assets/docs/academicos/relacion_general_de_academicos.pdf"
+
+  - artist_id: jean_baptiste_jouvenet
+    display_name: "Jean-Baptiste Jouvenet"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1644
+    death_year: 1717
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Jean-Baptiste Jouvenet"
+      - "Jean Baptiste Jouvenet"
+    notes: "2 filas del mismo lote | casas: duran_subastas | nacido en Rouen en 1644 y fallecido en Paris en 1717; fechas coincidentes con Silver. Fuente: https://arts-graphiques.louvre.fr/detail/artistes/0/1360-JOUVENET-Jean-Baptiste"
+
+  - artist_id: josep_cusachs
+    display_name: "Josep Cusachs"
+    country_birth: "FR"
+    nationalities: ["ES", "FR"]
+    birth_year: 1851
+    death_year: 1908
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Josep Cusachs"
+      - "Josep Cusachs y Cusachs"
+    notes: "3 lotes | casas: duran_subastas | nacido en Montpellier en 1851 y fallecido en Barcelona en 1908; Silver/Duran publica erroneamente 1850-1909. Pintor y militar catalan. Fuentes: https://www.museunacional.cat/es/josep-cusachs ; https://ejercito.defensa.gob.es/unidades/Segovia/acart/Noticias/2019/082.html"
+
+  - artist_id: jose_luis_gomez_perales
+    display_name: "José Luis Gómez Perales"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1923
+    death_year: 2008
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Luis Gómez Perales"
+    notes: "4 lotes | casas: duran_subastas | nacido en Madrid en 1923 y fallecido en Buenafuente del Sistal, Guadalajara, en 2008. Las Construcciones modulares de Silver coinciden con las obras del Reina Sofia. Fuente: https://www.museoreinasofia.es/colecciones/artista/gomez-perales-jose-luis/"
+
+  - artist_id: jose_jimenez_aranda
+    display_name: "José Jiménez Aranda"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1837
+    death_year: 1903
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José Jiménez Aranda"
+    notes: "7 lotes | casas: duran_subastas | nacido en Sevilla el 07-02-1837 y fallecido alli el 06-05-1903; fechas coincidentes con Silver. Identidad distinta de su hermano Luis Jimenez Aranda (1845-1928). Fuente: https://www.museodelprado.es/coleccion/artista/jose-jimenez-aranda/ba04bc6d-6a61-4d53-89de-95b915190660"
+
+  - artist_id: jose_maria_rodriguez_de_losada
+    display_name: "José María Rodríguez de Losada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1826
+    death_year: 1896
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "José María Rodríguez de Losada"
+      - "Rodríguez de Losada"
+      - "José María Rodríguez de los Ríos Losada"
+    notes: "5 lotes | casas: duran_subastas | el nombre institucional completo es Jose Maria Rodriguez de los Rios Losada; nacido en Sevilla en 1826 y fallecido en Jerez de la Frontera en 1896. Fuente: https://www.museodelprado.es/en/the-collection/artist/rodriguez-losada-jose-maria/21934cb0-8856-4df9-bdd6-89f3f2813e89"
+
+  - artist_id: johan_richter
+    display_name: "Johan Richter"
+    country_birth: "SE"
+    nationalities: ["SE"]
+    birth_year: 1665
+    death_year: 1745
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Johan Richter"
+      - "Johan Anton Richter"
+    notes: "1 lote | casas: duran_subastas | Johan Anton Richter es variante autorizada de Johan Richter; nacido en Estocolmo en 1665 y fallecido en Venecia en 1745. Fuentes: https://collection.nationalmuseum.se/en/artists/artist/10120/ ; https://www.getty.edu/vow/ULANFullDisplay?find=500021828&nation=&prev_page=1&role=&subjectid=500021828"
+
+  - artist_id: julian_schnabel
+    display_name: "Julian Schnabel"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1951
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Julian Schnabel"
+      - "JULIAN SCHNABEL"
+    notes: "1 lote | casas: lefebre_subastas | pintor estadounidense nacido en Nueva York en 1951; fecha coincidente con Silver. Fuente: https://www.musee-orsay.fr/sites/default/files/exposition/booklet/2021-07/DP_orsay_vu_par_julian_schnabel.pdf"
+
+  - artist_id: juan_anselmo_samudio
+    display_name: "Juan Anselmo Samudio"
+    country_birth: "PY"
+    nationalities: ["PY"]
+    birth_year: 1879
+    death_year: 1935
+    attribution_type: autor
+    source: manual
+    confidence: medium
+    aliases:
+      - "Juan Anselmo SAMUDIO"
+      - "Juan Anselmo Samudio"
+    notes: "1 lote | casas: duran_subastas | la Secretaría Nacional de Cultura de Paraguay lo identifica como pintor paraguayo y publica 1879-1935, coincidente con Silver. El Diccionario de las Artes Visuales del Paraguay sitúa su nacimiento en Asunción, pero publica 1878; se conserva 1879 por convergencia de la fuente oficial y Silver, y se documenta la discrepancia. Fuentes: https://cultura.gov.py/2012/08/continua-ciclo-de-charlas-sobre-historia-de-la-pintura-paraguaya/ ; https://www.portalguarani.com/254_juan_anselmo_samudio__.html"

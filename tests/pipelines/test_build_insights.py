@@ -6,6 +6,7 @@ escuelas/atribuciones en el ranking de artistas.
 """
 
 import json
+from collections import defaultdict
 
 import pytest
 
@@ -159,19 +160,27 @@ def test_explicit_status_beats_price_presence(gold):
     assert artists[0]["revenue_eur"] == 300.0
 
 
-def test_artists_below_minimum_are_not_ranked(gold):
-    """Con 1-2 ventas un 'precio medio' es ruido, no un dato."""
+def test_a_single_sale_is_enough_to_rank(gold):
+    """Vender una sola vez basta para entrar: la cola no se recorta.
+
+    El corte estuvo en 3 ventas para que el "precio medio" por artista no fuera
+    ruido. Costaba mas de lo que arreglaba: dejaba fuera ventas reales (Fidolo
+    Gonzalez Camargo, con ficha verificada, no salia por tener 2 lotes), y en
+    arte una pieza puede facturar mas que veinte de otro autor. El ranking
+    ordena por facturacion, asi que el de un lote cae donde le toca; lo que se
+    hace con la media corta es avisar en el informe, no ocultar la venta.
+    """
     silver, _, goldd = gold
     rows = [
         _lot(lot_url=f"x{i}", dedupe_key=f"x{i}", artist_name="Prolifico")
-        for i in range(build_insights.MIN_LOTS_FOR_ARTIST_RANK)
+        for i in range(3)
     ]
     rows.append(_lot(lot_url="y", dedupe_key="y", artist_name="Puntual"))
     _write(silver / "lots.jsonl", rows)
     build_insights.build_insights()
     names = {a["artist_name"] for a in _read(goldd / "agg_artist_metrics.jsonl")}
     assert "Prolifico" in names
-    assert "Puntual" not in names
+    assert "Puntual" in names
 
 
 def test_price_bands_partition_without_double_counting(gold):
@@ -416,3 +425,290 @@ def test_stats_report_country_coverage(gold):
     assert stats["artists_ranked"] == 2
     assert stats["artists_with_country"] == 1
     assert stats["country_coverage_rate"] == 0.5
+
+
+def test_artist_country_survives_late_resolution(gold):
+    """El pais no puede depender de que el PRIMER lote visto venga resuelto.
+
+    Antes las asignaciones de pais/id/resolution vivian dentro de
+    `if not a["artist_name"]`, asi que ganaba el primer lote del fichero. Si ese
+    llegaba sin resolver, el artista se quedaba sin pais para siempre aunque los
+    siguientes lo trajeran. Hoy no pasa (artist_resolve resuelve por nombre, asi
+    que o todos traen pais o ninguno), pero la ficha del informe haria visible el
+    fallo en cuanto ocurriera: gana el primer valor NO nulo.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            # Mismo artist_id (luego misma clave de agrupacion), pero el primer
+            # lote llega sin pais: no puede fijar country=None para siempre.
+            _resolved("Fernando Botero", lot_url="a", dedupe_key="a",
+                      artist_id="fernando_botero", artist_resolution=None,
+                      artist_country_birth=None, artist_nationalities=[]),
+            _resolved("Fernando Botero", lot_url="b", dedupe_key="b",
+                      artist_id="fernando_botero", artist_resolution="master",
+                      artist_country_birth="CO", artist_nationalities=["CO"]),
+            _resolved("Fernando Botero", lot_url="c", dedupe_key="c",
+                      artist_id="fernando_botero", artist_resolution="master",
+                      artist_country_birth="CO", artist_nationalities=["CO"]),
+        ],
+    )
+    build_insights.build_insights()
+    artist = _read(goldd / "agg_artist_metrics.jsonl")[0]
+    assert artist["country_birth"] == "CO"
+    assert artist["artist_id"] == "fernando_botero"
+    assert artist["resolution"] == "master"
+    assert artist["nationalities"] == ["CO"]
+
+
+def test_first_last_year_from_lots(gold):
+    """El rango de actividad sale de los lotes, con extract_year por casa."""
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Fernando Botero", lot_url="a", dedupe_key="a",
+                      auction_start_date="2015-03-10T18:00"),
+            # Formato de Duran: texto, no ISO. Tiene que contar igual.
+            _resolved("Fernando Botero", lot_url="b", dedupe_key="b",
+                      auction_start_date="Octubre 2019"),
+            _resolved("Fernando Botero", lot_url="c", dedupe_key="c",
+                      auction_start_date="2024-06-07T19:00"),
+        ],
+    )
+    build_insights.build_insights()
+    artist = _read(goldd / "agg_artist_metrics.jsonl")[0]
+    assert artist["first_year"] == "2015"
+    assert artist["last_year"] == "2024"
+    assert artist["years_active"] == 3
+
+
+# --------------------------------------------------------------------------
+# lot_details: alcance del drill-down
+# --------------------------------------------------------------------------
+
+def test_lot_details_include_fold_only_artists(gold):
+    """Un artista sin pais tambien necesita su detalle.
+
+    Antes el filtro era "tiene artist_country_birth", asi que los 863 artistas
+    fold_only del ranking no tenian ni un lote que ensenar en su ficha aunque el
+    ranking dijera que habian vendido 40 veces.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    details = _read(goldd / "lot_details.jsonl")
+    assert len(details) == 3
+    assert {d["artist_name"] for d in details} == {"Artista Sin Ficha"}
+    # Sin pais, pero presente: el pais no se inventa para poder incluirlo.
+    assert all(d["country"] is None for d in details)
+
+
+def test_lot_details_follow_the_ranking(gold):
+    """El detalle embebido lleva los lotes de TODO artista rankeado.
+
+    Va atado al ranking, no a un umbral propio: si un artista aparece en la
+    tabla, sus lotes tienen que poder abrirse. Con el corte en 1 eso significa
+    que la cola tambien entra y el HTML crece; el tamanio se controla en el
+    renderer, no escondiendo ventas del agregado.
+    """
+    silver, _, goldd = gold
+    rows = [
+        _resolved("Prolifico", lot_url=f"p{i}", dedupe_key=f"p{i}")
+        for i in range(3)
+    ]
+    rows.append(_resolved("Puntual", lot_url="y", dedupe_key="y"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    details = _read(goldd / "lot_details.jsonl")
+    assert {d["artist_name"] for d in details} == {"Prolifico", "Puntual"}
+
+
+def test_lot_details_carry_artist_key(gold):
+    """El cruce ficha-lotes va por artist_key, no por el nombre plegado.
+
+    El fold agrupa a dos personas distintas que comparten nombre (los dos
+    Francisco Toledo); cruzar por el reventaria justo los casos que el maestro
+    existe para separar.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                      artist_id="fernando_botero", artist_resolution="master",
+                      artist_country_birth="CO")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    details = _read(goldd / "lot_details.jsonl")
+    assert all(d["artist_key"] == "fernando_botero" for d in details)
+
+
+# --------------------------------------------------------------------------
+# agg_country_year_metrics: el heatmap pais x anio
+# --------------------------------------------------------------------------
+
+def test_country_year_uses_extract_year_not_string_slice(gold):
+    """El anio va por extract_year(), que sabe leer el formato de cada casa.
+
+    Duran guarda "Octubre 2014" y Bogota "2024-06-07T19:00". Un slice de los 4
+    primeros caracteres solo entiende el segundo y tiraria silenciosamente todo
+    Duran, que son 40.442 de los 62.420 lotes.
+    """
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Julio Romero de Torres", lot_url=f"d{i}", dedupe_key=f"d{i}",
+                      artist_id="julio_romero_de_torres", artist_resolution="master",
+                      artist_country_birth="ES", auction_start_date="Octubre 2014")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    rows = _read(goldd / "agg_country_year_metrics.jsonl")
+    assert len(rows) == 1
+    assert rows[0]["country"] == "ES"
+    assert rows[0]["year"] == "2014"
+    assert rows[0]["year_method"] == "text"
+    assert rows[0]["lots_offered"] == 3
+
+
+def test_country_year_marks_inferred_years(gold):
+    """Un anio sacado del slug es inferido y la celda tiene que decirlo."""
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Julio Romero de Torres", lot_url=f"d{i}", dedupe_key=f"d{i}",
+                      artist_id="julio_romero_de_torres", artist_resolution="master",
+                      artist_country_birth="ES", auction_start_date=None,
+                      auction_id="subasta-513-octubre-2014_513-001")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    rows = _read(goldd / "agg_country_year_metrics.jsonl")
+    assert rows[0]["year"] == "2014"
+    assert rows[0]["year_method"] == "auction_id"
+
+
+def test_country_year_keeps_null_country_row(gold):
+    """Los lotes sin pais no se reparten ni se ocultan: fila propia."""
+    silver, _, goldd = gold
+    _write(
+        silver / "lots.jsonl",
+        [
+            _resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}",
+                      auction_start_date="2024-05-10T18:00")
+            for i in range(3)
+        ],
+    )
+    build_insights.build_insights()
+    rows = _read(goldd / "agg_country_year_metrics.jsonl")
+    assert [r["country"] for r in rows] == [None]
+    assert rows[0]["lots_offered"] == 3
+
+
+def test_country_year_sums_match_country_metrics(gold):
+    """Agrupar por anio no puede perder ni duplicar lotes.
+
+    Si alguien mete un filtro en un agregado y no en el otro, el heatmap deja de
+    cuadrar con la tabla que tiene justo debajo. Esto lo detecta.
+    """
+    silver, _, goldd = gold
+    rows = []
+    for i in range(3):
+        rows.append(_resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                              artist_id="fernando_botero", artist_resolution="master",
+                              artist_country_birth="CO",
+                              auction_start_date=f"201{i + 5}-04-01T18:00"))
+        rows.append(_resolved("Julio Romero de Torres", lot_url=f"d{i}", dedupe_key=f"d{i}",
+                              artist_id="julio_romero_de_torres", artist_resolution="master",
+                              artist_country_birth="ES", auction_start_date="Octubre 2014"))
+        rows.append(_resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+
+    by_country = {c["country"]: c for c in _read(goldd / "agg_country_metrics.jsonl")}
+    cy = _read(goldd / "agg_country_year_metrics.jsonl")
+    agg = defaultdict(lambda: {"lots_offered": 0, "lots_sold": 0, "revenue_eur": 0.0})
+    for r in cy:
+        a = agg[r["country"]]
+        a["lots_offered"] += r["lots_offered"]
+        a["lots_sold"] += r["lots_sold"]
+        a["revenue_eur"] += r["revenue_eur"]
+
+    assert set(agg) == set(by_country)
+    for code, totals in agg.items():
+        assert totals["lots_offered"] == by_country[code]["lots_offered"]
+        assert totals["lots_sold"] == by_country[code]["lots_sold"]
+        assert totals["revenue_eur"] == pytest.approx(by_country[code]["revenue_eur"])
+
+
+# --------------------------------------------------------------------------
+# agg_artist_generation_metrics: el eje generacional
+# --------------------------------------------------------------------------
+
+def test_generations_bucket_by_decade(gold):
+    """1874 -> 1870s, 1920 -> 1920s, 1929 -> 1920s."""
+    assert build_insights.birth_decade(1874) == 1870
+    assert build_insights.birth_decade(1920) == 1920
+    assert build_insights.birth_decade(1929) == 1920
+    assert build_insights.birth_decade(None) is None
+
+
+def test_generations_sentinel_row_for_missing_birth_year(gold):
+    """Los artistas sin fecha van a su propia fila, no se reparten.
+
+    Repartirlos entre decadas seria inventar; ocultarlos haria que el grafico
+    pareciera cubrir todo el ranking cuando solo cubre el 35%.
+    """
+    silver, _, goldd = gold
+    rows = []
+    for i in range(3):
+        # Con ficha en el maestro: tiene fechas.
+        rows.append(_resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                              artist_id="fernando_botero", artist_resolution="master",
+                              artist_country_birth="CO"))
+        # fold_only: sin id, luego sin fechas.
+        rows.append(_resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    gens = _read(goldd / "agg_artist_generation_metrics.jsonl")
+    sentinel = [g for g in gens if g["decade"] is None]
+    assert len(sentinel) == 1
+    assert sentinel[0]["artists"] == 1
+    assert sentinel[0]["decade_label"] == "Sin fecha de nacimiento"
+
+
+def test_generations_totals_match_artist_ranking(gold):
+    """Las decadas (sentinela incluida) suman exactamente el ranking."""
+    silver, _, goldd = gold
+    rows = []
+    for i in range(3):
+        rows.append(_resolved("Fernando Botero", lot_url=f"b{i}", dedupe_key=f"b{i}",
+                              artist_id="fernando_botero", artist_resolution="master",
+                              artist_country_birth="CO"))
+        rows.append(_resolved("Artista Sin Ficha", lot_url=f"x{i}", dedupe_key=f"x{i}"))
+        rows.append(_resolved("Antoni Tàpies", lot_url=f"t{i}", dedupe_key=f"t{i}",
+                              artist_id="antoni_tapies", artist_resolution="master",
+                              artist_country_birth="ES"))
+    _write(silver / "lots.jsonl", rows)
+    build_insights.build_insights()
+    artists = _read(goldd / "agg_artist_metrics.jsonl")
+    gens = _read(goldd / "agg_artist_generation_metrics.jsonl")
+    assert sum(g["artists"] for g in gens) == len(artists)
+    assert sum(g["lots_offered"] for g in gens) == sum(a["lots_offered"] for a in artists)
+    assert sum(g["revenue_eur"] for g in gens) == pytest.approx(
+        sum(a["revenue_eur"] for a in artists)
+    )

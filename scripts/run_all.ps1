@@ -26,7 +26,10 @@ $stages = @(
     @{ Name = "Informe (JSON + HTML)";          Module = "pipelines.analytics.report_gold" },
     # Version sin CDN para publicar como Artifact de Claude (ver el docstring
     # del modulo: un Artifact bloquea todo host externo).
-    @{ Name = "Informe (version Artifact)";     Module = "pipelines.analytics.build_artifact" }
+    @{ Name = "Informe (version Artifact)";     Module = "pipelines.analytics.build_artifact" },
+    # Panel de la capa FX: cuanto se desviaba la tasa unica mes a mes. Va al
+    # final porque lee agg_house_metrics de Gold.
+    @{ Name = "Informe (capa FX)";              Module = "pipelines.analytics.build_fx_report" }
 )
 
 $total = $stages.Count
@@ -44,7 +47,7 @@ foreach ($stage in $stages) {
 
 Write-Host ""
 Write-Host "Puertas de calidad (informativas, no rompen el pipeline)" -ForegroundColor Cyan
-foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas")) {
+foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas", "zorrilla_subastas")) {
     python pipelines/silver/quality_gates.py --house-slug $house
 }
 

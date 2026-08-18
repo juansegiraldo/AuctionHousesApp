@@ -1,0 +1,8 @@
+# Reparaciones de autor por lote.
+#
+# Este fichero se conserva como punto de compatibilidad para
+# load_lot_author_fixes(), pero esta deliberadamente vacio: el parser de Duran
+# ya prioriza el campo Autor de la ficha y el output crudo fue regenerado.
+# Los titulos aislados siguen sin ser aliases del maestro ni autores validos.
+
+lot_authors: {}

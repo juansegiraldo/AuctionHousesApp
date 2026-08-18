@@ -237,6 +237,40 @@ def test_country_normalization(master_dir, text, expected):
     assert artist_master.normalize_country(text) == expected
 
 
+def test_norwegian_demonym_resolves_to_norway(tmp_path, monkeypatch):
+    """Un alias que vale NO devuelve Noruega, con comillas y sin ellas.
+
+    YAML 1.1 lee NO sin comillas como el booleano False, asi que 'norwegian: NO'
+    llega al loader como False. Aqui no rompe nada porque _iso() lo convierte de
+    vuelta a "NO" — esa coercion es la que sostiene el caso, no las comillas del
+    fichero. Se prueban las dos formas para que quitar la coercion falle, que es
+    lo unico que puede volver a borrar Noruega de la tabla.
+    """
+    for literal in ('"NO"', "NO"):
+        d = tmp_path / f"artists_{len(literal)}"
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "_countries.yaml").write_text(
+            textwrap.dedent(
+                f"""
+                countries:
+                  "NO": {{es: Noruega, demonym_es: noruego}}
+                aliases:
+                  norwegian: {literal}
+                """
+            ),
+            encoding="utf-8",
+        )
+        monkeypatch.setattr(artist_master, "ARTISTS_DIR", d)
+        artist_master.reset_caches()
+        try:
+            got = artist_master.normalize_country("Norwegian")
+            assert got == "NO", f"con 'norwegian: {literal}' llego {got!r}"
+            assert got is not False
+            assert artist_master.country_es(got) == "Noruega"
+        finally:
+            artist_master.reset_caches()
+
+
 def test_yaml_boolean_country_codes_survive_loading(tmp_path, monkeypatch):
     """NO (Noruega) no puede acabar siendo el booleano False.
 
@@ -332,6 +366,52 @@ def test_real_countries_table_is_loadable():
         artist_master.reset_caches()
 
 
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        # Gentilicios y nombres en ingles. Llegan de agregadores y de fichas de
+        # Duran escritas en ingles, y se contaban como unmapped_country_values
+        # aunque 'spanish' y 'uruguayan' ya estuvieran mapeados desde el principio.
+        ("Argentinean", "AR"),
+        ("Japanese", "JP"),
+        ("Philippine", "PH"),
+        ("Hungarian", "HU"),
+        ("Czech", "CZ"),
+        ("Norwegian", "NO"),
+        # Holanda es la region y no el estado, pero la ficha la usa como el pais,
+        # igual que 'Inglaterra' -> GB.
+        ("The Netherlands", "NL"),
+        ("Holland", "NL"),
+        # Paises en espaniol que faltaban en la tabla.
+        ("Turquía", "TR"),
+        ("Bielorrusia", "BY"),
+        ("República Checa", "CZ"),
+        # Ciudad y region donde deberia ir el pais, como el caso de Bogota.
+        ("Viena", "AT"),
+        ("Catalan", "ES"),
+        ("escuela sevillana", "ES"),
+        # Un siglo no es un pais: se queda en None a proposito, para que siga
+        # contando como unmapped en vez de inventarse una procedencia.
+        ("19th century", None),
+        ("18th century", None),
+        ("Europa", None),
+    ],
+)
+def test_real_table_maps_the_values_silver_actually_writes(text, expected):
+    """Contra el _countries.yaml del repo, no contra el fixture reducido.
+
+    Los casos de test_country_normalization usan una tabla de cuatro paises, asi
+    que no dicen nada sobre lo que Silver escribe de verdad en artist_country.
+    Estos valores salieron de contar unmapped_country_values sobre los 64.567
+    lotes reales.
+    """
+    artist_master.reset_caches()
+    try:
+        assert artist_master.normalize_country(text) == expected
+    finally:
+        artist_master.reset_caches()
+
+
 # --------------------------------------------------------------------------
 # Alias por inversion de coma: revisados a mano, no automaticos
 # --------------------------------------------------------------------------
@@ -410,9 +490,108 @@ def test_birth_country_is_not_the_market_country(name, country_birth):
     assert resolved["artist_country_birth"] == country_birth
 
 
+def test_beatriz_gonzalez_birth_year_is_1932_not_1938():
+    """1932, aunque el alias de la casa y el Reina Sofia digan 1938.
+
+    El error de 1938 esta vivo en dos fuentes que normalmente serian buenas:
+    el propio alias de Bogota ("Beatriz González (Colombia, 1938)") y la ficha
+    de exposicion del Museo Reina Sofia. Lo desempata la aritmetica del
+    obituario: murio el 09-01-2026 A LOS 93, y con 1938 tendria 87.
+
+    Se fija en un test porque el dato equivocado va a volver: esta en el alias
+    que entra por el scraper en cada ingesta.
+    """
+    artist_master.reset_caches()
+    try:
+        years = artist_master.artist_years("beatriz_gonzalez")
+    finally:
+        artist_master.reset_caches()
+    assert years == {"birth_year": 1932, "death_year": 2026}
+
+
+@pytest.mark.parametrize(
+    "name,country,nationalities",
+    [
+        # Cuatro fichas que TENIAN un pais equivocado, no un hueco. Se detectaron
+        # comparando el maestro contra fuentes publicas y son los cuatro sabores
+        # del mismo error: dar por nacional del mercado a quien nacio fuera.
+        #
+        # El apellido no es el pais: Hoffmann figuraba como DE por sonar aleman
+        # y nacio en Barranquilla.
+        ("Marlene Hoffmann", "CO", ["CO"]),
+        # Vender en Madrid no es haber nacido en Madrid: los tres venden en
+        # Duran y ninguno nacio en Espania.
+        ("Guillermo Muñoz Vera", "CL", ["ES", "CL"]),
+        ("Pedro Sandoval", "VE", ["ES", "VE"]),
+        ("Darío Basso", "VE", ["ES", "VE"]),
+    ],
+)
+def test_corrected_birth_countries(name, country, nationalities):
+    """El pais de NACIMIENTO manda, aunque el mercado diga otra cosa.
+
+    nationalities conserva la del mercado en primer lugar (regla 4 del README):
+    el dato de mercado no se pierde, se coloca donde corresponde.
+    """
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist(name)
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_country_birth"] == country
+    assert resolved["artist_nationalities"] == nationalities
+
+
+@pytest.mark.parametrize(
+    "name,country,birth",
+    [
+        # Estaban en la lista de "no verificables" y una segunda vuelta de
+        # investigacion SI los encontro, en fuentes institucionales (coleccion
+        # de Afundacion y ArteInformado). Se fijan para que no vuelvan a
+        # perderse: "no encontrado" es un estado del que se puede salir, y
+        # confundirlo con "no existe" congela la cobertura del informe.
+        ("Miguel Zelada", "ES", 1942),
+        ("Antonio Posada", "ES", 1952),
+    ],
+)
+def test_second_pass_resolved_these(name, country, birth):
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist(name)
+        years = artist_master.artist_years(resolved["artist_id"])
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_country_birth"] == country
+    assert years["birth_year"] == birth
+
+
+def test_mitsuo_miura_is_the_living_painter_not_the_cinematographer():
+    """Miura es el pintor de Iwate (1946), no el homonimo director de foto.
+
+    Hay un Mitsuo Miura (1902-1956) director de fotografia japones. Son dos
+    personas: el de los 93 lotes de Duran nacio en 1946, reside en Espania
+    desde 1966 y esta VIVO, asi que no puede llevar death_year.
+    """
+    artist_master.reset_caches()
+    try:
+        years = artist_master.artist_years("mitsuo_miura")
+    finally:
+        artist_master.reset_caches()
+    assert years["birth_year"] == 1946
+    assert years["death_year"] is None
+
+
 @pytest.mark.parametrize(
     "name",
-    ["Miguel Zelada", "Carlos Villalva", "Antonio Posada", "Pietro Psaier"],
+    [
+        "Carlos Villalva",
+        # Psaier es el caso mas fuerte de la lista y por eso sigue aqui: no es
+        # que falten sus datos, es que el mundo del arte discute que la PERSONA
+        # existiera (se sospecha una identidad fabricada por marchantes). Se le
+        # dio de alta con "IT, 1936-2004" en una tanda de investigacion y se
+        # revirtio: poner pais y fechas a alguien de existencia discutida es
+        # justamente inventar identidad, no documentarla.
+        "Pietro Psaier",
+    ],
 )
 def test_unverifiable_artists_keep_no_country(name):
     """Investigados sin resultado concluyente: se quedan SIN pais.
@@ -487,6 +666,69 @@ def test_format_life_years_shapes():
     assert artist_master.format_life_years(None, None) is None
 
 
+def test_excel_epoch_year_is_not_a_birth_date():
+    """1905 en una ficha de FINALL.xlsx puede ser el epoch, no un nacimiento.
+
+    Julia Acunia Guillen llevaba birth_year 1905 y salia viva con 121 anios. Su
+    unico lote no trae anio en el catalogo, asi que el 1905 solo existia en la
+    hoja: es el mismo artefacto que ya dejo 4 fichas con fechas imposibles.
+    Se retira en vez de sustituirlo por una estimacion.
+
+    El contraejemplo va en el mismo test a proposito: el 1918 de Leonor Alarcon
+    SI lo confirma el catalogo ("Leonor Alarcon Colombia, 1918"), asi que se
+    queda. La diferencia no es la antiguedad, es que haya una segunda fuente.
+    """
+    artist_master.reset_caches()
+    try:
+        julia = artist_master.artist_years("julia_acuna_guillen")
+        leonor = artist_master.artist_years("leonor_alarcon")
+    finally:
+        artist_master.reset_caches()
+    assert julia["birth_year"] is None
+    assert leonor["birth_year"] == 1918
+
+
+def test_luis_alberto_acuna_is_one_artist_not_two():
+    """Una sola ficha: entraba dos veces, con dos anios de muerte distintos.
+
+    "Luis Alberto Acuna" (catalogo de Bogota) y "Luis Alberto Acuna Tapias"
+    (hoja FINALL) son la misma persona, y sus 19 lotes salian partidos en dos
+    filas del ranking. Murio en 1993: el alias de la casa y la DESCRIPCION de
+    Wikidata dicen 1994, pero el claim P570 de Wikidata y Wikipedia ES dicen
+    1993.
+    """
+    artist_master.reset_caches()
+    try:
+        assert "luis_alberto_acuna_tapias" not in artist_master.load_master()
+        for name in ("Luis Alberto Acuña", "LUIS ALBERTO ACUÑA TAPIAS"):
+            resolved = artist_master.resolve_artist(name)
+            assert resolved["artist_id"] == "luis_alberto_acuna"
+        years = artist_master.artist_years("luis_alberto_acuna")
+    finally:
+        artist_master.reset_caches()
+    assert years == {"birth_year": 1904, "death_year": 1993}
+
+
+def test_implausible_age_is_flagged_not_published_as_alive():
+    """Pasados los 105 anios, "sin fecha de muerte" es un hueco, no una vida larga.
+
+    El informe llego a publicar a Fidolo Gonzalez Camargo (1883-1942) como si
+    tuviera 96 anios porque su ficha decia 1930, y a Julia Acunia Guillen con
+    121. La regla de no inventar una muerte sigue intacta: no se rellena
+    death_year, solo se deja de AFIRMAR que la persona vive.
+    """
+    f = artist_master.format_life_years
+    # Sin anio de referencia se comporta como siempre (compatibilidad).
+    assert f(1905, None) == "n. 1905"
+    # Con el anio en curso, una edad imposible se marca.
+    assert f(1905, None, 2026) == "n. 1905 (?)"
+    assert f(1883, None, 2026) == "n. 1883 (?)"
+    # Justo por debajo del umbral no se toca: hay artistas centenarios reales.
+    assert f(1930, None, 2026) == "n. 1930"
+    # Y si consta la muerte, la edad da igual: el dato esta completo.
+    assert f(1883, 1942, 2026) == "1883-1942"
+
+
 def test_artist_years_never_invents_a_date():
     """Misma disciplina que country_birth: fuera del maestro, None.
 
@@ -505,3 +747,66 @@ def test_artist_years_never_invents_a_date():
         }
     finally:
         artist_master.reset_caches()
+
+
+def test_juan_romero_does_not_publish_a_false_death_year():
+    """El catálogo antiguo decía 1996, pero el artista estaba activo en 2023."""
+    artist_master.reset_caches()
+    try:
+        years = artist_master.artist_years("juan_romero")
+    finally:
+        artist_master.reset_caches()
+    assert years == {"birth_year": 1932, "death_year": None}
+
+
+def test_jose_catala_omits_the_disputed_birth_year():
+    """Las fuentes secundarias discrepan entre 1958 y 1959."""
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("CATALÁ , JOSÉ")
+        years = artist_master.artist_years("jose_catala")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_id"] == "jose_catala"
+    assert resolved["artist_country_birth"] == "ES"
+    assert years == {"birth_year": None, "death_year": None}
+
+
+def test_jorge_damiani_uses_birth_country_and_real_death_year():
+    """El MNAV fija Nervi, Italia (1931), y Montevideo (2017)."""
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("Jorge DAMIANI")
+        years = artist_master.artist_years("jorge_damiani")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_country_birth"] == "IT"
+    assert set(resolved["artist_nationalities"]) == {"IT", "UY"}
+    assert years == {"birth_year": 1931, "death_year": 2017}
+
+
+def test_santiago_cardenas_short_and_full_names_are_one_living_artist():
+    """El sufijo Arroyo no crea otro ID y 2006 no era una muerte."""
+    artist_master.reset_caches()
+    try:
+        short = artist_master.resolve_artist("Santiago Cárdenas")
+        full = artist_master.resolve_artist("SANTIAGO CARDENAS ARROYO")
+        years = artist_master.artist_years("santiago_cardenas")
+        master = artist_master.load_master()
+    finally:
+        artist_master.reset_caches()
+    assert short["artist_id"] == full["artist_id"] == "santiago_cardenas"
+    assert "santiago_cardenas_arroyo" not in master
+    assert years == {"birth_year": 1937, "death_year": None}
+
+
+def test_giuseppe_maraschini_house_typo_resolves():
+    artist_master.reset_caches()
+    try:
+        resolved = artist_master.resolve_artist("Guiseppe MARASCHINI")
+        years = artist_master.artist_years("giuseppe_maraschini")
+    finally:
+        artist_master.reset_caches()
+    assert resolved["artist_id"] == "giuseppe_maraschini"
+    assert resolved["artist_country_birth"] == "IT"
+    assert years == {"birth_year": 1839, "death_year": 1903}

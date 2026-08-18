@@ -31,3 +31,44 @@ artists:
     aliases:
       - "KEVIN MANCERA / PAULO LICONA (COLOMBIA, 1982 / COLOMBIA, 1977)"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona | fechas descartadas por imposibles en la hoja: 1982-1977"
+
+  - artist_id: keith_haring
+    display_name: "Keith Haring"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1958
+    death_year: 1990
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Keith Haring"
+      - "KEITH HARING"
+    notes: "8 lotes | n. 04-05-1958 en Reading (Pennsylvania), m. 16-02-1990 en Nueva York. Pop art y grafiti del NY de los 80. Fuentes: Wikipedia, PBS American Masters, haring.com."
+
+  - artist_id: kcho
+    display_name: "Kcho"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1970
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "KCHO"
+      - "Alexis Leiva Machado"
+      - "Kcho (Alexis Leiva Machado)"
+    notes: "Full name: Alexis Leiva Machado. Contemporary Cuban artist born in Isla de la Juventud (Isle of Pines). Grand prize winner at Gwangju Biennale 1995. Works in sculpture, installation, and mixed media."
+
+  - artist_id: konrad_klapheck
+    display_name: "Konrad Klapheck"
+    country_birth: "DE"
+    nationalities: ["DE"]
+    birth_year: 1935
+    death_year: 2023
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Konrad Klapheck"
+    notes: "2 lotes vendidos por 27.500 EUR | casas: duran_subastas | pintor aleman nacido en Dusseldorf el 10-02-1935 y fallecido alli el 30-07-2023. Silver deja vacias las fechas biograficas; lot_year=1935 en un lote es arrastre del nacimiento, no fecha de la obra. Fuente: https://www.wikidata.org/wiki/Q315875"

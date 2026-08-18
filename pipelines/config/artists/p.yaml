@@ -100,6 +100,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Gastó VIlanova"
       - "Pedro Gastó"
     notes: "30 lotes | casas: duran_subastas"
 
@@ -119,11 +120,14 @@ artists:
   - artist_id: pedro_nel_gomez
     display_name: "Pedro Nel Gómez"
     country_birth: "CO"
+    birth_year: 1899
+    death_year: 1984
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Pedro Nel Gómez (Colombia, 1899 - 1984)"
       - "Pedro Nel Gómez"
       - "Gómez, Pedro Nel"
     notes: "14 lotes | casas: bogota_auctions"
@@ -137,23 +141,27 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Ruiz Ortega"
+      - "Pedro Ruiz (Colombia, 1957)"
       - "Pedro Ruíz"
     notes: "24 lotes | casas: bogota_auctions"
 
   - artist_id: pedro_sandoval
     display_name: "Pedro Sandoval"
-    country_birth: "ES"
-    nationalities: ["ES"]
+    country_birth: "VE"
+    nationalities: ["ES", "VE"]
+    birth_year: 1966
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Pedro Sandoval"
-    notes: "7 lotes | casas: duran_subastas"
+    notes: "7 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Ciudad Bolivar (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA)."
 
   - artist_id: pedro_sobrado
     display_name: "Pedro Sobrado"
     country_birth: "ES"
+    birth_year: 1936
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -165,6 +173,7 @@ artists:
   - artist_id: perico_pastor
     display_name: "Perico Pastor"
     country_birth: "ES"
+    birth_year: 1953
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -287,6 +296,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Alcántara Herrán y Virginia Amaya"
       - "PEDRO ALCANTARA HERRAN"
       - "Pedro Alcántara Herrán"
     notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -384,6 +394,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Pedro Alcántara - Colombia, 1942."
       - "Pedro Alcántara"
       - "PEDRO ALCANTARA"
     notes: "15 lotes en Silver | fuente: MoMA; Art Institute Chicago | colombiano; en museos de EEUU"
@@ -466,3 +477,68 @@ artists:
     aliases:
       - "Pere Pruna"
     notes: "12 lotes en Silver | fuente: Wikidata"
+
+  - artist_id: paco_leal
+    display_name: "Paco Leal"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paco Leal"
+    notes: "Spanish painter born 1952. Works sold at auction. Note: there is also a Mexican portrait artist named Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist."
+
+  - artist_id: pedro_maria_trapero
+    display_name: "Pedro María Trapero"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1918
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Trapero"
+      - "Pedro María Trapero"
+    notes: "Pintor español nacido en Navalcarnero, Madrid, 1918. Fallecido en Madrid 2005. Registrado en bases de datos españolas de arte."
+
+  - artist_id: paja_jovanovic
+    display_name: "Paja Jovanović"
+    country_birth: "RS"
+    nationalities: ["RS"]
+    birth_year: 1859
+    death_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paja Jovanovic"
+    notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Vrsac, entonces Imperio austriaco (Banato, austrohungaro desde 1867), hoy Serbia: RS por el lugar literal. Serbio de etnia y autoidentificacion. Murio en Viena a los 98 tras vivir alli casi toda su vida adulta, pero NO consta que adquiriera la ciudadania austriaca, asi que no se le aniade AT."
+
+  - artist_id: paul_francois_quinsac
+    display_name: "Paul François Quinsac"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1858
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Paul François Quinsac"
+    notes: "2 lotes | casas: duran_subastas | nacido en Burdeos, Francia, en 1858. Duran publica muerte en 1932, pero el repertorio documental actualizado del Musee d'Orsay fija 1929; se toma la fuente institucional. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/paul-quinsac-20471"
+
+  - artist_id: pedro_antonio_martinez_exposito
+    display_name: "Pedro Antonio Martínez Expósito"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1886
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Pedro Antonio Martínez"
+      - "Pedro Antonio Martínez Expósito"
+    notes: "1 lote | casas: duran_subastas | el catalogo identifica Majas con Mantilla, 1929, como obra de Pedro Antonio Martinez, Pulpi 1886-?. Prado y el Ayuntamiento desarrollan el nombre como Pedro Antonio Martinez Exposito. Se omite death_year porque las fuentes fiables lo desconocen y las secundarias discrepan. Fuentes: https://www.museodelprado.es/en/aprende/enciclopedia/voz/martinez-exposito-pedro-antonio/dfb21d0e-00aa-40fe-9fdb-8dbb35b1f646 ; https://www.dipalme.org/Servicios/cmsdipro/index.nsf/noticias.xsp?documentId=E99A261D7B707D3EC1258B11003E06B7&p=espaciosescenicospulpi ; https://www.duran-subastas.com/files/001/625/001_420.pdf"

@@ -12,16 +12,33 @@ artists:
     display_name: "Yayoi Kusama"
     country_birth: "JP"
     nationalities: ["JP"]
+    birth_year: 1929
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Yayoi Kusama"
-    notes: "3 lotes | casas: duran_subastas"
+      - "YAYOI KUSAMA"
+    notes: "3 lotes | casas: duran_subastas | n. 22-03-1929 en Matsumoto; viva, sin death_year. Fuentes: Wikipedia, Guggenheim Bilbao."
+
+  - artist_id: yoshitomo_nara
+    display_name: "Yoshitomo Nara"
+    country_birth: "JP"
+    nationalities: ["JP"]
+    birth_year: 1959
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Yoshitomo Nara"
+      - "YOSHITOMO NARA"
+      - "NARA, YOSHITOMO"
+    notes: "2 lotes | casas: bogota_auctions, duran_subastas | n. 05-12-1959 en Hirosaki (Aomori); vivo, sin death_year. Fuentes: Wikipedia, Aomori Museum of Art, David Zwirner."
 
   - artist_id: yuri_rodkin
     display_name: "Yuri Rodkin"
     country_birth: "RU"
+    birth_year: 1960
     nationalities: ["RU"]
     attribution_type: autor
     source: manual
@@ -33,17 +50,20 @@ artists:
   - artist_id: yober_arbey_melo_daza
     display_name: "Yober Arbey Melo Daza"
     country_birth: "CO"
+    birth_year: 1995
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Yober Arbey Melo Daza (Colombia, 1995)"
       - "YOBER ARBEY MELO DAZA"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
   - artist_id: yutaka_toyota
     display_name: "Yutaka Toyota"
     country_birth: "JP"
+    death_year: 2019
     nationalities: ["JP"]
     birth_year: 1931
     attribution_type: autor

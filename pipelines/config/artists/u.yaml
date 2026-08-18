@@ -11,6 +11,8 @@ artists:
   - artist_id: urbano_lugris_vadillo
     display_name: "Urbano Lugris Vadillo"
     country_birth: "ES"
+    birth_year: 1942
+    death_year: 2018
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -32,3 +34,18 @@ artists:
       - "Umberto Giangrandi"
       - "Giangrandi, Umberto"
     notes: "12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+
+  - artist_id: ulpiano_checa_y_sanz
+    display_name: "Ulpiano Checa y Sanz"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1860
+    death_year: 1916
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Ulpiano Checa"
+      - "Ulpiano Checa y Sanz"
+      - "Ulpiano Checa Sanz"
+    notes: "11 lotes | casas: duran_subastas | nacido en Colmenar de Oreja, Madrid, el 03-04-1860 y fallecido en Dax el 06-01-1916; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/checa-y-sanz-ulpiano/0bc5e8c6-86c9-43d2-9a6e-838b4da56afb"

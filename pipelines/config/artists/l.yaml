@@ -18,12 +18,15 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Leopoldo Richter (Alemania, 1896 - Colombia, 1984)"
+      - "Leopoldo Richter (Alemania, 19896 - Colombia, 1984)"
       - "Leopoldo Richter"
     notes: "17 lotes | casas: bogota_auctions"
 
   - artist_id: lita_cabellut
     display_name: "Lita Cabellut"
     country_birth: "ES"
+    birth_year: 1961
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -48,6 +51,7 @@ artists:
   - artist_id: luciano_diaz_castilla
     display_name: "Luciano Díaz Castilla"
     country_birth: "ES"
+    birth_year: 1940
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -66,6 +70,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Luciano Jaramillo: Otra Mirada"
       - "Luciano Jaramillo"
     notes: "10 lotes | casas: bogota_auctions"
 
@@ -92,20 +97,25 @@ artists:
     aliases:
       - "Lucio Muñoz"
       - "MUÑOZ, LUCIO"
-    notes: "62 lotes | casas: duran_subastas"
+      - "MUÑOZ MARTÍNEZ, LUCIO"
+    notes: "62 lotes | casas: duran_subastas | pintor nacido en Madrid en 1929 y fallecido en 1998. Fuente: https://www.museoreinasofia.es/exposicion/lucio-munoz"
 
   - artist_id: luis_alberto_acuna
     display_name: "Luis Alberto Acuña"
     country_birth: "CO"
+    death_year: 1993
     nationalities: ["CO"]
     birth_year: 1904
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Luis Alberto Acuña (Colombia, 1904 - 1994)"
       - "Luis Alberto Acuña"
       - "Acuña, Luis Alberto"
-    notes: "16 lotes | casas: bogota_auctions"
+      - "LUIS ALBERTO ACUÑA TAPIAS"
+      - "Luis Alberto Acuña Tapias"
+    notes: "19 lotes | casas: bogota_auctions | n. 12-05-1904 en Suaita (Santander), m. 1993 en Tunja. FUSIONADA con la ficha duplicada luis_alberto_acuna_tapias (misma persona, entraba por FINALL.xlsx con el nombre completo y partia sus lotes en dos filas del ranking). OJO con el anio de muerte: el alias de la casa y la DESCRIPCION de Wikidata dicen 1994, pero el claim P570 de la propia Wikidata y Wikipedia ES dicen 1993. Fuentes: Wikidata Q5982660 (claim, no descripcion), Wikipedia ES."
 
   - artist_id: luis_beut_y_lluch
     display_name: "Luis Beut y LLuch"
@@ -185,6 +195,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Luis García-Ochoa Ibáñez"
       - "Luis García Ochoa"
       - "GARCIA OCHOA, LUIS"
     notes: "146 lotes | casas: duran_subastas"
@@ -192,6 +203,7 @@ artists:
   - artist_id: luis_gordillo
     display_name: "Luis Gordillo"
     country_birth: "ES"
+    birth_year: 1934
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -203,6 +215,7 @@ artists:
   - artist_id: luis_moscardo
     display_name: "Luis Moscardó"
     country_birth: "ES"
+    birth_year: 1950
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -239,6 +252,7 @@ artists:
   - artist_id: lino_dinetto
     display_name: "Lino Dinetto"
     country_birth: "UY"
+    death_year: 2017
     nationalities: ["UY"]
     birth_year: 1927
     attribution_type: autor
@@ -273,6 +287,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Leo Matiz (Colombia, 1917 - 1988.)"
+      - "Leo Matiz (Colombia, 1919 - 1998.)"
       - "LEO MATIZ"
       - "Leo Matiz"
       - "Matiz, Leo"
@@ -340,6 +356,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Leonel Góngora - Colombia, 1932 - 1999."
       - "LEONEL GONGORA"
       - "Leonel Góngora"
     notes: "20 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -355,7 +372,7 @@ artists:
     aliases:
       - "LEONOR ALARCON"
       - "Leonor Alarcón"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | El 1918 lo confirman DOS fuentes independientes: la hoja curada y el propio catalogo de Bogota, que escribe 'Leonor Alarcón Colombia, 1918' en los tres lotes. Sin fecha de muerte: no esta en Wikidata ni en Wikipedia y Banrepcultural bloquea el acceso automatizado. Tendria 108 anios, asi que el informe la marca 'n. 1918 (?)': el hueco es casi seguro un dato que falta, pero NO se inventa una muerte."
 
   - artist_id: leopold_reigner
     display_name: "Léopold Reigner"
@@ -419,6 +436,7 @@ artists:
     source: manual
     confidence: medium
     aliases:
+      - "Los Carpinteros - 1992"
       - "LOS CARPINTEROS"
       - "Los Carpinteros"
       - "Los carpinteros"
@@ -434,6 +452,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Louise Nevelson (Ucrania, 1899 - EE.UU., 1988.)"
       - "LOUISE NEVELSON"
       - "Louise Nevelson"
     notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -479,19 +498,6 @@ artists:
       - "Luis A. Solari"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
-  - artist_id: luis_alberto_acuna_tapias
-    display_name: "Luis Alberto Acuña Tapias"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1904
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS ALBERTO ACUÑA TAPIAS"
-      - "Luis Alberto Acuña Tapias"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
   - artist_id: luis_angel_rengifo_munoz
     display_name: "Luis Ángel Rengifo Muñoz"
@@ -538,14 +544,14 @@ artists:
     display_name: "Luis Fernando Roldán"
     country_birth: "CO"
     nationalities: ["CO"]
-    birth_year: 1905
+    birth_year: 1955
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "LUIS FERNANDO ROLDAN"
       - "Luis Fernando Roldán"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1905, que lo publicaba como vivo de 121 anios; nacio en 1955 y esta vivo. Fuente: Artspace."
 
   - artist_id: luis_luna
     display_name: "Luis Luna"
@@ -599,6 +605,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Luz Angela Lizarazo (Colombia, 1966)"
       - "LUZ ANGELA LIZARAZO"
       - "Luz Ángela Lizarazo"
       - "Luz Angela Lizarazo"
@@ -677,3 +684,139 @@ artists:
     aliases:
       - "Luis Giner Bueno"
     notes: "12 lotes en Silver | fuente: Artnet; Wikipedia ES | Godella, Valencia"
+
+  - artist_id: luis_fernando_aguirre
+    display_name: "Luis Fernando Aguirre"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1935
+    death_year: 2021
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis Fernando Aguirre"
+    notes: "Pintor y periodista visual asturiano. Neofigurativista con influencias expresionistas alemanas. Primero muestra individual 1964, Galería Quixote Madrid. Falleció en Madrid."
+
+  - artist_id: luis_garcia_ramos
+    display_name: "Luis García Ramos"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1957
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis García-Ramos"
+    notes: "Pintor canario nacido en Tenerife, especializado en naturaleza e inspiración marina. Obra en museos españoles."
+
+  - artist_id: lorenzo_aparicio_boliche
+    display_name: "Lorenzo Aparicio Boliche"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1900
+    death_year: 1989
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Boliche"
+      - "Lorenzo Aparicio"
+    notes: "Pintor madrileño, maestro del arte naif español. Legó obras al Museo Internacional de Arte Naïf 'Manuel Moral' de Jaén."
+
+  - artist_id: leon_augustin_lhermitte
+    display_name: "Léon-Augustin Lhermitte"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1844
+    death_year: 1925
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Léon-Augustin Lhermitte"
+    notes: "1 lote de 90.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Mont-Saint-Pere, pintor naturalista de escenas campesinas."
+
+  - artist_id: luis_graner
+    display_name: "Luis Graner"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1863
+    death_year: 1929
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "GRANER, LUIS"
+      - "Luis Graner Arrufi"
+      - "Lluís Graner"
+      - "Lluís Graner Arrufí"
+    notes: "Su lote se recupero al re-scrapear el Autor de la ficha de Duran; antes llegaba con el titulo '\"Entrando en el puerto\"' como artista | casas: duran_subastas | Lluís Graner Arrufí, nacido y fallecido en Barcelona, 1863-1929. Fuentes: https://www.museunacional.cat/es/lluis-graner ; https://www.museodelprado.es/coleccion/artista/graner-y-arrufi-luis/917cde91-7779-40b3-a6ba-9878e75d8427"
+
+  - artist_id: lazzaro_baldi
+    display_name: "Lazzaro Baldi"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1623
+    death_year: 1703
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Lazzaro Baldi"
+    notes: "1 lote vendido por 27.500 EUR | casas: duran_subastas | nacido en Pistoia hacia 1623 y fallecido en Roma en 1703; la ficha de la casa escribe Pistoria. Fuente: https://www.museodelprado.es/coleccion/artista/baldi-lazzaro/a634d7a7-e69a-4b68-a65a-b82ee339e97d"
+
+  - artist_id: luca_giordano
+    display_name: "Luca Giordano"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1634
+    death_year: 1705
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luca Giordano"
+    notes: "5 lotes | casas: duran_subastas | nacido y fallecido en Napoles, 1634-1705; fechas coincidentes con Silver. No fusionar obras de escuela/circulo o atribuciones tradicionales. Fuente: https://www.museodelprado.es/coleccion/obra-de-arte/viaje-de-jacob-a-cana/d2b47b0a-1df8-425c-8563-88c67419674b"
+
+  - artist_id: lorenzo_guerrero_y_leogardo
+    display_name: "Lorenzo Guerrero y Leogardo"
+    country_birth: "PH"
+    nationalities: ["PH"]
+    birth_year: 1835
+    death_year: 1904
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Lorenzo Guerrero y Leogardo"
+      - "GUERRERO Y LEOGARDO, LORENZO"
+    notes: "1 lote | casas: duran_subastas | pintor filipino nacido en Ermita, Manila, en 1835 y fallecido en Paco en 1904; maestro de Juan Luna. Fuente de ficha y catalogo abierta: https://www.duran-subastas.com/es/subasta-lote/lorenzo-guerrero-y-leogardo-44-dibujos-filipinos/631-310"
+
+  - artist_id: luis_alvarez_catala
+    display_name: "Luis Álvarez Catalá"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1836
+    death_year: 1901
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis Álvarez Catalá"
+    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Madrid, 1836-1901; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/alvarez-catala-luis/99cba151-7974-40e6-ad8a-4a2cab2fb63e"
+
+  - artist_id: luis_saez_diez
+    display_name: "Luis Sáez Díez"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1925
+    death_year: 2010
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Luis Sáez"
+      - "Luis Sáez Díez"
+      - "SAEZ, LUIS"
+    notes: "10 lotes | casas: duran_subastas | Duran identifica al autor como SAEZ, LUIS (1925); Bañistas, La llegada y Los musicos pertenecen al mismo conjunto de lotes. Luis Saez Diez nacio en Mazuelo de Muño, Burgos, en 1925 y fallecio en Burgos en 2010. El lot_year 1925 de 8 filas es el nacimiento filtrado desde la ficha del autor, no la fecha de la obra. No confundir con Luis Saenz de la Calzada (1912-1994). Fuentes: https://museodeburgos.net/exposiciones/luis-saez/ ; https://museodeburgos.net/project/bellamente-aterrados-un-siglo-de-luis-saez-1925-2025/ ; https://www.duran-subastas.com/es/subasta-lote/luis-saez-la-llegada/592-254"

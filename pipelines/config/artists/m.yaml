@@ -24,6 +24,7 @@ artists:
   - artist_id: manolo_quejido
     display_name: "Manolo Quejido"
     country_birth: "ES"
+    birth_year: 1946
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -37,6 +38,7 @@ artists:
   - artist_id: manolo_valdes
     display_name: "Manolo Valdés"
     country_birth: "ES"
+    birth_year: 1942
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -48,12 +50,17 @@ artists:
   - artist_id: manolo_vellojin
     display_name: "Manolo Vellojín"
     country_birth: "CO"
-    nationalities: ["CO"]
+    birth_year: 1942
     death_year: 2013
+    nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Manolo Vellojín (Colombia, 1943 - 2013)"
+      - "Manolo Vellojín - Colombia, 1943 - 2013"
+      - "Manolo Vellojín (Colombia, 1943 -2013)"
+      - "Manolo Vellojin (Colombia, 1943 - 2013)"
       - "Manolo Vellojín"
       - "Vellojin, Manolo"
     notes: "12 lotes | casas: bogota_auctions"
@@ -62,16 +69,20 @@ artists:
     display_name: "Manu Campa"
     country_birth: "ES"
     nationalities: ["ES"]
+    birth_year: 1983
     attribution_type: autor
     source: manual
-    confidence: high
+    confidence: medium
     aliases:
       - "Manu Campa"
-    notes: "4 lotes | casas: duran_subastas"
+      - "CAMPA, MANU (1983)"
+    notes: "4 lotes | casas: duran_subastas | n. 1983, pintor madrilenio de arte automovilistico; vivo. El anio viene de la ficha de la propia casa (CAMPA, MANU (1983)), no de fuente independiente: no tiene Wikipedia ni Wikidata y su web y Artsy bloquean el fetch. De ahi confidence medium. Para un artista contemporaneo vivo el dato de la casa es aceptable; no lo seria para atribuir un pais."
 
   - artist_id: manuel_alcorlo
     display_name: "Manuel Alcorlo"
     country_birth: "ES"
+    birth_year: 1935
+    death_year: 2026
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -98,11 +109,14 @@ artists:
   - artist_id: manuel_de_gracia
     display_name: "Manuel de Gracia"
     country_birth: "ES"
+    birth_year: 1937
+    death_year: 2017
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Manuel de Gracia Pintado"
       - "Manuel de Gracia"
     notes: "22 lotes | casas: duran_subastas"
 
@@ -129,6 +143,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Manuel Hernández (Colombia, 1928 - 2014)"
+      - "Manuel Hernández - Colombia, 1928 - 2014."
       - "Manuel Hernández"
     notes: "26 lotes | casas: bogota_auctions, duran_subastas"
 
@@ -235,6 +251,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Manuel Viola y Sergio Castillo"
       - "Manuel Viola"
     notes: "85 lotes | casas: duran_subastas"
 
@@ -268,19 +285,22 @@ artists:
     display_name: "Mariano Bertuchi Nieto"
     country_birth: "ES"
     nationalities: ["ES"]
-    birth_year: 1885
+    birth_year: 1884
     death_year: 1955
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "MARIANO BERTUCHI NIETO Y CARLOS MOREU GISBERT"
       - "Mariano Bertuchi Nieto"
       - "BERTUCHI NIETO, MARIANO"
-    notes: "12 lotes | casas: duran_subastas"
+      - "Mariano Bertuchi"
+    notes: "23 lotes individuales y 1 atribucion conjunta en Silver | casas: duran_subastas | Duran publica 1885, pero RABASF confirma Granada 1884-Tetuan 1955. Fuente: https://www.academiacolecciones.com/dibujos/mostrar-autores.php?id=bertuchi-nieto-mariano"
 
   - artist_id: mariano_de_blas
     display_name: "Mariano de Blas"
     country_birth: "ES"
+    birth_year: 1958
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -318,15 +338,16 @@ artists:
 
   - artist_id: marlene_hoffmann
     display_name: "Marlene Hoffmann"
-    country_birth: "DE"
-    nationalities: ["CO", "DE"]
+    country_birth: "CO"
+    nationalities: ["CO"]
+    birth_year: 1934
     death_year: 2014
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Marlene Hoffmann"
-    notes: "7 lotes | casas: bogota_auctions"
+    notes: "7 lotes | casas: bogota_auctions | CORREGIDO: la ficha decia country_birth DE por el apellido aleman, y nacio en Barranquilla (CO) en 1934; murio en Cajica (CO) en 2014. Precursora del arte textil colombiano. Es el error tipico de deducir el pais del apellido. Fuentes: Wikipedia ES, AWARE Women Artists, MoMA."
 
   - artist_id: martin_chirino
     display_name: "Martín Chirino"
@@ -409,6 +430,8 @@ artists:
   - artist_id: miguel_angel_campano
     display_name: "Miguel Ángel Campano"
     country_birth: "ES"
+    birth_year: 1948
+    death_year: 2018
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -420,11 +443,13 @@ artists:
   - artist_id: miguel_angel_rojas
     display_name: "Miguel Ángel Rojas"
     country_birth: "CO"
+    birth_year: 1946
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Miguel Ángel Rojas - Colombia, 1946."
       - "Miguel Ángel Rojas"
     notes: "17 lotes | casas: bogota_auctions"
 
@@ -444,6 +469,7 @@ artists:
   - artist_id: miler_lagos
     display_name: "Miler Lagos"
     country_birth: "CO"
+    birth_year: 1973
     nationalities: ["CO"]
     attribution_type: autor
     source: manual
@@ -455,6 +481,7 @@ artists:
   - artist_id: miquel_barcelo
     display_name: "Miquel Barceló"
     country_birth: "ES"
+    birth_year: 1957
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -467,12 +494,13 @@ artists:
     display_name: "Mitsuo Miura"
     country_birth: "JP"
     nationalities: ["ES", "JP"]
+    birth_year: 1946
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "Mitsuo Miura"
-    notes: "93 lotes | casas: duran_subastas"
+    notes: "93 lotes | casas: duran_subastas | n. 1946 en Iwate (JP), reside en Espania desde 1966; vivo, sin death_year. No confundir con el homonimo Mitsuo Miura (1902-1956), director de fotografia japones: son dos personas. Fuentes: Wikipedia ES, Circulo de Bellas Artes."
 
   - artist_id: modesto_cuixart
     display_name: "Modesto Cuixart"
@@ -566,6 +594,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Manuel Parra \"Espartaco\""
       - "MANUEL PARRA"
       - "Manuel Parra"
     notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -622,6 +651,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Marco Tulio Villalobos - Colombia, 1910 -1990."
       - "MARCO TULIO VILLALOBOS"
       - "Marco Tulio Villalobos"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -692,12 +722,14 @@ artists:
   - artist_id: maria_teresa_hincapie
     display_name: "María teresa Hincapié"
     country_birth: "CO"
+    death_year: 2008
     nationalities: ["CO"]
     birth_year: 1956
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
+      - "Maria Teresa Hincapié (Colombia, 1956 - 2008)"
       - "MARIA TERESA HINCAPIE"
       - "María teresa Hincapié"
     notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -830,6 +862,8 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Máximo Flórez López"
+      - "Maximo Flórez López"
       - "MAXIMO FLOREZ"
       - "Máximo Florez"
     notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
@@ -884,6 +918,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Mondhare, Louis-Joseph"
       - "MONDHARE"
     notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
 
@@ -903,6 +938,8 @@ artists:
   - artist_id: myrna_baez
     display_name: "Myrna Baez"
     country_birth: "PR"
+    birth_year: 1931
+    death_year: 2018
     nationalities: ["PR"]
     attribution_type: autor
     source: manual
@@ -1114,7 +1151,8 @@ artists:
     confidence: high
     aliases:
       - "Miquel Navarro"
-    notes: "15 lotes en Silver | fuente: Wikipedia; Guggenheim Bilbao | Born Mislata, Valencia"
+      - "NAVARRO, MIQUEL"
+    notes: "15 lotes en Silver | nacido en Mislata, Valencia, en 1945. Fuente: https://www.guggenheim-bilbao.eus/la-coleccion/artistas/miquel-navarro"
 
   - artist_id: modest_cuixart
     display_name: "Modest Cuixart"
@@ -1158,6 +1196,8 @@ artists:
   - artist_id: mohammed_sabry
     display_name: "Mohammed Sabry"
     country_birth: "EG"
+    birth_year: 1917
+    death_year: 2018
     nationalities: ["EG"]
     attribution_type: autor
     source: manual
@@ -1192,3 +1232,226 @@ artists:
     aliases:
       - "Monir"
     notes: "25 lotes en Silver | fuente: Wikipedia EN | Monir Shahroudy Farmanfarmaian, nacida en Qazvin; grabados abstractos, coherente con los lotes"
+
+  - artist_id: miguel_zelada_jurado
+    display_name: "Miguel Zelada Jurado"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1942
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Miguel Zelada"
+    notes: "Pintor gallego nacido en A Coruña. Especializarse en paisajes portuarios con composiciones complejas, ritmos de líneas y coloraciones en azules, rosas y plateados."
+
+  - artist_id: manuel_fernandez_luque
+    display_name: "Manuel Fernández Luque"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1919
+    death_year: 2005
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Fernández Luque"
+    notes: "Pintor español nacido en Sevilla, fallecido en Valencia. Expresionismo español con técnica moderna. Exposiciones en NY, Chicago, París, Madrid, Valencia."
+
+  - artist_id: manuel_facal
+    display_name: "Manuel Facal"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1943
+    death_year: 2024
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Facal Ponte"
+      - "MAnuel Facal"
+    notes: "Artista gallego multidisciplinario. Nacido 20 julio 1943 Carballo, Coruña, fallecido 6 abril 2024. Pintor, grabador, escultor. Integrante Grupo Atlántica años 80. Presidió Fundación Manuel Facal 2022-2024."
+
+  - artist_id: mon_montoya
+    display_name: "Mon Montoya"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1947
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Mon Montoya"
+    notes: "Pintor español contemporáneo. Nacido 1947 Mérida, Badajoz. Reside en Palazuelos de Eresma, Segovia desde 1975. Expresionismo sígnico. Representó España en Bienal Sao Paulo 1977 y París 1980."
+
+  - artist_id: miguel_vaquer
+    display_name: "Miguel Vaquer"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1910
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Miguel Vaquer"
+    notes: "Pintor español nacido en Ondara, Valencia. Estudió en Madrid, viajó a París con 20 años donde permaneció 5 años y realizó retratos de personajes notables. Ganó Gold Medal en Salon des Tuileries 1958."
+
+  - artist_id: marcel_duchamp
+    display_name: "Marcel Duchamp"
+    country_birth: "FR"
+    nationalities: ["FR", "US"]
+    birth_year: 1887
+    death_year: 1968
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Marcel Duchamp"
+    notes: "French-born, became American citizen. Major figure in Dada and conceptual art movements."
+
+  - artist_id: max_ernst
+    display_name: "Max Ernst"
+    country_birth: "DE"
+    nationalities: ["DE", "FR"]
+    birth_year: 1891
+    death_year: 1976
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Max Ernst"
+    notes: "German-born (Brühl), settled in France. Leading Surrealist and Dada artist."
+
+  - artist_id: marten_van_valckenborch
+    display_name: "Marten van Valckenborch"
+    country_birth: "BE"
+    nationalities: ["BE"]
+    birth_year: 1535
+    death_year: 1612
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Martin van Valckenborch"
+    notes: "2 lotes (1 vendido en 60.000 EUR) | casas: duran_subastas | fuente: Wikipedia. Nacido en Lovaina, entonces Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik y Gillis); un 'van Valckenborch' sin nombre de pila NO debe resolverse aqui."
+
+  - artist_id: markus_lupertz
+    display_name: "Markus Lüpertz"
+    country_birth: "CZ"
+    nationalities: ["DE", "CZ"]
+    birth_year: 1941
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Markus Lüpertz"
+    notes: "1 lote | casas: duran_subastas | artista aleman nacido en Reichenberg, hoy Liberec (Chequia), en 1941. La nacionalidad de mercado va primero; country_birth usa el pais moderno del lugar de nacimiento. Fuente: https://zkm.de/en/persons/markus-lupertz"
+
+  - artist_id: manuel_losada
+    display_name: "Manuel Losada"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1865
+    death_year: 1949
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Losada"
+    notes: "8 lotes | casas: duran_subastas | Manuel Losada Perez de Nenin, nacido y fallecido en Bilbao, 1865-1949; fechas coincidentes con Silver. Fuente: https://bilbaomuseoa.eus/explora/artista/manuel-losada-perez-de-nenin/9e396d4a-23b7-4a09-8386-3afb0f595d80"
+
+  - artist_id: marcelo_pogolotti
+    display_name: "Marcelo Pogolotti"
+    country_birth: "CU"
+    nationalities: ["CU"]
+    birth_year: 1902
+    death_year: 1988
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Marcelo Pogolotti"
+    notes: "2 lotes | casas: duran_subastas | nacido y fallecido en La Habana, 1902-1988; fechas coincidentes con Silver. El listado oficial de prestamo identifica las obras del Museo Nacional de Bellas Artes de La Habana. Fuente: https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2007F/48450.pdf"
+
+  - artist_id: maruja_mallo
+    display_name: "Maruja Mallo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1902
+    death_year: 1995
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Maruja Mallo"
+    notes: "3 lotes | casas: duran_subastas | nacida en Viveiro, Lugo, en 1902 y fallecida en Madrid en 1995. No confundir con Cristino Mallo. Fuente: https://www.museoreinasofia.es/prensa/nota-de-prensa/maruja-mallo-mascara-y-compas-redescubre-en-el-reina-sofia-una-de-las-figuras/"
+
+  - artist_id: manuel_benedito_vives
+    display_name: "Manuel Benedito Vives"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1875
+    death_year: 1963
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Benedito Vives"
+      - "Manuel Benedito"
+      - "BENEDITO VIVES, MANUEL"
+    notes: "12 lotes | casas: duran_subastas | nacido en Valencia en 1875 y fallecido en Madrid en 1963. No confundir con Jose Meseguer Benedito. Fuente: https://www.museodelprado.es/coleccion/artista/benedito-vives-manuel/c7796335-1300-4209-b3e0-2354f51fa09f"
+
+  - artist_id: maurice_utrillo
+    display_name: "Maurice Utrillo"
+    country_birth: "FR"
+    nationalities: ["FR"]
+    birth_year: 1883
+    death_year: 1955
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Maurice Utrillo"
+    notes: "2 lotes | casas: duran_subastas | nacido en Paris en 1883 y fallecido en Dax en 1955; fechas coincidentes con Silver. Fuente: https://www.centrepompidou.fr/fr/ressources/personne/cgBg7M"
+
+  - artist_id: manuel_barbadillo
+    display_name: "Manuel Barbadillo"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1929
+    death_year: 2003
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Manuel Barbadillo"
+    notes: "6 lotes | casas: duran_subastas | nacido en Cazalla de la Sierra, Sevilla, en 1929 y fallecido en Malaga en 2003. Fuente: https://www.museoreinasofia.es/en/collections/artist/barbadillo-manuel/"
+
+  - artist_id: mimmo_rotella
+    display_name: "Mimmo Rotella"
+    country_birth: "IT"
+    nationalities: ["IT"]
+    birth_year: 1918
+    death_year: 2006
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Mimmo Rotella"
+      - "ROTELLA, MIMMO"
+    notes: "10 lotes | casas: duran_subastas | Domenico 'Mimmo' Rotella, nacido en Catanzaro en 1918 y fallecido en Milan en 2006. Las obras de decollage de Silver coinciden con su produccion documentada. Fuentes: https://contemporaneo.quirinale.it/opera/profili ; https://fondazionemimmorotella.net/en/biography/"
+
+  - artist_id: marceliano_santa_maria
+    display_name: "Marceliano Santa María"
+    country_birth: "ES"
+    nationalities: ["ES"]
+    birth_year: 1866
+    death_year: 1952
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Marceliano Santa María"
+      - "Marceliano Santa Maria"
+    notes: "9 lotes | casas: duran_subastas | nombre institucional completo Marceliano Santa María Sedano; nacido en Burgos en 1866 y fallecido en Madrid en 1952; Silver coincide. No atribuir las dos filas Escuela Española S que solo dicen Posible obra de Marceliano Santamaría. Fuente: https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/marceliano-santa-maria-sedano-804.html"

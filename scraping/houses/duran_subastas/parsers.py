@@ -512,9 +512,8 @@ def parse_lot_page(page: Any, auction_meta: AuctionMeta | None = None) -> dict:
     if (not description or len(_clean_text(description)) < 20) and main_description:
         description = main_description
     artist_from_detail = details.get("autor")
-    if artist_from_detail and not artist_raw:
+    if artist_from_detail:
         artist_raw = artist_from_detail
-    if artist_from_detail and not artist_name:
         artist_name = artist_from_detail.split("(")[0].strip()
     if not lot_year:
         lot_year = _infer_year(details.get("titulo"), artist_from_detail)
@@ -585,4 +584,3 @@ def get_auction_page_urls(page: Any, base_auction_url: str) -> list[str]:
 def get_auction_title_from_page(page: Any) -> str:
     raw_html = _page_html(page)
     return _extract_title(raw_html)
-

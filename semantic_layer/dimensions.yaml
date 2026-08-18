@@ -43,6 +43,22 @@ dimensions:
     source: gold.agg_artist_metrics
     description: Year of death from the artist master; null when unknown or alive
 
+  # Decada de nacimiento (1874 -> 1870). La fila decade=null conserva los
+  # artistas del ranking sin fecha en el maestro: no se reparten entre decadas
+  # porque repartirlos seria inventar. Los renderers muestran esa cobertura
+  # fuera del eje temporal, sin eliminarla del agregado.
+  - name: birth_decade
+    key: decade
+    source: gold.agg_artist_generation_metrics
+    description: Birth decade bucket; null row holds artists with no known birth year
+
+  # Anio de la subasta resuelto con extract_year(), que entiende el formato de
+  # cada casa (ISO en Bogota, texto en Duran) y marca el anio inferido del slug.
+  - name: auction_year
+    key: year
+    source: gold.agg_country_year_metrics
+    description: Auction year from extract_year(); "unknown" when not recoverable
+
   # OJO: no aditiva. Un artista con doble nacionalidad suma en dos paises, asi
   # que los totales por nacionalidad no cuadran con los totales por casa.
   - name: nationality

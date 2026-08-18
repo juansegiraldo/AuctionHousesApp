@@ -46,7 +46,11 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict
 
-from pipelines.shared.artist_master import normalize_country, resolve_artist
+from pipelines.shared.artist_master import (
+    load_lot_author_fixes,
+    normalize_country,
+    resolve_artist,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
@@ -69,12 +73,45 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     resultado, porque siempre se recalcula desde artist_name.
     """
     resolved = dict(row)
-    resolved.update(resolve_artist(row.get("artist_name")))
+
+    # Compatibilidad con el antiguo parche por lot_url. El mapa de produccion
+    # esta vacio desde que el parser de Duran prioriza el campo Autor; no se debe
+    # ampliar para datos nuevos.
+    name = row.get("artist_name")
+    lot_url = row.get("lot_url")
+    if lot_url:
+        name = load_lot_author_fixes().get(lot_url, name)
+
+    artist = resolve_artist(name)
+
+    # Lefebre mezcla ocasionalmente nombre y titulo en lineas consecutivas. No
+    # se acepta la primera linea por su forma: la casa es generalista y eso
+    # fabricaria autores a partir de joyas, monedas o vinilos. Solo si el bloque
+    # completo queda sin maestro se prueban sus prefijos, de mayor a menor, y se
+    # acepta exclusivamente uno que YA sea un alias exacto del maestro. Asi
+    # ``SANTIAGO CARDENAS\nBlack Tie`` recupera al pintor sin convertir el titulo
+    # en alias; los prefijos desconocidos permanecen sin pais.
+    if (
+        row.get("house_slug") == "lefebre_subastas"
+        and artist["artist_resolution"] == "fold_only"
+        and isinstance(name, str)
+        and "\n" in name
+    ):
+        lines = [line.strip() for line in name.splitlines() if line.strip()]
+        for end in range(len(lines) - 1, 0, -1):
+            candidate = " ".join(lines[:end])
+            candidate_artist = resolve_artist(candidate)
+            if candidate_artist["artist_resolution"] == "master":
+                name = candidate
+                artist = candidate_artist
+                break
+
+    resolved.update(artist)
 
     # El display name cae al nombre crudo cuando el artista no esta en el
     # maestro, para que el informe siga mostrando algo legible.
     if resolved["artist_display_name"] is None:
-        raw = (row.get("artist_name") or "").strip()
+        raw = (name or "").strip()
         resolved["artist_display_name"] = raw or None
 
     return resolved

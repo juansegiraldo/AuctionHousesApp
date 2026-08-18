@@ -51,6 +51,8 @@ def run_report() -> dict:
     # secciones en vez de fallar.
     artists = load_jsonl(GOLD_ROOT / "agg_artist_metrics.jsonl")
     countries = load_jsonl(GOLD_ROOT / "agg_country_metrics.jsonl")
+    country_year = load_jsonl(GOLD_ROOT / "agg_country_year_metrics.jsonl")
+    generations = load_jsonl(GOLD_ROOT / "agg_artist_generation_metrics.jsonl")
     categories = load_jsonl(GOLD_ROOT / "agg_category_metrics.jsonl")
     months = load_jsonl(GOLD_ROOT / "agg_month_metrics.jsonl")
     price_dist_rows = load_jsonl(GOLD_ROOT / "agg_price_distribution.jsonl")
@@ -90,6 +92,14 @@ def run_report() -> dict:
         },
         "quality_flags": quality_flags,
         "artist_coverage": artist_coverage,
+        # Los agregados por pais NO aplican el corte de lotes vendidos del
+        # ranking, asi que suman mas lotes que la tabla de artistas. El informe
+        # publica la diferencia en vez de dejar que parezca un error de suma.
+        "country_lots_below_rank_cutoff": max(
+            0,
+            sum(r.get("lots_offered", 0) for r in countries)
+            - sum(r.get("lots_offered", 0) for r in artists),
+        ),
         "by_house": [
             {
                 "house_slug": r.get("house_slug"),
@@ -109,6 +119,8 @@ def run_report() -> dict:
         "by_year_by_house": [],
         "by_artist": artists,
         "by_country": countries,
+        "by_country_year": country_year,
+        "by_generation": generations,
         "by_category": categories,
         "by_month": months,
         "price_distribution": price_dist_rows[0] if price_dist_rows else None,

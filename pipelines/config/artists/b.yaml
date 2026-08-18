@@ -26,6 +26,8 @@ artists:
     display_name: "Beatriz González"
     country_birth: "CO"
     nationalities: ["CO"]
+    birth_year: 1932
+    death_year: 2026
     attribution_type: autor
     source: manual
     confidence: high
@@ -33,7 +35,7 @@ artists:
       - "Beatriz González"
       - "Beatriz González (Colombia, 1938)"
       - "González, Beatriz"
-    notes: "60 lotes | casas: bogota_auctions"
+    notes: "60 lotes | casas: bogota_auctions | n. 16-11-1932 Bucaramanga, m. 09-01-2026 Bogota. OJO: el alias de la casa y la ficha del Reina Sofia dicen 1938; es un error propagado. Desempata la aritmetica del obituario: murio a los 93, lo que exige 1932 (con 1938 tendria 87). Fuentes: Wikipedia EN/ES, Publimetro y Pulzo (09-01-2026)."
 
   - artist_id: bengt_lindstrom
     display_name: "Bengt Lindström"
@@ -71,6 +73,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Bernardo Salcedo (Colombia, 1939 - 2007.)"
       - "Bernardo Salcedo"
     notes: "16 lotes | casas: bogota_auctions"
 
@@ -97,12 +100,17 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "BONIFACIO DEL CARRIL"
+      - "Bonifacio Alonso"
+      - "Bonifacio Lázaro Lozano"
+      - "Bonifacio (Alonso Bonifacio)"
       - "Bonifacio"
     notes: "55 lotes | casas: duran_subastas"
 
   - artist_id: bosco_sodi
     display_name: "Bosco Sodi"
     country_birth: "MX"
+    birth_year: 1970
     nationalities: ["MX"]
     attribution_type: autor
     source: manual
@@ -178,15 +186,16 @@ artists:
   - artist_id: beatriz_daza
     display_name: "Beatriz Daza"
     country_birth: "CO"
+    death_year: 1968
     nationalities: ["CO"]
-    birth_year: 1938
+    birth_year: 1927
     attribution_type: autor
     source: manual
     confidence: high
     aliases:
       - "BEATRIZ DAZA"
       - "Beatriz Daza"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
+    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1938 y nacio en 1927; murio en 1968. Fuente: Wikipedia ES."
 
   - artist_id: beltran
     display_name: "Beltran"

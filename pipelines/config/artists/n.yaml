@@ -11,6 +11,8 @@ artists:
   - artist_id: nacho_criado
     display_name: "Nacho Criado"
     country_birth: "ES"
+    birth_year: 1943
+    death_year: 2010
     nationalities: ["ES"]
     attribution_type: autor
     source: manual
@@ -29,12 +31,14 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Nadín Ospina (Colombia, 1960)"
       - "Nadín Ospina"
     notes: "10 lotes | casas: bogota_auctions"
 
   - artist_id: nicola_de_maria
     display_name: "Nicola de Maria"
     country_birth: "IT"
+    birth_year: 1954
     nationalities: ["IT"]
     attribution_type: autor
     source: manual
@@ -157,6 +161,7 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Norman Mejía Franco"
       - "NORMAN MEJIA"
       - "Norman Mejía"
       - "Norman  Mejía"
@@ -185,6 +190,9 @@ artists:
     source: manual
     confidence: high
     aliases:
+      - "Nicanor Piñole Rodríguez"
+      - "Nicanor Piñole y Rodríguez"
+      - "NIcanor Piñole y Rodríguez"
       - "Nicanor Piñole"
     notes: "13 lotes en Silver | fuente: Wikipedia ES | Gijon"
 
@@ -200,3 +208,55 @@ artists:
       - "Nicolás Gless"
       - "Nicolas Gless"
     notes: "16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila"
+
+  - artist_id: natasha_zupan
+    display_name: "Natasha Zupan"
+    country_birth: "US"
+    nationalities: ["US"]
+    birth_year: 1965
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Natasha Zupan"
+    notes: "Nacida en Columbus, Georgia, USA. Estudió en Yale University (1987). Padre: Bruno Zupan (artista esloveno). Mostró en 59ª Bienal de Venecia (2022) con 88 obras."
+
+  - artist_id: nicolas_garcia_uriburu
+    display_name: "Nicolás García Uriburu"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1937
+    death_year: 2016
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nicolás García Uriburu"
+      - "NICOLAS GARCIA URIBURU"
+    notes: "4 lotes | n. 1937 en Buenos Aires, m. 2016. Arquitecto y pionero del Land Art; coloreo el Gran Canal de Venecia (1968) y el Rin con Beuys (1981). Fuentes: Wikipedia, Centre Pompidou, Museo Moderno de Buenos Aires."
+
+  - artist_id: nikos_hadjikyriakos_ghika
+    display_name: "Nikos Hadjikyriakos-Ghika"
+    country_birth: "GR"
+    nationalities: ["GR"]
+    birth_year: 1906
+    death_year: 1994
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Nikos Hadjikyriakos Ghika"
+    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Atenas, 1906-1994. Fuente: https://www.nationalgallery.gr/en/artist/hatzikyriakos-ghika-nikos/"
+
+  - artist_id: norah_borges
+    display_name: "Norah Borges"
+    country_birth: "AR"
+    nationalities: ["AR"]
+    birth_year: 1901
+    death_year: 1998
+    attribution_type: autor
+    source: manual
+    confidence: high
+    aliases:
+      - "Norah Borges"
+    notes: "2 lotes | casas: duran_subastas | artista plastica argentina, 1901-1998; fechas coincidentes con Silver. No confundir con su hermano Jorge Luis Borges ni con Jacobo Borges. Fuente: https://www.bellasartes.gob.ar/exhibiciones/norah-borges-una-mujer-en-la-vanguardia/"

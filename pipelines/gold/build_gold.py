@@ -26,8 +26,8 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur
-from pipelines.shared.schema import UNKNOWN_YEAR, extract_year, is_sold
+from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur, to_eur_at
+from pipelines.shared.schema import UNKNOWN_YEAR, extract_month, extract_year, is_sold
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -95,6 +95,10 @@ def main() -> None:
     )
     year_source: dict[tuple[str, str], int] = defaultdict(int)
     unconvertible: dict[str, int] = defaultdict(int)
+    # Cuantos lotes se convirtieron con tasa del mes y cuantos cayeron al
+    # fallback estatico. Se publica en quality_flags: el fallback existe, pero
+    # queda contado, no invisible.
+    fx_methods: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     # Venta directa permanente (p.ej. "tienda-online" de Duran): no es una
     # subasta, asi que no tiene fecha. Se contabiliza aparte para no
     # confundirla con lotes a los que si deberia haberse podido datar.
@@ -113,10 +117,17 @@ def main() -> None:
         if method == "unknown" and ("tienda-online" in aid_raw or "venta-directa" in aid_raw):
             non_auction_lots[house] += 1
 
-        # Importe convertido: None si la moneda no esta en fx.yaml.
-        price_eur = to_eur(price, currency) if sold else None
-        if sold and price is not None and price_eur is None:
-            unconvertible[str(currency)] += 1
+        # Importe convertido con la tasa del MES de la subasta. Con la tasa de
+        # hoy, un lote COP de 2014 salia ~62% barato.
+        month, _month_method = extract_month(row.get("auction_start_date"), aid_raw)
+        if sold:
+            price_eur, fx_method = to_eur_at(price, currency, month)
+        else:
+            price_eur, fx_method = None, "monthly"
+        if sold and price is not None:
+            fx_methods[house][fx_method] += 1
+            if price_eur is None:
+                unconvertible[str(currency)] += 1
 
         h = per_house[house]
         h["lots_offered"] += 1
@@ -183,7 +194,11 @@ def main() -> None:
                 "currency": currency,
                 "revenue_native": round(m["revenue_native"], 2),
                 "revenue_eur": round(m["revenue_eur"], 2),
-                "fx_rate_used": rate_for(currency),
+                # Ya no hay una unica tasa por moneda: se aplica la del mes de
+                # cada subasta. Se publica el recuento de metodos en su lugar.
+                "fx_method_counts": dict(fx_methods.get(house, {})),
+                "fx_fallback_lots": fx_methods.get(house, {}).get("fallback_static", 0),
+                "fx_rate_static": rate_for(currency),
                 "avg_sold_price_native": (
                     round(m["revenue_native"] / lots_sold, 2) if lots_sold else None
                 ),
@@ -253,13 +268,32 @@ def main() -> None:
     _write_jsonl(GOLD_ROOT / "agg_lots_by_year_by_house.jsonl", year_house_rows)
 
     # --- quality_flags: las salvedades que el informe debe mostrar -----------
+    total_fallback = sum(m.get("fallback_static", 0) for m in fx_methods.values())
     flags = [
         {
             "level": "info",
-            "code": "fx_static",
-            "message": fx_note(),
+            "code": "fx_historical",
+            "message": fx_note(total_fallback),
             "fx_as_of": fx_as_of(),
-        }
+            "fx_fallback_lots": total_fallback,
+        },
+        {
+            # Este aviso ERA un warn: con una tasa unica aplicada a doce anios,
+            # las series por anio en euros llevaban dentro un movimiento que era
+            # del tipo de cambio y se leia como si fuera del mercado. Desde
+            # fx_history.yaml cada lote usa la tasa de SU mes, asi que comparar
+            # anios ya es valido y el aviso baja a info: queda la salvedad de
+            # que una media mensual no es la tasa del dia del martillo.
+            "level": "info",
+            "code": "fx_timeseries",
+            "fx_as_of": fx_as_of(),
+            "message": (
+                "Las series por año en euros usan la tasa media del mes de cada "
+                "subasta, no una tasa única: comparar años dentro de una misma casa "
+                "ya es válido. La media mensual no es la tasa del día exacto del "
+                "martillo, así que el importe en moneda nativa sigue siendo el exacto."
+            ),
+        },
     ]
 
     for house, m in sorted(per_house.items()):

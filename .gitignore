@@ -19,6 +19,9 @@ venv/
 scraping/output/
 scraping/houses/*/output/*.jsonl
 scraping/houses/*/output/checkpoints/
+# Restos de corridas de prueba apartados de output/ (ver el README de la
+# carpeta). Siguen siendo resultados de scrape: no se commitean.
+scraping/houses/*/_discarded/*.jsonl
 
 # Data lake / medallion local data
 data/bronze/**
