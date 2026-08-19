@@ -249,16 +249,19 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q139057962'
 - artist_id: pablo_sycet
   display_name: Pablo Sycet
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1953
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Pablo Sycet
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q55992734'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55992734. INVESTIGADO 2026-08-19: Pablo Sycet Torres, nacido
+    en GIBRALEON (Huelva) el 09-02-1953. Pintor, comisario y letrista, figura de la Movida madrilenia. En activo.
+    Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Pablo_Sycet ; Fundacion Juan March https://archivo.march.es/agents/people/3453'
   death_status: living
 - artist_id: pablo_tamayo
   display_name: Pablo Tamayo
@@ -835,13 +838,20 @@ artists:
   birth_year: 1902
   death_year: 1971
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Pedro de Valencia
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1902, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
-    Fuente: https://www.wikidata.org/wiki/Q136101307'
+    Fuente: https://www.wikidata.org/wiki/Q136101307. INVESTIGADO 2026-08-19: Seudonimo de Pedro Sanchez Garcia-Esteban,
+    nacido en VALENCIA en 1902 y muerto alli en enero de 1971. Formado en San Carlos desde 1914 y becado por San
+    Fernando en Italia. Fuentes: Museo Reina Sofia https://www.museoreinasofia.es/en/coleccion/autor/valencia-pedro-sanchez-garcia-esteban-pedro
+    ; Museo Nacional de Ceramica https://www.cultura.gob.es/mnceramica/colecciones/seleccion-piezas/pintura-artes-graficas/paisaje.html'
+  country_birth: ES
+  nationalities:
+  - ES
+  death_status: known
 - artist_id: pedro_delso_ruperez
   display_name: Pedro Delso Rupérez
   country_birth: ES
