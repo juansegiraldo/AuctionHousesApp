@@ -18,6 +18,9 @@ $stages = @(
     # Va justo despues de build_silver: reescribe lots.jsonl anadiendo identidad
     # de artista, tipo de autoria y pais. Todo lo que viene detras lo da por hecho.
     @{ Name = "Silver  (artistas + paises)";    Module = "pipelines.silver.artist_resolve" },
+    # Dimension exhaustiva: combina el maestro curado con todo fold de autor y
+    # deja los dudosos en needs_web/ambiguous, sin promover texto crudo.
+    @{ Name = "Gold    (maestro de artistas)";  Module = "pipelines.gold.build_artist_master" },
     @{ Name = "Enrich  (moneda -> EUR)";        Module = "pipelines.enrichments.currency_normalize" },
     @{ Name = "Enrich  (artistas)";             Module = "pipelines.enrichments.artist_canonicalize" },
     @{ Name = "Enrich  (categorias)";           Module = "pipelines.enrichments.category_tag" },
