@@ -66,3 +66,49 @@ def test_an_entry_without_a_master_year_is_not_a_conflict():
     )
 
     assert conflicts == []
+
+
+def test_a_minority_year_does_not_challenge_a_confirmed_master():
+    """Antonio Barrera: 62 lotes dicen 1948 (como el maestro) y 7 dicen 1889.
+
+    El valor DOMINANTE del catalogo confirma al maestro, asi que no hay
+    conflicto: la minoria es ruido de otra ficha o de un homonimo. Elegir el
+    discrepante mas votado ignorando la mayoria era un falso positivo.
+    """
+    row = {
+        "artist_id": "antonio_barrera",
+        "evidence": {
+            "birth_year": [
+                {"value": 1948, "count": 62},
+                {"value": 1889, "count": 7},
+            ]
+        },
+    }
+
+    conflicts = promote.catalog_year_conflicts(
+        {"antonio_barrera": {"birth_year": 1948, "display_name": "Antonio Barrera"}},
+        [row],
+    )
+
+    assert conflicts == []
+
+
+def test_the_dominant_catalog_year_still_wins_when_it_disagrees():
+    """Nirma Zarate: el valor mayoritario del catalogo SI contradice."""
+    row = {
+        "artist_id": "nirma_zarate",
+        "evidence": {
+            "birth_year": [
+                {"value": 1936, "count": 13},
+                {"value": 1969, "count": 1},
+            ]
+        },
+    }
+
+    conflicts = promote.catalog_year_conflicts(
+        {"nirma_zarate": {"birth_year": 1969, "display_name": "Nirma Zárate"}},
+        [row],
+    )
+
+    assert len(conflicts) == 1
+    assert conflicts[0]["catalog_birth_year"] == 1936

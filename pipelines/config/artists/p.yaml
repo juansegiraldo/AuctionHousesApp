@@ -77,15 +77,18 @@ artists:
   country_birth: UY
   nationalities:
   - UY
-  birth_year: 1880
-  death_year: 1971
+  birth_year: 1921
+  death_year: 2004
   attribution_type: autor
   source: wikidata
   confidence: high
   aliases:
   - Pablo Mañé
   - PABLO MAÑÉ
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6056220'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6056220.
+    CORREGIDO 2026-08-19: la ficha decia n.1880-1971 y el catalogo de la casa publica ''PABLO MANE (1921-2004)''
+    en sus lotes. La hoja FINALL.xlsx traia el anio equivocado; gana el dato de la casa.'
+  death_status: known
 - artist_id: pablo_munoz
   display_name: Pablo Muñoz
   country_birth: CO

@@ -1092,15 +1092,18 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1920
-  death_year: 2000
+  birth_year: 1958
+  death_year: 2006
   attribution_type: autor
   source: manual
   confidence: high
   aliases:
   - ALBERTO RIAÑO
   - Alberto Riaño
-  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1920-2000
+    y el catalogo de la casa publica ''Alberto Riano (Colombia, 1958 - 2006)'' en sus lotes. La hoja FINALL.xlsx
+    traia el anio equivocado; gana el dato de la casa.'
+  death_status: known
 - artist_id: alberto_saldarriaga
   display_name: Alberto Saldarriaga
   country_birth: CO
@@ -1506,14 +1509,16 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1945
+  birth_year: 1981
   attribution_type: autor
   source: manual
   confidence: high
   aliases:
   - ALEJANDRO SANCHEZ
   - Alejandro Sánchez
-  notes: '17 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '17 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1945 y
+    el catalogo de la casa publica ''ALEJANDRO SANCHEZ (1981) / Alejandro Sanchez (Colombia, 1981)'' en sus lotes.
+    La hoja FINALL.xlsx traia el anio equivocado; gana el dato de la casa.'
 - artist_id: alejandro_seiquer
   display_name: Alejandro Seiquer López
   country_birth: ES

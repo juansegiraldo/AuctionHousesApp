@@ -619,14 +619,18 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1969
+  birth_year: 1936
   attribution_type: autor
   source: manual
   confidence: high
   aliases:
   - NIRMA ZARATE
   - Nirma Zárate
-  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1969 y el
+    catalogo de la casa publica ''Nirma Zarate Colombia,1936-1999'' en sus lotes. La hoja FINALL.xlsx traia el anio
+    equivocado; gana el dato de la casa.'
+  death_year: 1999
+  death_status: known
 - artist_id: noe_leon
   display_name: Noé León
   country_birth: CO
@@ -712,7 +716,7 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1979
+  birth_year: 1938
   attribution_type: autor
   source: manual
   confidence: high
@@ -721,7 +725,9 @@ artists:
   - NORMAN MEJIA
   - Norman Mejía
   - Norman  Mejía
-  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1979 y el
+    catalogo de la casa publica ''Norman Mejia (Colombia, 1938)'' en sus lotes. La hoja FINALL.xlsx traia el anio
+    equivocado; gana el dato de la casa.'
 - artist_id: nydia_lozano
   display_name: Nydia Lozano
   birth_year: 1947

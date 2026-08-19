@@ -566,28 +566,33 @@ candidatos revisados, la mayoria eran autores reales que la senial marcaba mal
 `PALAZUELO, PABLO`, `HOGARTH, WILLIAM`, `MERCATOR, GERHARD`, `Equipo Realidad`,
 `Estampa Popular`. Hay un test que fija que los 17 sobrevivan.
 
-### 40 fichas con el anio EQUIVOCADO, y por que importan mas que un hueco
+### Fichas con el anio EQUIVOCADO, y por que importan mas que un hueco
 
 Un hueco es un resultado correcto; un anio equivocado se publica en el informe
-y **nadie lo detecta leyendolo**. La carga del Excel curado dejo 40 fichas donde
-el catalogo insiste en otra fecha, y el texto crudo le da la razon a la casa:
+y **nadie lo detecta leyendolo**. La carga del Excel curado dejo fichas donde el
+catalogo insiste en otra fecha, y el texto crudo le da la razon a la casa:
 
-| Ficha | Maestro | Catalogo | Lotes |
+| Ficha | Decia | Publica la casa | Lotes |
 |---|---|---|---|
 | `alejandro_sanchez` | n.1945 | **n.1981** | 59 |
 | `alberto_riano` | n.1920 | **1958-2006** | 34 |
 | `nirma_zarate` | n.1969 | **1936-1999** | 13 |
 | `maria_villa` | n.1972 | **1909-1991** | 6 |
 
-`python scripts/artist_master_promote.py --year-conflicts` las lista. **No
-corrige nada**: cada una se verifica a mano contra fuente antes de tocarla, la
-misma disciplina del resto del ciclo.
+**10 corregidas** contra la cita literal del catalogo, que queda en `notes`.
+Quedan 10 sin tocar: o el texto crudo no trae fechas, o la propia casa se
+contradice entre lotes (`lorenzo_jaramillo` sale 1955 y 1956, `carlos_castro`
+1976 y 1981), y ahi hace falta una fuente externa.
 
-El umbral (`MAX_CATALOG_YEAR_DRIFT`, 25 anios) distingue el error de dato del
-desacuerdo normal entre fuentes — Antonio Palacios es 1874 en Wikipedia y 1876
-en la ficha de Duran, y eso no es un conflicto. Y el catalogo tiene que
-**insistir** (`MIN_LOTS_TO_CHALLENGE_MASTER`): un lote suelto puede llevar una
-errata del scraper, varios ya son la ficha de la casa.
+`python scripts/artist_master_promote.py --year-conflicts` los lista.
+
+**Solo cuenta el valor DOMINANTE del catalogo.** Antonio Barrera tiene 62 lotes
+diciendo 1948 -- que confirma al maestro -- y 7 diciendo 1889: quedarse con el
+discrepante mas votado ignorando la mayoria daba **20 falsos positivos de 40**.
+
+El umbral (`MAX_CATALOG_YEAR_DRIFT`, 25 anios) separa el error de dato del
+desacuerdo normal entre fuentes (Antonio Palacios: 1874 vs 1876), y el catalogo
+tiene que insistir en 2+ lotes porque uno suelto puede llevar una errata.
 
 **Ojo con la lectura ingenua de la evidencia:** el primer analisis leyo esos
 anios como fechas de MUERTE y salieron artistas muertos a los 11 y 19 anios.

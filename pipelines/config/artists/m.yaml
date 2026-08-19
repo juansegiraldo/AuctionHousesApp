@@ -1965,14 +1965,18 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1972
+  birth_year: 1909
   attribution_type: autor
   source: manual
   confidence: high
   aliases:
   - MARIA VILLA
   - María Villa
-  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1972 y el
+    catalogo de la casa publica ''Maria Villa Colombia, 1909 - 1991'' en sus lotes. La hoja FINALL.xlsx traia el
+    anio equivocado; gana el dato de la casa.'
+  death_year: 1991
+  death_status: known
 - artist_id: mariana_lopez_cancio
   display_name: Mariana Lopez Cancio
   birth_year: 1909

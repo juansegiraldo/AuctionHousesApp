@@ -6730,19 +6730,23 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1981
+  birth_year: 1945
   attribution_type: autor
   source: manual
   confidence: high
   aliases:
   - JUAN CAMILO URIBE
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1981 y el
+    catalogo de la casa publica ''JUAN CAMILO URIBE (1945-2005)'' en sus lotes. La hoja FINALL.xlsx traia el anio
+    equivocado; gana el dato de la casa.'
+  death_year: 2005
+  death_status: known
 - artist_id: juan_cardenas
   display_name: Juan Cárdenas
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1978
+  birth_year: 1939
   attribution_type: autor
   source: manual
   confidence: high
@@ -6750,7 +6754,9 @@ artists:
   - 'Juan Cárdenas: dos Títulos'
   - JUAN CARDENAS
   - Juan Cárdenas
-  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1978 y el
+    catalogo de la casa publica ''Juan Cardenas Colombia, 1939'' en sus lotes. La hoja FINALL.xlsx traia el anio
+    equivocado; gana el dato de la casa.'
 - artist_id: juan_carlos_castagnino
   display_name: Juan Carlos Castagnino
   country_birth: AR

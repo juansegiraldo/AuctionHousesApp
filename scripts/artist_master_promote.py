@@ -312,18 +312,24 @@ def catalog_year_conflicts(
         if not master_year:
             continue
         evidence = (row.get("evidence") or {}).get("birth_year") or []
+        # Solo cuenta el valor DOMINANTE del catalogo. Antonio Barrera tiene 62
+        # lotes diciendo 1948 (como el maestro) y 7 diciendo 1889: quedarse con
+        # el discrepante mas votado ignorando la mayoria daba un falso positivo,
+        # porque esa minoria es ruido de un homonimo o de otra ficha.
+        votes = [
+            (value, item.get("count") or 0)
+            for item in evidence
+            if isinstance(item, Mapping)
+            and (value := _plausible_year(item.get("value")))
+        ]
         best = None
-        for item in evidence:
-            if not isinstance(item, Mapping):
-                continue
-            value = _plausible_year(item.get("value"))
-            count = item.get("count") or 0
-            if not value or count < MIN_LOTS_TO_CHALLENGE_MASTER:
-                continue
-            if abs(value - master_year) <= MAX_CATALOG_YEAR_DRIFT:
-                continue
-            if best is None or count > best[1]:
-                best = (value, count)
+        if votes:
+            top_value, top_count = max(votes, key=lambda v: v[1])
+            if (
+                top_count >= MIN_LOTS_TO_CHALLENGE_MASTER
+                and abs(top_value - master_year) > MAX_CATALOG_YEAR_DRIFT
+            ):
+                best = (top_value, top_count)
         if best:
             out.append(
                 {

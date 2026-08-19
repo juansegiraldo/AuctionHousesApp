@@ -2054,7 +2054,7 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1910
+  birth_year: 1958
   death_year: 1985
   attribution_type: autor
   source: manual
@@ -2063,7 +2063,9 @@ artists:
   - LUIS LUNA
   - Luis Luna
   - Luis  Luna
-  notes: '10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1910-1985
+    y el catalogo de la casa publica ''Luis Luna Colombia, 1958'' en sus lotes. La hoja FINALL.xlsx traia el anio
+    equivocado; gana el dato de la casa.'
 - artist_id: luis_marco
   display_name: Luis Marco
   country_birth: ES

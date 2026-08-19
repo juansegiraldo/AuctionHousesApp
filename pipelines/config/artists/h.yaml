@@ -663,7 +663,7 @@ artists:
   country_birth: CO
   nationalities:
   - CO
-  birth_year: 1978
+  birth_year: 1931
   attribution_type: autor
   source: manual
   confidence: high
@@ -671,7 +671,11 @@ artists:
   - HERNAN DIAZ
   - Hernán Díaz
   - Díaz, Hernán
-  notes: '12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1978 y
+    el catalogo de la casa publica ''Hernan Diaz Colombia, 1931 - 2009'' en sus lotes. La hoja FINALL.xlsx traia
+    el anio equivocado; gana el dato de la casa.'
+  death_year: 2009
+  death_status: known
 - artist_id: hernando_del_villar
   display_name: Hernando del Villar
   country_birth: CO
