@@ -2113,16 +2113,23 @@ artists:
   notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
 - artist_id: alfredo_sanchis_cortes
   display_name: Alfredo Sanchis Cortés
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   death_year: 2014
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Alfredo Sanchís Cortés
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q5668021'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5668021. INVESTIGADO 2026-08-19: Nacido en VALENCIA en
+    1932 y muerto el 31-10-2014. Historietista de Editorial Valenciana antes de dedicarse a la acuarela; ultima
+    gran figura de la pintura taurina valenciana. OJO: Artprice da 1933; se conserva 1932 por ser el consenso de
+    Wikipedia, Wikidata y las casas, y se anota la duda. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Alfredo_Sanchis_Cort%C3%A9s
+    ; Wikidata https://www.wikidata.org/wiki/Q5668021'
+  birth_year: 1932
+  death_status: known
 - artist_id: alfredo_sosabravo
   display_name: Alfredo Sosabravo
   country_birth: CU

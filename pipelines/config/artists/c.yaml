@@ -265,16 +265,19 @@ artists:
   death_status: living
 - artist_id: carlos_casariego
   display_name: Carlos Casariego
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1952
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Carlos Casariego
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q112499055'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q112499055. INVESTIGADO 2026-08-19: Nacido en OVIEDO en
+    1952 (no en Madrid, donde desarrollo parte de su carrera). Pintor y fotografo de arquitectura; en activo, con
+    series fechadas desde 2008. Fuente: Fundacion Juan March https://archivo.march.es/agents/people/4255'
   death_status: living
 - artist_id: carlos_castro
   display_name: Carlos Castro
@@ -2351,17 +2354,23 @@ artists:
   death_status: living
 - artist_id: costus
   display_name: Costus
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: medium
   aliases:
   - Costus
   - COSTUS
   - Constus
   notes: 'Duo de la Movida (Enrique Naya y Juan Carrero); sin pais unico porque son dos personas. El catalogo lo
-    publica tambien como ''Constus''. Fuente: https://www.wikidata.org/wiki/Q140444515'
+    publica tambien como ''Constus''. Fuente: https://www.wikidata.org/wiki/Q140444515. INVESTIGADO 2026-08-19:
+    COSTUS es un DUO, no una persona: Enrique Naya Igueravide (Cadiz, 12-09-1953) y Juan Jose Carrero Galofre (Palma,
+    04-05-1955), pareja artistica y sentimental que firma asi desde 1981. Ambos murieron en 1989. Los dos son espanioles,
+    asi que el PAIS es seguro; las FECHAS se omiten a proposito porque son dos nacimientos y dos muertes distintos
+    -- misma regla que ''Fernando Pareja y Leidy Chavez'', donde publicar el par habria dado a una artista viva
+    por muerta. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Costus_(pintores) ; web oficial https://www.costus.es/sobre-costus/'
 - artist_id: cristina_alabau
   display_name: Cristina Alabau
   birth_year: 1963

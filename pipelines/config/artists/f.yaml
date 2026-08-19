@@ -623,17 +623,21 @@ artists:
     en 1977; fechas coincidentes con Silver. Fuente: https://www.museoreinasofia.es/colecciones/artista/aguayo-fermin/'
 - artist_id: fermin_alegre
   display_name: Fermín Alegre
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1947
   death_year: 1996
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Fermín Alegre
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q139093920'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139093920. INVESTIGADO 2026-08-19: Fermin Alegre Monferrer,
+    nacido en TERUEL el 28-03-1947 y muerto alli el 28-06-1996. Formado en San Carlos (Valencia). Fuentes: web oficial
+    https://ferminalegre.com/biografia/ ; Gran Enciclopedia Aragonesa http://www.enciclopedia-aragonesa.com/voz.asp?voz_id=595'
+  death_status: known
 - artist_id: fermin_gonzalez_prieto
   display_name: Fermín González Prieto
   country_birth: ES
