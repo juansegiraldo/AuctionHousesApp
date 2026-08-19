@@ -1,1061 +1,2869 @@
-# Maestro de artistas - shard "e"
-#
-# Entradas cuyo artist_id empieza por "e". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: edgar_negret
-    display_name: "Edgar Negret"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1920
-    death_year: 2012
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "[Edgar Negret] Colección de fotografías de artistas"
-      - "Edgar Negret"
-      - "Edgar Negret (Colombia, 1920 - 2012)"
-      - "Negret, Edgar"
-    notes: "45 lotes | casas: bogota_auctions"
-
-  - artist_id: edgar_plans
-    display_name: "Edgar Plans"
-    country_birth: "ES"
-    birth_year: 1977
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Edgar Plans"
-      - "PLANS, EDGAR"
-    notes: "9 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_arroyo
-    display_name: "Eduardo Arroyo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1937
-    death_year: 2018
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Arroyo"
-      - "ARROYO, EDUARDO"
-    notes: "80 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_chillida
-    display_name: "Eduardo Chillida"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1924
-    death_year: 2002
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Chillida Belzunce"
-      - "Eduardo Chillida"
-    notes: "88 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_naranjo
-    display_name: "Eduardo Naranjo"
-    country_birth: "ES"
-    birth_year: 1944
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Naranjo"
-      - "NARANJO, EDUARDO"
-    notes: "49 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_ramirez_villamizar
-    display_name: "Eduardo Ramírez Villamizar"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1922
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Ramírez Villamizar (Colombia, 1922 - 2004)"
-      - "Eduardo Ramírez Villamizar - Colombia, 1922 - 2004."
-      - "Eduardo Ramírez Villamizar (Colombia, 1922 - 2004.)"
-      - "Eduardo Ramírez Villamizar"
-    notes: "35 lotes | casas: bogota_auctions"
-
-  - artist_id: eduardo_rosales
-    display_name: "Eduardo Rosales"
-    country_birth: "ES"
-    birth_year: 1836
-    death_year: 1873
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Rosales"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_santonja
-    display_name: "Eduardo Santonja"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1899
-    death_year: 1966
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Santonja Rosales"
-      - "Eduardo Santonja"
-    notes: "68 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_sanz
-    display_name: "Eduardo Sanz"
-    country_birth: "ES"
-    birth_year: 1928
-    death_year: 2013
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Sanz"
-    notes: "26 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_urculo
-    display_name: "Eduardo Úrculo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1938
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Úrculo"
-    notes: "67 lotes | casas: duran_subastas"
-
-  - artist_id: eduardo_vicente
-    display_name: "Eduardo Vicente"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1900
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Vicente"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: elena_asins
-    display_name: "Elena Asins"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1940
-    death_year: 2015
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Elena Asins"
-    notes: "10 lotes | casas: duran_subastas"
-
-  - artist_id: elena_santonja
-    display_name: "Elena Santonja"
-    country_birth: "ES"
-    birth_year: 1932
-    death_year: 2016
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Elena Santonja"
-    notes: "97 lotes | casas: duran_subastas"
-
-  - artist_id: elias_garralda_alzugaray
-    display_name: "Elías Garralda Alzugaray"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 2012
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Elías Garralda Alzugaray"
-      - "GARRALDA ALZUGARAY, ELÍAS"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: eliseo_meifren
-    display_name: "Eliseo Meifrén"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1859
-    death_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eliseo Meifrén"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: emilia_castaneda
-    display_name: "Emilia Castañeda"
-    country_birth: "ES"
-    birth_year: 1943
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilia Castañeda"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: emilio_grau_sala
-    display_name: "Emilio Grau Sala"
-    country_birth: "ES"
-    birth_year: 1911
-    death_year: 1975
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilio Grau Sala"
-    notes: "62 lotes | casas: duran_subastas"
-
-  - artist_id: emilio_prieto
-    display_name: "Emilio Prieto"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1940
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilio Prieto"
-      - "PRIETO, EMILIO"
-    notes: "67 lotes | casas: duran_subastas"
-
-  - artist_id: emilio_sala_frances
-    display_name: "Emilio Sala Francés"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1850
-    death_year: 1910
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilio Sala Francés"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: emma_reyes
-    display_name: "Emma Reyes"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1919
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emma Reyes - Colombia, 1919 - Francia, 2003."
-      - "Emma Reyes (Colombia, 1919 - Francia, 2003)"
-      - "Emma Reyes"
-    notes: "31 lotes | casas: bogota_auctions"
-
-  - artist_id: enrique_atalaya
-    display_name: "Enrique Atalaya"
-    country_birth: "ES"
-    birth_year: 1851
-    death_year: 1913
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Atalaya"
-      - "ATALAYA, ENRIQUE"
-    notes: "6 lotes | casas: duran_subastas"
-
-  - artist_id: enrique_brinkmann
-    display_name: "Enrique Brinkmann"
-    country_birth: "ES"
-    birth_year: 1938
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Brinkmann"
-      - "BRINKMANN, ENRIQUE"
-    notes: "24 lotes | casas: duran_subastas"
-
-  - artist_id: enrique_grau
-    display_name: "Enrique Grau"
-    country_birth: "PA"
-    nationalities: ["CO", "PA"]
-    birth_year: 1920
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Grau (Panamá, 1920 - Colombia, 2004)"
-      - "Enrique Grau - Panamá, 1920 - Colombia, 2004."
-      - "Enrique Grau - Panamá, 1920, Colombia, 2004."
-      - "Enrique Grau"
-      - "Grau, Enrique"
-    notes: "32 lotes | casas: bogota_auctions"
-
-  - artist_id: enrique_martinez_cubells
-    display_name: "Enrique Martínez Cubells"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1874
-    death_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique MARTÍNEZ CUBELLS Y RUIZ"
-      - "Enrique Martínez Cubells Ruiz"
-      - "Enrique Martinez Cubells Ruiz"
-      - "Enrique Martínez Cubells"
-    notes: "19 lotes | casas: duran_subastas"
-
-  - artist_id: enrique_monis_mora
-    display_name: "Enrique Monis Mora"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1914
-    death_year: 1982
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Monis Mora"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: enrique_segura
-    display_name: "Enrique Segura"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1906
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Segura"
-    notes: "28 lotes | casas: duran_subastas"
-
-  - artist_id: equipo_cronica
-    display_name: "Equipo Crónica"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1963
-    death_year: 1981
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Equipo Crónica (Después)"
-      - "Equipo Crónica"
-    notes: "73 lotes | casas: duran_subastas"
-
-  - artist_id: erwin_bechtold
-    display_name: "Erwin Bechtold"
-    country_birth: "DE"
-    nationalities: ["DE", "ES"]
-    birth_year: 1925
-    death_year: 2022
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Erwin Bechtold"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: eugenio_chicano
-    display_name: "Eugenio Chicano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1935
-    death_year: 2019
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio Chicano"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: eugenio_granell
-    display_name: "Eugenio Granell"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1912
-    death_year: 2001
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio Granell"
-    notes: "14 lotes | casas: duran_subastas"
-
-  - artist_id: eugenio_lucas_velazquez
-    display_name: "Eugenio Lucas Velázquez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1817
-    death_year: 1870
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio Lucas Velázquez"
-    notes: "37 lotes | casas: duran_subastas"
-
-  - artist_id: eugenio_lucas_villaamil
-    display_name: "Eugenio Lucas Villaamil"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1858
-    death_year: 1918
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio Lucas Villaamil"
-      - "LUCAS VILLAAMIL, EUGENIO"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: eusebio_sempere
-    display_name: "Eusebio Sempere"
-    country_birth: "ES"
-    birth_year: 1923
-    death_year: 1985
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eusebio Sempere (España, 1923 - 1985)"
-      - "Eusebio Sempere"
-      - "SEMPERE, EUSEBIO"
-    notes: "42 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: eustaquio_segrelles
-    display_name: "Eustaquio Segrelles"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1936
-    death_year: 2025
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eustaquio Segrelles"
-    notes: "85 lotes | casas: duran_subastas"
-
-  - artist_id: eva_lootz
-    display_name: "Eva Lootz"
-    country_birth: "ES"
-    birth_year: 1940
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eva Lootz - Regalé un libro a P"
-      - "Eva Lootz - Simbolón, decía"
-      - "Eva Lootz"
-      - "LOOTZ, EVA"
-    notes: "37 lotes | casas: duran_subastas"
-
-  - artist_id: evaristo_guerra
-    display_name: "Evaristo Guerra"
-    country_birth: "ES"
-    birth_year: 1942
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Evaristo Guerra"
-    notes: "33 lotes | casas: duran_subastas"
-
-  - artist_id: ever_astudillo
-    display_name: "Ever Astudillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1948
-    death_year: 2015
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ever Astudillo (Colombia, 1948 - 2015)"
-      - "Ever Astudillo (Colombia, 1948 - 2015.)"
-      - "Ever Astudillo"
-    notes: "11 lotes | casas: bogota_auctions"
-  - artist_id: edgardo_ribeiro
-    display_name: "Edgardo Ribeiro"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1921
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Edgardo Ribeiro"
-      - "Edgardo RIBEIRO"
-    notes: "7 lotes | casas: zorrilla_subastas"
-
-  - artist_id: enrique_broglia
-    display_name: "Enrique Broglia"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1942
-    death_year: 2013
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Broglia"
-      - "Enrique BROGLIA"
-    notes: "5 lotes | casas: zorrilla_subastas"
-
-  - artist_id: enrique_castells_capurro
-    display_name: "Enrique Castells Capurro"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1913
-    death_year: 1987
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Castells Capurro"
-      - "Enrique CASTELLS CAPURRO"
-    notes: "16 lotes | casas: zorrilla_subastas"
-
-  - artist_id: ernesto_cristiani
-    display_name: "Ernesto Cristiani"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1928
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ernesto Cristiani"
-      - "Ernesto CRISTIANI"
-    notes: "5 lotes | casas: zorrilla_subastas"
-
-  - artist_id: ernesto_laroche
-    display_name: "Ernesto Laroche"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1879
-    death_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ernesto Laroche"
-      - "Ernesto LAROCHE"
-    notes: "9 lotes | casas: zorrilla_subastas"
-
-  - artist_id: edwin_monsalve
-    display_name: "Edwin Monsalve"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "EDWIN MONSALVE"
-      - "Edwin Monsalve"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CONFLICTO nacimiento en la hoja: 1984x1, 1986x1"
-
-  - artist_id: efrain_arrieta
-    display_name: "Efrain Arrieta"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1927
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "EFRAIN ARRIETA"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: eladio_velez
-    display_name: "Eladio Vélez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1897
-    death_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ELADIO VELEZ"
-      - "Eladio Vélez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: elsa_zambrano
-    display_name: "Elsa Zambrano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1951
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ELSA ZAMBRANO"
-      - "Elsa Zambrano"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: emilio_sanchez
-    display_name: "Emilio Sánchez"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1921
-    death_year: 1999
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilio Sánchez Díaz"
-      - "Emilio Sanchez Cayuela (Gutxi)"
-      - "Emilio Sánchez Cayuela (Gutxi)"
-      - "Emilio Sánchez Perrier"
-      - "Emilio Sanchez (Cuba, 1921 - EE.UU., 1999.)"
-      - "EMILIO SANCHEZ"
-      - "Emilio Sánchez"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: enrique_galdos_rivas
-    display_name: "Enrique Galdos Rivas"
-    country_birth: "PE"
-    nationalities: ["PE"]
-    birth_year: 1933
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ENRIQUE GALDOS RIVAS"
-      - "Enrique Galdos Rivas"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ernesto_restrepo
-    display_name: "Ernesto Restrepo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ERNESTO RESTREPO"
-      - "Ernesto Restrepo"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ernesto_yerena
-    display_name: "Ernesto Yerena"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ERNESTO YERENA"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: erwin_kraus
-    display_name: "Erwin Kraus"
-    country_birth: "CO"
-    death_year: 1998
-    nationalities: ["CO"]
-    birth_year: 1911
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ERWIN KRAUS"
-      - "Erwin Kraus"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1934 y nacio en 1911; murio en 1998. Fotografo y montaniista colombo-aleman. Fuente: registro del Cementerio Aleman de Bogota."
-
-  - artist_id: ethel_gilmour
-    display_name: "Ethel Gilmour"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1912
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "ETHEL GILMOUR"
-      - "Ethel Gilmour"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: eduardo_arranz_bravo
-    display_name: "Eduardo Arranz Bravo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1941
-    death_year: 2023
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Arranz Bravo"
-      - "ARRANZ BRAVO, EDUARDO"
-      - "Eduard Arranz-Bravo"
-    notes: "11 lotes en Silver | casas: duran_subastas | el MACBA usa la forma institucional Eduard Arranz-Bravo y confirma Barcelona, 1941-2023. Fuente: https://www.macba.cat/es/actor/eduardo-arranz-bravo/"
-
-  - artist_id: eduardo_martinez_vazquez
-    display_name: "Eduardo Martínez Vázquez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1886
-    death_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Martínez Vázquez"
-      - "Eduardo Martínez Vazquez"
-      - "Eduardo Martinez Vazquez"
-    notes: "11 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: eduardo_sanz_fraile
-    display_name: "Eduardo Sanz Fraile"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1928
-    death_year: 2013
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo Sanz Fraile"
-    notes: "16 lotes en Silver | fuente: MutualArt; Wikidata | Santander"
-
-  - artist_id: elena_blasco
-    display_name: "Elena Blasco"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1950
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Elena Blasco"
-    notes: "14 lotes en Silver | fuente: Wikipedia | Madrid"
-
-  - artist_id: emiliano_ramos
-    display_name: "Emiliano Ramos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1953
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Emiliano Ramos"
-    notes: "17 lotes en Silver | fuente: Arteinformado | Zamora"
-
-  - artist_id: emilio_poy_dalmau
-    display_name: "Emilio Poy Dalmau"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1876
-    death_year: 1933
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilio Poy Dalmau"
-    notes: "16 lotes en Silver | fuente: Artprice; MutualArt | Madrid"
-
-  - artist_id: emilio_ros_benet
-    display_name: "Emilio Ros Benet"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1918
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Emilio Ros Benet"
-    notes: "14 lotes en Silver | fuente: registros de subasta"
-
-  - artist_id: enrique_serra_auque
-    display_name: "Enrique Serra Auqué"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1858
-    death_year: 1918
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Serra Auqué"
-    notes: "12 lotes en Silver | fuente: Wikipedia | Barcelona; murio en Roma"
-
-  - artist_id: eustaquio_marin_ramos
-    display_name: "Eustaquio Marin Ramos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1873
-    death_year: 1959
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIN RAMOS, EUSTAQUIO"
-      - "Eustaquio Marin Ramos"
-      - "Eustaquio Marín Ramos"
-    notes: "12 lotes en Silver | fuente: Wikidata | Sevilla"
-
-  - artist_id: eugenio_lopez_berron
-    display_name: "Eugenio López Berrón"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1941
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio López Berrón"
-    notes: "Nacido en Gotarrendura, Ávila 1941. Profesor de dibujo, Licenciado en Bellas Artes Complutense Madrid. Especialidad: paisajes urbanos, especialmente Gran Vía de Madrid. Múltiples premios incluyendo Medalla de Oro Academia Europea Artes y Letras 1993."
-
-  - artist_id: enrique_navarro
-    display_name: "Enrique Navarro"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1924
-    death_year: 1997
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Navarro"
-    notes: "Spanish painter from Madrid. Known for costumbrista scenes depicting beggars from Retiro Park. Trained at School of San Fernando Madrid."
-
-  - artist_id: enrique_vega
-    display_name: "Enrique Vega"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1953
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Vega"
-    notes: "Pintor nacido en Salamanca, 1953. Residente entre Madrid y Valencia. Estudió en San Fernando, obras en Reina Sofía, Museo Provincial de Huelva."
-
-  - artist_id: emilia_fedriani_y_camps
-    display_name: "Emilia Fedriani y Camps"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Emilia Fedriani Y Camps"
-    notes: "Pintora española del siglo XIX, activa hasta 1883. Registrada en Artprice con 16 lotes de subasta. Obras de temática religiosa."
-
-  - artist_id: enrique_valero_perez
-    display_name: "Enrique Valero Pérez"
-    country_birth: "MA"
-    nationalities: ["ES", "MA"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Valero Perez"
-    notes: "Pintor español nacido en Marruecos, con origen español. Radicado en Madrid. Especializado en acuarelas, paisajes y naturaleza. Presencia en galerías francesas y británicas."
-
-  - artist_id: efrain_zuniga_tovar
-    display_name: "Efraín Zúñiga Tovar"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "EFRAIN ZUÑIGA"
-      - "Efraín Zúñiga Tovar"
-    notes: "Nacido en Santiago de Cali, Colombia. Estudios en instituciones colombianas. Profesor en Amor y Arte Fundación (2016-2018). Obras en colecciones privadas Colombia, México, USA, China; Beijing Art Museum of Imperial City (BAMOIC)."
-
-  - artist_id: eugenio_hermoso
-    display_name: "Eugenio Hermoso"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1883
-    death_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eugenio Hermoso Martínez"
-    notes: "Pintor extremeño (Fregenal de la Sierra, 1883-1963). Maestro del realismo extremeño, académico de la Real Academia de Bellas Artes de San Fernando (1941)."
-
-  - artist_id: enrique_salamanca
-    display_name: "Enrique Salamanca"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1943
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "José Enrique Fernández y Enríquez de Salamanca"
-    notes: "Pintor y escultor español (Cádiz, 1943-). Pionero en arte computacional y formas plásticas cinéticas. Colecciones BBVA, Reina Sofía, Juan March."
-
-  - artist_id: enrique_melida_y_alinari
-    display_name: "Enrique Mélida y Alinari"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1838
-    death_year: 1892
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Mélida y Alinari"
-    notes: "Pintor y crítico de arte español, hermano del escultor Arturo Mélida. Nació Madrid, murió en París. Estudió Derecho pero se dedicó a la pintura a partir de 1867. Crítica en El Arte en España."
-
-  - artist_id: enrique_simonet_lombardo
-    display_name: "Enrique Simonet Lombardo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1866
-    death_year: 1927
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Enrique Simonet Lombardo"
-      - "Enrique SImonet Lombardo"
-      - "Enrique Simonet"
-    notes: "13 lotes tras fusionar la forma corta | casas: duran_subastas | nacido en Valencia en 1866 y fallecido en Madrid en 1927. La variante corta trae exactamente las mismas fechas y una obra titulada La buenaventura, tambien documentada por la Academia. Fuente: https://www.academiacolecciones.com/dibujos/inventario.php?id=L-733"
-
-  - artist_id: ernst_boerschmann
-    display_name: "Ernst Boerschmann"
-    country_birth: "DE"
-    nationalities: ["DE"]
-    birth_year: 1873
-    death_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Boerschmann, Ernst"
-    notes: "German architect and photographer specializing in Chinese architecture documentation."
-
-  - artist_id: edilberto_calderon
-    display_name: "Edilberto Calderón"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "EDILBERTO CALDERON"
-    notes: "Colombian painter born in Venadillo, Tolima. Master in Plastic Arts from Universidad Nacional de Colombia. Student of Fernando Botero. Over 70 years artistic trajectory with themes in folklore, love/eroticism, social protest. Works in mixed media (oil, pastel, acrylic). Exhibited internationally including Museo Regional de La Laguna (Mexico)."
-
-  - artist_id: evaristo_valle
-    display_name: "Evaristo Valle"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1873
-    death_year: 1951
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Evaristo Valle"
-    notes: "2 lotes | casas: duran_subastas | fuente: Fundacion Museo Evaristo Valle. Nacido en Gijon, Asturias. NO se fusiona con 'Cesar del Valle', que ya esta en el maestro y es otra persona."
-
-  - artist_id: emile_fabry
-    display_name: "Émile Fabry"
-    country_birth: "BE"
-    nationalities: ["BE"]
-    birth_year: 1865
-    death_year: 1966
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Émile Fabry"
-      - "Emile Fabry"
-    notes: "1 lote | casas: duran_subastas | nacido en Verviers, Belgica, en 1865 y fallecido en Woluwe-Saint-Pierre en 1966; fechas coincidentes con Silver. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/emile-fabry-28615"
-
-  - artist_id: el_hortelano
-    display_name: "El Hortelano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1954
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "El Hortelano"
-    notes: "5 lotes | casas: duran_subastas | seudonimo del pintor Jose Alfonso Morera Ortiz, nacido en Valencia en 1954 y fallecido en 2016. Fuentes: https://www.casareal.es/ES/actividades/Paginas/actividades_actividades_detalle.aspx?data=8548 ; https://archivolafuente.com/obra-artistica/1945-1989/espana/el-hortelano/"
-
-  - artist_id: eduardo_leon_garrido
-    display_name: "Eduardo León Garrido"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1856
-    death_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Eduardo León Garrido"
-    notes: "10 lotes | casas: duran_subastas | nacido en Madrid el 20-02-1856 y fallecido en Caen, Francia, el 24-02-1949; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/garrido-eduardo-leon/3b3cd7fc-2a28-44a8-bd52-a68820e8039c"
-
-  - artist_id: edouard_leon_cortes
-    display_name: "Édouard Léon Cortès"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1882
-    death_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Édouard Léon Cortès"
-      - "Eduouard Leon Cortes"
-    notes: "1 lote | casas: duran_subastas | el raw escribe Eduouard; corresponde al pintor frances Edouard Leon Cortes, nacido y fallecido en Lagny, 1882-1969, conocido por sus paisajes de Paris. No confundir con Andres Cortes y Aguilar ni con Antonio Cortes y Aguilar. Fuentes: https://archives.seine-et-marne.fr/sites/archives.seine-et-marne.fr/files/media/downloads/catalogue_acquisitions_2022_vf.pdf ; https://data.bnf.fr/ark%3A/12148/cb14420030r"
+- artist_id: edelmira_boller
+  display_name: Edelmira Boller
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EDELMIRA BOLLER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q138636844'
+  death_status: living
+- artist_id: edgar_degas
+  display_name: Edgar Degas
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1834
+  death_year: 1917
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edgar Degas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q46373'
+- artist_id: edgar_negret
+  display_name: Edgar Negret
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1920
+  death_year: 2012
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - '[Edgar Negret] Colección de fotografías de artistas'
+  - Edgar Negret
+  - Edgar Negret (Colombia, 1920 - 2012)
+  - Negret, Edgar
+  notes: '45 lotes | casas: bogota_auctions'
+- artist_id: edgar_neville
+  display_name: Edgar Neville
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edgar Neville
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q566047'
+- artist_id: edgar_plans
+  display_name: Edgar Plans
+  country_birth: ES
+  birth_year: 1977
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Edgar Plans
+  - PLANS, EDGAR
+  notes: '9 lotes | casas: duran_subastas'
+- artist_id: edgardo_ribeiro
+  display_name: Edgardo Ribeiro
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1921
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Edgardo Ribeiro
+  - Edgardo RIBEIRO
+  notes: '7 lotes | casas: zorrilla_subastas'
+- artist_id: edilberto_calderon
+  display_name: Edilberto Calderón
+  country_birth: CO
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - EDILBERTO CALDERON
+  notes: Colombian painter born in Venadillo, Tolima. Master in Plastic Arts from Universidad Nacional de Colombia.
+    Student of Fernando Botero. Over 70 years artistic trajectory with themes in folklore, love/eroticism, social
+    protest. Works in mixed media (oil, pastel, acrylic). Exhibited internationally including Museo Regional de
+    La Laguna (Mexico).
+- artist_id: edme_emile_laborne
+  display_name: Edme-Émile Laborne
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1837
+  death_year: 1913
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edme Emile LABORNE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28017127'
+- artist_id: edmond_amedee_heuze
+  display_name: Edmond Heuzé
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1883
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edmond Amédée Heuze
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3047863'
+- artist_id: edmond_petitjean
+  display_name: Edmond Marie Petitjean
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1844
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edmond Petitjean
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q604142'
+- artist_id: edmundo_jorda
+  display_name: Edmundo Jordá Pascual
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1877
+  death_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edmundo Jordá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47087436'
+- artist_id: edmundo_prati
+  display_name: Edmundo Prati
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1889
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edmundo PRATI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8772163'
+- artist_id: edouard_garcia_benito
+  display_name: García Benito
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1891
+  death_year: 1981
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edouard García Benito
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2895939'
+- artist_id: edouard_leon_cortes
+  display_name: Édouard Léon Cortès
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1882
+  death_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Édouard Léon Cortès
+  - Eduouard Leon Cortes
+  notes: '1 lote | casas: duran_subastas | el raw escribe Eduouard; corresponde al pintor frances Edouard Leon Cortes,
+    nacido y fallecido en Lagny, 1882-1969, conocido por sus paisajes de Paris. No confundir con Andres Cortes y
+    Aguilar ni con Antonio Cortes y Aguilar. Fuentes: https://archives.seine-et-marne.fr/sites/archives.seine-et-marne.fr/files/media/downloads/catalogue_acquisitions_2022_vf.pdf
+    ; https://data.bnf.fr/ark%3A/12148/cb14420030r'
+- artist_id: edouard_marcel_sandoz
+  display_name: Édouard-Marcel Sandoz
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1881
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ÉDOUARD-MARCEL SANDOZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q776342'
+- artist_id: edouard_pail
+  display_name: Édouard Pail
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1851
+  death_year: 1916
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EDOUARD PAIL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3579984'
+- artist_id: edouard_toudouze
+  display_name: Édouard Toudouze
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1848
+  death_year: 1907
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edouard Toudouze
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3580047'
+- artist_id: eduardo_amezaga
+  display_name: Eduardo Amézaga
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1911
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EDUARDO AMÉZAGA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42384175'
+- artist_id: eduardo_arranz_bravo
+  display_name: Eduardo Arranz Bravo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  death_year: 2023
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Arranz Bravo
+  - ARRANZ BRAVO, EDUARDO
+  - Eduard Arranz-Bravo
+  notes: '11 lotes en Silver | casas: duran_subastas | el MACBA usa la forma institucional Eduard Arranz-Bravo y
+    confirma Barcelona, 1941-2023. Fuente: https://www.macba.cat/es/actor/eduardo-arranz-bravo/'
+- artist_id: eduardo_arroyo
+  display_name: Eduardo Arroyo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  death_year: 2018
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Arroyo
+  - ARROYO, EDUARDO
+  notes: '80 lotes | casas: duran_subastas'
+- artist_id: eduardo_balaca
+  display_name: Eduardo Balaca
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1840
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Balaca
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9250645'
+- artist_id: eduardo_banda_y_pineda
+  display_name: Eduardo Banda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Banda y Pineda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q64149044'
+- artist_id: eduardo_barco
+  display_name: Eduardo Barco
+  country_birth: null
+  nationalities: []
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Barco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139065819'
+  death_status: living
+- artist_id: eduardo_bonati
+  display_name: Eduardo Bonati
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Bonati
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q115365722'
+  death_status: living
+- artist_id: eduardo_cano_de_la_pena
+  display_name: Eduardo Cano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1823
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Cano de la Peña
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8772252'
+- artist_id: eduardo_chicharro_y_aguera
+  display_name: Eduardo Chicharro y Agüera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1873
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Chicharro y Agüera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3815373'
+- artist_id: eduardo_chillida
+  display_name: Eduardo Chillida
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2002
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Chillida Belzunce
+  - Eduardo Chillida
+  notes: '88 lotes | casas: duran_subastas'
+- artist_id: eduardo_cortes_y_cordero
+  display_name: Eduardo Cortés y Cordero
+  birth_year: 1837
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Cortés y Cordero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q57469319'
+- artist_id: eduardo_de_martino
+  display_name: Eduardo de Martino
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1838
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo DE MARTINO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10270818'
+- artist_id: eduardo_gruber
+  display_name: Eduardo Gruber
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Gruber
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q130876093'
+  death_status: living
+- artist_id: eduardo_jonquieres
+  display_name: Eduardo Jonquières
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1918
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Jonquieres
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3048338'
+- artist_id: eduardo_kingman
+  display_name: Eduardo Kingman
+  country_birth: EC
+  nationalities:
+  - EC
+  birth_year: 1913
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EDUARDO KINGMAN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q734630'
+- artist_id: eduardo_laforet_alfaro
+  display_name: Eduardo Laforé Alfaro (1850-1941)
+  birth_year: 1850
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Laforet Alfaro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97583682'
+- artist_id: eduardo_lastres
+  display_name: Eduardo Lastres
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Lastres
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q93431647'
+  death_status: living
+- artist_id: eduardo_leon_garrido
+  display_name: Eduardo León Garrido
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1856
+  death_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo León Garrido
+  notes: '10 lotes | casas: duran_subastas | nacido en Madrid el 20-02-1856 y fallecido en Caen, Francia, el 24-02-1949;
+    fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/garrido-eduardo-leon/3b3cd7fc-2a28-44a8-bd52-a68820e8039c'
+- artist_id: eduardo_mac_entyre
+  display_name: Eduardo Mac Entyre
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1929
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Mac Entyre
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5340671'
+- artist_id: eduardo_martinez_vazquez
+  display_name: Eduardo Martínez Vázquez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1886
+  death_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Martínez Vázquez
+  - Eduardo Martínez Vazquez
+  - Eduardo Martinez Vazquez
+  - Martínez Vázquez
+  - Martinez Vazquez
+  notes: '11 lotes en Silver | fuente: Wikidata. Ficha ''martinez_vazquez'' consolidada aqui el 2026-08-18: misma
+    persona (mismas fechas), partida en dos entradas por variantes del nombre.'
+- artist_id: eduardo_naranjo
+  display_name: Eduardo Naranjo
+  country_birth: ES
+  birth_year: 1944
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Naranjo
+  - NARANJO, EDUARDO
+  notes: '49 lotes | casas: duran_subastas'
+- artist_id: eduardo_oliveira_cezar
+  display_name: Eduardo Oliveira Cézar
+  birth_year: 1942
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Oliveira Cezar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21345046'
+- artist_id: eduardo_ossandon
+  display_name: Eduardo Ossandon
+  country_birth: null
+  nationalities: []
+  birth_year: 1929
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Ossandón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q131469901'
+- artist_id: eduardo_paolozzi
+  display_name: Eduardo Paolozzi
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1924
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Paolozzi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q165397'
+- artist_id: eduardo_pascual_monturiol
+  display_name: Eduard Pascual Monturiol
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1882
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Pascual MONTURIOL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98280755'
+- artist_id: eduardo_ramirez_villamizar
+  display_name: Eduardo Ramírez Villamizar
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1922
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Ramírez Villamizar (Colombia, 1922 - 2004)
+  - Eduardo Ramírez Villamizar - Colombia, 1922 - 2004.
+  - Eduardo Ramírez Villamizar (Colombia, 1922 - 2004.)
+  - Eduardo Ramírez Villamizar
+  notes: '35 lotes | casas: bogota_auctions'
+- artist_id: eduardo_rodriguez_samper
+  display_name: Eduardo Rodríguez Samper
+  country_birth: null
+  nationalities: []
+  birth_year: 1922
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Rodríguez Samper
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99489786'
+  death_status: living
+- artist_id: eduardo_rosales
+  display_name: Eduardo Rosales
+  country_birth: ES
+  birth_year: 1836
+  death_year: 1873
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Rosales
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: eduardo_sanchez_beato
+  display_name: Eduardo Sánchez Beato
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Sánchez Beato
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123518920'
+  death_status: living
+- artist_id: eduardo_sanchez_sola
+  display_name: Eduardo Sánchez Solá
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1869
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Sánchez Solá
+  - Eduardo Sanchez Solá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6426702'
+- artist_id: eduardo_santonja
+  display_name: Eduardo Santonja
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1966
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Santonja Rosales
+  - Eduardo Santonja
+  notes: '68 lotes | casas: duran_subastas'
+- artist_id: eduardo_sanz
+  display_name: Eduardo Sanz
+  country_birth: ES
+  birth_year: 1928
+  death_year: 2013
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Sanz
+  - Eduardo Sanz Fraile
+  notes: '26 lotes | casas: duran_subastas. Ficha ''eduardo_sanz_fraile'' consolidada aqui el 2026-08-18: misma
+    persona (mismas fechas), partida en dos entradas por variantes del nombre.'
+- artist_id: eduardo_soria
+  display_name: Eduardo Soria
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Soria
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50721045'
+- artist_id: eduardo_urculo
+  display_name: Eduardo Úrculo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1938
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Úrculo
+  notes: '67 lotes | casas: duran_subastas'
+- artist_id: eduardo_vernazza
+  display_name: Eduardo Vernazza
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1910
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EDUARDO VERNAZZA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5340795'
+- artist_id: eduardo_vicente
+  display_name: Eduardo Vicente
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eduardo Vicente
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: eduardo_zamacois_y_zabala
+  display_name: Eduardo María Zamacois y Zabala
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1871
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eduardo Zamacois y Zabala
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3750944'
+- artist_id: edvard_munch
+  display_name: Edvard Munch
+  country_birth: 'NO'
+  nationalities:
+  - 'NO'
+  birth_year: 1863
+  death_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edvard Munch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q41406'
+- artist_id: edward_benjamin_herberte
+  display_name: Edward Benjamin Herberte
+  country_birth: null
+  nationalities: []
+  birth_year: 1857
+  death_year: 1893
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Edward Benjamin Herberte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q52155563'
+- artist_id: edward_clark_churchill_mace
+  display_name: Edward Clark Churchill Mace
+  birth_year: 1863
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Edward Clark Churchill Mace
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43133660'
+- artist_id: edward_hartley_mooney
+  display_name: Edward Hartley Mooney
+  country_birth: null
+  nationalities: []
+  birth_year: 1877
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Edward Hartley Mooney
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21456103'
+- artist_id: edward_king_redmore
+  display_name: Edward King Redmore
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1860
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edward King Redmore
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21456207'
+- artist_id: edward_ladell
+  display_name: Edward Ladell
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1821
+  death_year: 1886
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Edward Ladell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20203329'
+- artist_id: edward_prentis
+  display_name: Edward Prentis
+  birth_year: 1797
+  death_year: 1854
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Edward Prentis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q16066294'
+- artist_id: edwin_frederick_holt
+  display_name: Edwin Frederick Holt
+  birth_year: 1830
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Edwin Frederick Holt
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21456580'
+- artist_id: edwin_monsalve
+  display_name: Edwin Monsalve
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - EDWIN MONSALVE
+  - Edwin Monsalve
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CONFLICTO nacimiento en la hoja: 1984x1, 1986x1'
+- artist_id: efrain_arrieta
+  display_name: Efrain Arrieta
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1927
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - EFRAIN ARRIETA
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: efrain_zuniga_tovar
+  display_name: Efraín Zúñiga Tovar
+  country_birth: CO
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - EFRAIN ZUÑIGA
+  - Efraín Zúñiga Tovar
+  notes: Nacido en Santiago de Cali, Colombia. Estudios en instituciones colombianas. Profesor en Amor y Arte Fundación
+    (2016-2018). Obras en colecciones privadas Colombia, México, USA, China; Beijing Art Museum of Imperial City
+    (BAMOIC).
+- artist_id: egbert_van_der_poel
+  display_name: Egbert van der Poel
+  country_birth: NL
+  nationalities: []
+  birth_year: 1621
+  death_year: 1664
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Egbert Van der Poel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1296941'
+- artist_id: egon_possehl
+  display_name: Egon Possehl
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1921
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Egon Possehl
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133689706'
+- artist_id: el_hortelano
+  display_name: El Hortelano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1954
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - El Hortelano
+  notes: '5 lotes | casas: duran_subastas | seudonimo del pintor Jose Alfonso Morera Ortiz, nacido en Valencia en
+    1954 y fallecido en 2016. Fuentes: https://www.casareal.es/ES/actividades/Paginas/actividades_actividades_detalle.aspx?data=8548
+    ; https://archivolafuente.com/obra-artistica/1945-1989/espana/el-hortelano/'
+- artist_id: eladio_velez
+  display_name: Eladio Vélez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1897
+  death_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ELADIO VELEZ
+  - Eladio Vélez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: elena_asins
+  display_name: Elena Asins
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  death_year: 2015
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Elena Asins
+  notes: '10 lotes | casas: duran_subastas'
+- artist_id: elena_blasco
+  display_name: Elena Blasco
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Elena Blasco
+  notes: '14 lotes en Silver | fuente: Wikipedia | Madrid'
+- artist_id: elena_del_rivero
+  display_name: Elena del Rivero
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Elena del Rivero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19863231'
+- artist_id: elena_gago
+  display_name: Elena Gago
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Elena Gago
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12387766'
+- artist_id: elena_santonja
+  display_name: Elena Santonja
+  country_birth: ES
+  birth_year: 1932
+  death_year: 2016
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Elena Santonja
+  notes: '97 lotes | casas: duran_subastas'
+- artist_id: elias_garralda_alzugaray
+  display_name: Elías Garralda Alzugaray
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2012
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Elías Garralda Alzugaray
+  - GARRALDA ALZUGARAY, ELÍAS
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: elias_heim
+  display_name: Elías Heim
+  birth_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - ELIAS HEIM
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q94414939'
+  death_status: living
+- artist_id: elisee_maclet
+  display_name: Élisée Maclet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1881
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Élisée Maclet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3587973'
+- artist_id: eliseo_meifren
+  display_name: Eliseo Meifrén
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eliseo Meifrén
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: ellen_de_tombay
+  display_name: Ellen De Tombay
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ellen de Tombay
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96997298'
+- artist_id: elmyr_de_hory
+  display_name: Elmyr de Hory
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1906
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Elmyr de Hory
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1333126'
+- artist_id: elsa_andrada
+  display_name: Elsa Andrada
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1920
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Elsa Andrada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27243081'
+- artist_id: elsa_zambrano
+  display_name: Elsa Zambrano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1951
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ELSA ZAMBRANO
+  - Elsa Zambrano
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: elvira_cue
+  display_name: Elvira Cué
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Elvira Cue
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q94658836'
+  death_status: living
+- artist_id: emanuel_de_witte
+  display_name: Emanuel de Witte
+  birth_year: 1617
+  death_year: 1692
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emanuel De Witte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q711203'
+  country_birth: NL
+- artist_id: emile_auguste_pinchart
+  display_name: Émile Auguste Pinchart
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1842
+  death_year: 1920
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emile Auguste Pinchart
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20926482'
+- artist_id: emile_clavel
+  display_name: Émile Clavel
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1848
+  death_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emile Clavel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134879596'
+- artist_id: emile_fabry
+  display_name: Émile Fabry
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1865
+  death_year: 1966
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Émile Fabry
+  - Emile Fabry
+  notes: '1 lote | casas: duran_subastas | nacido en Verviers, Belgica, en 1865 y fallecido en Woluwe-Saint-Pierre
+    en 1966; fechas coincidentes con Silver. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/emile-fabry-28615'
+- artist_id: emile_munier
+  display_name: Émile Munier
+  country_birth: FR
+  nationalities:
+  - FR
+  death_year: 1895
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Émile Munier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8078305'
+- artist_id: emile_roumens
+  display_name: Émile Roumens
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1825
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emile Roumens
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q104802899'
+- artist_id: emilia_castaneda
+  display_name: Emilia Castañeda
+  country_birth: ES
+  birth_year: 1943
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilia Castañeda
+  notes: '17 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: emilia_fedriani_y_camps
+  display_name: Emilia Fedriani y Camps
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilia Fedriani Y Camps
+  notes: Pintora española del siglo XIX, activa hasta 1883. Registrada en Artprice con 16 lotes de subasta. Obras
+    de temática religiosa.
+- artist_id: emiliano_ramos
+  display_name: Emiliano Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1953
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Emiliano Ramos
+  notes: '17 lotes en Silver | fuente: Arteinformado | Zamora'
+- artist_id: emilie_lachaud_de_loqueyssie
+  display_name: Emilie Lachaud De Loqueyssie
+  birth_year: 1793
+  death_year: 1863
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilie Lachaud de Loqueyssie
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43129238'
+- artist_id: emilio_alvarez_diaz
+  display_name: Emilio Alvarez Díaz
+  country_birth: null
+  nationalities: []
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Álvarez Díaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97571412'
+- artist_id: emilio_campos_goitia
+  display_name: Emilio Campos Goitia
+  country_birth: null
+  nationalities: []
+  birth_year: 1931
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Campos Goitia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q136933397'
+- artist_id: emilio_ferrer_cabrera
+  display_name: Emilio Ferrer Cabrera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emilio Ferrer Cabrera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q97571411'
+- artist_id: emilio_frejo
+  display_name: Emilio Frejo
+  birth_year: 1931
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Frejo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5831096'
+- artist_id: emilio_gonzalez_sainz
+  display_name: Emilio Gonzalez Sainz
+  country_birth: null
+  nationalities: []
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio González Sáinz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99495589'
+  death_status: living
+- artist_id: emilio_grau_sala
+  display_name: Emilio Grau Sala
+  country_birth: ES
+  birth_year: 1911
+  death_year: 1975
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilio Grau Sala
+  notes: '62 lotes | casas: duran_subastas'
+- artist_id: emilio_mas
+  display_name: Emilio Más
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EMILIO MAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42405548'
+- artist_id: emilio_millan_ferriz
+  display_name: Emilio Millán Ferriz
+  country_birth: null
+  nationalities: []
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Millán Ferriz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97606398'
+- artist_id: emilio_ocon_y_rivas
+  display_name: Emilio Ocón y Rivas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1845
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emilio Ocón y Rivas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q922505'
+- artist_id: emilio_payes
+  display_name: Emilio Payes
+  country_birth: null
+  nationalities: []
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Payés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99493711'
+  death_status: living
+- artist_id: emilio_poy_dalmau
+  display_name: Emilio Poy Dalmau
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1876
+  death_year: 1933
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilio Poy Dalmau
+  notes: '16 lotes en Silver | fuente: Artprice; MutualArt | Madrid'
+- artist_id: emilio_prieto
+  display_name: Emilio Prieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilio Prieto
+  - PRIETO, EMILIO
+  notes: '67 lotes | casas: duran_subastas'
+- artist_id: emilio_rissone
+  display_name: Emilio Rissone
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1933
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emilio Rissone
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q85101785'
+- artist_id: emilio_ros_benet
+  display_name: Emilio Ros Benet
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Emilio Ros Benet
+  notes: '14 lotes en Silver | fuente: registros de subasta'
+- artist_id: emilio_sala_frances
+  display_name: Emilio Sala Francés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1850
+  death_year: 1910
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilio Sala Francés
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: emilio_sanchez
+  display_name: Emilio Sánchez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1921
+  death_year: 1999
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emilio Sánchez Díaz
+  - Emilio Sanchez Cayuela (Gutxi)
+  - Emilio Sánchez Cayuela (Gutxi)
+  - Emilio Sánchez Perrier
+  - Emilio Sanchez (Cuba, 1921 - EE.UU., 1999.)
+  - EMILIO SANCHEZ
+  - Emilio Sánchez
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: emilio_tadini
+  display_name: Emilio Tadini
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1927
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emilio Tadini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3724536'
+- artist_id: emilio_varela
+  display_name: Emilio Varela Isabel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emilio Varela
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5831362'
+- artist_id: emilio_vedova
+  display_name: Emilio Vedova
+  birth_year: 1919
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Emilio Vedova
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q664257'
+- artist_id: emma_reyes
+  display_name: Emma Reyes
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1919
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Emma Reyes - Colombia, 1919 - Francia, 2003.
+  - Emma Reyes (Colombia, 1919 - Francia, 2003)
+  - Emma Reyes
+  notes: '31 lotes | casas: bogota_auctions'
+- artist_id: emma_soyer
+  display_name: Emma Soyer
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1813
+  death_year: 1842
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emma Soyer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5362724'
+- artist_id: eneko_las_heras
+  display_name: Eneko
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eneko Las Heras
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42534348'
+- artist_id: enric_planas_dura
+  display_name: Enric Planasdurà
+  birth_year: 1921
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enric Planas Durá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19594497'
+- artist_id: enrico_tarenghi
+  display_name: Enrico Tarenghi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1848
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrico Tarenghi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16023319'
+- artist_id: enrique_albizu
+  display_name: Enrique Albizu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Albizu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12256874'
+- artist_id: enrique_atalaya
+  display_name: Enrique Atalaya
+  country_birth: ES
+  birth_year: 1851
+  death_year: 1913
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Atalaya
+  - ATALAYA, ENRIQUE
+  notes: '6 lotes | casas: duran_subastas'
+- artist_id: enrique_brinkmann
+  display_name: Enrique Brinkmann
+  country_birth: ES
+  birth_year: 1938
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Brinkmann
+  - BRINKMANN, ENRIQUE
+  notes: '24 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: enrique_broglia
+  display_name: Enrique Broglia
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1942
+  death_year: 2013
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Broglia
+  - Enrique BROGLIA
+  notes: '5 lotes | casas: zorrilla_subastas'
+- artist_id: enrique_castells_capurro
+  display_name: Enrique Castells Capurro
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1913
+  death_year: 1987
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Castells Capurro
+  - Enrique CASTELLS CAPURRO
+  notes: '16 lotes | casas: zorrilla_subastas'
+- artist_id: enrique_de_soria_santa_cruz
+  display_name: Enrique de Soria Santa Cruz
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique de Soria Santa Cruz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q127243337'
+- artist_id: enrique_dorda
+  display_name: Enrique Dorda Rodríguez
+  birth_year: 1869
+  death_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Dorda
+  - Enrique Dorda Rodríguez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97582877'
+- artist_id: enrique_estevan_y_vicente
+  display_name: Enrique Estevan y Vicente
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1849
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Estevan y Vicente
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29964132'
+- artist_id: enrique_ferau_alsina
+  display_name: Enrique Ferau y Alsina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1825
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Ferau Alsina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11681488'
+- artist_id: enrique_florido
+  display_name: Enrique Florido Berruelo
+  country_birth: null
+  nationalities: []
+  birth_year: 1873
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Florido
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98110302'
+- artist_id: enrique_galdos_rivas
+  display_name: Enrique Galdos Rivas
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1933
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ENRIQUE GALDOS RIVAS
+  - Enrique Galdos Rivas
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: enrique_gomez_campuzano
+  display_name: Enrique Gómez Campuzano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1905
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ENRIQUE GOMEZ CAMPUZANO
+  - ENRIQUE GÓMEZ CAMPUZANO
+  - ENRIQUE GOMEZ CAMPUZANO.
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q124695723'
+- artist_id: enrique_gran
+  display_name: Enrique Gran
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Gran
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5833373'
+- artist_id: enrique_grau
+  display_name: Enrique Grau
+  country_birth: PA
+  nationalities:
+  - CO
+  - PA
+  birth_year: 1920
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Grau (Panamá, 1920 - Colombia, 2004)
+  - Enrique Grau - Panamá, 1920 - Colombia, 2004.
+  - Enrique Grau - Panamá, 1920, Colombia, 2004.
+  - Enrique Grau
+  - Grau, Enrique
+  notes: '32 lotes | casas: bogota_auctions'
+- artist_id: enrique_herreros
+  display_name: Enrique Herreros
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1903
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Herreros
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27969745'
+- artist_id: enrique_jaraba
+  display_name: Enrique Jaraba
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Jaraba
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22969173'
+- artist_id: enrique_jimenez_carrero
+  display_name: Enrique Jiménez Carrero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Jiménez Carrero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5833453'
+  death_status: living
+- artist_id: enrique_marin_munoz
+  display_name: Enrique Marín Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Marín Muñoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q35672115'
+- artist_id: enrique_marin_sevilla
+  display_name: Enrique Marín
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Marin Sevilla
+  - Enrique Marín Sevilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q139996325'
+- artist_id: enrique_martinez_cubells
+  display_name: Enrique Martínez Cubells
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique MARTÍNEZ CUBELLS Y RUIZ
+  - Enrique Martínez Cubells Ruiz
+  - Enrique Martinez Cubells Ruiz
+  - Enrique Martínez Cubells
+  notes: '19 lotes | casas: duran_subastas'
+- artist_id: enrique_marty
+  display_name: Enrique Marty
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Marty
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19863315'
+  death_status: living
+- artist_id: enrique_melida_y_alinari
+  display_name: Enrique Mélida y Alinari
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1838
+  death_year: 1892
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Mélida y Alinari
+  notes: Pintor y crítico de arte español, hermano del escultor Arturo Mélida. Nació Madrid, murió en París. Estudió
+    Derecho pero se dedicó a la pintura a partir de 1867. Crítica en El Arte en España.
+- artist_id: enrique_miralles_darmanin
+  display_name: Enrique Miralles Darmanin
+  country_birth: null
+  nationalities: []
+  birth_year: 1855
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Miralles Darmanin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96757498'
+- artist_id: enrique_monaco
+  display_name: Enrique Mónaco
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Mónaco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55467230'
+- artist_id: enrique_monis_mora
+  display_name: Enrique Monis Mora
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1914
+  death_year: 1982
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Monis Mora
+  notes: '23 lotes | casas: duran_subastas'
+- artist_id: enrique_navarro
+  display_name: Enrique Navarro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 1997
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Navarro
+  notes: Spanish painter from Madrid. Known for costumbrista scenes depicting beggars from Retiro Park. Trained
+    at School of San Fernando Madrid.
+- artist_id: enrique_ortiz_alonso
+  display_name: Enrique Ortiz Alonso
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Enrique Ortiz Alonso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q131618553'
+  death_status: living
+- artist_id: enrique_salamanca
+  display_name: Enrique Salamanca
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - José Enrique Fernández y Enríquez de Salamanca
+  notes: Pintor y escultor español (Cádiz, 1943-). Pionero en arte computacional y formas plásticas cinéticas. Colecciones
+    BBVA, Reina Sofía, Juan March.
+  death_status: living
+- artist_id: enrique_segura
+  display_name: Enrique Segura
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1906
+  death_year: 1994
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Segura
+  notes: '28 lotes | casas: duran_subastas'
+- artist_id: enrique_serra_auque
+  display_name: Enrique Serra Auqué
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1858
+  death_year: 1918
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Serra Auqué
+  notes: '12 lotes en Silver | fuente: Wikipedia | Barcelona; murio en Roma'
+- artist_id: enrique_simonet_lombardo
+  display_name: Enrique Simonet Lombardo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1866
+  death_year: 1927
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Simonet Lombardo
+  - Enrique SImonet Lombardo
+  - Enrique Simonet
+  notes: '13 lotes tras fusionar la forma corta | casas: duran_subastas | nacido en Valencia en 1866 y fallecido
+    en Madrid en 1927. La variante corta trae exactamente las mismas fechas y una obra titulada La buenaventura,
+    tambien documentada por la Academia. Fuente: https://www.academiacolecciones.com/dibujos/inventario.php?id=L-733'
+- artist_id: enrique_suarez_alba
+  display_name: Enrique Suárez Alba
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Suarez Alba
+  - Enrique Suárez Alba
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q105798425'
+- artist_id: enrique_tabara
+  display_name: Luis Enrique Tábara Zerna
+  country_birth: EC
+  nationalities:
+  - EC
+  birth_year: 1930
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Tábara
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2750073'
+- artist_id: enrique_valero_perez
+  display_name: Enrique Valero Pérez
+  country_birth: MA
+  nationalities:
+  - ES
+  - MA
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Valero Perez
+  notes: Pintor español nacido en Marruecos, con origen español. Radicado en Madrid. Especializado en acuarelas,
+    paisajes y naturaleza. Presencia en galerías francesas y británicas.
+- artist_id: enrique_vara
+  display_name: Jose Enrique Vara Bethencourt
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Vara
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99492094'
+- artist_id: enrique_vega
+  display_name: Enrique Vega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1953
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Enrique Vega
+  notes: Pintor nacido en Salamanca, 1953. Residente entre Madrid y Valencia. Estudió en San Fernando, obras en
+    Reina Sofía, Museo Provincial de Huelva.
+- artist_id: enrique_vera_sales
+  display_name: Enrique Vera Sales
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1886
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enrique Vera Salés
+  - Enrique Vera Sales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43264771'
+- artist_id: enzo_cini
+  display_name: Enzo Cini
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1921
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Enzo Cini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q100272969'
+- artist_id: epifanio_garay
+  display_name: Epifanio Garay
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1849
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EPIFANIO GARAY
+  - Epifanio Garay
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5834807'
+- artist_id: equipo_cronica
+  display_name: Equipo Crónica
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  death_year: 1981
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Equipo Crónica (Después)
+  - Equipo Crónica
+  notes: '73 lotes | casas: duran_subastas'
+- artist_id: erich_heckel
+  display_name: Erich Heckel
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1883
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Erich Heckel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q156700'
+- artist_id: erik_doescher
+  display_name: Erik Doescher
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Erik Doescher
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q136823130'
+- artist_id: ernest_bordes
+  display_name: Ernest Bordes
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1852
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernest Bordes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27036505'
+- artist_id: ernest_meissonier
+  display_name: Jean-Louis-Ernest Meissonier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1815
+  death_year: 1891
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernest Meissonier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q354786'
+- artist_id: ernest_quost
+  display_name: Ernest Quost
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1842
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernest Quost
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3057146'
+- artist_id: ernesto_bertani
+  display_name: Ernesto Bertani
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1949
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernesto BERTANI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q106396745'
+- artist_id: ernesto_cristiani
+  display_name: Ernesto Cristiani
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1928
+  death_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ernesto Cristiani
+  - Ernesto CRISTIANI
+  notes: '5 lotes | casas: zorrilla_subastas'
+- artist_id: ernesto_drangosh
+  display_name: Ernesto Drangosh
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1945
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernesto Drangosh
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42389317'
+- artist_id: ernesto_goday_caamano
+  display_name: Ernesto Goday Caamaño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1915
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernesto Goday Caamaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769819'
+- artist_id: ernesto_gutierrez_hernandez
+  display_name: Ernesto Gutiérrez
+  birth_year: 1873
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ernesto Gutiérrez Hernández
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q31914089'
+- artist_id: ernesto_laroche
+  display_name: Ernesto Laroche
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1879
+  death_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ernesto Laroche
+  - Ernesto LAROCHE
+  notes: '9 lotes | casas: zorrilla_subastas'
+- artist_id: ernesto_restrepo
+  display_name: Ernesto Restrepo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ERNESTO RESTREPO
+  - Ernesto Restrepo
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: ernesto_santasusagna
+  display_name: Ernest Santasusagna Santacreu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernesto Santasusagna
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21850164'
+- artist_id: ernesto_tatafiore
+  display_name: Ernesto Tatafiore
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ernesto Tatafiore
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3732336'
+  death_status: living
+- artist_id: ernesto_yerena
+  display_name: Ernesto Yerena
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ERNESTO YERENA
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: ernst_barlach
+  display_name: Ernst Barlach
+  country_birth: DE
+  nationalities:
+  - DE
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - ERNST BARLACH
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q156890'
+- artist_id: ernst_boerschmann
+  display_name: Ernst Boerschmann
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1873
+  death_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Boerschmann, Ernst
+  notes: German architect and photographer specializing in Chinese architecture documentation.
+- artist_id: erwin_bechtold
+  display_name: Erwin Bechtold
+  country_birth: DE
+  nationalities:
+  - DE
+  - ES
+  birth_year: 1925
+  death_year: 2022
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Erwin Bechtold
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: erwin_kraus
+  display_name: Erwin Kraus
+  country_birth: CO
+  death_year: 1998
+  nationalities:
+  - CO
+  birth_year: 1911
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ERWIN KRAUS
+  - Erwin Kraus
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1934 y nacio en 1911;
+    murio en 1998. Fotografo y montaniista colombo-aleman. Fuente: registro del Cementerio Aleman de Bogota.'
+- artist_id: esperanza_nuere
+  display_name: Esperanza Nuere
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Esperanza Nuere
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99472147'
+  death_status: living
+- artist_id: esteban_chartrand
+  display_name: Esteban Chartrand
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1840
+  death_year: 1884
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Esteban Chartrand
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19607180'
+- artist_id: esteban_domenech
+  display_name: Esteban Doménech
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1892
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Esteban Domenech
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q130638023'
+- artist_id: esteban_maroto_torres
+  display_name: Esteban Maroto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Esteban Maroto Torres
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5400805'
+  death_status: living
+- artist_id: esteban_tranche
+  display_name: Esteban Tranche
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Esteban Tranche
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q93435619'
+  death_status: living
+- artist_id: esterio_segura
+  display_name: Esterio Segura Mora
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Esterio Segura
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5401003'
+  death_status: living
+- artist_id: esther_barugel
+  display_name: Esther Barugel
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1917
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ESTHER BARUGEL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3058952'
+- artist_id: esther_ortego
+  display_name: Esther Ortego
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Esther Ortego
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q132857231'
+- artist_id: ethel_gilmour
+  display_name: Ethel Gilmour
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1940
+  death_year: 2008
+  death_status: known
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - ETHEL GILMOUR
+  - Ethel Gilmour
+  notes: 'La ficha heredada de FINALL.xlsx (1912-1977) estaba mal asociada. MAMM documenta a Ethel Gilmour: Cleveland,
+    EEUU, 1940 - Medellin, Colombia, 2008; coincide con las fechas publicadas por Lefebre. Fuente: https://www.elmamm.org/coleccion-mamm/artista/ethel-gilmour/'
+- artist_id: eudald_serra_guell
+  display_name: Eudald Serra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eudald Serra Güell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3754232'
+- artist_id: eugene_antoine_aizelin
+  display_name: Eugène-Antoine Aizelin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1821
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugene-Antoine Aizelin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3059654'
+- artist_id: eugene_de_blaas
+  display_name: Eugene de Blaas
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1843
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugene de Blaas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q715036'
+- artist_id: eugene_delecluse
+  display_name: Eugène Delecluse
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1882
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugene Delecluse
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q83617409'
+- artist_id: eugene_ernest_hillemacher
+  display_name: Eugène Ernest Hillemacher
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1818
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugene Ernest HILLEMACHER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1373477'
+- artist_id: eugene_fromentin
+  display_name: Eugène Fromentin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1820
+  death_year: 1876
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugène Fromentin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q353746'
+- artist_id: eugene_joseph_lejeune
+  display_name: Eugène Joseph Lejeune
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1818
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugène Joseph Lejeune
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q41774645'
+- artist_id: eugene_marioton
+  display_name: Eugène Marioton
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1857
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EUGÈNE MARIOTON
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3060018'
+- artist_id: eugenio_alvarez_dumont
+  display_name: Eugenio Álvarez Dumont
+  country_birth: TN
+  nationalities:
+  - TN
+  birth_year: 1864
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugenio Álvarez Dumont
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8846188'
+- artist_id: eugenio_chicano
+  display_name: Eugenio Chicano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2019
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio Chicano
+  notes: '22 lotes | casas: duran_subastas'
+- artist_id: eugenio_gomez_mir
+  display_name: Eugenio Gómez Mir
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1877
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugenio Gómez Mir
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8846143'
+- artist_id: eugenio_granell
+  display_name: Eugenio Granell
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 2001
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio Granell
+  notes: '14 lotes | casas: duran_subastas'
+- artist_id: eugenio_hermoso
+  display_name: Eugenio Hermoso
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1883
+  death_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio Hermoso Martínez
+  notes: Pintor extremeño (Fregenal de la Sierra, 1883-1963). Maestro del realismo extremeño, académico de la Real
+    Academia de Bellas Artes de San Fernando (1941).
+- artist_id: eugenio_lopez_berron
+  display_name: Eugenio López Berrón
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio López Berrón
+  notes: 'Nacido en Gotarrendura, Ávila 1941. Profesor de dibujo, Licenciado en Bellas Artes Complutense Madrid.
+    Especialidad: paisajes urbanos, especialmente Gran Vía de Madrid. Múltiples premios incluyendo Medalla de Oro
+    Academia Europea Artes y Letras 1993.'
+  death_status: living
+- artist_id: eugenio_lucas_velazquez
+  display_name: Eugenio Lucas Velázquez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1817
+  death_year: 1870
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio Lucas Velázquez
+  notes: '37 lotes | casas: duran_subastas'
+- artist_id: eugenio_lucas_villaamil
+  display_name: Eugenio Lucas Villaamil
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1858
+  death_year: 1918
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eugenio Lucas Villaamil
+  - LUCAS VILLAAMIL, EUGENIO
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: eugenio_oliva
+  display_name: Eugenio Oliva
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1852
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eugenio Oliva
+  - Eugenio Oliva Rodrigo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2885931'
+- artist_id: eugenio_tamayo
+  display_name: Eugenio Tamayo
+  country_birth: null
+  nationalities: []
+  birth_year: 1891
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Eugenio Tamayo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55992591'
+- artist_id: eugenio_zerda
+  display_name: Eugenio Zerda
+  birth_year: 1879
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - EUGENIO ZERDA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5850619'
+- artist_id: eulogio_varela
+  display_name: Eulogio Varela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1868
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eulogio Varela
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5650613'
+- artist_id: eurico_goncalves
+  display_name: Eurico Manuel de Melo Gonçalves
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1932
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eurico Gonçalves
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16337432'
+- artist_id: eusebio_sempere
+  display_name: Eusebio Sempere
+  country_birth: ES
+  birth_year: 1923
+  death_year: 1985
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eusebio Sempere (España, 1923 - 1985)
+  - Eusebio Sempere
+  - SEMPERE, EUSEBIO
+  notes: '42 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: eusebio_valldeperas
+  display_name: Eusebio Valldeperas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1827
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eusebio Valldeperas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5852326'
+- artist_id: eustaquio_marin_ramos
+  display_name: Eustaquio Marin Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1873
+  death_year: 1959
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIN RAMOS, EUSTAQUIO
+  - Eustaquio Marin Ramos
+  - Eustaquio Marín Ramos
+  notes: '12 lotes en Silver | fuente: Wikidata | Sevilla'
+- artist_id: eustaquio_segrelles
+  display_name: Eustaquio Segrelles
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1936
+  death_year: 2025
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eustaquio Segrelles
+  notes: '85 lotes | casas: duran_subastas'
+- artist_id: eva_armisen
+  display_name: Eva Armisén
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eva Armisén
+  - Eva Armisen
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q106505848'
+  death_status: living
+- artist_id: eva_lootz
+  display_name: Eva Lootz
+  country_birth: ES
+  birth_year: 1940
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Eva Lootz - Regalé un libro a P
+  - Eva Lootz - Simbolón, decía
+  - Eva Lootz
+  - LOOTZ, EVA
+  notes: '37 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: eva_olivetti
+  display_name: Eva Olivetti
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1924
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - EVA OLIVETTI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16326166'
+- artist_id: evaristo_bellotti
+  display_name: Evaristo Bellotti
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Evaristo Bellotti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5852667'
+  death_status: living
+- artist_id: evaristo_guerra
+  display_name: Evaristo Guerra
+  country_birth: ES
+  birth_year: 1942
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Evaristo Guerra
+  notes: '33 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: evaristo_valle
+  display_name: Evaristo Valle
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1873
+  death_year: 1951
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Evaristo Valle
+  notes: '2 lotes | casas: duran_subastas | fuente: Fundacion Museo Evaristo Valle. Nacido en Gijon, Asturias. NO
+    se fusiona con ''Cesar del Valle'', que ya esta en el maestro y es otra persona.'
+- artist_id: ever_astudillo
+  display_name: Ever Astudillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1948
+  death_year: 2015
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ever Astudillo (Colombia, 1948 - 2015)
+  - Ever Astudillo (Colombia, 1948 - 2015.)
+  - Ever Astudillo
+  notes: '11 lotes | casas: bogota_auctions'
+- artist_id: exoristo_salmeron_tito
+  display_name: Exoristo Salmerón
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1877
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Exoristo Salmerón "Tito"
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20651080'

@@ -1,214 +1,494 @@
-# Maestro de artistas - shard "o"
-#
-# Entradas cuyo artist_id empieza por "o". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: olga_de_amaral
-    display_name: "Olga de Amaral"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1932
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Olga de Amaral: Bosques, estelas, umbras"
-      - "Olga de Amaral (Colombia, 1932)"
-      - "Olga de Amaral"
-    notes: "6 lotes | casas: bogota_auctions"
-
-  - artist_id: omar_rayo
-    display_name: "Omar Rayo"
-    country_birth: "CO"
-    birth_year: 1928
-    death_year: 2010
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Omar Rayo (Colombia, 1928 - 2010)"
-      - "Omar Rayo - Colombia, 1928 - 2010."
-      - "Omar Rayo"
-      - "Rayo, Omar"
-    notes: "29 lotes | casas: bogota_auctions"
-
-  - artist_id: orlando_pelayo
-    display_name: "Orlando Pelayo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1920
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Orlando Pelayo"
-    notes: "81 lotes | casas: duran_subastas"
-
-  - artist_id: oscar_dominguez
-    display_name: "Óscar Domínguez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Óscar Domínguez"
-    notes: "6 lotes | casas: duran_subastas"
-
-  - artist_id: oscar_estruga
-    display_name: "Óscar Estruga"
-    country_birth: "ES"
-    birth_year: 1933
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Óscar Estruga"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: oscar_munoz
-    display_name: "Oscar Muñoz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1951
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Oscar Muñoz (Colombia, 1951)"
-      - "Oscar Muñoz"
-    notes: "21 lotes | casas: bogota_auctions"
-
-  - artist_id: oswaldo_guayasamin
-    display_name: "Oswaldo Guayasamín"
-    country_birth: "EC"
-    nationalities: ["EC"]
-    birth_year: 1919
-    death_year: 1999
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Oswaldo Guayasamín"
-      # Errata de la propia ficha de Duran ("Guaysamín", sin la segunda "a").
-      # Rankeaba aparte con 1 lote de 30.000 EUR y sin pais.
-      - "Oswaldo Guaysamín"
-    notes: "38 lotes | casas: bogota_auctions, duran_subastas"
-  - artist_id: oscar_garcia_reino
-    display_name: "Óscar García Reino"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1910
-    death_year: 1993
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Óscar García Reino"
-      - "Óscar GARCÍA REINO"
-    notes: "21 lotes | casas: zorrilla_subastas"
-
-  - artist_id: ofelia_rodriguez
-    display_name: "Ofelia Rodriguez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1946
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OFELIA RODRIGUEZ"
-      - "Ofelia Rodriguez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: oscar_martinez_vasquez
-    display_name: "Oscar Martínez Vásquez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OSCAR MARTINEZ VASQUEZ"
-      - "Oscar Martínez Vásquez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: oscar_rodriguez_naranjo
-    display_name: "Oscar Rodríguez Naranjo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1907
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OSCAR RODRIGUEZ NARANJO"
-      - "Oscar Rodríguez Naranjo"
-      - "Rodríguez Naranjo, Oscar"
-    notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: oskar_kokoschka
-    display_name: "Oskar Kokoschka"
-    country_birth: "AT"
-    nationalities: ["AT"]
-    birth_year: 1886
-    death_year: 1980
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OSKAR KOKOSCHKA"
-      - "Oskar Kokoschka"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: oswaldo_vigas
-    display_name: "Oswaldo Vigas"
-    country_birth: "VE"
-    nationalities: ["VE"]
-    birth_year: 1923
-    death_year: 2014
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OSWALDO VIGAS"
-      - "Oswaldo Vigas"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: oswaldo_viteri
-    display_name: "Oswaldo Viteri"
-    country_birth: "EC"
-    death_year: 2023
-    nationalities: ["EC"]
-    birth_year: 1931
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "OSWALDO VITERI"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ouka_leele
-    display_name: "Ouka Leele"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1957
-    death_year: 2022
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ouka Leele"
-    notes: "12 lotes en Silver | fuente: Wikipedia | seudonimo de Barbara Allende Gil de Biedma, Madrid"
+- artist_id: octavio_bianqui
+  display_name: Octavio Bianqui
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1872
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Octavio Bianqui
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96757120'
+- artist_id: octavio_colis
+  display_name: Octavio Colis
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Octavio Colis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q133624369'
+  death_status: living
+- artist_id: octavio_ocampo
+  display_name: Octavio Ocampo
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Octavio Ocampo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q58399'
+  death_status: living
+- artist_id: octavio_podesta
+  display_name: Octavio Podestá
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - OCTAVIO PODESTÁ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16613135'
+  death_status: living
+- artist_id: ofelia_rodriguez
+  display_name: Ofelia Rodriguez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1946
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OFELIA RODRIGUEZ
+  - Ofelia Rodriguez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: ohannes_ounanian
+  display_name: Ohannes Ounanian
+  country_birth: GR
+  nationalities:
+  - GR
+  birth_year: 1926
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ohannes OUNANIÁN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42386320'
+- artist_id: olegario_junyent
+  display_name: Oleguer Junyent
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1876
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Olegario Junyent
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9051988'
+- artist_id: olga_de_amaral
+  display_name: Olga de Amaral
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1932
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - 'Olga de Amaral: Bosques, estelas, umbras'
+  - Olga de Amaral (Colombia, 1932)
+  - Olga de Amaral
+  notes: '6 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: olga_de_dios
+  display_name: Olga de Dios
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1979
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Olga de Dios
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q62116521'
+- artist_id: olga_sacharoff
+  display_name: Olga Nicolaevna Sacharoff
+  country_birth: null
+  nationalities: []
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Olga Sacharoff
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2581909'
+- artist_id: olga_sinclair
+  display_name: Olga Sinclair
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - OLGA SINCLAIR
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q7086682'
+- artist_id: olimpia_torres
+  display_name: Olimpia Torres
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Olimpia TORRES
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29057519'
+- artist_id: olivier_debre
+  display_name: Olivier Debré
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1920
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Olivier Debré
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2637632'
+- artist_id: omar_carreno
+  display_name: Omar Carreño
+  birth_year: 1927
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Omar Carreño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q29043591'
+- artist_id: omar_rayo
+  display_name: Omar Rayo
+  country_birth: CO
+  birth_year: 1928
+  death_year: 2010
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Omar Rayo (Colombia, 1928 - 2010)
+  - Omar Rayo - Colombia, 1928 - 2010.
+  - Omar Rayo
+  - Rayo, Omar
+  notes: '29 lotes | casas: bogota_auctions'
+- artist_id: onofre_prohens
+  display_name: Onofre Prohéns
+  country_birth: null
+  nationalities: []
+  birth_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Onofre Prohéns
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55948396'
+  death_status: living
+- artist_id: orlando_norie
+  display_name: Orlando Norie
+  birth_year: 1832
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Orlando Norie
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q7103146'
+- artist_id: orlando_pelayo
+  display_name: Orlando Pelayo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1920
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Orlando Pelayo
+  notes: '81 lotes | casas: duran_subastas'
+- artist_id: orlando_pierri
+  display_name: Orlando Pierri
+  birth_year: 1913
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Orlando Pierri
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6053101'
+- artist_id: orozio_belem
+  display_name: Orózio Belém
+  birth_year: 1903
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Orózio Belém
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q10341848'
+- artist_id: oscar_benedi
+  display_name: Oscar Benedi
+  birth_year: 1952
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Oscar Benedi
+  - Oscar Benedí
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q130148217'
+- artist_id: oscar_dominguez
+  display_name: Óscar Domínguez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Óscar Domínguez
+  notes: '6 lotes | casas: duran_subastas'
+- artist_id: oscar_estruga
+  display_name: Óscar Estruga
+  country_birth: ES
+  birth_year: 1933
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Óscar Estruga
+  notes: '23 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: oscar_garcia_reino
+  display_name: Óscar García Reino
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1910
+  death_year: 1993
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Óscar García Reino
+  - Óscar GARCÍA REINO
+  notes: '21 lotes | casas: zorrilla_subastas'
+- artist_id: oscar_martinez_vasquez
+  display_name: Oscar Martínez Vásquez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OSCAR MARTINEZ VASQUEZ
+  - Oscar Martínez Vásquez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: oscar_munoz
+  display_name: Oscar Muñoz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1951
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Oscar Muñoz (Colombia, 1951)
+  - Oscar Muñoz
+  notes: '21 lotes | casas: bogota_auctions'
+- artist_id: oscar_rodriguez_naranjo
+  display_name: Oscar Rodríguez Naranjo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1907
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OSCAR RODRIGUEZ NARANJO
+  - Oscar Rodríguez Naranjo
+  - Rodríguez Naranjo, Oscar
+  notes: '10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: oskar_dalvit
+  display_name: Oskar Dalvit
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1911
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Oskar Dalvit
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1251874'
+- artist_id: oskar_holweck
+  display_name: Oskar Holweck
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1924
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Oskar Holweck
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2033733'
+- artist_id: oskar_kokoschka
+  display_name: Oskar Kokoschka
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1886
+  death_year: 1980
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OSKAR KOKOSCHKA
+  - Oskar Kokoschka
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: osvaldo_leite
+  display_name: Osvaldo Leite
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Osvaldo Leite
+  - OSVALDO LEITE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17624103'
+  death_status: living
+- artist_id: oswaldo_guayasamin
+  display_name: Oswaldo Guayasamín
+  country_birth: EC
+  nationalities:
+  - EC
+  birth_year: 1919
+  death_year: 1999
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Oswaldo Guayasamín
+  - Oswaldo Guaysamín
+  notes: '38 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: oswaldo_subero
+  display_name: Oswaldo Subero
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Oswaldo Subero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94533636'
+  death_status: living
+- artist_id: oswaldo_vigas
+  display_name: Oswaldo Vigas
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1923
+  death_year: 2014
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OSWALDO VIGAS
+  - Oswaldo Vigas
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: oswaldo_viteri
+  display_name: Oswaldo Viteri
+  country_birth: EC
+  death_year: 2023
+  nationalities:
+  - EC
+  birth_year: 1931
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - OSWALDO VITERI
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: otto_cavalcanti
+  display_name: Otto Cavalcanti
+  birth_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Otto Cavalcanti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6054692'
+- artist_id: otto_ludwig_richarde
+  display_name: Ludvig Richarde
+  country_birth: SE
+  nationalities:
+  - SE
+  birth_year: 1862
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Otto Ludwig Richarde
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6164568'
+- artist_id: ouka_leele
+  display_name: Ouka Leele
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1957
+  death_year: 2022
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ouka Leele
+  - Ouka Lele
+  notes: '12 lotes en Silver | fuente: Wikipedia | seudonimo de Barbara Allende Gil de Biedma, Madrid. Duran publica
+    tambien ''Ouka Lele'' con una sola ele (11 lotes): misma artista, folds distintos, asi que necesita el alias
+    explicito para no rankear partida.'

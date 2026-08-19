@@ -1,544 +1,1798 @@
-# Maestro de artistas - shard "p"
-#
-# Entradas cuyo artist_id empieza por "p". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: pablo_palazuelo
-    display_name: "Pablo Palazuelo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1916
-    death_year: 2007
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pablo Palazuelo"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: pablo_picasso
-    display_name: "Pablo Picasso"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1881
-    death_year: 1973
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pablo Picasso"
-      - "Pablo Ruiz Picasso"
-      - "Picasso, Pablo"
-      - "PICASSO, PABLO RUIZ"
-    notes: "13 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: pablo_serrano
-    display_name: "Pablo Serrano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1910
-    death_year: 1985
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pablo Serrano"
-    notes: "34 lotes | casas: duran_subastas"
-
-  - artist_id: pancho_cossio
-    display_name: "Pancho Cossío"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1894
-    death_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pancho Cossío"
-      - "COSSÍO, PANCHO"
-    notes: "9 lotes | casas: duran_subastas"
-
-  - artist_id: patricia_gadea
-    display_name: "Patricia Gadea"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1960
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Patricia Gadea"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: pedro_bueno
-    display_name: "Pedro Bueno"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1910
-    death_year: 1993
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Bueno"
-    notes: "19 lotes | casas: duran_subastas"
-
-  - artist_id: pedro_gasto
-    display_name: "Pedro Gastó"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1908
-    death_year: 1997
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Gastó VIlanova"
-      - "Pedro Gastó"
-    notes: "30 lotes | casas: duran_subastas"
-
-  - artist_id: pedro_mozos
-    display_name: "Pedro Mozos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1915
-    death_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Mozos"
-    notes: "34 lotes | casas: duran_subastas"
-
-  - artist_id: pedro_nel_gomez
-    display_name: "Pedro Nel Gómez"
-    country_birth: "CO"
-    birth_year: 1899
-    death_year: 1984
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Nel Gómez (Colombia, 1899 - 1984)"
-      - "Pedro Nel Gómez"
-      - "Gómez, Pedro Nel"
-    notes: "14 lotes | casas: bogota_auctions"
-
-  - artist_id: pedro_ruiz
-    display_name: "Pedro Ruíz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Ruiz Ortega"
-      - "Pedro Ruiz (Colombia, 1957)"
-      - "Pedro Ruíz"
-    notes: "24 lotes | casas: bogota_auctions"
-
-  - artist_id: pedro_sandoval
-    display_name: "Pedro Sandoval"
-    country_birth: "VE"
-    nationalities: ["ES", "VE"]
-    birth_year: 1966
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Sandoval"
-    notes: "7 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Ciudad Bolivar (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA)."
-
-  - artist_id: pedro_sobrado
-    display_name: "Pedro Sobrado"
-    country_birth: "ES"
-    birth_year: 1936
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Sobrado"
-    notes: "54 lotes | casas: duran_subastas"
-
-  - artist_id: perico_pastor
-    display_name: "Perico Pastor"
-    country_birth: "ES"
-    birth_year: 1953
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Perico Pastor"
-    notes: "25 lotes | casas: duran_subastas"
-  - artist_id: pedro_blanes_viale
-    display_name: "Pedro Blanes Viale"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1878
-    death_year: 1926
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Blanes Viale"
-      - "Pedro BLANES VIALE"
-    notes: "15 lotes | casas: zorrilla_subastas"
-
-  - artist_id: pedro_figari
-    display_name: "Pedro Figari"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1861
-    death_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Figari"
-      - "Pedro FIGARI"
-    notes: "24 lotes | casas: zorrilla_subastas"
-
-  - artist_id: petrona_viera
-    display_name: "Petrona Viera"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1895
-    death_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Petrona Viera"
-      - "Petrona VIERA"
-    notes: "9 lotes | casas: zorrilla_subastas"
-
-  - artist_id: pablo_atchugarry
-    display_name: "Pablo Atchugarry"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PABLO ATCHUGARRY"
-      - "Pablo Atchugarry"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pablo_gilberto_montoya
-    display_name: "Pablo Gilberto Montoya"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PABLO GILBERTO MONTOYA"
-      - "Pablo Gilberto Montoya"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pablo_munoz
-    display_name: "Pablo Muñoz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PABLO MUÑOZ"
-      - "Pablo Muñoz"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pablo_obelar
-    display_name: "Pablo Obelar"
-    country_birth: "CL"
-    nationalities: ["CL"]
-    birth_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PABLO OBELAR"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: patricia_tavera
-    display_name: "Patricia Tavera"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PATRICIA TAVERA"
-      - "Patricia Tavera"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pedro_alcantara_herran
-    display_name: "Pedro Alcántara Herrán"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1942
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Alcántara Herrán y Virginia Amaya"
-      - "PEDRO ALCANTARA HERRAN"
-      - "Pedro Alcántara Herrán"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pedro_alcantara_quijano
-    display_name: "Pedro Alcántara Quijano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1878
-    death_year: 1953
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PEDRO ALCANTARA QUIJANO"
-      - "Pedro Alcántara Quijano"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pedro_hanne_gallo
-    display_name: "Pedro Hanne Gallo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1930
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PEDRO HANNE GALLO"
-      - "Pedro Hanne Gallo"
-    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pereira_gamba_prospero
-    display_name: "Pereira Gamba, Próspero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1793
-    death_year: 1855
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PEREIRA GAMBA, PROSPERO"
-      - "Pereira Gamba, Próspero"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: peter_downsbrough
-    display_name: "Peter Downsbrough"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PETER DOWNSBROUGH"
-      - "Peter Downsbrough"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: phanor_leon
-    display_name: "Phanor León"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1944
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PHANOR LEON"
-      - "Phanor León"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pierre_daguet
-    display_name: "Pierre Daguet"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1903
-    death_year: 1980
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "PIERRE DAGUET"
-      - "Pierre Daguet"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: pedro_alcantara
-    display_name: "Pedro Alcántara"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1942
-    death_year: 2019
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Alcántara - Colombia, 1942."
-      - "Pedro Alcántara"
-      - "PEDRO ALCANTARA"
-    notes: "15 lotes en Silver | fuente: MoMA; Art Institute Chicago | colombiano; en museos de EEUU"
-
-  - artist_id: pedro_castrortega
-    display_name: "Pedro Castrortega"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1956
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Pedro Castrortega"
-    notes: "12 lotes en Silver | fuente: Artnet"
-
-  - artist_id: pedro_flores
-    display_name: "Pedro Flores"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1897
-    death_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Flores"
-    notes: "11 lotes en Silver | fuente: Wikipedia ES | Murcia"
-
-  - artist_id: pedro_marcos_bustamante
-    display_name: "Pedro Marcos Bustamante"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1921
-    death_year: 2001
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Marcos Bustamante"
-    notes: "48 lotes en Silver | fuente: Invaluable; Artnet | Bilbao; murio en Rota, Cadiz"
-
-  - artist_id: pedro_serra_farnes
-    display_name: "Pedro Serra Farnés"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1890
-    death_year: 1974
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Serra Farnés"
-      - "PEdro Serra Farnés"
-      - "Pedro Serra Farnes"
-    notes: "16 lotes en Silver | fuente: Askart; Artprice | Barcelona; paisajista catalan"
-
-  - artist_id: pepi_sanchez
-    display_name: "Pepi Sánchez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 2012
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pepi Sánchez"
-    notes: "14 lotes en Silver | fuente: Wikipedia | Sevilla"
-
-  - artist_id: pere_pruna
-    display_name: "Pere Pruna"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pere Pruna"
-    notes: "12 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: paco_leal
-    display_name: "Paco Leal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Paco Leal"
-    notes: "Spanish painter born 1952. Works sold at auction. Note: there is also a Mexican portrait artist named Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist."
-
-  - artist_id: pedro_maria_trapero
-    display_name: "Pedro María Trapero"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1918
-    death_year: 2005
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Trapero"
-      - "Pedro María Trapero"
-    notes: "Pintor español nacido en Navalcarnero, Madrid, 1918. Fallecido en Madrid 2005. Registrado en bases de datos españolas de arte."
-
-  - artist_id: paja_jovanovic
-    display_name: "Paja Jovanović"
-    country_birth: "RS"
-    nationalities: ["RS"]
-    birth_year: 1859
-    death_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Paja Jovanovic"
-    notes: "1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Vrsac, entonces Imperio austriaco (Banato, austrohungaro desde 1867), hoy Serbia: RS por el lugar literal. Serbio de etnia y autoidentificacion. Murio en Viena a los 98 tras vivir alli casi toda su vida adulta, pero NO consta que adquiriera la ciudadania austriaca, asi que no se le aniade AT."
-
-  - artist_id: paul_francois_quinsac
-    display_name: "Paul François Quinsac"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1858
-    death_year: 1929
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Paul François Quinsac"
-    notes: "2 lotes | casas: duran_subastas | nacido en Burdeos, Francia, en 1858. Duran publica muerte en 1932, pero el repertorio documental actualizado del Musee d'Orsay fija 1929; se toma la fuente institucional. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/paul-quinsac-20471"
-
-  - artist_id: pedro_antonio_martinez_exposito
-    display_name: "Pedro Antonio Martínez Expósito"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1886
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Pedro Antonio Martínez"
-      - "Pedro Antonio Martínez Expósito"
-    notes: "1 lote | casas: duran_subastas | el catalogo identifica Majas con Mantilla, 1929, como obra de Pedro Antonio Martinez, Pulpi 1886-?. Prado y el Ayuntamiento desarrollan el nombre como Pedro Antonio Martinez Exposito. Se omite death_year porque las fuentes fiables lo desconocen y las secundarias discrepan. Fuentes: https://www.museodelprado.es/en/aprende/enciclopedia/voz/martinez-exposito-pedro-antonio/dfb21d0e-00aa-40fe-9fdb-8dbb35b1f646 ; https://www.dipalme.org/Servicios/cmsdipro/index.nsf/noticias.xsp?documentId=E99A261D7B707D3EC1258B11003E06B7&p=espaciosescenicospulpi ; https://www.duran-subastas.com/files/001/625/001_420.pdf"
+- artist_id: pablo_atchugarry
+  display_name: Pablo Atchugarry
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PABLO ATCHUGARRY
+  - Pablo Atchugarry
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: pablo_buendia_y_beltran
+  display_name: Pablo Buendia y Beltrán
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pablo Buendía y Beltrán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97930241'
+- artist_id: pablo_donezar
+  display_name: Pablo Donezar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Donezar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q132528030'
+- artist_id: pablo_genoves
+  display_name: Pablo Genovés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Genovés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19863653'
+- artist_id: pablo_gilberto_montoya
+  display_name: Pablo Gilberto Montoya
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PABLO GILBERTO MONTOYA
+  - Pablo Gilberto Montoya
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pablo_gonzalvo_perez
+  display_name: Pablo Gonzalvo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1827
+  death_year: 1896
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Gonzalvo Pérez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9053966'
+- artist_id: pablo_mane
+  display_name: Pablo Mañe
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1880
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Mañé
+  - PABLO MAÑÉ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6056220'
+- artist_id: pablo_munoz
+  display_name: Pablo Muñoz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PABLO MUÑOZ
+  - Pablo Muñoz
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pablo_obelar
+  display_name: Pablo Obelar
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PABLO OBELAR
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pablo_palasso
+  display_name: Pablo Palasso
+  country_birth: null
+  nationalities: []
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pablo Palasso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43135008'
+  death_status: living
+- artist_id: pablo_palazuelo
+  display_name: Pablo Palazuelo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1916
+  death_year: 2007
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pablo Palazuelo
+  - Palazuelo
+  notes: '22 lotes | casas: duran_subastas. Alias corto ''Palazuelo'' consolidado aqui (una tanda automatica lo
+    dio de alta aparte el 2026-08-18). Wikidata (Q3362996) da 1915; la ficha curada dice 1916 y se conserva: la
+    discrepancia se anota, no se resuelve sola.'
+- artist_id: pablo_perez_minguez
+  display_name: Pablo Pérez-Mínguez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Pérez-Mínguez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3359995'
+- artist_id: pablo_picasso
+  display_name: Pablo Picasso
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1881
+  death_year: 1973
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pablo Picasso
+  - Pablo Ruiz Picasso
+  - Picasso, Pablo
+  - PICASSO, PABLO RUIZ
+  notes: '13 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: pablo_raul_quert_alvarez
+  display_name: Pablo Raúl Quert Álvarez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Raul Quert Alvarez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6056367'
+  death_status: living
+- artist_id: pablo_rodriguez_guy
+  display_name: Pablo Rodriguez Guy
+  country_birth: null
+  nationalities: []
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pablo Rodríguez Guy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q134397123'
+  death_status: living
+- artist_id: pablo_salinas_teruel
+  display_name: Juan Pablo Salinas Teruel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Salinas Teruel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5951852'
+- artist_id: pablo_serrano
+  display_name: Pablo Serrano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1910
+  death_year: 1985
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pablo Serrano
+  notes: '34 lotes | casas: duran_subastas'
+- artist_id: pablo_solano
+  display_name: Pablo Solano
+  birth_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - PABLO SOLANO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139057962'
+- artist_id: pablo_sycet
+  display_name: Pablo Sycet
+  country_birth: null
+  nationalities: []
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pablo Sycet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55992734'
+  death_status: living
+- artist_id: pablo_uranga_diaz_de_arcaya
+  display_name: Pablo Uranga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pablo Uranga Díaz de Arcaya
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7121778'
+- artist_id: paca_jiliberto
+  display_name: Paca Jiliberto
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Paca Jiliberto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q106582560'
+- artist_id: paco_gorospe
+  display_name: Paco Gorospe
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1939
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - PACO GOROSPE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7123084'
+- artist_id: paco_leal
+  display_name: Paco Leal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Paco Leal
+  notes: 'Spanish painter born 1952. Works sold at auction. Note: there is also a Mexican portrait artist named
+    Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist.'
+- artist_id: paco_rabanne
+  display_name: Paco Rabanne
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paco Rabanne
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q467754'
+- artist_id: paja_jovanovic
+  display_name: Paja Jovanović
+  country_birth: RS
+  nationalities:
+  - RS
+  birth_year: 1859
+  death_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Paja Jovanovic
+  notes: '1 lote de 30.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Vrsac, entonces Imperio austriaco
+    (Banato, austrohungaro desde 1867), hoy Serbia: RS por el lugar literal. Serbio de etnia y autoidentificacion.
+    Murio en Viena a los 98 tras vivir alli casi toda su vida adulta, pero NO consta que adquiriera la ciudadania
+    austriaca, asi que no se le aniade AT.'
+- artist_id: paloma_hinojosa
+  display_name: Paloma Hinojosa
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Paloma Hinojosa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55992601'
+  death_status: living
+- artist_id: paloma_navares
+  display_name: Paloma Navares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paloma Navares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6059161'
+  death_status: living
+- artist_id: paloma_pelaez
+  display_name: Paloma Peláez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paloma Peláez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q125218078'
+  death_status: living
+- artist_id: paloma_picasso
+  display_name: Paloma Picasso
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paloma Picasso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q270356'
+  death_status: living
+- artist_id: pamen_pereira
+  display_name: Pamen Pereira
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pamen Pereira
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30243149'
+- artist_id: pancho_cossio
+  display_name: Pancho Cossío
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1894
+  death_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pancho Cossío
+  - COSSÍO, PANCHO
+  notes: '9 lotes | casas: duran_subastas'
+- artist_id: pancho_ortuno
+  display_name: Pancho Ortuno
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pancho Ortuño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q133762818'
+- artist_id: paolo_fiammingo
+  display_name: Paolo Fiammingo
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1540
+  death_year: 1596
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paolo Fiammingo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q213284'
+- artist_id: paolo_porpora
+  display_name: Paolo Porpora
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1617
+  death_year: 1673
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paolo Porpora
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3362660'
+- artist_id: pascual_de_cabo_diaz
+  display_name: Pascual de Cabo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pascual de Cabo Díaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55946392'
+  death_status: living
+- artist_id: pascual_palacios_tardez
+  display_name: Pascual Palacios Tardez
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pascual Palacios Tardez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60827622'
+- artist_id: pat_andrea
+  display_name: Pat Andrea
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pat Andrea
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2806407'
+- artist_id: patricia_gadea
+  display_name: Patricia Gadea
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1960
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Patricia Gadea
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: patricia_tavera
+  display_name: Patricia Tavera
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PATRICIA TAVERA
+  - Patricia Tavera
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: patricio_cabrera
+  display_name: Patricio Cabrera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Patricio Cabrera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594506'
+- artist_id: patricio_court
+  display_name: Patricio Court
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Patricio Court
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43379361'
+- artist_id: patrick_nasmyth
+  display_name: Patrick Nasmyth
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1787
+  death_year: 1831
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Patrick Nasmyth
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7147317'
+- artist_id: paul_emile_lecomte
+  display_name: Paul Émile Lecomte
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1877
+  death_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paul Émile Lecomte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21462590'
+- artist_id: paul_francois_quinsac
+  display_name: Paul François Quinsac
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1858
+  death_year: 1929
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Paul François Quinsac
+  notes: '2 lotes | casas: duran_subastas | nacido en Burdeos, Francia, en 1858. Duran publica muerte en 1932, pero
+    el repertorio documental actualizado del Musee d''Orsay fija 1929; se toma la fuente institucional. Fuente:
+    https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/paul-quinsac-20471'
+- artist_id: paul_gurk
+  display_name: Paul Gurk
+  birth_year: 1880
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Paul Gurk
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2059892'
+- artist_id: paul_hermanus
+  display_name: Paul Hermanus
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1859
+  death_year: 1911
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paul Hermanus
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2270346'
+- artist_id: paul_maurice_duthoit
+  display_name: Paul-Maurice Duthoit
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1856
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paul Maurice Duthoit
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3370362'
+- artist_id: paul_rebeyrolle
+  display_name: Paul Rebeyrolle
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1926
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paul Rebeyrolle
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q315544'
+- artist_id: paul_sieffert
+  display_name: Paul Sieffert
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1874
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paul Sieffert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3372199'
+- artist_id: paulino_vicente_padre
+  display_name: Paulino Vicente (padre)
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Paulino Vicente (Padre)
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3372785'
+- artist_id: pedro_alcantara
+  display_name: Pedro Alcántara
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1942
+  death_year: 2019
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Alcántara - Colombia, 1942.
+  - Pedro Alcántara
+  - PEDRO ALCANTARA
+  notes: '15 lotes en Silver | fuente: MoMA; Art Institute Chicago | colombiano; en museos de EEUU'
+- artist_id: pedro_alcantara_herran
+  display_name: Pedro Alcántara Herrán
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1942
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Alcántara Herrán y Virginia Amaya
+  - PEDRO ALCANTARA HERRAN
+  - Pedro Alcántara Herrán
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pedro_alcantara_quijano
+  display_name: Pedro Alcántara Quijano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1878
+  death_year: 1953
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PEDRO ALCANTARA QUIJANO
+  - Pedro Alcántara Quijano
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pedro_antequera_azpiri
+  display_name: Pedro Antequera Azpiri
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1892
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Antequera Azpiri
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6068133'
+- artist_id: pedro_antonio_martinez_exposito
+  display_name: Pedro Antonio Martínez Expósito
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1886
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Antonio Martínez
+  - Pedro Antonio Martínez Expósito
+  notes: '1 lote | casas: duran_subastas | el catalogo identifica Majas con Mantilla, 1929, como obra de Pedro Antonio
+    Martinez, Pulpi 1886-?. Prado y el Ayuntamiento desarrollan el nombre como Pedro Antonio Martinez Exposito.
+    Se omite death_year porque las fuentes fiables lo desconocen y las secundarias discrepan. Fuentes: https://www.museodelprado.es/en/aprende/enciclopedia/voz/martinez-exposito-pedro-antonio/dfb21d0e-00aa-40fe-9fdb-8dbb35b1f646
+    ; https://www.dipalme.org/Servicios/cmsdipro/index.nsf/noticias.xsp?documentId=E99A261D7B707D3EC1258B11003E06B7&p=espaciosescenicospulpi
+    ; https://www.duran-subastas.com/files/001/625/001_420.pdf'
+- artist_id: pedro_batalla_xatruch
+  display_name: Pedro Batalla Xatruch
+  country_birth: null
+  nationalities: []
+  birth_year: 1893
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pedro Batalla Xatruch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q17428032'
+- artist_id: pedro_blanes_viale
+  display_name: Pedro Blanes Viale
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1878
+  death_year: 1926
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Blanes Viale
+  - Pedro BLANES VIALE
+  notes: '15 lotes | casas: zorrilla_subastas'
+- artist_id: pedro_bueno
+  display_name: Pedro Bueno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1910
+  death_year: 1993
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Bueno
+  notes: '19 lotes | casas: duran_subastas'
+- artist_id: pedro_castrortega
+  display_name: Pedro Castrortega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1956
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Pedro Castrortega
+  notes: '12 lotes en Silver | fuente: Artnet'
+  death_status: living
+- artist_id: pedro_centeno_vallenilla
+  display_name: Pedro Centeno Vallenilla
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1899
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Centeno Vallenilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q79389513'
+- artist_id: pedro_de_oraa
+  display_name: Pedro de Oraá
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1931
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro de Oraa
+  - Pedro de Oraá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59179487'
+- artist_id: pedro_delso_ruperez
+  display_name: Pedro Delso Rupérez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Delso Rupérez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96379203'
+- artist_id: pedro_figari
+  display_name: Pedro Figari
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1861
+  death_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Figari
+  - Pedro FIGARI
+  notes: '24 lotes | casas: zorrilla_subastas'
+- artist_id: pedro_flores
+  display_name: Pedro Flores
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1897
+  death_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Flores
+  notes: '11 lotes en Silver | fuente: Wikipedia ES | Murcia'
+- artist_id: pedro_friedeberg
+  display_name: Pedro Friedeberg
+  country_birth: null
+  nationalities: []
+  birth_year: 1936
+  death_year: 2026
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - PEDRO FRIEDEBERG
+  - Pedro Friedeberg
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q7159594'
+- artist_id: pedro_garcia_camio
+  display_name: Pedro García Camio
+  birth_year: 1897
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pedro García Camio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97571325'
+- artist_id: pedro_garcia_ramos
+  display_name: Pedro García Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro García Ramos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q136547111'
+- artist_id: pedro_gasto
+  display_name: Pedro Gastó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1997
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Gastó VIlanova
+  - Pedro Gastó
+  notes: '30 lotes | casas: duran_subastas'
+- artist_id: pedro_gros
+  display_name: Pedro Gross
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Gros
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q109353624'
+- artist_id: pedro_hanne_gallo
+  display_name: Pedro Hanne Gallo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1930
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PEDRO HANNE GALLO
+  - Pedro Hanne Gallo
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pedro_marcos_bustamante
+  display_name: Pedro Marcos Bustamante
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2001
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Marcos Bustamante
+  notes: '48 lotes en Silver | fuente: Invaluable; Artnet | Bilbao; murio en Rota, Cadiz'
+- artist_id: pedro_maria_trapero
+  display_name: Pedro María Trapero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 2005
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Trapero
+  - Pedro María Trapero
+  notes: Pintor español nacido en Navalcarnero, Madrid, 1918. Fallecido en Madrid 2005. Registrado en bases de datos
+    españolas de arte.
+- artist_id: pedro_mozos
+  display_name: Pedro Mozos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1915
+  death_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Mozos
+  notes: '34 lotes | casas: duran_subastas'
+- artist_id: pedro_muguruza
+  display_name: Pedro Muguruza
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1893
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Muguruza
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3374095'
+- artist_id: pedro_nel_gomez
+  display_name: Pedro Nel Gómez
+  country_birth: CO
+  birth_year: 1899
+  death_year: 1984
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Nel Gómez (Colombia, 1899 - 1984)
+  - Pedro Nel Gómez
+  - Gómez, Pedro Nel
+  notes: '14 lotes | casas: bogota_auctions'
+- artist_id: pedro_nunez_de_villavicencio
+  display_name: Pedro Núñez de Villavicencio
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1644
+  death_year: 1695
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Nuñez de Villavicencio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3374104'
+- artist_id: pedro_rodriguez_de_la_torre
+  display_name: Pedro Rodríguez de la Torre
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1847
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Rodríguez de la Torre
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6070015'
+- artist_id: pedro_roig_asuar
+  display_name: Pedro Roig Asuar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1884
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Roig Asuar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99861176'
+- artist_id: pedro_ruiz
+  display_name: Pedro Ruíz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Ruiz Ortega
+  - Pedro Ruiz (Colombia, 1957)
+  - Pedro Ruíz
+  notes: '24 lotes | casas: bogota_auctions'
+- artist_id: pedro_saenz_y_saenz
+  display_name: Pedro Sáenz
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pedro Sáenz y Sáenz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6070203'
+- artist_id: pedro_sanchez_picazo
+  display_name: Pedro Sánchez Picazo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Sanchez Picazo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28503531'
+- artist_id: pedro_sandoval
+  display_name: Pedro Sandoval
+  country_birth: VE
+  nationalities:
+  - ES
+  - VE
+  birth_year: 1966
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Sandoval
+  notes: '7 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Ciudad Bolivar
+    (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA).'
+- artist_id: pedro_serra_farnes
+  display_name: Pedro Serra Farnés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1974
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Serra Farnés
+  - PEdro Serra Farnés
+  - Pedro Serra Farnes
+  notes: '16 lotes en Silver | fuente: Askart; Artprice | Barcelona; paisajista catalan'
+- artist_id: pedro_sobrado
+  display_name: Pedro Sobrado
+  country_birth: ES
+  birth_year: 1936
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pedro Sobrado
+  notes: '54 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: pedro_valdez_cardoso
+  display_name: Pedro Valdez Cardoso
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Valdez Cardoso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10347797'
+  death_status: living
+- artist_id: pedro_ysern_alie
+  display_name: Pere Ysern
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pedro Ysern Alié
+  - Pere Isern Alié
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1843324'
+- artist_id: pelayo_ortega
+  display_name: Pelayo Ortega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pelayo Ortega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9057870'
+  death_status: living
+- artist_id: pello_irazu
+  display_name: Pello Irazu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pello Irazu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12265724'
+  death_status: living
+- artist_id: penelope_fleming
+  display_name: Penelope Fleming
+  country_birth: null
+  nationalities: []
+  birth_year: 1711
+  death_year: 1764
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Penelope Fleming
+  - Penélope Fleming
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q76035365'
+- artist_id: pepe_carazo
+  display_name: Pepe Carazo
+  country_birth: null
+  nationalities: []
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pepe Carazo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q133651378'
+  death_status: living
+- artist_id: pepe_cerda
+  display_name: Pepe Cerdá
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pepe Cerdá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6071721'
+- artist_id: pepe_espana
+  display_name: Pepe España
+  birth_year: 1930
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pepe España
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q112763500'
+- artist_id: pepi_sanchez
+  display_name: Pepi Sánchez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2012
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pepi Sánchez
+  notes: '14 lotes en Silver | fuente: Wikipedia | Sevilla'
+- artist_id: pere_creixams_pico
+  display_name: Pere Créixams Picó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1893
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pere Creixams Picó
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3375262'
+- artist_id: pere_pruna
+  display_name: Pere Pruna
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Pere Pruna
+  notes: '12 lotes en Silver | fuente: Wikidata'
+- artist_id: pere_ynglada
+  display_name: Pere Ynglada
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1881
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pere Ynglada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16510181'
+- artist_id: pereira_gamba_prospero
+  display_name: Pereira Gamba, Próspero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1793
+  death_year: 1855
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PEREIRA GAMBA, PROSPERO
+  - Pereira Gamba, Próspero
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: perejaume
+  display_name: Perejaume
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Perejaume
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q550154'
+  death_status: living
+- artist_id: perico_pastor
+  display_name: Perico Pastor
+  country_birth: ES
+  birth_year: 1953
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Perico Pastor
+  notes: '25 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: peridis
+  display_name: Peridis
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Peridis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9058492'
+  death_status: living
+- artist_id: peter_angermann
+  display_name: Peter Angermann
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Peter Angermann
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1229100'
+  death_status: living
+- artist_id: peter_deacon
+  display_name: Peter Deacon
+  country_birth: null
+  nationalities: []
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Peter Deacon
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21463624'
+  death_status: living
+- artist_id: peter_downsbrough
+  display_name: Peter Downsbrough
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PETER DOWNSBROUGH
+  - Peter Downsbrough
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_year: 2024
+- artist_id: peter_kuhfeld
+  display_name: Peter Kuhfeld
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Peter Kuhfeld
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7175292'
+- artist_id: peter_pollag
+  display_name: Peter Pollág
+  country_birth: SK
+  nationalities:
+  - SK
+  birth_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Peter Pollag
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q51176362'
+- artist_id: peter_schmersal
+  display_name: Peter Schmersal
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Peter Schmersal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2078125'
+  death_status: living
+- artist_id: peter_von_artens
+  display_name: Peter Von Artens
+  country_birth: null
+  nationalities: []
+  birth_year: 1937
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Peter von Artens
+  - Peter Von Artens
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43139657'
+- artist_id: petr_krokhonyatkin
+  display_name: Petr Krokhonyatkin
+  birth_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Petr Krokhonyatkin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43132818'
+- artist_id: petrona_viera
+  display_name: Petrona Viera
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1895
+  death_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Petrona Viera
+  - Petrona VIERA
+  notes: '9 lotes | casas: zorrilla_subastas'
+- artist_id: phanor_leon
+  display_name: Phanor León
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1944
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PHANOR LEON
+  - Phanor León
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: philip_lorca_dicorcia
+  display_name: Philip-Lorca diCorcia
+  country_birth: US
+  nationalities:
+  - US
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Philip-Lorca Dicorcia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1274009'
+- artist_id: philippe_halsman
+  display_name: Philippe Halsman
+  birth_year: 1906
+  death_year: 1979
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Philippe Halsman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q704572'
+- artist_id: philippe_monteagudo
+  display_name: Philippe Monteagudo
+  birth_year: 1936
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Philippe Monteagudo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q20016486'
+- artist_id: philippe_swyncop
+  display_name: Philippe Swyncop
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1878
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Philippe Swyncop
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2155895'
+- artist_id: pierre_albert_leroux
+  display_name: Pierre Albert Leroux
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1890
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Albert Leroux
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52156682'
+- artist_id: pierre_alechinsky
+  display_name: Pierre Alechinsky
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Alechinsky
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q328248'
+  death_status: living
+- artist_id: pierre_daguet
+  display_name: Pierre Daguet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1903
+  death_year: 1980
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - PIERRE DAGUET
+  - Pierre Daguet
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: pierre_gonnord
+  display_name: Pierre Gonnord
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1963
+  death_year: 2024
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Gonnord
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3385267'
+- artist_id: pierre_jacques_dierckx
+  display_name: Pierre Jacques Dierckx
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1855
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Jacques Dierckx
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19792211'
+- artist_id: pierre_jules_mene
+  display_name: Pierre Jules Mène
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1810
+  death_year: 1879
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - PIERRE-JULES MENE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3383244'
+- artist_id: pierre_le_faguays
+  display_name: Pierre Le Faguays
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1892
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - PIERRE LE FAGUAYS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3387816'
+- artist_id: pierre_montezin
+  display_name: Pierre Eugène Montézin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1874
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Montezin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3384925'
+- artist_id: pierre_tal_coat
+  display_name: Pierre Tal-Coat
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1905
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Tal-Coat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q320605'
+- artist_id: pierre_trofimoff
+  display_name: Pierre Trofimoff
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1925
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pierre Trofimoff
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3387172'
+- artist_id: piet_mondrian
+  display_name: Piet Mondrian
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1872
+  death_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - PIET MONDRIAN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q151803'
+- artist_id: pietro_parboni
+  display_name: Pietro Parboni
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1783
+  death_year: 1841
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pietro Parboni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26248482'
+- artist_id: pietro_psaier
+  display_name: Pietro Psaier
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: manual
+  confidence: low
+  aliases:
+  - Pietro Psaier
+  notes: 'SIN PAIS NI FECHAS A PROPOSITO. No es que falten los datos: el mundo del arte discute que la PERSONA existiera
+    (se sospecha una identidad fabricada por marchantes para vender obra atribuida a Warhol). Wikidata tiene ficha
+    (Q3904190) y las tandas automaticas ya le han puesto pais TRES veces (altas y complementos); ahora esta en DISPUTED_IDENTITIES
+    de artist_master_promote.py, que cubre las dos rutas. Un match exacto acredita que la ficha existe, no que la
+    identidad sea real. Test: test_unverifiable_artists_keep_no_country.'
+- artist_id: pilar_cocero_de_corvera
+  display_name: Pilar Cocero De Corvera
+  country_birth: null
+  nationalities: []
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pilar Cocero de Corvera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19802617'
+  death_status: living
+- artist_id: pilar_gomez_cossio
+  display_name: Pilar Cossío
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pilar Gómez Cossío
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6075776'
+- artist_id: pilar_perez_hidalgo
+  display_name: Pilar Pérez Hidalgo
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pilar Perez Hidalgo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55688260'
+  death_status: living
+- artist_id: pilarin_bayes
+  display_name: Pilarín Bayés
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pilarín Bayés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9059658'
+- artist_id: pio_escalera
+  display_name: Pío Escalera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pío Escalera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55718127'
+- artist_id: placido_frances_y_pascual
+  display_name: Plácido Francés y Pascual
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1834
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Plácido Francés y Pascual
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16782020'
+- artist_id: pol_bury
+  display_name: Pol Bury
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1922
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Pol Bury
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q492909'
+- artist_id: polin_laporta
+  display_name: Concepción Laporta Albors
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1920
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Polin Laporta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q97119917'
+- artist_id: posada_jose_guadalupe
+  display_name: José Guadalupe Posada
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1852
+  death_year: 1913
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Posada, Jose Guadalupe
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q732526'
+- artist_id: praphan_srisouta
+  display_name: Praphan Srisouta
+  birth_year: 1939
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Praphan Srisouta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q133665164'
+- artist_id: primo_conti
+  display_name: Primo Conti
+  country_birth: null
+  nationalities: []
+  birth_year: 1900
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Primo Conti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2478132'
+- artist_id: pure_evil
+  display_name: Pure Evil
+  birth_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pure Evil
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98761318'
+  death_status: living

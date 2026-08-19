@@ -1,401 +1,1067 @@
-# Maestro de artistas - shard "d"
-#
-# Entradas cuyo artist_id empieza por "d". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: daniel_merino
-    display_name: "Daniel Merino"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1941
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Daniel Merino"
-    notes: "38 lotes | casas: duran_subastas"
-
-  - artist_id: daniel_vazquez_diaz
-    display_name: "Daniel Vázquez Díaz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1881
-    death_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Daniel Vázquez Díaz y Eva Aggerholm"
-      - "Daniel Vázquez Díaz"
-    notes: "83 lotes | casas: duran_subastas"
-
-  - artist_id: dario_basso
-    display_name: "Darío Basso"
-    country_birth: "VE"
-    birth_year: 1966
-    nationalities: ["ES", "VE"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Darío Basso"
-      - "Darío Álvarez Basso"
-    notes: "33 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Caracas (VE) en 1966, de padre gallego; se traslado a Vigo en 1969. Firma tambien como Dario Alvarez Basso, de ahi el alias. Fuentes: masdearte, Afundacion, ArteInformado."
-
-  - artist_id: dario_de_regoyos
-    display_name: "Darío de Regoyos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1857
-    death_year: 1913
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Darío de Regoyos"
-    notes: "13 lotes | casas: duran_subastas"
-
-  - artist_id: dario_morales
-    display_name: "Darío Morales"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1944
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Darío Morales"
-    notes: "6 lotes | casas: bogota_auctions"
-
-  - artist_id: david_manzur
-    display_name: "David Manzur"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1929
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "David Manzur (Colombia, 1929.)"
-      - "David Manzur"
-    notes: "34 lotes | casas: bogota_auctions"
-
-  - artist_id: david_roberts
-    display_name: "David Roberts"
-    country_birth: "GB"
-    nationalities: ["GB"]
-    birth_year: 1796
-    death_year: 1864
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "David Roberts"
-      - "ROBERTS, DAVID"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: debora_arango
-    display_name: "Débora Arango"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1907
-    death_year: 2005
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Débora Arango - Colombia, 1907 - 2005."
-      - "Débora Arango Pérez"
-      - "Débora Arango"
-    notes: "4 lotes | casas: bogota_auctions"
-
-  - artist_id: delcy_morelos
-    display_name: "Delcy Morelos"
-    country_birth: "CO"
-    birth_year: 1967
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Delcy Morelos - Colombia, 1967."
-      - "Delcy Morelos"
-    notes: "4 lotes | casas: bogota_auctions"
-
-  - artist_id: demetrio_salgado
-    display_name: "Demetrio Salgado"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1916
-    death_year: 2000
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Demetrio Salgado"
-    notes: "77 lotes | casas: duran_subastas"
-
-  - artist_id: dino_valls
-    display_name: "Dino Valls"
-    country_birth: "ES"
-    birth_year: 1959
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "VALLS, DINO"
-      - "Dino Valls"
-    notes: "28 lotes | casas: duran_subastas"
-
-  - artist_id: dis_berlin
-    display_name: "Dis Berlin"
-    country_birth: "ES"
-    birth_year: 1959
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Dis Berlin"
-    notes: "26 lotes | casas: duran_subastas"
-
-  - artist_id: danilo_duenas
-    display_name: "Danilo Dueñas"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1937
-    death_year: 1976
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DANILO DUEÑAS"
-      - "Danilo Dueñas"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: dario_ortiz
-    display_name: "Darío Ortiz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DARIO ORTIZ"
-      - "Darío Ortiz"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: dario_villalba
-    display_name: "Darío Villalba"
-    country_birth: "PY"
-    death_year: 2018
-    nationalities: ["PY"]
-    birth_year: 1939
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Dario Villalba (España, 1939 - 2018.)"
-      - "DARIO VILLALBA"
-      - "Darío Villalba"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: david_alfaro_siqueiros
-    display_name: "David Alfaro Siqueiros"
-    country_birth: "MX"
-    nationalities: ["MX"]
-    birth_year: 1896
-    death_year: 1974
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DAVID ALFARO SIQUEIROS"
-      - "David Alfaro Siqueiros"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: dicken_castro
-    display_name: "Dicken Castro"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1922
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DICKEN CASTRO"
-      - "Dicken Castro"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: diego_chaves_lesivo
-    display_name: "Diego Chaves \"Lesivo\""
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Diego Chaves \"Lesivo\" (Colombia)"
-      - "DIEGO CHAVES \"LESIVO\""
-      - "Diego Chaves \"Lesivo\""
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: diva_teresa_ramirez
-    display_name: "Diva Teresa Ramírez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DIVA TERESA RAMIREZ"
-      - "Diva Teresa Ramírez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: domingo_izquierdo
-    display_name: "Domingo Izquierdo"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1931
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DOMINGO IZQUIERDO"
-      - "Domingo Izquierdo"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: domingo_moreno_otero
-    display_name: "Domingo Moreno Otero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1882
-    death_year: 1948
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DOMINGO MORENO OTERO"
-      - "Domingo Moreno Otero"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: doris_salcedo
-    display_name: "Doris Salcedo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1958
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "DORIS SALCEDO"
-      - "Doris Salcedo"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: domingo_huetos
-    display_name: "Domingo Huetos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1928
-    death_year: 2005
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Domingo Huetos"
-    notes: "14 lotes en Silver"
-
-  - artist_id: daniel_salamanca
-    display_name: "Daniel Salamanca"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Daniel Salamanca"
-      - "Daniel Salamanca Núñez"
-    notes: "Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC Chicago (2019). Works as artist, graphic designer, essayist, lecturer. Won Cultural Ministry of Colombia grant for emerging artists (2015)."
-
-  - artist_id: david_teniers_el_joven
-    display_name: "David Teniers el Joven"
-    country_birth: "BE"
-    nationalities: ["BE"]
-    birth_year: 1610
-    death_year: 1690
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "David Teniers El Joven"
-      - "David Teniers el Joven"
-      - "David \"The Younger\" TENIERS"
-    notes: "5 lotes de autor en Silver | nacido en Amberes, actual Belgica, en 1610; fallecido en Bruselas en 1690. No fusionar las atribuciones Seguidor/Circulo. Fuente: https://www.museodelprado.es/coleccion/artista/teniers-el-joven-david/a23a8d0c-2f36-4b88-8802-7e0ad599c91e"
-
-  - artist_id: domingo_fernandez_gonzalez
-    display_name: "Domingo Fernández González"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1862
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Domingo Fernández González"
-      - "Domingo Fernández y González"
-    notes: "5 lotes | casas: duran_subastas | nacido en Sevilla en 1862. Silver y Duran publican muerte en Buenos Aires en 1918, pero Frick solo lo documenta activo hasta 1918 y el catalogo del Museo de Sevilla citado alli usa c.1920; se omite death_year. Fuentes: https://research.frick.org/spanish/detail/1607 ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_581.pdf"
-
-  - artist_id: damien_hirst
-    display_name: "Damien Hirst"
-    country_birth: "GB"
-    nationalities: ["GB"]
-    birth_year: 1965
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Damien Hirst"
-    notes: "9 lotes | casas: duran_subastas | artista britanico nacido en Bristol en 1965. British Council documenta el nacimiento y su produccion de spin paintings, coincidente con los lotes de Silver. Fuentes: https://collection.britishcouncil.org/author/hirst-damien/6495b265425178137a390e43?_locale=en ; https://www.npg.org.uk/collections/search/person/mp14191/damien-hirst"
-
-  - artist_id: dionis_bennassar
-    display_name: "Dionís Bennàssar"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Dionís Bennassar"
-      - "Dionís Bennasar"
-      - "Dionis Bennassar"
-    notes: "3 lotes | casas: duran_subastas | nacido en Pollença, Mallorca; Silver coincide en 1904-1967. No fusionar con Joan Bennassar ni Pere Bennassar. Fuente: https://fdionis.org/about-dionis-bennassar/"
-
-  - artist_id: dennis_oppenheim
-    display_name: "Dennis Oppenheim"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1938
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Dennis Oppenheim"
-      - "OPPENHEIM, DENNIS"
-      - "Denis Oppenheim"
-    notes: "5 lotes nominales | casas: duran_subastas | nacido en Electric City, Washington, EE. UU., en 1938 y fallecido en Nueva York en 2011. Denis Oppenheim es errata confirmada por el campo Autor de la propia ficha. El afiche de Bogota Auctions no es alias y Victor Oppenheim es otra persona. Fuentes: https://www.museoreinasofia.es/en/collections/artist/oppenheim-dennis/ ; https://www.duran-subastas.com/es/subasta-lote/denis-oppenheim-ricardo-zamora/630-27"
+- artist_id: d_face
+  display_name: D*Face
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - D*FACE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5203218'
+  death_status: living
+- artist_id: damien_hirst
+  display_name: Damien Hirst
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1965
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Damien Hirst
+  notes: '9 lotes | casas: duran_subastas | artista britanico nacido en Bristol en 1965. British Council documenta
+    el nacimiento y su produccion de spin paintings, coincidente con los lotes de Silver. Fuentes: https://collection.britishcouncil.org/author/hirst-damien/6495b265425178137a390e43?_locale=en
+    ; https://www.npg.org.uk/collections/search/person/mp14191/damien-hirst'
+  death_status: living
+- artist_id: dana_gluckstein
+  display_name: Dana Gluckstein
+  country_birth: US
+  nationalities:
+  - US
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dana Gluckstein
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q115276019'
+- artist_id: dana_gordon
+  display_name: Dana Gordon
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dana Gordon
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q108897251'
+  death_status: living
+- artist_id: daniel_argimon
+  display_name: Daniel Argimon
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Argimón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8353580'
+- artist_id: daniel_canogar
+  display_name: Daniel Canogar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Canogar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19998250'
+  death_status: living
+- artist_id: daniel_merino
+  display_name: Daniel Merino
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Daniel Merino
+  notes: '38 lotes | casas: duran_subastas'
+- artist_id: daniel_perea_y_rojas
+  display_name: Daniel Perea y Rojas
+  birth_year: 1834
+  death_year: 1909
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Daniel Perea y Rojas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q17515989'
+- artist_id: daniel_salamanca
+  display_name: Daniel Salamanca
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Daniel Salamanca
+  - Daniel Salamanca Núñez
+  notes: Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC
+    Chicago (2019). Works as artist, graphic designer, essayist, lecturer. Won Cultural Ministry of Colombia grant
+    for emerging artists (2015).
+- artist_id: daniel_spoerri
+  display_name: Daniel Spoerri
+  country_birth: RO
+  nationalities:
+  - RO
+  birth_year: 1930
+  death_year: 2024
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Spoerri
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123487'
+- artist_id: daniel_van_heil
+  display_name: Daniel van Heil
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1604
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Van Heil
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q392090'
+- artist_id: daniel_vazquez_diaz
+  display_name: Daniel Vázquez Díaz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1881
+  death_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Daniel Vázquez Díaz y Eva Aggerholm
+  - Daniel Vázquez Díaz
+  notes: '83 lotes | casas: duran_subastas'
+- artist_id: daniel_verbis
+  display_name: Daniel Verbis
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Verbis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2882929'
+  death_status: living
+- artist_id: daniel_zuloaga
+  display_name: Daniel Zuloaga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1852
+  death_year: 1921
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Daniel Zuloaga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5219156'
+- artist_id: danilo_duenas
+  display_name: Danilo Dueñas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1937
+  death_year: 1976
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DANILO DUEÑAS
+  - Danilo Dueñas
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: dario_basso
+  display_name: Darío Basso
+  country_birth: VE
+  birth_year: 1966
+  nationalities:
+  - ES
+  - VE
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Darío Basso
+  - Darío Álvarez Basso
+  notes: '33 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Caracas (VE)
+    en 1966, de padre gallego; se traslado a Vigo en 1969. Firma tambien como Dario Alvarez Basso, de ahi el alias.
+    Fuentes: masdearte, Afundacion, ArteInformado.'
+  death_status: living
+- artist_id: dario_de_regoyos
+  display_name: Darío de Regoyos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1913
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Darío de Regoyos
+  notes: '13 lotes | casas: duran_subastas'
+- artist_id: dario_morales
+  display_name: Darío Morales
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1944
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Darío Morales
+  notes: '6 lotes | casas: bogota_auctions'
+- artist_id: dario_ortiz
+  display_name: Darío Ortiz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DARIO ORTIZ
+  - Darío Ortiz
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: dario_villalba
+  display_name: Darío Villalba
+  country_birth: PY
+  death_year: 2018
+  nationalities:
+  - PY
+  birth_year: 1939
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Dario Villalba (España, 1939 - 2018.)
+  - DARIO VILLALBA
+  - Darío Villalba
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: david_alfaro_siqueiros
+  display_name: David Alfaro Siqueiros
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1896
+  death_year: 1974
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DAVID ALFARO SIQUEIROS
+  - David Alfaro Siqueiros
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: david_d_angers_pierre_jean
+  display_name: David d'Angers
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1788
+  death_year: 1856
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - David D'Angers, Pierre-Jean
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q364498'
+- artist_id: david_de_almeida
+  display_name: David de Almeida
+  country_birth: null
+  nationalities: []
+  birth_year: 1945
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - David De Almeida
+  - David de Almeida
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q10264457'
+- artist_id: david_hockney
+  display_name: David Hockney
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1937
+  death_year: 2026
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - David Hockney
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q159907'
+- artist_id: david_lachapelle
+  display_name: David LaChapelle
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - David Lachapelle
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q366172'
+  death_status: living
+- artist_id: david_lechuga
+  display_name: David Lechuga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - David Lechuga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5800124'
+  death_status: living
+- artist_id: david_manzur
+  display_name: David Manzur
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1929
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - David Manzur (Colombia, 1929.)
+  - David Manzur
+  notes: '34 lotes | casas: bogota_auctions'
+- artist_id: david_redondo
+  display_name: David Redondo
+  country_birth: null
+  nationalities: []
+  birth_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - David Redondo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99484553'
+  death_status: living
+- artist_id: david_roberts
+  display_name: David Roberts
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1796
+  death_year: 1864
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - David Roberts
+  - ROBERTS, DAVID
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: david_teniers_el_joven
+  display_name: David Teniers el Joven
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1610
+  death_year: 1690
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - David Teniers El Joven
+  - David Teniers el Joven
+  - David "The Younger" TENIERS
+  notes: '5 lotes de autor en Silver | nacido en Amberes, actual Belgica, en 1610; fallecido en Bruselas en 1690.
+    No fusionar las atribuciones Seguidor/Circulo. Fuente: https://www.museodelprado.es/coleccion/artista/teniers-el-joven-david/a23a8d0c-2f36-4b88-8802-7e0ad599c91e'
+- artist_id: debora_arango
+  display_name: Débora Arango
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1907
+  death_year: 2005
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Débora Arango - Colombia, 1907 - 2005.
+  - Débora Arango Pérez
+  - Débora Arango
+  notes: '4 lotes | casas: bogota_auctions'
+- artist_id: delcy_morelos
+  display_name: Delcy Morelos
+  country_birth: CO
+  birth_year: 1967
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Delcy Morelos - Colombia, 1967.
+  - Delcy Morelos
+  notes: '4 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: delia_cugat
+  display_name: Delia Cugat
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - DELIA CUGAT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10882537'
+  death_status: living
+- artist_id: delphin_enjolras
+  display_name: Delphin Enjolras
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1865
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Delphin Enjolras
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q733576'
+- artist_id: demetrio_salgado
+  display_name: Demetrio Salgado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1916
+  death_year: 2000
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Demetrio Salgado
+  notes: '77 lotes | casas: duran_subastas'
+- artist_id: denis_long
+  display_name: Denis Long
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Denis Long
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q75737326'
+- artist_id: denis_nunez_rodriguez
+  display_name: Denis Núñez Rodríguez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Denis Núñez Rodríguez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q65159072'
+  death_status: living
+- artist_id: dennis_oppenheim
+  display_name: Dennis Oppenheim
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1938
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Dennis Oppenheim
+  - OPPENHEIM, DENNIS
+  - Denis Oppenheim
+  notes: '5 lotes nominales | casas: duran_subastas | nacido en Electric City, Washington, EE. UU., en 1938 y fallecido
+    en Nueva York en 2011. Denis Oppenheim es errata confirmada por el campo Autor de la propia ficha. El afiche
+    de Bogota Auctions no es alias y Victor Oppenheim es otra persona. Fuentes: https://www.museoreinasofia.es/en/collections/artist/oppenheim-dennis/
+    ; https://www.duran-subastas.com/es/subasta-lote/denis-oppenheim-ricardo-zamora/630-27'
+- artist_id: diaz_de_orosia
+  display_name: Díaz de Orosia
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Díaz de Orosia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q20014643'
+  death_status: living
+- artist_id: dicken_castro
+  display_name: Dicken Castro
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1922
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DICKEN CASTRO
+  - Dicken Castro
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: didier_lourenco
+  display_name: Didier Lourenço
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1968
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Didier Lourenço
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24961782'
+- artist_id: diego_chaves_lesivo
+  display_name: Diego Chaves "Lesivo"
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Diego Chaves "Lesivo" (Colombia)
+  - DIEGO CHAVES "LESIVO"
+  - Diego Chaves "Lesivo"
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: diego_crosa_y_costa
+  display_name: Diego Crosa y Costa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1869
+  death_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Diego Crosa y Costa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q114702288'
+- artist_id: diego_marin_lopez
+  display_name: Diego Marín López
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Diego Marín López
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98833813'
+- artist_id: diego_mazuera
+  display_name: Diego Mazuera
+  country_birth: null
+  nationalities: []
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - DIEGO MAZUERA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5806375'
+  death_status: living
+- artist_id: diego_mullor
+  display_name: Diego Mullor
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1881
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Diego Mullor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q121666787'
+- artist_id: dieter_wallert
+  display_name: Dieter Wallert
+  birth_year: 1935
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dieter Wallert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q112763156'
+- artist_id: dino_boschi
+  display_name: Dino Boschi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1923
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dino Boschi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3707890'
+- artist_id: dino_valls
+  display_name: Dino Valls
+  country_birth: ES
+  birth_year: 1959
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - VALLS, DINO
+  - Dino Valls
+  notes: '28 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: dionis_bennassar
+  display_name: Dionís Bennàssar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Dionís Bennassar
+  - Dionís Bennasar
+  - Dionis Bennassar
+  notes: '3 lotes | casas: duran_subastas | nacido en Pollença, Mallorca; Silver coincide en 1904-1967. No fusionar
+    con Joan Bennassar ni Pere Bennassar. Fuente: https://fdionis.org/about-dionis-bennassar/'
+- artist_id: dionisio_baixeras_y_verdaguer
+  display_name: Dionisio Baixeras
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dionisio Baixeras y Verdaguer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3028747'
+- artist_id: dionisio_fierros_alvarez
+  display_name: Dionisio Fierros
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1894
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dionisio Fierros Álvarez
+  - Dionisio Fierros
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13146993'
+- artist_id: dioscoro_de_la_puebla
+  display_name: Dióscoro Puebla
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1831
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dióscoro de la Puebla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5812003'
+- artist_id: dirck_van_der_lisse
+  display_name: Dirck van der Lisse
+  country_birth: NL
+  nationalities: []
+  birth_year: 1607
+  death_year: 1669
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dirck van der Lisse
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1986862'
+- artist_id: dis_berlin
+  display_name: Dis Berlin
+  country_birth: ES
+  birth_year: 1959
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Dis Berlin
+  notes: '26 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: diva_teresa_ramirez
+  display_name: Diva Teresa Ramírez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DIVA TERESA RAMIREZ
+  - Diva Teresa Ramírez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: dolcey_schenone_puig
+  display_name: Dolcey Schenone Puig
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1896
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dolcey SCHENONE PUIG
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5812396'
+- artist_id: domenec_olive_busquets
+  display_name: Domènec Olivé Busquets
+  birth_year: 1892
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Domenec Olivé Busquets
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99861210'
+- artist_id: domingo_bazzurro
+  display_name: Domingo Bazzurro
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1886
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - DOMINGO BAZZURRO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42382409'
+- artist_id: domingo_carles_rosich
+  display_name: Domènec Carles Rosich
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Carles Rosich
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11917647'
+- artist_id: domingo_fernandez_gonzalez
+  display_name: Domingo Fernández González
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Domingo Fernández González
+  - Domingo Fernández y González
+  notes: '5 lotes | casas: duran_subastas | nacido en Sevilla en 1862. Silver y Duran publican muerte en Buenos
+    Aires en 1918, pero Frick solo lo documenta activo hasta 1918 y el catalogo del Museo de Sevilla citado alli
+    usa c.1920; se omite death_year. Fuentes: https://research.frick.org/spanish/detail/1607 ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_581.pdf'
+- artist_id: domingo_giaudrone
+  display_name: Domingo Giaudrone
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1889
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - DOMINGO GIAUDRONE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42382612'
+- artist_id: domingo_huetos
+  display_name: Domingo Huetos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2005
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Domingo Huetos
+  notes: 14 lotes en Silver
+- artist_id: domingo_izquierdo
+  display_name: Domingo Izquierdo
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1931
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DOMINGO IZQUIERDO
+  - Domingo Izquierdo
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: domingo_laporte
+  display_name: Domingo Laporte
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1855
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Laporte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12163354'
+- artist_id: domingo_moreno_otero
+  display_name: Domingo Moreno Otero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1882
+  death_year: 1948
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DOMINGO MORENO OTERO
+  - Domingo Moreno Otero
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: domingo_munoz_cuesta
+  display_name: Domingo Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1850
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Muñoz Cuesta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50110889'
+- artist_id: domingo_sanz
+  display_name: Domingo Sanz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Sanz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50926903'
+  death_status: living
+- artist_id: domingo_soler_gili
+  display_name: Domènec Soler i Gili
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Soler Gili
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19290328'
+- artist_id: domingo_viladomat
+  display_name: Domingo Viladomat
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1913
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Viladomat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q100396419'
+- artist_id: domingo_zapata
+  display_name: Domingo Zapata
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Domingo Zapata
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5290414'
+  death_status: living
+- artist_id: dominique_tarle
+  display_name: Dominique Tarle
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - DOMINIQUE TARLE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99481766'
+  death_status: living
+- artist_id: donald_sultan
+  display_name: Donald Sultan
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Donald Sultan
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5295201'
+  death_status: living
+- artist_id: dora_dolz_de_herman
+  display_name: Dora Dolz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dora Dolz de Herman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2510365'
+- artist_id: dora_maar
+  display_name: Dora Maar
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1907
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dora Maar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q236161'
+- artist_id: doris_salcedo
+  display_name: Doris Salcedo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1958
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - DORIS SALCEDO
+  - Doris Salcedo
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: doroteo_arnaiz
+  display_name: Doroteo Arnáiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Doroteo Arnáiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55996241'
+  death_status: living
+- artist_id: dorothy_napangardi_robinson
+  display_name: Dorothy Napangardi
+  country_birth: AU
+  nationalities:
+  - AU
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Dorothy Napangardi Robinson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5298564'
+- artist_id: duflos_le_jeune
+  display_name: Pierre Duflos
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1742
+  death_year: 1816
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Duflos le Jeune
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18511904'
+- artist_id: dumas_orono
+  display_name: Dumas Oroño
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1921
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dumas OROÑO
+  - DUMAS OROÑO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27940582'
+- artist_id: duvan_lopez
+  display_name: Duvan López
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - DUVAN LOPEZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96765036'
+  death_status: living

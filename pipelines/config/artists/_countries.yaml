@@ -30,6 +30,7 @@ countries:
   ES: {es: España, demonym_es: español}
   FR: {es: Francia, demonym_es: francés}
   GB: {es: Reino Unido, demonym_es: británico}
+  HR: {es: Croacia, demonym_es: croata}
   GR: {es: Grecia, demonym_es: griego}
   GT: {es: Guatemala, demonym_es: guatemalteco}
   HN: {es: Honduras, demonym_es: hondureño}
@@ -40,14 +41,17 @@ countries:
   IR: {es: Irán, demonym_es: iraní}
   IT: {es: Italia, demonym_es: italiano}
   JP: {es: Japón, demonym_es: japonés}
+  KR: {es: Corea del Sur, demonym_es: surcoreano}
   LT: {es: Lituania, demonym_es: lituano}
   MA: {es: Marruecos, demonym_es: marroquí}
+  TN: {es: Túnez, demonym_es: tunecino}
   MX: {es: México, demonym_es: mexicano}
   NI: {es: Nicaragua, demonym_es: nicaragüense}
   NL: {es: Países Bajos, demonym_es: neerlandés}
   # Entrecomillado obligatorio: YAML 1.1 lee NO sin comillas como el booleano
   # False, y Noruega desaparecia de la tabla convertida en la clave False.
   "NO": {es: Noruega, demonym_es: noruego}
+  NZ: {es: Nueva Zelanda, demonym_es: neozelandés}
   PA: {es: Panamá, demonym_es: panameño}
   PE: {es: Perú, demonym_es: peruano}
   PH: {es: Filipinas, demonym_es: filipino}
@@ -57,6 +61,7 @@ countries:
   RO: {es: Rumanía, demonym_es: rumano}
   RU: {es: Rusia, demonym_es: ruso}
   SE: {es: Suecia, demonym_es: sueco}
+  SI: {es: Eslovenia, demonym_es: esloveno}
   SV: {es: El Salvador, demonym_es: salvadoreño}
   # Estado historico. Se conserva como codigo propio en vez de repartirlo entre
   # Chequia y Eslovaquia: la fuente dice "Checoslovaquia" y no sabemos cual.
@@ -73,6 +78,8 @@ countries:
   UA: {es: Ucrania, demonym_es: ucraniano}
   IQ: {es: Irak, demonym_es: iraquí}
   RS: {es: Serbia, demonym_es: serbio}
+  SD: {es: Sudán, demonym_es: sudanés}
+  SK: {es: Eslovaquia, demonym_es: eslovaco}
   TW: {es: Taiwán, demonym_es: taiwanés}
   EG: {es: Egipto, demonym_es: egipcio}
   # Aparecen en artist_country de Duran y Bogota. Chequia va como CZ, el estado
@@ -175,6 +182,11 @@ aliases:
   roma: IT
   noruega: "NO"   # ver la nota de arriba: sin comillas YAML lo lee como False
   paises bajos: NL
+  croacia: HR
+  eslovaquia: SK
+  sudan: SD
+  nueva zelanda: NZ
+  nueva zelandia: NZ
   polonia: PL
   portugal: PT
   reino unido: GB
@@ -232,6 +244,13 @@ aliases:
   israeli: IL
   japanese: JP
   norwegian: "NO"   # ver la nota de Noruega: sin comillas YAML lo lee como False
+  croatia: HR
+  slovakia: SK
+  sudanese: SD
+  slovak: SK
+  croatian: HR
+  new zealand: NZ
+  new zealander: NZ
   paraguayan: PY
   peruvian: PE
   philippine: PH

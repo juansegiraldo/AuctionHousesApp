@@ -1,262 +1,693 @@
-# Maestro de artistas - shard "n"
-#
-# Entradas cuyo artist_id empieza por "n". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: nacho_criado
-    display_name: "Nacho Criado"
-    country_birth: "ES"
-    birth_year: 1943
-    death_year: 2010
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nacho Criado"
-      - "CRIADO, NACHO"
-    notes: "26 lotes | casas: duran_subastas"
-
-  - artist_id: nadin_ospina
-    display_name: "Nadín Ospina"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nadín Ospina (Colombia, 1960)"
-      - "Nadín Ospina"
-    notes: "10 lotes | casas: bogota_auctions"
-
-  - artist_id: nicola_de_maria
-    display_name: "Nicola de Maria"
-    country_birth: "IT"
-    birth_year: 1954
-    nationalities: ["IT"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nicola de Maria"
-    notes: "14 lotes | casas: duran_subastas"
-
-  - artist_id: nicolas_martinez_ortiz_de_zarate
-    display_name: "Nicolás Martínez Ortíz de Zárate"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1907
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nicolás Martínez Ortíz de Zárate"
-    notes: "34 lotes | casas: duran_subastas"
-
-  - artist_id: noe_leon
-    display_name: "Noé León"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1907
-    death_year: 1978
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Noé León"
-    notes: "8 lotes | casas: bogota_auctions"
-  - artist_id: nelson_ramos
-    display_name: "Nelson Ramos"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1932
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nelson Ramos"
-      - "Nelson RAMOS"
-    notes: "9 lotes | casas: zorrilla_subastas"
-
-  - artist_id: norberto_berdia
-    display_name: "Norberto Berdia"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1900
-    death_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Norberto Berdia"
-      - "Norberto BERDIA"
-    notes: "5 lotes | casas: zorrilla_subastas"
-
-  - artist_id: nancy_friedman
-    display_name: "Nancy Friedman"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1945
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "NANCY FRIEDMAN"
-      - "Nancy Friedman"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: natalia_mendieta
-    display_name: "Natalia Mendieta"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "NATALIA MENDIETA"
-      - "Natalia Mendieta"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: nirma_zarate
-    display_name: "Nirma Zárate"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "NIRMA ZARATE"
-      - "Nirma Zárate"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: nohemi_perez
-    display_name: "Nohemí Pérez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "NOHEMI PEREZ"
-      - "Nohemí Pérez"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: norman_mejia
-    display_name: "Norman Mejía"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1979
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Norman Mejía Franco"
-      - "NORMAN MEJIA"
-      - "Norman Mejía"
-      - "Norman  Mejía"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: nelson_dominguez
-    display_name: "Nelson Domínguez"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nelson Domínguez"
-      - "Nelson Dominguez"
-    notes: "17 lotes en Silver | fuente: MutualArt; Askart | Santiago de Cuba"
-
-  - artist_id: nicanor_pinole
-    display_name: "Nicanor Piñole"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1878
-    death_year: 1978
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nicanor Piñole Rodríguez"
-      - "Nicanor Piñole y Rodríguez"
-      - "NIcanor Piñole y Rodríguez"
-      - "Nicanor Piñole"
-    notes: "13 lotes en Silver | fuente: Wikipedia ES | Gijon"
-
-  - artist_id: nicolas_gless
-    display_name: "Nicolás Gless"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1950
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nicolás Gless"
-      - "Nicolas Gless"
-    notes: "16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila"
-
-  - artist_id: natasha_zupan
-    display_name: "Natasha Zupan"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1965
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Natasha Zupan"
-    notes: "Nacida en Columbus, Georgia, USA. Estudió en Yale University (1987). Padre: Bruno Zupan (artista esloveno). Mostró en 59ª Bienal de Venecia (2022) con 88 obras."
-
-  - artist_id: nicolas_garcia_uriburu
-    display_name: "Nicolás García Uriburu"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1937
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nicolás García Uriburu"
-      - "NICOLAS GARCIA URIBURU"
-    notes: "4 lotes | n. 1937 en Buenos Aires, m. 2016. Arquitecto y pionero del Land Art; coloreo el Gran Canal de Venecia (1968) y el Rin con Beuys (1981). Fuentes: Wikipedia, Centre Pompidou, Museo Moderno de Buenos Aires."
-
-  - artist_id: nikos_hadjikyriakos_ghika
-    display_name: "Nikos Hadjikyriakos-Ghika"
-    country_birth: "GR"
-    nationalities: ["GR"]
-    birth_year: 1906
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Nikos Hadjikyriakos Ghika"
-    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Atenas, 1906-1994. Fuente: https://www.nationalgallery.gr/en/artist/hatzikyriakos-ghika-nikos/"
-
-  - artist_id: norah_borges
-    display_name: "Norah Borges"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1901
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Norah Borges"
-    notes: "2 lotes | casas: duran_subastas | artista plastica argentina, 1901-1998; fechas coincidentes con Silver. No confundir con su hermano Jorge Luis Borges ni con Jacobo Borges. Fuente: https://www.bellasartes.gob.ar/exhibiciones/norah-borges-una-mujer-en-la-vanguardia/"
+- artist_id: naama_tsabar
+  display_name: Naama Tsabar
+  country_birth: IL
+  nationalities:
+  - IL
+  birth_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Naama Tsabar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29754679'
+- artist_id: nacho_criado
+  display_name: Nacho Criado
+  country_birth: ES
+  birth_year: 1943
+  death_year: 2010
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nacho Criado
+  - CRIADO, NACHO
+  notes: '26 lotes | casas: duran_subastas'
+- artist_id: naci_kalmukoglu
+  display_name: Naci Kalmukoğlu
+  birth_year: 1896
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Naci Kalmukoglu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q97208338'
+- artist_id: nadin_ospina
+  display_name: Nadín Ospina
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nadín Ospina (Colombia, 1960)
+  - Nadín Ospina
+  notes: '10 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: nam_june_paik
+  display_name: Nam June Paik
+  country_birth: KR
+  nationalities:
+  - KR
+  birth_year: 1932
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nam June Paik
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q158056'
+- artist_id: nan_goldin
+  display_name: Nan Goldin
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - NAN GOLDIN
+  - Nan Goldin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q234279'
+- artist_id: nancy_friedman
+  display_name: Nancy Friedman
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1945
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - NANCY FRIEDMAN
+  - Nancy Friedman
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: napoleon_iii
+  display_name: Napoleón III
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1808
+  death_year: 1873
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Napoleon III
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7721'
+- artist_id: narcis_comadira
+  display_name: Narcís Comadira
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Narcís Comadira
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9048758'
+- artist_id: narciso_diaz_de_la_pena
+  display_name: Narcisse-Virgile Díaz de la Peña
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1807
+  death_year: 1876
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Narciso Díaz de la Peña
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q724140'
+- artist_id: narciso_mendez_bringa
+  display_name: Narciso Méndez Bringa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1868
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Narciso Méndez Bringa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17378191'
+- artist_id: nasser_ovissi
+  display_name: Nasser Ovissi
+  country_birth: IR
+  nationalities:
+  - IR
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nasser Ovissi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5874065'
+  death_status: living
+- artist_id: natalia_dumitresco
+  display_name: Natalia Dumitresco
+  country_birth: RO
+  nationalities:
+  - RO
+  birth_year: 1915
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Natalia Dumitresco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3336350'
+- artist_id: natalia_mendieta
+  display_name: Natalia Mendieta
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - NATALIA MENDIETA
+  - Natalia Mendieta
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: natalio_bayo
+  display_name: Natalio Bayo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Natalio Bayo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5638199'
+- artist_id: natasha_zupan
+  display_name: Natasha Zupan
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1965
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Natasha Zupan
+  notes: 'Nacida en Columbus, Georgia, USA. Estudió en Yale University (1987). Padre: Bruno Zupan (artista esloveno).
+    Mostró en 59ª Bienal de Venecia (2022) con 88 obras.'
+  death_status: living
+- artist_id: nati_canada
+  display_name: Nati Cañada
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nati Cañada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q25409784'
+- artist_id: nazario_montero_madrazo
+  display_name: Nazario Montero Madrazo
+  country_birth: null
+  nationalities: []
+  birth_year: 1883
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nazario Montero Madrazo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6039137'
+- artist_id: nelson_dominguez
+  display_name: Nelson Domínguez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nelson Domínguez
+  - Nelson Dominguez
+  notes: '17 lotes en Silver | fuente: MutualArt; Askart | Santiago de Cuba'
+- artist_id: nelson_ramos
+  display_name: Nelson Ramos
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1932
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nelson Ramos
+  - Nelson RAMOS
+  notes: '9 lotes | casas: zorrilla_subastas'
+- artist_id: nelson_zumel
+  display_name: Nelson Zumel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nelson Zúmel
+  - Nelson Zumel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55999965'
+  death_status: living
+- artist_id: nerses_ounanian
+  display_name: Nerses Ounanian
+  country_birth: GR
+  nationalities:
+  - GR
+  birth_year: 1924
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - NERSES OUNANIAN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6041031'
+- artist_id: nestor_basterretxea
+  display_name: Néstor Basterretxea
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Néstor Basterretxea
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1771513'
+- artist_id: neus_martin_royo
+  display_name: Neus Martín Royo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Neus Martín Royo
+  - Neus Martin Royo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96593714'
+  death_status: living
+- artist_id: nicanor_blanes
+  display_name: Nicanor Blanes
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1857
+  death_year: 1895
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicanor BLANES
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42381417'
+- artist_id: nicanor_pinole
+  display_name: Nicanor Piñole
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1878
+  death_year: 1978
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nicanor Piñole Rodríguez
+  - Nicanor Piñole y Rodríguez
+  - NIcanor Piñole y Rodríguez
+  - Nicanor Piñole
+  notes: '13 lotes en Silver | fuente: Wikipedia ES | Gijon'
+- artist_id: nicanor_vazquez_ubach
+  display_name: Nicanor Vázquez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicanor Vázquez Ubach
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11938676'
+- artist_id: nicholaes_berchem
+  display_name: Nicolaes Berchem
+  country_birth: NL
+  nationalities:
+  - NL
+  death_year: 1683
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nicholaes Berchem
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q711737'
+- artist_id: nico_munuera
+  display_name: Nico Munuera
+  country_birth: null
+  nationalities: []
+  birth_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nico Munuera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99496466'
+  death_status: living
+- artist_id: nicola_de_maria
+  display_name: Nicola de Maria
+  country_birth: IT
+  birth_year: 1954
+  nationalities:
+  - IT
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nicola de Maria
+  notes: '14 lotes | casas: duran_subastas'
+- artist_id: nicolas_alperiz
+  display_name: Nicolás Alperiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1865
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolás Alpériz
+  - Nicolás Alperiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9049963'
+- artist_id: nicolas_carrega
+  display_name: Nicolas Carrega
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1914
+  death_year: 1993
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolas Carrega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20089500'
+- artist_id: nicolas_cuparo
+  display_name: Nicolás Cúparo
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1906
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - NICOLÁS CÚPARO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42395479'
+- artist_id: nicolas_de_largilliere
+  display_name: Nicolas de Largillière
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1656
+  death_year: 1746
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolas de Largilliere
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q550302'
+- artist_id: nicolas_garcia_uriburu
+  display_name: Nicolás García Uriburu
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1937
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nicolás García Uriburu
+  - NICOLAS GARCIA URIBURU
+  notes: '4 lotes | n. 1937 en Buenos Aires, m. 2016. Arquitecto y pionero del Land Art; coloreo el Gran Canal de
+    Venecia (1968) y el Rin con Beuys (1981). Fuentes: Wikipedia, Centre Pompidou, Museo Moderno de Buenos Aires.'
+- artist_id: nicolas_gless
+  display_name: Nicolás Gless
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nicolás Gless
+  - Nicolas Gless
+  notes: '16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila'
+- artist_id: nicolas_martinez_ortiz_de_zarate
+  display_name: Nicolás Martínez Ortíz de Zárate
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nicolás Martínez Ortíz de Zárate
+  notes: '34 lotes | casas: duran_subastas'
+- artist_id: nicolas_megia
+  display_name: Nicolás Megía
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1845
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nicolás Megía
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q6042384'
+- artist_id: nicolas_ponce
+  display_name: Nicolas Ponce
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1746
+  death_year: 1831
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolas Ponce
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3340690'
+- artist_id: nicolas_raurich
+  display_name: Nicolás Raurich
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolás Raurich
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11938726'
+- artist_id: nicolas_ruiz_de_valdivia
+  display_name: Nicolás Ruiz de Valdivia
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1829
+  death_year: 1880
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolás Ruiz de Valdivia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60036524'
+- artist_id: nicolas_svistoonoff
+  display_name: Nicolas Svistoonoff
+  country_birth: CN
+  nationalities:
+  - CN
+  birth_year: 1945
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolás Svistoonoff
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94689142'
+- artist_id: nicolas_urta
+  display_name: Nicolás Urta
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1897
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nicolás URTA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42383051'
+- artist_id: nijole_sivickas
+  display_name: Nijolė Šivickas
+  country_birth: LT
+  nationalities:
+  - LT
+  birth_year: 1925
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - NIJOLÉ ŠIVICKAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6042937'
+- artist_id: nikos_hadjikyriakos_ghika
+  display_name: Nikos Hadjikyriakos-Ghika
+  country_birth: GR
+  nationalities:
+  - GR
+  birth_year: 1906
+  death_year: 1994
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Nikos Hadjikyriakos Ghika
+  notes: '3 lotes | casas: duran_subastas | nacido y fallecido en Atenas, 1906-1994. Fuente: https://www.nationalgallery.gr/en/artist/hatzikyriakos-ghika-nikos/'
+- artist_id: nirma_zarate
+  display_name: Nirma Zárate
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - NIRMA ZARATE
+  - Nirma Zárate
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: noe_leon
+  display_name: Noé León
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1907
+  death_year: 1978
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Noé León
+  notes: '8 lotes | casas: bogota_auctions'
+- artist_id: nohemi_perez
+  display_name: Nohemí Pérez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - NOHEMI PEREZ
+  - Nohemí Pérez
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: noni_lazaga
+  display_name: Noni Lazaga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Noni Lazaga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30337906'
+- artist_id: norah_borges
+  display_name: Norah Borges
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1901
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Norah Borges
+  notes: '2 lotes | casas: duran_subastas | artista plastica argentina, 1901-1998; fechas coincidentes con Silver.
+    No confundir con su hermano Jorge Luis Borges ni con Jacobo Borges. Fuente: https://www.bellasartes.gob.ar/exhibiciones/norah-borges-una-mujer-en-la-vanguardia/'
+- artist_id: norberto_berdia
+  display_name: Norberto Berdia
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1900
+  death_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Norberto Berdia
+  - Norberto BERDIA
+  notes: '5 lotes | casas: zorrilla_subastas'
+- artist_id: norman_mejia
+  display_name: Norman Mejía
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1979
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Norman Mejía Franco
+  - NORMAN MEJIA
+  - Norman Mejía
+  - Norman  Mejía
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: nydia_lozano
+  display_name: Nydia Lozano
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Nydia Lozano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q131604077'
+  death_status: living

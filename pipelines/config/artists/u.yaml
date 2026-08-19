@@ -1,51 +1,122 @@
-# Maestro de artistas - shard "u"
-#
-# Entradas cuyo artist_id empieza por "u". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: urbano_lugris_vadillo
-    display_name: "Urbano Lugris Vadillo"
-    country_birth: "ES"
-    birth_year: 1942
-    death_year: 2018
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Urbano Lugris Vadillo"
-    notes: "11 lotes | casas: duran_subastas"
-
-  - artist_id: umberto_giangrandi
-    display_name: "Umberto Giangrandi"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1943
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "UMBERTO GIANGRANDI"
-      - "Umberto Giangrandi"
-      - "Giangrandi, Umberto"
-    notes: "12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ulpiano_checa_y_sanz
-    display_name: "Ulpiano Checa y Sanz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1860
-    death_year: 1916
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ulpiano Checa"
-      - "Ulpiano Checa y Sanz"
-      - "Ulpiano Checa Sanz"
-    notes: "11 lotes | casas: duran_subastas | nacido en Colmenar de Oreja, Madrid, el 03-04-1860 y fallecido en Dax el 06-01-1916; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/checa-y-sanz-ulpiano/0bc5e8c6-86c9-43d2-9a6e-838b4da56afb"
+- artist_id: ulfert_wilke
+  display_name: Ulfert Wilke
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1907
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ULFERT WILKE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7878924'
+- artist_id: ulisse_caputo
+  display_name: Ulisse Caputo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1872
+  death_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ulisse Caputo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15997603'
+- artist_id: ulpiano_carrasco
+  display_name: Ulpiano Carrasco
+  country_birth: null
+  nationalities: []
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ulpiano Carrasco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6155318'
+  death_status: living
+- artist_id: ulpiano_checa_y_sanz
+  display_name: Ulpiano Checa y Sanz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1916
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ulpiano Checa
+  - Ulpiano Checa y Sanz
+  - Ulpiano Checa Sanz
+  notes: '11 lotes | casas: duran_subastas | nacido en Colmenar de Oreja, Madrid, el 03-04-1860 y fallecido en Dax
+    el 06-01-1916; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/checa-y-sanz-ulpiano/0bc5e8c6-86c9-43d2-9a6e-838b4da56afb'
+- artist_id: ulrich_leman
+  display_name: Ulrich Leman
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1885
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ulrich Leman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q896912'
+- artist_id: umberto_giangrandi
+  display_name: Umberto Giangrandi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1943
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - UMBERTO GIANGRANDI
+  - Umberto Giangrandi
+  - Giangrandi, Umberto
+  notes: '12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: urbano_lugris_vadillo
+  display_name: Urbano Lugris Vadillo
+  country_birth: ES
+  birth_year: 1942
+  death_year: 2018
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Urbano Lugris Vadillo
+  notes: '11 lotes | casas: duran_subastas'
+- artist_id: utamaro
+  display_name: Utamaro
+  country_birth: JP
+  nationalities:
+  - JP
+  death_year: 1806
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Utamaro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q272045'
+- artist_id: uwe_bremer
+  display_name: Uwe Bremer
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Uwe Bremer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2504070'
+  death_status: living

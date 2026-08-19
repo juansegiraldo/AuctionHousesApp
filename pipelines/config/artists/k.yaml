@@ -1,74 +1,235 @@
-# Maestro de artistas - shard "k"
-#
-# Entradas cuyo artist_id empieza por "k". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: karel_appel
-    display_name: "Karel Appel"
-    country_birth: "NL"
-    nationalities: ["NL"]
-    birth_year: 1921
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Karel Appel"
-    notes: "7 lotes | casas: duran_subastas"
-
-  - artist_id: kevin_mancera_paulo_licona_colombia_1982_colombia_1977
-    display_name: "Kevin Mancera / Paulo Licona (colombia, 1982 / Colombia, 1977)"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "KEVIN MANCERA / PAULO LICONA (COLOMBIA, 1982 / COLOMBIA, 1977)"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona | fechas descartadas por imposibles en la hoja: 1982-1977"
-
-  - artist_id: keith_haring
-    display_name: "Keith Haring"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1958
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Keith Haring"
-      - "KEITH HARING"
-    notes: "8 lotes | n. 04-05-1958 en Reading (Pennsylvania), m. 16-02-1990 en Nueva York. Pop art y grafiti del NY de los 80. Fuentes: Wikipedia, PBS American Masters, haring.com."
-
-  - artist_id: kcho
-    display_name: "Kcho"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "KCHO"
-      - "Alexis Leiva Machado"
-      - "Kcho (Alexis Leiva Machado)"
-    notes: "Full name: Alexis Leiva Machado. Contemporary Cuban artist born in Isla de la Juventud (Isle of Pines). Grand prize winner at Gwangju Biennale 1995. Works in sculpture, installation, and mixed media."
-
-  - artist_id: konrad_klapheck
-    display_name: "Konrad Klapheck"
-    country_birth: "DE"
-    nationalities: ["DE"]
-    birth_year: 1935
-    death_year: 2023
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Konrad Klapheck"
-    notes: "2 lotes vendidos por 27.500 EUR | casas: duran_subastas | pintor aleman nacido en Dusseldorf el 10-02-1935 y fallecido alli el 30-07-2023. Silver deja vacias las fechas biograficas; lot_year=1935 en un lote es arrastre del nacimiento, no fecha de la obra. Fuente: https://www.wikidata.org/wiki/Q315875"
+- artist_id: k_hito
+  display_name: Ricardo García López
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - K-Hito
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q924115'
+- artist_id: kako_topouria
+  display_name: Kako (kunstnik)
+  country_birth: null
+  nationalities: []
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - KAKO TOPOURIA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q12366127'
+  death_status: living
+- artist_id: karel_appel
+  display_name: Karel Appel
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1921
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Karel Appel
+  notes: '7 lotes | casas: duran_subastas'
+- artist_id: karl_borschke
+  display_name: Karl Borschke
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1886
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - KARL BORSCHKE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19606802'
+- artist_id: karl_brandstatter
+  display_name: Karl Brandstätter
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Karl Brandstatter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94629153'
+  death_status: living
+- artist_id: karl_folsom
+  display_name: Karl Folsom
+  birth_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Karl Folsom
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q117118924'
+  death_status: living
+- artist_id: karl_oenike
+  display_name: Karl Oenike
+  birth_year: 1862
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Karl Oenike
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6372128'
+- artist_id: kathe_olshausen_schonberger
+  display_name: Käthe Olshausen-Schönberger
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1881
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Käthe Olshausen-Schonberger
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1712827'
+- artist_id: kaws
+  display_name: KAWS
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - KAWS
+  - Kaws
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3194367'
+  death_status: living
+- artist_id: kcho
+  display_name: Kcho
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - KCHO
+  - Alexis Leiva Machado
+  - Kcho (Alexis Leiva Machado)
+  notes: 'Full name: Alexis Leiva Machado. Contemporary Cuban artist born in Isla de la Juventud (Isle of Pines).
+    Grand prize winner at Gwangju Biennale 1995. Works in sculpture, installation, and mixed media.'
+  death_status: living
+- artist_id: keith_haring
+  display_name: Keith Haring
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1958
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Keith Haring
+  - KEITH HARING
+  notes: '8 lotes | n. 04-05-1958 en Reading (Pennsylvania), m. 16-02-1990 en Nueva York. Pop art y grafiti del
+    NY de los 80. Fuentes: Wikipedia, PBS American Masters, haring.com.'
+- artist_id: kevin_mancera_paulo_licona_colombia_1982_colombia_1977
+  display_name: Kevin Mancera / Paulo Licona (colombia, 1982 / Colombia, 1977)
+  country_birth: CO
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - KEVIN MANCERA / PAULO LICONA (COLOMBIA, 1982 / COLOMBIA, 1977)
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una
+    sola persona | fechas descartadas por imposibles en la hoja: 1982-1977'
+- artist_id: kevin_teare
+  display_name: Kevin Teare
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Kevin Teare
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q16150669'
+  death_status: living
+- artist_id: khalid_el_bekay
+  display_name: Khalid El Bekay
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Khalid El Bekay
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118829962'
+  death_status: living
+- artist_id: kiker
+  display_name: Kiker
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Kiker
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13147312'
+  death_status: living
+- artist_id: kimon_loghi
+  display_name: Kimon Loghi
+  country_birth: GR
+  nationalities:
+  - GR
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Kimon Loghi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3196915'
+- artist_id: kindi_llajtu
+  display_name: Kindi llajtu
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - KINDI LLAJTU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16586699'
+  death_status: living
+- artist_id: konrad_klapheck
+  display_name: Konrad Klapheck
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1935
+  death_year: 2023
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Konrad Klapheck
+  notes: '2 lotes vendidos por 27.500 EUR | casas: duran_subastas | pintor aleman nacido en Dusseldorf el 10-02-1935
+    y fallecido alli el 30-07-2023. Silver deja vacias las fechas biograficas; lot_year=1935 en un lote es arrastre
+    del nacimiento, no fecha de la obra. Fuente: https://www.wikidata.org/wiki/Q315875'

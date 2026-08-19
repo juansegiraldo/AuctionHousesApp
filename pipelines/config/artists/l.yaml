@@ -1,822 +1,2366 @@
-# Maestro de artistas - shard "l"
-#
-# Entradas cuyo artist_id empieza por "l". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: leopoldo_richter
-    display_name: "Leopoldo Richter"
-    country_birth: "DE"
-    nationalities: ["CO", "DE"]
-    birth_year: 1896
-    death_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Leopoldo Richter (Alemania, 1896 - Colombia, 1984)"
-      - "Leopoldo Richter (Alemania, 19896 - Colombia, 1984)"
-      - "Leopoldo Richter"
-    notes: "17 lotes | casas: bogota_auctions"
-
-  - artist_id: lita_cabellut
-    display_name: "Lita Cabellut"
-    country_birth: "ES"
-    birth_year: 1961
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lita Cabellut"
-    notes: "16 lotes | casas: duran_subastas"
-
-  - artist_id: lolo_soldevilla
-    display_name: "Loló Soldevilla"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1901
-    death_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Loló Soldevilla"
-    notes: "13 lotes | casas: duran_subastas"
-
-  - artist_id: luciano_diaz_castilla
-    display_name: "Luciano Díaz Castilla"
-    country_birth: "ES"
-    birth_year: 1940
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luciano Díaz Castilla"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: luciano_jaramillo
-    display_name: "Luciano Jaramillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1938
-    death_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luciano Jaramillo: Otra Mirada"
-      - "Luciano Jaramillo"
-    notes: "10 lotes | casas: bogota_auctions"
-
-  - artist_id: luciano_recio
-    display_name: "Luciano Recio"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luciano Recio"
-    notes: "33 lotes | casas: duran_subastas"
-
-  - artist_id: lucio_munoz
-    display_name: "Lucio Muñoz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lucio Muñoz"
-      - "MUÑOZ, LUCIO"
-      - "MUÑOZ MARTÍNEZ, LUCIO"
-    notes: "62 lotes | casas: duran_subastas | pintor nacido en Madrid en 1929 y fallecido en 1998. Fuente: https://www.museoreinasofia.es/exposicion/lucio-munoz"
-
-  - artist_id: luis_alberto_acuna
-    display_name: "Luis Alberto Acuña"
-    country_birth: "CO"
-    death_year: 1993
-    nationalities: ["CO"]
-    birth_year: 1904
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Alberto Acuña (Colombia, 1904 - 1994)"
-      - "Luis Alberto Acuña"
-      - "Acuña, Luis Alberto"
-      - "LUIS ALBERTO ACUÑA TAPIAS"
-      - "Luis Alberto Acuña Tapias"
-    notes: "19 lotes | casas: bogota_auctions | n. 12-05-1904 en Suaita (Santander), m. 1993 en Tunja. FUSIONADA con la ficha duplicada luis_alberto_acuna_tapias (misma persona, entraba por FINALL.xlsx con el nombre completo y partia sus lotes en dos filas del ranking). OJO con el anio de muerte: el alias de la casa y la DESCRIPCION de Wikidata dicen 1994, pero el claim P570 de la propia Wikidata y Wikipedia ES dicen 1993. Fuentes: Wikidata Q5982660 (claim, no descripcion), Wikipedia ES."
-
-  - artist_id: luis_beut_y_lluch
-    display_name: "Luis Beut y LLuch"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1873
-    death_year: 1929
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Beut y LLuch"
-    notes: "34 lotes | casas: duran_subastas"
-
-  - artist_id: luis_caballero
-    display_name: "Luis Caballero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1943
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Caballero"
-      - "Luis Caballero (Colombia, 1943 - 1995)"
-    notes: "39 lotes | casas: bogota_auctions"
-
-  - artist_id: luis_caruncho
-    display_name: "Luis Caruncho"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Caruncho"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: luis_domingo_garcia
-    display_name: "Luis Domingo García"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1924
-    death_year: 2001
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Domingo García"
-    notes: "31 lotes | casas: duran_subastas"
-
-  - artist_id: luis_feito
-    display_name: "Luis Feito"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 2021
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Feito"
-      - "FEITO LÓPEZ, LUIS"
-      - "Luis Feito López"
-    notes: "28 lotes | casas: duran_subastas"
-
-  - artist_id: luis_garcia_ochoa
-    display_name: "Luis García Ochoa"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1924
-    death_year: 2001
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis García-Ochoa Ibáñez"
-      - "Luis García Ochoa"
-      - "GARCIA OCHOA, LUIS"
-    notes: "146 lotes | casas: duran_subastas"
-
-  - artist_id: luis_gordillo
-    display_name: "Luis Gordillo"
-    country_birth: "ES"
-    birth_year: 1934
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Gordillo"
-    notes: "90 lotes | casas: duran_subastas"
-
-  - artist_id: luis_moscardo
-    display_name: "Luis Moscardó"
-    country_birth: "ES"
-    birth_year: 1950
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Moscardó"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: luis_roldan
-    display_name: "Luis Roldán"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Roldán"
-    notes: "6 lotes | casas: bogota_auctions"
-  - artist_id: lincoln_presno
-    display_name: "Lincoln Presno"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1917
-    death_year: 1991
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lincoln Presno"
-      - "Lincoln PRESNO"
-    notes: "8 lotes | casas: zorrilla_subastas"
-
-  - artist_id: lino_dinetto
-    display_name: "Lino Dinetto"
-    country_birth: "UY"
-    death_year: 2017
-    nationalities: ["UY"]
-    birth_year: 1927
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lino Dinetto"
-      - "Lino DINETTO"
-    notes: "7 lotes | casas: zorrilla_subastas"
-
-  - artist_id: luis_alberto_solari
-    display_name: "Luis Alberto Solari"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1918
-    death_year: 1993
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Alberto Solari"
-      - "Luis Alberto SOLARI"
-    notes: "25 lotes | casas: zorrilla_subastas"
-
-  - artist_id: leo_matiz
-    display_name: "Leo Matiz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1917
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Leo Matiz (Colombia, 1917 - 1988.)"
-      - "Leo Matiz (Colombia, 1919 - 1998.)"
-      - "LEO MATIZ"
-      - "Leo Matiz"
-      - "Matiz, Leo"
-    notes: "14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leon_alcantara
-    display_name: "Leon Alcantara"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1944
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEON ALCANTARA"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leon_cano
-    display_name: "León Cano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1898
-    death_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEON CANO"
-      - "León Cano"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leon_trujillo
-    display_name: "León Trujillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEON TRUJILLO"
-      - "León Trujillo"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leonel_estrada
-    display_name: "Leonel Estrada"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1944
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEONEL ESTRADA"
-      - "Leonel Estrada"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leonel_gongora
-    display_name: "Leonel Góngora"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1932
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Leonel Góngora - Colombia, 1932 - 1999."
-      - "LEONEL GONGORA"
-      - "Leonel Góngora"
-    notes: "20 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: leonor_alarcon
-    display_name: "Leonor Alarcón"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1918
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEONOR ALARCON"
-      - "Leonor Alarcón"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | El 1918 lo confirman DOS fuentes independientes: la hoja curada y el propio catalogo de Bogota, que escribe 'Leonor Alarcón Colombia, 1918' en los tres lotes. Sin fecha de muerte: no esta en Wikidata ni en Wikipedia y Banrepcultural bloquea el acceso automatizado. Tendria 108 anios, asi que el informe la marca 'n. 1918 (?)': el hueco es casi seguro un dato que falta, pero NO se inventa una muerte."
-
-  - artist_id: leopold_reigner
-    display_name: "Léopold Reigner"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1897
-    death_year: 1981
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LEOPOLD REIGNER"
-      - "Léopold Reigner"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: liliana_porter
-    display_name: "Liliana Porter"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1941
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LILIANA PORTER"
-      - "Liliana Porter"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: liliana_sanchez
-    display_name: "Liliana Sánchez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LILIANA SANCHEZ"
-      - "Liliana Sánchez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: lorenzo_jaramillo
-    display_name: "Lorenzo Jaramillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1928
-    death_year: 2018
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LORENZO JARAMILLO"
-      - "Lorenzo Jaramillo"
-    notes: "8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: los_carpinteros
-    display_name: "Los Carpinteros"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Los Carpinteros - 1992"
-      - "LOS CARPINTEROS"
-      - "Los Carpinteros"
-      - "Los carpinteros"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
-
-  - artist_id: louise_nevelson
-    display_name: "Louise Nevelson"
-    country_birth: "UA"
-    nationalities: ["UA"]
-    birth_year: 1899
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Louise Nevelson (Ucrania, 1899 - EE.UU., 1988.)"
-      - "LOUISE NEVELSON"
-      - "Louise Nevelson"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luciano_denver
-    display_name: "Luciano Denver"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1976
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUCIANO DENVER"
-      - "Luciano Denver"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: lucy_tejada
-    display_name: "Lucy Tejada"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1929
-    death_year: 2017
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUCY TEJADA"
-      - "Lucy Tejada"
-    notes: "11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_a_solari
-    display_name: "Luis A. Solari"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1905
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS A SOLARI"
-      - "Luis A. Solari"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-
-  - artist_id: luis_angel_rengifo_munoz
-    display_name: "Luis Ángel Rengifo Muñoz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1906
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS ÁNGEL RENGIFO MUÑOZ"
-      - "Luis Ángel Rengifo Muñoz"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_eduardo_vieco
-    display_name: "Luis Eduardo Vieco"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1882
-    death_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS EDUARDO VIECO"
-      - "Luis Eduardo Vieco"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_fernando_pelaez
-    display_name: "Luis Fernando Peláez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1961
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS FERNANDO PELAEZ"
-      - "Luis Fernando Peláez"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_fernando_roldan
-    display_name: "Luis Fernando Roldán"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS FERNANDO ROLDAN"
-      - "Luis Fernando Roldán"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1905, que lo publicaba como vivo de 121 anios; nacio en 1955 y esta vivo. Fuente: Artspace."
-
-  - artist_id: luis_luna
-    display_name: "Luis Luna"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1910
-    death_year: 1985
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS LUNA"
-      - "Luis Luna"
-      - "Luis  Luna"
-    notes: "10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_morales
-    display_name: "Luis Morales"
-    country_birth: "PR"
-    nationalities: ["PR"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS MORALES"
-      - "Luis Morales"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luis_nunez_borda
-    display_name: "Luis Núñez Borda"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1872
-    death_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUIS NUÑEZ BORDA"
-      - "Luis Núñez Borda"
-      - "Luis Nuñez Borda"
-    notes: "15 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luz_angela_lizarazo
-    display_name: "Luz Ángela Lizarazo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1966
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luz Angela Lizarazo (Colombia, 1966)"
-      - "LUZ ANGELA LIZARAZO"
-      - "Luz Ángela Lizarazo"
-      - "Luz Angela Lizarazo"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: luz_helena_caballero
-    display_name: "Luz Helena Caballero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LUZ HELENA CABALLERO"
-      - "Luz Helena Caballero"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: lydia_azout
-    display_name: "Lydia Azout"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1913
-    death_year: 2009
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "LYDIA AZOUT"
-      - "Lydia Azout"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: lita_mora
-    display_name: "Lita Mora"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1958
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Lita Mora"
-    notes: "38 lotes en Silver | fuente: Askart | datos biograficos minimos"
-
-  - artist_id: lorenzo_gonzalez
-    display_name: "Lorenzo González"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1943
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Lorenzo González"
-    notes: "15 lotes en Silver | fuente: Singulart; gallery records | Lorenzo González Sánchez, born Medina de Rioseco, Valladolid 1943"
-
-  - artist_id: lourdes_carcedo
-    display_name: "Lourdes Carcedo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: low
-    aliases:
-      - "Lourdes Carcedo"
-    notes: "16 lotes en Silver | fuente: Arteinformado | fotografa; datos minimos"
-
-  - artist_id: luis_giner_bueno
-    display_name: "Luis Giner Bueno"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Giner Bueno"
-    notes: "12 lotes en Silver | fuente: Artnet; Wikipedia ES | Godella, Valencia"
-
-  - artist_id: luis_fernando_aguirre
-    display_name: "Luis Fernando Aguirre"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1935
-    death_year: 2021
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Fernando Aguirre"
-    notes: "Pintor y periodista visual asturiano. Neofigurativista con influencias expresionistas alemanas. Primero muestra individual 1964, Galería Quixote Madrid. Falleció en Madrid."
-
-  - artist_id: luis_garcia_ramos
-    display_name: "Luis García Ramos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis García-Ramos"
-    notes: "Pintor canario nacido en Tenerife, especializado en naturaleza e inspiración marina. Obra en museos españoles."
-
-  - artist_id: lorenzo_aparicio_boliche
-    display_name: "Lorenzo Aparicio Boliche"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1900
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Boliche"
-      - "Lorenzo Aparicio"
-    notes: "Pintor madrileño, maestro del arte naif español. Legó obras al Museo Internacional de Arte Naïf 'Manuel Moral' de Jaén."
-
-  - artist_id: leon_augustin_lhermitte
-    display_name: "Léon-Augustin Lhermitte"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1844
-    death_year: 1925
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Léon-Augustin Lhermitte"
-    notes: "1 lote de 90.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Mont-Saint-Pere, pintor naturalista de escenas campesinas."
-
-  - artist_id: luis_graner
-    display_name: "Luis Graner"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1863
-    death_year: 1929
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GRANER, LUIS"
-      - "Luis Graner Arrufi"
-      - "Lluís Graner"
-      - "Lluís Graner Arrufí"
-    notes: "Su lote se recupero al re-scrapear el Autor de la ficha de Duran; antes llegaba con el titulo '\"Entrando en el puerto\"' como artista | casas: duran_subastas | Lluís Graner Arrufí, nacido y fallecido en Barcelona, 1863-1929. Fuentes: https://www.museunacional.cat/es/lluis-graner ; https://www.museodelprado.es/coleccion/artista/graner-y-arrufi-luis/917cde91-7779-40b3-a6ba-9878e75d8427"
-
-  - artist_id: lazzaro_baldi
-    display_name: "Lazzaro Baldi"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1623
-    death_year: 1703
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lazzaro Baldi"
-    notes: "1 lote vendido por 27.500 EUR | casas: duran_subastas | nacido en Pistoia hacia 1623 y fallecido en Roma en 1703; la ficha de la casa escribe Pistoria. Fuente: https://www.museodelprado.es/coleccion/artista/baldi-lazzaro/a634d7a7-e69a-4b68-a65a-b82ee339e97d"
-
-  - artist_id: luca_giordano
-    display_name: "Luca Giordano"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1634
-    death_year: 1705
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luca Giordano"
-    notes: "5 lotes | casas: duran_subastas | nacido y fallecido en Napoles, 1634-1705; fechas coincidentes con Silver. No fusionar obras de escuela/circulo o atribuciones tradicionales. Fuente: https://www.museodelprado.es/coleccion/obra-de-arte/viaje-de-jacob-a-cana/d2b47b0a-1df8-425c-8563-88c67419674b"
-
-  - artist_id: lorenzo_guerrero_y_leogardo
-    display_name: "Lorenzo Guerrero y Leogardo"
-    country_birth: "PH"
-    nationalities: ["PH"]
-    birth_year: 1835
-    death_year: 1904
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Lorenzo Guerrero y Leogardo"
-      - "GUERRERO Y LEOGARDO, LORENZO"
-    notes: "1 lote | casas: duran_subastas | pintor filipino nacido en Ermita, Manila, en 1835 y fallecido en Paco en 1904; maestro de Juan Luna. Fuente de ficha y catalogo abierta: https://www.duran-subastas.com/es/subasta-lote/lorenzo-guerrero-y-leogardo-44-dibujos-filipinos/631-310"
-
-  - artist_id: luis_alvarez_catala
-    display_name: "Luis Álvarez Catalá"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1836
-    death_year: 1901
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Álvarez Catalá"
-    notes: "3 lotes | casas: duran_subastas | nacido y fallecido en Madrid, 1836-1901; fechas coincidentes con Silver. Fuente: https://www.museodelprado.es/coleccion/artista/alvarez-catala-luis/99cba151-7974-40e6-ad8a-4a2cab2fb63e"
-
-  - artist_id: luis_saez_diez
-    display_name: "Luis Sáez Díez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 2010
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Luis Sáez"
-      - "Luis Sáez Díez"
-      - "SAEZ, LUIS"
-    notes: "10 lotes | casas: duran_subastas | Duran identifica al autor como SAEZ, LUIS (1925); Bañistas, La llegada y Los musicos pertenecen al mismo conjunto de lotes. Luis Saez Diez nacio en Mazuelo de Muño, Burgos, en 1925 y fallecio en Burgos en 2010. El lot_year 1925 de 8 filas es el nacimiento filtrado desde la ficha del autor, no la fecha de la obra. No confundir con Luis Saenz de la Calzada (1912-1994). Fuentes: https://museodeburgos.net/exposiciones/luis-saez/ ; https://museodeburgos.net/project/bellamente-aterrados-un-siglo-de-luis-saez-1925-2025/ ; https://www.duran-subastas.com/es/subasta-lote/luis-saez-la-llegada/592-254"
+- artist_id: la_chunga
+  display_name: La Chunga
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1938
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - La Chunga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3207366'
+- artist_id: la_marquesa
+  display_name: la Marquesa
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - La Marquesa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q140310189'
+- artist_id: la_monte_young
+  display_name: La Monte Young
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - La Monte Young
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q432822'
+  death_status: living
+- artist_id: lance_letscher
+  display_name: Lance Letscher
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lance Letscher
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94403968'
+  death_status: living
+- artist_id: larbi_belcadi
+  display_name: Larbi Belcadi
+  country_birth: MA
+  nationalities:
+  - MA
+  birth_year: 1930
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Larbi Belcadi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110520588'
+- artist_id: larry_zox
+  display_name: Ларри Зокс
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1937
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Larry Zox
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6491348'
+- artist_id: laura_brinkmann
+  display_name: Laura Brinkmann
+  birth_year: 1823
+  death_year: 1906
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Laura Brinkmann
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q60839148'
+- artist_id: laureano_barrau
+  display_name: Laureano Barrau
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Laureano Barrau
+  - Laureano Barrau Buñol
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3820539'
+- artist_id: laurie_lipton
+  display_name: Laurie Lipton
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LAURIE LIPTON
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5971843'
+  death_status: living
+- artist_id: laxeiro
+  display_name: Laxeiro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Laxeiro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3219944'
+- artist_id: lazzaro_baldi
+  display_name: Lazzaro Baldi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1623
+  death_year: 1703
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lazzaro Baldi
+  notes: '1 lote vendido por 27.500 EUR | casas: duran_subastas | nacido en Pistoia hacia 1623 y fallecido en Roma
+    en 1703; la ficha de la casa escribe Pistoria. Fuente: https://www.museodelprado.es/coleccion/artista/baldi-lazzaro/a634d7a7-e69a-4b68-a65a-b82ee339e97d'
+- artist_id: le_corbusier
+  display_name: Le Corbusier
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1887
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Le Corbusier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4724'
+- artist_id: lech_wolski
+  display_name: Lech Wolski
+  country_birth: null
+  nationalities: []
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Lech Wolski
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q11753552'
+  death_status: living
+- artist_id: leo_erb
+  display_name: Leo Erb
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1923
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leo Erb
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1279320'
+- artist_id: leo_matiz
+  display_name: Leo Matiz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1917
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Leo Matiz (Colombia, 1917 - 1988.)
+  - Leo Matiz (Colombia, 1919 - 1998.)
+  - LEO MATIZ
+  - Leo Matiz
+  - Matiz, Leo
+  notes: '14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leo_tavella
+  display_name: Leo Tavella
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1920
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LEO TAVELLA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q109424629'
+- artist_id: leon_abadias
+  display_name: León Abadías y Santolaria
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1836
+  death_year: 1894
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - León Abadías
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28122419'
+- artist_id: leon_alcantara
+  display_name: Leon Alcantara
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1944
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEON ALCANTARA
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leon_augustin_lhermitte
+  display_name: Léon-Augustin Lhermitte
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1844
+  death_year: 1925
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Léon-Augustin Lhermitte
+  notes: '1 lote de 90.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en Mont-Saint-Pere, pintor naturalista
+    de escenas campesinas.'
+- artist_id: leon_cano
+  display_name: León Cano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1898
+  death_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEON CANO
+  - León Cano
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leon_danchin
+  display_name: Léon Danchin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1887
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Léon Danchin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3270866'
+- artist_id: leon_huygens
+  display_name: Léon Huygens
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1876
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leon Huygens
+  - León Huygens
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q748875'
+- artist_id: leon_richet
+  display_name: 레옹 리셰
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1843
+  death_year: 1907
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leon RICHET
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18600491'
+- artist_id: leon_trujillo
+  display_name: León Trujillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEON TRUJILLO
+  - León Trujillo
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leonardo_alenza
+  display_name: Leonardo Alenza
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1807
+  death_year: 1845
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonardo Alenza
+  - Leonardo Alenza y Nieto
+  - Leonardo Alenza Nieto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2696989'
+- artist_id: leonardo_da_vinci
+  display_name: Leonardo da Vinci
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1452
+  death_year: 1519
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonardo da Vinci
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q762'
+- artist_id: leonardo_nierman
+  display_name: Leonardo Nierman
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1932
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonardo Nierman
+  - LEONARDO NIERMAN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q929068'
+- artist_id: leonardo_roda
+  display_name: Leonardo Roda
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1868
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonardo Roda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3830422'
+- artist_id: leonel_estrada
+  display_name: Leonel Estrada
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1944
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEONEL ESTRADA
+  - Leonel Estrada
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leonel_gongora
+  display_name: Leonel Góngora
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1932
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Leonel Góngora - Colombia, 1932 - 1999.
+  - LEONEL GONGORA
+  - Leonel Góngora
+  notes: '20 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leonel_moura
+  display_name: Leonel Moura
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonel Moura
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6526244'
+  death_status: living
+- artist_id: leonor_alarcon
+  display_name: Leonor Alarcón
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1918
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEONOR ALARCON
+  - Leonor Alarcón
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | El 1918 lo confirman DOS fuentes independientes:
+    la hoja curada y el propio catalogo de Bogota, que escribe ''Leonor Alarcón Colombia, 1918'' en los tres lotes.
+    Sin fecha de muerte: no esta en Wikidata ni en Wikipedia y Banrepcultural bloquea el acceso automatizado. Tendria
+    108 anios, asi que el informe la marca ''n. 1918 (?)'': el hueco es casi seguro un dato que falta, pero NO se
+    inventa una muerte.'
+- artist_id: leonor_fini
+  display_name: argentinar jatorriko frantses pintorea
+  country_birth: AR
+  nationalities:
+  - AR
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Leonor Fini
+  - LEONOR FINI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q464011'
+- artist_id: leopold_durangel
+  display_name: Léopold Durangel
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1828
+  death_year: 1898
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leopold Durangel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22210737'
+- artist_id: leopold_reigner
+  display_name: Léopold Reigner
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1897
+  death_year: 1981
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LEOPOLD REIGNER
+  - Léopold Reigner
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: leopoldo_fernandez_varela
+  display_name: Leopoldo Fernández Varela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leopoldo Fernández Varela
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769634'
+- artist_id: leopoldo_galeota
+  display_name: Leopoldo Galeota-Russo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1868
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leopoldo Galeota
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21453662'
+- artist_id: leopoldo_guerrero_del_castillo
+  display_name: Leopoldo Guerrero del Castillo
+  birth_year: 1878
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Leopoldo Guerrero del Castillo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q109302797'
+- artist_id: leopoldo_novoa
+  display_name: Leopoldo Nóvoa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leopoldo Novoa
+  - LEOPOLDO NÒVOA
+  - LEOPOLDO NÓVOA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3271860'
+- artist_id: leopoldo_richter
+  display_name: Leopoldo Richter
+  country_birth: DE
+  nationalities:
+  - CO
+  - DE
+  birth_year: 1896
+  death_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Leopoldo Richter (Alemania, 1896 - Colombia, 1984)
+  - Leopoldo Richter (Alemania, 19896 - Colombia, 1984)
+  - Leopoldo Richter
+  notes: '17 lotes | casas: bogota_auctions'
+- artist_id: leopoldo_roca_furno
+  display_name: Leopold Roca Furnó
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Leopoldo Roca Furnó
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q97583692'
+- artist_id: leopoldo_torres_aguero
+  display_name: Leopoldo Torres Agüero
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1924
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leopoldo Torres Agüero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18223977'
+- artist_id: leyla_cardenas_campos
+  display_name: Leyla Cárdenas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LEYLA CARDENAS CAMPOS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q116282620'
+- artist_id: lia_bermudez
+  display_name: Lía Bermúdez
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1930
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lía Bermúdez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6711255'
+- artist_id: lidio_ajmone
+  display_name: Lidio Aimone
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1884
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lidio Ajmone
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3832057'
+- artist_id: liliana_porter
+  display_name: Liliana Porter
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1941
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LILIANA PORTER
+  - Liliana Porter
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: liliana_sanchez
+  display_name: Liliana Sánchez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LILIANA SANCHEZ
+  - Liliana Sánchez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: lincoln_presno
+  display_name: Lincoln Presno
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1917
+  death_year: 1991
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lincoln Presno
+  - Lincoln PRESNO
+  notes: '8 lotes | casas: zorrilla_subastas'
+- artist_id: lino_dinetto
+  display_name: Lino Dinetto
+  country_birth: UY
+  death_year: 2017
+  nationalities:
+  - UY
+  birth_year: 1927
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lino Dinetto
+  - Lino DINETTO
+  notes: '7 lotes | casas: zorrilla_subastas'
+- artist_id: lino_martinez_villafinez
+  display_name: Lino Martínez Villafínez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1892
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lino Martínez Villafínez
+  - Lino Martinez Villafinez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20534879'
+- artist_id: lita_cabellut
+  display_name: Lita Cabellut
+  country_birth: ES
+  birth_year: 1961
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lita Cabellut
+  notes: '16 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: lita_mora
+  display_name: Lita Mora
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1958
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Lita Mora
+  notes: '38 lotes en Silver | fuente: Askart | datos biograficos minimos'
+  death_status: living
+- artist_id: lluis_puig_barella
+  display_name: Lluís Puig Barella
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1894
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LLuis Puig Barella
+  - Lluis Puig Barella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5977925'
+- artist_id: lola_anglada
+  display_name: Lola Anglada
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Lola Anglada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q459343'
+- artist_id: lola_padin
+  display_name: Dolores Padín Fernández
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lola Padín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q61989856'
+  death_status: living
+- artist_id: lolo_soldevilla
+  display_name: Loló Soldevilla
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1901
+  death_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Loló Soldevilla
+  notes: '13 lotes | casas: duran_subastas'
+- artist_id: lopez_enguidanos_tomas
+  display_name: Tomás López Enguídanos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1773
+  death_year: 1814
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LOPEZ ENGUIDANOS, TOMAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9088264'
+- artist_id: lorenzo_aguirre_sanchez
+  display_name: Lorenzo Aguirre
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1884
+  death_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Aguirre Sánchez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9023740'
+- artist_id: lorenzo_aparicio_boliche
+  display_name: Lorenzo Aparicio Boliche
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Boliche
+  - Lorenzo Aparicio
+  notes: Pintor madrileño, maestro del arte naif español. Legó obras al Museo Internacional de Arte Naïf 'Manuel
+    Moral' de Jaén.
+- artist_id: lorenzo_casanova_ruiz
+  display_name: Lorenzo Casanova Ruiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1844
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Casanova Ruiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4892860'
+- artist_id: lorenzo_frechilla
+  display_name: Lorenzo Frechilla
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Frechilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5944026'
+- artist_id: lorenzo_goni_suarez
+  display_name: Lorenzo Goñi
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Goñi Suárez
+  - Lorenzo Goñi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5979039'
+- artist_id: lorenzo_gonzalez
+  display_name: Lorenzo González
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Lorenzo González
+  notes: '15 lotes en Silver | fuente: Singulart; gallery records | Lorenzo González Sánchez, born Medina de Rioseco,
+    Valladolid 1943'
+- artist_id: lorenzo_guerrero_y_leogardo
+  display_name: Lorenzo Guerrero y Leogardo
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1835
+  death_year: 1904
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lorenzo Guerrero y Leogardo
+  - GUERRERO Y LEOGARDO, LORENZO
+  notes: '1 lote | casas: duran_subastas | pintor filipino nacido en Ermita, Manila, en 1835 y fallecido en Paco
+    en 1904; maestro de Juan Luna. Fuente de ficha y catalogo abierta: https://www.duran-subastas.com/es/subasta-lote/lorenzo-guerrero-y-leogardo-44-dibujos-filipinos/631-310'
+- artist_id: lorenzo_jaramillo
+  display_name: Lorenzo Jaramillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1928
+  death_year: 2018
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LORENZO JARAMILLO
+  - Lorenzo Jaramillo
+  notes: '8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: lorenzo_pericas_ferrer
+  display_name: Lorenzo Pericás Ferrer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1868
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Pericás Ferrer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5979078'
+- artist_id: lorenzo_valles
+  display_name: Lorenzo Vallés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1831
+  death_year: 1910
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lorenzo Vallés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17350343'
+- artist_id: los_carpinteros
+  display_name: Los Carpinteros
+  country_birth: CU
+  nationalities:
+  - CU
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Los Carpinteros - 1992
+  - LOS CARPINTEROS
+  - Los Carpinteros
+  - Los carpinteros
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una
+    sola persona'
+- artist_id: lothar_charoux
+  display_name: Lothar Charoux
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1912
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lothar CHAROUX
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28703942'
+- artist_id: louis_alexandre_cabie
+  display_name: Louis Alexandre Cábie
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1853
+  death_year: 1939
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Alexandre Cabié
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1871463'
+- artist_id: louis_barnaba
+  display_name: Louis Barnaba
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1826
+  death_year: 1892
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Barnaba
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16039496'
+- artist_id: louis_chantal
+  display_name: Louis Chantal
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1822
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Chantal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22667503'
+- artist_id: louis_emile_dardoize
+  display_name: Louis Émile Dardoize
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1826
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Émile Dardoize
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22920094'
+- artist_id: louis_eugene_coedes
+  display_name: Louis-Eugène Coedès
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1810
+  death_year: 1906
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Eugène Coedes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q41321228'
+- artist_id: louis_floutier
+  display_name: Louis Floutier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1882
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Floutier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3261899'
+- artist_id: louis_henri_deschamps
+  display_name: Louis Deschamps
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1846
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Henri Deschamps
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3261712'
+- artist_id: louis_icart
+  display_name: Louis Justin Laurent Icart
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1888
+  death_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis ICART
+  - LOUIS ICART
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8342047'
+- artist_id: louis_jules_dumoulin
+  display_name: Louis Dumoulin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1860
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis-Jules Dumoulin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1766598'
+- artist_id: louis_leopold_boilly
+  display_name: Louis Léopold Boilly
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1761
+  death_year: 1845
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Louis Leopold Boilly
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q715909'
+- artist_id: louise_nevelson
+  display_name: Louise Nevelson
+  country_birth: UA
+  nationalities:
+  - UA
+  birth_year: 1899
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Louise Nevelson (Ucrania, 1899 - EE.UU., 1988.)
+  - LOUISE NEVELSON
+  - Louise Nevelson
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: lourdes_carcedo
+  display_name: Lourdes Carcedo
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: low
+  aliases:
+  - Lourdes Carcedo
+  notes: '16 lotes en Silver | fuente: Arteinformado | fotografa; datos minimos'
+- artist_id: lourdes_murillo
+  display_name: Lourdes Murillo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lourdes Murillo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q48220302'
+  death_status: living
+- artist_id: loutherbourg
+  display_name: Philip James de Loutherbourg
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1740
+  death_year: 1812
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Loutherbourg
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1970087'
+- artist_id: luca_giordano
+  display_name: Luca Giordano
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1634
+  death_year: 1705
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luca Giordano
+  notes: '5 lotes | casas: duran_subastas | nacido y fallecido en Napoles, 1634-1705; fechas coincidentes con Silver.
+    No fusionar obras de escuela/circulo o atribuciones tradicionales. Fuente: https://www.museodelprado.es/coleccion/obra-de-arte/viaje-de-jacob-a-cana/d2b47b0a-1df8-425c-8563-88c67419674b'
+- artist_id: lucas_van_leyden
+  display_name: Lucas van Leyden
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1494
+  death_year: 1533
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucas van Leyden
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q320980'
+- artist_id: lucebert
+  display_name: Lucebert
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1924
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucebert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q689279'
+- artist_id: lucia_maya
+  display_name: Lucía Maya
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Lucía Maya
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6698650'
+  death_status: living
+- artist_id: luciano_castelli
+  display_name: Luciano Castelli
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luciano Castelli
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q119808'
+  death_status: living
+- artist_id: luciano_denver
+  display_name: Luciano Denver
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1976
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUCIANO DENVER
+  - Luciano Denver
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luciano_diaz_castilla
+  display_name: Luciano Díaz Castilla
+  country_birth: ES
+  birth_year: 1940
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luciano Díaz Castilla
+  notes: '23 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: luciano_jaramillo
+  display_name: Luciano Jaramillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1938
+  death_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - 'Luciano Jaramillo: Otra Mirada'
+  - Luciano Jaramillo
+  notes: '10 lotes | casas: bogota_auctions'
+- artist_id: luciano_recio
+  display_name: Luciano Recio
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luciano Recio
+  notes: '33 lotes | casas: duran_subastas'
+- artist_id: lucien_adrion
+  display_name: Philippe Adrion
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1889
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucien Adrión
+  - Lucien Adrion
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47310030'
+- artist_id: lucien_clergue
+  display_name: Lucien Clergue
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1934
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucien Clergue
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1395740'
+- artist_id: lucien_delarue
+  display_name: Lucien Delarue
+  birth_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Lucien Delarue
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99458986'
+  death_status: living
+- artist_id: lucio_del_pezzo
+  display_name: Lucio Del Pezzo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1933
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucio del Pezzo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3838854'
+- artist_id: lucio_fontana
+  display_name: Lucio Fontana
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1899
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lucio Fontana
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q312392'
+- artist_id: lucio_munoz
+  display_name: Lucio Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Lucio Muñoz
+  - MUÑOZ, LUCIO
+  - MUÑOZ MARTÍNEZ, LUCIO
+  notes: '62 lotes | casas: duran_subastas | pintor nacido en Madrid en 1929 y fallecido en 1998. Fuente: https://www.museoreinasofia.es/exposicion/lucio-munoz'
+- artist_id: lucy_tejada
+  display_name: Lucy Tejada
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1920
+  death_year: 2011
+  death_status: known
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUCY TEJADA
+  - Lucy Tejada
+  notes: 'La ficha heredada de FINALL.xlsx (1929-2017) era incorrecta. Museo La Tertulia documenta Pereira, Colombia,
+    1920 - Cali, Colombia, 2011; coincide con Bogota Auctions y Lefebre. Fuente: https://coleccion.museolatertulia.com/artista/lucy-tejada/'
+- artist_id: ludwig_buchhorn
+  display_name: Ludwig Buchhorn
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1770
+  death_year: 1856
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ludwig BUCHHORN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q63942'
+- artist_id: luigi_serena
+  display_name: Luigi Serena
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1855
+  death_year: 1911
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LUIGI SERENA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16043802'
+- artist_id: luis_a_solari
+  display_name: Luis A. Solari
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1905
+  death_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS A SOLARI
+  - Luis A. Solari
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_alberto_acuna
+  display_name: Luis Alberto Acuña
+  country_birth: CO
+  death_year: 1993
+  nationalities:
+  - CO
+  birth_year: 1904
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Alberto Acuña (Colombia, 1904 - 1994)
+  - Luis Alberto Acuña
+  - Acuña, Luis Alberto
+  - LUIS ALBERTO ACUÑA TAPIAS
+  - Luis Alberto Acuña Tapias
+  notes: '19 lotes | casas: bogota_auctions | n. 12-05-1904 en Suaita (Santander), m. 1993 en Tunja. FUSIONADA con
+    la ficha duplicada luis_alberto_acuna_tapias (misma persona, entraba por FINALL.xlsx con el nombre completo
+    y partia sus lotes en dos filas del ranking). OJO con el anio de muerte: el alias de la casa y la DESCRIPCION
+    de Wikidata dicen 1994, pero el claim P570 de la propia Wikidata y Wikipedia ES dicen 1993. Fuentes: Wikidata
+    Q5982660 (claim, no descripcion), Wikipedia ES.'
+- artist_id: luis_alberto_solari
+  display_name: Luis Alberto Solari
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1918
+  death_year: 1993
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Alberto Solari
+  - Luis Alberto SOLARI
+  notes: '25 lotes | casas: zorrilla_subastas'
+- artist_id: luis_alonso_munoz
+  display_name: Luis Alonso Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Alonso Muñoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q65095424'
+  death_status: living
+- artist_id: luis_alvarez_catala
+  display_name: Luis Álvarez Catalá
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1836
+  death_year: 1901
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Álvarez Catalá
+  notes: '3 lotes | casas: duran_subastas | nacido y fallecido en Madrid, 1836-1901; fechas coincidentes con Silver.
+    Fuente: https://www.museodelprado.es/coleccion/artista/alvarez-catala-luis/99cba151-7974-40e6-ad8a-4a2cab2fb63e'
+- artist_id: luis_angel_rengifo_munoz
+  display_name: Luis Ángel Rengifo Muñoz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1906
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS ÁNGEL RENGIFO MUÑOZ
+  - Luis Ángel Rengifo Muñoz
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_antonio_planes
+  display_name: Luis Antonio Planes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1742
+  death_year: 1821
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Antonio Planes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15710732'
+- artist_id: luis_arcas_brauner
+  display_name: Luis Arcas Brauner
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Arcas Brauner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21197687'
+- artist_id: luis_bagaria
+  display_name: Luis Bagaría
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1882
+  death_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Bagaría
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q504959'
+- artist_id: luis_bertodano
+  display_name: Luis Bertodano
+  country_birth: null
+  nationalities: []
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Bertodano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55089044'
+- artist_id: luis_beut_y_lluch
+  display_name: Luis Beut y LLuch
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1873
+  death_year: 1929
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Beut y LLuch
+  notes: '34 lotes | casas: duran_subastas'
+- artist_id: luis_blesa
+  display_name: Luis Blesa y Prats
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Blesa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29565024'
+- artist_id: luis_caballero
+  display_name: Luis Caballero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1943
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Caballero
+  - Luis Caballero (Colombia, 1943 - 1995)
+  notes: '39 lotes | casas: bogota_auctions'
+- artist_id: luis_camnitzer
+  display_name: Luis Camnitzer
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Camnitzer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q475981'
+  death_status: living
+- artist_id: luis_canadas
+  display_name: Luis Cañadas Fernández
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Cañadas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5983073'
+- artist_id: luis_canelo
+  display_name: Luis Canelo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Canelo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19858043'
+  death_status: living
+- artist_id: luis_caruncho
+  display_name: Luis Caruncho
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Caruncho
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: luis_crespo_ordonez
+  display_name: Luis Crespo Ordoñez
+  country_birth: EC
+  nationalities:
+  - EC
+  birth_year: 1904
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Crespo Ordóñez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5983140'
+- artist_id: luis_de_madrazo_y_kuntz
+  display_name: Luis de Madrazo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1825
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis de Madrazo y Kuntz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3840426'
+- artist_id: luis_delacamara
+  display_name: Luis Delacamara
+  country_birth: null
+  nationalities: []
+  birth_year: 1942
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Delacámara
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21480577'
+- artist_id: luis_domingo_garcia
+  display_name: Luis Domingo García
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2001
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Domingo García
+  notes: '31 lotes | casas: duran_subastas'
+- artist_id: luis_eduardo_aute
+  display_name: Luis Eduardo Aute
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1943
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Eduardo Aute
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1398571'
+- artist_id: luis_eduardo_vieco
+  display_name: Luis Eduardo Vieco
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1882
+  death_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS EDUARDO VIECO
+  - Luis Eduardo Vieco
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_fega
+  display_name: Luis Fega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Fega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55948777'
+  death_status: living
+- artist_id: luis_feito
+  display_name: Luis Feito
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2021
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Feito
+  - FEITO LÓPEZ, LUIS
+  - Luis Feito López
+  notes: '28 lotes | casas: duran_subastas'
+- artist_id: luis_fernando_aguirre
+  display_name: Luis Fernando Aguirre
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2021
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Fernando Aguirre
+  notes: Pintor y periodista visual asturiano. Neofigurativista con influencias expresionistas alemanas. Primero
+    muestra individual 1964, Galería Quixote Madrid. Falleció en Madrid.
+- artist_id: luis_fernando_pelaez
+  display_name: Luis Fernando Peláez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1961
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS FERNANDO PELAEZ
+  - Luis Fernando Peláez
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_fernando_roldan
+  display_name: Luis Fernando Roldán
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS FERNANDO ROLDAN
+  - Luis Fernando Roldán
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1905, que lo publicaba
+    como vivo de 121 anios; nacio en 1955 y esta vivo. Fuente: Artspace.'
+  death_status: living
+- artist_id: luis_fernando_zapata
+  display_name: Luis Fernando Zapata
+  birth_year: 1951
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - LUIS FERNANDO ZAPATA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q109857637'
+- artist_id: luis_ferrant
+  display_name: Luis Ferrant y Llausás
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1806
+  death_year: 1868
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Ferrant
+  - Luis Ferrant y Llausás
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9025088'
+- artist_id: luis_fuente_garate
+  display_name: Luis Fuente Garate
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Fuente Gárate
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11689835'
+  death_status: living
+- artist_id: luis_garcia_campos
+  display_name: Luis García Campos
+  country_birth: null
+  nationalities: []
+  birth_year: 1928
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis García Campos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q126963938'
+- artist_id: luis_garcia_ochoa
+  display_name: Luis García Ochoa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2001
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis García-Ochoa Ibáñez
+  - Luis García Ochoa
+  - GARCIA OCHOA, LUIS
+  notes: '146 lotes | casas: duran_subastas'
+- artist_id: luis_garcia_ramos
+  display_name: Luis García Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis García-Ramos
+  notes: Pintor canario nacido en Tenerife, especializado en naturaleza e inspiración marina. Obra en museos españoles.
+- artist_id: luis_garcia_sampedro
+  display_name: Luis García Sampedro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1872
+  death_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis García Sampedro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q58012748'
+- artist_id: luis_giner_bueno
+  display_name: Luis Giner Bueno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Giner Bueno
+  notes: '12 lotes en Silver | fuente: Artnet; Wikipedia ES | Godella, Valencia'
+- artist_id: luis_gordillo
+  display_name: Luis Gordillo
+  country_birth: ES
+  birth_year: 1934
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Gordillo
+  notes: '90 lotes | casas: duran_subastas'
+- artist_id: luis_gracia_pueyo
+  display_name: Luis Gracia Pueyo
+  birth_year: 1871
+  death_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Gracia Pueyo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98824755'
+- artist_id: luis_graner
+  display_name: Luis Graner
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1929
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GRANER, LUIS
+  - Luis Graner Arrufi
+  - Lluís Graner
+  - Lluís Graner Arrufí
+  notes: 'Su lote se recupero al re-scrapear el Autor de la ficha de Duran; antes llegaba con el titulo ''"Entrando
+    en el puerto"'' como artista | casas: duran_subastas | Lluís Graner Arrufí, nacido y fallecido en Barcelona,
+    1863-1929. Fuentes: https://www.museunacional.cat/es/lluis-graner ; https://www.museodelprado.es/coleccion/artista/graner-y-arrufi-luis/917cde91-7779-40b3-a6ba-9878e75d8427'
+- artist_id: luis_guevara_moreno
+  display_name: Luis Guevara Moreno
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1926
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Guevara Moreno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18419867'
+- artist_id: luis_herreros_de_tejada
+  display_name: Luis Herreros de Tejada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1867
+  death_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Herreros de Tejada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60036377'
+- artist_id: luis_huidobro
+  display_name: Luis Huidobro Laplana
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1870
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Huidobro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29272816'
+- artist_id: luis_javier_gaya
+  display_name: Luis Javier Gayá
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Javier Gayá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5983704'
+  death_status: living
+- artist_id: luis_jimenez_aranda
+  display_name: Luis Jiménez Aranda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1845
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Jiménez Aranda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3013984'
+- artist_id: luis_lleo_arnau
+  display_name: Lluís Lleó Arnau
+  birth_year: 1899
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis LLeo Arnau
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q53548709'
+- artist_id: luis_lopez_piquer
+  display_name: Luis López Piquer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1802
+  death_year: 1865
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis López Piquer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5390248'
+- artist_id: luis_lozano_losilla
+  display_name: Luis Lozano Losilla
+  country_birth: null
+  nationalities: []
+  birth_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Lozano Losilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97604315'
+- artist_id: luis_luna
+  display_name: Luis Luna
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1910
+  death_year: 1985
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS LUNA
+  - Luis Luna
+  - Luis  Luna
+  notes: '10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_marco
+  display_name: Luis Marco
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Marco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55993915'
+  death_status: living
+- artist_id: luis_marin_bosqued
+  display_name: Luis Marín Bosqued
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1909
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Marín Bosqued
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5983923'
+- artist_id: luis_maristany_de_trias
+  display_name: Luís Maristany de Trias
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1885
+  death_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luís MARISTANY DE TRIAS
+  - LUIS MARISTANY DE TRÍAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10321546'
+- artist_id: luis_martinez_pedro
+  display_name: Luis Martínez Pedro
+  birth_year: 1910
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Martínez Pedro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21077787'
+- artist_id: luis_mazzey
+  display_name: Luis Mazzey
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1895
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis MAZZEY
+  - LUIS MAZZEY
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42382941'
+- artist_id: luis_menendez_pidal
+  display_name: Luis Menéndez Pidal
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Menéndez Pidal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5196453'
+- artist_id: luis_morales
+  display_name: Luis Morales
+  country_birth: PR
+  nationalities:
+  - PR
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS MORALES
+  - Luis Morales
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_moscardo
+  display_name: Luis Moscardó
+  country_birth: ES
+  birth_year: 1950
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Moscardó
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: luis_mosquera_gomez
+  display_name: Luis Mosquera Gómez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Mosquera Gómez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769793'
+- artist_id: luis_nishizawa
+  display_name: Luis Nishizawa Flores
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1918
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Nishizawa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q351430'
+- artist_id: luis_nunez_borda
+  display_name: Luis Núñez Borda
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1872
+  death_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUIS NUÑEZ BORDA
+  - Luis Núñez Borda
+  - Luis Nuñez Borda
+  notes: '15 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: luis_queirolo_repetto
+  display_name: Luis Queirolo Repetto
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1862
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis QUEIROLO REPETTO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9025332'
+- artist_id: luis_quintas_goyanes
+  display_name: Luis Quintas Goyanes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Quintas Goyanes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769400'
+- artist_id: luis_ricardo_falero
+  display_name: Luis Ricardo Falero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1851
+  death_year: 1896
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Ricardo Falero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2744493'
+- artist_id: luis_rigalt_y_farriols
+  display_name: Luis Rigalt
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1814
+  death_year: 1894
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Rigalt y Farriols
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2913566'
+- artist_id: luis_roldan
+  display_name: Luis Roldán
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Roldán
+  notes: '6 lotes | casas: bogota_auctions'
+- artist_id: luis_saez_diez
+  display_name: Luis Sáez Díez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2010
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luis Sáez
+  - Luis Sáez Díez
+  - SAEZ, LUIS
+  notes: '10 lotes | casas: duran_subastas | Duran identifica al autor como SAEZ, LUIS (1925); Bañistas, La llegada
+    y Los musicos pertenecen al mismo conjunto de lotes. Luis Saez Diez nacio en Mazuelo de Muño, Burgos, en 1925
+    y fallecio en Burgos en 2010. El lot_year 1925 de 8 filas es el nacimiento filtrado desde la ficha del autor,
+    no la fecha de la obra. No confundir con Luis Saenz de la Calzada (1912-1994). Fuentes: https://museodeburgos.net/exposiciones/luis-saez/
+    ; https://museodeburgos.net/project/bellamente-aterrados-un-siglo-de-luis-saez-1925-2025/ ; https://www.duran-subastas.com/es/subasta-lote/luis-saez-la-llegada/592-254'
+- artist_id: luis_seoane
+  display_name: Luis Seoane
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1910
+  death_year: 1979
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Seoane
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3314977'
+- artist_id: luis_sevil
+  display_name: Luis Sevil
+  birth_year: 1817
+  death_year: 1893
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Luis Sevil
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q127038188'
+- artist_id: luis_taberner_y_montalvo
+  display_name: Luis Taberner Montalvo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1844
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luis Taberner y Montalvo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18713304'
+- artist_id: luis_tomasello
+  display_name: Luis Tomasello
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1915
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LUÍS TOMASELLO
+  - LUIS TOMASELLO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3266842'
+- artist_id: luisa_richter
+  display_name: Luisa Richter
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1928
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luisa Richter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15480217'
+- artist_id: luisson
+  display_name: Luisson
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1922
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luisson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q102273270'
+  death_status: living
+- artist_id: lupa
+  display_name: LUPA
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Lupa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q113467394'
+  death_status: living
+- artist_id: luz_angela_lizarazo
+  display_name: Luz Ángela Lizarazo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1966
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Luz Angela Lizarazo (Colombia, 1966)
+  - LUZ ANGELA LIZARAZO
+  - Luz Ángela Lizarazo
+  - Luz Angela Lizarazo
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: luz_de_alvear
+  display_name: Luz de Alvear
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Luz de Alvear
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q84089661'
+- artist_id: luz_helena_caballero
+  display_name: Luz Helena Caballero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LUZ HELENA CABALLERO
+  - Luz Helena Caballero
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: lydia_azout
+  display_name: Lydia Azout
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1942
+  death_status: unknown
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - LYDIA AZOUT
+  - Lydia Azout
+  notes: 'La ficha heredada de FINALL.xlsx (1913-2009) era incorrecta. Banrepcultural documenta a la escultora nacida
+    en Bogota en 1942; no se publica fecha de muerte y queda explicitamente desconocida. Fuente: https://enciclopedia.banrepcultural.org/index.php/Lydia_Azout'
+- artist_id: lydia_rubio
+  display_name: Lydia Rubio Ferrer
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - LYDIA RUBIO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6707679'
+  death_status: living

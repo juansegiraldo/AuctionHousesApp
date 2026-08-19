@@ -1,1457 +1,4238 @@
-# Maestro de artistas - shard "m"
-#
-# Entradas cuyo artist_id empieza por "m". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: manolo_millares
-    display_name: "Manolo Millares"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 1972
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manolo Millares"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: manolo_quejido
-    display_name: "Manolo Quejido"
-    country_birth: "ES"
-    birth_year: 1946
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manolo Quejido"
-      - "Manuel Quejido"
-      - "QUEJIDO, MANOLO"
-    notes: "43 lotes | casas: duran_subastas"
-
-  - artist_id: manolo_valdes
-    display_name: "Manolo Valdés"
-    country_birth: "ES"
-    birth_year: 1942
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manolo Valdés"
-    notes: "68 lotes | casas: duran_subastas"
-
-  - artist_id: manolo_vellojin
-    display_name: "Manolo Vellojín"
-    country_birth: "CO"
-    birth_year: 1942
-    death_year: 2013
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manolo Vellojín (Colombia, 1943 - 2013)"
-      - "Manolo Vellojín - Colombia, 1943 - 2013"
-      - "Manolo Vellojín (Colombia, 1943 -2013)"
-      - "Manolo Vellojin (Colombia, 1943 - 2013)"
-      - "Manolo Vellojín"
-      - "Vellojin, Manolo"
-    notes: "12 lotes | casas: bogota_auctions"
-
-  - artist_id: manu_campa
-    display_name: "Manu Campa"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Manu Campa"
-      - "CAMPA, MANU (1983)"
-    notes: "4 lotes | casas: duran_subastas | n. 1983, pintor madrilenio de arte automovilistico; vivo. El anio viene de la ficha de la propia casa (CAMPA, MANU (1983)), no de fuente independiente: no tiene Wikipedia ni Wikidata y su web y Artsy bloquean el fetch. De ahi confidence medium. Para un artista contemporaneo vivo el dato de la casa es aceptable; no lo seria para atribuir un pais."
-
-  - artist_id: manuel_alcorlo
-    display_name: "Manuel Alcorlo"
-    country_birth: "ES"
-    birth_year: 1935
-    death_year: 2026
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Alcorlo"
-      - "ALCORLO, MANUEL"
-    notes: "70 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_angeles_ortiz
-    display_name: "Manuel Ángeles Ortiz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1895
-    death_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Ángeles Ortiz"
-      - "ÁNGELES ORTIZ, MANUEL"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_de_gracia
-    display_name: "Manuel de Gracia"
-    country_birth: "ES"
-    birth_year: 1937
-    death_year: 2017
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel de Gracia Pintado"
-      - "Manuel de Gracia"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_garcia_y_rodriguez
-    display_name: "Manuel García y Rodríguez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1863
-    death_year: 1925
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel García y Rodríguez"
-    notes: "13 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_hernandez
-    display_name: "Manuel Hernández"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1928
-    death_year: 2014
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Hernández (Colombia, 1928 - 2014)"
-      - "Manuel Hernández - Colombia, 1928 - 2014."
-      - "Manuel Hernández"
-    notes: "26 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: manuel_hernandez_mompo
-    display_name: "Manuel Hernández Mompó"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1927
-    death_year: 1992
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Hernández Mompó"
-      - "MOMPÓ, MANUEL HERNÁNDEZ"
-    notes: "74 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_narvaez_patino
-    display_name: "Manuel Narváez Patiño"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1945
-    death_year: 2001
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Narváez Patiño"
-      - "NARVÁEZ PATIÑO, MANUEL"
-    notes: "77 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_ramos_artal
-    display_name: "Manuel Ramos Artal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1855
-    death_year: 1916
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Ramos Artal"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_rivera_hernandez
-    display_name: "Manuel Rivera Hernández"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1927
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Rivera Hernández"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_rodriguez_de_guzman
-    display_name: "Manuel Rodríguez de Guzmán"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1818
-    death_year: 1867
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Rodríguez de Guzmán"
-    notes: "8 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_salinas
-    display_name: "Manuel Salinas"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1940
-    death_year: 2021
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Salinas"
-    notes: "31 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_ventura_millan
-    display_name: "Manuel Ventura Millán"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1923
-    death_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Ventura Millán"
-    notes: "28 lotes | casas: duran_subastas"
-
-  - artist_id: manuel_viola
-    display_name: "Manuel Viola"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1919
-    death_year: 1987
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Viola y Sergio Castillo"
-      - "Manuel Viola"
-    notes: "85 lotes | casas: duran_subastas"
-
-  - artist_id: marco_ospina
-    display_name: "Marco Ospina"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1912
-    death_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marco Ospina"
-    notes: "6 lotes | casas: bogota_auctions"
-
-  - artist_id: maria_antonia_dans
-    display_name: "Maria Antonia Dans"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1932
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maria Antonia Dans"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: mariano_bertuchi_nieto
-    display_name: "Mariano Bertuchi Nieto"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1884
-    death_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIANO BERTUCHI NIETO Y CARLOS MOREU GISBERT"
-      - "Mariano Bertuchi Nieto"
-      - "BERTUCHI NIETO, MARIANO"
-      - "Mariano Bertuchi"
-    notes: "23 lotes individuales y 1 atribucion conjunta en Silver | casas: duran_subastas | Duran publica 1885, pero RABASF confirma Granada 1884-Tetuan 1955. Fuente: https://www.academiacolecciones.com/dibujos/mostrar-autores.php?id=bertuchi-nieto-mariano"
-
-  - artist_id: mariano_de_blas
-    display_name: "Mariano de Blas"
-    country_birth: "ES"
-    birth_year: 1958
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mariano de Blas"
-      - "DE BLAS, MARIANO"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: mariano_fortuny_marsal
-    display_name: "Mariano Fortuny Marsal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1838
-    death_year: 1874
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mariano Fortuny Marsal"
-      - "FORTUNY MARSAL, MARIANO"
-    notes: "14 lotes | casas: duran_subastas"
-
-  - artist_id: maripaz_jaramillo
-    display_name: "Maripaz Jaramillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1948
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maripaz Jaramillo"
-    notes: "18 lotes | casas: bogota_auctions"
-
-  - artist_id: marlene_hoffmann
-    display_name: "Marlene Hoffmann"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1934
-    death_year: 2014
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marlene Hoffmann"
-    notes: "7 lotes | casas: bogota_auctions | CORREGIDO: la ficha decia country_birth DE por el apellido aleman, y nacio en Barranquilla (CO) en 1934; murio en Cajica (CO) en 2014. Precursora del arte textil colombiano. Es el error tipico de deducir el pais del apellido. Fuentes: Wikipedia ES, AWARE Women Artists, MoMA."
-
-  - artist_id: martin_chirino
-    display_name: "Martín Chirino"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 2019
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Martín Chirino"
-    notes: "41 lotes | casas: duran_subastas"
-
-  - artist_id: martin_rico_y_ortega
-    display_name: "Martín Rico y Ortega"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1833
-    death_year: 1908
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Martín Rico y Ortega"
-    notes: "14 lotes | casas: duran_subastas"
-
-  - artist_id: max_penson
-    display_name: "Max Penson"
-    country_birth: "RU"
-    nationalities: ["RU"]
-    birth_year: 1893
-    death_year: 1959
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Max Penson"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: maximino_pena
-    display_name: "Maximino Peña"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1863
-    death_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maximino Peña"
-    notes: "29 lotes | casas: duran_subastas"
-
-  - artist_id: menchu_gal
-    display_name: "Menchu Gal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1919
-    death_year: 2008
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Menchu Gal"
-    notes: "19 lotes | casas: duran_subastas"
-
-  - artist_id: meriem_mezian
-    display_name: "Mériem Mézian"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1930
-    death_year: 2009
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mériem Mézian"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: miguel_angel_campano
-    display_name: "Miguel Ángel Campano"
-    country_birth: "ES"
-    birth_year: 1948
-    death_year: 2018
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Ángel Campano"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: miguel_angel_rojas
-    display_name: "Miguel Ángel Rojas"
-    country_birth: "CO"
-    birth_year: 1946
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Ángel Rojas - Colombia, 1946."
-      - "Miguel Ángel Rojas"
-    notes: "17 lotes | casas: bogota_auctions"
-
-  - artist_id: miguel_berrocal
-    display_name: "Miguel Berrocal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1933
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Berrocal"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: miler_lagos
-    display_name: "Miler Lagos"
-    country_birth: "CO"
-    birth_year: 1973
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miler Lagos"
-    notes: "4 lotes | casas: bogota_auctions"
-
-  - artist_id: miquel_barcelo
-    display_name: "Miquel Barceló"
-    country_birth: "ES"
-    birth_year: 1957
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miquel Barceló"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: mitsuo_miura
-    display_name: "Mitsuo Miura"
-    country_birth: "JP"
-    nationalities: ["ES", "JP"]
-    birth_year: 1946
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mitsuo Miura"
-    notes: "93 lotes | casas: duran_subastas | n. 1946 en Iwate (JP), reside en Espania desde 1966; vivo, sin death_year. No confundir con el homonimo Mitsuo Miura (1902-1956), director de fotografia japones: son dos personas. Fuentes: Wikipedia ES, Circulo de Bellas Artes."
-
-  - artist_id: modesto_cuixart
-    display_name: "Modesto Cuixart"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 2007
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Modesto Cuixart"
-    notes: "18 lotes | casas: duran_subastas"
-  - artist_id: manuel_larravide
-    display_name: "Manuel Larravide"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1831
-    death_year: 1910
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Larravide"
-      - "Manuel LARRAVIDE"
-    notes: "11 lotes | casas: zorrilla_subastas"
-
-  - artist_id: manuel_pailos
-    display_name: "Manuel Pailós"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1918
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Pailós"
-      - "Manuel PAILÓS"
-    notes: "16 lotes | casas: zorrilla_subastas"
-
-  - artist_id: maria_freire
-    display_name: "María Freire"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1917
-    death_year: 2005
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "María Freire"
-      - "María FREIRE"
-    notes: "6 lotes | casas: zorrilla_subastas"
-
-  - artist_id: miguel_de_vita
-    display_name: "Miguel De Vita"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1923
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel De Vita"
-      - "Miguel DE VITA"
-    notes: "15 lotes | casas: zorrilla_subastas"
-
-  - artist_id: manuel_estrada
-    display_name: "Manuel Estrada"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1929
-    death_year: 2012
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MANUEL ESTRADA"
-      - "Manuel Estrada"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: manuel_parra
-    display_name: "Manuel Parra"
-    country_birth: "MX"
-    nationalities: ["MX"]
-    birth_year: 1911
-    death_year: 1997
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Parra \"Espartaco\""
-      - "MANUEL PARRA"
-      - "Manuel Parra"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marcial_alegria
-    display_name: "Marcial Alegría"
-    country_birth: "CL"
-    nationalities: ["CL"]
-    birth_year: 1944
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARCIAL ALEGRIA"
-      - "Marcial Alegría"
-      - "Marcial  Alegría"
-    notes: "11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marco_tobon_mejia
-    display_name: "Marco Tobón Mejía"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1876
-    death_year: 1933
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARCO TOBON MEJIA"
-      - "Marco Tobón Mejía"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marco_tulio_salas_vega
-    display_name: "Marco Tulio Salas Vega"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1904
-    death_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARCO TULIO SALAS VEGA"
-      - "Marco Tulio Salas Vega"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marco_tulio_villalobos
-    display_name: "Marco Tulio Villalobos"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1910
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marco Tulio Villalobos - Colombia, 1910 -1990."
-      - "MARCO TULIO VILLALOBOS"
-      - "Marco Tulio Villalobos"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_cano
-    display_name: "Maria Cano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1887
-    death_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA CANO"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_clara_mantilla
-    display_name: "María Clara Mantilla"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA CLARA MANTILLA"
-      - "María Clara Mantilla"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_elvira_escallon
-    display_name: "Maria Elvira Escallón"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA ELVIRA ESCALLON"
-      - "Maria Elvira Escallón"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_fernanda_cardoso
-    display_name: "María Fernanda Cardoso"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA FERNANDA CARDOSO"
-      - "María Fernanda Cardoso"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_gordillo
-    display_name: "Maria Gordillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1959
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA GORDILLO"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_teresa_hincapie
-    display_name: "María teresa Hincapié"
-    country_birth: "CO"
-    death_year: 2008
-    nationalities: ["CO"]
-    birth_year: 1956
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maria Teresa Hincapié (Colombia, 1956 - 2008)"
-      - "MARIA TERESA HINCAPIE"
-      - "María teresa Hincapié"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_thereza_negreiros
-    display_name: "María Thereza Negreiros"
-    country_birth: "BR"
-    nationalities: ["BR"]
-    birth_year: 1930
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA THEREZA NEGREIROS"
-      - "María Thereza Negreiros"
-    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maria_villa
-    display_name: "María Villa"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1972
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIA VILLA"
-      - "María Villa"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mariana_varela
-    display_name: "Mariana Varela"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIANA VARELA"
-      - "Mariana Varela"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mariano_rodriguez
-    display_name: "Mariano Rodríguez"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1912
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARIANO RODRIGUEZ"
-      - "Mariano Rodríguez"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marina_abramovic
-    display_name: "Marina Abramović"
-    country_birth: "RS"
-    nationalities: ["RS"]
-    birth_year: 1946
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARINA ABRAMOVIC"
-      - "Marina Abramović"
-      - "Marina Abramovic"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: marta_elena_velez
-    display_name: "Marta Elena Vélez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MARTA ELENA VELEZ"
-      - "Marta Elena Vélez"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mateo_lopez
-    display_name: "Mateo López"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1978
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MATEO LOPEZ"
-      - "Mateo López"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mauricio_arango
-    display_name: "Mauricio Arango"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1935
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MAURICIO ARANGO"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mauricio_zequeda
-    display_name: "Mauricio Zequeda"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1979
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MAURICIO ZEQUEDA"
-      - "Mauricio Zequeda"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: maximo_florez
-    display_name: "Máximo Florez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1951
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Máximo Flórez López"
-      - "Maximo Flórez López"
-      - "MAXIMO FLOREZ"
-      - "Máximo Florez"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: miguel_sopo_duque
-    display_name: "Miguel Sopó Duque"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1918
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MIGUEL SOPO DUQUE"
-      - "Miguel Sopó Duque"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: milos_jonic
-    display_name: "Milos Jonic"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1982
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MILOS JONIC"
-      - "Milos Jonic"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mirta_cerra_herrera
-    display_name: "Mirta Cerra Herrera"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1904
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MIRTA CERRA HERRERA"
-      - "Mirta Cerra Herrera"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: mondhare
-    display_name: "Mondhare"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mondhare, Louis-Joseph"
-      - "MONDHARE"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: monica_meira
-    display_name: "Mónica Meira"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1973
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MONICA MEIRA"
-      - "Mónica Meira"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: myrna_baez
-    display_name: "Myrna Baez"
-    country_birth: "PR"
-    birth_year: 1931
-    death_year: 2018
-    nationalities: ["PR"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "MYRNA BAEZ"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja: 1905-1905"
-
-  - artist_id: manuel_baeza
-    display_name: "Manuel Baeza"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1911
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Baeza"
-    notes: "16 lotes en Silver | fuente: Askart; Invaluable | Alicante - CORRIGE el 1915 del dato de subasta"
-
-  - artist_id: manuel_calvo
-    display_name: "Manuel Calvo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1934
-    death_year: 2018
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Manuel Calvo"
-      - "MAnuel Calvo"
-    notes: "13 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: manuel_castro_gil
-    display_name: "Manuel Castro Gil"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1890
-    death_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Manuel Castro Gil"
-    notes: "12 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: manuel_gil_perez
-    display_name: "Manuel Gil Pérez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Gil Pérez"
-    notes: "16 lotes en Silver | fuente: MutualArt; Askart | Valencia; fundador Grupo Parpallo"
-
-  - artist_id: manuel_martos
-    display_name: "Manuel Martos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1950
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Manuel Martos"
-    notes: "17 lotes en Silver | fuente: Askart; MutualArt | Jaen"
-
-  - artist_id: manuel_mingorance_acien
-    display_name: "Manuel Mingorance Acien"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1937
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Manuel Mingorance Acien"
-      - "Manuel MIngorance Acien"
-    notes: "11 lotes en Silver | fuente: Artnet"
-
-  - artist_id: manuel_oyonarte
-    display_name: "Manuel Oyonarte"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1937
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Oyonarte"
-    notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
-
-  - artist_id: manuel_prego
-    display_name: "Manuel Prego"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1915
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Prego"
-    notes: "16 lotes en Silver | fuente: Askart; Artprice | Prego de Oliver, Ourense - CORRIGE el 1916"
-
-  - artist_id: manuel_rivera
-    display_name: "Manuel Rivera"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1927
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Rivera"
-    notes: "15 lotes en Silver | fuente: Wikipedia; Tate; Artnet | Born Granada; fundador del grupo El Paso"
-
-  - artist_id: manuel_valdes
-    display_name: "Manuel Valdés"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1942
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Valdés"
-    notes: "14 lotes en Silver | fuente: Wikipedia | Manolo Valdes, Valencia"
-
-  - artist_id: mariano_alonso_perez
-    display_name: "Mariano Alonso Pérez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1857
-    death_year: 1930
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mariano Alonso Pérez"
-    notes: "11 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: marta_cardenas
-    display_name: "Marta Cárdenas"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1944
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marta Cárdenas"
-    notes: "11 lotes en Silver | fuente: Wikipedia ES | San Sebastian"
-
-  - artist_id: martin_zerolo
-    display_name: "Martín Zerolo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1928
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Martín Zerolo"
-    notes: "12 lotes en Silver | fuente: Wikidata | Santa Cruz de Tenerife"
-
-  - artist_id: martinez_vazquez
-    display_name: "Martínez Vázquez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1886
-    death_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Martínez Vázquez"
-      - "Martinez Vazquez"
-    notes: "14 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: miguel_torner_de_semir
-    display_name: "Miguel Torner de Semir"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Torner de Semir"
-    notes: "16 lotes en Silver | fuente: MutualArt; Artsper | Girona"
-
-  - artist_id: miquel_navarro
-    display_name: "Miquel Navarro"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1945
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miquel Navarro"
-      - "NAVARRO, MIQUEL"
-    notes: "15 lotes en Silver | nacido en Mislata, Valencia, en 1945. Fuente: https://www.guggenheim-bilbao.eus/la-coleccion/artistas/miquel-navarro"
-
-  - artist_id: modest_cuixart
-    display_name: "Modest Cuixart"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 2007
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Modest Cuixart"
-    notes: "14 lotes en Silver | fuente: Wikipedia | Barcelona"
-
-  - artist_id: modesto_roldan
-    display_name: "Modesto Roldán"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 2014
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Modesto Roldán"
-    notes: "15 lotes en Silver | fuente: Askart; Artprice; Gaudifond Arte | Born Nerva, Huelva; died Madrid"
-
-  - artist_id: modesto_urgell
-    display_name: "Modesto Urgell"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1839
-    death_year: 1919
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Modesto Urgell"
-    notes: "14 lotes en Silver | fuente: Wikipedia | Barcelona"
-
-  - artist_id: mohammed_sabry
-    display_name: "Mohammed Sabry"
-    country_birth: "EG"
-    birth_year: 1917
-    death_year: 2018
-    nationalities: ["EG"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Mohammed Sabry"
-    notes: "11 lotes en Silver | fuente: Artnet | pintor egipcio"
-
-  - artist_id: marola
-    display_name: "Marola"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1905
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marola"
-      - "MArola"
-    notes: "15 lotes en Silver | fuente: Wikidata Q9029326 | seudonimo de Manuel Rodriguez Lana, nacido en Gijon"
-
-  - artist_id: monir_shahroudy_farmanfarmaian
-    display_name: "Monir"
-    country_birth: "IR"
-    nationalities: ["IR"]
-    birth_year: 1922
-    death_year: 2019
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Monir"
-    notes: "25 lotes en Silver | fuente: Wikipedia EN | Monir Shahroudy Farmanfarmaian, nacida en Qazvin; grabados abstractos, coherente con los lotes"
-
-  - artist_id: miguel_zelada_jurado
-    display_name: "Miguel Zelada Jurado"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1942
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Zelada"
-    notes: "Pintor gallego nacido en A Coruña. Especializarse en paisajes portuarios con composiciones complejas, ritmos de líneas y coloraciones en azules, rosas y plateados."
-
-  - artist_id: manuel_fernandez_luque
-    display_name: "Manuel Fernández Luque"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1919
-    death_year: 2005
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Fernández Luque"
-    notes: "Pintor español nacido en Sevilla, fallecido en Valencia. Expresionismo español con técnica moderna. Exposiciones en NY, Chicago, París, Madrid, Valencia."
-
-  - artist_id: manuel_facal
-    display_name: "Manuel Facal"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1943
-    death_year: 2024
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Facal Ponte"
-      - "MAnuel Facal"
-    notes: "Artista gallego multidisciplinario. Nacido 20 julio 1943 Carballo, Coruña, fallecido 6 abril 2024. Pintor, grabador, escultor. Integrante Grupo Atlántica años 80. Presidió Fundación Manuel Facal 2022-2024."
-
-  - artist_id: mon_montoya
-    display_name: "Mon Montoya"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mon Montoya"
-    notes: "Pintor español contemporáneo. Nacido 1947 Mérida, Badajoz. Reside en Palazuelos de Eresma, Segovia desde 1975. Expresionismo sígnico. Representó España en Bienal Sao Paulo 1977 y París 1980."
-
-  - artist_id: miguel_vaquer
-    display_name: "Miguel Vaquer"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1910
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Miguel Vaquer"
-    notes: "Pintor español nacido en Ondara, Valencia. Estudió en Madrid, viajó a París con 20 años donde permaneció 5 años y realizó retratos de personajes notables. Ganó Gold Medal en Salon des Tuileries 1958."
-
-  - artist_id: marcel_duchamp
-    display_name: "Marcel Duchamp"
-    country_birth: "FR"
-    nationalities: ["FR", "US"]
-    birth_year: 1887
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marcel Duchamp"
-    notes: "French-born, became American citizen. Major figure in Dada and conceptual art movements."
-
-  - artist_id: max_ernst
-    display_name: "Max Ernst"
-    country_birth: "DE"
-    nationalities: ["DE", "FR"]
-    birth_year: 1891
-    death_year: 1976
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Max Ernst"
-    notes: "German-born (Brühl), settled in France. Leading Surrealist and Dada artist."
-
-  - artist_id: marten_van_valckenborch
-    display_name: "Marten van Valckenborch"
-    country_birth: "BE"
-    nationalities: ["BE"]
-    birth_year: 1535
-    death_year: 1612
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Martin van Valckenborch"
-    notes: "2 lotes (1 vendido en 60.000 EUR) | casas: duran_subastas | fuente: Wikipedia. Nacido en Lovaina, entonces Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik y Gillis); un 'van Valckenborch' sin nombre de pila NO debe resolverse aqui."
-
-  - artist_id: markus_lupertz
-    display_name: "Markus Lüpertz"
-    country_birth: "CZ"
-    nationalities: ["DE", "CZ"]
-    birth_year: 1941
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Markus Lüpertz"
-    notes: "1 lote | casas: duran_subastas | artista aleman nacido en Reichenberg, hoy Liberec (Chequia), en 1941. La nacionalidad de mercado va primero; country_birth usa el pais moderno del lugar de nacimiento. Fuente: https://zkm.de/en/persons/markus-lupertz"
-
-  - artist_id: manuel_losada
-    display_name: "Manuel Losada"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1865
-    death_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Losada"
-    notes: "8 lotes | casas: duran_subastas | Manuel Losada Perez de Nenin, nacido y fallecido en Bilbao, 1865-1949; fechas coincidentes con Silver. Fuente: https://bilbaomuseoa.eus/explora/artista/manuel-losada-perez-de-nenin/9e396d4a-23b7-4a09-8386-3afb0f595d80"
-
-  - artist_id: marcelo_pogolotti
-    display_name: "Marcelo Pogolotti"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1902
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marcelo Pogolotti"
-    notes: "2 lotes | casas: duran_subastas | nacido y fallecido en La Habana, 1902-1988; fechas coincidentes con Silver. El listado oficial de prestamo identifica las obras del Museo Nacional de Bellas Artes de La Habana. Fuente: https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2007F/48450.pdf"
-
-  - artist_id: maruja_mallo
-    display_name: "Maruja Mallo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1902
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maruja Mallo"
-    notes: "3 lotes | casas: duran_subastas | nacida en Viveiro, Lugo, en 1902 y fallecida en Madrid en 1995. No confundir con Cristino Mallo. Fuente: https://www.museoreinasofia.es/prensa/nota-de-prensa/maruja-mallo-mascara-y-compas-redescubre-en-el-reina-sofia-una-de-las-figuras/"
-
-  - artist_id: manuel_benedito_vives
-    display_name: "Manuel Benedito Vives"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1875
-    death_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Benedito Vives"
-      - "Manuel Benedito"
-      - "BENEDITO VIVES, MANUEL"
-    notes: "12 lotes | casas: duran_subastas | nacido en Valencia en 1875 y fallecido en Madrid en 1963. No confundir con Jose Meseguer Benedito. Fuente: https://www.museodelprado.es/coleccion/artista/benedito-vives-manuel/c7796335-1300-4209-b3e0-2354f51fa09f"
-
-  - artist_id: maurice_utrillo
-    display_name: "Maurice Utrillo"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1883
-    death_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Maurice Utrillo"
-    notes: "2 lotes | casas: duran_subastas | nacido en Paris en 1883 y fallecido en Dax en 1955; fechas coincidentes con Silver. Fuente: https://www.centrepompidou.fr/fr/ressources/personne/cgBg7M"
-
-  - artist_id: manuel_barbadillo
-    display_name: "Manuel Barbadillo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Manuel Barbadillo"
-    notes: "6 lotes | casas: duran_subastas | nacido en Cazalla de la Sierra, Sevilla, en 1929 y fallecido en Malaga en 2003. Fuente: https://www.museoreinasofia.es/en/collections/artist/barbadillo-manuel/"
-
-  - artist_id: mimmo_rotella
-    display_name: "Mimmo Rotella"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1918
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Mimmo Rotella"
-      - "ROTELLA, MIMMO"
-    notes: "10 lotes | casas: duran_subastas | Domenico 'Mimmo' Rotella, nacido en Catanzaro en 1918 y fallecido en Milan en 2006. Las obras de decollage de Silver coinciden con su produccion documentada. Fuentes: https://contemporaneo.quirinale.it/opera/profili ; https://fondazionemimmorotella.net/en/biography/"
-
-  - artist_id: marceliano_santa_maria
-    display_name: "Marceliano Santa María"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1866
-    death_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Marceliano Santa María"
-      - "Marceliano Santa Maria"
-    notes: "9 lotes | casas: duran_subastas | nombre institucional completo Marceliano Santa María Sedano; nacido en Burgos en 1866 y fallecido en Madrid en 1952; Silver coincide. No atribuir las dos filas Escuela Española S que solo dicen Posible obra de Marceliano Santamaría. Fuente: https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/marceliano-santa-maria-sedano-804.html"
+- artist_id: mabel_palacin_lahoz
+  display_name: Mabel Palacín Lahoz
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mabel Palacin Lahoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17034879'
+- artist_id: madeleine_de_la_giraudiere
+  display_name: Mady La Giraudière
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1922
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Madeleine de la Giraudiere
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3276273'
+- artist_id: magali_lara
+  display_name: Magali Lara
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Magali Lara
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26001043'
+  death_status: living
+- artist_id: malte_sartorius
+  display_name: Malte Sartorius
+  country_birth: RU
+  nationalities:
+  - RU
+  birth_year: 1933
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Malte Sartorius
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21014973'
+- artist_id: mamerto_segui_arecharala
+  display_name: Mamerto Segui Arecharala
+  birth_year: 1862
+  death_year: 1908
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mamerto Seguí Arecharala
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110176216'
+- artist_id: manel_lledos
+  display_name: Manel Lledós
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manel LLedós
+  - Manel Lledos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55949307'
+  death_status: living
+- artist_id: manolo_hugue
+  display_name: Manuel Hugué
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1872
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manolo Hugué
+  - MAnolo Hugué
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1385979'
+- artist_id: manolo_millares
+  display_name: Manolo Millares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 1972
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manolo Millares
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: manolo_prieto
+  display_name: Manolo Prieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manolo Prieto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5991704'
+- artist_id: manolo_quejido
+  display_name: Manolo Quejido
+  country_birth: ES
+  birth_year: 1946
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manolo Quejido
+  - Manuel Quejido
+  - QUEJIDO, MANOLO
+  notes: '43 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: manolo_valdes
+  display_name: Manolo Valdés
+  country_birth: ES
+  birth_year: 1942
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manolo Valdés
+  notes: '68 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: manolo_vellojin
+  display_name: Manolo Vellojín
+  country_birth: CO
+  birth_year: 1942
+  death_year: 2013
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manolo Vellojín (Colombia, 1943 - 2013)
+  - Manolo Vellojín - Colombia, 1943 - 2013
+  - Manolo Vellojín (Colombia, 1943 -2013)
+  - Manolo Vellojin (Colombia, 1943 - 2013)
+  - Manolo Vellojín
+  - Vellojin, Manolo
+  notes: '12 lotes | casas: bogota_auctions'
+- artist_id: manu_campa
+  display_name: Manu Campa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Manu Campa
+  - CAMPA, MANU (1983)
+  notes: '4 lotes | casas: duran_subastas | n. 1983, pintor madrilenio de arte automovilistico; vivo. El anio viene
+    de la ficha de la propia casa (CAMPA, MANU (1983)), no de fuente independiente: no tiene Wikipedia ni Wikidata
+    y su web y Artsy bloquean el fetch. De ahi confidence medium. Para un artista contemporaneo vivo el dato de
+    la casa es aceptable; no lo seria para atribuir un pais.'
+- artist_id: manu_muniategiandikoetxea
+  display_name: Manu Muniategiandikoetxea
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manu Muniategiandikoetxea
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12262963'
+- artist_id: manuel_abelenda
+  display_name: Manuel Abelenda Zapata
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Abelenda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20532861'
+- artist_id: manuel_alcorlo
+  display_name: Manuel Alcorlo
+  country_birth: ES
+  birth_year: 1935
+  death_year: 2026
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Alcorlo
+  - ALCORLO, MANUEL
+  notes: '70 lotes | casas: duran_subastas'
+- artist_id: manuel_amell_y_jorda
+  display_name: Manuel Amell y Jorda
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Amell y Jordá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59926048'
+- artist_id: manuel_angeles_ortiz
+  display_name: Manuel Ángeles Ortiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1895
+  death_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Ángeles Ortiz
+  - ÁNGELES ORTIZ, MANUEL
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: manuel_avellaneda
+  display_name: Manuel Avellaneda Gómez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1938
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Avellaneda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5992321'
+- artist_id: manuel_ayllon
+  display_name: Manuel Ayllón
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Ayllón
+  - MAnuel Ayllón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52637385'
+  death_status: living
+- artist_id: manuel_baeza
+  display_name: Manuel Baeza
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Baeza
+  notes: '16 lotes en Silver | fuente: Askart; Invaluable | Alicante - CORRIGE el 1915 del dato de subasta'
+- artist_id: manuel_barbadillo
+  display_name: Manuel Barbadillo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Barbadillo
+  notes: '6 lotes | casas: duran_subastas | nacido en Cazalla de la Sierra, Sevilla, en 1929 y fallecido en Malaga
+    en 2003. Fuente: https://www.museoreinasofia.es/en/collections/artist/barbadillo-manuel/'
+- artist_id: manuel_barron
+  display_name: Manuel Barrón y Carrillo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1814
+  death_year: 1884
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Barrón
+  - Manuel Barron
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9027621'
+- artist_id: manuel_bea
+  display_name: Manel Bea
+  birth_year: 1934
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Bea
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55999186'
+- artist_id: manuel_benedito_vives
+  display_name: Manuel Benedito Vives
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Benedito Vives
+  - Manuel Benedito
+  - BENEDITO VIVES, MANUEL
+  notes: '12 lotes | casas: duran_subastas | nacido en Valencia en 1875 y fallecido en Madrid en 1963. No confundir
+    con Jose Meseguer Benedito. Fuente: https://www.museodelprado.es/coleccion/artista/benedito-vives-manuel/c7796335-1300-4209-b3e0-2354f51fa09f'
+- artist_id: manuel_boix
+  display_name: Manuel Boix Álvarez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Boix
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3286763'
+- artist_id: manuel_bouzo
+  display_name: Manuel Bouzo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Bouzo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55988917'
+  death_status: living
+- artist_id: manuel_cabral_aguado_y_bejarano
+  display_name: Manuel Cabral Aguado-Bejarano
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1891
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Cabral Aguado y Bejarano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9027667'
+- artist_id: manuel_calvo
+  display_name: Manuel Calvo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 2018
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Manuel Calvo
+  - MAnuel Calvo
+  notes: '13 lotes en Silver | fuente: Wikidata'
+- artist_id: manuel_capdevila
+  display_name: Manuel Capdevila
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1910
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel CApdevila
+  - Manuel Capdevila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9027691'
+- artist_id: manuel_castano
+  display_name: Manuel Castaño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Castaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5406224'
+- artist_id: manuel_castro_mellado
+  display_name: Manuel Castro Mellado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1944
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Castro Mellado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98097853'
+- artist_id: manuel_cusi_y_ferret
+  display_name: Manuel Cusí i Ferret
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1919
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Cusí y Ferret
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11934944'
+- artist_id: manuel_de_gracia
+  display_name: Manuel de Gracia
+  country_birth: ES
+  birth_year: 1937
+  death_year: 2017
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel de Gracia Pintado
+  - Manuel de Gracia
+  notes: '22 lotes | casas: duran_subastas'
+- artist_id: manuel_de_la_rosa
+  display_name: Manuel de la Rosa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel de la Rosa
+  - Manuel de la rosa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42178193'
+- artist_id: manuel_estrada
+  display_name: Manuel Estrada
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1929
+  death_year: 2012
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MANUEL ESTRADA
+  - Manuel Estrada
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: manuel_facal
+  display_name: Manuel Facal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  death_year: 2024
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Facal Ponte
+  - MAnuel Facal
+  notes: Artista gallego multidisciplinario. Nacido 20 julio 1943 Carballo, Coruña, fallecido 6 abril 2024. Pintor,
+    grabador, escultor. Integrante Grupo Atlántica años 80. Presidió Fundación Manuel Facal 2022-2024.
+- artist_id: manuel_fernandez_carpio
+  display_name: Manuel Fernández Carpio
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1853
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Fernandez Carpio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q60036084'
+- artist_id: manuel_fernandez_luque
+  display_name: Manuel Fernández Luque
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 2005
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Fernández Luque
+  notes: Pintor español nacido en Sevilla, fallecido en Valencia. Expresionismo español con técnica moderna. Exposiciones
+    en NY, Chicago, París, Madrid, Valencia.
+- artist_id: manuel_fernandez_sanahuja
+  display_name: Manuel Fernández Sanahuja
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1835
+  death_year: 1884
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Fernandez Sanahuja
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55837419'
+- artist_id: manuel_garcia_linares
+  display_name: Manuel García Linares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel García Linares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17399003'
+  death_status: living
+- artist_id: manuel_garcia_y_rodriguez
+  display_name: Manuel García y Rodríguez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1925
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel García y Rodríguez
+  notes: '13 lotes | casas: duran_subastas'
+- artist_id: manuel_gil_perez
+  display_name: Manuel Gil Pérez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Gil Pérez
+  notes: '16 lotes en Silver | fuente: MutualArt; Askart | Valencia; fundador Grupo Parpallo'
+- artist_id: manuel_gonzalez_santana
+  display_name: Manuel González Santana
+  birth_year: 1904
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel González Santana
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q94687915'
+- artist_id: manuel_gonzalez_santos
+  display_name: Manuel González Santos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel González Santos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5993172'
+- artist_id: manuel_h
+  display_name: Manuel H
+  birth_year: 1920
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel H
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q16598407'
+- artist_id: manuel_hernandez
+  display_name: Manuel Hernández
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1928
+  death_year: 2014
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Hernández (Colombia, 1928 - 2014)
+  - Manuel Hernández - Colombia, 1928 - 2014.
+  - Manuel Hernández
+  notes: '26 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: manuel_hernandez_mompo
+  display_name: Manuel Hernández Mompó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 1992
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Hernández Mompó
+  - MOMPÓ, MANUEL HERNÁNDEZ
+  notes: '74 lotes | casas: duran_subastas'
+- artist_id: manuel_jimenez_prieto
+  display_name: Manuel Jiménez Prieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1846
+  death_year: 1904
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Jiménez Prieto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21544015'
+- artist_id: manuel_lahoz_valle
+  display_name: Manuel Lahoz Valle
+  country_birth: null
+  nationalities: []
+  birth_year: 1910
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Lahoz Valle
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55991537'
+- artist_id: manuel_larravide
+  display_name: Manuel Larravide
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1831
+  death_year: 1910
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Larravide
+  - Manuel LARRAVIDE
+  notes: '11 lotes | casas: zorrilla_subastas'
+- artist_id: manuel_leon_astruc
+  display_name: Manuel León Astruc
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Leon Astruc
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96757297'
+- artist_id: manuel_lopez_garabal
+  display_name: Manuel López Garabal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1981
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel López Garabal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769649'
+- artist_id: manuel_lopez_villasenor
+  display_name: Manuel López-Villaseñor y López-Cano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel López Villaseñor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5993533'
+- artist_id: manuel_losada
+  display_name: Manuel Losada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1865
+  death_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Losada
+  notes: '8 lotes | casas: duran_subastas | Manuel Losada Perez de Nenin, nacido y fallecido en Bilbao, 1865-1949;
+    fechas coincidentes con Silver. Fuente: https://bilbaomuseoa.eus/explora/artista/manuel-losada-perez-de-nenin/9e396d4a-23b7-4a09-8386-3afb0f595d80'
+- artist_id: manuel_mampaso
+  display_name: Manuel Mampaso Bueno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Mampaso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15102650'
+- artist_id: manuel_martos
+  display_name: Manuel Martos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Manuel Martos
+  notes: '17 lotes en Silver | fuente: Askart; MutualArt | Jaen'
+- artist_id: manuel_mendive
+  display_name: Manuel Mendive
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Mendive
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5993755'
+  death_status: living
+- artist_id: manuel_mingorance_acien
+  display_name: Manuel Mingorance Acien
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Manuel Mingorance Acien
+  - Manuel MIngorance Acien
+  notes: '11 lotes en Silver | fuente: Artnet'
+- artist_id: manuel_monedero
+  display_name: Manuel Monedero
+  country_birth: null
+  nationalities: []
+  birth_year: 1925
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Monedero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5993812'
+- artist_id: manuel_moral_mozas
+  display_name: Manuel Moral Mozas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Moral Mozas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5993846'
+- artist_id: manuel_munoz_barberan
+  display_name: Manuel Muñoz Barberán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Muñoz Barberán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9027984'
+- artist_id: manuel_munoz_diaz
+  display_name: Manuel Muñoz Díaz
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Muñoz Diaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q100140032'
+- artist_id: manuel_narvaez_patino
+  display_name: Manuel Narváez Patiño
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1945
+  death_year: 2001
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Narváez Patiño
+  - NARVÁEZ PATIÑO, MANUEL
+  notes: '77 lotes | casas: duran_subastas'
+- artist_id: manuel_osuna
+  display_name: Manuel Osuna
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Osuna
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q100249627'
+- artist_id: manuel_oyonarte
+  display_name: Manuel Oyonarte
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Oyonarte
+  notes: '12 lotes en Silver | fuente: Wikipedia ES | Madrid'
+- artist_id: manuel_padorno
+  display_name: Manuel Padorno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1933
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Padorno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5681184'
+- artist_id: manuel_pailos
+  display_name: Manuel Pailós
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1918
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Pailós
+  - Manuel PAILÓS
+  notes: '16 lotes | casas: zorrilla_subastas'
+- artist_id: manuel_parra
+  display_name: Manuel Parra
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1911
+  death_year: 1997
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Parra "Espartaco"
+  - MANUEL PARRA
+  - Manuel Parra
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: manuel_picolo_y_lopez
+  display_name: Manuel Picolo López
+  country_birth: null
+  nationalities: []
+  birth_year: 1855
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Picolo y López
+  - Manuel Pícolo y López
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q20027929'
+- artist_id: manuel_poy_dalmau
+  display_name: Manuel Poy Dalmau
+  birth_year: 1874
+  death_year: 1909
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MANUEL POY DALMAU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q20671933'
+- artist_id: manuel_prego
+  display_name: Manuel Prego
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1915
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Prego
+  notes: '16 lotes en Silver | fuente: Askart; Artprice | Prego de Oliver, Ourense - CORRIGE el 1916'
+- artist_id: manuel_quintana_martelo
+  display_name: Manuel Quintana Martelo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Quintana Martelo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5994126'
+- artist_id: manuel_raba
+  display_name: Manuel Gómez Raba
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Raba
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47775616'
+- artist_id: manuel_ramirez_ibanez
+  display_name: Manuel Ramírez Ibáñez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1856
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Ramírez Ibáñez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52218785'
+- artist_id: manuel_ramos_artal
+  display_name: Manuel Ramos Artal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1855
+  death_year: 1916
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Ramos Artal
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: manuel_rivera
+  display_name: Manuel Rivera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Rivera
+  - Manuel Rivera Hernández
+  notes: '15 lotes en Silver | fuente: Wikipedia; Tate; Artnet | Born Granada; fundador del grupo El Paso. Ficha
+    ''manuel_rivera_hernandez'' consolidada aqui el 2026-08-18: misma persona (mismas fechas), partida en dos entradas
+    por variantes del nombre.'
+- artist_id: manuel_rodriguez_de_guzman
+  display_name: Manuel Rodríguez de Guzmán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1818
+  death_year: 1867
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Rodríguez de Guzmán
+  notes: '8 lotes | casas: duran_subastas'
+- artist_id: manuel_rose
+  display_name: Manuel Rosé
+  country_birth: UY
+  nationalities:
+  - UY
+  death_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MANUEL ROSÉ
+  - Manuel Rosé
+  - Manuel ROSÉ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16860267'
+- artist_id: manuel_ruiz_morales
+  display_name: Manuel Bernardino Ruiz Sánchez Morales
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1922
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Ruiz Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43134395'
+- artist_id: manuel_sagnier_vidal
+  display_name: Manuel Sagnier Vidal-Ribas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1891
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Sagnier Vidal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19301002'
+- artist_id: manuel_salces
+  display_name: Manuel Salces Gutiérrez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Salces
+  - Manuel Salcés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5994302'
+- artist_id: manuel_salinas
+  display_name: Manuel Salinas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  death_year: 2021
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Salinas
+  notes: '31 lotes | casas: duran_subastas'
+- artist_id: manuel_salvador_carmona
+  display_name: Manuel Salvador Carmona
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1734
+  death_year: 1820
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Salvador Carmona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3820874'
+- artist_id: manuel_santiago_morato
+  display_name: Manuel Santiago Morato
+  country_birth: null
+  nationalities: []
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Santiago Morato
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55999247'
+  death_status: living
+- artist_id: manuel_valdes
+  display_name: Manuel Valdés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Valdés
+  notes: '14 lotes en Silver | fuente: Wikipedia | Manolo Valdes, Valencia'
+- artist_id: manuel_ventura_millan
+  display_name: Manuel Ventura Millán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Ventura Millán
+  notes: '28 lotes | casas: duran_subastas'
+- artist_id: manuel_villegas_brieva
+  display_name: Manuel Villegas Brieva
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Villegas Brieva
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11935025'
+- artist_id: manuel_viola
+  display_name: Manuel Viola
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 1987
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Manuel Viola y Sergio Castillo
+  - Manuel Viola
+  notes: '85 lotes | casas: duran_subastas'
+- artist_id: manuel_wssel_de_guimbarda
+  display_name: Manuel Ussel de Guimbarda
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1833
+  death_year: 1907
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Wssel de Guimbarda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5994501'
+- artist_id: manuela_trasobares
+  display_name: Manuela Trasobares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuela Trasobares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2469656'
+- artist_id: marc_chagall
+  display_name: Marc Chagall
+  country_birth: BY
+  nationalities:
+  - BY
+  birth_year: 1887
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARC CHAGALL
+  - Marc Chagall
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q93284'
+- artist_id: marc_de_gastyne
+  display_name: Marco de Gastyne
+  country_birth: FR
+  nationalities:
+  - FR
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marc de Gastyne
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q677644'
+- artist_id: marc_pessin
+  display_name: Marc Pessin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1933
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marc Pessin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q101063232'
+- artist_id: marcel_blairat
+  display_name: Marcel Blairat
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marcel Blairat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q125526447'
+- artist_id: marcel_duchamp
+  display_name: Marcel Duchamp
+  country_birth: FR
+  nationalities:
+  - FR
+  - US
+  birth_year: 1887
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marcel Duchamp
+  notes: French-born, became American citizen. Major figure in Dada and conceptual art movements.
+- artist_id: marcel_floris
+  display_name: Marcel Floris
+  country_birth: null
+  nationalities: []
+  birth_year: 1914
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marcel Floris
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q105090179'
+- artist_id: marcel_gromaire
+  display_name: Marcel Gromaire
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1892
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marcel Gromaire
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q690155'
+- artist_id: marceliano_santa_maria
+  display_name: Marceliano Santa María
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1866
+  death_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marceliano Santa María
+  - Marceliano Santa Maria
+  notes: '9 lotes | casas: duran_subastas | nombre institucional completo Marceliano Santa María Sedano; nacido
+    en Burgos en 1866 y fallecido en Madrid en 1952; Silver coincide. No atribuir las dos filas Escuela Española
+    S que solo dicen Posible obra de Marceliano Santamaría. Fuente: https://coleccion.bde.es/wca/en/secciones/coleccion/artistas/marceliano-santa-maria-sedano-804.html'
+- artist_id: marcelina_poncela
+  display_name: Marcelina Poncela
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1917
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marcelina Poncela
+  - Marcelina Poncela Hontoria
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5995573'
+- artist_id: marcelino_de_unceta
+  display_name: Marcelino de Unceta
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1835
+  death_year: 1905
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marcelino de Unceta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3573047'
+- artist_id: marcelo_bonevardi
+  display_name: Marcelo Bonevardi
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1929
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARCELO BONEVARDI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6756509'
+- artist_id: marcelo_pogolotti
+  display_name: Marcelo Pogolotti
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1902
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marcelo Pogolotti
+  notes: '2 lotes | casas: duran_subastas | nacido y fallecido en La Habana, 1902-1988; fechas coincidentes con
+    Silver. El listado oficial de prestamo identifica las obras del Museo Nacional de Bellas Artes de La Habana.
+    Fuente: https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2007F/48450.pdf'
+- artist_id: marcial_alegria
+  display_name: Marcial Alegría
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1944
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARCIAL ALEGRIA
+  - Marcial Alegría
+  - Marcial  Alegría
+  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: marco_ospina
+  display_name: Marco Ospina
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1912
+  death_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marco Ospina
+  notes: '6 lotes | casas: bogota_auctions'
+- artist_id: marco_tobon_mejia
+  display_name: Marco Tobón Mejía
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1876
+  death_year: 1933
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARCO TOBON MEJIA
+  - Marco Tobón Mejía
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: marco_tulio_salas_vega
+  display_name: Marco Tulio Salas Vega
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1904
+  death_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARCO TULIO SALAS VEGA
+  - Marco Tulio Salas Vega
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: marco_tulio_villalobos
+  display_name: Marco Tulio Villalobos
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1910
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marco Tulio Villalobos - Colombia, 1910 -1990.
+  - MARCO TULIO VILLALOBOS
+  - Marco Tulio Villalobos
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: margarita_monsalve
+  display_name: Margarita María Monsalve Pino
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MARGARITA MONSALVE
+  - Margarita Monsalve
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q112510256'
+  death_status: living
+- artist_id: margherita_caffi
+  display_name: Margarita Caffi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1648
+  death_year: 1710
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Margherita Caffi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1074555'
+- artist_id: mari_puri_herrero
+  display_name: Mari Puri Herrero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mari Puri Herrero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9028841'
+  death_status: living
+- artist_id: maria_angeles_de_armas
+  display_name: María Ángeles de Armas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1938
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Ángeles de Armas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6005041'
+- artist_id: maria_antonia_dans
+  display_name: Maria Antonia Dans
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maria Antonia Dans
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: maria_antonia_sanchez_escalona
+  display_name: M. Antonia Sánchez Escalona
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maria Antonia Sánchez Escalona
+  - María Antonia Sánchez Escalona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110984007'
+  death_status: living
+- artist_id: maria_assumpcio_raventos_i_torras
+  display_name: María Asunción Raventós
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - María Assumpció Raventós I Torrás
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q977309'
+- artist_id: maria_blanchard
+  display_name: María Blanchard
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1881
+  death_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Blanchard
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q443779'
+- artist_id: maria_cano
+  display_name: Maria Cano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1887
+  death_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA CANO
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_carbonero
+  display_name: María Carbonero Barceló
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Carbonero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94411958'
+- artist_id: maria_carrera_pascual
+  display_name: María Carrera Pascual
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Carrera Pascual
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6003492'
+  death_status: living
+- artist_id: maria_cecilia_martin_iglesias
+  display_name: María Cecilia Martín Iglesias
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1920
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Cecilia Martín Iglesias
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24707768'
+- artist_id: maria_clara_mantilla
+  display_name: María Clara Mantilla
+  country_birth: CO
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA CLARA MANTILLA
+  - María Clara Mantilla
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_cristina_cortes
+  display_name: Maria Cristina Cortes
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARIA CRISTINA CORTES
+  - Maria Cristina Cortés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q127690277'
+  death_status: living
+- artist_id: maria_elisa_leboroni
+  display_name: Maria Elisa Leboroni
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Elisa Leboroni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q132856643'
+- artist_id: maria_elvira_escallon
+  display_name: Maria Elvira Escallón
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA ELVIRA ESCALLON
+  - Maria Elvira Escallón
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: maria_fernanda_cardoso
+  display_name: María Fernanda Cardoso
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA FERNANDA CARDOSO
+  - María Fernanda Cardoso
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: maria_fernanda_cuartas
+  display_name: María Fernanda Cuartas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARIA FERNANDA CUARTAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5654947'
+  death_status: living
+- artist_id: maria_freire
+  display_name: María Freire
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1917
+  death_year: 2005
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - María Freire
+  - María FREIRE
+  notes: '6 lotes | casas: zorrilla_subastas'
+- artist_id: maria_girona
+  display_name: Maria Girona i Benet
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Girona
+  - Maria Girona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11690955'
+- artist_id: maria_gordillo
+  display_name: Maria Gordillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1959
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA GORDILLO
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_luisa_de_la_riva_munoz
+  display_name: María Luisa de la Riva y Callol-Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Maria Luisa de la Riva Muñoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23571930'
+- artist_id: maria_luisa_perez_herrero
+  display_name: María Luisa Pérez Herrero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1898
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maria Luisa Pérez Herrero
+  - María Luisa Pérez Herrero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q46235717'
+- artist_id: maria_mira_montoyo
+  display_name: Maria Mira Montoyo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1916
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Mira Montoyo
+  - Maria Mira Montoyo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96593693'
+- artist_id: maria_revenga
+  display_name: María Revenga
+  country_birth: null
+  nationalities: []
+  birth_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Maria Revenga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q101092473'
+- artist_id: maria_rius_zunon
+  display_name: María Rius Zunon
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - María Ríus Zunón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99862313'
+- artist_id: maria_teresa_cano
+  display_name: María Teresa Cano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARIA TERESA CANO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42583492'
+- artist_id: maria_teresa_hincapie
+  display_name: María teresa Hincapié
+  country_birth: CO
+  death_year: 2008
+  nationalities:
+  - CO
+  birth_year: 1956
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maria Teresa Hincapié (Colombia, 1956 - 2008)
+  - MARIA TERESA HINCAPIE
+  - María teresa Hincapié
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_thereza_negreiros
+  display_name: María Thereza Negreiros
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1930
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA THEREZA NEGREIROS
+  - María Thereza Negreiros
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_villa
+  display_name: María Villa
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1972
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIA VILLA
+  - María Villa
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mariana_lopez_cancio
+  display_name: Mariana Lopez Cancio
+  birth_year: 1909
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mariana López Cancio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98833837'
+- artist_id: mariana_varela
+  display_name: Mariana Varela
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIANA VARELA
+  - Mariana Varela
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: marianne_heske
+  display_name: Marianne Heske
+  country_birth: 'NO'
+  nationalities:
+  - 'NO'
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marianne Heske
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3211506'
+  death_status: living
+- artist_id: mariano_alonso_perez
+  display_name: Mariano Alonso Pérez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1930
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mariano Alonso Pérez
+  notes: '11 lotes en Silver | fuente: Wikidata'
+- artist_id: mariano_barbasan_lagueruela
+  display_name: Mariano Barbasán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1864
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Barbasán Lagueruela
+  - Mariano BARBASÁN LAGUERUELA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9028952'
+- artist_id: mariano_benlliure
+  display_name: Mariano Benlliure
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Benlliure
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2402329'
+- artist_id: mariano_bertuchi_nieto
+  display_name: Mariano Bertuchi Nieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1884
+  death_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIANO BERTUCHI NIETO Y CARLOS MOREU GISBERT
+  - Mariano Bertuchi Nieto
+  - BERTUCHI NIETO, MARIANO
+  - Mariano Bertuchi
+  notes: '23 lotes individuales y 1 atribucion conjunta en Silver | casas: duran_subastas | Duran publica 1885,
+    pero RABASF confirma Granada 1884-Tetuan 1955. Fuente: https://www.academiacolecciones.com/dibujos/mostrar-autores.php?id=bertuchi-nieto-mariano'
+- artist_id: mariano_de_blas
+  display_name: Mariano de Blas
+  country_birth: ES
+  birth_year: 1958
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mariano de Blas
+  - DE BLAS, MARIANO
+  notes: '23 lotes | casas: duran_subastas'
+- artist_id: mariano_de_corral_y_libano
+  display_name: Mariano de Corral
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano de Corral y Líbano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12263074'
+- artist_id: mariano_de_la_roca_y_delgado
+  display_name: Mariano de la Roca y Delgado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1825
+  death_year: 1872
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano de la Roca y Delgado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23761684'
+- artist_id: mariano_felez
+  display_name: Mariano Félez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1883
+  death_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Felez
+  - Mariano Félez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59201784'
+- artist_id: mariano_fernandez_copello
+  display_name: Mariano Fernández Copello
+  birth_year: 1865
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mariano Fernández Copello
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60036519'
+- artist_id: mariano_fortuny_marsal
+  display_name: Mariano Fortuny Marsal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1838
+  death_year: 1874
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mariano Fortuny Marsal
+  - FORTUNY MARSAL, MARIANO
+  - Mariano Fortuny y Marsal
+  - Mariano Fortuny
+  notes: '14 lotes | casas: duran_subastas. Ficha ''mariano_fortuny_y_marsal'' consolidada aqui el 2026-08-18: misma
+    persona (mismas fechas), partida en dos entradas por variantes del nombre.'
+- artist_id: mariano_izquierdo_vivas
+  display_name: Mariano Izquierdo y Vivas
+  country_birth: null
+  nationalities: []
+  birth_year: 1893
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mariano Izquierdo Vivas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55769779'
+- artist_id: mariano_nani
+  display_name: Mariano Nani
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1725
+  death_year: 1804
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Nani
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15724650'
+- artist_id: mariano_obiols_delgado
+  display_name: Mariano Obiols Delgado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Obiols Delgado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55716721'
+- artist_id: mariano_oliver_aznar
+  display_name: Mariano Oliver Aznar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Oliver Aznar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26935240'
+- artist_id: mariano_pidelaserra_brias
+  display_name: Marià Pidelaserra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1877
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Pidelaserra Brías
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9029249'
+- artist_id: mariano_rodriguez
+  display_name: Mariano Rodríguez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1912
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARIANO RODRIGUEZ
+  - Mariano Rodríguez
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mariano_tito_vazquez
+  display_name: Mariano Tito Vázquez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1870
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariano Tito Vázquez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12392936'
+- artist_id: mariano_villalta
+  display_name: Mariano Villalta
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mariano Villalta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110056296'
+- artist_id: marie_elisabeth_boulanger
+  display_name: Marie-Elisabeth Boulanger
+  country_birth: FR
+  nationalities:
+  - FR
+  death_year: 1883
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marie Elisabeth Boulanger
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3275249'
+- artist_id: mariette_lydis
+  display_name: Mariette Lydis
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1887
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mariette LYDIS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3293034'
+- artist_id: marina_abramovic
+  display_name: Marina Abramović
+  country_birth: RS
+  nationalities:
+  - RS
+  birth_year: 1946
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARINA ABRAMOVIC
+  - Marina Abramović
+  - Marina Abramovic
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: mario_algaze
+  display_name: Mario Algaze
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1947
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARIO ALGAZE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6764520'
+- artist_id: mario_ballocco
+  display_name: Mario Ballocco
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1913
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario Ballocco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16576252'
+- artist_id: mario_bedini
+  display_name: Mario Bedini
+  birth_year: 1936
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mario Bedini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131417668'
+- artist_id: mario_borgoni
+  display_name: Mario Borgoni
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1869
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario Borgoni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13178568'
+- artist_id: mario_dario_grandi
+  display_name: Mario Darío Grandi
+  birth_year: 1918
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mario Darío GRANDI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2842674'
+- artist_id: mario_giacoya
+  display_name: Mario Giacoya
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario GIACOYA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28015818'
+- artist_id: mario_martin_del_campo
+  display_name: Mario Martín del Campo
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario Martín del Campo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22808149'
+- artist_id: mario_merz
+  display_name: Mario Merz
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1925
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario Merz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q698877'
+- artist_id: mario_mollari
+  display_name: Mario Miguel Mollari
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1930
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mario Mollari
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1898919'
+- artist_id: mario_murua
+  display_name: Mario Murúa
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MARIO MURUA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134311078'
+- artist_id: mario_opazo
+  display_name: Mario Opazo
+  birth_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MARIO OPAZO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6764849'
+- artist_id: maripaz_jaramillo
+  display_name: Maripaz Jaramillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1948
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maripaz Jaramillo
+  notes: '18 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: maripi_morales
+  display_name: Maripi Morales
+  birth_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Marípi Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55687808'
+- artist_id: marisa_roesset
+  display_name: Marisa Roesset Velasco
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marisa Röesset
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q45174504'
+- artist_id: mark_kostabi
+  display_name: Mark Kostabi
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mark Kostabi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q724401'
+- artist_id: markus_lupertz
+  display_name: Markus Lüpertz
+  country_birth: CZ
+  nationalities:
+  - DE
+  - CZ
+  birth_year: 1941
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Markus Lüpertz
+  notes: '1 lote | casas: duran_subastas | artista aleman nacido en Reichenberg, hoy Liberec (Chequia), en 1941.
+    La nacionalidad de mercado va primero; country_birth usa el pais moderno del lugar de nacimiento. Fuente: https://zkm.de/en/persons/markus-lupertz'
+  death_status: living
+- artist_id: marlene_hoffmann
+  display_name: Marlene Hoffmann
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1934
+  death_year: 2014
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marlene Hoffmann
+  notes: '7 lotes | casas: bogota_auctions | CORREGIDO: la ficha decia country_birth DE por el apellido aleman,
+    y nacio en Barranquilla (CO) en 1934; murio en Cajica (CO) en 2014. Precursora del arte textil colombiano. Es
+    el error tipico de deducir el pais del apellido. Fuentes: Wikipedia ES, AWARE Women Artists, MoMA.'
+- artist_id: marola
+  display_name: Marola
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1905
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marola
+  - MArola
+  notes: '15 lotes en Silver | fuente: Wikidata Q9029326 | seudonimo de Manuel Rodriguez Lana, nacido en Gijon'
+- artist_id: maroussia_valero
+  display_name: Maroussia Valero
+  birth_year: 1885
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Maroussia Valero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q68089005'
+- artist_id: marta_cardenas
+  display_name: Marta Cárdenas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1944
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Marta Cárdenas
+  notes: '11 lotes en Silver | fuente: Wikipedia ES | San Sebastian'
+  death_status: living
+- artist_id: marta_elena_velez
+  display_name: Marta Elena Vélez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MARTA ELENA VELEZ
+  - Marta Elena Vélez
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: marten_de_vos
+  display_name: Marten de Vos
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1532
+  death_year: 1603
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Marten de Vos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q555022'
+- artist_id: marten_van_valckenborch
+  display_name: Marten van Valckenborch
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1535
+  death_year: 1612
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Martin van Valckenborch
+  notes: '2 lotes (1 vendido en 60.000 EUR) | casas: duran_subastas | fuente: Wikipedia. Nacido en Lovaina, entonces
+    Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras
+    huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik
+    y Gillis); un ''van Valckenborch'' sin nombre de pila NO debe resolverse aqui.'
+- artist_id: martin_chambi_jimenez
+  display_name: Martín Chambi
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1891
+  death_year: 1973
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Martín Chambí Jiménez
+  - Martín Chambí
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q288159'
+- artist_id: martin_chirino
+  display_name: Martín Chirino
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2019
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Martín Chirino
+  notes: '41 lotes | casas: duran_subastas'
+- artist_id: martin_rico_ortega
+  display_name: Martín Rico
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1833
+  death_year: 1908
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Martín Rico Ortega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q427999'
+- artist_id: martin_rico_y_ortega
+  display_name: Martín Rico y Ortega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1833
+  death_year: 1908
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Martín Rico y Ortega
+  notes: '14 lotes | casas: duran_subastas'
+- artist_id: martin_ruiz_anglada
+  display_name: Ruizanglada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Martín Ruiz Anglada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16626870'
+- artist_id: martin_saez
+  display_name: Martín Sáez
+  birth_year: 1923
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Martín Sáez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q56000113'
+- artist_id: martin_zerolo
+  display_name: Martín Zerolo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Martín Zerolo
+  notes: '12 lotes en Silver | fuente: Wikidata | Santa Cruz de Tenerife'
+- artist_id: maruja_mallo
+  display_name: Maruja Mallo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1902
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maruja Mallo
+  notes: '3 lotes | casas: duran_subastas | nacida en Viveiro, Lugo, en 1902 y fallecida en Madrid en 1995. No confundir
+    con Cristino Mallo. Fuente: https://www.museoreinasofia.es/prensa/nota-de-prensa/maruja-mallo-mascara-y-compas-redescubre-en-el-reina-sofia-una-de-las-figuras/'
+- artist_id: mary_farl_powers
+  display_name: Mary Farl Powers
+  country_birth: null
+  nationalities: []
+  birth_year: 1948
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mary Farl Powers
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q52157517'
+- artist_id: mary_weatherford
+  display_name: Mary Weatherford
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mary Weatherford
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21290812'
+  death_status: living
+- artist_id: maryan_ribas
+  display_name: Maryan Ribas
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Maryan Ribas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q71296342'
+- artist_id: mateo_balasch_mateu
+  display_name: Mateo Balasch
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1872
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mateo Balasch Mateu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23574620'
+- artist_id: mateo_lopez
+  display_name: Mateo López
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1978
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MATEO LOPEZ
+  - Mateo López
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mateo_manaure
+  display_name: Mateus Manaure
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1926
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mateo Manaure
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6005916'
+- artist_id: mateo_mate
+  display_name: Mateo Maté
+  country_birth: null
+  nationalities: []
+  birth_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mateo Maté
+  - Mateo Mate
+  - MAteo Maté
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q17582627'
+  death_status: living
+- artist_id: mateo_orozco
+  display_name: Mateo Orozco
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mateo Orozco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q17621990'
+- artist_id: mateo_perez_correa
+  display_name: Mateo Pérez Correa
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MATEO PEREZ CORREA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q141051506'
+- artist_id: mateo_vilagrasa
+  display_name: Mateo Vilagrasa
+  country_birth: null
+  nationalities: []
+  birth_year: 1944
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mateo Vilagrasa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19594451'
+- artist_id: mateu_bauza
+  display_name: Mateu Bauzà
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mateu Bauzá
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q118829551'
+- artist_id: mathias_withoos
+  display_name: Matthias Withoos
+  birth_year: 1627
+  death_year: 1703
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mathias Withoos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1983347'
+  country_birth: NL
+  nationalities:
+  - NL
+- artist_id: mathys_schoevaerdts
+  display_name: Mathys Schoevaerdts
+  country_birth: BE
+  nationalities:
+  - BE
+  death_year: 1703
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mathys Schoevaerdts
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3852287'
+- artist_id: matias_alvarez_ajuria
+  display_name: Matías Álvarez Ajuria
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1914
+  death_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Matías Álvarez Ajuria
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98823831'
+- artist_id: matias_lavina_blasco
+  display_name: Matías Laviña Blasco
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1868
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Matías Laviña Blasco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20950093'
+- artist_id: matias_palau_ferre
+  display_name: Matías Palau Ferré
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Matías Palau Ferré
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2784998'
+- artist_id: matias_quetglas
+  display_name: Matias Quetglas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Matías Quetglas
+  - Matias Quetglas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6006138'
+  death_status: living
+- artist_id: maud_earl
+  display_name: Maud Earl
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1864
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maud Earl
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6792218'
+- artist_id: maurice_de_vlaminck
+  display_name: 모리스 드 블라맹크
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1876
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurice DE VLAMINCK
+  - MAURICE DE VLAMINCK
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q241098'
+- artist_id: maurice_esteve
+  display_name: Maurice Estève
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1904
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurice Esteve
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q471318'
+- artist_id: maurice_louis_savin
+  display_name: Maurice Savin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1894
+  death_year: 1973
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurice-Louis Savin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q281157'
+- artist_id: maurice_romberg_de_vaucorbeil
+  display_name: Maurice Romberg
+  country_birth: BE
+  nationalities:
+  - BE
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MAURICE ROMBERG DE VAUCORBEIL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28841867'
+- artist_id: maurice_sys
+  display_name: Maurice Sys
+  birth_year: 1880
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Maurice Sys
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21646757'
+- artist_id: maurice_taquoy
+  display_name: Maurice Taquoy
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1878
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurice Taquoy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q37945913'
+- artist_id: maurice_utrillo
+  display_name: Maurice Utrillo
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1883
+  death_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maurice Utrillo
+  notes: '2 lotes | casas: duran_subastas | nacido en Paris en 1883 y fallecido en Dax en 1955; fechas coincidentes
+    con Silver. Fuente: https://www.centrepompidou.fr/fr/ressources/personne/cgBg7M'
+- artist_id: maurici_vallsquer
+  display_name: Maurici Valls Quer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurici Vallsquer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11936248'
+- artist_id: mauricio_arango
+  display_name: Mauricio Arango
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1935
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MAURICIO ARANGO
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mauricio_zequeda
+  display_name: Mauricio Zequeda
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1979
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MAURICIO ZEQUEDA
+  - Mauricio Zequeda
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maurizio_cattelan
+  display_name: Maurizio Cattelan
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurizio Cattelan
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q655398'
+- artist_id: maurizio_corona
+  display_name: Mauro Corona
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurizio Corona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q469083'
+  death_status: living
+- artist_id: maurizio_lanzillotta
+  display_name: Maurizio Lanzillotta
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maurizio Lanzillotta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18819136'
+- artist_id: mauro_leivas
+  display_name: Mauro Leivas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mauro Leivas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q135451027'
+- artist_id: mauro_piva
+  display_name: Mauro Piva
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mauro Piva
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43135328'
+- artist_id: max_bill
+  display_name: Max Bill
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1908
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Max Bill
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123454'
+- artist_id: max_ernst
+  display_name: Max Ernst
+  country_birth: DE
+  nationalities:
+  - DE
+  - FR
+  birth_year: 1891
+  death_year: 1976
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Max Ernst
+  notes: German-born (Brühl), settled in France. Leading Surrealist and Dada artist.
+- artist_id: max_papart
+  display_name: Max Papart
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1911
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Max Papart
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3302254'
+- artist_id: max_penson
+  display_name: Max Penson
+  country_birth: RU
+  nationalities:
+  - RU
+  birth_year: 1893
+  death_year: 1959
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Max Penson
+  notes: '22 lotes | casas: duran_subastas'
+- artist_id: maxime_dastugue
+  display_name: Maxime Dastugue
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1851
+  death_year: 1909
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Maxime Dastugue
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q38145115'
+- artist_id: maximino_pena
+  display_name: Maximino Peña
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Maximino Peña
+  notes: '29 lotes | casas: duran_subastas'
+- artist_id: maximo_florez
+  display_name: Máximo Florez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1951
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Máximo Flórez López
+  - Maximo Flórez López
+  - MAXIMO FLOREZ
+  - Máximo Florez
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maximo_juderias_caballero
+  display_name: Máximo Juderías Caballero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1867
+  death_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Máximo Juderías Caballero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9048112'
+- artist_id: medicina
+  display_name: Francesco Ghelli
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1637
+  death_year: 1703
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - '[Medicina]'
+  - Medicina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52154084'
+- artist_id: melchor_aracil_gallego
+  display_name: Melchor Aracil Gallego
+  country_birth: null
+  nationalities: []
+  birth_year: 1906
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Melchor Aracil Gallego
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q136324421'
+- artist_id: melchor_mendez_magarinos
+  display_name: Melchor Méndez Magariños
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1885
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MELCHOR MÉNDEZ MAGARIÑOS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3391282'
+- artist_id: menchu_gal
+  display_name: Menchu Gal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 2008
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Menchu Gal
+  notes: '19 lotes | casas: duran_subastas'
+- artist_id: menchu_lamas
+  display_name: Menchu Lamas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Menchu Lamas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594453'
+  death_status: living
+- artist_id: mercedes_gomez_pablos
+  display_name: Mercedes Gómez-Pablos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mercedes Gómez-Pablos
+  - Mercedes Gómez Pablos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30904712'
+  death_status: living
+- artist_id: mercedes_marti
+  display_name: Mercedes Marti
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mercedes Martí
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q100876723'
+- artist_id: meriem_mezian
+  display_name: Mériem Mézian
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 2009
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mériem Mézian
+  notes: '23 lotes | casas: duran_subastas'
+- artist_id: merle_spandorfer
+  display_name: Merle Spandorfer
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Merle Spandorfer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55219804'
+  death_status: living
+- artist_id: meyer_de_schauensee_r
+  display_name: Rodolphe Meyer de Schauensee
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1901
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Meyer de Schauensee, R.
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q434472'
+- artist_id: michael_heizer
+  display_name: Michael Heizer
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Michael Heizer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q558432'
+- artist_id: michael_swaney
+  display_name: Michael Swaney
+  country_birth: CA
+  nationalities:
+  - CA
+  birth_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Michael Swaney
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133578642'
+  death_status: living
+- artist_id: michel_hunter
+  display_name: Michel Hunter
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1873
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Michel Hunter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q100324773'
+- artist_id: michel_moreno
+  display_name: Michel Moreno
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Michel Moreno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43134401'
+- artist_id: michel_seuphor
+  display_name: Michel Seuphor
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1901
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Michel Seuphor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q548860'
+- artist_id: michel_sturla
+  display_name: Michel Sturla
+  birth_year: 1895
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Michel Sturla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q136205110'
+- artist_id: michelangelo_conte
+  display_name: Michelangelo Conte
+  country_birth: null
+  nationalities: []
+  birth_year: 1913
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Michelangelo Conte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q94654574'
+- artist_id: michelle_stuart
+  display_name: Michelle Stuart
+  country_birth: US
+  nationalities:
+  - US
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Michelle Stuart
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6837258'
+- artist_id: michiel_jansz_van_mierevelt
+  display_name: Michiel Jansz. van Mierevelt
+  country_birth: NL
+  nationalities:
+  - NL
+  death_year: 1641
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Michiel Jansz van Mierevelt
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q864092'
+- artist_id: miguel_acquaroni
+  display_name: Miguel Acquaroni
+  birth_year: 1925
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Acquaroni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98822972'
+- artist_id: miguel_angel_alonso_tur
+  display_name: Miguel Ángel Alonso Tur
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Ángel Alonso Tur
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q23979100'
+  death_status: living
+- artist_id: miguel_angel_battegazzore
+  display_name: Miguel Ángel Battegazzore
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1931
+  death_year: 2024
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MIGUEL ÁNGEL BATTEGAZZORE
+  - MIGUEL BATTEGAZZORE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42387139'
+- artist_id: miguel_angel_bedate
+  display_name: Miguel Ángel Bedate
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Ángel Bedate
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55949302'
+  death_status: living
+- artist_id: miguel_angel_campano
+  display_name: Miguel Ángel Campano
+  country_birth: ES
+  birth_year: 1948
+  death_year: 2018
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Ángel Campano
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: miguel_angel_echauri
+  display_name: Miguel Ángel Echauri
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 2024
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Ángel Echauri
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42386811'
+- artist_id: miguel_angel_lombardia
+  display_name: Miguel Ángel Lombardía
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Ángel Lombardía
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q53840741'
+- artist_id: miguel_angel_pareja
+  display_name: Miguel Ángel Pareja
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1908
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Ángel PAREJA
+  - MIGUEL ÁNGEL PAREJA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30335823'
+- artist_id: miguel_angel_rojas
+  display_name: Miguel Ángel Rojas
+  country_birth: CO
+  birth_year: 1946
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Ángel Rojas - Colombia, 1946.
+  - Miguel Ángel Rojas
+  notes: '17 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: miguel_berrocal
+  display_name: Miguel Berrocal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1933
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Berrocal
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: miguel_brayda
+  display_name: Miguel Brayda
+  country_birth: null
+  nationalities: []
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Brayda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55688275'
+  death_status: living
+- artist_id: miguel_de_la_espriella
+  display_name: Miguel de la Espriella
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1947
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MIGUEL DE LA ESPRIELLA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6844871'
+- artist_id: miguel_de_vita
+  display_name: Miguel De Vita
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1923
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel De Vita
+  - Miguel DE VITA
+  notes: '15 lotes | casas: zorrilla_subastas'
+- artist_id: miguel_diaz_vargas
+  display_name: Miguel Díaz Vargas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1886
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - MIGUEL DIAZ VARGAS
+  - MIGUEL DÍAZ VARGAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6014236'
+- artist_id: miguel_eguiluz_anchia
+  display_name: Miguel Eguiluz Anchía
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Eguiluz Anchia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9032708'
+- artist_id: miguel_galanda
+  display_name: Miguel Galanda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Galanda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20005955'
+  death_status: living
+- artist_id: miguel_galano
+  display_name: Miguel Galano
+  country_birth: null
+  nationalities: []
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Galano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55990703'
+  death_status: living
+- artist_id: miguel_garcia_vivancos
+  display_name: Miguel García Vivancos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1895
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel García Vivancos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2895420'
+- artist_id: miguel_gila
+  display_name: Miguel Gila
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Gila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q751323'
+- artist_id: miguel_mihura
+  display_name: Miguel Mihura
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1905
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Mihura
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q239249'
+- artist_id: miguel_ocampo
+  display_name: Miguel Ocampo
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1922
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Ocampo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6014849'
+- artist_id: miguel_oriola
+  display_name: Miguel Oriola
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1943
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Oriola
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q58005233'
+- artist_id: miguel_ourvantzoff
+  display_name: Miguel Ourvantzoff
+  country_birth: null
+  nationalities: []
+  birth_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Ourvantzoff
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60596718'
+- artist_id: miguel_pradilla
+  display_name: Miguel Pradilla
+  country_birth: null
+  nationalities: []
+  birth_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Pradilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97604148'
+- artist_id: miguel_rasero
+  display_name: Miguel Rasero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Rasero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20101192'
+- artist_id: miguel_reche
+  display_name: Miguel Reche
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Reche
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q137313580'
+- artist_id: miguel_rodriguez_acosta
+  display_name: Miguel Rodríguez-Acosta
+  birth_year: 1927
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Rodríguez Acosta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q56000924'
+- artist_id: miguel_segui_riera
+  display_name: Miguel Seguí
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1858
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Seguí Riera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23576142'
+- artist_id: miguel_sopo_duque
+  display_name: Miguel Sopó Duque
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1918
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MIGUEL SOPO DUQUE
+  - Miguel Sopó Duque
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: miguel_torner_de_semir
+  display_name: Miguel Torner de Semir
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Torner de Semir
+  notes: '16 lotes en Silver | fuente: MutualArt; Artsper | Girona'
+- artist_id: miguel_vaquer
+  display_name: Miguel Vaquer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1910
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Vaquer
+  notes: Pintor español nacido en Ondara, Valencia. Estudió en Madrid, viajó a París con 20 años donde permaneció
+    5 años y realizó retratos de personajes notables. Ganó Gold Medal en Salon des Tuileries 1958.
+- artist_id: miguel_vico_y_hernandez
+  display_name: Miguel Vico Hernández
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1850
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Vico y Hernández
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q58021988'
+- artist_id: miguel_viladrich_vila
+  display_name: Miquel Viladrich Vila
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Viladrich Vila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9033525'
+- artist_id: miguel_villa
+  display_name: Miquel Villa Bassols
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miguel Villá
+  - Miquel Villa Bassols
+  - Miquel Villá Bassols
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5844892'
+- artist_id: miguel_zelada_jurado
+  display_name: Miguel Zelada Jurado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miguel Zelada
+  notes: Pintor gallego nacido en A Coruña. Especializarse en paisajes portuarios con composiciones complejas, ritmos
+    de líneas y coloraciones en azules, rosas y plateados.
+  death_status: living
+- artist_id: miki_leal
+  display_name: Miki Leal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miki Leal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47493986'
+- artist_id: miklos_mihalovits
+  display_name: Miklós Mihalovits
+  birth_year: 1888
+  death_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miklos Mihalovits
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q130134724'
+- artist_id: mil_lubroth
+  display_name: Mil Lubroth
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1926
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mil Lubroth
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21544363'
+- artist_id: mila_santonja
+  display_name: Mila Santonja
+  birth_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Mila Santonja
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q94687921'
+  death_status: living
+- artist_id: milena_bonilla
+  display_name: Milena Bonilla
+  birth_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Milena Bonilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q125820784'
+- artist_id: miler_lagos
+  display_name: Miler Lagos
+  country_birth: CO
+  birth_year: 1973
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miler Lagos
+  notes: '4 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: milo_lockett
+  display_name: Milo Lockett
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Milo LOCKETT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q36640983'
+  death_status: living
+- artist_id: milos_jonic
+  display_name: Milos Jonic
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1982
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MILOS JONIC
+  - Milos Jonic
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mimmo_rotella
+  display_name: Mimmo Rotella
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1918
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mimmo Rotella
+  - ROTELLA, MIMMO
+  notes: '10 lotes | casas: duran_subastas | Domenico ''Mimmo'' Rotella, nacido en Catanzaro en 1918 y fallecido
+    en Milan en 2006. Las obras de decollage de Silver coinciden con su produccion documentada. Fuentes: https://contemporaneo.quirinale.it/opera/profili
+    ; https://fondazionemimmorotella.net/en/biography/'
+- artist_id: minnie_smythe
+  display_name: Minnie Smythe
+  country_birth: null
+  nationalities: []
+  birth_year: 1872
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Minnie Smythe
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19394267'
+- artist_id: miquel_barcelo
+  display_name: Miquel Barceló
+  country_birth: ES
+  birth_year: 1957
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miquel Barceló
+  notes: '23 lotes | casas: duran_subastas'
+- artist_id: miquel_carbonell
+  display_name: Miquel Carbonell
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miquel Carbonell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q55999453'
+- artist_id: miquel_llabres_grimalt
+  display_name: Miquel Llabrés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miquel Llabres Grimalt
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q89325756'
+- artist_id: miquel_moragas_i_ricart
+  display_name: Miguel Moragas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1842
+  death_year: 1916
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Miquel Moragas I Ricart
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22675976'
+- artist_id: miquel_navarro
+  display_name: Miquel Navarro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1945
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Miquel Navarro
+  - NAVARRO, MIQUEL
+  notes: '15 lotes en Silver | nacido en Mislata, Valencia, en 1945. Fuente: https://www.guggenheim-bilbao.eus/la-coleccion/artistas/miquel-navarro'
+- artist_id: mirta_cerra_herrera
+  display_name: Mirta Cerra Herrera
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1904
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MIRTA CERRA HERRERA
+  - Mirta Cerra Herrera
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mitsuo_miura
+  display_name: Mitsuo Miura
+  country_birth: JP
+  nationalities:
+  - ES
+  - JP
+  birth_year: 1946
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mitsuo Miura
+  notes: '93 lotes | casas: duran_subastas | n. 1946 en Iwate (JP), reside en Espania desde 1966; vivo, sin death_year.
+    No confundir con el homonimo Mitsuo Miura (1902-1956), director de fotografia japones: son dos personas. Fuentes:
+    Wikipedia ES, Circulo de Bellas Artes.'
+- artist_id: modest_cuixart
+  display_name: Modest Cuixart
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2007
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Modest Cuixart
+  notes: '14 lotes en Silver | fuente: Wikipedia | Barcelona'
+- artist_id: modesto_cuixart
+  display_name: Modesto Cuixart
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2007
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Modesto Cuixart
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: modesto_delgado_rodas
+  display_name: Modesto Delgado Rodas
+  country_birth: PY
+  nationalities:
+  - PY
+  birth_year: 1886
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Modesto DELGADO RODAS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6889219'
+- artist_id: modesto_roldan
+  display_name: Modesto Roldán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2014
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Modesto Roldán
+  notes: '15 lotes en Silver | fuente: Askart; Artprice; Gaudifond Arte | Born Nerva, Huelva; died Madrid'
+- artist_id: modesto_urgell
+  display_name: Modesto Urgell
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1839
+  death_year: 1919
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Modesto Urgell
+  notes: '14 lotes en Silver | fuente: Wikipedia | Barcelona'
+- artist_id: mohamed_hamri
+  display_name: Mohamed Hamri
+  country_birth: MA
+  nationalities:
+  - MA
+  birth_year: 1932
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mohamed Hamri
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16014885'
+- artist_id: mohammed_sabry
+  display_name: Mohammed Sabry
+  country_birth: EG
+  birth_year: 1917
+  death_year: 2018
+  nationalities:
+  - EG
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Mohammed Sabry
+  notes: '11 lotes en Silver | fuente: Artnet | pintor egipcio'
+- artist_id: moises_colomo
+  display_name: Moisés Colomo
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Moisés Colomo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55688531'
+- artist_id: mon_montoya
+  display_name: Mon Montoya
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mon Montoya
+  notes: Pintor español contemporáneo. Nacido 1947 Mérida, Badajoz. Reside en Palazuelos de Eresma, Segovia desde
+    1975. Expresionismo sígnico. Representó España en Bienal Sao Paulo 1977 y París 1980.
+  death_status: living
+- artist_id: moncho_borrajo
+  display_name: Moncho Borrajo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Moncho Borrajo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9034527'
+  death_status: living
+- artist_id: mondhare
+  display_name: Mondhare
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Mondhare, Louis-Joseph
+  - MONDHARE
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: monica_meira
+  display_name: Mónica Meira
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1973
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MONICA MEIRA
+  - Mónica Meira
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: monica_rosello
+  display_name: Mònica Roselló Menasanch
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mónica Roselló
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q112128288'
+- artist_id: monique_de_roux
+  display_name: Monique de Roux
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Monique de Roux
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18637038'
+  death_status: living
+- artist_id: monique_lancelot
+  display_name: Monique Lancelot
+  country_birth: null
+  nationalities: []
+  birth_year: 1923
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Monique Lancelot
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110211829'
+- artist_id: monique_tello
+  display_name: Monique Tello
+  birth_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Monique Tello
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q3320932'
+  death_status: living
+- artist_id: monir_shahroudy_farmanfarmaian
+  display_name: Monir
+  country_birth: IR
+  nationalities:
+  - IR
+  birth_year: 1922
+  death_year: 2019
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Monir
+  notes: '25 lotes en Silver | fuente: Wikipedia EN | Monir Shahroudy Farmanfarmaian, nacida en Qazvin; grabados
+    abstractos, coherente con los lotes'
+- artist_id: montserrat_gomez_osuna
+  display_name: Montserrat Gómez Osuna
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Montserrat Gómez-Osuna
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96756764'
+- artist_id: montserrat_gudiol
+  display_name: Montserrat Gudiol
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1933
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Montserrat Gudiol
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9034903'
+- artist_id: montserrat_soto
+  display_name: Montserrat Soto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Montserrat Soto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19301297'
+  death_status: living
+- artist_id: montxo_algora
+  display_name: Montxo Algora
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Montxo Algora
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139044971'
+  death_status: living
+- artist_id: muriel_angulo
+  display_name: Muriel Ángulo
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Muriel Angulo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q140181273'
+- artist_id: myrna_baez
+  display_name: Myrna Baez
+  country_birth: PR
+  birth_year: 1931
+  death_year: 2018
+  nationalities:
+  - PR
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - MYRNA BAEZ
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja:
+    1905-1905'

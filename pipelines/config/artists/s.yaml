@@ -1,468 +1,1295 @@
-# Maestro de artistas - shard "s"
-#
-# Entradas cuyo artist_id empieza por "s". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: salvador_dali
-    display_name: "Salvador Dalí"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Salvador Dalí y Domenech"
-      - "Salvador Dalí Domenech"
-      - "Salvador Dalí"
-    notes: "53 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: salvador_victoria
-    display_name: "Salvador Victoria"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1929
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Salvador Victoria"
-    notes: "19 lotes | casas: duran_subastas"
-
-  - artist_id: salvo
-    display_name: "Salvo"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1947
-    death_year: 2015
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Salvo"
-      # Nombre civil + seudonimo en la misma cadena: es la forma con la que
-      # Duran lista sus 2 lotes de mas valor, y no comparte fold con "Salvo".
-      - "Salvatore Mangione (Salvo)"
-    notes: "4 lotes | casas: duran_subastas"
-
-  - artist_id: santiago_cardenas
-    display_name: "Santiago Cárdenas Arroyo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1937
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Santiago Cárdenas (Colombia, 1937.)"
-      - "Santiago Cárdenas"
-      - "SANTIAGO CARDENAS ARROYO"
-      - "Santiago Cárdenas Arroyo"
-    notes: "Las formas corta y completa pertenecen al mismo pintor, nacido en Bogota el 04-12-1937; se consolida aqui el antiguo ID duplicado santiago_cardenas_arroyo. Se retira death_year 2006: es el ano de una retrospectiva, y hay obra posterior. La ficha institucional documenta tambien La corbata y su trabajo con corbatas. Fuente: https://enciclopedia.banrepcultural.org/Santiago_C%C3%A1rdenas ; identificador Getty ULAN: http://vocab.getty.edu/page/ulan/500201873"
-
-  - artist_id: saturnino_ramirez
-    display_name: "Saturnino Ramírez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1946
-    death_year: 2002
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Saturnino Ramírez (Colombia, 1946 - 2002.)"
-      - "Saturnino Ramírez"
-    notes: "17 lotes | casas: bogota_auctions"
-
-  - artist_id: sebastian_martinez_moyano
-    display_name: "Sebastián Martínez Moyano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Sebastián Martínez Moyano"
-    notes: "65 lotes | casas: duran_subastas"
-
-  - artist_id: segundo_matilla
-    display_name: "Segundo Matilla"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1862
-    death_year: 1937
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Segundo Matilla Marina"
-      - "Segundo Matilla"
-    notes: "27 lotes | casas: duran_subastas"
-
-  - artist_id: serge_marshennikov
-    display_name: "Serge Marshennikov"
-    country_birth: "RU"
-    birth_year: 1971
-    nationalities: ["RU"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Serge Marshennikov"
-    notes: "13 lotes | casas: duran_subastas"
-
-  - artist_id: servando_cabrera_moreno
-    display_name: "Servando Cabrera Moreno"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1923
-    death_year: 1981
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Servando Cabrera Moreno"
-    notes: "26 lotes | casas: duran_subastas"
-
-  - artist_id: soledad_sevilla
-    display_name: "Soledad Sevilla"
-    country_birth: "ES"
-    birth_year: 1944
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Soledad Sevilla"
-      - "SEVILLA, SOLEDAD"
-    notes: "10 lotes | casas: duran_subastas"
-
-  - artist_id: stephen_mckenna
-    display_name: "Stephen McKenna"
-    country_birth: "GB"
-    nationalities: ["GB"]
-    birth_year: 1939
-    death_year: 2017
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Stephen McKenna"
-    notes: "7 lotes | casas: duran_subastas"
-
-  - artist_id: sair_garcia
-    display_name: "Sair García"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SAIR GARCIA"
-      - "Sair García"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: santiago_martinez_delgado
-    display_name: "Santiago Martínez Delgado"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1906
-    death_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SANTIAGO MARTINEZ DELGADO"
-      - "Santiago Martínez Delgado"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: santiago_uribe_holguin
-    display_name: "Santiago Uribe Holguin"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1985
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SANTIAGO URIBE HOLGUIN"
-      - "Santiago Uribe Holguin"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: sara_modiano
-    display_name: "Sara Modiano"
-    country_birth: "GR"
-    nationalities: ["GR"]
-    birth_year: 1912
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SARA MODIANO"
-      - "Sara Modiano"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: senex_john
-    display_name: "Senex, John"
-    country_birth: "GB"
-    birth_year: 1678
-    death_year: 1740
-    nationalities: ["GB"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SENEX, JOHN"
-      - "Senex, John"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja: 1904-1904"
-
-  - artist_id: sergio_trujillo_magnenat
-    display_name: "Sergio Trujillo Magnenat"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1935
-    death_year: 1999
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SERGIO TRUJILLO MAGNENAT"
-      - "Sergio Trujillo Magnenat"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: shepard_fairey_obey
-    display_name: "Shepard Fairey \"Obey\""
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SHEPARD FAIREY \"OBEY\""
-      - "SHEPARD FAIREY (OBEY)"
-      - "Shepard Fairey \"Obey\""
-    notes: "11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: shirin_neshat
-    display_name: "Shirin Neshat"
-    country_birth: "IR"
-    nationalities: ["IR"]
-    birth_year: 1957
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SHIRIN NESHAT"
-      - "Shirin Neshat"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: sofia_urrutia_holguin
-    display_name: "Sofía Urrutia Holguín"
-    country_birth: "BO"
-    nationalities: ["CO", "BO"]
-    birth_year: 1912
-    death_year: 2002
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SOFIA URRUTIA HOLGUIN"
-      - "Sofía Urrutia Holguín"
-      - "Sofía Urrutia"
-      - "Sofía Urrutia - Colombia, 1910 - 2002."
-    notes: "11 lotes | casas: bogota_auctions, lefebre_subastas | una ficha publica erroneamente Colombia, 1910-2002. Banrepcultural confirma La Paz, Bolivia, 1912-Bogota, 2002 y nacionalidad colombo-boliviana. Fuente: https://enciclopedia.banrepcultural.org/index.php?title=Sof%C3%ADa_Urrutia_Holgu%C3%ADn"
-
-  - artist_id: sol_lewitt
-    display_name: "Sol Lewitt"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1928
-    death_year: 2007
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SOL LEWITT"
-      - "Sol Lewitt"
-      - "LEWITT, SOL"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: sonia_gutierrez
-    display_name: "Sonia Gutiérrez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1945
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SONIA GUTIERREZ"
-      - "Sonia Gutiérrez"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: susana_carrie
-    display_name: "Susana Carrié"
-    country_birth: "VE"
-    nationalities: ["VE"]
-    birth_year: 1962
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SUSANA CARRIE"
-      - "Susana Carrié"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: salvador_dali_i_domenech
-    display_name: "Salvador Dalí i Domenech"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Salvador Dalí i Domenech"
-    notes: "13 lotes en Silver | fuente: Wikipedia | Figueres"
-
-  - artist_id: santiago_ydanez
-    display_name: "Santiago Ydañez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Santiago Ydañez"
-    notes: "16 lotes en Silver | fuente: MutualArt; Artnet | Jaen; Premio BMW 2018"
-
-  - artist_id: sebastian_cestero
-    display_name: "Sebastián Cestero"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1931
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: low
-    aliases:
-      - "Sebastián Cestero"
-    notes: "16 lotes en Silver | fuente: Invaluable; MutualArt | datos minimos"
-
-  - artist_id: sohad_lachiri
-    display_name: "Sohad Lachiri"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1946
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Sohad Lachiri"
-    notes: "19 lotes en Silver | fuente: Arteinformado; Plioart | origen arabe, afincada en Madrid"
-
-  - artist_id: soledad_fernandez_ramos
-    display_name: "Soledad Fernández Ramos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1945
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Soledad Fernández Ramos"
-    notes: "16 lotes en Silver | fuente: Askart; Artnet | Madrid"
-
-  - artist_id: serny
-    display_name: "Serny"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1908
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Serny"
-    notes: "10 lotes en Silver | fuente: Wikidata Q6108492 | seudonimo de Ricardo Summers Ysern"
-
-  - artist_id: sebastia_ramis
-    display_name: "Sebastià Ramis"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Sebastián Ramis"
-    notes: "Pintor y grabador nacido en Palma de Mallorca (1947). Especializado en paisajes, naturalezas muertas y escenas de playa. Pasteles y técnicas de grabado. Exposiciones en Barcelona, Madrid, París, Toulouse."
-
-  - artist_id: simon_vouet
-    display_name: "Simon Vouet"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1590
-    death_year: 1649
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Simon Vouet"
-      - "VOUET, SIMON"
-    notes: "4 lotes (1 vendido en 42.500 EUR) | casas: duran_subastas | fuente: National Gallery. Nacido en Paris, introductor del barroco italiano en Francia. La forma invertida 'VOUET, SIMON' no comparte fold y rankeaba aparte."
-
-  - artist_id: salvador_sanchez_barbudo
-    display_name: "Salvador Sánchez Barbudo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1857
-    death_year: 1917
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "SÁNCHEZ-BARBUDO Y MORALES, SALVADOR"
-      - "Salvador Sanchez Barbudo"
-      - "Salvador Sanchez-Barbudo"
-      - "Salvador Sánchez Barbudo"
-      - "Salvador Sánchez Barbudo y Morales"
-      - "Salvador Sánchez-Barbudo y Morales"
-    notes: "12 filas en Silver | nacido en Jerez de la Frontera, Cadiz, en 1857 y fallecido en Roma en 1917. Fuente: https://www.museodelprado.es/coleccion/artista/sanchez-barbudo-morales-salvador/f1df7ec1-9803-40e3-888b-b11c69db50bc"
-
-  - artist_id: santiago_rusinol
-    display_name: "Santiago Rusiñol"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1861
-    death_year: 1931
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Santiago Rusiñol"
-    notes: "2 lotes, reofertas de la misma obra | casas: duran_subastas | Santiago Rusinol Prats, nacido en Barcelona en 1861 y fallecido en Aranjuez en 1931. Fuente: https://www.museunacional.cat/es/santiago-rusinol"
-
-  - artist_id: sebastian_de_llanos_y_valdes
-    display_name: "Sebastián de Llanos y Valdés"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Sebastián de Llanos y Valdés"
-      - "Sebastián Llanos y Valdés"
-    notes: "3 lotes de autor y 1 de circulo | casas: duran_subastas | nacido en Sevilla. Se omiten los anos por discrepancia institucional: Louvre publica ca. 1605-1677 y CER.es/Museo del Greco 1617-1675. Fuentes: https://collections.louvre.fr/ark:/53355/cl010064730 ; https://ceres.mcu.es/pages/ResultSearch?Museo=MGTO&MuseumsRolSearch=28&MuseumsSearch=MGTO%7C&hipertextSearch=1&listaMuseos=%5BMuseo+del+Greco%5D&search=simple&simpleSearch=0&txtSimpleSearch=Cabeza+de+San+Dionisio"
+- artist_id: saad_hassani
+  display_name: Saâd Hassani
+  country_birth: MA
+  nationalities:
+  - MA
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Saad Hassani
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q137112010'
+- artist_id: sair_garcia
+  display_name: Sair García
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SAIR GARCIA
+  - Sair García
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: salvador_clemente
+  display_name: Salvador Clemente
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1909
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Clemente
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98959823'
+- artist_id: salvador_corratge
+  display_name: Salvador Corratgé
+  birth_year: 1928
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Salvador Corratgé
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q29043593'
+- artist_id: salvador_dali
+  display_name: Salvador Dalí
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Salvador Dalí y Domenech
+  - Salvador Dalí Domenech
+  - Salvador Dalí
+  - Salvador Dalí i Domenech
+  notes: '53 lotes | casas: bogota_auctions, duran_subastas. Ficha ''salvador_dali_i_domenech'' consolidada aqui
+    el 2026-08-18: misma persona (mismas fechas), partida en dos entradas por variantes del nombre.'
+- artist_id: salvador_martinez_cubells
+  display_name: Salvador Martínez Cubells
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1845
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Martínez Cubells
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1771035'
+- artist_id: salvador_mayol
+  display_name: Salvador Mayol
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1775
+  death_year: 1834
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Mayol
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5492582'
+- artist_id: salvador_montesa
+  display_name: Salvador Montesa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Montesa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q119247297'
+  death_status: living
+- artist_id: salvador_rodriguez_bronchu
+  display_name: Salvador Rodriguez Bronchu
+  country_birth: null
+  nationalities: []
+  birth_year: 1913
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Salvador Rodríguez Bronchu
+  - Salvador Rodriguez Bronchu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q106767057'
+- artist_id: salvador_sanchez_barbudo
+  display_name: Salvador Sánchez Barbudo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1917
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SÁNCHEZ-BARBUDO Y MORALES, SALVADOR
+  - Salvador Sanchez Barbudo
+  - Salvador Sanchez-Barbudo
+  - Salvador Sánchez Barbudo
+  - Salvador Sánchez Barbudo y Morales
+  - Salvador Sánchez-Barbudo y Morales
+  notes: '12 filas en Silver | nacido en Jerez de la Frontera, Cadiz, en 1857 y fallecido en Roma en 1917. Fuente:
+    https://www.museodelprado.es/coleccion/artista/sanchez-barbudo-morales-salvador/f1df7ec1-9803-40e3-888b-b11c69db50bc'
+- artist_id: salvador_soria
+  display_name: Salvador Soria Zapater
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1915
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Soria
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20006578'
+- artist_id: salvador_tuset_tuset
+  display_name: Salvador Tuset
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1883
+  death_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvador Tuset Tuset
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6117804'
+- artist_id: salvador_victoria
+  display_name: Salvador Victoria
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 1994
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Salvador Victoria
+  notes: '19 lotes | casas: duran_subastas'
+- artist_id: salvatore_scarpitta
+  display_name: Salvatore Scarpitta
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1919
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Salvatore Scarpitta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7406692'
+- artist_id: salvo
+  display_name: Salvo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1947
+  death_year: 2015
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Salvo
+  - Salvatore Mangione (Salvo)
+  notes: '4 lotes | casas: duran_subastas'
+- artist_id: san_roque
+  display_name: Roque de Montpellier
+  country_birth: FR
+  nationalities:
+  - FR
+  death_year: 1327
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - San Roque
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q152457'
+- artist_id: sandor_brodszky
+  display_name: Sándor Brodszky
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1819
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sandor Brodszky
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7665260'
+- artist_id: sandro_antal
+  display_name: Sandro Antal
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sandro antal
+  - Sandro Antal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2221187'
+  death_status: living
+- artist_id: sandu_darie
+  display_name: Sandú Darié Laver
+  country_birth: RO
+  nationalities:
+  - RO
+  birth_year: 1908
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sandú Darié
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29043595'
+- artist_id: santiago_cardenas
+  display_name: Santiago Cárdenas Arroyo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1937
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Santiago Cárdenas (Colombia, 1937.)
+  - Santiago Cárdenas
+  - SANTIAGO CARDENAS ARROYO
+  - Santiago Cárdenas Arroyo
+  notes: 'Las formas corta y completa pertenecen al mismo pintor, nacido en Bogota el 04-12-1937; se consolida aqui
+    el antiguo ID duplicado santiago_cardenas_arroyo. Se retira death_year 2006: es el ano de una retrospectiva,
+    y hay obra posterior. La ficha institucional documenta tambien La corbata y su trabajo con corbatas. Fuente:
+    https://enciclopedia.banrepcultural.org/Santiago_C%C3%A1rdenas ; identificador Getty ULAN: http://vocab.getty.edu/page/ulan/500201873'
+- artist_id: santiago_de_les_chornet
+  display_name: Santiago de Les
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1898
+  death_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago de Les Chornet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16628925'
+- artist_id: santiago_harker
+  display_name: Santiago Harker
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - SANTIAGO HARKER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55949795'
+- artist_id: santiago_lagunas
+  display_name: Santiago Lagunas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Lagunas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6120970'
+- artist_id: santiago_mallo
+  display_name: Santiago Mallo
+  country_birth: AR
+  nationalities:
+  - AR
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Santiago Mallo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q131857225'
+- artist_id: santiago_martin_salvador
+  display_name: Santiago Martín Salvador
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Martín Salvador
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6121004'
+- artist_id: santiago_martinez_delgado
+  display_name: Santiago Martínez Delgado
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1906
+  death_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SANTIAGO MARTINEZ DELGADO
+  - Santiago Martínez Delgado
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: santiago_martinez_martin
+  display_name: Santiago Martínez Martín
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1979
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Martínez Martín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6121010'
+- artist_id: santiago_picatoste
+  display_name: Santiago Picatoste
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Picatoste
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q137119949'
+  death_status: living
+- artist_id: santiago_rodriguez_olazabal
+  display_name: Santiago Rodriguez Olazábal
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Rodríguez Olazábal
+  - Santiago Rodriguez Olazabal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q84498999'
+  death_status: living
+- artist_id: santiago_rusinol
+  display_name: Santiago Rusiñol
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1931
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Santiago Rusiñol
+  notes: '2 lotes, reofertas de la misma obra | casas: duran_subastas | Santiago Rusinol Prats, nacido en Barcelona
+    en 1861 y fallecido en Aranjuez en 1931. Fuente: https://www.museunacional.cat/es/santiago-rusinol'
+- artist_id: santiago_uribe_holguin
+  display_name: Santiago Uribe Holguin
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1985
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SANTIAGO URIBE HOLGUIN
+  - Santiago Uribe Holguin
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: santiago_ydanez
+  display_name: Santiago Ydañez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Santiago Ydañez
+  notes: '16 lotes en Silver | fuente: MutualArt; Artnet | Jaen; Premio BMW 2018'
+  death_status: living
+- artist_id: santos_inurrieta
+  display_name: Santos Iñurrieta
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santos Iñurrieta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12267041'
+- artist_id: santos_saavedra
+  display_name: Santos Saavedra
+  country_birth: null
+  nationalities: []
+  birth_year: 1903
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Santos Saavedra
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110137399'
+- artist_id: sara_modiano
+  display_name: Sara Modiano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1951
+  death_year: 2010
+  death_status: known
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SARA MODIANO
+  - Sara Modiano
+  notes: 'La ficha heredada de FINALL.xlsx habia usado Grecia y 1912-1994 por error. La fundacion de la artista
+    y Hammer Museum documentan nacimiento en Barranquilla, Colombia, en 1951 y muerte en 2010. Fuentes: https://saramodiano.org/sara-modiano
+    ; https://hammer.ucla.edu/radical-women/artists/sara-modiano'
+- artist_id: saturnino_ramirez
+  display_name: Saturnino Ramírez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1946
+  death_year: 2002
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Saturnino Ramírez (Colombia, 1946 - 2002.)
+  - Saturnino Ramírez
+  notes: '17 lotes | casas: bogota_auctions'
+- artist_id: scaramuix
+  display_name: Scaramuix
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1956
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Scaramuix
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6122327'
+- artist_id: sebastia_ramis
+  display_name: Sebastià Ramis
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Sebastián Ramis
+  notes: Pintor y grabador nacido en Palma de Mallorca (1947). Especializado en paisajes, naturalezas muertas y
+    escenas de playa. Pasteles y técnicas de grabado. Exposiciones en Barcelona, Madrid, París, Toulouse.
+- artist_id: sebastian_cestero
+  display_name: Sebastián Cestero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1931
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: low
+  aliases:
+  - Sebastián Cestero
+  notes: '16 lotes en Silver | fuente: Invaluable; MutualArt | datos minimos'
+- artist_id: sebastian_de_llanos_y_valdes
+  display_name: Sebastián de Llanos y Valdés
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Sebastián de Llanos y Valdés
+  - Sebastián Llanos y Valdés
+  notes: '3 lotes de autor y 1 de circulo | casas: duran_subastas | nacido en Sevilla. Se omiten los anos por discrepancia
+    institucional: Louvre publica ca. 1605-1677 y CER.es/Museo del Greco 1617-1675. Fuentes: https://collections.louvre.fr/ark:/53355/cl010064730
+    ; https://ceres.mcu.es/pages/ResultSearch?Museo=MGTO&MuseumsRolSearch=28&MuseumsSearch=MGTO%7C&hipertextSearch=1&listaMuseos=%5BMuseo+del+Greco%5D&search=simple&simpleSearch=0&txtSimpleSearch=Cabeza+de+San+Dionisio'
+- artist_id: sebastian_gessa_y_arias
+  display_name: Sebastián Gessa y Arias
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1840
+  death_year: 1920
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sebastián Gessa y Arias
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9075346'
+- artist_id: sebastian_martinez_domedel
+  display_name: Sebastián Martínez Domedel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1615
+  death_year: 1667
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sebastián Martínez Domedel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2885614'
+- artist_id: sebastian_martinez_moyano
+  display_name: Sebastián Martínez Moyano
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Sebastián Martínez Moyano
+  notes: '65 lotes | casas: duran_subastas'
+- artist_id: sebastian_palomo_linares
+  display_name: Palomo Linares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sebastián Palomo Linares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3361671'
+- artist_id: sebastian_pascual_tejerina
+  display_name: Pascual Tejerina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sebastián Pascual Tejerina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13147852'
+- artist_id: sebastian_salcedo
+  display_name: Sebastián Salcedo
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sebastián Salcedo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98461779'
+- artist_id: segundo_agelvis
+  display_name: Segundo Agelvis
+  country_birth: null
+  nationalities: []
+  birth_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - SEGUNDO AGELVIS
+  - Segundo Agelvis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q109858770'
+- artist_id: segundo_cabello_izarra
+  display_name: Segundo Cabello Izarra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1868
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Segundo Cabello Izarra
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q60036118'
+- artist_id: segundo_matilla
+  display_name: Segundo Matilla
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  death_year: 1937
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Segundo Matilla Marina
+  - Segundo Matilla
+  notes: '27 lotes | casas: duran_subastas'
+- artist_id: senen_ubina
+  display_name: Senén Ubiña
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Senén Ubiña
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96751025'
+- artist_id: senex_john
+  display_name: Senex, John
+  country_birth: GB
+  birth_year: 1678
+  death_year: 1740
+  nationalities:
+  - GB
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SENEX, JOHN
+  - Senex, John
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja:
+    1904-1904'
+- artist_id: serafin_avendano
+  display_name: Serafín Avendaño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1837
+  death_year: 1916
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Serafín Avendaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3394913'
+- artist_id: serafin_rojo_caamano
+  display_name: Serafín Rojo
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Serafín Rojo Caamaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7452644'
+- artist_id: serge_fotinsky
+  display_name: Serge Fotinsky
+  birth_year: 1885
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Serge Fotinsky
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1800018'
+- artist_id: serge_ivanoff
+  display_name: Serge Ivanoff
+  birth_year: 1893
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Serge Ivanoff
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q786010'
+- artist_id: serge_marshennikov
+  display_name: Serge Marshennikov
+  country_birth: RU
+  birth_year: 1971
+  nationalities:
+  - RU
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Serge Marshennikov
+  notes: '13 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: sergei_chepik
+  display_name: Sergei Chepik
+  country_birth: null
+  nationalities: []
+  birth_year: 1953
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sergei Chepik
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q3479715'
+- artist_id: sergei_menyayev
+  display_name: Sergei Menyayev
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sergei Menyayev
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99513599'
+  death_status: living
+- artist_id: sergi_aguilar
+  display_name: Sergi Aguilar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sergi Aguilar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15403259'
+  death_status: living
+- artist_id: sergio_belinchon
+  display_name: Sergio Belinchón
+  birth_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sergio Belinchón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5813151'
+- artist_id: sergio_trujillo_magnenat
+  display_name: Sergio Trujillo Magnenat
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1935
+  death_year: 1999
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SERGIO TRUJILLO MAGNENAT
+  - Sergio Trujillo Magnenat
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: serny
+  display_name: Serny
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Serny
+  notes: '10 lotes en Silver | fuente: Wikidata Q6108492 | seudonimo de Ricardo Summers Ysern'
+- artist_id: servando_cabrera_moreno
+  display_name: Servando Cabrera Moreno
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1923
+  death_year: 1981
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Servando Cabrera Moreno
+  notes: '26 lotes | casas: duran_subastas'
+- artist_id: sheila_girling
+  display_name: Sheila Girling
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1924
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sheila Girling
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19801210'
+- artist_id: sheldon_parsons
+  display_name: Orin Sheldon Parsons
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1866
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sheldon Parsons
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q46992424'
+- artist_id: shen_jingdong
+  display_name: Shen Jingdong
+  country_birth: CN
+  nationalities:
+  - CN
+  birth_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Shen Jingdong
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13626767'
+- artist_id: shepard_fairey
+  display_name: Shepard Fairey
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Shepard Fairey
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1332698'
+- artist_id: shepard_fairey_obey
+  display_name: Shepard Fairey "Obey"
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SHEPARD FAIREY "OBEY"
+  - SHEPARD FAIREY (OBEY)
+  - Shepard Fairey "Obey"
+  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: shigeru_izumi
+  display_name: Shigeru Izumi
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1922
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Shigeru Izumi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22123897'
+- artist_id: shin_kamiya
+  display_name: Shin Kamiya
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Shin Kamiya
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11359974'
+  death_status: living
+- artist_id: shirin_neshat
+  display_name: Shirin Neshat
+  country_birth: IR
+  nationalities:
+  - IR
+  birth_year: 1957
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SHIRIN NESHAT
+  - Shirin Neshat
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: shizuko_yoshikawa
+  display_name: Shizuko Yoshikawa
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1934
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Shizuko Yoshikawa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q77353951'
+- artist_id: sigfredo_chacon
+  display_name: Sigfredo Chacón
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - SIGFREDO CHACON
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55937584'
+- artist_id: sigfrido_martin_begue
+  display_name: Sigfrido Martín Begué
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1959
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sigfrido Martín Begué
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55948030'
+- artist_id: sigmar_polke
+  display_name: Sigmar Polke
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1941
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sigmar Polke
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q376062'
+- artist_id: silvia_hornig
+  display_name: Sílvia Hornig
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Silvia Hornig
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96350857'
+  death_status: living
+- artist_id: simo_busom_grau
+  display_name: Simó Busom Grau
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Simo Busom Grau
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16860413'
+- artist_id: simon_brieva
+  display_name: Simón Brieva
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1795
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Simón Brieva
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23978052'
+- artist_id: simon_posthuma
+  display_name: Simon Posthuma
+  country_birth: NL
+  nationalities: []
+  birth_year: 1939
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Simon Posthuma
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q24067663'
+- artist_id: simon_vouet
+  display_name: Simon Vouet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1590
+  death_year: 1649
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Simon Vouet
+  - VOUET, SIMON
+  notes: '4 lotes (1 vendido en 42.500 EUR) | casas: duran_subastas | fuente: National Gallery. Nacido en Paris,
+    introductor del barroco italiano en Francia. La forma invertida ''VOUET, SIMON'' no comparte fold y rankeaba
+    aparte.'
+- artist_id: sinibaldo_tordi
+  display_name: Sinibaldo Tordi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1876
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sinibaldo Tordi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43138937'
+- artist_id: sjoerd_buisman
+  display_name: Sjoerd Buisman
+  country_birth: NL
+  nationalities: []
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sjoerd Buisman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2291077'
+  death_status: living
+- artist_id: socrates_quintana_montoto
+  display_name: Sócrates Quintana Montoto
+  birth_year: 1892
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sócrates Quintana Montoto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q99861184'
+- artist_id: sofia_bassi
+  display_name: Sofia Bassi
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1913
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sofía Bassi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16014010'
+- artist_id: sofia_madrigal
+  display_name: Sofía Madrigal
+  country_birth: null
+  nationalities: []
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sofía Madrigal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55990226'
+  death_status: living
+- artist_id: sofia_urrutia_holguin
+  display_name: Sofía Urrutia Holguín
+  country_birth: BO
+  nationalities:
+  - CO
+  - BO
+  birth_year: 1912
+  death_year: 2002
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SOFIA URRUTIA HOLGUIN
+  - Sofía Urrutia Holguín
+  - Sofía Urrutia
+  - Sofía Urrutia - Colombia, 1910 - 2002.
+  notes: '11 lotes | casas: bogota_auctions, lefebre_subastas | una ficha publica erroneamente Colombia, 1910-2002.
+    Banrepcultural confirma La Paz, Bolivia, 1912-Bogota, 2002 y nacionalidad colombo-boliviana. Fuente: https://enciclopedia.banrepcultural.org/index.php?title=Sof%C3%ADa_Urrutia_Holgu%C3%ADn'
+- artist_id: sohad_lachiri
+  display_name: Sohad Lachiri
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Sohad Lachiri
+  notes: '19 lotes en Silver | fuente: Arteinformado; Plioart | origen arabe, afincada en Madrid'
+- artist_id: sol_lewitt
+  display_name: Sol Lewitt
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1928
+  death_year: 2007
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SOL LEWITT
+  - Sol Lewitt
+  - LEWITT, SOL
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: soledad_fernandez_ramos
+  display_name: Soledad Fernández Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1945
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Soledad Fernández Ramos
+  notes: '16 lotes en Silver | fuente: Askart; Artnet | Madrid'
+- artist_id: soledad_sevilla
+  display_name: Soledad Sevilla
+  country_birth: ES
+  birth_year: 1944
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Soledad Sevilla
+  - SEVILLA, SOLEDAD
+  notes: '10 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: sonia_gutierrez
+  display_name: Sonia Gutiérrez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1945
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SONIA GUTIERREZ
+  - Sonia Gutiérrez
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: sor_maria_de_la_antigua
+  display_name: Sor María de la Antigua
+  birth_year: 1566
+  death_year: 1617
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Sor Maria de la Antigua
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q42871362'
+- artist_id: stefano_bruzzi
+  display_name: Stefano Bruzzi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1835
+  death_year: 1911
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Stefano Bruzzi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12955442'
+- artist_id: stella_mertens
+  display_name: Stella Mertens
+  birth_year: 1896
+  death_year: 1986
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Stella Mertens
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2834036'
+- artist_id: stephen_mckenna
+  display_name: Stephen McKenna
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1939
+  death_year: 2017
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Stephen McKenna
+  notes: '7 lotes | casas: duran_subastas'
+- artist_id: steve_mccurry
+  display_name: Steve McCurry
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Steve McCurry
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q359815'
+  death_status: living
+- artist_id: susana_carrie
+  display_name: Susana Carrié
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1962
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - SUSANA CARRIE
+  - Susana Carrié
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: susana_solano
+  display_name: Susana Solano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Susana Solano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1875842'
+  death_status: living
+- artist_id: szijarto_kalman
+  display_name: Kálmán Szijártó
+  country_birth: null
+  nationalities: []
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Szijarto Kalman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q119785462'
+  death_status: living

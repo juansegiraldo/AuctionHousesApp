@@ -1,228 +1,855 @@
-# Maestro de artistas - shard "h"
-#
-# Entradas cuyo artist_id empieza por "h". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: hans_hartung
-    display_name: "Hans Hartung"
-    country_birth: "DE"
-    nationalities: ["DE", "FR"]
-    birth_year: 1904
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Hans Hartung"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: hernando_vines
-    display_name: "Hernando Viñes"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1993
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Hernando Viñes"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: hugo_zapata
-    display_name: "Hugo Zapata"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1945
-    death_year: 2025
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Hugo Zapata"
-      - "Hugo Zapata (Colombia, 1945)"
-    notes: "11 lotes | casas: bogota_auctions"
-
-  - artist_id: henry_moore
-    display_name: "Henry Moore"
-    country_birth: "GB"
-    nationalities: ["GB"]
-    birth_year: 1898
-    death_year: 1986
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HENRY MOORE"
-      - "Henry Moore"
-    notes: "9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hernan_diaz
-    display_name: "Hernán Díaz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1978
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HERNAN DIAZ"
-      - "Hernán Díaz"
-      - "Díaz, Hernán"
-    notes: "12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hernando_momo_del_villar
-    display_name: "Hernando \"Momo\" del Villar"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1944
-    death_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HERNANDO \"MOMO\" DEL VILLAR"
-      - "Hernando \"Momo\" del Villar"
-    notes: "9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hernando_tejada
-    display_name: "Hernando Tejada"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1924
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HERNANDO TEJADA"
-      - "Hernando Tejada"
-    notes: "8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hugo_demarco
-    display_name: "Hugo Demarco"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1962
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HUGO DEMARCO"
-      - "Hugo Demarco"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hugo_martinez
-    display_name: "Hugo Martínez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HUGO MARTINEZ"
-      - "Hugo Martínez"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: humberto_chaves
-    display_name: "Humberto Chaves"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1891
-    death_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HUMBERTO CHAVES"
-      - "Humberto Chaves"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: humberto_valencia_chavez
-    display_name: "Humberto Valencia Chavez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "HUMBERTO VALENCIA CHAVEZ"
-      - "Humberto Valencia Chavez"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: hipolito_hidalgo_de_caviedes
-    display_name: "Hipólito Hidalgo de Caviedes"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1902
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Hipólito Hidalgo de Caviedes"
-      - "Hipólito hidalgo de Caviedes"
-    notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
-
-  - artist_id: horacio_silva_sebastian
-    display_name: "Horacio Silva Sebastián"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1950
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Horacio Silva"
-    notes: "Pintor español nacido en Valencia el 29 de marzo de 1950. Profesor en la Facultad de Bellas Artes de la Universidad Politécnica de Valencia. Ha evolucionado del realismo al cubismo cromático."
-
-  - artist_id: harry_humphrey_moore
-    display_name: "Harry Humphrey Moore"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1844
-    death_year: 1926
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Harry Humphrey Moore"
-    notes: "2 lotes duplicados en el corpus | casas: duran_subastas | nacido en Nueva York en 1844 y fallecido en Paris en 1926. El North Carolina Museum of Art confirma artista estadounidense y fechas; Hirschl & Adler documenta Nueva York como lugar de nacimiento. Fuentes: https://collection.ncartmuseum.org/objects/10286/in-a-japanese-garden ; https://www.hirschlandadler.com/galleries/harry-humphrey-moore"
-
-  - artist_id: henri_matisse
-    display_name: "Henri Matisse"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1869
-    death_year: 1954
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Henri Matisse"
-      - "Henry Matisse"
-      - "MATISSE, HENRI"
-    notes: "4 lotes | casas: duran_subastas | tres filas publican Henri Matisse y una escribe Henry Matisse; el catalogo de Duran identifica esta errata con Cateau-Cambresis 1869-Nice 1954 y la obra Femme sur canape. Centre Pompidou confirma nacimiento en Le Cateau-Cambresis, Francia, en 1869, muerte en Nice en 1954 y nacionalidad francesa. Fuentes: https://www.centrepompidou.fr/fr/ressources/personne/crb5Eg ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_540.pdf"
-
-  - artist_id: hiacynt_alchimowicz
-    display_name: "Hiacynt Alchimowicz"
-    country_birth: "BY"
-    nationalities: ["PL", "FR", "BY"]
-    birth_year: 1841
-    death_year: 1916
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Hiacynt Alchimowiz"
-      - "ALCHIMOWICZ, HIACYNT"
-      - "Hyacinthe Alchimowicz"
-      - "Hiacent Alchimowicz"
-    notes: "1 lote vendido por 8.500 EUR | casas: duran_subastas | la cabecera de Duran escribe Alchimowiz, pero el campo Autor da ALCHIMOWICZ, HIACYNT (1841 - 1900?). Nacido en Dziembrow/Dembrava, actual Bielorrusia; pintor polaco naturalizado frances en 1891. El acta de defuncion n. 565 de Perpignan (vista 81/129) fija 27-08-1916 y corrige 1897 de Orsay y 1900? de Duran. No confundir con su hermano mayor, el pintor Kazimierz Alchimowicz (1840-1916). Fuentes: https://www.duran-subastas.com/es/subasta-lote/hiacynt-alchimowiz-desnuda-en-la-hierba/600-133 ; https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/hyacinthe-alchimowicz-125515 ; https://archives.cd66.fr/mdr/index.php/docnumViewer/calculHierarchieDocNum/373927/322715%3A328312%3A328316%3A373927/864/1536 ; https://gallica.bnf.fr/ark:/12148/bpt6k42259400/f908.image.r=Alchimowicz?rk=815454;4 ; https://www.gov.pl/attachment/19fa85f9-65de-4bb0-8cc4-7dc552229b7d"
+- artist_id: halina_eysymont
+  display_name: Halina Eysymont
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Halina Eysymont
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131456368'
+  death_status: living
+- artist_id: hans_albrecht_von_derschau
+  display_name: Hans Albrecht von Derschau
+  death_year: 1824
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - HANS ALBRECHT VON DERSCHAU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55843668'
+- artist_id: hans_bellmer
+  display_name: Hans Bellmer
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1902
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - HANS BELLMER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q213703'
+- artist_id: hans_hartung
+  display_name: Hans Hartung
+  country_birth: DE
+  nationalities:
+  - DE
+  - FR
+  birth_year: 1904
+  death_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Hans Hartung
+  notes: '22 lotes | casas: duran_subastas'
+- artist_id: hans_hinterreiter
+  display_name: Hans Hinterreiter
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1902
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hans Hinterreiter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23071693'
+- artist_id: hans_liska
+  display_name: Hans Liska
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1907
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hans Liska
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q924314'
+- artist_id: harry_humphrey_moore
+  display_name: Harry Humphrey Moore
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1844
+  death_year: 1926
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Harry Humphrey Moore
+  notes: '2 lotes duplicados en el corpus | casas: duran_subastas | nacido en Nueva York en 1844 y fallecido en
+    Paris en 1926. El North Carolina Museum of Art confirma artista estadounidense y fechas; Hirschl & Adler documenta
+    Nueva York como lugar de nacimiento. Fuentes: https://collection.ncartmuseum.org/objects/10286/in-a-japanese-garden
+    ; https://www.hirschlandadler.com/galleries/harry-humphrey-moore'
+- artist_id: hector_rojas_herazo
+  display_name: Héctor Rojas Herazo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1920
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - HECTOR ROJAS HERAZO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5948825'
+- artist_id: hector_sgarbi
+  display_name: Héctor Sgarbi
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1905
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - HÉCTOR SGARBI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5906428'
+- artist_id: heinrich_carl_schubert
+  display_name: Heinrich Carl Schubert
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1827
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Heinrich Carl Schubert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42178102'
+- artist_id: heinrich_deuchert
+  display_name: Heinrich Deuchert
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1840
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Heinrich Deuchert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q37519613'
+- artist_id: heinrich_pforr
+  display_name: Heinrich Pforr
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1880
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Heinrich Pforr
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1598483'
+- artist_id: helene_feillet
+  display_name: Hélène Feillet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1812
+  death_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hélène Feillet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15407045'
+- artist_id: heliodoro_guillen_pedemont
+  display_name: Heliodoro Guillén Pedemonti
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1864
+  death_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Heliodoro Guillen Pedemont
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9287525'
+- artist_id: helmuth_schievelkamp
+  display_name: Helmuth Schievelkamp
+  birth_year: 1849
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - HELMUTH SCHIEVELKAMP
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19502583'
+- artist_id: henri_de_toulouse_lautrec
+  display_name: Henri de Toulouse-Lautrec
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1864
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri de Toulouse-Lautrec
+  - Henri DE TOULOUSE-LAUTREC
+  - HENRI DE TOULOUSE-LAUTREC
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q82445'
+- artist_id: henri_dechanet
+  display_name: Henri Déchanet
+  country_birth: MA
+  nationalities:
+  - MA
+  birth_year: 1930
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Dechanet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27516869'
+- artist_id: henri_desire_gauquie
+  display_name: Henri Gauquie
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1858
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Desire GAUQUIE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3131037'
+- artist_id: henri_girault_de_nolhac
+  display_name: Henri de Nolhac
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1884
+  death_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Girault de Nolhac
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q54809984'
+- artist_id: henri_hayden
+  display_name: Henri Hayden
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1883
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Hayden
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1607477'
+- artist_id: henri_matisse
+  display_name: Henri Matisse
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1869
+  death_year: 1954
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Henri Matisse
+  - Henry Matisse
+  - MATISSE, HENRI
+  notes: '4 lotes | casas: duran_subastas | tres filas publican Henri Matisse y una escribe Henry Matisse; el catalogo
+    de Duran identifica esta errata con Cateau-Cambresis 1869-Nice 1954 y la obra Femme sur canape. Centre Pompidou
+    confirma nacimiento en Le Cateau-Cambresis, Francia, en 1869, muerte en Nice en 1954 y nacionalidad francesa.
+    Fuentes: https://www.centrepompidou.fr/fr/ressources/personne/crb5Eg ; https://www.duran-subastas.com/files/001/HISTORICAS/ARTE_540.pdf'
+- artist_id: henri_michaux
+  display_name: Henri Michaux
+  birth_year: 1899
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Henri Michaux
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q160780'
+- artist_id: henri_montassier
+  display_name: Henri Montassier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1880
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Montassier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3131671'
+- artist_id: henri_nicolas_van_gorp
+  display_name: Henri Nicolas van Gorp
+  country_birth: FR
+  nationalities:
+  - FR
+  death_year: 1820
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Henri NIcolas Van Gorp
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3130449'
+- artist_id: henri_van_wyk
+  display_name: Henri van Wijk
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1833
+  death_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri van Wyk
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55804863'
+- artist_id: henri_verge_sarrat
+  display_name: Henri Vergé-Sarrat
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1880
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henri Vergé Sarrat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21074158'
+- artist_id: henry_caro_delvaille
+  display_name: Henry Caro-Delvaille
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1876
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henry Caro-Delvaille
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3132672'
+- artist_id: henry_john_yeend_king
+  display_name: Yeend King
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1855
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henry John Yeend King
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21453404'
+- artist_id: henry_maurice_d_anty
+  display_name: Henry d' Anty
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1910
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henry Maurice D'Anty
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21453167'
+- artist_id: henry_moore
+  display_name: Henry Moore
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1898
+  death_year: 1986
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HENRY MOORE
+  - Henry Moore
+  notes: '9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: henry_pierce_bone
+  display_name: Henry Pierce Bone
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1779
+  death_year: 1855
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Henry Pierce Bone
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5727002'
+- artist_id: hercules_brabazon
+  display_name: Hercules Brabazon Brabazon
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1821
+  death_year: 1906
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hercules Brabazon
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5736436'
+- artist_id: herman_hebler
+  display_name: Herman Hebler
+  country_birth: 'NO'
+  nationalities:
+  - 'NO'
+  birth_year: 1911
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Herman Hebler
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1610274'
+- artist_id: herman_weyen
+  display_name: Herman Weyen
+  birth_year: 1625
+  death_year: 1672
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Herman Weyen
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q105090704'
+- artist_id: hermann_josef_painitz
+  display_name: Hermann Josef Painitz
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1938
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hermann Josef Painitz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94911075'
+- artist_id: hermenegildo_anglada_camarasa
+  display_name: Hermenegildo Anglada Camarasa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hermenegildo Anglada-Camarasa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1343042'
+- artist_id: hermenegildo_estevan
+  display_name: Hermenegildo Estevan
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1851
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hermenegildo Estevan
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11925481'
+- artist_id: hermenegildo_sabat
+  display_name: Hermenegildo Sábat
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1933
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hermenegildo SÁBAT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1978730'
+- artist_id: herminio_molero
+  display_name: Herminio Molero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Herminio Molero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5895891'
+  death_status: living
+- artist_id: hernan_diaz
+  display_name: Hernán Díaz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1978
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HERNAN DIAZ
+  - Hernán Díaz
+  - Díaz, Hernán
+  notes: '12 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: hernando_del_villar
+  display_name: Hernando del Villar
+  country_birth: CO
+  nationalities: []
+  birth_year: 1944
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Hernando del Villar
+  - HERNANDO DEL VILLAR
+  - HERNANDO "MOMO" DEL VILLAR
+  - Hernando "Momo" del Villar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q94645251. Ficha ''hernando_momo_del_villar'' consolidada
+    aqui el 2026-08-18: misma persona (mismas fechas), partida en dos entradas por variantes del nombre.'
+- artist_id: hernando_tejada
+  display_name: Hernando Tejada
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1924
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HERNANDO TEJADA
+  - Hernando Tejada
+  notes: '8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: hernando_vines
+  display_name: Hernando Viñes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1993
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Hernando Viñes
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: hiacynt_alchimowicz
+  display_name: Hiacynt Alchimowicz
+  country_birth: BY
+  nationalities:
+  - PL
+  - FR
+  - BY
+  birth_year: 1841
+  death_year: 1916
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Hiacynt Alchimowiz
+  - ALCHIMOWICZ, HIACYNT
+  - Hyacinthe Alchimowicz
+  - Hiacent Alchimowicz
+  notes: '1 lote vendido por 8.500 EUR | casas: duran_subastas | la cabecera de Duran escribe Alchimowiz, pero el
+    campo Autor da ALCHIMOWICZ, HIACYNT (1841 - 1900?). Nacido en Dziembrow/Dembrava, actual Bielorrusia; pintor
+    polaco naturalizado frances en 1891. El acta de defuncion n. 565 de Perpignan (vista 81/129) fija 27-08-1916
+    y corrige 1897 de Orsay y 1900? de Duran. No confundir con su hermano mayor, el pintor Kazimierz Alchimowicz
+    (1840-1916). Fuentes: https://www.duran-subastas.com/es/subasta-lote/hiacynt-alchimowiz-desnuda-en-la-hierba/600-133
+    ; https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/hyacinthe-alchimowicz-125515 ;
+    https://archives.cd66.fr/mdr/index.php/docnumViewer/calculHierarchieDocNum/373927/322715%3A328312%3A328316%3A373927/864/1536
+    ; https://gallica.bnf.fr/ark:/12148/bpt6k42259400/f908.image.r=Alchimowicz?rk=815454;4 ; https://www.gov.pl/attachment/19fa85f9-65de-4bb0-8cc4-7dc552229b7d'
+- artist_id: hilario_bravo
+  display_name: Hilario Bravo
+  country_birth: null
+  nationalities: []
+  birth_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Hilario Bravo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q134585074'
+  death_status: living
+- artist_id: hipolito_hidalgo_de_caviedes
+  display_name: Hipólito Hidalgo de Caviedes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1902
+  death_year: 1994
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Hipólito Hidalgo de Caviedes
+  - Hipólito hidalgo de Caviedes
+  notes: '12 lotes en Silver | fuente: Wikipedia ES | Madrid'
+- artist_id: hippolyte_lazerges
+  display_name: Hippolyte Lazerges
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1817
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hippolyte lazerges
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3136076'
+- artist_id: hitoshi_karasawa
+  display_name: Hitoshi Karasawa
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hitoshi Karasawa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16770182'
+  death_status: living
+- artist_id: honore_cavaroc
+  display_name: Honoré Cavaroc
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1846
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Honoré Cavaroc
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52155348'
+- artist_id: honore_daumier
+  display_name: Victorin Honoré Daumier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1808
+  death_year: 1879
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - HONORE DAUMIER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q187506'
+- artist_id: horacio_garcia_rossi
+  display_name: Horacio Garcia Rossi
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1929
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Horacio García Rossi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1627944'
+- artist_id: horacio_lengo
+  display_name: Horacio Lengo
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1890
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Horacio Lengo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5901917'
+- artist_id: horacio_sapere
+  display_name: Horacio Sapere
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Horacio Sapere
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43136355'
+  death_status: living
+- artist_id: horacio_silva_sebastian
+  display_name: Horacio Silva Sebastián
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Horacio Silva
+  notes: Pintor español nacido en Valencia el 29 de marzo de 1950. Profesor en la Facultad de Bellas Artes de la
+    Universidad Politécnica de Valencia. Ha evolucionado del realismo al cubismo cromático.
+  death_status: living
+- artist_id: hortensia_nunez_ladeveze
+  display_name: Hortensia Núñez Ladeveze
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hortensia Nunez-Ladeveze
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q106411321'
+  death_status: living
+- artist_id: hugo_demarco
+  display_name: Hugo Demarco
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1962
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HUGO DEMARCO
+  - Hugo Demarco
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: hugo_fontela
+  display_name: Hugo Fontela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1986
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hugo Fontela
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18347236'
+  death_status: living
+- artist_id: hugo_longa
+  display_name: Hugo Longa
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1934
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hugo LONGA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16576537'
+- artist_id: hugo_martinez
+  display_name: Hugo Martínez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HUGO MARTINEZ
+  - Hugo Martínez
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: hugo_nantes
+  display_name: Hugo Nantes
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1933
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Hugo NANTES
+  - HUGO NANTES
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5904611'
+- artist_id: hugo_sartore
+  display_name: Hugo Sartore
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1934
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - HUGO SARTORE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42405527'
+- artist_id: hugo_zapata
+  display_name: Hugo Zapata
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1945
+  death_year: 2025
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Hugo Zapata
+  - Hugo Zapata (Colombia, 1945)
+  notes: '11 lotes | casas: bogota_auctions'
+- artist_id: humberto_chaves
+  display_name: Humberto Chaves
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1891
+  death_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HUMBERTO CHAVES
+  - Humberto Chaves
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: humberto_valencia_chavez
+  display_name: Humberto Valencia Chavez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - HUMBERTO VALENCIA CHAVEZ
+  - Humberto Valencia Chavez
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'

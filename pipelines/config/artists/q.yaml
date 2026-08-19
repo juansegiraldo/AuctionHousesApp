@@ -1,10 +1,15 @@
-# Maestro de artistas - shard "q"
-#
-# Entradas cuyo artist_id empieza por "q". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
-artists: []
+artists:
+- artist_id: quico_estivill
+  display_name: Quico Estivill
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Quico Estívill
+  - Quico Estivill
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118830206'
+  death_status: living

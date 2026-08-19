@@ -1,0 +1,42 @@
+{
+  "curation_status_counts": {
+    "ambiguous": 257,
+    "needs_web": 8838
+  },
+  "review_queue_rows": 9095,
+  "rule": "Registro exhaustivo de candidatos; no es cargado por load_master y no concede identidad ni pais.",
+  "schema_version": 1,
+  "shards": {
+    "a": 807,
+    "b": 410,
+    "c": 918,
+    "d": 301,
+    "e": 467,
+    "f": 465,
+    "g": 431,
+    "h": 229,
+    "i": 137,
+    "j": 842,
+    "k": 57,
+    "l": 450,
+    "m": 880,
+    "n": 133,
+    "o": 121,
+    "p": 621,
+    "q": 22,
+    "r": 490,
+    "s": 532,
+    "t": 233,
+    "u": 61,
+    "v": 332,
+    "w": 70,
+    "x": 21,
+    "y": 17,
+    "z": 48
+  },
+  "source": {
+    "legacy_excel_included": true,
+    "silver_lots": "data\\silver\\lots.jsonl",
+    "silver_sha256": "7ba5324bd99fb5400d93a8122c24cff423c7913fcae90cc4db4d76fd57a342eb"
+  }
+}

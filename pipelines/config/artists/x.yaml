@@ -1,10 +1,91 @@
-# Maestro de artistas - shard "x"
-#
-# Entradas cuyo artist_id empieza por "x". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
-artists: []
+artists:
+- artist_id: xaime_quessada_porto
+  display_name: Xaime Quesada Porto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xaime Quessada Porto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9096499'
+- artist_id: xano_armenter
+  display_name: Xano Armenter
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xano Armenter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16170391'
+  death_status: living
+- artist_id: xavier_corbero
+  display_name: Xavier Corberó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xavier Corberó
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9096553'
+- artist_id: xavier_gose
+  display_name: Javier Gosé
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1876
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xavier Gosé
+  - Xavier Gose
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9011246'
+- artist_id: xavier_rodes
+  display_name: Xavier Rodés
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xavier Rodés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118829979'
+- artist_id: xavier_valls
+  display_name: Xavier Valls
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xavier Valls
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q328956'
+- artist_id: xurxo_gomez_chao
+  display_name: Xurxo Gómez-Chao
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Xurxo Gómez-Chao
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50753564'

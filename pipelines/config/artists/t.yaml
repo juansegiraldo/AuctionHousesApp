@@ -1,171 +1,584 @@
-# Maestro de artistas - shard "t"
-#
-# Entradas cuyo artist_id empieza por "t". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: tomas_campuzano_y_aguirre
-    display_name: "Tomás Campuzano y Aguirre"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1857
-    death_year: 1934
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Tomás Campuzano y Aguirre"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: takeshi_hara
-    display_name: "Takeshi Hara"
-    country_birth: "JP"
-    nationalities: ["JP"]
-    birth_year: 1974
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "TAKESHI HARA"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: teresa_cuellar_teye
-    display_name: "Teresa Cuellar - Teye"
-    country_birth: "CO"
-    death_year: 2023
-    nationalities: ["CO"]
-    birth_year: 1935
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "TERESA CUELLAR - TEYE"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1937 y nacio en 1935; murio el 02-07-2023. Fuente: Wikidata Q6142541."
-
-  - artist_id: teresa_sanchez
-    display_name: "Teresa Sánchez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1943
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "TERESA SANCHEZ"
-      - "Teresa Sánchez"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: tomas_sanchez
-    display_name: "Tomás Sánchez"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1948
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "TOMAS SANCHEZ"
-      - "Tomás Sánchez"
-      - "Tomas Sánchez"
-    notes: "8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: theophile_alexandre_steinlen
-    display_name: "Théophile Alexandre Steinlen"
-    country_birth: "CH"
-    nationalities: ["CH"]
-    birth_year: 1859
-    death_year: 1923
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Théophile Alexandre Steinlen"
-    notes: "12 lotes en Silver | fuente: Wikipedia | nacido en Lausana, Suiza; trabajo en Paris"
-
-  - artist_id: tomas_campuzano
-    display_name: "Tomás Campuzano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1857
-    death_year: 1934
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Tomás Campuzano"
-    notes: "15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; Wikidata | Born Santander; died Becerril de la Sierra"
-
-  - artist_id: tomas_martin_rebollo
-    display_name: "Tomás Martín Rebollo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1858
-    death_year: 1919
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Tomás Martín Rebollo"
-      - "Tomás MArtín Rebollo"
-    notes: "15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; RAH | Born Granada; died Madrid"
-
-  - artist_id: tamara_de_lempicka
-    display_name: "Tamara de Lempicka"
-    country_birth: "PL"
-    nationalities: ["PL", "US"]
-    birth_year: 1894
-    death_year: 1980
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Tamara de Lempicka"
-      - "TAMARA DE LEMPICKA"
-      - "TAMARA LEMPICKA"
-    notes: "3 lotes en 3 grafias | casas: duran_subastas, lefebre_subastas | fuente: Wikipedia, investigacion de 2024 (de Young / FAMSF). PAIS DISPUTADO A TRES BANDAS, de ahi confidence medium: ella misma decia Varsovia o San Petersburgo segun la ocasion y su biografa Laura Claridge sostiene Moscu. PL es el consenso, no un hecho limpio. La investigacion de 2024 corrigio sobre todo la FECHA (16 jun 1894, no 1898 ni 1905) y el nombre real (Tamara Rosa Hurwitz), destapando un origen judio que probablemente motivo la reinvencion de la identidad polaca."
-
-  - artist_id: tsuguharu_foujita
-    display_name: "Tsuguharu Foujita"
-    country_birth: "JP"
-    nationalities: ["JP", "FR"]
-    birth_year: 1886
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Tsuguharu Foujita"
-      - "Foujita"
-      - "FOUJITA"
-      - "Tsuguharu FOUJITA"
-    notes: "9 lotes en dos folds actualmente separados | casas: duran_subastas, lefebre_subastas, zorrilla_subastas | nacido en Tokio en 1886; naturalizado frances en 1955; fallecido en Zurich en 1968. Fuente: https://www.fondation-foujita.org/leonard-tsuguharu-foujita/"
-
-  - artist_id: takesada_matsutani
-    display_name: "Takesada Matsutani"
-    country_birth: "JP"
-    nationalities: ["JP"]
-    birth_year: 1937
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Takesada Matsutani"
-    notes: "1 lote | casas: duran_subastas | nacido en Osaka en 1937; vivo, sin death_year. Fuente: https://www.metmuseum.org/art/collection/search/932125"
-
-  - artist_id: tito_cittadini
-    display_name: "Tito Cittadini"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1886
-    death_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Tito Cittadini"
-      - "CITTADINI, TITO"
-    notes: "5 lotes | casas: duran_subastas | nacido en Buenos Aires en 1886 y fallecido en Pollensa en 1960; fechas coincidentes con Silver. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/1732/"
+- artist_id: tadeusz_lapinski
+  display_name: Tadeusz Lapinski
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1928
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tadeusz Lapinski
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21288174'
+- artist_id: takesada_matsutani
+  display_name: Takesada Matsutani
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1937
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Takesada Matsutani
+  notes: '1 lote | casas: duran_subastas | nacido en Osaka en 1937; vivo, sin death_year. Fuente: https://www.metmuseum.org/art/collection/search/932125'
+  death_status: living
+- artist_id: takeshi_hara
+  display_name: Takeshi Hara
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1974
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - TAKESHI HARA
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: tamara_de_lempicka
+  display_name: Tamara de Lempicka
+  country_birth: PL
+  nationalities:
+  - PL
+  - US
+  birth_year: 1894
+  death_year: 1980
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Tamara de Lempicka
+  - TAMARA DE LEMPICKA
+  - TAMARA LEMPICKA
+  notes: '3 lotes en 3 grafias | casas: duran_subastas, lefebre_subastas | fuente: Wikipedia, investigacion de 2024
+    (de Young / FAMSF). PAIS DISPUTADO A TRES BANDAS, de ahi confidence medium: ella misma decia Varsovia o San
+    Petersburgo segun la ocasion y su biografa Laura Claridge sostiene Moscu. PL es el consenso, no un hecho limpio.
+    La investigacion de 2024 corrigio sobre todo la FECHA (16 jun 1894, no 1898 ni 1905) y el nombre real (Tamara
+    Rosa Hurwitz), destapando un origen judio que probablemente motivo la reinvencion de la identidad polaca.'
+- artist_id: telemaco_signorini
+  display_name: Telemaco Signorini
+  birth_year: 1835
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Telemaco Signorini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2326080'
+- artist_id: telesforo_cuevas
+  display_name: Telesforo Fernández Cuevas
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Telesforo Cuevas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13148066'
+- artist_id: temistocle_lamesi
+  display_name: Temistocle Lamesi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1870
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Temistocle Lamesi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94993109'
+- artist_id: teodoro_andreu_sentamans
+  display_name: Teodoro Andreu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1870
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Teodoro Andreu Sentamans
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9085927'
+- artist_id: teodoro_delgado
+  display_name: Teodoro Delgado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Teodoro Delgado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2919212'
+- artist_id: teodoro_gascon_baquero
+  display_name: Teodoro Gascón
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Teodoro Gascón Baquero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q31214722'
+- artist_id: teodoro_miciano
+  display_name: Teodoro Miciano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1903
+  death_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Teodoro Miciano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55229192'
+- artist_id: teresa_cuellar_teye
+  display_name: Teresa Cuellar - Teye
+  country_birth: CO
+  death_year: 2023
+  nationalities:
+  - CO
+  birth_year: 1935
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - TERESA CUELLAR - TEYE
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1937 y nacio en 1935;
+    murio el 02-07-2023. Fuente: Wikidata Q6142541.'
+- artist_id: teresa_llacer_pellicer
+  display_name: Teresa Llàcer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Teresa Llácer Pellicer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28708718'
+- artist_id: teresa_margolles
+  display_name: Teresa Margolles
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Teresa Margolles
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2368360'
+- artist_id: teresa_sanchez
+  display_name: Teresa Sánchez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1943
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - TERESA SANCHEZ
+  - Teresa Sánchez
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: theo_tobiasse
+  display_name: Théo Tobiasse
+  country_birth: IL
+  nationalities:
+  - IL
+  birth_year: 1927
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Theo Tobiasse
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q625930'
+- artist_id: theo_van_doesburg
+  display_name: Theo van Doesburg
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1883
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - THEO VAN DOESBURG
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q160422'
+- artist_id: theophile_alexandre_steinlen
+  display_name: Théophile Alexandre Steinlen
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1859
+  death_year: 1923
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Théophile Alexandre Steinlen
+  - Alexandre Théophile Steinlen
+  notes: '12 lotes en Silver | fuente: Wikipedia | nacido en Lausana, Suiza; trabajo en Paris Alias ''Alexandre
+    Théophile Steinlen'' (nombre invertido) anadido desde Wikidata Q706041.'
+- artist_id: theophile_marie_francois_lybaert
+  display_name: Theophile Marie Francois Lybaert
+  birth_year: 1848
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Theophile Marie François Lybaert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q3526669'
+- artist_id: thomas_couture
+  display_name: Thomas Couture
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1815
+  death_year: 1879
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - THOMAS COUTURE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q326434'
+- artist_id: thomas_lyde_hornbrook
+  display_name: Thomas Lyde Hornbrook
+  birth_year: 1780
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Thomas Lyde Hornbrook
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q7791986'
+- artist_id: thomas_miles_richardson_ii
+  display_name: Thomas Miles Richardson
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1813
+  death_year: 1890
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Thomas Miles Richardson II
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19930624'
+- artist_id: thomas_ruff
+  display_name: Thomas Ruff
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Thomas Ruff
+  - THOMAS RUFF
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q77558'
+- artist_id: thomas_shotter_boys
+  display_name: Thomas Shotter Boys
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1803
+  death_year: 1874
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Thomas Shotter Boys
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7793956'
+- artist_id: thomas_sidney_cooper
+  display_name: Thomas Sidney Cooper
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1803
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Thomas Sidney Cooper
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1333386'
+- artist_id: thomas_wyck
+  display_name: Thomas Wijck
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1616
+  death_year: 1677
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Thomas Wyck
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q709404'
+- artist_id: timoteo_perez_rubio
+  display_name: Timoteo Pérez Rubio
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1896
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Timoteo Pérez Rubio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6147067'
+- artist_id: tino_gatagan
+  display_name: Tino Gatagán
+  birth_year: 1951
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tino Gatagan
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6147168'
+- artist_id: tito_cittadini
+  display_name: Tito Cittadini
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1886
+  death_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Tito Cittadini
+  - CITTADINI, TITO
+  notes: '5 lotes | casas: duran_subastas | nacido en Buenos Aires en 1886 y fallecido en Pollensa en 1960; fechas
+    coincidentes con Silver. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/1732/'
+- artist_id: tito_conti
+  display_name: Tito Conti
+  birth_year: 1842
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tito Conti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q16031190'
+- artist_id: tito_salas
+  display_name: Tito Salas
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1887
+  death_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tito Salas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3466695'
+- artist_id: tofol_sastre
+  display_name: Tòfol Sastre
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tofol Sastre
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17036805'
+  death_status: living
+- artist_id: tom_schaal
+  display_name: Tom Schaal
+  country_birth: null
+  nationalities: []
+  birth_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tom Schaal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139014561'
+  death_status: living
+- artist_id: tomas_campuzano
+  display_name: Tomás Campuzano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1934
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Tomás Campuzano
+  - Tomás Campuzano y Aguirre
+  notes: '15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; Wikidata | Born Santander; died Becerril de la
+    Sierra. Ficha ''tomas_campuzano_y_aguirre'' consolidada aqui el 2026-08-18: misma persona (mismas fechas), partida
+    en dos entradas por variantes del nombre.'
+- artist_id: tomas_diaz_valdes_y_folgado
+  display_name: Tomás Díaz Valdés
+  birth_year: 1805
+  death_year: 1886
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tomás Díaz Valdés y Folgado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96751017'
+- artist_id: tomas_hiepes
+  display_name: Tomás Yepes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1595
+  death_year: 1674
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tomás Hiepes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7820530'
+- artist_id: tomas_martin_rebollo
+  display_name: Tomás Martín Rebollo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1858
+  death_year: 1919
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Tomás Martín Rebollo
+  - Tomás MArtín Rebollo
+  notes: '15 lotes en Silver | fuente: Wikipedia ES; Museo Prado; RAH | Born Granada; died Madrid'
+- artist_id: tomas_munoz_lucena
+  display_name: Tomás Muñoz Lucena
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tomás Muñoz Lucena
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5487949'
+- artist_id: tomas_sanchez
+  display_name: Tomás Sánchez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1948
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - TOMAS SANCHEZ
+  - Tomás Sánchez
+  - Tomas Sánchez
+  notes: '8 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: tomas_sans_corbella
+  display_name: Tomàs Sans Corbella
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tomás Sans Corbella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11952101'
+- artist_id: toni_catany
+  display_name: Toni Catany
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Toni Catany
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q322216'
+- artist_id: tono_carbajo
+  display_name: Tono Carbajo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Tono Carbajo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20535658'
+- artist_id: toth_menyhert
+  display_name: Menyhért Tóth
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1904
+  death_year: 1980
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Toth Menyhért
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1327376'
+- artist_id: trinidad_fernandez_martin
+  display_name: Trinidad Fernández Martín
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Trinidad Fernández Martín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98836412'
+- artist_id: tsuguharu_foujita
+  display_name: Tsuguharu Foujita
+  country_birth: JP
+  nationalities:
+  - JP
+  - FR
+  birth_year: 1886
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Tsuguharu Foujita
+  - Foujita
+  - FOUJITA
+  - Tsuguharu FOUJITA
+  notes: '9 lotes en dos folds actualmente separados | casas: duran_subastas, lefebre_subastas, zorrilla_subastas
+    | nacido en Tokio en 1886; naturalizado frances en 1955; fallecido en Zurich en 1968. Fuente: https://www.fondation-foujita.org/leonard-tsuguharu-foujita/'

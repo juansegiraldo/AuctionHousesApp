@@ -1,23 +1,118 @@
-# Maestro de artistas - shard "z"
-#
-# Entradas cuyo artist_id empieza por "z". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: zoma_baitler
-    display_name: "Zoma Baitler"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1903
-    death_year: 1994
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Zoma Baitler"
-      - "Zoma BAITLER"
-    notes: "30 lotes | casas: zorrilla_subastas"
+- artist_id: zacarias_gonzalez
+  display_name: Zacarías González
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zacarías González
+  - Zacarías Gónzalez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6170745'
+- artist_id: zacarias_gonzalez_velazquez
+  display_name: Zacarías González Velázquez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1763
+  death_year: 1834
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zacarías González Velázquez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q957210'
+- artist_id: zaida_del_rio
+  display_name: Zaida del Río
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zaida Del Río
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q53391265'
+  death_status: living
+- artist_id: zao_wou_ki
+  display_name: Zao Wou-Ki
+  country_birth: CN
+  nationalities:
+  - CN
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Zao Wou-Ki
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q147144'
+- artist_id: zdena_fibichova
+  display_name: Zdena Fibichová
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1933
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zdena Fibichova
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21296305'
+- artist_id: zinaida_zatsepina
+  display_name: Zinaida Illivna Zatsepina
+  country_birth: RU
+  nationalities:
+  - RU
+  birth_year: 1913
+  death_year: 1986
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zinaida Zatsepina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q111961456'
+- artist_id: zoma_baitler
+  display_name: Zoma Baitler
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1903
+  death_year: 1994
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Zoma Baitler
+  - Zoma BAITLER
+  notes: '30 lotes | casas: zorrilla_subastas'
+- artist_id: zulema_bagur
+  display_name: Zulema Bagur
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zulema Bagur
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q111102722'
+- artist_id: zush
+  display_name: Evru
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Zush
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17037123'

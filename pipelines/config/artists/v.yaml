@@ -1,216 +1,872 @@
-# Maestro de artistas - shard "v"
-#
-# Entradas cuyo artist_id empieza por "v". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: valentin_de_zubiaurre
-    display_name: "Valentín de Zubiaurre"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1879
-    death_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Valentín de Zubiaurre"
-    notes: "19 lotes | casas: duran_subastas"
-
-  - artist_id: victor_mira
-    display_name: "Victor Mira"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1949
-    death_year: 2004
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Victor Mira"
-    notes: "29 lotes | casas: duran_subastas"
-
-  - artist_id: victor_patricio_landaluze
-    display_name: "Victor Patricio Landaluze"
-    country_birth: "ES"
-    nationalities: ["CU", "ES"]
-    birth_year: 1828
-    death_year: 1889
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Victor Patricio Landaluze"
-    notes: "4 lotes | casas: duran_subastas"
-
-  - artist_id: victor_vasarely
-    display_name: "Victor Vasarely"
-    country_birth: "HU"
-    birth_year: 1906
-    death_year: 1997
-    nationalities: ["FR", "HU"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Victor Vasarely"
-    notes: "15 lotes | casas: bogota_auctions, duran_subastas"
-  - artist_id: vicente_martin
-    display_name: "Vicente Martín"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1911
-    death_year: 1988
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Vicente Martín"
-      - "Vicente MARTÍN"
-    notes: "6 lotes | casas: zorrilla_subastas"
-
-  - artist_id: veronica_cardenas
-    display_name: "Verónica Cárdenas"
-    country_birth: "MX"
-    nationalities: ["MX"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "VERONICA CARDENAS"
-      - "Verónica Cárdenas"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: victor_laignelet
-    display_name: "Victor Laignelet"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "VICTOR LAIGNELET"
-      - "Victor Laignelet"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: vik_muniz
-    display_name: "Vik Muniz"
-    country_birth: "BR"
-    nationalities: ["BR"]
-    birth_year: 1961
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "VIK MUNIZ"
-      - "Vik Muniz"
-    notes: "4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: vicente_lopez
-    display_name: "Vicente López"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1772
-    death_year: 1850
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Vicente López Portaña"
-      - "Vicente López"
-    notes: "11 lotes en Silver | fuente: Wikipedia | Vicente Lopez Portana, Valencia; pintor de camara"
-
-  - artist_id: vicente_palmaroli
-    display_name: "Vicente Palmaroli"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1834
-    death_year: 1896
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Vicente Palmaroli"
-    notes: "15 lotes en Silver | fuente: Wikipedia; Museo Prado | Zarzalejo; director del Prado"
-
-  - artist_id: vicente_pastor_calpena
-    display_name: "Vicente Pastor Calpena"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1918
-    death_year: 1993
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Vicente Pastor Calpena"
-      - "VIcente Pastor Calpena"
-    notes: "11 lotes en Silver | fuente: Artnet"
-
-  - artist_id: vicente_ruiz
-    display_name: "Vicente Ruiz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1941
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Vicente Ruiz"
-    notes: "15 lotes en Silver | fuente: Region de Murcia Digital; BNE | Born Lorca, Murcia"
-
-  - artist_id: vicente_vela
-    display_name: "Vicente Vela"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1931
-    death_year: 2015
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Vicente Vela"
-    notes: "13 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: vicente_arnas_lozano
-    display_name: "Vicente Arnás Lozano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Vicente Arnás"
-    notes: "Pintor madrileño nacido en 1949. Estudió Artes y Oficios en Madrid, se define como autodidacta. Comenzó carrera en publicidad como ilustrador y delineante. Primera exposición individual 1976 (galería Macarrón, Madrid). Realismo mágico y surrealismo crítico. Especialista en serie Tauromaquia. Múltiples premios: Medalla de Honor BMW (1987, 1990), Premio La Maestranza Sevilla (1993), Premio de Grabado Cebreros (1996)."
-
-  - artist_id: victor_jerez
-    display_name: "Víctor Jerez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1981
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Víctor Jerez"
-      - "Victor Jerez"
-    notes: "Pintor español contemporáneo. Nacido 1981 Algeciras, Cádiz. Conocido como 'pintor de deportistas'. Especializado en live painting de eventos internacionales de tenis."
-
-  - artist_id: vicente_macip
-    display_name: "Vicente Macip"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1475
-    death_year: 1551
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Vicente Macip"
-    notes: "2 lotes | casas: duran_subastas | nacido en Valencia. Prado: h.1473/75-1551; CER.es y Duran: ca.1475-1545. Se prioriza la fecha de muerte de la ficha actual del Prado. Fuentes: https://www.museodelprado.es/coleccion/artista/vicente-macip/fa32efe6-41f8-4585-b8d0-797fc0e90698 ; https://ceres.mcu.es/pages/Main?idt=132571&inventary=08448&museum=MLGM&table=FMUS"
+- artist_id: valentin_de_zubiaurre
+  display_name: Valentín de Zubiaurre
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1879
+  death_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Valentín de Zubiaurre
+  notes: '19 lotes | casas: duran_subastas'
+- artist_id: valeriano_dominguez_becquer
+  display_name: Valeriano Domínguez Bécquer
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1833
+  death_year: 1870
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Valeriano Domínguez Becquer
+  - Valeriano Domínguez Bécquer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3325495'
+- artist_id: valerio_adami
+  display_name: Valerio Adami
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Valerio Adami
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q562139'
+  death_status: living
+- artist_id: van_ostade
+  display_name: Isaak van Ostade
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1621
+  death_year: 1649
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Van Ostade
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q217648'
+- artist_id: vanessa_beecroft
+  display_name: Vanessa Beecroft
+  birth_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vanessa Beecroft
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q152292'
+- artist_id: vascano
+  display_name: Kaulak
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vascano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5958697'
+- artist_id: vela_zanetti
+  display_name: Vela Zanetti
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1913
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vela Zanetti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5552128'
+- artist_id: vernet_claude_joseph
+  display_name: Joseph Vernet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1714
+  death_year: 1789
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - VERNET, CLAUDE JOSEPH
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q315819'
+- artist_id: veronica_cardenas
+  display_name: Verónica Cárdenas
+  country_birth: MX
+  nationalities:
+  - MX
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - VERONICA CARDENAS
+  - Verónica Cárdenas
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: veronique_filozof
+  display_name: Véronique Filozof
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1904
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Véronique Filozof
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q122858'
+- artist_id: vicenc_sole_jorba
+  display_name: Vicenç Solé Jorba
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicenç Solé Jorba
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11954674'
+- artist_id: vicent_benito_botella
+  display_name: Vicent Benito Botella
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicent Benito Botella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42585261'
+- artist_id: vicente_ameztoy
+  display_name: Vicente Ameztoy
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Ameztoy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9093224'
+- artist_id: vicente_arnas_lozano
+  display_name: Vicente Arnás Lozano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Vicente Arnás
+  notes: 'Pintor madrileño nacido en 1949. Estudió Artes y Oficios en Madrid, se define como autodidacta. Comenzó
+    carrera en publicidad como ilustrador y delineante. Primera exposición individual 1976 (galería Macarrón, Madrid).
+    Realismo mágico y surrealismo crítico. Especialista en serie Tauromaquia. Múltiples premios: Medalla de Honor
+    BMW (1987, 1990), Premio La Maestranza Sevilla (1993), Premio de Grabado Cebreros (1996).'
+- artist_id: vicente_banuls
+  display_name: Vicente Bañuls
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1866
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Bañuls
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6161038'
+- artist_id: vicente_borras_abella
+  display_name: Vicente Borrás y Abella
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1867
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Borrás Abella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19842327'
+- artist_id: vicente_castellano_giner
+  display_name: Vicente Castellano Giner
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Castellano Giner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q87652763'
+- artist_id: vicente_colom
+  display_name: Vicente Colom
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Colom
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133709073'
+  death_status: living
+- artist_id: vicente_cutanda_y_toraya
+  display_name: Vicente Cutanda y Toraya
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1850
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Cutanda y Toraya
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9093263'
+- artist_id: vicente_esquivel
+  display_name: Vicente Esquivel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1833
+  death_year: 1900
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Esquivel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17155814'
+- artist_id: vicente_gandia
+  display_name: Vicente Gandía
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Gandía
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16243212'
+- artist_id: vicente_garcia_de_paredes
+  display_name: Vicente García de Paredes
+  country_birth: null
+  nationalities: []
+  birth_year: 1845
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vicente García de Paredes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q94523709'
+- artist_id: vicente_herrero
+  display_name: Vicente Herrero
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vicente Herrero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q56000514'
+- artist_id: vicente_llorens_poy
+  display_name: Vicente Llorens Poy
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1936
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente LLorens Poy
+  - Vicente Llorens Poy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9093313'
+- artist_id: vicente_lopez
+  display_name: Vicente López
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1772
+  death_year: 1850
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Vicente López Portaña
+  - Vicente López
+  notes: '11 lotes en Silver | fuente: Wikipedia | Vicente Lopez Portana, Valencia; pintor de camara'
+- artist_id: vicente_macip
+  display_name: Vicente Macip
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1475
+  death_year: 1551
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Vicente Macip
+  notes: '2 lotes | casas: duran_subastas | nacido en Valencia. Prado: h.1473/75-1551; CER.es y Duran: ca.1475-1545.
+    Se prioriza la fecha de muerte de la ficha actual del Prado. Fuentes: https://www.museodelprado.es/coleccion/artista/vicente-macip/fa32efe6-41f8-4585-b8d0-797fc0e90698
+    ; https://ceres.mcu.es/pages/Main?idt=132571&inventary=08448&museum=MLGM&table=FMUS'
+- artist_id: vicente_march_marco
+  display_name: Vicente March
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente March Marco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2041378'
+- artist_id: vicente_martin
+  display_name: Vicente Martín
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1911
+  death_year: 1988
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Vicente Martín
+  - Vicente MARTÍN
+  notes: '6 lotes | casas: zorrilla_subastas'
+- artist_id: vicente_mota_y_morales
+  display_name: Vicente Mota y Morales
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vicente Mota y Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96750806'
+- artist_id: vicente_palmaroli
+  display_name: Vicente Palmaroli
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1834
+  death_year: 1896
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Vicente Palmaroli
+  notes: '15 lotes en Silver | fuente: Wikipedia; Museo Prado | Zarzalejo; director del Prado'
+- artist_id: vicente_pascual_rodrigo
+  display_name: Vicente Pascual Rodrigo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Pascual Rodrigo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6161270'
+- artist_id: vicente_pastor_calpena
+  display_name: Vicente Pastor Calpena
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 1993
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Vicente Pastor Calpena
+  - VIcente Pastor Calpena
+  notes: '11 lotes en Silver | fuente: Artnet'
+- artist_id: vicente_poveda
+  display_name: Vicente Poveda y Juan
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1857
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Poveda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26261671'
+- artist_id: vicente_puig
+  display_name: Vicente Puig
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1882
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - VICENTE PUIG
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28503622'
+- artist_id: vicente_ruiz
+  display_name: Vicente Ruiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Vicente Ruiz
+  notes: '15 lotes en Silver | fuente: Region de Murcia Digital; BNE | Born Lorca, Murcia'
+- artist_id: vicente_santos_sainz
+  display_name: Vicente Santos Sainz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Santos Sáinz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q131352276'
+- artist_id: vicente_vela
+  display_name: Vicente Vela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1931
+  death_year: 2015
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Vicente Vela
+  notes: '13 lotes en Silver | fuente: Wikidata'
+- artist_id: vicente_verdu
+  display_name: Vicente Verdú
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vicente Verdú
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11705066'
+- artist_id: vicente_viudes
+  display_name: Vicente Viudes
+  birth_year: 1916
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vicente Viudes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q52157330'
+- artist_id: victor_charreton
+  display_name: Victor Charreton
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1864
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Victor Charreton
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q3557216'
+- artist_id: victor_constantin_delaigue
+  display_name: Victor-Constantin Delaigue
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1878
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - VICTOR-CONSTANTIN DELAIGUE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21287402'
+- artist_id: victor_henry_lesur
+  display_name: Victor Henry Lesur
+  birth_year: 1863
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Victor Henry Lesur
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q97604001'
+- artist_id: victor_jerez
+  display_name: Víctor Jerez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1981
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Víctor Jerez
+  - Victor Jerez
+  notes: Pintor español contemporáneo. Nacido 1981 Algeciras, Cádiz. Conocido como 'pintor de deportistas'. Especializado
+    en live painting de eventos internacionales de tenis.
+  death_status: living
+- artist_id: victor_laignelet
+  display_name: Victor Laignelet
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - VICTOR LAIGNELET
+  - Victor Laignelet
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: victor_lecomte
+  display_name: Victor Lecomte
+  birth_year: 1856
+  death_year: 1920
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Victor Lecomte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q37516247'
+- artist_id: victor_lopez_rua
+  display_name: Víctor López-Rúa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Víctor López Rúa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99495111'
+- artist_id: victor_manuel_garcia_valdez
+  display_name: Víctor Manuel García Valdez
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1897
+  death_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - VÍctor Manuel García Valdez
+  - Victor Manuel García Valdez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4111025'
+- artist_id: victor_mira
+  display_name: Victor Mira
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  death_year: 2004
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Victor Mira
+  notes: '29 lotes | casas: duran_subastas'
+- artist_id: victor_moya_y_calvo
+  display_name: Víctor Moya i Calvo
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Víctor Moya y Calvo
+  - Victor Moya y Calvo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94523672'
+- artist_id: victor_patricio_landaluze
+  display_name: Victor Patricio Landaluze
+  country_birth: ES
+  nationalities:
+  - CU
+  - ES
+  birth_year: 1828
+  death_year: 1889
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Victor Patricio Landaluze
+  notes: '4 lotes | casas: duran_subastas'
+- artist_id: victor_pierre_huguet
+  display_name: Victor Pierre Huguet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1835
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Victor-Pierre Huguet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3557373'
+- artist_id: victor_rebuffo
+  display_name: Víctor Rebuffo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1903
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - VICTOR REBUFFO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27786488'
+- artist_id: victor_valera
+  display_name: Víctor Valera
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1927
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Víctor Valera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9095345'
+- artist_id: victor_vasarely
+  display_name: Victor Vasarely
+  country_birth: HU
+  birth_year: 1906
+  death_year: 1997
+  nationalities:
+  - FR
+  - HU
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Victor Vasarely
+  notes: '15 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: victoria_civera
+  display_name: Victoria Civera
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Victoria Civera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9093427'
+- artist_id: victoriano_codina_y_langlin
+  display_name: Victoriano Codina y Langlin
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1844
+  death_year: 1911
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Victoriano Codina y Langlin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21462761'
+- artist_id: victoriano_pardo_galindo
+  display_name: Victoriano Pardo Galindo
+  country_birth: null
+  nationalities: []
+  birth_year: 1918
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Victoriano Pardo Galindo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q80939190'
+- artist_id: victorio_macho
+  display_name: Victorio Macho
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Victorio Macho
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3302484'
+- artist_id: vidal_gonzalez_arenal
+  display_name: Vidal González Arenal
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vidal González Arenal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55838520'
+- artist_id: vik_muniz
+  display_name: Vik Muniz
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1961
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - VIK MUNIZ
+  - Vik Muniz
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: viktor_templin
+  display_name: Viktor Templin
+  country_birth: RU
+  nationalities:
+  - RU
+  birth_year: 1920
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Viktor Templin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q66726175'
+- artist_id: vincenzo_irolli
+  display_name: Vincenzo Irolli
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1860
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vincenzo Irolli
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4013331'
+- artist_id: virgilio_albiac_bielsa
+  display_name: Virgilio Albiac Bielsa
+  country_birth: null
+  nationalities: []
+  birth_year: 1912
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Virgilio Albiac Bielsa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q66119765'
+- artist_id: virgilio_galan_roman
+  display_name: Virgilio Galán Román
+  country_birth: null
+  nationalities: []
+  birth_year: 1931
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Virgilio Galán Román
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q105938639'
+- artist_id: virgilio_mattoni
+  display_name: Virgilio Mattoni
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1842
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Virgilio Mattoni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q537036'
+- artist_id: virgilio_trompiz
+  display_name: Virgilio Trómpiz
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1927
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Virgilio Trompiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6163680'
+- artist_id: vitin_cortezo
+  display_name: Víctor Cortezo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vitín Cortezo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28503002'
+- artist_id: vittore_zanetti_zilla
+  display_name: Vittore Zanetti Zilla
+  birth_year: 1864
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vittore ZANETTI ZILLA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q4015193'

@@ -1,517 +1,1804 @@
-# Maestro de artistas - shard "g"
-#
-# Entradas cuyo artist_id empieza por "g". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: gabriel_bernaldo_de_quiros
-    display_name: "Gabriel Bernaldo de Quirós"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gabriel Bernaldo de Quirós"
-      - "BERNALDO DE QUIROS, GABRIEL"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: gabriel_morcillo
-    display_name: "Gabriel Morcillo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1888
-    death_year: 1973
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gabriel Morcillo Raya"
-      - "Gabriel Morcillo"
-    notes: "7 lotes | casas: duran_subastas"
-
-  - artist_id: gabriel_puig_roda
-    display_name: "Gabriel Puig Roda"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1865
-    death_year: 1919
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gabriel Puig Roda"
-    notes: "6 lotes | casas: duran_subastas"
-
-  - artist_id: gaspar_montes_iturrioz
-    display_name: "Gaspar Montes Iturrioz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1901
-    death_year: 1998
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gaspar Montes Iturrioz"
-    notes: "16 lotes | casas: duran_subastas"
-
-  - artist_id: genaro_perez_villaamil
-    display_name: "Genaro Pérez Villaamil"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1807
-    death_year: 1854
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Genaro Pérez Villaamil"
-      - "PÉREZ VILLAAMIL, GENARO"
-    notes: "12 lotes | casas: duran_subastas"
-
-  - artist_id: gerardo_rueda
-    display_name: "Gerardo Rueda"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 1996
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gerardo Rueda"
-    notes: "34 lotes | casas: duran_subastas"
-
-  - artist_id: gines_parra
-    display_name: "Ginés Parra"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1899
-    death_year: 1961
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ginés Parra"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: gonzalo_ariza
-    display_name: "Gonzalo Ariza"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1912
-    death_year: 1995
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gonzalo Ariza (Colombia, 1912 - 1995)"
-      - "Gonzalo Ariza (Colombia, 1912 - 1995.)"
-      - "Gonzalo Ariza"
-    notes: "9 lotes | casas: bogota_auctions"
-
-  - artist_id: goya
-    display_name: "Goya"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1746
-    death_year: 1828
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Goya"
-      - "Francisco de Goya y Lucientes"
-      - "Francisco de Goya"
-      - "GOYA Y LUCIENTES, FRANCISCO DE"
-    notes: "44 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: gregorio_del_olmo
-    display_name: "Gregorio del Olmo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1921
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gregorio del Olmo"
-    notes: "27 lotes | casas: duran_subastas"
-
-  - artist_id: gregorio_prieto
-    display_name: "Gregorio Prieto"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1899
-    death_year: 1992
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gregorio Prieto"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: guillermo_gomez_gil
-    display_name: "Guillermo Gómez Gil"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1862
-    death_year: 1942
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Guillermo Gómez Gil"
-    notes: "32 lotes | casas: duran_subastas"
-
-  - artist_id: guillermo_munoz_vera
-    display_name: "Guillermo Muñoz Vera"
-    country_birth: "CL"
-    birth_year: 1956
-    nationalities: ["ES", "CL"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Guillermo Muñoz Vera"
-    notes: "21 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Concepcion (CL) el 28-04-1956; llego a Espania en 1979 y se nacionalizo en 1985. Vende en el mercado espaniol y funda la Escuela de Chinchon, de ahi que ES vaya primero en nationalities, pero el nacimiento es CL. Fuentes: Wikipedia ES, Artistas Visuales Chilenos (MNBA)."
-
-  - artist_id: guillermo_perez_villalta
-    display_name: "Guillermo Pérez Villalta"
-    country_birth: "ES"
-    birth_year: 1948
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Guillermo Pérez Villalta"
-      - "PÉREZ VILLALTA, GUILLERMO"
-    notes: "43 lotes | casas: duran_subastas"
-
-  - artist_id: guillermo_vargas_ruiz
-    display_name: "Guillermo Vargas Ruiz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1910
-    death_year: 1990
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Guillermo Vargas Ruiz"
-    notes: "63 lotes | casas: duran_subastas"
-
-  - artist_id: guillermo_wiedemann
-    display_name: "Guillermo Wiedemann"
-    country_birth: "DE"
-    death_year: 1969
-    nationalities: ["CO", "DE"]
-    birth_year: 1905
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Guillermo Wiedemann"
-    notes: "12 lotes | casas: bogota_auctions"
-
-  - artist_id: gustavo_torner
-    display_name: "Gustavo Torner"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1925
-    death_year: 2025
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gustavo Torner"
-    notes: "33 lotes | casas: duran_subastas"
-
-  - artist_id: gustavo_zalamea
-    display_name: "Gustavo Zalamea"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1951
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gustavo Zalamea (Argentina 1951 - Brasil, 2011)"
-      - "Gustavo Zalamea (Argentina, 1951 - Brasil, 2011.)"
-      - "Gustavo Zalamea - Argentina, 1951- Brasil, 2011."
-      - "Gustavo Zalamea"
-      - "Zalamea, Gustavo"
-    notes: "14 lotes | casas: bogota_auctions"
-
-  - artist_id: gaviria
-    display_name: "Gaviria"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GAVIRIA"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: george_rouault
-    display_name: "George Rouault"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1871
-    death_year: 1958
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GEORGE ROUAULT"
-      - "George Rouault"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: george_segal
-    display_name: "George Segal"
-    country_birth: "US"
-    nationalities: ["US"]
-    birth_year: 1924
-    death_year: 2000
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "George Segal (EE.UU., 1924 - 2000.)"
-      - "GEORGE SEGAL"
-      - "George Segal"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: german_arrubla
-    display_name: "Germán Arrubla"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1939
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GERMAN ARRUBLA"
-      - "Germán Arrubla"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: german_botero
-    display_name: "Germán Botero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1946
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GERMAN BOTERO"
-      - "Germán Botero"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: gilbert_george_gilbert_proesch_george_passmore_y_david_hockney
-    display_name: "Gilbert & George (gilbert Proesch & George Passmore) y David Hockney"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "GILBERT & GEORGE (GILBERT PROESCH & GEORGE PASSMORE) Y DAVID HOCKNEY"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
-
-  - artist_id: gonzalo_diaz
-    display_name: "Gonzalo Díaz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GONZALO DIAZ"
-      - "Gonzalo Díaz"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: graciela_sacco
-    display_name: "Graciela Sacco"
-    country_birth: "AR"
-    nationalities: ["AR"]
-    birth_year: 1956
-    death_year: 2017
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GRACIELA SACCO"
-      - "Graciela Sacco"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: gustavo_garavato_bernal
-    display_name: "Gustavo \"garavato\" Bernal"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1980
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GUSTAVO \"GARAVATO\" BERNAL"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: gustavo_otero_munoz
-    display_name: "Gustavo Otero Muñoz"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1979
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GUSTAVO OTERO MUÑOZ"
-      - "Otero Muñoz, Gustavo"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: gustavo_vejarano
-    display_name: "Gustavo Vejarano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1932
-    death_year: 2012
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GUSTAVO VEJARANO"
-      - "Gustavo Vejarano"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: genaro_lahuerta
-    display_name: "Genaro Lahuerta"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1905
-    death_year: 1985
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Genaro Lahuerta"
-    notes: "11 lotes en Silver | fuente: Wikipedia ES | Valencia"
-
-  - artist_id: godofredo_ortega_munoz
-    display_name: "Godofredo Ortega Muñoz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1899
-    death_year: 1982
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Godofredo Ortega Muñoz"
-      - "GODOFREDO ORTEGA MUÑOZ"
-    notes: "11 lotes en Silver | fuente: Wikidata | San Vicente de Alcantara; CORRIGE 1905 -> 1899"
-
-  - artist_id: grete_stern
-    display_name: "Grete Stern"
-    country_birth: "DE"
-    nationalities: ["DE"]
-    birth_year: 1904
-    death_year: 1999
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Grete Stern"
-    notes: "13 lotes en Silver | fuente: Wikipedia | nacida en Elberfeld, Alemania; emigro a Argentina"
-
-  - artist_id: gonzalo_bilbao_martinez
-    display_name: "Gonzalo Bilbao Martínez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1860
-    death_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gonzalo Bilbao Martínez"
-    notes: "Costumbrista painter, professor at Escuela Superior de Artes e Industrias de Sevilla. Born in Seville; studied orientalism in Tánger and Tetuán 1883."
-
-  - artist_id: george_owen_wynne_apperley
-    display_name: "George Owen Wynne Apperley"
-    country_birth: "GB"
-    nationalities: ["GB"]
-    birth_year: 1884
-    death_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "George Wynne Apperley"
-      - "George Owen Wynne Apperley"
-    notes: "6 lotes | casas: duran_subastas | pintor britanico nacido en Ventnor, isla de Wight, el 17-06-1884 y fallecido en Tanger el 10-09-1960; fechas coincidentes con Silver. Fuente: https://historia-hispanica.rah.es/biografias/3049-george-owen-wynne-apperley"
-
-  - artist_id: giuseppe_bonito
-    display_name: "Giuseppe Bonito"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1707
-    death_year: 1789
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Giuseppe Bonito"
-    notes: "1 lote | casas: duran_subastas | pintor italiano nacido en Castellammare di Stabia en 1707 y fallecido en Napoles en 1789; fechas coincidentes con Silver. Fuentes: https://www.museodelprado.es/aprende/enciclopedia/voz/bonito-giuseppe/e3a1ab69-8a1b-4288-9707-a72c62daf69a ; https://catalogo.beniculturali.it/Agent/9bef403399d329850eb3b782c2f8f5d7"
-
-  - artist_id: grip_face
-    display_name: "Grip Face"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1989
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "GRIP FACE"
-    notes: "1 lote vendido por 9.000 EUR | casas: duran_subastas | la memoria institucional de la Fundació Miró identifica Grip Face como pseudónimo de David Oliver, nacido en Palma en 1989. David Oliver no se añade como alias por riesgo de homonimia y porque esa forma no aparece como artista crudo en Silver. Fuentes: https://miromallorca.com/uploads/2026/04/memoria2025.pdf ; https://miromallorca.com/es/exhibition/grip-face-utopia-del-lodo-y-sashimi-de-bruma/"
-
-  - artist_id: gustavo_de_maeztu
-    display_name: "Gustavo de Maeztu"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1887
-    death_year: 1947
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Gustavo de Maeztu"
-    notes: "6 lotes | casas: duran_subastas | nacido en Vitoria en 1887 y fallecido en Estella en 1947; Silver coincide. Fuente: https://www.museogustavodemaeztu.com/biografia-gustavo-de-maeztu/"
-
-  - artist_id: giuseppe_maraschini
-    display_name: "Giuseppe Maraschini"
-    country_birth: "IT"
-    nationalities: ["IT"]
-    birth_year: 1839
-    death_year: 1903
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Giuseppe Maraschini"
-      - "Guiseppe MARASCHINI"
-      - "MARASCHINI, Guiseppe"
-      - "MARASCHINI, Guiseppe (Italian school, 1839-1903)"
-    notes: "1 lote con autor extraido en Silver; otros 2 lotes solo tienen el nombre en lot_title y siguen fuera del resolver | Giuseppe Maraschini nacio en Posina, Vicenza, en 1839 y murio en Florencia en 1903; Guiseppe es una errata de la casa. Fuente institucional: https://www.museicivicivicenza.it/file/doc-10796.pdf ; archivo: https://www.museicivicivicenza.it/file/doc1-13340.pdf"
+- artist_id: gabino_gaona
+  display_name: Gabino Gaona
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1933
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabino Gaona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6438112'
+- artist_id: gabino_rey_santiago
+  display_name: Gabino Rey Santiago
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabino Rey Santiago
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q713968'
+- artist_id: gabriel_amat
+  display_name: Gabriel Amat
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabriel Amat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q25995935'
+- artist_id: gabriel_bernaldo_de_quiros
+  display_name: Gabriel Bernaldo de Quirós
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gabriel Bernaldo de Quirós
+  - BERNALDO DE QUIROS, GABRIEL
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: gabriel_carriat_rolant
+  display_name: Gabriel Carriat-Rolant
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gabriel Carriat-Rolant
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q134709733'
+- artist_id: gabriel_largacha
+  display_name: Gabriel Largacha
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - GABRIEL LARGACHA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q125242766'
+- artist_id: gabriel_morcillo
+  display_name: Gabriel Morcillo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1973
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gabriel Morcillo Raya
+  - Gabriel Morcillo
+  notes: '7 lotes | casas: duran_subastas'
+- artist_id: gabriel_orozco
+  display_name: Gabriel Orozco
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GABRIEL OROZCO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1242404'
+  death_status: living
+- artist_id: gabriel_osmundo_gomez
+  display_name: Gabriel Osmundo Gómez
+  birth_year: 1856
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gabriel Osmundo Gómez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55838353'
+- artist_id: gabriel_perez_bolano
+  display_name: Gabriel Pérez Bolaño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1973
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabriel Pérez Bolaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118830155'
+  death_status: living
+- artist_id: gabriel_puig_roda
+  display_name: Gabriel Puig Roda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1865
+  death_year: 1919
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gabriel Puig Roda
+  notes: '6 lotes | casas: duran_subastas'
+- artist_id: gabriel_ramos_uranga
+  display_name: Gabriel Ramos Uranga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1939
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabriel Ramos Uranga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12258083'
+- artist_id: gabriel_rigo
+  display_name: Gabriel Rigo
+  country_birth: null
+  nationalities: []
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gabriel Rigo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131548058'
+  death_status: living
+- artist_id: gabriel_spizel
+  display_name: Gabriel Spitzel
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1697
+  death_year: 1760
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gabriel Spizel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21646712'
+- artist_id: gaetano_bellei
+  display_name: Gaetano Bellei
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1857
+  death_year: 1922
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gaetano Bellei
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30092075'
+- artist_id: garcia_lorca_federico
+  display_name: Federico García Lorca
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1898
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - García Lorca, Federico
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q41408'
+- artist_id: gary_tricker
+  display_name: Gary Tricker
+  country_birth: NZ
+  nationalities:
+  - NZ
+  birth_year: 1938
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gary Tricker
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59859205'
+- artist_id: gaspar_camps
+  display_name: Gaspar Camps
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gaspar Camps
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3098717'
+- artist_id: gaspar_miro_lleo
+  display_name: Gaspar Miró Lleó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gaspar Miró Lleo
+  - Gaspar Miró LLeo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16860469'
+- artist_id: gaspar_montes_iturrioz
+  display_name: Gaspar Montes Iturrioz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1998
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gaspar Montes Iturrioz
+  notes: '16 lotes | casas: duran_subastas'
+- artist_id: gaspar_netscher
+  display_name: Caspar Netscher
+  country_birth: DE
+  nationalities:
+  - DE
+  death_year: 1684
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gaspar Netscher
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q217715'
+- artist_id: gaston_larrieu
+  display_name: Gaston Larrieu
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1908
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gastón Larrieu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3099054'
+- artist_id: gaston_lelarge
+  display_name: Gaston Lelarge
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1861
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gastón Lelarge
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3099061'
+- artist_id: gaston_orellana
+  display_name: Gastón Orellana
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gastón Orellana
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1648991'
+  death_status: living
+- artist_id: gaston_vuillier
+  display_name: Gaston Vuillier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1845
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gastón Vuillier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3099188'
+- artist_id: gaviria
+  display_name: Gaviria
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GAVIRIA
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gemma_sin
+  display_name: Gemma Sin
+  birth_year: 1952
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gemma Sin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96707051'
+- artist_id: genaro_lahuerta
+  display_name: Genaro Lahuerta
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1905
+  death_year: 1985
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Genaro Lahuerta
+  notes: '11 lotes en Silver | fuente: Wikipedia ES | Valencia'
+- artist_id: genaro_perez_villaamil
+  display_name: Genaro Pérez Villaamil
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1807
+  death_year: 1854
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Genaro Pérez Villaamil
+  - PÉREZ VILLAAMIL, GENARO
+  notes: '12 lotes | casas: duran_subastas'
+- artist_id: geo_bernier
+  display_name: Geo Bernier
+  birth_year: 1862
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Géo Bernier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q3127252'
+- artist_id: georg_massanes
+  display_name: Georg Massanés
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georg Massanés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118829363'
+  death_status: living
+- artist_id: george_condo
+  display_name: George Condo
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - George Condo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q705880'
+  death_status: living
+- artist_id: george_fischhof
+  display_name: George Fischhof
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1849
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - George Fischhof
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1504215'
+- artist_id: george_hoyningen_huene
+  display_name: George Hoyningen-Huene
+  birth_year: 1900
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - George Hoyningen Huene
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1507622'
+- artist_id: george_owen_wynne_apperley
+  display_name: George Owen Wynne Apperley
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1884
+  death_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - George Wynne Apperley
+  - George Owen Wynne Apperley
+  notes: '6 lotes | casas: duran_subastas | pintor britanico nacido en Ventnor, isla de Wight, el 17-06-1884 y fallecido
+    en Tanger el 10-09-1960; fechas coincidentes con Silver. Fuente: https://historia-hispanica.rah.es/biografias/3049-george-owen-wynne-apperley'
+- artist_id: george_rouault
+  display_name: George Rouault
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1871
+  death_year: 1958
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GEORGE ROUAULT
+  - George Rouault
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: george_segal
+  display_name: George Segal
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1924
+  death_year: 2000
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - George Segal (EE.UU., 1924 - 2000.)
+  - GEORGE SEGAL
+  - George Segal
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: george_william_sartorius
+  display_name: William Sartorius
+  birth_year: 1759
+  death_year: 1828
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - George William Sartorius
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q18600463'
+- artist_id: georges_braque
+  display_name: Georges Braque
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1882
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges Braque
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q153793'
+- artist_id: georges_brasseur
+  display_name: Georges Brasseur
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1880
+  death_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GEORGES BRASSEUR
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52147529'
+- artist_id: georges_clairin
+  display_name: Georges Clairin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1843
+  death_year: 1919
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges Clairin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1398223'
+- artist_id: georges_coran
+  display_name: Georges Coran
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1928
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges CORAN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133854174'
+- artist_id: georges_louis_hyon
+  display_name: Georges Louis Hyon
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1840
+  death_year: 1913
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges Louis Hyon
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21464027'
+- artist_id: georges_rouault
+  display_name: جورج رووه
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1871
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GEORGES ROUAULT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q156128'
+- artist_id: georges_spiro
+  display_name: Georges Spiro
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1909
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges Spiro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1509080'
+- artist_id: georges_steel
+  display_name: Georges Steel
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1923
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Georges Steel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q77439343'
+- artist_id: gerald_laing
+  display_name: Gerald Laing
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1936
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GERALD LAING
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5549319'
+- artist_id: gerard_sala
+  display_name: Gerard Sala i Roselló
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  death_year: 2024
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerard Sala
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594560'
+- artist_id: gerard_schlosser
+  display_name: Gérard Schlosser
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1931
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gérard Schlosser
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3124299'
+- artist_id: gerard_titus_carmel
+  display_name: Gérard Titus-Carmel
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerard Titus Carmel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3124332'
+  death_status: living
+- artist_id: gerardo_aparicio
+  display_name: Gerardo Aparicio
+  country_birth: null
+  nationalities: []
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gerardo Aparicio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55988945'
+  death_status: living
+- artist_id: gerardo_cantu
+  display_name: Gerardo Cantú
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1934
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerardo Cantú
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1510228'
+- artist_id: gerardo_de_alvear
+  display_name: Gerardo de Alvear
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerardo de Alvear
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55996308'
+- artist_id: gerardo_pita
+  display_name: Gerardo Pita
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerardo Pita
+  - Gerardo Pita Salvatella
+  - Gerardo PIta Salvatella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43135313'
+  death_status: living
+- artist_id: gerardo_rueda
+  display_name: Gerardo Rueda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 1996
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gerardo Rueda
+  notes: '34 lotes | casas: duran_subastas'
+- artist_id: gerardus_hendriks
+  display_name: Gerardus Hendriks
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1804
+  death_year: 1859
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerardus Hendriks
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21464294'
+- artist_id: gerlinde_beck
+  display_name: Gerlinde Beck
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1930
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gerlinde Beck
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1513737'
+- artist_id: german_alvarez_algeciras
+  display_name: Germán Álvarez Algeciras
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1848
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Germán Álvarez Algeciras
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3761177'
+- artist_id: german_arrubla
+  display_name: Germán Arrubla
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1939
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GERMAN ARRUBLA
+  - Germán Arrubla
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: german_botero
+  display_name: Germán Botero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1946
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GERMAN BOTERO
+  - Germán Botero
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: german_londono
+  display_name: Germán Londoño
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1961
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GERMAN LONDOÑO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5551143'
+  death_status: living
+- artist_id: german_tessarolo
+  display_name: Germán Tessarolo
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Germán Tessarolo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139093215'
+  death_status: living
+- artist_id: german_valdecara_y_gonzalez
+  display_name: Germán Valdecara
+  birth_year: 1849
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - German Valdecara y Gonzalez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96757331'
+- artist_id: getulio_alviani
+  display_name: Getulio Alviani
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1939
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Getulio Alviani
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q325200'
+- artist_id: gillis_mostaert
+  display_name: Gillis Mostaert
+  country_birth: NL
+  nationalities: []
+  birth_year: 1528
+  death_year: 1598
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gillis Mostaert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2313016'
+- artist_id: gines_liebana_velasco
+  display_name: Ginés Liébana
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ginés Liébana Velasco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2919563'
+- artist_id: gines_parra
+  display_name: Ginés Parra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1961
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ginés Parra
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: gino_hollander
+  display_name: Gino Hollander
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1924
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gino Hollander
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5563232'
+- artist_id: gino_meloni
+  display_name: Gino Meloni
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1905
+  death_year: 1989
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GINO MELONI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3764665'
+- artist_id: gino_severini
+  display_name: Gino Severini
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1883
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gino Severini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q169984'
+- artist_id: giorgio_de_chirico
+  display_name: Giorgio de Chirico
+  country_birth: GR
+  nationalities:
+  - GR
+  birth_year: 1888
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GIORGIO DE CHIRICO
+  - Giorgio de Chirico
+  - Giorgio DE CHIRICO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q156622'
+- artist_id: giovanni_battista_de_andreis
+  display_name: Giovanni Battista De Andreis
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Giovanni Battista De Andreis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16559790'
+  death_status: living
+- artist_id: giovanni_battista_piranesi
+  display_name: Giovanni Battista Piranesi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1720
+  death_year: 1778
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GIOVANNI BATTISTA PIRANESI
+  - Giovanni Battista PIRANESI
+  - Giovanni PIRANESI
+  - Giovanni Piranesi
+  - Piranesi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q316307'
+- artist_id: giovanni_gianni
+  display_name: Giovanni Gianni
+  country_birth: null
+  nationalities: []
+  birth_year: 1866
+  death_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Giovanni Gianni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43130742'
+- artist_id: giovanni_maria_viani
+  display_name: Giovanni Maria Viani
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1636
+  death_year: 1700
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Giovanni Maria Viani
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3107261'
+- artist_id: girolamo_forabosco
+  display_name: Girolamo Forabosco
+  death_year: 1679
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Girolamo Forabosco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1433129'
+- artist_id: giulio_cantalamessa
+  display_name: Giulio Cantalamessa
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1846
+  death_year: 1924
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Giulio Cantalamessa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24035646'
+- artist_id: giulio_carpioni
+  display_name: Giulio Carpioni
+  birth_year: 1613
+  death_year: 1678
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Giulio Carpioni
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1528009'
+- artist_id: giuseppe_bonito
+  display_name: Giuseppe Bonito
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1707
+  death_year: 1789
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Giuseppe Bonito
+  notes: '1 lote | casas: duran_subastas | pintor italiano nacido en Castellammare di Stabia en 1707 y fallecido
+    en Napoles en 1789; fechas coincidentes con Silver. Fuentes: https://www.museodelprado.es/aprende/enciclopedia/voz/bonito-giuseppe/e3a1ab69-8a1b-4288-9707-a72c62daf69a
+    ; https://catalogo.beniculturali.it/Agent/9bef403399d329850eb3b782c2f8f5d7'
+- artist_id: giuseppe_maraschini
+  display_name: Giuseppe Maraschini
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1839
+  death_year: 1903
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Giuseppe Maraschini
+  - Guiseppe MARASCHINI
+  - MARASCHINI, Guiseppe
+  - MARASCHINI, Guiseppe (Italian school, 1839-1903)
+  notes: '1 lote con autor extraido en Silver; otros 2 lotes solo tienen el nombre en lot_title y siguen fuera del
+    resolver | Giuseppe Maraschini nacio en Posina, Vicenza, en 1839 y murio en Florencia en 1903; Guiseppe es una
+    errata de la casa. Fuente institucional: https://www.museicivicivicenza.it/file/doc-10796.pdf ; archivo: https://www.museicivicivicenza.it/file/doc1-13340.pdf'
+- artist_id: giuseppe_mazzolini
+  display_name: Giuseppe Mazzolini
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1806
+  death_year: 1876
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Giuseppe Mazzolini
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20054986'
+- artist_id: giuseppe_ruoppolo
+  display_name: Giuseppe Ruoppolo
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1631
+  death_year: 1710
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Giuseppe Ruoppolo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18573601'
+- artist_id: gladys_marguerite_baker
+  display_name: Gladys Marguerite Baker
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1889
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gladys Marguerite Baker
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20083671'
+- artist_id: glauco_capozzoli
+  display_name: Glauco Capozzoli
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1929
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Glauco CAPOZZOLI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1530067'
+- artist_id: gloria_garcia_lorca
+  display_name: Gloria García Lorca
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gloria García Lorca
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50649568'
+  death_status: living
+- artist_id: gloria_merino
+  display_name: Gloria Merino
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gloria Merino
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50649714'
+- artist_id: gloria_torner
+  display_name: Gloria Torner
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gloria Torner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q61983357'
+  death_status: living
+- artist_id: godofredo_ortega_munoz
+  display_name: Godofredo Ortega Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1982
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Godofredo Ortega Muñoz
+  - GODOFREDO ORTEGA MUÑOZ
+  notes: '11 lotes en Silver | fuente: Wikidata | San Vicente de Alcantara; CORRIGE 1905 -> 1899'
+- artist_id: gonzalo_ariza
+  display_name: Gonzalo Ariza
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1912
+  death_year: 1995
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gonzalo Ariza (Colombia, 1912 - 1995)
+  - Gonzalo Ariza (Colombia, 1912 - 1995.)
+  - Gonzalo Ariza
+  notes: '9 lotes | casas: bogota_auctions'
+- artist_id: gonzalo_bilbao_martinez
+  display_name: Gonzalo Bilbao Martínez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gonzalo Bilbao Martínez
+  notes: Costumbrista painter, professor at Escuela Superior de Artes e Industrias de Sevilla. Born in Seville;
+    studied orientalism in Tánger and Tetuán 1883.
+- artist_id: gonzalo_chillida
+  display_name: Gonzalo Chillida
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gonzalo Chillida
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5882893'
+- artist_id: gonzalo_diaz
+  display_name: Gonzalo Díaz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GONZALO DIAZ
+  - Gonzalo Díaz
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gonzalo_fuenmayor
+  display_name: Gonzalo Fuenmayor
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GONZALO FUENMAYOR
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123209447'
+  death_status: living
+- artist_id: gonzalo_perez_espolita
+  display_name: Gonzalo Pérez Espolita
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GONZALO PÉREZ ESPOLITA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5883201'
+- artist_id: gori_munoz
+  display_name: Gori Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1906
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gori Muñoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5883626'
+- artist_id: gotardo_grondona
+  display_name: Gotardo Grondona
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1795
+  death_year: 1865
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gotardo Grondona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59312735'
+- artist_id: goya
+  display_name: Goya
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1746
+  death_year: 1828
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Goya
+  - Francisco de Goya y Lucientes
+  - Francisco de Goya
+  - GOYA Y LUCIENTES, FRANCISCO DE
+  notes: '44 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: goyo_dominguez
+  display_name: Goyo Dominguez
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Goyo Domínguez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21465154'
+  death_status: living
+- artist_id: gracia_barrios
+  display_name: Gracia Barrios Rivadeneira
+  country_birth: CL
+  nationalities:
+  - CL
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gracia Barrios
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8964811'
+- artist_id: graciela_gomez
+  display_name: Graciela Gomez
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Graciela Gómez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q102302770'
+- artist_id: graciela_iturbide
+  display_name: Graciela Iturbide
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Graciela Iturbide
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q468816'
+  death_status: living
+- artist_id: graciela_sacco
+  display_name: Graciela Sacco
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1956
+  death_year: 2017
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GRACIELA SACCO
+  - Graciela Sacco
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: graham_sutherland
+  display_name: Graham Sutherland
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1903
+  death_year: 1980
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Graham Sutherland
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q581763'
+- artist_id: gregorio_cuartas
+  display_name: Gregorio Cuartas
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - GREGORIO CUARTAS
+  - Gregorio Cuartas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q117844320'
+- artist_id: gregorio_del_olmo
+  display_name: Gregorio del Olmo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gregorio del Olmo
+  notes: '27 lotes | casas: duran_subastas'
+- artist_id: gregorio_lopez_naguil
+  display_name: Gregorio López Naguil
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1894
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gregorio López Naguil
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110313504'
+- artist_id: gregorio_prieto
+  display_name: Gregorio Prieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1899
+  death_year: 1992
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gregorio Prieto
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: grete_stern
+  display_name: Grete Stern
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1904
+  death_year: 1999
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Grete Stern
+  notes: '13 lotes en Silver | fuente: Wikipedia | nacida en Elberfeld, Alemania; emigro a Argentina'
+- artist_id: grillo_demo
+  display_name: Grillo Demo
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Grillo Demo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q16208011'
+- artist_id: grip_face
+  display_name: Grip Face
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1989
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GRIP FACE
+  notes: '1 lote vendido por 9.000 EUR | casas: duran_subastas | la memoria institucional de la Fundació Miró identifica
+    Grip Face como pseudónimo de David Oliver, nacido en Palma en 1989. David Oliver no se añade como alias por
+    riesgo de homonimia y porque esa forma no aparece como artista crudo en Silver. Fuentes: https://miromallorca.com/uploads/2026/04/memoria2025.pdf
+    ; https://miromallorca.com/es/exhibition/grip-face-utopia-del-lodo-y-sashimi-de-bruma/'
+- artist_id: guillem_villa_bassols
+  display_name: Guillem Villà Bassols
+  country_birth: null
+  nationalities: []
+  birth_year: 1917
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Guillem Villá Bassols
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99860860'
+- artist_id: guillermo_fresquet_bardina
+  display_name: Guillem Fresquet
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1914
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Guillermo Fresquet Bardina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21694902'
+- artist_id: guillermo_gomez_gil
+  display_name: Guillermo Gómez Gil
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  death_year: 1942
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Guillermo Gómez Gil
+  notes: '32 lotes | casas: duran_subastas'
+- artist_id: guillermo_lledo
+  display_name: Guillermo Lledó
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Guillermo Lledó
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q130380313'
+- artist_id: guillermo_londono
+  display_name: Guillermo Londoño
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GUILLERMO LONDOÑO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5888697'
+  death_status: living
+- artist_id: guillermo_mora
+  display_name: Guillermo Mora
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1980
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Guillermo Mora
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99492890'
+  death_status: living
+- artist_id: guillermo_munoz_vera
+  display_name: Guillermo Muñoz Vera
+  country_birth: CL
+  birth_year: 1956
+  nationalities:
+  - ES
+  - CL
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Guillermo Muñoz Vera
+  notes: '21 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Concepcion (CL)
+    el 28-04-1956; llego a Espania en 1979 y se nacionalizo en 1985. Vende en el mercado espaniol y funda la Escuela
+    de Chinchon, de ahi que ES vaya primero en nationalities, pero el nacimiento es CL. Fuentes: Wikipedia ES, Artistas
+    Visuales Chilenos (MNBA).'
+  death_status: living
+- artist_id: guillermo_oyaguez
+  display_name: Guillermo Oyágüez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Guillermo Oyaguez
+  - Guillermo Oyagüez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5888792'
+  death_status: living
+- artist_id: guillermo_paneque
+  display_name: Guillermo Paneque
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Guillermo Paneque
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99491599'
+  death_status: living
+- artist_id: guillermo_perez_villalta
+  display_name: Guillermo Pérez Villalta
+  country_birth: ES
+  birth_year: 1948
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Guillermo Pérez Villalta
+  - PÉREZ VILLALTA, GUILLERMO
+  notes: '43 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: guillermo_vargas_ruiz
+  display_name: Guillermo Vargas Ruiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1910
+  death_year: 1990
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Guillermo Vargas Ruiz
+  notes: '63 lotes | casas: duran_subastas'
+- artist_id: guillermo_wiedemann
+  display_name: Guillermo Wiedemann
+  country_birth: DE
+  death_year: 1969
+  nationalities:
+  - CO
+  - DE
+  birth_year: 1905
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Guillermo Wiedemann
+  notes: '12 lotes | casas: bogota_auctions'
+- artist_id: gust_romijn
+  display_name: Gustavus Adrianus Maria Romijn
+  birth_year: 1922
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gust Romijn
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2486126'
+  country_birth: NL
+  nationalities:
+  - NL
+- artist_id: gustav_karl_ludwig_richter
+  display_name: Gustav Richter
+  birth_year: 1823
+  death_year: 1884
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gustav Karl Ludwig Richter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1556306'
+- artist_id: gustav_kurt_beck
+  display_name: Gustav Kurt Beck
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1902
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - GUSTAV KURT BECK
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q989512'
+- artist_id: gustave_brion
+  display_name: C... Gustave Brion
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1824
+  death_year: 1877
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustave Brion
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q323110'
+- artist_id: gustave_de_breanski
+  display_name: Gustave de Breanski
+  birth_year: 1859
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gustave de BREANSKI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21289050'
+- artist_id: gustavo_alamon
+  display_name: Gustavo Alamón
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1935
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustavo ALAMÓN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1556754'
+- artist_id: gustavo_bacarisas
+  display_name: Gustavo Bacarisas
+  birth_year: 1873
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Gustavo Bacarisas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5621345'
+- artist_id: gustavo_de_maeztu
+  display_name: Gustavo de Maeztu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1947
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gustavo de Maeztu
+  notes: '6 lotes | casas: duran_subastas | nacido en Vitoria en 1887 y fallecido en Estella en 1947; Silver coincide.
+    Fuente: https://www.museogustavodemaeztu.com/biografia-gustavo-de-maeztu/'
+- artist_id: gustavo_dore
+  display_name: Gustave Doré
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1832
+  death_year: 1883
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustavo Doré
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6682'
+- artist_id: gustavo_gallardo
+  display_name: Gustavo Gallardo Ruiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1891
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustavo Gallardo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96757319'
+- artist_id: gustavo_garavato_bernal
+  display_name: Gustavo "garavato" Bernal
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1980
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GUSTAVO "GARAVATO" BERNAL
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gustavo_isoe
+  display_name: Tsuyoshi Isoe
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1954
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustavo Isoe
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11588006'
+- artist_id: gustavo_lopez_armentia
+  display_name: Gustavo López Armentia
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gustavo López Armentia
+  - Gustavo Lopez Armentia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q105335046'
+  death_status: living
+- artist_id: gustavo_otero_munoz
+  display_name: Gustavo Otero Muñoz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1979
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GUSTAVO OTERO MUÑOZ
+  - Otero Muñoz, Gustavo
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gustavo_torner
+  display_name: Gustavo Torner
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2025
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gustavo Torner
+  notes: '33 lotes | casas: duran_subastas'
+- artist_id: gustavo_vejarano
+  display_name: Gustavo Vejarano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1932
+  death_year: 2012
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - GUSTAVO VEJARANO
+  - Gustavo Vejarano
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gustavo_zalamea
+  display_name: Gustavo Zalamea
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1951
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Gustavo Zalamea (Argentina 1951 - Brasil, 2011)
+  - Gustavo Zalamea (Argentina, 1951 - Brasil, 2011.)
+  - Gustavo Zalamea - Argentina, 1951- Brasil, 2011.
+  - Gustavo Zalamea
+  - Zalamea, Gustavo
+  notes: '14 lotes | casas: bogota_auctions'

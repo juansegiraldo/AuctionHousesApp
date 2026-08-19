@@ -1,921 +1,2839 @@
-# Maestro de artistas - shard "f"
-#
-# Entradas cuyo artist_id empieza por "f". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: fanny_sanin
-    display_name: "Fanny Sanín"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fanny Sanín (Colombia, 1938)"
-      - "Fanny Sanín - Colombia, 1938."
-      - "Fanny Sanín"
-    notes: "8 lotes | casas: bogota_auctions"
-
-  - artist_id: faustino_manchado
-    display_name: "Faustino Manchado"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Faustino Manchado"
-    notes: "20 lotes | casas: duran_subastas"
-
-  - artist_id: federico_beltran_masses
-    display_name: "Federico Beltrán Masses"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1885
-    death_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Federico Beltrán Masses"
-    notes: "15 lotes | casas: duran_subastas"
-
-  - artist_id: federico_de_madrazo
-    display_name: "Federico de Madrazo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1815
-    death_year: 1894
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Federico de Madrazo"
-      - "Federico de Madrazo y Kuntz"
-    notes: "5 lotes | casas: duran_subastas"
-
-  - artist_id: felix_resurreccion_hidalgo
-    display_name: "Félix Resurrección Hidalgo"
-    country_birth: "PH"
-    nationalities: ["PH"]
-    birth_year: 1855
-    death_year: 1913
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Félix Resurrección Hidalgo"
-      - "Félix Resurreción Hidalgo"
-    notes: "11 lotes | casas: duran_subastas"
-
-  - artist_id: feliza_bursztyn
-    display_name: "Feliza Bursztyn"
-    country_birth: "CO"
-    death_year: 1982
-    nationalities: ["CO"]
-    birth_year: 1933
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Feliza Bursztyn"
-    notes: "5 lotes | casas: bogota_auctions"
-
-  - artist_id: fermin_santos
-    display_name: "Fermín Santos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1915
-    death_year: 1997
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fermín Santos"
-    notes: "45 lotes | casas: duran_subastas"
-
-  - artist_id: fernando_alvarez_de_sotomayor
-    display_name: "Fernando Álvarez de Sotomayor"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1875
-    death_year: 1960
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Álvarez de Sotomayor"
-    notes: "21 lotes | casas: duran_subastas"
-
-  - artist_id: fernando_bellver
-    display_name: "Fernando Bellver"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Bellver"
-    notes: "41 lotes | casas: duran_subastas"
-
-  - artist_id: fernando_botero
-    display_name: "Fernando Botero"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1932
-    death_year: 2023
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Botero"
-      - "Fernando Botero (Colombia, 1932)"
-      - "BOTERO, FERNANDO"
-    notes: "19 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: fernando_de_szyszlo
-    display_name: "Fernando de Szyszlo"
-    country_birth: "PE"
-    nationalities: ["PE"]
-    birth_year: 1925
-    death_year: 2017
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando de Szyszlo (Perú, 1925 - 2017.)"
-      - "Fernando de Szyszlo (Perú, 1925 - 2007.)"
-      - "Fernando de Szyszlo"
-    notes: "14 lotes | casas: bogota_auctions"
-
-  - artist_id: fernando_verdugo
-    display_name: "Fernando Verdugo"
-    country_birth: "ES"
-    birth_year: 1942
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Verdugo"
-    notes: "22 lotes | casas: duran_subastas"
-
-  - artist_id: fernando_zobel
-    display_name: "Fernando Zóbel"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1924
-    death_year: 1984
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Zóbel (Después)"
-      - "Fernando Zóbel de Ayala"
-      - "Fernando Zóbel"
-    notes: "47 lotes | casas: duran_subastas"
-
-  - artist_id: fernell_franco
-    display_name: "Fernell Franco"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1942
-    death_year: 2006
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernell Franco"
-    notes: "7 lotes | casas: bogota_auctions"
-
-  - artist_id: francis_bacon
-    display_name: "Francis Bacon"
-    country_birth: "IE"
-    nationalities: ["GB", "IE"]
-    birth_year: 1909
-    death_year: 1992
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francis Bacon"
-    notes: "3 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_arias
-    display_name: "Francisco Arias"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1912
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Arias"
-      - "ARIAS, FRANCISCO"
-    notes: "25 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_arjona
-    display_name: "Francisco Arjona"
-    country_birth: "ES"
-    birth_year: 1944
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Arjona"
-    notes: "47 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_bores
-    display_name: "Francisco Bores"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1898
-    death_year: 1972
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Bores"
-    notes: "26 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_calabuig
-    display_name: "Francisco Calabuig"
-    country_birth: "ES"
-    birth_year: 1946
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Calabuig"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_domingo_marques
-    display_name: "Francisco Domingo Marqués"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1842
-    death_year: 1920
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Domingo Marqués"
-      - "Francisco Domingo"
-      - "DOMINGO MARQUÉS, FRANCISCO"
-    notes: "184 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_echauz
-    display_name: "Francisco Echauz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1927
-    death_year: 2011
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Echáuz Buisan"
-      - "Francisco Echauz"
-    notes: "37 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_farreras
-    display_name: "Francisco Farreras"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1927
-    death_year: 2021
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Farreras"
-      - "FARRERAS, FRANCISCO"
-    notes: "51 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_iturrino
-    display_name: "Francisco Iturrino"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1864
-    death_year: 1924
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Iturrino"
-    notes: "12 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_mateos
-    display_name: "Francisco Mateos"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1897
-    death_year: 1976
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Mateos"
-      - "MATEOS, FRANCISCO"
-    notes: "55 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_peinado
-    display_name: "Francisco Peinado"
-    country_birth: "ES"
-    birth_year: 1941
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Peinado"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_pradilla_ortiz
-    display_name: "Francisco Pradilla Ortiz"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1848
-    death_year: 1921
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Pradilla Ortiz"
-      - "Francisco Pradilla"
-      - "Francisco Pradilla y Ortiz"
-    notes: "38 lotes tras unificar variantes | casas: duran_subastas, zorrilla_subastas | nacido en Villanueva de Gallego, Zaragoza, en 1848 y fallecido en Madrid en 1921. No confundir con Miguel Pradilla. Fuente: https://www.museodelprado.es/coleccion/artista/pradilla-y-ortiz-francisco/b71fa5b2-2cc6-4195-a7c0-0c850280c6f4"
-
-  - artist_id: francisco_sales
-    display_name: "Francisco Sales"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1904
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Sales"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_san_jose
-    display_name: "Francisco San José"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1919
-    death_year: 1981
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco San José"
-      - "SAN JOSÉ, FRANCISCO"
-    notes: "39 lotes | casas: duran_subastas"
-
-  - artist_id: francisco_sobrino
-    display_name: "Francisco Sobrino"
-    country_birth: "ES"
-    birth_year: 1932
-    death_year: 2014
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Sobrino (España, 1932 - Francia, 2014)"
-      - "Francisco Sobrino"
-      - "SOBRINO, FRANCISCO"
-    notes: "38 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: francisco_vadillo
-    display_name: "Francisco Vadillo"
-    country_birth: "ES"
-    birth_year: 1933
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Vadillo"
-    notes: "30 lotes | casas: duran_subastas"
-
-  - artist_id: freda_sargent
-    display_name: "Freda Sargent"
-    country_birth: "GB"
-    nationalities: ["GB", "CO"]
-    birth_year: 1928
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Freda Sargent (Inglaterra, 1928)"
-      - "Freda Sargent"
-      - "Freda Sargent de Obregón"
-    notes: "14 lotes | casas: bogota_auctions | n. 16-08-1928 (Wikidata Q99456319, pintora britanica); SIN fecha de muerte registrada alli. Tercera esposa de Alejandro Obregon y docente en Barranquilla, que es por lo que sus lotes salen en Bogota pese a ser inglesa: de ahi nationalities [GB, CO]. Tendria 98 anios; no se le pone death_year porque no consta, no porque este confirmada viva."
-
-  - artist_id: federico_uribe
-    display_name: "Federico Uribe"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1962
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FEDERICO URIBE"
-      - "Federico Uribe"
-    notes: "7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: felipe_bonilla
-    display_name: "Felipe Bonilla"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1987
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FELIPE BONILLA"
-      - "Felipe Bonilla"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fernando_arias
-    display_name: "Fernando Arias"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FERNANDO ARIAS"
-      - "Fernando Arias"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fernando_oramas
-    display_name: "Fernando Oramas"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1925
-    death_year: 2016
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FERNANDO ORAMAS"
-      - "Fernando Oramas"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fernando_pareja_y_leidy_chavez
-    display_name: "Fernando Pareja y Leidy Chavez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "FERNANDO PAREJA Y LEIDY CHAVEZ"
-      - "Fernando Pareja y Leidy Chavez"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una sola persona"
-
-  - artist_id: fernando_uhia
-    display_name: "Fernando Uhía"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1967
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FERNANDO UHIA"
-      - "Fernando Uhía"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fidolo_alfonso_gonzalez_camargo
-    display_name: "Fídolo Alfonso González Camargo"
-    country_birth: "CO"
-    death_year: 1942
-    nationalities: ["CO"]
-    birth_year: 1883
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FIDOLO ALFONSO GONZALEZ CAMARGO"
-      - "Fídolo Alfonso González Camargo"
-      - "Fidolo Alfonso González Camargo"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1930 y nacio el 20-09-1883 en Bogota; murio el 23-08-1942 en Sibate. Con 1930 el informe lo publicaba como vivo de 96 anios. Fuentes: Enciclopedia Banrepcultural, Wikidata Q137727316."
-
-  - artist_id: francisco_antonio_cano
-    display_name: "Francisco Antonio Cano"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1865
-    death_year: 1935
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANCISCO ANTONIO CANO"
-      - "Francisco Antonio Cano"
-    notes: "6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: francisco_fernandez
-    display_name: "Francisco Fernández"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1895
-    death_year: 1953
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANCISCO FERNANDEZ"
-      - "Francisco Fernández"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: francisco_mejia_guinand
-    display_name: "Francisco Mejía Guinand"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANCISCO MEJIA GUINAND"
-      - "Francisco Mejía Guinand"
-    notes: "3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: francisco_paez
-    display_name: "Francisco Paez"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1938
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANCISCO PAEZ"
-    notes: "0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: francisco_toledo
-    display_name: "Francisco Toledo"
-    country_birth: "MX"
-    nationalities: ["MX"]
-    birth_year: 1940
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANCISCO TOLEDO"
-      - "Francisco Toledo"
-    notes: "5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: franklin_aguirre
-    display_name: "Franklin Aguirre"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FRANKLIN AGUIRRE"
-      - "Franklin Aguirre"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fredy_alzate
-    display_name: "Fredy Alzate"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1975
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FREDY ALZATE"
-      - "Fredy Alzate"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: fredy_serna
-    display_name: "Fredy Serna"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1971
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "FREDY SERNA"
-      - "Fredy Serna"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: federico_jimenez_fernandez
-    display_name: "Federico Jiménez Fernández"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1841
-    death_year: 1931
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Federico Jiménez Fernández"
-      - "Federico Jimenez Fernández"
-      - "Federico Jiménez Fernandez"
-      - "Federico Jimenez Fernandez"
-    notes: "14 lotes en Silver | fuente: Wikipedia ES | Madrid; CORRIGE muerte 1910 -> 1931"
-
-  - artist_id: federico_ribas_montenegro
-    display_name: "Federico Ribas Montenegro"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1890
-    death_year: 1952
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Federico Ribas Montenegro"
-    notes: "13 lotes en Silver | fuente: Wikipedia ES | Vigo, Galicia"
-
-  - artist_id: fernando_calderon
-    display_name: "Fernando Calderón"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1928
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Fernando Calderón"
-    notes: "13 lotes en Silver | fuente: Wikidata | Badajoz"
-
-  - artist_id: fernando_saez
-    display_name: "Fernando Sáez"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1921
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Sáez González"
-      - "Fernando Saez Gonzalez"
-      - "Fernando Sáez"
-      - "Fernando Saez"
-    notes: "16 lotes en Silver | fuente: MutualArt; Bilbao Museoa | Laredo, Cantabria"
-
-  - artist_id: francisco_gimeno
-    display_name: "Francisco Gimeno"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1858
-    death_year: 1927
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Gimeno Barón"
-      - "Francisco Gimeno"
-    notes: "14 lotes en Silver | fuente: Wikipedia ES | Tortosa"
-
-  - artist_id: francisco_hohenleiter
-    display_name: "Francisco Hohenleiter"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1889
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Hohenleiter"
-    notes: "12 lotes en Silver | fuente: Wikidata"
-
-  - artist_id: francisco_lopez_sancho
-    display_name: "Francisco López Sancho"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1951
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco López Sancho"
-      - "Francisco Lopez Sancho"
-    notes: "12 lotes en Silver | fuente: Wikipedia ES | Madrid"
-
-  - artist_id: francisco_nunez_losada
-    display_name: "Francisco Nuñez Losada"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1889
-    death_year: 1973
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Francisco Nuñez Losada"
-      - "Francisco Núñez Losada"
-    notes: "15 lotes en Silver | fuente: Wikidata; Askart; MutualArt | Spanish painter"
-
-  - artist_id: francisco_rodriguez_sanclement
-    display_name: "Francisco Rodríguez Sanclement"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1893
-    death_year: 1968
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Francisco Rodríguez Sanclement"
-      - "Francisco Rodriguez Sanclement"
-    notes: "13 lotes en Silver | fuente: Artnet"
-
-  - artist_id: fernando_pagola
-    display_name: "Fernando Pagola"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Pagola"
-    notes: "Spanish architect and visual artist born 1955 in Donostia-San Sebastián, Guipúzcoa (Basque Country). Professor at University of Navarra. Works in impressionist figuration and abstraction."
-
-  - artist_id: francisco_lozano
-    display_name: "Francisco Lozano"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1912
-    death_year: 2000
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Lozano Sanchís"
-    notes: "Pintor y acuarelista nacido en Antella (Valencia) el 19 de septiembre de 1912. Falleció en Valencia el 29 de mayo de 2000. Ganador del primer premio de la Exposición Nacional de Bellas Artes en 1952."
-
-  - artist_id: felipe_criado
-    display_name: "Felipe Criado"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1928
-    death_year: 2013
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Felipe Criado Martín"
-    notes: "Pintor español nacido en Gijón el 8 de enero de 1928, falleció en Mera (A Coruña) el 22 de noviembre de 2013. Estudió en la Real Academia de Bellas Artes de San Fernando. Miembro de la Real Academia de Bellas Artes de Galicia (1996)."
-
-  - artist_id: frederico_vigil
-    display_name: "Frederico Vigil"
-    country_birth: "US"
-    nationalities: ["US"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Frederico Vigil"
-    notes: "Maestro fresquista estadounidense contemporáneo, nacido Santa Fe, Nuevo México. Discípulo de Luciene Block y Stephen Pope Dimitroff (aprendices de Diego Rivera). Especializado en frescos buon fresco a escala monumental. ALERTA: artista vivo/contemporáneo, NO histórico de subastas españolas/latinoamericanas."
-
-  - artist_id: francisco_oller
-    display_name: "Francisco Oller"
-    country_birth: "PR"
-    nationalities: ["PR"]
-    birth_year: 1833
-    death_year: 1917
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Oller y Cestero"
-    notes: "2 lotes | casas: duran_subastas | fuente: Wikipedia. Nacido en Bayamon cuando Puerto Rico era colonia espaniola: el pais de nacimiento es PR, que ISO si codifica, no ES ni US. Fundador de la pintura puertorriquenia; unico impresionista latinoamericano del circulo de Pissarro y Courbet."
-
-  - artist_id: francisco_bayeu
-    display_name: "Francisco Bayeu"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1734
-    death_year: 1795
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Bayeu"
-    notes: "2 lotes | casas: duran_subastas | fuente: Museo del Prado. Nacido en Zaragoza, cuniado de Goya. OJO: sus hermanos Ramon y fray Manuel Bayeu tambien fueron pintores y ya aparecen en el catalogo ('Ramon Bayeu', 'BAYEU , RAMON'), asi que este alias lleva el nombre de pila obligatorio."
-
-  - artist_id: fernando_amorsolo
-    display_name: "Fernando Amorsolo"
-    country_birth: "PH"
-    nationalities: ["PH"]
-    birth_year: 1892
-    death_year: 1972
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernando Amorsolo"
-    notes: "1 lote vendido por 27.500 EUR | casas: duran_subastas | Fernando Cueto Amorsolo, nacido en Paco, Manila, el 30-05-1892 y fallecido el 24-04-1972; fechas coincidentes con Silver. Fuente: https://www.nationalmuseum.gov.ph/2022/05/30/birth-anniversary-of-fernando-cueto-amorsolomay-30-1892-april-24-1972/"
-
-  - artist_id: fernand_leger
-    display_name: "Fernand Léger"
-    country_birth: "FR"
-    nationalities: ["FR"]
-    birth_year: 1881
-    death_year: 1955
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fernand Léger"
-      - "Fernand Leger"
-      - "FERNAND LEGER"
-    notes: "5 lotes | casas: bogota_auctions, duran_subastas, lefebre_subastas | nacido en Argentan, Francia, 1881-1955. Un lote de Lefebre imprime 1881-1995: 1995 es errata; la muerte correcta es 1955. Fuente: https://www.centrepompidou.fr/en/ressources/personne/co4a7kG"
-
-  - artist_id: francisco_de_paula_mendoza_y_moreno
-    display_name: "Francisco de Paula Mendoza y Moreno"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1812
-    attribution_type: autor
-    source: manual
-    confidence: medium
-    aliases:
-      - "Francisco de Paula Mendoza y Moreno"
-    notes: "2 lotes | casas: duran_subastas | nacido en Madrid en 1812. Silver publica 1812-1885, mientras la Real Academia de Bellas Artes de San Fernando marca la muerte como dudosa (¿1885?); se omite death_year. Fuente: https://www.academiacolecciones.com/pinturas/mostrar-autores.php?id=mendoza-y-moreno-francisco-de-paula"
-
-  - artist_id: felix_pardo_de_tavera_y_gorricho
-    display_name: "Félix Pardo de Tavera y Gorricho"
-    country_birth: "PH"
-    nationalities: ["PH", "AR"]
-    birth_year: 1859
-    death_year: 1932
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Felix Pardo de Tavera y Gorricho"
-      - "Félix Pardo de Tavera y Gorricho"
-    notes: "1 lote | casas: duran_subastas | escultor nacido en Manila en 1859 y fallecido en Paris en 1932; no confundir con su padre homonimo. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/5764/"
-
-  - artist_id: fermin_aguayo
-    display_name: "Fermín Aguayo"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1926
-    death_year: 1977
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Fermín Aguayo"
-    notes: "4 lotes | casas: duran_subastas | nacido en Sotillo de la Ribera, Burgos, en 1926 y fallecido en Paris en 1977; fechas coincidentes con Silver. Fuente: https://www.museoreinasofia.es/colecciones/artista/aguayo-fermin/"
-
-  - artist_id: francisco_bonnin_guerin
-    display_name: "Francisco Bonnín Guerín"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1874
-    death_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Francisco Bonnin Guerin"
-      - "BONNIN GUERIN, FRANCISCO"
-    notes: "5 lotes | casas: duran_subastas | nacido en Santa Cruz de Tenerife en 1874; Silver y ambas fuentes coinciden en 1874-1963. Prado sitúa la muerte en Barcelona y RSEAPT en Puerto de la Cruz, dato no almacenado. No fusionar con Francisco Bonnin Miranda. Fuentes: https://www.museodelprado.es/coleccion/artista/francisco-bonnin-guerin/621b7691-21de-4e9c-b23e-d9aee643383e ; https://www.rseapt.es/es/personalidades/item/26-pintores/347-francisco-bonnin-guerin"
-
-  - artist_id: francisco_jose_de_caldas
-    display_name: "Francisco José de Caldas"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1768
-    death_year: 1816
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Caldas, Francisco José de"
-      - "Caldas, Francisco José"
-      - "Caldas, Francisco José de (dir.)"
-    notes: "5 lotes nominales | casas: bogota_auctions | científico, autor y editor histórico nacido en Popayán, Virreinato de Nueva Granada, actual Colombia, en 1768 y fallecido en Santafé en 1816. No fusionar la coautoría Humboldt-Caldas; la fila Lote 115 permanece not_an_author porque el nombre solo está en artist_raw. Fuentes: https://enciclopedia.banrepcultural.org/Francisco_Jos%C3%A9_de_Caldas ; https://www.museonacional.gov.co/micrositios1/2018/Caldas/index.html"
+- artist_id: fabian_de_la_rosa
+  display_name: Fabián de la Rosa
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1869
+  death_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fabián de la Rosa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1888557'
+- artist_id: fabio_herrera
+  display_name: Fabio Herrera
+  country_birth: CR
+  nationalities:
+  - CR
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - FABIO HERRERA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q94650995'
+  death_status: living
+- artist_id: fabio_mcnamara
+  display_name: Fabio McNamara
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fabio Mcnamara
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59970'
+  death_status: living
+- artist_id: faik_husein
+  display_name: Faik Husein
+  country_birth: IQ
+  nationalities:
+  - IQ
+  birth_year: 1944
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Faik Husein
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q105090393'
+- artist_id: falda
+  display_name: Giovanni Battista Falda
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1643
+  death_year: 1678
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Falda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3766656'
+- artist_id: fanny_sanin
+  display_name: Fanny Sanín
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fanny Sanín (Colombia, 1938)
+  - Fanny Sanín - Colombia, 1938.
+  - Fanny Sanín
+  notes: '8 lotes | casas: bogota_auctions'
+  death_status: living
+- artist_id: faustino_aizkorbe
+  display_name: Faustino Aizkorbe
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Faustino Aizkorbe
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12257782'
+  death_status: living
+- artist_id: faustino_manchado
+  display_name: Faustino Manchado
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Faustino Manchado
+  notes: '20 lotes | casas: duran_subastas'
+- artist_id: federico_aguilar_alcuaz
+  display_name: Federico Aguilar Alcuaz
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1932
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Federico Aguilar Alcuaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1865225'
+- artist_id: federico_amerigo_rouviere
+  display_name: Federico Amérigo Rouviere
+  country_birth: null
+  nationalities: []
+  birth_year: 1840
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Federico Amérigo Rouviere
+  - Federico Amerigo Rouviere
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97583617'
+- artist_id: federico_beltran_masses
+  display_name: Federico Beltrán Masses
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1885
+  death_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Federico Beltrán Masses
+  notes: '15 lotes | casas: duran_subastas'
+- artist_id: federico_de_madrazo
+  display_name: Federico de Madrazo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1815
+  death_year: 1894
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Federico de Madrazo
+  - Federico de Madrazo y Kuntz
+  notes: '5 lotes | casas: duran_subastas'
+- artist_id: federico_echevarria
+  display_name: Federico de Echevarría Uribe
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Federico Echevarría
+  - Federico Echevarría Uribe
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12257794'
+- artist_id: federico_ferrandiz
+  display_name: Federico Ferrándiz Terán
+  birth_year: 1870
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Federico Ferrandiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60035934'
+- artist_id: federico_jimenez_fernandez
+  display_name: Federico Jiménez Fernández
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1841
+  death_year: 1931
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Federico Jiménez Fernández
+  - Federico Jimenez Fernández
+  - Federico Jiménez Fernandez
+  - Federico Jimenez Fernandez
+  notes: '14 lotes en Silver | fuente: Wikipedia ES | Madrid; CORRIGE muerte 1910 -> 1931'
+- artist_id: federico_lloveras
+  display_name: Frederic Lloveras i Herrera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Federico Lloveras
+  - Federico LLoveras
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11923057'
+- artist_id: federico_madrazo
+  display_name: Federico Madrazo
+  birth_year: 1815
+  death_year: 1894
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Federico Madrazo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1345186'
+- artist_id: federico_montanana
+  display_name: Federico Montañana
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Federico Montañana
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23719802'
+- artist_id: federico_renom
+  display_name: Federico Renóm
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1862
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Federico RENÓM
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42381531'
+- artist_id: federico_ribas_montenegro
+  display_name: Federico Ribas Montenegro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1952
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Federico Ribas Montenegro
+  notes: '13 lotes en Silver | fuente: Wikipedia ES | Vigo, Galicia'
+- artist_id: federico_uribe
+  display_name: Federico Uribe
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1962
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FEDERICO URIBE
+  - Federico Uribe
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: felice_vellan
+  display_name: Felice Vellan
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1889
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Felice Vellan
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12951624'
+- artist_id: felician_von_myrbach_rheinfeld
+  display_name: Felician von Myrbach-Rheinfeld
+  country_birth: null
+  nationalities: []
+  birth_year: 1853
+  death_year: 1940
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Felician von Myrbach Rheinfeld
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1403041'
+- artist_id: feliciano_carvallo
+  display_name: Feliciano Carvallo
+  country_birth: null
+  nationalities: []
+  birth_year: 1920
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Feliciano Carvallo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q65031605'
+- artist_id: felicien_rops
+  display_name: Félicien Rops
+  country_birth: null
+  nationalities: []
+  birth_year: 1833
+  death_year: 1898
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Felicien Rops
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q378129'
+- artist_id: felipe_bello_pineiro
+  display_name: Felipe Bello Piñeiro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1886
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Felipe Bello Piñeiro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12388350'
+- artist_id: felipe_bonilla
+  display_name: Felipe Bonilla
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1987
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FELIPE BONILLA
+  - Felipe Bonilla
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: felipe_checa
+  display_name: Felipe Checa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1844
+  death_year: 1906
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Felipe Checa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16836507'
+- artist_id: felipe_criado
+  display_name: Felipe Criado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2013
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Felipe Criado Martín
+  notes: Pintor español nacido en Gijón el 8 de enero de 1928, falleció en Mera (A Coruña) el 22 de noviembre de
+    2013. Estudió en la Real Academia de Bellas Artes de San Fernando. Miembro de la Real Academia de Bellas Artes
+    de Galicia (1996).
+- artist_id: felipe_roxas
+  display_name: Felipe Roxas
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1840
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Felipe Roxas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16170949'
+- artist_id: felipe_seade
+  display_name: Felipe Seade
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1912
+  death_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Felipe SEADE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5442047'
+- artist_id: felix_alarcon
+  display_name: Félix Alarcón y Brenes
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Félix Alarcón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21850150'
+- artist_id: felix_angel
+  display_name: Félix Ángel
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FÉLIX ÁNGEL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5442129'
+  death_status: living
+- artist_id: felix_de_cardenas
+  display_name: Félix de Cárdenas
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix de Cárdenas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q112499021'
+  death_status: living
+- artist_id: felix_de_la_concha
+  display_name: Félix de la Concha
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix de la Concha
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5442375'
+  death_status: living
+- artist_id: felix_iniesta_soto
+  display_name: Félix Iniesta Soto
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Félix Iniesta Soto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60036176'
+- artist_id: felix_juan_bordes
+  display_name: Félix Juan Bordes
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1939
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix Juan Bordes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q125318645'
+  death_status: living
+- artist_id: felix_martinez_lorenzo
+  display_name: Félix Martínez y Lorenzo
+  birth_year: 1859
+  death_year: 1916
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Félix Martínez Lorenzo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60024943'
+- artist_id: felix_mas
+  display_name: Félix Mas
+  country_birth: null
+  nationalities: []
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Felix Mas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5442268'
+  death_status: living
+- artist_id: felix_pardo_de_tavera_y_gorricho
+  display_name: Félix Pardo de Tavera y Gorricho
+  country_birth: PH
+  nationalities:
+  - PH
+  - AR
+  birth_year: 1859
+  death_year: 1932
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Felix Pardo de Tavera y Gorricho
+  - Félix Pardo de Tavera y Gorricho
+  notes: '1 lote | casas: duran_subastas | escultor nacido en Manila en 1859 y fallecido en Paris en 1932; no confundir
+    con su padre homonimo. Fuente: https://www.bellasartes.gob.ar/coleccion/obra/5764/'
+- artist_id: felix_resurreccion_hidalgo
+  display_name: Félix Resurrección Hidalgo
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1855
+  death_year: 1913
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Félix Resurrección Hidalgo
+  - Félix Resurreción Hidalgo
+  notes: '11 lotes | casas: duran_subastas'
+- artist_id: felix_revello_de_toro
+  display_name: Félix Revello de Toro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix Revello de Toro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5872406'
+  death_status: living
+- artist_id: felix_tabasco
+  display_name: Félix Tabasco
+  birth_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Felix Tabasco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55991509'
+- artist_id: felix_trezel
+  display_name: Félix Trezel
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1782
+  death_year: 1855
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix Trezel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3385104'
+- artist_id: felix_yuste_peinado
+  display_name: Félix Yuste Peinado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1866
+  death_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Félix Yuste Peinado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q31078769'
+- artist_id: feliza_bursztyn
+  display_name: Feliza Bursztyn
+  country_birth: CO
+  death_year: 1982
+  nationalities:
+  - CO
+  birth_year: 1933
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Feliza Bursztyn
+  notes: '5 lotes | casas: bogota_auctions'
+- artist_id: ferdinand_roybet
+  display_name: Ferdinand Roybet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1840
+  death_year: 1920
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ferdinand Roybet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3068651'
+- artist_id: fermin_aguayo
+  display_name: Fermín Aguayo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fermín Aguayo
+  notes: '4 lotes | casas: duran_subastas | nacido en Sotillo de la Ribera, Burgos, en 1926 y fallecido en Paris
+    en 1977; fechas coincidentes con Silver. Fuente: https://www.museoreinasofia.es/colecciones/artista/aguayo-fermin/'
+- artist_id: fermin_alegre
+  display_name: Fermín Alegre
+  country_birth: null
+  nationalities: []
+  birth_year: 1947
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fermín Alegre
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q139093920'
+- artist_id: fermin_gonzalez_prieto
+  display_name: Fermín González Prieto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fermín González Prieto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55119904'
+- artist_id: fermin_hernandez_garbayo
+  display_name: Fermín Hernández Garbayo
+  country_birth: null
+  nationalities: []
+  birth_year: 1929
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fermin Hernandez Garbayo
+  - Fermín Hernández Garbayo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131416383'
+- artist_id: fermin_santos
+  display_name: Fermín Santos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1915
+  death_year: 1997
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fermín Santos
+  notes: '45 lotes | casas: duran_subastas'
+- artist_id: fernand_leger
+  display_name: Fernand Léger
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1881
+  death_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernand Léger
+  - Fernand Leger
+  - FERNAND LEGER
+  notes: '5 lotes | casas: bogota_auctions, duran_subastas, lefebre_subastas | nacido en Argentan, Francia, 1881-1955.
+    Un lote de Lefebre imprime 1881-1995: 1995 es errata; la muerte correcta es 1955. Fuente: https://www.centrepompidou.fr/en/ressources/personne/co4a7kG'
+- artist_id: fernando_albasanz
+  display_name: Fernando Albasanz
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Albasanz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110681673'
+  death_status: living
+- artist_id: fernando_alvarez_de_sotomayor
+  display_name: Fernando Álvarez de Sotomayor
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1960
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Álvarez de Sotomayor
+  notes: '21 lotes | casas: duran_subastas'
+- artist_id: fernando_amorsolo
+  display_name: Fernando Amorsolo
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1892
+  death_year: 1972
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Amorsolo
+  notes: '1 lote vendido por 27.500 EUR | casas: duran_subastas | Fernando Cueto Amorsolo, nacido en Paco, Manila,
+    el 30-05-1892 y fallecido el 24-04-1972; fechas coincidentes con Silver. Fuente: https://www.nationalmuseum.gov.ph/2022/05/30/birth-anniversary-of-fernando-cueto-amorsolomay-30-1892-april-24-1972/'
+- artist_id: fernando_arias
+  display_name: Fernando Arias
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FERNANDO ARIAS
+  - Fernando Arias
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: fernando_bellver
+  display_name: Fernando Bellver
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Bellver
+  notes: '41 lotes | casas: duran_subastas'
+- artist_id: fernando_botero
+  display_name: Fernando Botero
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1932
+  death_year: 2023
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Botero
+  - Fernando Botero (Colombia, 1932)
+  - BOTERO, FERNANDO
+  notes: '19 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: fernando_brambila
+  display_name: Fernando Brambila
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1763
+  death_year: 1834
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Brambila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5836358'
+- artist_id: fernando_calderon
+  display_name: Fernando Calderón
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Fernando Calderón
+  notes: '13 lotes en Silver | fuente: Wikidata | Badajoz'
+- artist_id: fernando_cano
+  display_name: Fernando Rodríguez García
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FERNANDO CANO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20532887'
+- artist_id: fernando_chueca
+  display_name: Fernando Chueca Goitia
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Chueca
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q322154'
+- artist_id: fernando_de_amarica_y_medina
+  display_name: Fernando de Amárica
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1866
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando de Amárica y Medina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12257834'
+- artist_id: fernando_de_szyszlo
+  display_name: Fernando de Szyszlo
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1925
+  death_year: 2017
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando de Szyszlo (Perú, 1925 - 2017.)
+  - Fernando de Szyszlo (Perú, 1925 - 2007.)
+  - Fernando de Szyszlo
+  notes: '14 lotes | casas: bogota_auctions'
+- artist_id: fernando_delapuente
+  display_name: Fernando Delapuente
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1909
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Delapuente
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5859455'
+- artist_id: fernando_diaz_mackenna
+  display_name: Fernando Diaz Mackenna
+  country_birth: null
+  nationalities: []
+  birth_year: 1873
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Díaz Mackenna
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131457351'
+- artist_id: fernando_fernandez_mota
+  display_name: Fernando Fernández Mota
+  birth_year: 1863
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Fernández Mota
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q98110293'
+- artist_id: fernando_higueras
+  display_name: Fernando Higueras
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Higueras
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5444762'
+- artist_id: fernando_iriarte
+  display_name: Fernando Iriarte
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1958
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Iriarte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133460495'
+- artist_id: fernando_labrada
+  display_name: Fernando Labrada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Labrada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55229237'
+- artist_id: fernando_lerin
+  display_name: Fernando Lerin
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Lerin
+  - Fernando Lerín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3069483'
+- artist_id: fernando_oramas
+  display_name: Fernando Oramas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1925
+  death_year: 2016
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FERNANDO ORAMAS
+  - Fernando Oramas
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: fernando_pagola
+  display_name: Fernando Pagola
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1955
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Pagola
+  notes: Spanish architect and visual artist born 1955 in Donostia-San Sebastián, Guipúzcoa (Basque Country). Professor
+    at University of Navarra. Works in impressionist figuration and abstraction.
+  death_status: living
+- artist_id: fernando_pareja_y_leidy_chavez
+  display_name: Fernando Pareja y Leidy Chavez
+  country_birth: CO
+  nationalities:
+  - CO
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - FERNANDO PAREJA Y LEIDY CHAVEZ
+  - Fernando Pareja y Leidy Chavez
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | colectivo/duo: fechas omitidas, no son de una
+    sola persona'
+  birth_year: 1979
+  death_status: living
+- artist_id: fernando_puig_rosado
+  display_name: Fernando Puig Rosado
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1931
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Puig Rosado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1369276'
+- artist_id: fernando_quesada_porto
+  display_name: Fernando Quesada Porto
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1933
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fernando Quesada Porto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24703763'
+- artist_id: fernando_saez
+  display_name: Fernando Sáez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Sáez González
+  - Fernando Saez Gonzalez
+  - Fernando Sáez
+  - Fernando Saez
+  notes: '16 lotes en Silver | fuente: MutualArt; Bilbao Museoa | Laredo, Cantabria'
+- artist_id: fernando_sanchez_calderon
+  display_name: Fernando Sánchez Calderón
+  birth_year: 1951
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Sánchez Calderón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55937759'
+- artist_id: fernando_somoza
+  display_name: Fernando Somoza
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Somoza
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q75431121'
+- artist_id: fernando_uhia
+  display_name: Fernando Uhía
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FERNANDO UHIA
+  - Fernando Uhía
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: fernando_verdugo
+  display_name: Fernando Verdugo
+  country_birth: ES
+  birth_year: 1942
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Verdugo
+  notes: '22 lotes | casas: duran_subastas'
+- artist_id: fernando_zobel
+  display_name: Fernando Zóbel
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 1984
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernando Zóbel (Después)
+  - Fernando Zóbel de Ayala
+  - Fernando Zóbel
+  notes: '47 lotes | casas: duran_subastas'
+- artist_id: fernell_franco
+  display_name: Fernell Franco
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1942
+  death_year: 2006
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Fernell Franco
+  notes: '7 lotes | casas: bogota_auctions'
+- artist_id: ferran_garcia_sevilla
+  display_name: Ferran García Sevilla
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ferran García Sevilla
+  - Ferrán García Sevilla
+  - Ferran Garcia Sevilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8961452'
+  death_status: living
+- artist_id: fidel_bofill_bosch
+  display_name: Fidel Bofill
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fidel Bofill Bosch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3071430'
+- artist_id: fidel_sclavo
+  display_name: Fidel Sclavo
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fidel Sclavo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42392305'
+  death_status: living
+- artist_id: fidolo_alfonso_gonzalez_camargo
+  display_name: Fídolo Alfonso González Camargo
+  country_birth: CO
+  death_year: 1942
+  nationalities:
+  - CO
+  birth_year: 1883
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FIDOLO ALFONSO GONZALEZ CAMARGO
+  - Fídolo Alfonso González Camargo
+  - Fidolo Alfonso González Camargo
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CORREGIDO: la ficha decia n.1930 y nacio el 20-09-1883
+    en Bogota; murio el 23-08-1942 en Sibate. Con 1930 el informe lo publicaba como vivo de 96 anios. Fuentes: Enciclopedia
+    Banrepcultural, Wikidata Q137727316.'
+- artist_id: flora_fong
+  display_name: Flora Fong
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Flora Fong
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q53774627'
+  death_status: living
+- artist_id: flora_lopez_castrillo
+  display_name: Flora López Castrillo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1878
+  death_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Flora López Castrillo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60036207'
+- artist_id: flora_rey
+  display_name: Flora Rey
+  country_birth: AR
+  nationalities:
+  - AR
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Flora Rey
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19401878'
+- artist_id: florencio_aguilera
+  display_name: Florencio Aguilera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Florencio Aguilera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1429401'
+  death_status: living
+- artist_id: florencio_gelabert
+  display_name: Florencio Gelabert
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1904
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Florencio Gelabert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98431971'
+- artist_id: florentino_delgado
+  display_name: Florentino Delgado
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1907
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Florentino DELGADO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42383854'
+- artist_id: floris_jespers
+  display_name: Floris Jespers
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1889
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Floris JESPERS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3074339'
+- artist_id: fodor_lengyel_zoltan
+  display_name: Zoltán Fodor-Lengyel
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fodor Lengyel Zoltán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21004104'
+  death_status: living
+- artist_id: forges
+  display_name: Forges
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1942
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Forges
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3242789'
+- artist_id: fortunato_depero
+  display_name: Fortunato Depero
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1892
+  death_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fortunato Depero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1125077'
+- artist_id: fran_baro
+  display_name: Fran-Baro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fran Baró
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110016821'
+- artist_id: francesc_poch_romeu
+  display_name: Francesc Poch Romeu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francesc Poch Romeu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2838664'
+- artist_id: francesc_torne_gavalda
+  display_name: Francesc Torné Gavaldà
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1917
+  death_year: 2008
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francesc Torne Gavalda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47088317'
+- artist_id: francesca_marti
+  display_name: Francesca Martí
+  country_birth: ES
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francesca Martí
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q140513577'
+- artist_id: francesco_bartolozzi
+  display_name: Francesco Bartolozzi
+  death_year: 1815
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francesco Bartolozzi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q734889'
+- artist_id: francesco_maestosi
+  display_name: Francesco Maestosi
+  birth_year: 1822
+  death_year: 1883
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francesco Maestosi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21795275'
+- artist_id: francesco_paolo_michetti
+  display_name: Francesco Paolo Michetti
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1851
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francesco Paolo Michetti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3081044'
+- artist_id: francesco_raibolini_francia
+  display_name: Francesco Francia
+  country_birth: IT
+  nationalities:
+  - IT
+  death_year: 1517
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francesco Raibolini Francia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q260057'
+- artist_id: francis_bacon
+  display_name: Francis Bacon
+  country_birth: IE
+  nationalities:
+  - GB
+  - IE
+  birth_year: 1909
+  death_year: 1992
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francis Bacon
+  notes: '3 lotes | casas: duran_subastas'
+- artist_id: francis_picabia
+  display_name: فرانسيس پيكابيا
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1879
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francis Picabia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q157321'
+- artist_id: francisco_alcaraz_gonzalez
+  display_name: Francisco Alcaraz González
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Alcaráz González
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98822476'
+  death_status: living
+- artist_id: francisco_antolinez_y_ochoa
+  display_name: Francisco Antolínez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1645
+  death_year: 1700
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Antolínez y Ochoa
+  - Francisco Antolínez y Sarabia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q549438'
+- artist_id: francisco_antonio_cano
+  display_name: Francisco Antonio Cano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1865
+  death_year: 1935
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANCISCO ANTONIO CANO
+  - Francisco Antonio Cano
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: francisco_antonio_de_ettenhard_y_abarca
+  display_name: Francisco Antonio de Ettenhard y Abarca
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1650
+  death_year: 1701
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Antonio de Ettenhard y Abarca
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16493241'
+- artist_id: francisco_arias
+  display_name: Francisco Arias
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Arias
+  - ARIAS, FRANCISCO
+  notes: '25 lotes | casas: duran_subastas'
+- artist_id: francisco_arjona
+  display_name: Francisco Arjona
+  country_birth: ES
+  birth_year: 1944
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Arjona
+  notes: '47 lotes | casas: duran_subastas'
+- artist_id: francisco_avila
+  display_name: Francisco Avila
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Ávila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q102841729'
+- artist_id: francisco_barrachina
+  display_name: Francisco Barrachina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1940
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Barrachina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123158407'
+- artist_id: francisco_bayeu
+  display_name: Francisco Bayeu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1734
+  death_year: 1795
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Bayeu
+  notes: '2 lotes | casas: duran_subastas | fuente: Museo del Prado. Nacido en Zaragoza, cuniado de Goya. OJO: sus
+    hermanos Ramon y fray Manuel Bayeu tambien fueron pintores y ya aparecen en el catalogo (''Ramon Bayeu'', ''BAYEU
+    , RAMON''), asi que este alias lleva el nombre de pila obligatorio.'
+- artist_id: francisco_bonnin_guerin
+  display_name: Francisco Bonnín Guerín
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Bonnin Guerin
+  - BONNIN GUERIN, FRANCISCO
+  notes: '5 lotes | casas: duran_subastas | nacido en Santa Cruz de Tenerife en 1874; Silver y ambas fuentes coinciden
+    en 1874-1963. Prado sitúa la muerte en Barcelona y RSEAPT en Puerto de la Cruz, dato no almacenado. No fusionar
+    con Francisco Bonnin Miranda. Fuentes: https://www.museodelprado.es/coleccion/artista/francisco-bonnin-guerin/621b7691-21de-4e9c-b23e-d9aee643383e
+    ; https://www.rseapt.es/es/personalidades/item/26-pintores/347-francisco-bonnin-guerin'
+- artist_id: francisco_bonnin_miranda
+  display_name: Francisco Bonnín Miranda
+  birth_year: 1911
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Bonnin Miranda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60830103'
+- artist_id: francisco_bores
+  display_name: Francisco Bores
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1898
+  death_year: 1972
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Bores
+  notes: '26 lotes | casas: duran_subastas'
+- artist_id: francisco_calabuig
+  display_name: Francisco Calabuig
+  country_birth: ES
+  birth_year: 1946
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Calabuig
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: francisco_capuleto
+  display_name: Francisco Capulino-Lanuza Pérez
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Capuleto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8962321'
+- artist_id: francisco_casariego
+  display_name: Francisco Casariego Terrero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1890
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Casariego
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q52156678'
+- artist_id: francisco_cerezo_moreno
+  display_name: Francisco Cerezo Moreno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Cerezo Moreno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29359878'
+- artist_id: francisco_conesa
+  display_name: Francisco Conesa
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1947
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Conesa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q127990113'
+- artist_id: francisco_cortijo
+  display_name: Francisco Cortijo
+  country_birth: null
+  nationalities: []
+  birth_year: 1936
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Cortijo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110175670'
+- artist_id: francisco_cruz_de_castro
+  display_name: Francisco Cruz de Castro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Cruz de Castro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q112326474'
+  death_status: living
+- artist_id: francisco_de_paula_mendoza_y_moreno
+  display_name: Francisco de Paula Mendoza y Moreno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1812
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Francisco de Paula Mendoza y Moreno
+  notes: '2 lotes | casas: duran_subastas | nacido en Madrid en 1812. Silver publica 1812-1885, mientras la Real
+    Academia de Bellas Artes de San Fernando marca la muerte como dudosa (¿1885?); se omite death_year. Fuente:
+    https://www.academiacolecciones.com/pinturas/mostrar-autores.php?id=mendoza-y-moreno-francisco-de-paula'
+- artist_id: francisco_de_paula_van_halen
+  display_name: Francisco de Paula Van Halen
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1814
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco de Paula Van Halen
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8962632'
+- artist_id: francisco_diaz_carreno
+  display_name: Francisco Díaz Carreño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1836
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Díaz Carreño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24699628'
+- artist_id: francisco_diaz_de_leon
+  display_name: Francisco Díaz de León
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1897
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FRANCISCO DIAZ DE LEÓN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1306614'
+- artist_id: francisco_domingo_marques
+  display_name: Francisco Domingo Marqués
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1842
+  death_year: 1920
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Domingo Marqués
+  - Francisco Domingo
+  - DOMINGO MARQUÉS, FRANCISCO
+  notes: '184 lotes | casas: duran_subastas'
+- artist_id: francisco_echauz
+  display_name: Francisco Echauz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 2011
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Echáuz Buisan
+  - Francisco Echauz
+  notes: '37 lotes | casas: duran_subastas'
+- artist_id: francisco_esteve_botey
+  display_name: Francisco Esteve Botey
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1884
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Esteve Botey
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11922750'
+- artist_id: francisco_farreras
+  display_name: Francisco Farreras
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1927
+  death_year: 2021
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Farreras
+  - FARRERAS, FRANCISCO
+  notes: '51 lotes | casas: duran_subastas'
+- artist_id: francisco_fernandez
+  display_name: Francisco Fernández
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1895
+  death_year: 1953
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANCISCO FERNANDEZ
+  - Francisco Fernández
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: francisco_garcia_abuja
+  display_name: Francisco García Abuja
+  country_birth: null
+  nationalities: []
+  birth_year: 1924
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco García Abuja
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q102184910'
+- artist_id: francisco_garcia_de_la_cal
+  display_name: Francisco García de la Cal
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco García de la Cal
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96757359'
+- artist_id: francisco_gimeno
+  display_name: Francisco Gimeno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1858
+  death_year: 1927
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Gimeno Barón
+  - Francisco Gimeno
+  notes: '14 lotes en Silver | fuente: Wikipedia ES | Tortosa'
+- artist_id: francisco_gonzalez_lagares
+  display_name: Francisco González Lagares
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco González Lagares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q140471188'
+  death_status: living
+- artist_id: francisco_guinart_candelich
+  display_name: Francisco Guinart Candelich
+  birth_year: 1888
+  death_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Guinart Candelich
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131448972'
+- artist_id: francisco_hohenleiter
+  display_name: Francisco Hohenleiter
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Hohenleiter
+  notes: '12 lotes en Silver | fuente: Wikidata'
+- artist_id: francisco_inglada
+  display_name: Francisco Inglada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1850
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Inglada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q50056003'
+- artist_id: francisco_iturrino
+  display_name: Francisco Iturrino
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1864
+  death_year: 1924
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Iturrino
+  notes: '12 lotes | casas: duran_subastas'
+- artist_id: francisco_javier_ortego_y_vereda
+  display_name: Francisco Ortego
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1833
+  death_year: 1881
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Javier Ortego y Vereda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3064843'
+- artist_id: francisco_javier_riedmayer
+  display_name: Francisco Javier Riedmayer
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Javier Riedmayer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5866259'
+- artist_id: francisco_jose_de_caldas
+  display_name: Francisco José de Caldas
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1768
+  death_year: 1816
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Caldas, Francisco José de
+  - Caldas, Francisco José
+  - Caldas, Francisco José de (dir.)
+  notes: '5 lotes nominales | casas: bogota_auctions | científico, autor y editor histórico nacido en Popayán, Virreinato
+    de Nueva Granada, actual Colombia, en 1768 y fallecido en Santafé en 1816. No fusionar la coautoría Humboldt-Caldas;
+    la fila Lote 115 permanece not_an_author porque el nombre solo está en artist_raw. Fuentes: https://enciclopedia.banrepcultural.org/Francisco_Jos%C3%A9_de_Caldas
+    ; https://www.museonacional.gov.co/micrositios1/2018/Caldas/index.html'
+- artist_id: francisco_llorens_diaz
+  display_name: Francisco Llorens Díaz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Llorens Díaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5866532'
+- artist_id: francisco_lopez_sancho
+  display_name: Francisco López Sancho
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1951
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco López Sancho
+  - Francisco Lopez Sancho
+  notes: '12 lotes en Silver | fuente: Wikipedia ES | Madrid'
+  death_status: living
+- artist_id: francisco_lozano
+  display_name: Francisco Lozano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 2000
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Lozano Sanchís
+  notes: Pintor y acuarelista nacido en Antella (Valencia) el 19 de septiembre de 1912. Falleció en Valencia el
+    29 de mayo de 2000. Ganador del primer premio de la Exposición Nacional de Bellas Artes en 1952.
+- artist_id: francisco_mateos
+  display_name: Francisco Mateos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1897
+  death_year: 1976
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Mateos
+  - MATEOS, FRANCISCO
+  notes: '55 lotes | casas: duran_subastas'
+- artist_id: francisco_matto
+  display_name: Francisco Matto
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1911
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco MATTO
+  - FRANCISCO MATTO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17994478'
+- artist_id: francisco_mejia_guinand
+  display_name: Francisco Mejía Guinand
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANCISCO MEJIA GUINAND
+  - Francisco Mejía Guinand
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: francisco_meneses_osorio
+  display_name: Francisco Meneses Osorio
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1640
+  death_year: 1721
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Meneses Osorio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5483705'
+- artist_id: francisco_narbona
+  display_name: Francisco Narbona
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1928
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Narbona
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6436700'
+- artist_id: francisco_nunez_de_celis
+  display_name: Francisco Núñez de Celis
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Núñez de Celis
+  - Francisco Nuñez de Celis
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q64492296'
+- artist_id: francisco_nunez_losada
+  display_name: Francisco Nuñez Losada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1973
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Francisco Nuñez Losada
+  - Francisco Núñez Losada
+  notes: '15 lotes en Silver | fuente: Wikidata; Askart; MutualArt | Spanish painter'
+- artist_id: francisco_oller
+  display_name: Francisco Oller
+  country_birth: PR
+  nationalities:
+  - PR
+  birth_year: 1833
+  death_year: 1917
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Oller y Cestero
+  notes: '2 lotes | casas: duran_subastas | fuente: Wikipedia. Nacido en Bayamon cuando Puerto Rico era colonia
+    espaniola: el pais de nacimiento es PR, que ISO si codifica, no ES ni US. Fundador de la pintura puertorriquenia;
+    unico impresionista latinoamericano del circulo de Pissarro y Courbet.'
+- artist_id: francisco_paez
+  display_name: Francisco Paez
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1938
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANCISCO PAEZ
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: francisco_palma_burgos
+  display_name: Francisco Palma Burgos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Palma Burgos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867001'
+- artist_id: francisco_paya_sanchis
+  display_name: Francisco Payá Sanchís
+  country_birth: null
+  nationalities: []
+  birth_year: 1892
+  death_year: 1977
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Payá Sanchís
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q105616674'
+- artist_id: francisco_peinado
+  display_name: Francisco Peinado
+  country_birth: ES
+  birth_year: 1941
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Peinado
+  notes: '18 lotes | casas: duran_subastas'
+  death_status: living
+- artist_id: francisco_peralta_del_campo
+  display_name: Francisco Peralta del Campo
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Peralta del Campo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q867677'
+- artist_id: francisco_planas_doria
+  display_name: Francesc d'A. Planas Doria
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1879
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Planas Doria
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16335814'
+- artist_id: francisco_pompey
+  display_name: Francisco Pompey Salgueiro
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1887
+  death_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Pompey
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99839614'
+- artist_id: francisco_pons_arnau
+  display_name: Francisco Pons Arnau
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1886
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Pons Arnau
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867118'
+- artist_id: francisco_pradilla_ortiz
+  display_name: Francisco Pradilla Ortiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1848
+  death_year: 1921
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Pradilla Ortiz
+  - Francisco Pradilla
+  - Francisco Pradilla y Ortiz
+  notes: '38 lotes tras unificar variantes | casas: duran_subastas, zorrilla_subastas | nacido en Villanueva de
+    Gallego, Zaragoza, en 1848 y fallecido en Madrid en 1921. No confundir con Miguel Pradilla. Fuente: https://www.museodelprado.es/coleccion/artista/pradilla-y-ortiz-francisco/b71fa5b2-2cc6-4195-a7c0-0c850280c6f4'
+- artist_id: francisco_prats_y_velasco
+  display_name: Francisco Prats y Velasco
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1813
+  death_year: 1891
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Prats y Velasco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27031992'
+- artist_id: francisco_preciado_de_la_vega
+  display_name: Francisco Preciado de la Vega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1713
+  death_year: 1789
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Preciado de la Vega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3081923'
+- artist_id: francisco_prieto_santos
+  display_name: Francisco Prieto Santos
+  country_birth: null
+  nationalities: []
+  birth_year: 1884
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Prieto Santos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q52156484'
+- artist_id: francisco_rafael_segura_monforte
+  display_name: Francesc Rafael Segura i Monforte
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Rafael Segura Monforte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27092696'
+- artist_id: francisco_relogio
+  display_name: Francisco Relógio
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1926
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Relogio
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10285111'
+- artist_id: francisco_revelles
+  display_name: Francisco Revelles Tejada
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1938
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Revellés
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10285115'
+- artist_id: francisco_ribera_gomez
+  display_name: Francisco Ribera Gómez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Ribera Gómez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q17429240'
+- artist_id: francisco_rodriguez_sanclement
+  display_name: Francisco Rodríguez Sanclement
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1893
+  death_year: 1968
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Francisco Rodríguez Sanclement
+  - Francisco Rodriguez Sanclement
+  notes: '13 lotes en Silver | fuente: Artnet'
+- artist_id: francisco_ruiz_morales
+  display_name: Francisco Ruiz Morales
+  country_birth: null
+  nationalities: []
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Ruiz Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96757350'
+- artist_id: francisco_sales
+  display_name: Francisco Sales
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1904
+  death_year: 1977
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Sales
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: francisco_san_jose
+  display_name: Francisco San José
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1919
+  death_year: 1981
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco San José
+  - SAN JOSÉ, FRANCISCO
+  notes: '39 lotes | casas: duran_subastas'
+- artist_id: francisco_sancha
+  display_name: Francisco Sancha
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Sancha
+  - Francisco Sancha Lengo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19721314'
+- artist_id: francisco_sans_castano
+  display_name: Francisco Sans Castaño
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1868
+  death_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Sans Castaño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867412'
+- artist_id: francisco_sans_huguet
+  display_name: Francesc Sans Huguet
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Sans Huguet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q122584542'
+- artist_id: francisco_sebastian
+  display_name: Francisco Sebastián
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1920
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Sebastián
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55988399'
+- artist_id: francisco_serra_castellet
+  display_name: Francesc Serra Castellet
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Serra Castellet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24701983'
+- artist_id: francisco_sobrino
+  display_name: Francisco Sobrino
+  country_birth: ES
+  birth_year: 1932
+  death_year: 2014
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Sobrino (España, 1932 - Francia, 2014)
+  - Francisco Sobrino
+  - SOBRINO, FRANCISCO
+  notes: '38 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: francisco_soria_aedo
+  display_name: Francisco Soria Aedo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1898
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Soria Aedo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867529'
+- artist_id: francisco_toledo
+  display_name: Francisco Toledo
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1940
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANCISCO TOLEDO
+  - Francisco Toledo
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: francisco_tropa
+  display_name: Francisco Tropa
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Tropa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23418825'
+  death_status: living
+- artist_id: francisco_vadillo
+  display_name: Francisco Vadillo
+  country_birth: ES
+  birth_year: 1933
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Francisco Vadillo
+  notes: '30 lotes | casas: duran_subastas'
+- artist_id: francisco_zorrilla
+  display_name: Francisco Zorrilla
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Francisco Zorrilla
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q19423756'
+- artist_id: francky_boy
+  display_name: Francky Boy
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francky Boy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q139586030'
+  death_status: living
+- artist_id: francois_charles_cachoud
+  display_name: François Cachoud
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1866
+  death_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - François Charles Cachoud
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3084152'
+- artist_id: francois_desnoyer
+  display_name: François Desnoyer
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1894
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francois Desnoyer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3084439'
+- artist_id: francois_joseph_heim
+  display_name: François Joseph Heim
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1787
+  death_year: 1865
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - François Joseph Heim
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3083465'
+- artist_id: francois_marechal_bissey
+  display_name: François Maréchal
+  birth_year: 1938
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - François Marechal Bissey
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q56000284'
+- artist_id: francois_morellet
+  display_name: François Morellet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1926
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - François Morellet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q667780'
+- artist_id: francoise_menard
+  display_name: Françoise Ménard
+  country_birth: AU
+  nationalities:
+  - AU
+  birth_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francoise Ménard
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q117084687'
+  death_status: living
+- artist_id: frank_carmelitano
+  display_name: Frank Carmelitano
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1935
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frank Carmelitano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133600040'
+- artist_id: frank_meisler
+  display_name: Франк Майслер
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1929
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FRANK MEISLER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q107292'
+- artist_id: frank_wasley
+  display_name: Frank Wasley
+  birth_year: 1848
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Frank Wasley
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21460595'
+- artist_id: franklin_aguirre
+  display_name: Franklin Aguirre
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FRANKLIN AGUIRRE
+  - Franklin Aguirre
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: franklin_benjamin
+  display_name: Benjamin Franklin
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1706
+  death_year: 1790
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Franklin, Benjamin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q34969'
+- artist_id: franz_werner_von_tamm
+  display_name: Franz Werner Tamm
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1658
+  death_year: 1724
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FRANZ WERNER VON TAMM
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q830611'
+- artist_id: franz_xaver_hendrik_verbeeck
+  display_name: Frans Xaver Hendrik Verbeeck
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1686
+  death_year: 1755
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Franz Xaver Hendrik Verbeeck
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18508207'
+- artist_id: fray_miguel_de_herrera
+  display_name: Fray Miguel de Herrera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1696
+  death_year: 1765
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - FRay Miguel de Herrera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21480050'
+- artist_id: freda_sargent
+  display_name: Freda Sargent
+  country_birth: GB
+  nationalities:
+  - GB
+  - CO
+  birth_year: 1928
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Freda Sargent (Inglaterra, 1928)
+  - Freda Sargent
+  - Freda Sargent de Obregón
+  notes: '14 lotes | casas: bogota_auctions | n. 16-08-1928 (Wikidata Q99456319, pintora britanica); SIN fecha de
+    muerte registrada alli. Tercera esposa de Alejandro Obregon y docente en Barranquilla, que es por lo que sus
+    lotes salen en Bogota pese a ser inglesa: de ahi nationalities [GB, CO]. Tendria 98 anios; no se le pone death_year
+    porque no consta, no porque este confirmada viva.'
+  death_status: living
+- artist_id: frederic_amat
+  display_name: Frederic Amat
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frederic Amat
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11923043'
+  death_status: living
+- artist_id: frederic_legrip
+  display_name: Frédéric Legrip
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1817
+  death_year: 1871
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frederic Legrip
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3089965'
+- artist_id: frederick_cayley_robinson
+  display_name: Frederick Cayley Robinson
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1862
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frederick Cayley Robinson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3087071'
+- artist_id: frederick_hamilton_jackson
+  display_name: Frederick Hamilton Jackson
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1848
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frederick Hamilton Jackson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5497953'
+- artist_id: frederick_hendrik_kaemmerer
+  display_name: Frederick Hendrik Kaemmerer
+  birth_year: 1839
+  death_year: 1902
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Frederick Hendrik Kaemmerer
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q132130895'
+- artist_id: frederico_vigil
+  display_name: Frederico Vigil
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1946
+  death_status: living
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Frederico Vigil
+  notes: 'Maestro fresquista estadounidense contemporáneo, nacido Santa Fe, Nuevo México. Discípulo de Luciene Block
+    y Stephen Pope Dimitroff (aprendices de Diego Rivera). Especializado en frescos buon fresco a escala monumental.
+    ALERTA: artista vivo/contemporáneo, NO histórico de subastas españolas/latinoamericanas.'
+- artist_id: frederik_christian_kiaerschou
+  display_name: Frederick Christian Jacobsen Kiaerskou
+  country_birth: DK
+  nationalities:
+  - DK
+  birth_year: 1805
+  death_year: 1891
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Frederik Christian Kiaerschou
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12310825'
+- artist_id: fredy_alzate
+  display_name: Fredy Alzate
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1975
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FREDY ALZATE
+  - Fredy Alzate
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: fredy_serna
+  display_name: Fredy Serna
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1971
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - FREDY SERNA
+  - Fredy Serna
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: friedrich_eibner
+  display_name: Friedrich Eibner
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1825
+  death_year: 1877
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Friedrich Eibner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5503784'
+- artist_id: fritz_bersch
+  display_name: Fritz Bersch
+  birth_year: 1873
+  death_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fritz Bersch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131418074'
+- artist_id: fumiko_negishi
+  display_name: Fumiko Negishi
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Fumiko Negishi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q136500441'
+  death_status: living

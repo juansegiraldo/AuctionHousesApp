@@ -1,62 +1,346 @@
-# Maestro de artistas - shard "w"
-#
-# Entradas cuyo artist_id empieza por "w". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: waldo_aguiar
-    display_name: "Waldo Aguiar"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1930
-    death_year: 2000
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Waldo Aguiar"
-      - "AGUIAR, WALDO"
-    notes: "18 lotes | casas: duran_subastas"
-
-  - artist_id: wifredo_lam
-    display_name: "Wifredo Lam"
-    country_birth: "CU"
-    nationalities: ["CU"]
-    birth_year: 1902
-    death_year: 1982
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Wifredo Lam"
-    notes: "19 lotes | casas: bogota_auctions, duran_subastas"
-
-  - artist_id: wilson_diaz_polanco
-    display_name: "Wilson Díaz Polanco"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1963
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "WILSON DIAZ POLANCO"
-      - "Wilson Díaz Polanco"
-    notes: "1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: will_faber_zitetz
-    display_name: "Will Faber Zitetz"
-    country_birth: "DE"
-    nationalities: ["DE"]
-    birth_year: 1901
-    death_year: 1987
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Will Faber Zitetz"
-    notes: "15 lotes en Silver | fuente: Ketterer Kunst; MACBA Barcelona | Born Saarbrucken, Germany; died Barcelona"
+- artist_id: walasse_ting
+  display_name: 丁雄泉
+  country_birth: CN
+  nationalities:
+  - CN
+  birth_year: 1929
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - WALASSE TING
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2095915'
+- artist_id: waldo_aguiar
+  display_name: Waldo Aguiar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1930
+  death_year: 2000
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Waldo Aguiar
+  - AGUIAR, WALDO
+  notes: '18 lotes | casas: duran_subastas'
+- artist_id: waldo_balart
+  display_name: Waldo Díaz-Balart
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1931
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Waldo Balart
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7961556'
+- artist_id: walter_deliotti
+  display_name: Walter Deliotti
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1925
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Walter Deliotti
+  - WALTER DELIOTTI
+  - Walter DELIOTTI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42386111'
+- artist_id: walter_fryer_stocks
+  display_name: Walter Fryer Stocks
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1842
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Walter Fryer Stocks
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26250773'
+- artist_id: walter_waentig
+  display_name: Walter Waentig
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1881
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Walter Waentig
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55847128'
+- artist_id: washington_barcala
+  display_name: Washington Barcala
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1920
+  death_year: 1993
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Washington Barcala
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19858169'
+- artist_id: werner_berges
+  display_name: Werner Berges
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1941
+  death_year: 2017
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Werner Berges
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q661398'
+- artist_id: wifredo_lam
+  display_name: Wifredo Lam
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1902
+  death_year: 1982
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Wifredo Lam
+  notes: '19 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: wilfredo_diaz_valdez
+  display_name: Wilfredo Diaz Valdez
+  birth_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - WILFREDO DÍAZ VALDÉZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q131680884'
+  death_status: living
+- artist_id: wilhelm_beintmann
+  display_name: Wilhelm Beintmann
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Wilhelm Beintmann
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin fecha de muerte y nacido hace mas de
+    105 anios: falta el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q59325834'
+- artist_id: wilhelm_kray
+  display_name: Wilhelm Kray
+  birth_year: 1828
+  death_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Wilhelm Kray
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19513870'
+- artist_id: wilhelm_lucas_von_cranach
+  display_name: Wilhelm Lucas von Cranach
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1861
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wilhelm Lucas von Cranach
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21682551'
+- artist_id: will_faber_zitetz
+  display_name: Will Faber Zitetz
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1901
+  death_year: 1987
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Will Faber Zitetz
+  notes: '15 lotes en Silver | fuente: Ketterer Kunst; MACBA Barcelona | Born Saarbrucken, Germany; died Barcelona'
+- artist_id: willem_schellinks
+  display_name: Willem Schellinks
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1627
+  death_year: 1678
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Willem Schellinks
+  - WILLEM SCHELLINKS
+  - Willem SCHELLINKS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4019900'
+- artist_id: willem_van_de_velde_ii
+  display_name: Willem van de Velde el Joven
+  birth_year: 1633
+  death_year: 1707
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - WILLEM VAN DE VELDE II
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q432266'
+  country_birth: NL
+  nationalities:
+  - NL
+- artist_id: willem_van_mieris
+  display_name: Willem van Mieris
+  country_birth: NL
+  nationalities: []
+  birth_year: 1662
+  death_year: 1747
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Willem Van Mieris
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q1348950'
+- artist_id: william_allen_brunning
+  display_name: William Allen Brunning
+  birth_year: 1818
+  death_year: 1850
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - William Allen Brunning
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21464164'
+- artist_id: william_james_stamper
+  display_name: William James Stamper
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - William James Stamper
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q136698736'
+- artist_id: wilson_amaral
+  display_name: Wilson Amaral
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1919
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wilson Amaral
+  - WILSON AMARAL
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42385196'
+- artist_id: wilson_diaz_polanco
+  display_name: Wilson Díaz Polanco
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1963
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - WILSON DIAZ POLANCO
+  - Wilson Díaz Polanco
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: witold_januszewski
+  display_name: Witold Januszewski
+  birth_year: 1915
+  death_year: 1981
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Witold Januszewski
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q3569517'
+- artist_id: wladyslaw_strzeminski
+  display_name: Władysław Strzemiński
+  birth_year: 1893
+  death_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Wladyslaw Strzeminski
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q2471547'
+- artist_id: wlodzimierz_kunz
+  display_name: Wlodzimierz Kunz
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1926
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wlodzimierz Kunz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9382707'
+- artist_id: wolf_vostell
+  display_name: Wolf Vostell
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1932
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wolf Vostell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q326226'
+- artist_id: wolfgang_loesche
+  display_name: Wolfgang Loesche
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wolfgang Loesche
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94430273'
+  death_status: living
+- artist_id: wolfgang_tillmans
+  display_name: Wolfgang Tillmans
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Wolfgang Tillmans
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q704012'

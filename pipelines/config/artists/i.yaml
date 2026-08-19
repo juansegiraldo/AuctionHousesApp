@@ -1,166 +1,594 @@
-# Maestro de artistas - shard "i"
-#
-# Entradas cuyo artist_id empieza por "i". Ver README.md en este
-# directorio para la forma de una entrada y las reglas (nunca inventar pais,
-# alias como decision humana, un alias solo pertenece a un artista).
-#
-# Los codigos de pais van SIEMPRE entrecomillados: YAML 1.1 lee NO (Noruega),
-# ON, OFF e YES sin comillas como booleanos.
-
 artists:
-  - artist_id: ignacio_gomez_jaramillo
-    display_name: "Ignacio Gómez Jaramillo"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1910
-    death_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ignacio Gómez Jaramillo - Colombia, 1910 - 1970."
-      - "Ignacio Gómez Jaramillo"
-    notes: "8 lotes | casas: bogota_auctions"
-
-  - artist_id: ignacio_pinazo_camarlench
-    display_name: "Ignacio Pinazo Camarlench"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1849
-    death_year: 1916
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ignacio Pinazo Camarlench"
-      - "PINAZO CAMARLENCH, IGNACIO"
-    notes: "14 lotes | casas: duran_subastas"
-
-  - artist_id: ignacio_zuloaga
-    display_name: "Ignacio Zuloaga"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1870
-    death_year: 1945
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ignacio Zuloaga, El Mozo"
-      - "Ignacio Zuloaga Zabaleta"
-      - "Ignacio Zuloaga"
-    notes: "12 lotes | casas: duran_subastas"
-
-  - artist_id: isabel_guerra
-    display_name: "Isabel Guerra"
-    country_birth: "ES"
-    birth_year: 1947
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Isabel Guerra"
-    notes: "23 lotes | casas: duran_subastas"
-
-  - artist_id: isabel_villar
-    display_name: "Isabel Villar"
-    country_birth: "ES"
-    birth_year: 1934
-    nationalities: ["ES"]
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Isabel Villar"
-    notes: "17 lotes | casas: duran_subastas"
-
-  - artist_id: ismael_gonzalez_de_la_serna
-    display_name: "Ismael González de la Serna"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1897
-    death_year: 1970
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ismael González de la Serna"
-    notes: "29 lotes | casas: duran_subastas"
-  - artist_id: ignacio_iturria
-    display_name: "Ignacio Iturria"
-    country_birth: "UY"
-    nationalities: ["UY"]
-    birth_year: 1949
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ignacio Iturria"
-      - "Ignacio ITURRIA"
-      - "ITURRIA, IGNACIO"
-    notes: "7 lotes | casas: zorrilla_subastas"
-
-  - artist_id: ivan_argote
-    display_name: "Iván Argote"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1983
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "IVAN ARGOTE"
-      - "Iván Argote"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ivan_rickenmann
-    display_name: "Ivan  Rickenmann"
-    country_birth: "CO"
-    nationalities: ["CO"]
-    birth_year: 1969
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "IVAN RICKENMANN"
-      - "Ivan  Rickenmann"
-    notes: "2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas"
-
-  - artist_id: ismael_blat
-    display_name: "Ismael Blat"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1901
-    death_year: 1976
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ismael Blat"
-    notes: "11 lotes en Silver | fuente: Wikipedia ES | Benimamet, Valencia"
-
-  - artist_id: isidro_lopez_murias
-    display_name: "Isidro López Murías"
-    country_birth: "MA"
-    nationalities: ["ES", "MA"]
-    birth_year: 1939
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Isidro López Murias"
-    notes: "14 lotes | nacido en 1939 en Tetuan, entonces Protectorado espaniol de Marruecos; pintor y Doctor en Bellas Artes, tesis sobre Vicente Berdusan. Mismo patron que Saenz de Tejada (Tanger): nace en el Protectorado y vende en el mercado espaniol. Fuentes: murias.org (web del propio pintor), ArteInformado, Ayuntamiento de Pamplona."
-
-  - artist_id: ignacio_gil_sala
-    display_name: "Ignacio Gil Sala"
-    country_birth: "ES"
-    nationalities: ["ES"]
-    birth_year: 1913
-    death_year: 2003
-    attribution_type: autor
-    source: manual
-    confidence: high
-    aliases:
-      - "Ignacio Gil Sala"
-    notes: "Pintor y viajero aventurero español (1913-2003). Escuela de BBAA Barcelona con maestros Mestres y Borrás. Estilo Impresionista, paisajes catalanes y baleares. Exposiciones en España, Francia, Filipinas, Suiza, EEUU, Canadá, Colombia. Premios nacionales e internacionales."
+- artist_id: ian_anull
+  display_name: Ian Anull
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ian Anüll
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28777070'
+  death_status: living
+- artist_id: ibrahim_miranda
+  display_name: Ibrahim Miranda Ramos
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1969
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ibrahim Miranda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q77324925'
+  death_status: living
+- artist_id: ichiyusai_kuniyoshi
+  display_name: 歌川国芳
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1798
+  death_year: 1861
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ichiyusai KUNIYOSHI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q317736'
+- artist_id: ignacio_de_leon_y_escosura
+  display_name: Ignacio de Leon y Escosura
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1834
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio de León y Escosura
+  - Ignacio León y Escosura
+  - IGNACIO LEÓN Y ESCOSURA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18600114'
+- artist_id: ignacio_diaz_olano
+  display_name: Ignacio Díaz de Olano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1860
+  death_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio Díaz Olano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12259454'
+- artist_id: ignacio_garcia_erguin
+  display_name: Ignacio García Ergüin
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1934
+  death_year: 2025
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio García Ergüin
+  - Ignacio Garcia Ergüin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12259458'
+- artist_id: ignacio_gil_sala
+  display_name: Ignacio Gil Sala
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1913
+  death_year: 2003
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ignacio Gil Sala
+  notes: Pintor y viajero aventurero español (1913-2003). Escuela de BBAA Barcelona con maestros Mestres y Borrás.
+    Estilo Impresionista, paisajes catalanes y baleares. Exposiciones en España, Francia, Filipinas, Suiza, EEUU,
+    Canadá, Colombia. Premios nacionales e internacionales.
+- artist_id: ignacio_gomez_jaramillo
+  display_name: Ignacio Gómez Jaramillo
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1910
+  death_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ignacio Gómez Jaramillo - Colombia, 1910 - 1970.
+  - Ignacio Gómez Jaramillo
+  notes: '8 lotes | casas: bogota_auctions'
+- artist_id: ignacio_guibert_amor
+  display_name: Ignacio Guibert Amor
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1916
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio Guibert Amor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q116854248'
+- artist_id: ignacio_iturria
+  display_name: Ignacio Iturria
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1949
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ignacio Iturria
+  - Ignacio ITURRIA
+  - ITURRIA, IGNACIO
+  notes: '7 lotes | casas: zorrilla_subastas'
+  death_status: living
+- artist_id: ignacio_pinazo_camarlench
+  display_name: Ignacio Pinazo Camarlench
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1849
+  death_year: 1916
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ignacio Pinazo Camarlench
+  - PINAZO CAMARLENCH, IGNACIO
+  notes: '14 lotes | casas: duran_subastas'
+- artist_id: ignacio_suarez_llanos
+  display_name: Ignacio Suárez Llanos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1830
+  death_year: 1881
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio Suarez Llanos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5913579'
+- artist_id: ignacio_tovar
+  display_name: Ignacio Tovar
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ignacio Tovar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99498150'
+  death_status: living
+- artist_id: ignacio_ugarte_bereciartu
+  display_name: Ignacio Ugarte
+  country_birth: ES
+  nationalities:
+  - ES
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ignacio Ugarte Bereciartu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12259469'
+- artist_id: ignacio_yraola
+  display_name: Ignacio Yraola
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1928
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignacio Yraola
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60829248'
+- artist_id: ignacio_zuloaga
+  display_name: Ignacio Zuloaga
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1870
+  death_year: 1945
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ignacio Zuloaga, El Mozo
+  - Ignacio Zuloaga Zabaleta
+  - Ignacio Zuloaga
+  notes: '12 lotes | casas: duran_subastas'
+- artist_id: ignasi_mundo
+  display_name: Ignasi Mundó
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ignasi Mundó
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16999633'
+- artist_id: imeldo_corral
+  display_name: Imeldo Corral
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Imeldo Corral
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20533528'
+- artist_id: inocencio_garcia_asarta
+  display_name: Inocencio García Asarta
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1862
+  death_year: 1921
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Inocencio García Asarta
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12259628'
+- artist_id: ion_muresanu
+  display_name: Ion Mureșanu
+  country_birth: RO
+  nationalities:
+  - RO
+  birth_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ION MURESANU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118812457'
+  death_status: living
+- artist_id: irena_snarska
+  display_name: Irena Snarska
+  country_birth: null
+  nationalities: []
+  birth_year: 1934
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Irena Snarska
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q51551326'
+- artist_id: irene_laffitte
+  display_name: Irene Laffitte
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1941
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Irene Laffitte
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12259738'
+- artist_id: irma_morassi
+  display_name: Irma Morassi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Irma Morassi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q132856654'
+  death_status: living
+- artist_id: isaac_santacruz
+  display_name: Isaac Santacruz
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1868
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - ISAAC SANTACRUZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q135898139'
+- artist_id: isabel_dato
+  display_name: Isabel Dato y Barrenechea
+  country_birth: null
+  nationalities: []
+  death_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Isabel Dato
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q9071456'
+- artist_id: isabel_guerra
+  display_name: Isabel Guerra
+  country_birth: ES
+  birth_year: 1947
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Isabel Guerra
+  notes: '23 lotes | casas: duran_subastas'
+- artist_id: isabel_laginhas
+  display_name: Isabel Laginhas
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1942
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isabel Laginhas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98607718'
+- artist_id: isabel_oliver_cuevas
+  display_name: Isabel Oliver
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isabel Oliver Cuevas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24934400'
+- artist_id: isabel_pons
+  display_name: Isabel Pons
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isabel Pons
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q57530107'
+- artist_id: isabel_villar
+  display_name: Isabel Villar
+  country_birth: ES
+  birth_year: 1934
+  nationalities:
+  - ES
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Isabel Villar
+  notes: '17 lotes | casas: duran_subastas'
+- artist_id: isidoro_brocos_gomez
+  display_name: Isidoro Brocos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1841
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidoro Brocos Gomez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20535072'
+- artist_id: isidoro_lazaro_ferre
+  display_name: Isidoro Lázaro Ferré
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidoro Lázaro Ferré
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21818021'
+  death_status: living
+- artist_id: isidoro_marin_garces
+  display_name: Isidoro Marín Garés
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1863
+  death_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidoro Marín Garcés
+  - Isidoro Marin Gares
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23816075'
+- artist_id: isidoro_valcarcel_medina
+  display_name: Isidoro Valcárcel Medina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1937
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidoro Valcárcel Medina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5921245'
+  death_status: living
+- artist_id: isidro_lopez_murias
+  display_name: Isidro López Murías
+  country_birth: MA
+  nationalities:
+  - ES
+  - MA
+  birth_year: 1939
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Isidro López Murias
+  notes: '14 lotes | nacido en 1939 en Tetuan, entonces Protectorado espaniol de Marruecos; pintor y Doctor en Bellas
+    Artes, tesis sobre Vicente Berdusan. Mismo patron que Saenz de Tejada (Tanger): nace en el Protectorado y vende
+    en el mercado espaniol. Fuentes: murias.org (web del propio pintor), ArteInformado, Ayuntamiento de Pamplona.'
+- artist_id: isidro_nonell
+  display_name: Isidro Nonell
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1872
+  death_year: 1911
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidro Nonell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1393742'
+- artist_id: isidro_parra
+  display_name: Isidro Parra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1925
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Isidro Parra
+  - Isidro Parra Molina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q101076565'
+- artist_id: ismael_blat
+  display_name: Ismael Blat
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1976
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ismael Blat
+  notes: '11 lotes en Silver | fuente: Wikipedia ES | Benimamet, Valencia'
+- artist_id: ismael_gonzalez_de_la_serna
+  display_name: Ismael González de la Serna
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1897
+  death_year: 1970
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - Ismael González de la Serna
+  notes: '29 lotes | casas: duran_subastas'
+- artist_id: ivan_argote
+  display_name: Iván Argote
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1983
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - IVAN ARGOTE
+  - Iván Argote
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: ivan_larra_plaza
+  display_name: Ivan Larra Plaza
+  country_birth: null
+  nationalities: []
+  birth_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Iván Larra Plaza
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99494186'
+  death_status: living
+- artist_id: ivan_rickenmann
+  display_name: Ivan  Rickenmann
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1969
+  attribution_type: autor
+  source: manual
+  confidence: high
+  aliases:
+  - IVAN RICKENMANN
+  - Ivan  Rickenmann
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  death_status: living
+- artist_id: ivan_serpa
+  display_name: Ivan Serpa
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1923
+  death_year: 1973
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ivan Serpa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27093753'
+- artist_id: ivan_uralov
+  display_name: Ivan Uralov
+  birth_year: 1948
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Ivan Uralov
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q109485455'
+  death_status: living
+- artist_id: izabella_godlewska
+  display_name: Izabella Godlewska
+  country_birth: BY
+  nationalities:
+  - BY
+  birth_year: 1931
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Izabella Godlewska
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11714723'
