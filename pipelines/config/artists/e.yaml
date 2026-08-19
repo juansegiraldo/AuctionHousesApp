@@ -1385,11 +1385,17 @@ artists:
   - ES
   birth_year: 1845
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Emilio Ocón y Rivas
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q922505'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q922505.
+    INVESTIGADO 2026-08-19: nacido en el PENION DE VELEZ DE LA GOMERA en 1845 y muerto en Malaga en 1904. El lugar
+    de nacimiento es una plaza de soberania ESPANIOLA en la costa marroqui, asi que ES es correcto pese a la geografia.
+    Fundador de la escuela de marinistas malaguenios; discipulo de Carlos de Haes. Fuentes: Museo del Prado https://www.museodelprado.es/aprende/enciclopedia/voz/ocon-y-rivas-emilio/9e947057-16cb-4540-93ae-01016962d4f7
+    ; Museo Carmen Thyssen Malaga https://www.carmenthyssenmalaga.org/artista/emilio-ocon-y-rivas'
+  death_year: 1904
+  death_status: known
 - artist_id: emilio_payes
   display_name: Emilio Payes
   country_birth: null
@@ -2471,11 +2477,18 @@ artists:
   - CU
   birth_year: 1892
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Esteban Domenech
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q130638023'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q130638023.
+    INVESTIGADO 2026-08-19: Esteban Domenech Fernandez, pintor CUBANO nacido en Santa Clara y muerto en 1960. Formado
+    en San Alejandro; desde 1912 copista en el Prado, considerado el mejor copista del Greco; consul de Cuba en
+    Toledo en 1926. OJO al NACIMIENTO: EcuRed da el 03-09-1886 y las casas 1892; se conserva el 1892 de la ficha
+    y se anota la discrepancia, que no se resuelve. Fuentes: Museo del Prado https://www.museodelprado.es/aprende/enciclopedia/voz/domenech-esteban/b8f107e3-8d8f-4df2-bb3e-b08e4feb5014
+    ; EcuRed https://www.ecured.cu/Esteban_Domenech_Fern%C3%A1ndez'
+  death_year: 1960
+  death_status: known
 - artist_id: esteban_maroto_torres
   display_name: Esteban Maroto
   country_birth: ES
