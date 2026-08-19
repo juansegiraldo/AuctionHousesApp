@@ -30,6 +30,7 @@ countries:
   ES: {es: España, demonym_es: español}
   FR: {es: Francia, demonym_es: francés}
   GB: {es: Reino Unido, demonym_es: británico}
+  GE: {es: Georgia, demonym_es: georgiano}
   HR: {es: Croacia, demonym_es: croata}
   GR: {es: Grecia, demonym_es: griego}
   GT: {es: Guatemala, demonym_es: guatemalteco}
@@ -183,6 +184,7 @@ aliases:
   noruega: "NO"   # ver la nota de arriba: sin comillas YAML lo lee como False
   paises bajos: NL
   croacia: HR
+  georgia: GE
   eslovaquia: SK
   sudan: SD
   nueva zelanda: NZ
@@ -245,6 +247,7 @@ aliases:
   japanese: JP
   norwegian: "NO"   # ver la nota de Noruega: sin comillas YAML lo lee como False
   croatia: HR
+  georgian: GE
   slovakia: SK
   sudanese: SD
   slovak: SK

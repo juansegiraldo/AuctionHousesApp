@@ -13,17 +13,22 @@ artists:
   - K-Hito
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q924115'
 - artist_id: kako_topouria
-  display_name: Kako (kunstnik)
-  country_birth: null
-  nationalities: []
+  display_name: Kako Topuria
+  country_birth: GE
+  nationalities:
+  - GE
   birth_year: 1960
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - KAKO TOPOURIA
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q12366127'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q12366127. INVESTIGADO 2026-08-19: Kako Topuria, nacido
+    en TBILISI (Georgia) en 1960; estudio historia del arte en la Universidad Estatal de Tbilisi (1983-88) y desde
+    1990 vive entre Georgia y Francia. El display_name de la ficha decia ''Kako (kunstnik)'' -- ''kunstnik'' es
+    ''artista'' en estonio, un artefacto de etiqueta, no parte del nombre. Fuentes: web oficial https://kako.net/biography/
+    ; Georgian Artists Abroad (Univ. de Tbilisi) https://geoartistsabroad.tsu.ge/en/artists/t-y/topuria-kako.html'
   death_status: living
 - artist_id: karel_appel
   display_name: Karel Appel

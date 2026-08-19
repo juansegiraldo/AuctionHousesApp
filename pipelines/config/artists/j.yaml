@@ -8646,13 +8646,19 @@ artists:
   birth_year: 1934
   death_year: 2023
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Julio Viera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1934, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
-    Fuente: https://www.wikidata.org/wiki/Q21065686'
+    Fuente: https://www.wikidata.org/wiki/Q21065686. INVESTIGADO 2026-08-19: Nacido en LAS PALMAS DE GRAN CANARIA
+    el 08-07-1934 y muerto en Palma de Mallorca el 27-08-2023. Proximo al surrealismo; dos lienzos suyos estan en
+    los Museos Vaticanos. Fuentes: CAAM https://caam.net/artista/julio-viera/ ; Canarias7 https://www.canarias7.es/cultura/arte/fallece-mallorca-pintor-grancanario-julio-viera-20230829230500-nt.html'
+  country_birth: ES
+  nationalities:
+  - ES
+  death_status: known
 - artist_id: julio_vila_y_prades
   display_name: Julio Vila y Prades
   country_birth: ES
