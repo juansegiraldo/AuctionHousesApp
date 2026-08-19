@@ -980,13 +980,21 @@ artists:
   birth_year: 1858
   death_year: 1933
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Fernando Martínez Checa
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1858, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
-    Fuente: https://www.wikidata.org/wiki/Q5859862'
+    Fuente: https://www.wikidata.org/wiki/Q5859862. INVESTIGADO 2026-08-19: Nacido en Requena (Valencia) y muerto
+    en Baeza (Jaen) en 1933. OJO a la discrepancia: el Registro Civil de Requena da 1855, tres anios antes que el
+    1858 habitual; se conserva 1858 por ser el consenso de museos y catalogos, y se anota la duda en vez de resolverla.
+    Fuentes: Museo de Huelva https://www.museosdeandalucia.es/web/museodehuelva/-/fernando-martinez-checa-1858-1933-
+    ; Cronicas Historicas de Requena https://cronicasderequena.es/martinez-checa-fernando/'
+  country_birth: ES
+  nationalities:
+  - ES
+  death_status: known
 - artist_id: fernando_oramas
   display_name: Fernando Oramas
   country_birth: CO
@@ -1902,17 +1910,21 @@ artists:
   notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
 - artist_id: francisco_garcia_abuja
   display_name: Francisco García Abuja
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1924
   death_year: 2013
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Francisco García Abuja
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q102184910'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q102184910. INVESTIGADO 2026-08-19: Nacido en Madrid el
+    04-04-1924. Formado en San Fernando desde 1943; neofigurativo espaniol de los 50-60. Fuente: Real Academia de
+    la Historia https://dbe.rah.es/biografias/100847/francisco-garcia-abuja'
+  death_status: known
 - artist_id: francisco_garcia_de_la_cal
   display_name: Francisco García de la Cal
   death_year: 1899

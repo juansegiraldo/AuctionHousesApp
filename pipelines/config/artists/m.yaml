@@ -854,17 +854,21 @@ artists:
   notes: '11 lotes en Silver | fuente: Artnet'
 - artist_id: manuel_monedero
   display_name: Manuel Monedero
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1925
   death_year: 2002
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Manuel Monedero
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q5993812'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5993812. INVESTIGADO 2026-08-19: Nacido en Sevilla en 1925,
+    muerto en Carboneras (Aracena, Huelva) en 2002. Autodidacta; expuso sobre todo en EEUU en los anios 60. Fuente:
+    Fernando Duran https://www.fernandoduran.com/es/888-manuel-monedero-sevilla-1925-2002'
+  death_status: known
 - artist_id: manuel_moral_mozas
   display_name: Manuel Moral Mozas
   country_birth: ES

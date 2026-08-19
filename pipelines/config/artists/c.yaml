@@ -883,17 +883,21 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12385368'
 - artist_id: carlos_tauler
   display_name: Carlos Tauler
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1911
   death_year: 1988
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Carlos Tauler
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q29419507'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q29419507. INVESTIGADO 2026-08-19: Nacido en Madrid en 1911.
+    Pintor africanista: viajo por encargo de la Direccion General de Marruecos y Colonias a Guinea (1947) y al Sahara
+    (1949). Fuente: Biblioteca Nacional de Espania https://datos.bne.es/resource/XX906039 ; Wikidata https://www.wikidata.org/wiki/Q29419507'
+  death_status: known
 - artist_id: carlos_valenzuela
   display_name: Carlos Valenzuela
   country_birth: CO

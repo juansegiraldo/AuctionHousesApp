@@ -1425,18 +1425,23 @@ artists:
   death_status: living
 - artist_id: peter_von_artens
   display_name: Peter Von Artens
-  country_birth: null
-  nationalities: []
+  country_birth: AR
+  nationalities:
+  - AR
   birth_year: 1937
   death_year: 2003
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Peter von Artens
   - Peter Von Artens
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q43139657'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43139657. INVESTIGADO 2026-08-19: Nacido en BUENOS AIRES
+    en 1937; estudio en Santiago de Chile y, becado por el Instituto de Cultura Hispanica, en la Real Academia de
+    San Fernando de Madrid. Las casas lo rotulan ''Argentinian''. Fuentes: Findlay Galleries https://findlaygalleries.com/artists/estates/peter-von-artens/
+    ; Wikidata https://www.wikidata.org/wiki/Q43139657'
+  death_status: known
 - artist_id: petr_krokhonyatkin
   display_name: Petr Krokhonyatkin
   birth_year: 1929
