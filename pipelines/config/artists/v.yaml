@@ -460,11 +460,18 @@ artists:
   - ES
   birth_year: 1899
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Vicente Santos Sáinz
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q131352276'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q131352276.
+    INVESTIGADO 2026-08-19: pintor espaniol 1899-1981; tiene ficha en la Real Academia de la Historia (historia-hispanica.rah.es/biografias/48531)
+    pero la pagina no sirve contenido a la consulta, asi que el LUGAR de nacimiento no queda confirmado -- el pais
+    ES ya estaba en la ficha y se conserva. Las fechas las publican de forma coincidente las casas. Fuentes: Real
+    Academia de la Historia https://historia-hispanica.rah.es/biografias/48531-vicente-santos-sainz ; Invaluable
+    https://www.invaluable.com/artist/santos-sainz-vicente-qzy2hgfcij/sold-at-auction-prices/'
+  death_year: 1981
+  death_status: known
 - artist_id: vicente_vela
   display_name: Vicente Vela
   country_birth: ES
