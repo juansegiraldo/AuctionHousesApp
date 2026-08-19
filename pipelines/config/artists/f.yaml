@@ -2420,17 +2420,22 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3081923'
 - artist_id: francisco_prieto_santos
   display_name: Francisco Prieto Santos
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1884
   death_year: 1967
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Francisco Prieto Santos
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q52156484'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q52156484. INVESTIGADO 2026-08-19: Nacido en VALLADOLID
+    en 1884 y muerto en CADIZ en 1967. Se le tiene por pintor gaditano porque alli desarrollo casi toda su obra,
+    pero el nacimiento es vallisoletano. Fuentes: Drouot https://drouot.com/it/l/27625126-francisco-prieto-santos-valladolid-1884-cadiz-1967-cadiz
+    ; Escultura y Arte https://esculturayarte.com/042310/Francisco-Prieto-en-Cadiz.html'
+  death_status: known
 - artist_id: francisco_rafael_segura_monforte
   display_name: Francesc Rafael Segura i Monforte
   country_birth: ES

@@ -1309,17 +1309,22 @@ artists:
   death_status: living
 - artist_id: jesus_apellaniz
   display_name: Jesús Apellániz
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1897
   death_year: 1969
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Jesús Apellániz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q60830217'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60830217. INVESTIGADO 2026-08-19: Jesus Lopez Apellaniz
+    (antepuso legalmente el apellido materno), nacido en VITORIA el 21-09-1897 y muerto alli el 23-03-1969. Paisajista
+    alaves; en 1956 pinto seis lienzos para la Iglesia de San Miguel de Vitoria. Fuentes: Aunamendi Eusko Entziklopedia
+    https://aunamendi.eusko-ikaskuntza.eus/es/apellaniz-lopez-jesus/ar-1755/ ; Bilbao Museoa https://bilbaomuseoa.eus/en/explore/artist/jesus-apellaniz-lopez/2afde948-9b6d-4d0a-8aeb-044313a2f7c3'
+  death_status: known
 - artist_id: jesus_basiano_martinez
   display_name: Jesús Basiano Martínez
   country_birth: ES

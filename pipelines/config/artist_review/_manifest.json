@@ -37,6 +37,6 @@
   "source": {
     "legacy_excel_included": true,
     "silver_lots": "data\\silver\\lots.jsonl",
-    "silver_sha256": "be3a4d3c2d2dcd24ff54fb25cdd6dc979b6b81cab22443dc7b0bfa37b130d737"
+    "silver_sha256": "b9ac9214c527033381ba0d15d51b8dbe87ff87e37840f176795c2eb1681ea449"
   }
 }
