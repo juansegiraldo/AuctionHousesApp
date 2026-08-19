@@ -4584,16 +4584,23 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q109403905'
 - artist_id: jose_marced_furio
   display_name: José Marced Furió
-  country_birth: null
-  nationalities: []
-  birth_year: 1896
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - José Marced Furió
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q99861225'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99861225. INVESTIGADO 2026-08-19: Nacido en VILLAJOYOSA
+    (Alicante) el 10-01-1889 y muerto en Valencia el 29-06-1967. CORRIGE el nacimiento de la ficha, que decia 1896:
+    Alicantepedia da la fecha exacta y el resto de fuentes locales coinciden en 1889. Hijo de herreros, formado
+    en San Carlos de Valencia. Fuentes: Alicantepedia https://alicantepedia.com/biografias/marced-furi%C3%B3-jos%C3%A9
+    ; Diccionario de Pintores Alicantinos https://alicantinos.wordpress.com/2014/11/29/marced-furio-jose/'
+  death_year: 1967
+  death_status: known
 - artist_id: jose_marcelo_contreras_y_munoz
   display_name: José Marcelo Contreras Muñoz
   country_birth: ES
@@ -7559,16 +7566,20 @@ artists:
   notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
 - artist_id: juan_manuel_lugo
   display_name: Juan Manuel Lugo
-  country_birth: null
-  nationalities: []
+  country_birth: CO
+  nationalities:
+  - CO
   birth_year: 1945
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - JUAN MANUEL LUGO
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q120373260'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q120373260. INVESTIGADO 2026-08-19: Pintor y grabador COLOMBIANO
+    nacido en Bogota en 1945 (no canario, pese al apellido). Estudio en la Escuela de Bellas Artes de la Universidad
+    Nacional y en el Atelier 17 de William Hayter en Paris. En activo. Fuentes: Semana https://www.semana.com/arte/articulo/el-pintor-juan-manuel-lugo-homenajea-gabo/42226/
+    ; El Tiempo https://www.eltiempo.com/archivo/documento/MAM-142635'
   death_status: living
 - artist_id: juan_martinez_abades
   display_name: Juan Martínez Abades
