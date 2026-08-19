@@ -860,18 +860,24 @@ artists:
   notes: '11 lotes en Silver | fuente: Wikipedia ES | Murcia'
 - artist_id: pedro_friedeberg
   display_name: Pedro Friedeberg
-  country_birth: null
-  nationalities: []
+  country_birth: IT
+  nationalities:
+  - IT
   birth_year: 1936
   death_year: 2026
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - PEDRO FRIEDEBERG
   - Pedro Friedeberg
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q7159594'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q7159594. INVESTIGADO 2026-08-19: Nacido en FLORENCIA, Italia,
+    el 11-01-1936, en una familia judeo-alemana que emigro a Mexico durante la Segunda Guerra Mundial siendo el
+    un ninio. Es EL surrealista mexicano por antonomasia (la Silla Mano), pero el pais de NACIMIENTO es Italia.
+    Murio el 05-03-2026 en San Miguel de Allende a los 90 anios. Fuentes: La Jornada https://www.jornada.com.mx/noticia/2026/03/05/cultura/murio-pedro-friedeberg-figura-fundamental-del-arte-contemporaneo-en-mexico
+    ; Wikipedia https://en.wikipedia.org/wiki/Pedro_Friedeberg'
+  death_status: known
 - artist_id: pedro_garcia_camio
   display_name: Pedro García Camio
   birth_year: 1897

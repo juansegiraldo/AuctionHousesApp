@@ -308,14 +308,19 @@ artists:
   display_name: Oscar Jaramillo
   birth_year: 1947
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - OSCAR JARAMILLO
   - ÓSCAR JARAMILLO
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1947, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
-    Fuente: https://www.wikidata.org/wiki/Q133672073'
+    Fuente: https://www.wikidata.org/wiki/Q133672073. INVESTIGADO 2026-08-19: Nacido en MEDELLIN en 1947, del barrio
+    Boston; autodidacta, del grupo ''Los Once antioqueños''. Fuente: Museo de Arte Moderno de Medellin https://www.elmamm.org/coleccion-mamm/artista/oscar-jaramillo/'
+  country_birth: CO
+  nationalities:
+  - CO
+  death_status: living
 - artist_id: oscar_martinez_vasquez
   display_name: Oscar Martínez Vásquez
   country_birth: CO

@@ -393,16 +393,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q711737'
 - artist_id: nico_munuera
   display_name: Nico Munuera
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1974
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Nico Munuera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q99496466'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99496466. INVESTIGADO 2026-08-19: Nicolas Munuera Giner,
+    nacido en LORCA (Murcia) en diciembre de 1974. Licenciado en San Carlos (Valencia) en 1996; obra en el Reina
+    Sofia, IVAM y Fundacion Botin. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Nico_Munuera ; web oficial
+    https://nicomunueraprojects.com/biografia/'
   death_status: living
 - artist_id: nicola_de_maria
   display_name: Nicola de Maria
