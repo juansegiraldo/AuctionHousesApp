@@ -7,6 +7,7 @@ del ranking o cuelan escuelas y muebles como si fueran autores.
 
 import pytest
 
+from pipelines.shared import artist_key as artist_key_module
 from pipelines.shared.artist_key import (
     ATTRIBUTION_TYPES,
     artist_fold,
@@ -367,8 +368,47 @@ def test_fully_quoted_titles_are_not_authors(name):
     ],
 )
 def test_confirmed_residual_noise_is_not_an_author(name):
-    """Solo las 34 formas comprobadas se retiran del ranking."""
+    """Solo las formas comprobadas se retiran del ranking."""
     assert attribution_type(name) == "no_autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Banco Bajo",
+        "Mesa auxiliar",
+        "Seguros Bolívar",
+        "Gilbert & George (Gilbert Proesch & George Passmore) y David Hockney",
+    ],
+)
+def test_confirmed_master_false_positives_are_not_authors(name):
+    """Estos cuatro falsos artistas se excluyen por una lista cerrada."""
+    assert attribution_type(name) == "no_autor"
+
+
+def test_compound_group_is_explicit_not_a_length_heuristic(monkeypatch):
+    """El grupo compuesto no depende del limite generico de caracteres."""
+    monkeypatch.setattr(artist_key_module, "MAX_NAME_LENGTH", 10_000)
+    assert attribution_type(
+        "Gilbert & George (Gilbert Proesch & George Passmore) y David Hockney"
+    ) == "no_autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Juan Bajo",
+        "Carlos Mesa",
+        "Simón Bolívar Restrepo",
+        "Gilbert & George",
+        "Gilbert Proesch",
+        "George Passmore",
+        "David Hockney",
+    ],
+)
+def test_confirmed_master_false_positive_list_does_not_generalize(name):
+    """Los componentes y apellidos parecidos siguen siendo autores."""
+    assert attribution_type(name) == "autor"
 
 
 @pytest.mark.parametrize(
@@ -404,3 +444,107 @@ def test_residual_noise_list_does_not_generalize_from_name_shape(name):
 def test_quoted_prefix_with_real_name_survives(name):
     """La regla exige que TODO el nombre sea el entrecomillado, no que empiece por comilla."""
     assert attribution_type(name) != "no_autor"
+
+
+# --------------------------------------------------------------------------
+# Ampliacion de _OBJECT_NAMES del 2026-08-18
+# --------------------------------------------------------------------------
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Blazer", "Blusa", "Hielera", "Gargantilla", "Pañoleta", "Boina",
+        "Sombrero", "Tacones", "Licorera", "Poltrona", "Vajilla", "Sobre",
+        "Mesa de comedor", "Lentes de sol", "Lámpara de escritorio",
+        "Silla giratoria", "Tapete persa", "Copa con flores",
+    ],
+)
+def test_wardrobe_and_furniture_are_not_authors(name):
+    """Prendas y muebles que el scraper metio en artist_name.
+
+    Se detectaron con una senial determinista: Wikidata casa el nombre exacto
+    con una entidad que NO es humana (P31 != Q5). Aun asi entran a mano en la
+    lista cerrada, nunca por regla automatica.
+    """
+    assert attribution_type(name) != "autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # La MISMA senial marcaba a estos como no-humanos porque el nombre casa
+        # con su OBRA (el atlas de Ortelius), no con la persona. Aplicar el
+        # filtro en bloque habria borrado a Chillida del ranking.
+        "CHILLIDA, EDUARDO",
+        "VASARELY, VICTOR",
+        "PALENCIA, BENJAMÍN",
+        "CALLOT, JACQUES",
+        "ORTELIUS, ABRAHAM",
+        "Equipo Realidad",
+    ],
+)
+def test_real_authors_survive_the_object_filter(name):
+    assert attribution_type(name) == "autor"
+
+
+# --------------------------------------------------------------------------
+# Segunda pasada de limpieza del 2026-08-18: los 160 candidatos de 2+ lotes
+# --------------------------------------------------------------------------
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # Objetos y mobiliario que el scraper puso en artist_name.
+        "Frutero", "Biombo", "Bargueño", "Cajonera", "Columna", "Llavero",
+        "Encendedor", "Lámpara de aceite", "Bife", "Poster",
+        # Tecnicas y descripciones de ficha, no personas.
+        "Óleo sobre lienzo", "Obra gráfica", "Litografía", "Diapositivas",
+        "Conjunto", "Varios",
+        # Titulos genericos de obra.
+        "Desnudo femenino", "Retrato de dama", "Retrato de niña",
+        "Cabeza de mujer", "Busto de mujer", "Escena de caza",
+        "Niño Jesús", "Oración en el huerto", "San José con el niño",
+        "Cristo atado a la columna", "Virgen de la servilleta",
+        "El corte de pelo", "Cigüeñas",
+    ],
+)
+def test_objects_titles_and_techniques_are_not_authors(name):
+    """Segunda tanda, misma disciplina: lista cerrada revisada a mano."""
+    assert attribution_type(name) != "autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # Instituciones, empresas y publicaciones: el "autor" es la entidad
+        # que edito el documento, no un artista.
+        "Banco de la República", "Davivienda", "Avianca", "SCADTA",
+        "Museo del Prado", "Museo nacional de colombia",
+        "Real Academia Española", "Calcografía Nacional",
+        "Alcaldía Mayor de Bogotá", "Instituto geográfico Agustín Codazzi",
+        "Partido Comunista Colombiano", "República de Colombia",
+        "The Illustrated London News", "El Tiempo", "Derriere le Miroir",
+        "Oficina de Longitudes",
+    ],
+)
+def test_institutions_and_publishers_are_not_artists(name):
+    assert attribution_type(name) != "autor"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        # La senial not_q5_human marcaba tambien a estos, y son autores REALES:
+        # grabadores y cartografos cuyo nombre casa con su obra, colectivos
+        # artisticos, y pintores de primera fila. Borrarlos no se ve en el
+        # informe; dejar entrar un biombo, si.
+        "CHILLIDA, EDUARDO", "VASARELY, VICTOR", "PALENCIA, BENJAMÍN",
+        "PALAZUELO, PABLO", "VÁZQUEZ DÍAZ, DANIEL", "ROPS, FELICIEN",
+        "HOGARTH, WILLIAM", "CALLOT, JACQUES", "ORTELIUS, ABRAHAM",
+        "MERCATOR, GERHARD", "MUNSTER, Sebastian", "SEUTTER, MATTHAUS",
+        "Equipo Realidad", "Estampa Popular", "Vaquero Turcios",
+        "Rodríguez, Melitón", "Alberti, Rafael",
+    ],
+)
+def test_real_authors_survive_the_second_cleanup(name):
+    assert attribution_type(name) == "autor"

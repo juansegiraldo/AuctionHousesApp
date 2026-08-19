@@ -116,6 +116,32 @@ _OBJECT_NAMES = frozenset(
         "cartel", "sin titulo", "paisaje", "bodegon", "composicion", "desnudo",
         "marina", "retrato", "abstracto", "maternidad", "fotografia",
         "escultura", "busto", "figura",
+        # Ampliacion del 2026-08-18. Se detectaron con una senial determinista
+        # -- Wikidata casa el nombre exacto con una entidad que NO es humana
+        # (P31 != Q5) -- pero entraron a mano una por una, NO por regla: la
+        # misma senial marcaba tambien a "CHILLIDA, EDUARDO", "VASARELY,
+        # VICTOR" y "CALLOT, JACQUES", porque el nombre casa con su OBRA y no
+        # con la persona. Aplicarla en bloque habria borrado a Chillida del
+        # ranking, que es el fallo que no se ve en el informe.
+        "blazer", "blusa", "hielera", "gargantilla", "panoleta", "boina",
+        "sombrero", "sombrero de paja", "tacones", "licorera", "poltrona",
+        "vajilla", "sobre", "mesa de comedor", "lentes de sol",
+        "lampara de escritorio", "silla giratoria", "tapete persa",
+        "copa con flores", "jarra", "cristaleria", "cubiertos", "mantel",
+        "servilletero", "azucarera", "tetera", "cafetera", "candelabro",
+        "portarretrato", "pisapapeles", "cenicero", "joyero",
+        # Segunda pasada del 2026-08-18 sobre los candidatos de 2+ lotes.
+        "frutero", "biombo", "bargueno", "cajonera", "columna", "llavero",
+        "encendedor", "lampara de aceite", "bife", "poster",
+        # Tecnicas y campos de ficha que acabaron en artist_name.
+        "oleo sobre lienzo", "obra grafica", "litografia", "diapositivas",
+        "conjunto", "varios",
+        # Titulos genericos de obra (el generico entero, nunca por substring).
+        "desnudo femenino", "retrato de dama", "retrato de nina",
+        "cabeza de mujer", "busto de mujer", "escena de caza",
+        "nino jesus", "oracion en el huerto", "san jose con el nino",
+        "cristo atado a la columna", "virgen de la servilleta",
+        "el corte de pelo", "ciguenas",
     }
 )
 
@@ -131,6 +157,15 @@ _OBJECT_NAMES = frozenset(
 # aqui sin borrar la forma no cualificada del pintor.
 _NON_ARTIST_NAMES = frozenset(
     {
+        # Falsos positivos del maestro comprobados contra sus lotes. Son un
+        # objeto, una entidad editorial y una autoria compuesta, no una persona
+        # identificable. Se enumeran por igualdad exacta: no se generalizan
+        # palabras como "banco", "mesa", "seguros" ni los nombres propios de
+        # los artistas que aparecen dentro de la autoria compuesta.
+        "banco bajo",
+        "mesa auxiliar",
+        "seguros bolivar",
+        "gilbert george gilbert proesch george passmore y david hockney",
         # Documentos, publicaciones e instituciones.
         "carta de gonzalo jimenez de quesada al rey carlos v",
         "manuscritos sobre esclavitud siglo xviii xix",
@@ -200,6 +235,17 @@ _NON_ARTIST_AUTHORS = frozenset(
         "bellin jacques nicolas",
         # Escritores: primeras ediciones y manuscritos.
         "acosta de samper soledad",
+        # Instituciones, empresas y publicaciones (2026-08-18). El "autor" del
+        # lote es la entidad que edito el documento, no un artista. Se
+        # detectaron por la senial not_q5_human de Wikidata y se revisaron una
+        # a una: la misma senial marcaba a Chillida y a Callot.
+        "banco de la republica", "davivienda", "avianca", "scadta",
+        "museo del prado", "museo nacional de colombia",
+        "real academia espanola", "calcografia nacional",
+        "alcaldia mayor de bogota", "instituto geografico agustin codazzi",
+        "partido comunista colombiano", "republica de colombia",
+        "the illustrated london news", "el tiempo", "derriere le miroir",
+        "oficina de longitudes",
     }
 )
 
