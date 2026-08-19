@@ -1121,7 +1121,11 @@ artists:
   aliases:
   - Fernando Somoza
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
-    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q75431121'
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q75431121.
+    INVESTIGADO 2026-08-19 SIN RESULTADO: la unica huella documental es el catalogo ''Fernando Somoza, 1965-1975''
+    de una exposicion en las Salas Pablo Ruiz Picasso del Ministerio de Cultura (abril-mayo de 1983), que no trae
+    datos biograficos. Las busquedas devuelven otros pintores gallegos (Isabel Somoza, Alvarez de Sotomayor). Se
+    queda SIN PAIS a proposito.'
 - artist_id: fernando_uhia
   display_name: Fernando Uhía
   country_birth: CO

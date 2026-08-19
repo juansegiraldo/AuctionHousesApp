@@ -1280,16 +1280,23 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q43129238'
 - artist_id: emilio_alvarez_diaz
   display_name: Emilio Alvarez Díaz
-  country_birth: null
-  nationalities: []
+  country_birth: AR
+  nationalities:
+  - AR
+  - ES
   death_year: 1952
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Emilio Álvarez Díaz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q97571412'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97571412. INVESTIGADO 2026-08-19: nacido en BUENOS AIRES
+    el 21-06-1879 y muerto en Madrid el 05-07-1952. Emigro de ninio con su familia a Madrid, donde estudio con Emilio
+    Ordonez y desarrollo toda su obra -- otro caso de mercado espaniol y nacimiento fuera. De temperamento timido,
+    nunca concurrio a exposiciones ni certamenes. Fuente: Arte de la Argentina https://www.artedelaargentina.com.ar/disciplinas/artista/pintura/emilio-alvarez-diaz'
+  birth_year: 1879
+  death_status: known
 - artist_id: emilio_campos_goitia
   display_name: Emilio Campos Goitia
   country_birth: null
