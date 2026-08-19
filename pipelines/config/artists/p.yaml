@@ -1849,7 +1849,10 @@ artists:
   aliases:
   - Pilar Cocero de Corvera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q19802617'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q19802617. INVESTIGADO 2026-08-19 SIN RESULTADO: ninguna
+    fuente publica biografia de esta artista. Las busquedas devuelven homonimas parciales (Pilar Caballero Arroyo,
+    colombiana n.1940; Pilar Calvo Rodero, espaniola n.1910; Pilar Cossio, n.1950), ninguna con este nombre ni este
+    anio. Se queda SIN PAIS a proposito.'
   death_status: living
 - artist_id: pilar_gomez_cossio
   display_name: Pilar Cossío

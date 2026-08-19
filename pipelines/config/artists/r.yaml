@@ -226,17 +226,24 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q96751031'
 - artist_id: rafael_cuenca_munoz
   display_name: Rafael Cuenca Muñoz
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1894
   death_year: 1967
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Rafael Cuenca Muñoz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q96751035'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q96751035. INVESTIGADO 2026-08-19: nacido en CORDOBA en
+    1894 y muerto en Madrid en 1967. Becado por la Diputacion en San Fernando; dirigio la Academia de Bellas Artes
+    de Albacete. Tras la Guerra Civil se exilio en ARGENTINA, donde desarrollo casi toda su carrera posterior --
+    el pais es el de nacimiento, no el del mercado. OJO: todocoleccion da 1895; se conserva 1894 por ser el consenso
+    de las casas y se anota la duda. Fuentes: Maestros del retrato https://maestrosdelretrato.blogspot.com/2009/12/rafael-cuenca-munoz.html
+    ; Arte de la Argentina https://artedelaargentina.com.ar/disciplinas/artista/pintura/rafael-cuenca-munoz'
+  death_status: known
 - artist_id: rafael_de_la_torre_estefania
   display_name: Rafael de la Torre y Estefanía
   country_birth: ES
