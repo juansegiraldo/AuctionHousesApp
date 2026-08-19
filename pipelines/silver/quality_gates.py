@@ -22,11 +22,6 @@ from pipelines.shared.schema import extract_month
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
 CATEGORY_TAGS = ROOT / "data" / "enrichments" / "category_tags.jsonl"
 
-# Casas sin artista por naturaleza: su tasa de resolucion sera 0% para siempre y
-# no tiene sentido que la puerta grite por ello. Zorrilla son 3.437 lotes de
-# joyeria, ninguno con artist_name.
-HOUSES_WITHOUT_ARTISTS = {"zorrilla_subastas"}
-
 
 def load_category_map(path: Path) -> dict[str, str]:
     if not path.exists():
@@ -161,17 +156,14 @@ def main() -> None:
         failures.append(
             f"category_scope({pct_out_of_scope:.4f}>{args.max_out_of_scope_pct})"
         )
-    # Las casas de joyeria no tienen artistas: exigirles cobertura seria gritar
-    # lobo eternamente.
-    if args.house_slug not in HOUSES_WITHOUT_ARTISTS:
-        if pct_resolution < args.min_artist_resolution_rate:
-            failures.append(
-                f"artist_resolution({pct_resolution:.4f}<{args.min_artist_resolution_rate})"
-            )
-        if pct_country < args.min_country_coverage:
-            failures.append(
-                f"country_coverage({pct_country:.4f}<{args.min_country_coverage})"
-            )
+    if pct_resolution < args.min_artist_resolution_rate:
+        failures.append(
+            f"artist_resolution({pct_resolution:.4f}<{args.min_artist_resolution_rate})"
+        )
+    if pct_country < args.min_country_coverage:
+        failures.append(
+            f"country_coverage({pct_country:.4f}<{args.min_country_coverage})"
+        )
 
     if failures:
         message = f"failed_quality_gate: {','.join(failures)}"
@@ -186,4 +178,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

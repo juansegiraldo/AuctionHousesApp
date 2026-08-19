@@ -96,9 +96,27 @@ def collect(min_lots: int) -> list[dict]:
                 continue
             row = json.loads(line)
             name = (row.get("artist_name") or "").strip()
-            if not name or attribution_type(name) != "autor":
+            if not name:
                 continue
-            fold = artist_fold(name)
+
+            # Silver ya es la autoridad sobre identidad y tipo de autoria. En
+            # particular, artist_resolve.py puede resolver contra el maestro
+            # una forma distinta de artist_name (p. ej. el prefijo valido de
+            # una fila multilínea de Lefebre). Recalcular aqui desde el nombre
+            # crudo volveria a proponer esa fila ya resuelta como otro artista.
+            #
+            # El fallback conserva compatibilidad con Silver historico que aun
+            # no tenia los campos de resolucion; si el campo existe, incluso
+            # con un valor invalido, no se ignora la decision de Silver.
+            if "artist_resolution" in row:
+                if row.get("artist_resolution") != "fold_only":
+                    continue
+                silver_fold = row.get("artist_fold")
+                fold = silver_fold.strip() if isinstance(silver_fold, str) else None
+            else:
+                if attribution_type(name) != "autor":
+                    continue
+                fold = artist_fold(name)
             if not fold:
                 continue
 

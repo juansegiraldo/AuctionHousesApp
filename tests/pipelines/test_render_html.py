@@ -311,3 +311,94 @@ def test_both_renderers_report_the_same_revenue(local_html, artifact_html):
 
     assert _find(local_html)
     assert _find(artifact_html)
+
+
+# --------------------------------------------------------------------------
+# Alcance del ranking por pais
+# --------------------------------------------------------------------------
+
+def _artist(name, country, revenue):
+    return {
+        "artist_name": name, "artist_id": name.lower().replace(" ", "_"),
+        "artist_key": name.lower().replace(" ", "_"),
+        "country_birth": country, "country_birth_es": country,
+        "lots_offered": 2, "lots_sold": 1, "revenue_eur": revenue,
+        "sell_through_rate": 0.5, "avg_sold_price_eur": revenue,
+        "houses": ["duran_subastas"], "resolution": "master",
+    }
+
+
+def test_country_ranking_reaches_beyond_the_global_top():
+    """Filtrar Colombia mostraba 41 de 258 porque el corte era GLOBAL.
+
+    Se renderiza el top global mas el top de cada pais, o el desplegable
+    promete un filtro que no puede cumplir.
+    """
+    artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(5)]
+    artists += [_artist(f"Colombiano {i}", "CO", 100 - i) for i in range(3)]
+
+    html = render_html.build_artist_table(artists, limit=5)
+
+    # Los colombianos quedan fuera del top 5 global y aun asi deben estar.
+    for i in range(3):
+        assert f"Colombiano {i}" in html
+
+
+def test_country_ranking_still_caps_each_country():
+    artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(9)]
+    html = render_html.build_artist_table(artists, limit=3)
+    # 3 globales + 3 del tope por pais: el resto no se pinta.
+    assert "Espanol 2" in html
+    assert "Espanol 8" not in html
+
+
+def test_a_single_country_batch_is_not_duplicated():
+    """Un artista que esta en el top global Y en el de su pais sale una vez."""
+    artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(3)]
+    html = render_html.build_artist_table(artists, limit=5)
+    assert html.count(">Espanol 0<") == 1
+
+
+def test_artist_table_ships_pagination_controls():
+    """750 filas de golpe abruman. La tabla pagina en cliente.
+
+    Se comprueba el andamiaje que el JS necesita: sin los controles en el DOM
+    la paginacion no existe, por muy escrito que este el script.
+    """
+    artists = [_artist(f"Pintor {i}", "ES", 1000 - i) for i in range(12)]
+    html = render_html.build_artist_table(artists, limit=12)
+    assert "artist-pager" in html
+    assert "artist-page-prev" in html
+    assert "artist-page-next" in html
+
+
+def test_pagination_logic_ships_in_the_document_script():
+    # El tamano de pagina vive en el script global, no en el fragmento de la
+    # tabla: se comprueba donde de verdad esta.
+    js = render_html.JS_TEMPLATE
+    assert "PAGE_SIZE" in js
+    # Las descargas no pueden volver a leer !hidden: con paginacion, hidden
+    # solo dice si la fila cae en la pagina actual.
+    assert "dataset.match" in js
+
+
+def test_artifact_ranking_also_reaches_beyond_the_global_top():
+    """Los dos renderizadores deben comportarse igual.
+
+    El artifact tenia su propio corte y se quedaba en 41 colombianos mientras
+    el informe local mostraba 200: dos productos del mismo dato contando cosas
+    distintas es justo la divergencia que estos tests existen para impedir.
+    """
+    artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(5)]
+    artists += [_artist(f"Colombiano {i}", "CO", 100 - i) for i in range(3)]
+
+    html = build_artifact.build_artist_table(artists, {}, {}, None)
+
+    for i in range(3):
+        assert f"Colombiano {i}" in html
+
+
+def test_artifact_ships_pagination_too():
+    artists = [_artist(f"Pintor {i}", "ES", 1000 - i) for i in range(12)]
+    html = build_artifact.build_artist_table(artists, {}, {}, None)
+    assert "artist-pager" in html

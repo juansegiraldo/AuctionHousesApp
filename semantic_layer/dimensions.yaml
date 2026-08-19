@@ -17,6 +17,24 @@ dimensions:
     source: silver.lots
     description: Canonical artist identifier from pipelines/config/artists/
 
+  # Maestro operativo exhaustivo. Une el nucleo curado con cada fold observado,
+  # pero conserva needs_web/ambiguous para que una cadena cruda no se convierta
+  # silenciosamente en persona ni reciba un pais sin evidencia.
+  - name: artist_master
+    key: artist_key
+    source: gold.dim_artist_master
+    description: Exhaustive artist registry with curation status and per-field gaps
+
+  - name: artist_curation_status
+    key: curation_status
+    source: gold.dim_artist_master
+    description: verified | needs_web | needs_review | ambiguous
+
+  - name: artist_death_status
+    key: death_status
+    source: gold.dim_artist_master
+    description: known | living | unknown | not_applicable; null death is never assumed alive
+
   # Clave de agrupacion cuando el artista no esta en el maestro. Agrupa, pero
   # no identifica: "Francisco Toledo" son dos personas con el mismo fold.
   - name: artist_fold

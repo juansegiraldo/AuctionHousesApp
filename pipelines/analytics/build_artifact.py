@@ -49,6 +49,7 @@ from pipelines.analytics.render_html import (
     HOUSE_COUNTRY,
     HOUSE_LABELS,
     MONTH_LABELS,
+    _rank_selection,
     pack_lot_details,
 )
 from pipelines.shared.fx import fx_note
@@ -638,6 +639,11 @@ tbody tr:hover{background:var(--raised)}
 .tot.hi .tot-v{color:var(--accent)}
 .tot-n{display:block;font-family:var(--mono);font-size:.68rem;color:var(--fg-soft)}
 .empty{color:var(--fg-soft);font-size:.9rem;padding:var(--s2);margin:0}
+.pager{display:flex;align-items:center;justify-content:center;gap:var(--s3);padding:var(--s3) 0 0;flex-wrap:wrap}
+.pager-btn{font:inherit;font-size:.85rem;padding:.5rem .9rem;cursor:pointer;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg)}
+.pager-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.pager-btn:disabled{opacity:.4;cursor:default}
+.pager-info{font-size:.85rem;color:var(--fg-soft);font-variant-numeric:tabular-nums}
 
 /* Graficos SVG */
 .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:var(--s3)}
@@ -1017,7 +1023,10 @@ def build_artist_table(artists: list[dict], cov: dict,
     if not artists:
         return ""
     lots_by_artist = lots_by_artist or {}
-    shown = artists[:ARTIST_LIMIT]
+    # Misma seleccion que el informe local: top global MAS top por pais. Se
+    # reutiliza su funcion en vez de copiarla, que es como los dos renderizados
+    # acabaron divergiendo antes (uno decia 41 colombianos y el otro 200).
+    shown = _rank_selection(artists, ARTIST_LIMIT)
     pares = sorted(
         {(a.get("country_birth"), a.get("country_birth_es") or a.get("country_birth"))
          for a in shown if a.get("country_birth")},
@@ -1153,6 +1162,13 @@ def build_artist_table(artists: list[dict], cov: dict,
         "<th>Artista</th><th>Vendidos</th><th>Tasa venta</th><th>Volumen</th>"
         f"<th>Récord</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>"
         "<p class='empty' id='artist-empty' hidden>Ningún artista coincide con el filtro.</p>"
+        # Mismo paginador que el informe local: la tabla ronda las 750 filas y
+        # filtrar un pais grande devuelve 200 seguidas.
+        "<div class='pager' id='artist-pager' hidden>"
+        "<button type='button' id='artist-page-prev' class='pager-btn'>&larr; Anterior</button>"
+        "<span class='pager-info' id='artist-page-info' aria-live='polite'></span>"
+        "<button type='button' id='artist-page-next' class='pager-btn'>Siguiente &rarr;</button>"
+        "</div>"
         + caveats + "</section>"
     )
 
@@ -1431,7 +1447,10 @@ JS = r"""
     var reset = document.getElementById(cfg.reset);
 
     function visible() {
-      return rows.filter(function (r) { return !r.hidden; });
+      // dataset.match, no !hidden: con la paginacion hidden solo dice si la
+      // fila cae en la pagina actual, y descargar "lo que se ve" tiene que
+      // seguir significando todo lo filtrado.
+      return rows.filter(function (r) { return r.dataset.match; });
     }
 
     function apply() {
@@ -1448,6 +1467,7 @@ JS = r"""
                              : row.dataset.kind === extra);
         var ok = (!q || fold(row.dataset.name).indexOf(q) >= 0) &&
                  (!sel || row.dataset.country === sel) && okExtra;
+        row.dataset.match = ok ? '1' : '';
         row.hidden = !ok;
         // La ficha sigue a su fila: al ocultarse el artista se cierra, o
         // quedaria abierta bajo un filtro que ya no la incluye.
@@ -1485,9 +1505,61 @@ JS = r"""
       }
       empty.hidden = n !== 0;
       totals.classList.toggle('on', n !== rows.length);
+      paginate();
     }
 
+    // Paginacion: solo afecta a lo que se pinta. Los totales ya estan sumados
+    // sobre todo lo filtrado y visible() lee dataset.match, asi que cambiar de
+    // pagina no mueve ni un KPI ni un CSV.
+    var PAGE_SIZE = 50;
+    var page = 0;
+    var pgr = document.getElementById(cfg.table.replace('-table', '-pager'));
+    var pinf = document.getElementById(cfg.table.replace('-table', '-page-info'));
+    var pprv = document.getElementById(cfg.table.replace('-table', '-page-prev'));
+    var pnxt = document.getElementById(cfg.table.replace('-table', '-page-next'));
+
+    function paginate() {
+      var matched = rows.filter(function (r) { return r.dataset.match; });
+      var pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+      if (page >= pages) page = pages - 1;
+      if (page < 0) page = 0;
+      matched.forEach(function (r, i) {
+        var inPage = i >= page * PAGE_SIZE && i < (page + 1) * PAGE_SIZE;
+        r.hidden = !inPage;
+        if (!inPage && r.dataset.card) {
+          var c = document.getElementById(r.dataset.card);
+          if (c && !c.hidden) {
+            c.hidden = true;
+            var b = r.querySelector('.artist-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      if (!pgr) return;
+      pgr.hidden = matched.length <= PAGE_SIZE;
+      if (pinf) {
+        var desde = matched.length ? page * PAGE_SIZE + 1 : 0;
+        var hasta = Math.min((page + 1) * PAGE_SIZE, matched.length);
+        pinf.textContent = desde + '–' + hasta + ' de ' + miles(matched.length);
+      }
+      if (pprv) pprv.disabled = page === 0;
+      if (pnxt) pnxt.disabled = page >= pages - 1;
+    }
+
+    function goPage(d) {
+      page += d;
+      paginate();
+      var t = document.getElementById(cfg.table);
+      if (t) t.scrollIntoView({ block: 'nearest' });
+    }
+    if (pprv) pprv.addEventListener('click', function () { goPage(-1); });
+    if (pnxt) pnxt.addEventListener('click', function () { goPage(1); });
+
     inputs.forEach(function (el) {
+      // Un filtro nuevo empieza por la pagina 1: quedarse en la 4 tras filtrar
+      // a 12 resultados enseñaria una tabla vacia.
+      el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input',
+                          function () { page = 0; });
       el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', apply);
     });
     if (reset) reset.addEventListener('click', function () {

@@ -23,6 +23,7 @@ el fold como clave, ese error seria irreparable por construccion.
 from __future__ import annotations
 
 from functools import lru_cache
+from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -46,8 +47,13 @@ LOT_AUTHOR_FIXES_FILENAME = "_lot_author_fixes.yaml"
 # Ficheros de pipelines/config/artists/ que NO son shards de artistas.
 _NON_SHARD_FILENAMES = frozenset({COUNTRIES_FILENAME, LOT_AUTHOR_FIXES_FILENAME})
 
-VALID_SOURCES = ("manual", "llm", "parsed")
+# "wikidata" no es lo mismo que "llm": la identidad la afirma una fuente
+# comprobable (match exacto de nombre + P31=Q5) y la ficha lleva su QID en
+# notes, asi que se puede auditar una por una. Meterlas en "llm" las confundia
+# con conjeturas de un modelo, que es justo lo que el maestro no admite.
+VALID_SOURCES = ("manual", "llm", "parsed", "wikidata")
 VALID_CONFIDENCE = ("high", "medium", "low")
+VALID_DEATH_STATUS = ("known", "living", "unknown", "not_applicable")
 
 # Estados posibles de resolucion de un lote.
 RESOLUTION_MASTER = "master"          # alias encontrado en el maestro
@@ -383,6 +389,47 @@ def validate_master() -> List[str]:
 
         if not entry.get("aliases"):
             problems.append(f"{where}: sin aliases, no resolvera ningun lote")
+
+        # Una entrada cuyo display y aliases caen todos en no_autor no puede
+        # resolver ningun lote aunque el YAML parezca completo. Asi entro en el
+        # pasado un grupo de tres artistas como si fuera una sola persona.
+        identity_names = [entry.get("display_name"), *(entry.get("aliases") or [])]
+        if identity_names and not any(
+            attribution_type(str(name)) == "autor" for name in identity_names if name
+        ):
+            problems.append(f"{where}: ningun nombre es un alias de autor resoluble")
+
+        birth_year = entry.get("birth_year")
+        death_year = entry.get("death_year")
+        for field, value in (("birth_year", birth_year), ("death_year", death_year)):
+            if value is None:
+                continue
+            if isinstance(value, bool) or not isinstance(value, int):
+                problems.append(f"{where}: {field} debe ser un entero o null")
+            elif not 500 <= value <= date.today().year:
+                problems.append(f"{where}: {field} fuera de rango plausible: {value}")
+        if (
+            isinstance(birth_year, int)
+            and not isinstance(birth_year, bool)
+            and isinstance(death_year, int)
+            and not isinstance(death_year, bool)
+            and death_year <= birth_year
+        ):
+            problems.append(
+                f"{where}: death_year ({death_year}) debe ser posterior a birth_year ({birth_year})"
+            )
+
+        death_status = entry.get("death_status")
+        if death_status is not None and death_status not in VALID_DEATH_STATUS:
+            problems.append(
+                f"{where}: death_status '{death_status}' no esta en {VALID_DEATH_STATUS}"
+            )
+        if death_status == "known" and death_year is None:
+            problems.append(f"{where}: death_status known exige death_year")
+        if death_status in ("living", "not_applicable") and death_year is not None:
+            problems.append(
+                f"{where}: death_status {death_status} no admite death_year"
+            )
 
         # El shard debe corresponder con la inicial del artist_id, para que un
         # lote de altas toque un solo fichero.

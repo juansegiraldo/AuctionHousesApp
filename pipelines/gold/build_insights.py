@@ -127,6 +127,20 @@ def load_categories() -> dict[str, str]:
     return out
 
 
+def load_artist_dimension(path: Path | None = None) -> dict[str, dict]:
+    """artist_key -> ficha del maestro operativo exhaustivo.
+
+    La etapa es tolerante a ejecuciones antiguas sin la dimension: el ranking
+    sigue saliendo, pero los flags se derivan de forma conservadora.
+    """
+    source = path or (GOLD_ROOT / "dim_artist_master.jsonl")
+    return {
+        row["artist_key"]: row
+        for row in load_jsonl(source)
+        if row.get("artist_key")
+    }
+
+
 def build_insights() -> dict:
     lots_path = SILVER_ROOT / "lots.jsonl"
     if not lots_path.exists():
@@ -135,6 +149,7 @@ def build_insights() -> dict:
         )
 
     key2cat = load_categories()
+    artist_dimension = load_artist_dimension()
 
     artists: dict[str, dict] = defaultdict(
         lambda: {
@@ -375,6 +390,18 @@ def build_insights() -> dict:
         # artista en fold_only no tiene id, asi que se queda sin fechas: no se
         # deducen del texto del lote (artist_raw viene truncado a 60 chars).
         years = artist_years(a["artist_id"])
+        master_row = artist_dimension.get(key) or {}
+        missing_fields = master_row.get("missing_fields")
+        if missing_fields is None:
+            missing_fields = [
+                field
+                for field, value in (
+                    ("country_birth", a["country_birth"]),
+                    ("birth_year", years["birth_year"]),
+                    ("death_year", years["death_year"]),
+                )
+                if value is None
+            ]
         # Rango de actividad en subasta. Es del LOTE (cuando se vendio), no del
         # artista: nada que ver con birth_year/death_year, que salen del maestro.
         # "unknown" no es un anio, asi que no puede marcar ni el primero ni el
@@ -393,6 +420,15 @@ def build_insights() -> dict:
                 "life_years": format_life_years(
                     years["birth_year"], years["death_year"], _this_year()
                 ),
+                # Flags del maestro operativo: un null deja de ser ambiguo y
+                # queda explicitamente en la cola de investigacion.
+                "curation_status": master_row.get("curation_status"),
+                "entity_type": master_row.get("entity_type"),
+                "death_status": master_row.get("death_status")
+                or ("known" if years["death_year"] is not None else "unknown"),
+                "missing_fields": missing_fields,
+                "needs_web_research": master_row.get("needs_web_research", True),
+                "quality_flags": master_row.get("quality_flags", []),
                 "first_year": active[0] if active else None,
                 "last_year": active[-1] if active else None,
                 "years_active": len(active),

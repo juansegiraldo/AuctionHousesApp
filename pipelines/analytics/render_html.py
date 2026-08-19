@@ -278,6 +278,31 @@ def build_house_table(houses: list[dict]) -> str:
     )
 
 
+def _rank_selection(artists: list[dict], limit: int) -> list[dict]:
+    """Top `limit` global MAS el top `limit` de cada pais.
+
+    El corte global solo dejaba 41 colombianos de 258, asi que el desplegable
+    prometia un filtro que no podia cumplir: el filtrado es JS sobre el DOM y
+    no puede traer filas que no se hayan renderizado.
+
+    Alcanzar 200 colombianos por corte global exigiria pintar 2.383 filas; por
+    pais salen ~1.400 y ademas cada pais queda completo hasta su propio tope.
+    Se conserva el orden global para que la columna de posicion siga leyendose
+    de mayor a menor volumen.
+    """
+    keep: set[int] = set(range(min(limit, len(artists))))
+    per_country: dict[str, int] = {}
+    for i, a in enumerate(artists):
+        code = a.get("country_birth")
+        if not code:
+            continue
+        seen = per_country.get(code, 0)
+        if seen < limit:
+            per_country[code] = seen + 1
+            keep.add(i)
+    return [a for i, a in enumerate(artists) if i in keep]
+
+
 def build_artist_table(artists: list[dict], coverage: dict | None = None,
                        limit: int = 200, generations: list[dict] | None = None) -> str:
     """Ranking de artistas con filtro por nombre y por pais.
@@ -288,11 +313,13 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
     if not artists:
         return ""
 
+    shown = _rank_selection(artists, limit)
+
     # Opciones del desplegable: solo los paises realmente presentes.
     countries = sorted(
         {
             (a.get("country_birth"), a.get("country_birth_es") or a.get("country_birth"))
-            for a in artists[:limit]
+            for a in shown
             if a.get("country_birth")
         },
         key=lambda pair: pair[1] or "",
@@ -302,12 +329,12 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
     )
     unknown_option = (
         "<option value='__none__'>Sin país informado</option>"
-        if any(not a.get("country_birth") for a in artists[:limit])
+        if any(not a.get("country_birth") for a in shown)
         else ""
     )
 
     rows = []
-    for i, a in enumerate(artists[:limit], 1):
+    for i, a in enumerate(shown, 1):
         st = (a.get("sell_through_rate") or 0) * 100
         title = a.get("top_lot_title") or ""
         url = a.get("top_lot_url")
@@ -372,8 +399,6 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
             f"<td colspan='6'></td></tr>"
         )
 
-    shown = min(limit, len(artists))
-
     # Titular de la seccion: la tesis con las cifras del propio informe, no un
     # texto generico. Se calcula aqui y no se escribe a mano para que siga
     # siendo cierto cuando cambien los datos.
@@ -405,19 +430,20 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
 
     # Cobertura de fechas: la de la tabla visible y la del ranking entero. Basta
     # birth_year, porque un artista vivo no tiene death_year y eso no es un hueco.
-    dated_shown = sum(1 for a in artists[:limit] if a.get("birth_year"))
+    dated_shown = sum(1 for a in shown if a.get("birth_year"))
     dated_ranked = sum(1 for a in artists if a.get("birth_year"))
     caveat = (
         "<p class='caveat'>El récord enlaza al lote original en la web de la casa.</p>"
     )
-    if len(artists) > shown:
+    if len(artists) > len(shown):
         # Sin esto, los totales de la tabla se leerian como el total del
         # mercado, y son solo los de los artistas mostrados.
         caveat += (
             f"<p class='caveat'>Los totales de arriba suman lo que hay filtrado en la "
-            f"tabla, que son los {num(shown)} primeros artistas de {num(len(artists))} "
-            "rankeados. No son el total del mercado: ese está en las tarjetas de "
-            "cabecera del informe.</p>"
+            f"tabla, que son {num(len(shown))} artistas de {num(len(artists))} "
+            "rankeados: el top 200 global mas el top 200 de cada país, para que "
+            "filtrar por país no se quede corto. No son el total del mercado: ese "
+            "está en las tarjetas de cabecera del informe.</p>"
         )
     if coverage:
         ranked = coverage.get("artists_ranked") or 0
@@ -444,8 +470,8 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
                 caveat += (
                     f"<p class='caveat'>Las fechas de nacimiento y muerte salen del maestro "
                     f"de artistas, no del texto del lote: cuando no constan, no se deducen. "
-                    f"Las tienen {num(dated_shown)} de los {num(shown)} artistas de esta tabla "
-                    f"({pct(dated_shown / shown * 100)}), pero solo {num(dated_ranked)} de los "
+                    f"Las tienen {num(dated_shown)} de los {num(len(shown))} artistas de esta tabla "
+                    f"({pct(dated_shown / len(shown) * 100)}), pero solo {num(dated_ranked)} de los "
                     f"{num(ranked)} del ranking completo ({pct(dated_ranked / ranked * 100)}): "
                     "la curaduría se ha priorizado por facturación, así que los artistas que "
                     "más mueven están mejor documentados que la cola.</p>"
@@ -490,7 +516,7 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
         "</figure>"
         # --- Acto 5: el detalle nominal (el 4 lo pone build_country_table) ---
         "<h3>El ranking, nombre a nombre</h3>"
-        f"<p class='panel-lead'>Los {num(shown)} artistas con mayor volumen adjudicado. "
+        f"<p class='panel-lead'>Los {num(len(shown))} artistas con mayor volumen adjudicado. "
         "Pulsa en un nombre para ver su ficha y sus lotes. "
         # El corte sale de MIN_LOTS_FOR_ARTIST_RANK, no de un "3" escrito a mano
         # aqui y otro en build_artifact.py: cambiar la constante los dejaba a los
@@ -552,6 +578,14 @@ def build_artist_table(artists: list[dict], coverage: dict | None = None,
         "<th scope='col'>Volumen</th><th scope='col'>Récord</th></tr></thead>"
         f"<tbody>{''.join(rows)}</tbody></table></div>"
         "<p class='empty-msg' id='artist-empty' hidden>Ningún artista coincide con el filtro.</p>"
+        # Paginacion en cliente: 750 filas de una vez abruman, y al filtrar un
+        # pais grande salen 200 seguidas. Los controles viven aqui para que el
+        # JS solo tenga que engancharlos; sin ellos en el DOM no hay paginacion.
+        + "<div class='pager' id='artist-pager' hidden>"
+        "<button type='button' id='artist-page-prev' class='pager-btn'>&larr; Anterior</button>"
+        "<span class='pager-info' id='artist-page-info' aria-live='polite'></span>"
+        "<button type='button' id='artist-page-next' class='pager-btn'>Siguiente &rarr;</button>"
+        "</div>"
         + caveat
         + "</section>"
     )
@@ -1100,6 +1134,14 @@ td.n,.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-spa
 .dl svg{flex:0 0 auto}
 @media (max-width:640px){.downloads{margin-left:0;width:100%}.dl{flex:1;justify-content:center}}
 .empty-msg{color:var(--c-fg-soft);font-size:.9rem;padding:var(--space-2) 0;margin:0}
+.pager{display:flex;align-items:center;justify-content:center;gap:var(--space-3);
+ padding:var(--space-3) 0 0;flex-wrap:wrap}
+.pager-btn{font:inherit;font-size:.85rem;padding:.5rem .9rem;cursor:pointer;
+ border:1px solid var(--c-border);border-radius:4px;background:var(--c-bg);
+ color:var(--c-fg)}
+.pager-btn:hover:not(:disabled){border-color:var(--c-accent);color:var(--c-accent)}
+.pager-btn:disabled{opacity:.4;cursor:default}
+.pager-info{font-size:.85rem;color:var(--c-fg-soft);font-variant-numeric:tabular-nums}
 
 /* Confirmacion de descarga: sustituye a alert(), que puede estar bloqueado
    segun donde se abra el informe. */
@@ -1593,6 +1635,10 @@ if (!toggle.textContent.trim()) {
           || (extra === 'multi' ? row.dataset.kind !== 'single'
                                 : row.dataset.kind === extra);
         const visible = okName && okSel && okExtra;
+        // Coincide con el filtro. Que se PINTE o no lo decide la paginacion
+        // mas abajo: los totales deben sumar todo lo filtrado, no solo la
+        // pagina en pantalla, o el KPI mentiria al cambiar de pagina.
+        row.dataset.match = visible ? '1' : '';
         row.hidden = !visible;
         // La ficha sigue a su fila: al ocultarse el artista se cierra, o
         // quedaria abierta bajo un filtro que ya no la incluye.
@@ -1638,8 +1684,62 @@ if (!toggle.textContent.trim()) {
       const filtrado = n !== rows.length;
       totals.classList.toggle('is-filtered', filtrado);
       if (reset) reset.hidden = !filtrado;
+      paginate();
     }
 
+    // ---- Paginacion -------------------------------------------------
+    // Solo afecta a lo que se PINTA. Los totales de arriba ya estan sumados
+    // sobre todo lo filtrado, y las descargas leen dataset.match, asi que
+    // cambiar de pagina no altera ni un KPI ni un CSV.
+    const PAGE_SIZE = 50;
+    let page = 0;
+    const pager = document.getElementById(cfg.table.replace('-table', '-pager'));
+    const pinfo = document.getElementById(cfg.table.replace('-table', '-page-info'));
+    const pprev = document.getElementById(cfg.table.replace('-table', '-page-prev'));
+    const pnext = document.getElementById(cfg.table.replace('-table', '-page-next'));
+
+    function paginate() {
+      const matched = rows.filter((r) => r.dataset.match);
+      const pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+      if (page >= pages) page = pages - 1;
+      if (page < 0) page = 0;
+      matched.forEach((r, i) => {
+        const inPage = i >= page * PAGE_SIZE && i < (page + 1) * PAGE_SIZE;
+        r.hidden = !inPage;
+        // Una ficha abierta fuera de pagina quedaria huerfana.
+        if (!inPage && r.dataset.card) {
+          const card = document.getElementById(r.dataset.card);
+          if (card && !card.hidden) {
+            card.hidden = true;
+            const btn = r.querySelector('.artist-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      if (!pager) return;
+      pager.hidden = matched.length <= PAGE_SIZE;
+      if (pinfo) {
+        const desde = matched.length ? page * PAGE_SIZE + 1 : 0;
+        const hasta = Math.min((page + 1) * PAGE_SIZE, matched.length);
+        pinfo.textContent = desde + '–' + hasta + ' de ' + miles(matched.length);
+      }
+      if (pprev) pprev.disabled = page === 0;
+      if (pnext) pnext.disabled = page >= pages - 1;
+    }
+
+    function goto(delta) {
+      page += delta;
+      paginate();
+      const t = document.getElementById(cfg.table);
+      if (t) t.scrollIntoView({ block: 'nearest' });
+    }
+    if (pprev) pprev.addEventListener('click', () => goto(-1));
+    if (pnext) pnext.addEventListener('click', () => goto(1));
+
+    // Un filtro nuevo empieza por la primera pagina: quedarse en la 4 tras
+    // filtrar a 12 resultados enseñaria una tabla vacia.
+    inputs.forEach((el) => el.addEventListener(
+      el.tagName === 'SELECT' ? 'change' : 'input', () => { page = 0; }));
     inputs.forEach((el) => el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', apply));
     if (reset) {
       reset.addEventListener('click', () => {
@@ -1653,7 +1753,10 @@ if (!toggle.textContent.trim()) {
     if (cfg.dlView) {
       wireDownloads(
         cfg,
-        () => rows.filter((r) => !r.hidden),
+        // dataset.match, no !hidden: con la paginacion, hidden solo dice si la
+        // fila cae en la pagina actual. Descargar "lo que se ve" debe seguir
+        // significando todo lo filtrado, no las 50 de esta pantalla.
+        () => rows.filter((r) => r.dataset.match),
         () => inputs.map((el) => el.value).filter(Boolean).join('-'),
       );
     }

@@ -159,11 +159,8 @@ def test_artist_gates_can_fail_the_build(tmp_path, monkeypatch):
         quality_gates.main()
 
 
-def test_houses_without_artists_are_exempt(tmp_path, monkeypatch):
-    """Zorrilla es joyeria: 0% de artistas para siempre, no es un fallo.
-
-    Sin la excepcion la puerta gritaria lobo en cada ejecucion.
-    """
+def test_zorrilla_artist_gates_are_enforced(tmp_path, monkeypatch):
+    """Zorrilla no tiene una exencion especial de las puertas de artistas."""
     _setup_artists(
         tmp_path,
         monkeypatch,
@@ -177,7 +174,8 @@ def test_houses_without_artists_are_exempt(tmp_path, monkeypatch):
          "--min-country-coverage", "0.9",
          "--fail-on-violation"],
     )
-    quality_gates.main()  # no debe lanzar
+    with pytest.raises(SystemExit, match="artist_resolution"):
+        quality_gates.main()
 
 
 def test_silver_without_artist_resolve_does_not_crash(tmp_path, monkeypatch, capsys):

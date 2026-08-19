@@ -6,6 +6,7 @@ salga de aqui lo revisa una persona, no una maquina.
 """
 
 import importlib.util
+import json
 from collections import Counter
 from pathlib import Path
 
@@ -101,3 +102,48 @@ def test_parse_biography_ignores_unknown_country():
 def test_parse_biography_on_empty_input():
     assert propose.parse_biography(None) == {}
     assert propose.parse_biography("Fernando Botero") == {}
+
+
+def test_collect_respects_silver_resolution_and_fold(tmp_path, monkeypatch):
+    """No reproponer reglas especiales ni recalcular la clave de Silver.
+
+    La primera fila representa el caso Lefebre: Silver encontro un alias del
+    maestro en el prefijo de un artist_name multilinea. Replegar el texto crudo
+    fabricaria el candidato espurio ``santiago cardenas black tie``.
+    """
+    rows = [
+        {
+            "artist_name": "SANTIAGO CARDENAS\nBlack Tie",
+            "artist_resolution": "master",
+            "artist_fold": "santiago cardenas",
+            "house_slug": "lefebre_subastas",
+        },
+        {
+            "artist_name": "Variante publicada uno",
+            "artist_resolution": "fold_only",
+            "artist_fold": "clave decidida por silver",
+            "house_slug": "casa_uno",
+        },
+        {
+            "artist_name": "Variante publicada dos",
+            "artist_resolution": "fold_only",
+            "artist_fold": "clave decidida por silver",
+            "house_slug": "casa_dos",
+        },
+    ]
+    lots = tmp_path / "lots.jsonl"
+    lots.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(propose, "SILVER_LOTS", lots)
+    # Aisla la conducta de Silver: el caso master debe excluirse incluso si el
+    # indice del maestro no conoce el fold durante esta prueba.
+    monkeypatch.setattr(propose, "_known_folds", lambda: set())
+
+    candidates = propose.collect(min_lots=1)
+
+    assert len(candidates) == 1
+    assert candidates[0]["fold"] == "clave decidida por silver"
+    assert candidates[0]["lots"] == 2
+    assert candidates[0]["houses"] == ["casa_dos", "casa_uno"]

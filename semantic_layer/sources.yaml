@@ -8,6 +8,9 @@ sources:
     agg_auction_metrics: data/gold/agg_auction_metrics.jsonl
     agg_lots_by_year: data/gold/agg_lots_by_year.jsonl
     agg_artist_metrics: data/gold/agg_artist_metrics.jsonl
+    dim_artist_master: data/gold/dim_artist_master.jsonl
+    artist_name_disposition: data/gold/artist_name_disposition.jsonl
+    artist_master_coverage: data/gold/artist_master_coverage.json
     agg_country_metrics: data/gold/agg_country_metrics.jsonl
     agg_country_year_metrics: data/gold/agg_country_year_metrics.jsonl
     agg_artist_generation_metrics: data/gold/agg_artist_generation_metrics.jsonl
@@ -23,5 +26,6 @@ sources:
   enrichments:
     currency_normalized: data/enrichments/currency_normalized.jsonl
     artist_canonicalized: data/enrichments/artist_canonicalized.jsonl
+    artist_web_research: data/enrichments/artist_web_research.jsonl
     category_tags: data/enrichments/category_tags.jsonl
     embeddings_stub: data/enrichments/embeddings_stub.jsonl

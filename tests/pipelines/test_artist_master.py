@@ -327,6 +327,26 @@ def test_validate_catches_unquoted_boolean_country(master_dir):
     assert any("booleano" in p for p in problems), problems
 
 
+def test_validate_catches_bad_years_death_status_and_unresolvable_alias(master_dir):
+    _write_shard(
+        master_dir,
+        "a.yaml",
+        [
+            _obregon(
+                display_name="Mesa auxiliar",
+                aliases=["Mesa auxiliar"],
+                birth_year=2000,
+                death_year=1999,
+                death_status="living",
+            )
+        ],
+    )
+    problems = artist_master.validate_master()
+    assert any("ningun nombre es un alias de autor resoluble" in p for p in problems)
+    assert any("debe ser posterior" in p for p in problems)
+    assert any("living no admite death_year" in p for p in problems)
+
+
 def test_country_es_display_name(master_dir):
     assert artist_master.country_es("CO") == "Colombia"
     assert artist_master.country_es("GB") == "Reino Unido"
@@ -785,6 +805,39 @@ def test_jorge_damiani_uses_birth_country_and_real_death_year():
     assert years == {"birth_year": 1931, "death_year": 2017}
 
 
+@pytest.mark.parametrize(
+    "name,country,birth,death",
+    [
+        ("Julio Roca", "CO", 1935, 1992),
+        ("Augusto Rendón", "CO", 1933, 2020),
+        ("Lucy Tejada", "CO", 1920, 2011),
+        ("Lydia Azout", "CO", 1942, None),
+        ("Antonio Asís", "AR", 1932, 2019),
+        ("Sara Modiano", "CO", 1951, 2010),
+        ("Ethel Gilmour", "US", 1940, 2008),
+    ],
+)
+def test_finall_misidentifications_are_corrected(name, country, birth, death):
+    """FINALL habia asociado estas siete fichas a homonimos u otras personas."""
+    artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(name)
+    years = artist_master.artist_years(resolved["artist_id"])
+    assert resolved["artist_country_birth"] == country
+    assert years == {"birth_year": birth, "death_year": death}
+
+
+def test_known_objects_and_multi_artist_group_are_not_in_master():
+    """Una fila curada en Excel no basta para convertir un objeto/grupo en persona."""
+    artist_master.reset_caches()
+    for name in (
+        "Banco Bajo",
+        "GILBERT & GEORGE (GILBERT PROESCH & GEORGE PASSMORE) Y DAVID HOCKNEY",
+    ):
+        resolved = artist_master.resolve_artist(name)
+        assert resolved["artist_id"] is None
+        assert resolved["artist_resolution"] == RESOLUTION_NOT_AUTHOR
+
+
 def test_santiago_cardenas_short_and_full_names_are_one_living_artist():
     """El sufijo Arroyo no crea otro ID y 2006 no era una muerte."""
     artist_master.reset_caches()
@@ -810,3 +863,42 @@ def test_giuseppe_maraschini_house_typo_resolves():
     assert resolved["artist_id"] == "giuseppe_maraschini"
     assert resolved["artist_country_birth"] == "IT"
     assert years == {"birth_year": 1839, "death_year": 1903}
+
+
+def test_wikidata_is_a_valid_source():
+    """`wikidata` distingue lo verificado contra la enciclopedia de lo que
+    conjeturo un modelo. Sin el, las 151 fichas promovidas por
+    scripts/artist_master_promote.py entraban como `llm` y se confundian con
+    trabajo sin fuente comprobable."""
+    assert "wikidata" in artist_master.VALID_SOURCES
+
+
+def test_a_bogus_source_is_still_rejected():
+    # Ampliar la lista no puede convertirla en un colador.
+    assert "inventado" not in artist_master.VALID_SOURCES
+
+
+def test_slovenia_is_in_the_country_table():
+    """Cesare Dell'Acqua (Trieste) y Joze Spacal llegaron con SI y el maestro
+    no lo conocia. Es ISO vigente: faltaba en la tabla, no sobraba en la ficha."""
+    artist_master.reset_caches()
+    try:
+        countries = artist_master.load_countries()["countries"]
+    finally:
+        artist_master.reset_caches()
+    assert countries["SI"]["es"] == "Eslovenia"
+
+
+def test_tunisia_and_south_korea_are_in_the_country_table():
+    """Eugenio Alvarez Dumont nacio en Tunez y Nam June Paik en Seul.
+
+    Son el mismo patron que Eslovenia: ISO vigente que faltaba en la tabla. El
+    hueco lo destapa el pegado, no una revision teorica.
+    """
+    artist_master.reset_caches()
+    try:
+        countries = artist_master.load_countries()["countries"]
+    finally:
+        artist_master.reset_caches()
+    assert countries["TN"]["es"] == "Túnez"
+    assert countries["KR"]["es"] == "Corea del Sur"
