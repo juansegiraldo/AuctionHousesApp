@@ -1,4 +1,18 @@
 artists:
+- artist_id: jacob_jordaens
+  display_name: Jacob Jordaens
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1593
+  death_year: 1678
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jacob Jordaens
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1593, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q270658'
 - artist_id: jacobo_borges
   display_name: Jacobo Borges
   country_birth: VE
@@ -170,6 +184,20 @@ artists:
   - JAIME NOWINSKI
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42387617'
   death_status: living
+- artist_id: jaime_osorio
+  display_name: Jaime Osorio
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - JAIME OSORIO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1945, el anio que publica la casa. Wikidata no declara ocupacion: confirmar que es artista
+    antes de fijar. Fuente: https://www.wikidata.org/wiki/Q104742007'
 - artist_id: jaime_pastor_baron
   display_name: Jaime Pastor Barón
   attribution_type: autor
@@ -229,6 +257,20 @@ artists:
   aliases:
   - James Arthur O'Connor
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6128880'
+- artist_id: james_northcote
+  display_name: James Northcote
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1746
+  death_year: 1831
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - James Northcote
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1746, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3161307'
 - artist_id: james_rosenquist
   display_name: James Rosenquist
   country_birth: US
@@ -253,6 +295,20 @@ artists:
   - Jan Anton Garemyn
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q664002'
+- artist_id: jan_baptist_huysmans
+  display_name: Jan Baptiste Huysmans
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1654
+  death_year: 1716
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jan Baptist Huysmans
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1654, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q15962344'
 - artist_id: jan_dibbets
   display_name: Jan Dibbets
   birth_year: 1941
@@ -353,6 +409,20 @@ artists:
   notes: '1 lote de 120.000 EUR | casas: duran_subastas | fuente: Wikipedia. Nacido en La Haya, Provincias Unidas:
     es neerlandes del norte, NO flamenco. El nombre de pila es obligatorio en el alias porque existen Dirck de Quade
     van Ravesteyn y Arnold van Ravesteyn, pintores distintos.'
+- artist_id: jan_weissenbruch
+  display_name: Johan Hendrik Weissenbruch
+  country_birth: NL
+  nationalities:
+  - NL
+  birth_year: 1824
+  death_year: 1903
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jan Weissenbruch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1824, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1691988'
 - artist_id: janetta_parlade
   display_name: Janetta Parladé
   birth_year: 1921
@@ -405,6 +475,20 @@ artists:
   - JANO
   notes: '15 lotes en Silver | fuente: Wikidata Q5865679 | seudonimo de Francisco Fernandez-Zarza Perez, ilustrador
     y cartelista'
+- artist_id: janos_viski
+  display_name: János Viski
+  country_birth: HU
+  nationalities:
+  - HU
+  birth_year: 1891
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - János VISKI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1891, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1460294'
 - artist_id: jaume_genovart
   display_name: Jaume Genovart
   country_birth: ES
@@ -498,6 +582,20 @@ artists:
   aliases:
   - Jaume Queralt
   notes: '18 lotes | casas: duran_subastas'
+- artist_id: javier_arevalo
+  display_name: Javier Arévalo
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1937
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Javier Arévalo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1937, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6165415'
 - artist_id: javier_baldeon
   display_name: Javier Baldeón
   country_birth: ES
@@ -685,6 +783,20 @@ artists:
   aliases:
   - Javier Virseda
   notes: '15 lotes en Silver | fuente: Archivo MARCH; Artshot | Born Madrid; died Calpe'
+- artist_id: jean_aubery
+  display_name: Jean Aubery
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1880
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jean Aubery
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1880, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q104528544'
 - artist_id: jean_baptiste_greuze
   display_name: Jean-Baptiste Greuze
   country_birth: FR
@@ -1360,6 +1472,18 @@ artists:
   - Jim Amaral
   notes: '22 lotes | casas: bogota_auctions'
   death_status: living
+- artist_id: jim_bird
+  display_name: Jim Bird
+  birth_year: 1937
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Jim Bird
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1937, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q98765930'
 - artist_id: jim_dine
   display_name: Jim Dine
   country_birth: US
@@ -1386,6 +1510,20 @@ artists:
   - Jiri Georg Dokoupil
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q555152'
   death_status: living
+- artist_id: jiri_kolar
+  display_name: Jiří Kolář
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1914
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jiri Kolár
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1914, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q699793'
 - artist_id: joan_abello_prat
   display_name: Joan Abelló i Prat
   country_birth: ES
@@ -1781,7 +1919,10 @@ artists:
   aliases:
   - Joaquín Araujo y Ruano
   - Joaquin Araujo y Ruano
-  notes: '13 lotes en Silver | fuente: Wikidata/Prado'
+  - Joaquín Araujo
+  - Joaquín Araujo Ruano
+  notes: '13 lotes en Silver | fuente: Wikidata/Prado. Ficha ''joaquin_araujo'' consolidada aqui el 2026-08-19:
+    misma persona (mismas fechas).'
 - artist_id: joaquin_asensio
   display_name: Joaquín Asensio
   country_birth: ES
@@ -2194,6 +2335,20 @@ artists:
   aliases:
   - Joe Tilson
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1363990'
+- artist_id: joel_stein
+  display_name: Joel Stein
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1926
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Joël Stein
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1926, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1286410'
 - artist_id: johan_giraldo
   display_name: Johan Giraldo
   country_birth: CO
@@ -2246,6 +2401,20 @@ artists:
   - Johann Holmstedt
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q110017752'
+- artist_id: johann_jungblut
+  display_name: Johann Jungblut
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1860
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Johann Jungblut
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1860, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21031905'
 - artist_id: johann_schenau
   display_name: Johann Eleazar Zeissig
   country_birth: DE
@@ -2297,6 +2466,20 @@ artists:
   aliases:
   - John Anthony Park
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21460191'
+- artist_id: john_cage
+  display_name: John Cage
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1912
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - John Cage
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1912, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q180727'
 - artist_id: john_castles
   display_name: John Castles
   country_birth: CO
@@ -2326,6 +2509,20 @@ artists:
   aliases:
   - JOHN CHARLES DOLLMAN
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3181222'
+- artist_id: john_constable
+  display_name: John Constable
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1776
+  death_year: 1837
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - JOHN CONSTABLE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1776, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q159297'
 - artist_id: john_frederick_i_herring
   display_name: John Frederick Herring, Sr.
   country_birth: GB
@@ -2352,6 +2549,34 @@ artists:
   - John Millei
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22231350'
   death_status: living
+- artist_id: john_piper
+  display_name: John Piper
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1903
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - JOHN PIPER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1903, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q4363211'
+- artist_id: john_russel
+  display_name: John Russell
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1745
+  death_year: 1806
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - John Russel
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1745, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6255995'
 - artist_id: john_sanderson_wells
   display_name: John Sanderson-Wells
   birth_year: 1872
@@ -2835,6 +3060,20 @@ artists:
   notes: Pintor y escultor gallego nacido en A Coruña en 1959. Falleció en Sada el 20 de febrero de 2013. Estudió
     en la Escuela de Bellas Artes de San Carlos de Valencia (especialidad Grabado). Referente de la pintura gallega
     contemporánea.
+- artist_id: jorge_pineda
+  display_name: Jorge Pineda
+  country_birth: PH
+  nationalities:
+  - PH
+  birth_year: 1879
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jorge Pineda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1879, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q56219942'
 - artist_id: jorge_ribalta
   display_name: Jorge Ribalta
   country_birth: ES
@@ -3099,6 +3338,20 @@ artists:
   aliases:
   - José Bedia
   notes: '7 lotes | casas: duran_subastas'
+- artist_id: jose_belloni
+  display_name: José Belloni
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1882
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - JOSE BELLONI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1882, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q459935'
 - artist_id: jose_benavent_calatayud
   display_name: José Benavent Calatayud
   birth_year: 1858
@@ -3424,6 +3677,20 @@ artists:
   aliases:
   - José de Madrazo Agudo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2343934'
+- artist_id: jose_de_togores
+  display_name: Josep de Togores i Llach
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1893
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - José de Togores
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1893, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q9013399'
 - artist_id: jose_de_zamora
   display_name: José de Zamora
   country_birth: ES
@@ -3479,6 +3746,21 @@ artists:
   aliases:
   - José Duarte
   notes: '17 lotes en Silver | fuente: Museo Reina Sofia | Cordoba; fundador de Equipo 57'
+- artist_id: jose_echave
+  display_name: José Echave
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1921
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - JOSE ECHAVE
+  - JOSÉ ECHAVE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42385537'
 - artist_id: jose_elbo
   display_name: José Elbo
   country_birth: ES
@@ -3701,6 +3983,21 @@ artists:
   - José Gurvich
   - José GURVICH
   notes: '20 lotes | casas: zorrilla_subastas'
+- artist_id: jose_gutierrez_de_la_vega
+  display_name: José Gutiérrez de la Vega
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1791
+  death_year: 1865
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - José Gutiérrez de la Vega
+  - José Gutierrez de la Vega
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1791, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q11685834'
 - artist_id: jose_gutierrez_solana
   display_name: José Gutierrez Solana
   country_birth: ES
@@ -4131,6 +4428,20 @@ artists:
   - José Lupiáñez y Carrasco
   - José Lupiañez y Carrasco
   notes: '14 lotes en Silver | fuente: Wikipedia ES | Malaga'
+- artist_id: jose_malhoa
+  display_name: José Malhoa
+  country_birth: PT
+  nationalities:
+  - PT
+  birth_year: 1855
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - José Malhoa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1855, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q720979'
 - artist_id: jose_manaut_viglietti
   display_name: José Manaut Viglietti
   country_birth: ES
@@ -4421,6 +4732,20 @@ artists:
   aliases:
   - Jose Maria Florit y Arizcun
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110316645'
+- artist_id: jose_maria_galvan
+  display_name: José María Galván y Candela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1837
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jose María Galván
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1837, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21401532'
 - artist_id: jose_maria_guerrero_medina
   display_name: José María Guerrero Medina
   country_birth: ES
@@ -5436,6 +5761,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q55999976'
   death_status: living
+- artist_id: jose_sanchez_pescador
+  display_name: José Sánchez Pescador
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1839
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - José Sánchez Pescador
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1839, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q60036514'
 - artist_id: jose_sanchez_vazquez
   display_name: José Sánchez Vázquez
   country_birth: ES
@@ -5625,7 +5964,9 @@ artists:
   aliases:
   - José Vela Zanetti
   - VELA ZANETTI, JOSÉ
-  notes: '33 lotes | casas: duran_subastas'
+  - Vela Zanetti
+  notes: '33 lotes | casas: duran_subastas. Ficha ''vela_zanetti'' consolidada aqui el 2026-08-19: misma persona
+    (mismas fechas).'
 - artist_id: jose_vento
   display_name: José Vento
   country_birth: ES
@@ -5841,6 +6182,20 @@ artists:
   - Guinovart
   notes: '71 lotes | casas: duran_subastas | el alias a secas ''Guinovart'' son 11 lotes mas, todos con birth_year
     1927 en el dato de subasta'
+- artist_id: josep_lluis_arimany
+  display_name: Josep Lluís Arimany
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Josep Lluis Arimany
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1923, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q55987475'
 - artist_id: josep_maria_marques_garcia
   display_name: José María Marqués
   country_birth: ES
@@ -6043,6 +6398,20 @@ artists:
   aliases:
   - Joseph Laulié
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q135261412'
+- artist_id: joseph_nigg
+  display_name: Joseph Nigg
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1782
+  death_year: 1863
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Joseph Nigg
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1782, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1707710'
 - artist_id: joze_spacal
   display_name: Jože Spacal
   country_birth: SI
@@ -6139,6 +6508,20 @@ artists:
   aliases:
   - Juan Antonio de Frías y Escalante
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3544225'
+- artist_id: juan_antonio_gonzalez
+  display_name: Juan Antonio González Jiménez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1842
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan Antonio González
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1842, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q43130888'
 - artist_id: juan_antonio_morales
   display_name: Juan Antonio Morales
   country_birth: ES
@@ -6737,6 +7120,20 @@ artists:
   aliases:
   - Juan García Calvo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q100891942'
+- artist_id: juan_garcia_ramos
+  display_name: Juan García Ramos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1856
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan García Ramos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1856, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q23942776'
 - artist_id: juan_genoves
   display_name: Juan Genovés
   country_birth: ES
@@ -6780,6 +7177,20 @@ artists:
   - Juan González Alacreu
   notes: '27 lotes | casas: duran_subastas'
   death_status: living
+- artist_id: juan_guillermo
+  display_name: Juan Guillermo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1916
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan Guillermo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1916, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q11084238'
 - artist_id: juan_gutierrez_montiel
   display_name: Juan Gutiérrez Montiel
   country_birth: ES
@@ -7134,6 +7545,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q99670873'
   death_status: living
+- artist_id: juan_munoz
+  display_name: Juan Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1953
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan Muñoz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1953, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q567396'
 - artist_id: juan_navarro_baldeweg
   display_name: Juan Navarro Baldeweg
   country_birth: ES
@@ -7307,6 +7732,34 @@ artists:
   aliases:
   - Juan Ruiz Soriano
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16585115'
+- artist_id: juan_sanchez_cotan
+  display_name: Juan Sánchez Cotán
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1560
+  death_year: 1627
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan Sánchez Cotán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1560, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q919806'
+- artist_id: juan_serrano
+  display_name: Juan Serrano Muñoz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1929
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Juan Serrano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1929, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q19950140'
 - artist_id: juan_simon_gutierrez
   display_name: Juan Simón Gutiérrez
   country_birth: ES
@@ -7484,6 +7937,20 @@ artists:
   aliases:
   - JULES BENOIT-LÉVY
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4844253'
+- artist_id: jules_dupre
+  display_name: Jules Dupré
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1811
+  death_year: 1889
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jules Dupre
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1811, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q959212'
 - artist_id: jules_hippolyte_ravel
   display_name: Jules Hippolyte Ravel
   country_birth: FR
@@ -7497,6 +7964,21 @@ artists:
   aliases:
   - Jules Hippolyte Ravel
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24706323'
+- artist_id: jules_leroy
+  display_name: Jules Leroy
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1833
+  death_year: 1865
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jules Leroy
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1833, el anio que publica la casa. Wikidata no declara ocupacion: confirmar que es artista
+    antes de fijar. Fuente: https://www.wikidata.org/wiki/Q116919603'
 - artist_id: jules_moigniez
   display_name: Jules Moigniez
   country_birth: FR
@@ -7523,6 +8005,17 @@ artists:
   aliases:
   - Jules René Hervé
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3188375'
+- artist_id: jules_vernier
+  display_name: Jules Vernier
+  birth_year: 1862
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Jules Vernier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1862, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q27986518'
 - artist_id: julia_acuna_guillen
   display_name: Julia Acuña Guillén
   country_birth: CO
@@ -7822,6 +8315,20 @@ artists:
   - Julio Girona
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q52151083'
+- artist_id: julio_gonzalez
+  display_name: Julio González
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1876
+  death_year: 1942
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Julio González
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1876, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q316531'
 - artist_id: julio_larraz
   display_name: Julio Larraz
   country_birth: CU
@@ -8023,6 +8530,18 @@ artists:
   aliases:
   - JULIO VERDIÉ
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42383240'
+- artist_id: julio_viera
+  display_name: Julio Viera
+  birth_year: 1934
+  death_year: 2023
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Julio Viera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1934, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q21065686'
 - artist_id: julio_vila_y_prades
   display_name: Julio Vila y Prades
   country_birth: ES
@@ -8088,6 +8607,18 @@ artists:
   - Juraj Dobrovic
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6314788'
   death_status: living
+- artist_id: jurgen_schadeberg
+  display_name: Jürgen Schadeberg
+  birth_year: 1931
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Jurgen Schadeberg
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1931, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q1623859'
 - artist_id: justiniano_asuncion
   display_name: Justiniano Asunción
   country_birth: PH

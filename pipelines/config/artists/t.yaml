@@ -219,6 +219,20 @@ artists:
   aliases:
   - THEO VAN DOESBURG
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q160422'
+- artist_id: theodore_rousseau
+  display_name: Théodore Rousseau
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1812
+  death_year: 1867
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - THÉODORE ROUSSEAU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1812, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q310025'
 - artist_id: theophile_alexandre_steinlen
   display_name: Théophile Alexandre Steinlen
   country_birth: CH
@@ -258,6 +272,18 @@ artists:
   aliases:
   - THOMAS COUTURE
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q326434'
+- artist_id: thomas_lenk
+  display_name: Thomas Lenk
+  birth_year: 1933
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Thomas Lenk
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1933, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q2261154'
 - artist_id: thomas_lyde_hornbrook
   display_name: Thomas Lyde Hornbrook
   birth_year: 1780
@@ -528,6 +554,20 @@ artists:
   aliases:
   - Toni Catany
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q322216'
+- artist_id: tono
+  display_name: Tono
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1896
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Tono
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1896, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3620383'
 - artist_id: tono_carbajo
   display_name: Tono Carbajo
   country_birth: ES
@@ -553,6 +593,18 @@ artists:
   aliases:
   - Toth Menyhért
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1327376'
+- artist_id: tove_jansson
+  display_name: Tove Jansson
+  birth_year: 1914
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Tove Jansson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1914, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q102071'
 - artist_id: trinidad_fernandez_martin
   display_name: Trinidad Fernández Martín
   country_birth: ES

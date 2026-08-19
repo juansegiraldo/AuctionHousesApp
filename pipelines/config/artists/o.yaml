@@ -304,6 +304,18 @@ artists:
   - Óscar García Reino
   - Óscar GARCÍA REINO
   notes: '21 lotes | casas: zorrilla_subastas'
+- artist_id: oscar_jaramillo
+  display_name: Oscar Jaramillo
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - OSCAR JARAMILLO
+  - ÓSCAR JARAMILLO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1947, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q133672073'
 - artist_id: oscar_martinez_vasquez
   display_name: Oscar Martínez Vásquez
   country_birth: CO
@@ -345,6 +357,19 @@ artists:
   - Oscar Rodríguez Naranjo
   - Rodríguez Naranjo, Oscar
   notes: '10 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: oscar_villalobos
+  display_name: Óscar Villalobos
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - OSCAR VILLALOBOS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1987, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q124425935'
 - artist_id: oskar_dalvit
   display_name: Oskar Dalvit
   country_birth: CH
@@ -492,3 +517,17 @@ artists:
   notes: '12 lotes en Silver | fuente: Wikipedia | seudonimo de Barbara Allende Gil de Biedma, Madrid. Duran publica
     tambien ''Ouka Lele'' con una sola ele (11 lotes): misma artista, folds distintos, asi que necesita el alias
     explicito para no rankear partida.'
+- artist_id: owen_bowen
+  display_name: Owen Bowen
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1873
+  death_year: 1967
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Owen BOWEN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1873, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21461772'

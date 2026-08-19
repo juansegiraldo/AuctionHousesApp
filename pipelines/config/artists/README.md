@@ -9,13 +9,13 @@ Lo lee `pipelines/shared/artist_master.py`, que a su vez usa
 
 ## Estado actual (2026-08-18)
 
-**3.307 artistas poblados**, que resuelven **25.615 lotes con pais (60,8% de los
-lotes que tienen autor)**. En el ranking, **2.265 de 9.774 artistas (23,2%)
-cubren el 89,27% del ingreso atribuido a artistas**. Las dos coberturas se
+**3.524 artistas poblados**, que resuelven **26.034 lotes con pais (61,8% de los
+lotes que tienen autor)**. En el ranking, **2.386 de 9.769 artistas (24,4%)
+cubren el 89,79% del ingreso atribuido a artistas**. Las dos coberturas se
 publican juntas: la primera mide trabajo pendiente y la segunda, su importancia
 economica.
 
-Completitud de las fichas: **85,5% con pais**, **71,8% completas** (pais +
+Completitud de las fichas: **85,5% con pais**, **72,1% completas** (pais +
 nacimiento + muerte-o-`living`).
 
 La cobertura **exhaustiva** es aparte y va al 100%: los **12.893 folds de autor**
@@ -565,6 +565,27 @@ candidatos revisados, la mayoria eran autores reales que la senial marcaba mal
 — `CHILLIDA, EDUARDO`, `VASARELY, VICTOR`, `PALENCIA, BENJAMIN`,
 `PALAZUELO, PABLO`, `HOGARTH, WILLIAM`, `MERCATOR, GERHARD`, `Equipo Realidad`,
 `Estampa Popular`. Hay un test que fija que los 17 sobrevivan.
+
+### El anio de la casa desempata al homonimo que Wikidata deja abierto
+
+Wikidata no elige entre dos homonimos, y hace bien. Pero **la casa publica el
+anio de nacimiento**, y si de los candidatos solo uno lo cumple, la ambiguedad
+desaparece: son dos fuentes independientes concordando, no una conjetura.
+
+De **1.531 fichas `ambiguous`, 488 se desempatan asi** y aportaron 191 altas —
+James Northcote, Ricardo Macarron, Esteban Vicente. El desempate exige un
+**unico** candidato coincidente: si casan dos, o ninguno, la ficha se queda sin
+resolver.
+
+Entran con `confidence: medium`, nunca `high`: un homonimo resuelto por
+concordancia no es una identidad sin dudas, y la nota deja escrito el anio que
+sirvio de desempate.
+
+**Trampa que aparecio aqui:** Wikidata devolvio `بابلو بيكاسو` como label de
+Picasso y `Рихард Линднер` como el de Lindner. El `display_name` se PUBLICA en
+el informe y lo compara el fold contra el catalogo, asi que un label en otro
+alfabeto no puede ganar: `picasso` habria entrado como artista nuevo teniendo ya
+`pablo_picasso`. Si el label no es latino, manda el nombre del catalogo.
 
 ### La senial determinista que SI sirve, y por que no se aplica sola
 

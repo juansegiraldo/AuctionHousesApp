@@ -179,7 +179,23 @@ artists:
   confidence: high
   aliases:
   - Will Faber Zitetz
-  notes: '15 lotes en Silver | fuente: Ketterer Kunst; MACBA Barcelona | Born Saarbrucken, Germany; died Barcelona'
+  - Will Faber
+  notes: '15 lotes en Silver | fuente: Ketterer Kunst; MACBA Barcelona | Born Saarbrucken, Germany; died Barcelona.
+    Ficha ''will_faber'' consolidada aqui el 2026-08-19: misma persona (mismas fechas).'
+- artist_id: willem_roelofs
+  display_name: Willem Roelofs
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1822
+  death_year: 1897
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Willem Roelofs
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1822, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1372280'
 - artist_id: willem_schellinks
   display_name: Willem Schellinks
   country_birth: FR
@@ -233,6 +249,34 @@ artists:
   - William Allen Brunning
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q21464164'
+- artist_id: william_collins
+  display_name: William Collins
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1788
+  death_year: 1847
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - William Collins
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1788, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2623883'
+- artist_id: william_hogarth
+  display_name: William Hogarth
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1697
+  death_year: 1764
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - William Hogarth
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1697, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q171344'
 - artist_id: william_james_stamper
   display_name: William James Stamper
   death_year: 1963
@@ -243,6 +287,46 @@ artists:
   - William James Stamper
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q136698736'
+- artist_id: william_mellor
+  display_name: William Mellor
+  birth_year: 1851
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - William Mellor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1851, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q21465974'
+- artist_id: william_strang
+  display_name: William Strang
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1859
+  death_year: 1921
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - William Strang
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1859, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2547129'
+- artist_id: willy_weber
+  display_name: Willy Weber
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1933
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Willy Weber
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1933, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1383578'
 - artist_id: wilson_amaral
   display_name: Wilson Amaral
   country_birth: UY

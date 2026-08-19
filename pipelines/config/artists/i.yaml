@@ -446,6 +446,20 @@ artists:
   - Isidoro Valcárcel Medina
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5921245'
   death_status: living
+- artist_id: isidre_mercade_ferrando
+  display_name: Isidre Mercadé Ferrando
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Isidre Mercadé Ferrando
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1912, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5921270'
 - artist_id: isidro_lopez_murias
   display_name: Isidro López Murías
   country_birth: MA

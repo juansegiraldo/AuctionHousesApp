@@ -415,6 +415,33 @@ artists:
   aliases:
   - George Fischhof
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1504215'
+- artist_id: george_gregory
+  display_name: George Gregory
+  birth_year: 1849
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - George Gregory
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1849, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q21462932'
+- artist_id: george_hayter
+  display_name: George Hayter
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1792
+  death_year: 1871
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - GEORGE, HAYTER
+  - GEORGE HAYTER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1792, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3760522'
 - artist_id: george_hoyningen_huene
   display_name: George Hoyningen-Huene
   birth_year: 1900
@@ -426,6 +453,20 @@ artists:
   - George Hoyningen Huene
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q1507622'
+- artist_id: george_morland
+  display_name: George Morland
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1763
+  death_year: 1804
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - George Morland
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1763, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2405427'
 - artist_id: george_owen_wynne_apperley
   display_name: George Owen Wynne Apperley
   country_birth: GB
@@ -470,6 +511,20 @@ artists:
   - GEORGE SEGAL
   - George Segal
   notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: george_turner
+  display_name: George Turner
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1841
+  death_year: 1910
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - George Turner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1841, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q542812'
 - artist_id: george_william_sartorius
   display_name: William Sartorius
   birth_year: 1759
@@ -546,6 +601,20 @@ artists:
   aliases:
   - Georges Louis Hyon
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21464027'
+- artist_id: georges_mathieu
+  display_name: Georges Mathieu
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1921
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Georges Mathieu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q834939'
 - artist_id: georges_rouault
   display_name: جورج رووه
   country_birth: FR
@@ -939,6 +1008,20 @@ artists:
   - Giovanni Piranesi
   - Piranesi
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q316307'
+- artist_id: giovanni_fattori
+  display_name: Giovanni Fattori
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1825
+  death_year: 1908
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Giovanni Fattori
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1825, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q710089'
 - artist_id: giovanni_gianni
   display_name: Giovanni Gianni
   country_birth: null
@@ -1192,6 +1275,19 @@ artists:
   - GONZALO DIAZ
   - Gonzalo Díaz
   notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gonzalo_fonseca
+  display_name: Gonzalo Fonseca
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1922
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - GONZALO FONSECA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1922, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q546868'
 - artist_id: gonzalo_fuenmayor
   display_name: Gonzalo Fuenmayor
   country_birth: CO
@@ -1553,6 +1649,20 @@ artists:
   - PÉREZ VILLALTA, GUILLERMO
   notes: '43 lotes | casas: duran_subastas'
   death_status: living
+- artist_id: guillermo_rodriguez
+  display_name: Guillermo C. Rodríguez
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1889
+  death_year: 1959
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - GUILLERMO RODRIGUEZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1889, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q24964010'
 - artist_id: guillermo_vargas_ruiz
   display_name: Guillermo Vargas Ruiz
   country_birth: ES
@@ -1758,6 +1868,20 @@ artists:
   - GUSTAVO OTERO MUÑOZ
   - Otero Muñoz, Gustavo
   notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: gustavo_sorzano
+  display_name: Gustavo Sorzano
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - GUSTAVO SORZANO
+  - Gustavo Sorzano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1944, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42259130'
 - artist_id: gustavo_torner
   display_name: Gustavo Torner
   country_birth: ES

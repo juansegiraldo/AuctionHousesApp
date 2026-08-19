@@ -228,6 +228,20 @@ artists:
   - Nazario Montero Madrazo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q6039137'
+- artist_id: nelson_dawson
+  display_name: Nelson Dawson
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1859
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Nelson Dawson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1859, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q13471343'
 - artist_id: nelson_dominguez
   display_name: Nelson Domínguez
   country_birth: CU
@@ -255,6 +269,20 @@ artists:
   - Nelson Ramos
   - Nelson RAMOS
   notes: '9 lotes | casas: zorrilla_subastas'
+- artist_id: nelson_romero
+  display_name: Nelson Romero
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1951
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - NELSON ROMERO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1951, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1805887'
 - artist_id: nelson_zumel
   display_name: Nelson Zumel
   country_birth: ES
@@ -665,6 +693,20 @@ artists:
   - Norberto Berdia
   - Norberto BERDIA
   notes: '5 lotes | casas: zorrilla_subastas'
+- artist_id: norman_garstin
+  display_name: Norman Garstin
+  country_birth: IE
+  nationalities:
+  - IE
+  birth_year: 1847
+  death_year: 1926
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Norman Garstin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1847, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1740505'
 - artist_id: norman_mejia
   display_name: Norman Mejía
   country_birth: CO

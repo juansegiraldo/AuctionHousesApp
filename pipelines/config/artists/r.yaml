@@ -101,6 +101,19 @@ artists:
   - Rafael Barradas
   - Rafael BARRADAS
   notes: '26 lotes | casas: zorrilla_subastas'
+- artist_id: rafael_barrios
+  display_name: Rafael Barrios
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - RAFAEL BARRIOS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1947, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q111794221'
 - artist_id: rafael_bartolozzi
   display_name: Rafael Bartolozzi
   country_birth: ES
@@ -228,6 +241,20 @@ artists:
   aliases:
   - Rafael de la Torre Estefanía
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60036079'
+- artist_id: rafael_de_penagos
+  display_name: Rafael de Penagos
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1889
+  death_year: 1954
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rafael de Penagos
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1889, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q11160767'
 - artist_id: rafael_del_real
   display_name: Rafael del Real
   country_birth: ES
@@ -404,6 +431,18 @@ artists:
   - Rafael Juliá Entraigues
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q96751033'
+- artist_id: rafael_martinez_diaz
+  display_name: Rafael Martínez Díaz
+  birth_year: 1915
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Rafael Martínez Díaz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1915, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q6097589'
 - artist_id: rafael_martinez_padilla
   display_name: Rafael Martínez Padilla
   country_birth: ES
@@ -466,6 +505,17 @@ artists:
   aliases:
   - Rafael Munoa Roiz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12266422'
+- artist_id: rafael_ortiz
+  display_name: Rafael Ortiz
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - RAFAEL ORTIZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1960, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q133658385'
 - artist_id: rafael_ortiz_alfau
   display_name: Rafael Ortiz Alfau
   country_birth: ES
@@ -598,6 +648,20 @@ artists:
   aliases:
   - Rafael Senet
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11701835'
+- artist_id: rafael_soriano
+  display_name: Rafael Soriano
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1920
+  death_year: 2015
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rafael Soriano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q19842101'
 - artist_id: rafael_tur_costa
   display_name: Rafael Tur Costa
   country_birth: ES
@@ -1605,6 +1669,20 @@ artists:
   aliases:
   - Ricardo López Cabrera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9068995'
+- artist_id: ricardo_macarron
+  display_name: Ricardo Macarrón
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1926
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Ricardo Macarrón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1926, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q9068996'
 - artist_id: ricardo_maffei
   display_name: Ricardo Maffei
   country_birth: CL
@@ -1629,6 +1707,20 @@ artists:
   - Ricardo Manzanet
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q96751229'
+- artist_id: ricardo_marin
+  display_name: Ricardo Marín
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1874
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Ricardo Marín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1874, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28973511'
 - artist_id: ricardo_montesinos
   display_name: Ricardo Montesinos
   country_birth: ES
@@ -1803,6 +1895,20 @@ artists:
   aliases:
   - Richard Ansdell
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1571482'
+- artist_id: richard_earlom
+  display_name: Richard Earlom
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1743
+  death_year: 1822
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Richard EARLOM
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1743, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2360939'
 - artist_id: richard_lin_show_you
   display_name: Richard Lin Show You
   country_birth: TW
@@ -1817,6 +1923,20 @@ artists:
   - RICHARD LIN SHOW YOU
   notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | fechas descartadas por imposibles en la hoja:
     1905-1905'
+- artist_id: richard_lindner
+  display_name: Richard Lindner
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1901
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Richard Lindner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1901, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q126074'
 - artist_id: richard_smith
   display_name: Richard Smith
   country_birth: GB
@@ -2559,6 +2679,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q131548039'
   death_status: living
+- artist_id: rosa_cervera
+  display_name: Rosa Cervera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1912
+  death_year: 1993
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rosa Cervera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1912, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q19594469'
 - artist_id: rosa_da_tivoli
   display_name: Philipp Peter Roos
   country_birth: DE
@@ -2714,6 +2848,32 @@ artists:
   aliases:
   - Rubens Santoro
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15996346'
+- artist_id: rudolf_kundera
+  display_name: Rudolf Kundera
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1911
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rudolf Kundera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1911, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3446733'
+- artist_id: rudolf_schacht
+  display_name: Rudolf Schacht
+  birth_year: 1900
+  death_year: 1974
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Rudolf SCHACHT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1900, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q110017100'
 - artist_id: rufino_martos_ortiz
   display_name: Rufino Martos Ortiz
   country_birth: ES

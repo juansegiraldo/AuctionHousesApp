@@ -74,19 +74,6 @@ artists:
   aliases:
   - Vascano
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5958697'
-- artist_id: vela_zanetti
-  display_name: Vela Zanetti
-  country_birth: ES
-  nationalities:
-  - ES
-  birth_year: 1913
-  death_year: 1999
-  attribution_type: autor
-  source: wikidata
-  confidence: high
-  aliases:
-  - Vela Zanetti
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5552128'
 - artist_id: vernet_claude_joseph
   display_name: Joseph Vernet
   country_birth: FR
@@ -204,6 +191,20 @@ artists:
   aliases:
   - Vicente Borrás Abella
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19842327'
+- artist_id: vicente_castell
+  display_name: Vicente Castell
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Vicente Castell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1871, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3825671'
 - artist_id: vicente_castellano_giner
   display_name: Vicente Castellano Giner
   country_birth: ES
@@ -497,6 +498,20 @@ artists:
   - Vicente Viudes
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q52157330'
+- artist_id: victor
+  display_name: Victor
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1920
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Victor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q124252744'
 - artist_id: victor_charreton
   display_name: Victor Charreton
   country_birth: FR
@@ -870,3 +885,15 @@ artists:
   - Vittore ZANETTI ZILLA
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q4015193'
+- artist_id: vladimir_velickovic
+  display_name: Vladimir Veličković
+  birth_year: 1935
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Vladimir Velickovic
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1935, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q1978366'

@@ -430,6 +430,20 @@ artists:
   aliases:
   - Agapito Casas Abarca
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23497943'
+- artist_id: agnes_martin
+  display_name: Agnes Martin
+  country_birth: CA
+  nationalities:
+  - CA
+  birth_year: 1912
+  death_year: 2004
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Agnes Martin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1912, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q275610'
 - artist_id: agostino_carracci
   display_name: Agostino Carracci
   country_birth: IT
@@ -629,6 +643,20 @@ artists:
   aliases:
   - Agustín Salinas Teruel
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16930330'
+- artist_id: agustin_segura
+  display_name: Agustín Segura
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1900
+  death_year: 1988
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Agustín Segura
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1900, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5660882'
 - artist_id: agustin_ubeda
   display_name: Agustín Úbeda
   country_birth: ES
@@ -752,6 +780,20 @@ artists:
   aliases:
   - Albert Janesch
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2638239'
+- artist_id: albert_lynch
+  display_name: Albert Lynch
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1851
+  death_year: 1931
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Albert Lynch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1851, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q133497429'
 - artist_id: albert_nikolayevich_benois
   display_name: Albert Benois
   country_birth: null
@@ -765,6 +807,20 @@ artists:
   - Albert Nikolayevich Benois
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q946949'
+- artist_id: albert_steiner
+  display_name: Albert Steiner
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1877
+  death_year: 1965
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Albert Steiner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1877, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q121412'
 - artist_id: alberto_arboleda
   display_name: Alberto Arboleda
   country_birth: CO
@@ -887,6 +943,20 @@ artists:
   - Alberto García-Alix
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2739771'
   death_status: living
+- artist_id: alberto_giacometti
+  display_name: Alberto Giacometti
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1901
+  death_year: 1966
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Alberto Giacometti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1901, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q157194'
 - artist_id: alberto_gironella
   display_name: Alberto Gironella
   country_birth: MX
@@ -1391,6 +1461,20 @@ artists:
   - Alejandro Obregón - España, 1920 . Colombia 1992.
   - Alejandro Obregón
   notes: '34 lotes | casas: bogota_auctions'
+- artist_id: alejandro_otero
+  display_name: Alejandro Otero
+  country_birth: VE
+  nationalities:
+  - VE
+  birth_year: 1921
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ALEJANDRO OTERO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2117224'
 - artist_id: alejandro_quincoces
   display_name: Alejandro Quincoces
   country_birth: null
@@ -1650,6 +1734,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q21454909'
   death_status: living
+- artist_id: alfonso_grosso
+  display_name: Alfonso Grosso Sánchez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1893
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Alfonso Grosso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1893, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q8195148'
 - artist_id: alfonso_guerra_calle
   display_name: Alfonso Guerra Calle
   country_birth: null
@@ -1809,6 +1907,18 @@ artists:
   aliases:
   - Alfred Godchaux
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43130854'
+- artist_id: alfred_hartley
+  display_name: Alfred Hartley
+  birth_year: 1855
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Alfred Hartley
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1855, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q21455157'
 - artist_id: alfred_manessier
   display_name: Alfred Manessier
   country_birth: FR
@@ -1835,6 +1945,18 @@ artists:
   - Alfred Woolnoth
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q21455388'
+- artist_id: alfredo_aguado
+  display_name: Alfredo Aguado
+  birth_year: 1905
+  death_year: 1930
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Alfredo Aguado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1905, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q55999525'
 - artist_id: alfredo_alcain
   display_name: Alfredo Alcaín
   country_birth: ES
@@ -2114,6 +2236,34 @@ artists:
   aliases:
   - ALLAN D'ARCANGELO
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4730556'
+- artist_id: allan_ramsay
+  display_name: Allan Ramsay
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1713
+  death_year: 1784
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Allan Ramsay
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1713, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q560792'
+- artist_id: alonso_cano
+  display_name: Alonso Cano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1601
+  death_year: 1667
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Alonso Cano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1601, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q378783'
 - artist_id: alonso_quijano
   display_name: Alonso Quijano
   country_birth: CO
@@ -2670,6 +2820,21 @@ artists:
   - André Lothe
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q111044219'
+- artist_id: andre_masson
+  display_name: André Masson
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1896
+  death_year: 1987
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ANDRE MASSON
+  - André Masson
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1896, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q312529'
 - artist_id: andre_planson
   display_name: Andre Planson
   country_birth: FR
@@ -2683,6 +2848,20 @@ artists:
   aliases:
   - André Planson
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16228923'
+- artist_id: andre_vautier
+  display_name: André Vautier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1861
+  death_year: 1941
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - André Vautier
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1861, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q127271537'
 - artist_id: andreas_gursky
   display_name: Andreas Gursky
   country_birth: null
@@ -2748,6 +2927,20 @@ artists:
   - Andrés Cillero
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q60828446'
+- artist_id: andres_colombo
+  display_name: Andrés Colombo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1911
+  death_year: 1991
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Andrés Colombo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1911, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42908384'
 - artist_id: andres_conejo
   display_name: Andrés Conejo
   country_birth: ES
@@ -2806,6 +2999,17 @@ artists:
   notes: '7 lotes | casas: bogota_auctions, lefebre_subastas | Nacido en BOGOTA pese a formarse en Bruselas y Paris
     y morir en Bruselas: el perfil que un heuristico ''por mercado'' clasificaria mal. NO fusionar con ''Navas Sanz
     de Santamaria, Pablo'' ni ''Sanz de Santamaria, Carlos'', que son otras personas.'
+- artist_id: andres_gimeno
+  display_name: Andrés Gimeno
+  birth_year: 1879
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Andrés Gimeno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1879, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q98460499'
 - artist_id: andres_holguin
   display_name: Andres Holguin
   country_birth: CO
@@ -2950,6 +3154,19 @@ artists:
   - ANDREU ALFARO
   - Andreu Alfaro
   notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: andrew_lord
+  display_name: Andrew Lord
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1950
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ANDREW LORD
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1950, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28756442'
 - artist_id: andy_warhol
   display_name: Andy Warhol
   country_birth: US
@@ -2965,6 +3182,20 @@ artists:
   - Andy Warhol (EE.UU., 1928 - 1987.)
   - Andy Warhol
   notes: '51 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: angel_alonso
+  display_name: Angel Alonso
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1923
+  death_year: 1994
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Ángel Alonso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1923, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2849333'
 - artist_id: angel_andrade_blazquez
   display_name: Ángel Andrade
   country_birth: ES
@@ -3137,6 +3368,21 @@ artists:
   - Ángel Mateo Charris
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5086668'
   death_status: living
+- artist_id: angel_medina
+  display_name: Angel Medina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1924
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Ángel Medina
+  - Angel Medina
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1924, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q17621082'
 - artist_id: angel_oliveras_guart
   display_name: Ángel Oliveras Guart
   country_birth: ES
@@ -3533,6 +3779,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q590231'
   death_status: living
+- artist_id: anton_hubner
+  display_name: Anton Hübner
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1818
+  death_year: 1892
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Anton Hubner
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1818, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q97930370'
 - artist_id: anton_lamazares
   display_name: Antón Lamazares
   country_birth: ES
@@ -3747,6 +4007,18 @@ artists:
   aliases:
   - ANTONIO BERNI
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2566694'
+- artist_id: antonio_bisquert
+  display_name: Antonio Bisquert Pérez
+  birth_year: 1906
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Antonio Bisquert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1906, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q28182174'
 - artist_id: antonio_brugada
   display_name: Antonio de Brugada
   country_birth: ES
@@ -3962,6 +4234,20 @@ artists:
   - Antonio Fabres y Costa
   - Antonio Fabrés y Costa
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q654125'
+- artist_id: antonio_fernandez_gomez
+  display_name: Antonio Fernández Gómez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1882
+  death_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Antonio Fernández Gómez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1882, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q8201211'
 - artist_id: antonio_fernandez_molina
   display_name: Antonio Fernández Molina
   country_birth: ES
@@ -4266,6 +4552,18 @@ artists:
   - Antonio Jardines
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q97571269'
+- artist_id: antonio_jimenez
+  display_name: Antonio Jiménez
+  birth_year: 1945
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Antonio Jiménez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1945, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q110125618'
 - artist_id: antonio_lago
   display_name: Antonio Lago
   country_birth: ES
@@ -4485,6 +4783,20 @@ artists:
   - Antonio Papasso
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q6597314'
+- artist_id: antonio_pena
+  display_name: Antonio Pena
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1894
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ANTONIO PENA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1894, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5699344'
 - artist_id: antonio_posada_ranz
   display_name: Antonio Posada Ranz
   country_birth: ES
@@ -4512,6 +4824,20 @@ artists:
   - Antonio Puga
   notes: '1 lote vendido por 27.500 EUR | casas: duran_subastas | nacido en Orense en 1602 y fallecido en Madrid
     en 1648; las fechas coinciden con la ficha de la casa. Fuente: https://www.museodelprado.es/coleccion/artista/puga-antonio/4cbebf67-b5b5-4d41-a6ff-888e91ba383b'
+- artist_id: antonio_quintana
+  display_name: Antonio Quintana
+  country_birth: CL
+  nationalities:
+  - CL
+  birth_year: 1904
+  death_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Antonio Quintana
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1904, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2857412'
 - artist_id: antonio_quiros
   display_name: Antonio Quirós
   country_birth: ES
@@ -4686,6 +5012,20 @@ artists:
   aliases:
   - Antonio Santos Viana
   notes: '19 lotes | casas: duran_subastas'
+- artist_id: antonio_sarti
+  display_name: Antonio Sarti
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1797
+  death_year: 1880
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Antonio Sarti
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1797, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q61785987'
 - artist_id: antonio_saura
   display_name: Antonio Saura
   country_birth: ES
@@ -4822,6 +5162,18 @@ artists:
   - ANTONIO VALENCIA MEJIA
   - Antonio Valencia Mejía
   notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: antonio_vazquez
+  display_name: Antonio Vázquez
+  birth_year: 1485
+  death_year: 1563
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Antonio Vázquez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1485, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q17621297'
 - artist_id: antonio_villatoro
   display_name: Antonio Villa-Toro
   country_birth: ES
@@ -5025,6 +5377,19 @@ artists:
   aliases:
   - ARMANDO REVERON
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2343025'
+- artist_id: armando_sendin
+  display_name: Armando Sendin
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ARMANDO SENDIN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1925, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q9629337'
 - artist_id: armando_villegas
   display_name: Armando Villegas
   country_birth: PE
@@ -5309,6 +5674,20 @@ artists:
   aliases:
   - August Puig
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q763477'
+- artist_id: august_siegert
+  display_name: Augustin Siegert
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1786
+  death_year: 1869
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - August Siegert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1786, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q62505874'
 - artist_id: auguste_allonge
   display_name: Auguste Allongé
   country_birth: FR
@@ -5322,6 +5701,20 @@ artists:
   aliases:
   - Auguste Allonge
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2871026'
+- artist_id: auguste_delacroix
+  display_name: Auguste Delacroix
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1809
+  death_year: 1868
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Auguste Delacroix
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1809, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q766340'
 - artist_id: auguste_henri_louis_de_clermont
   display_name: Auguste-Henri-Louis De Clermont
   country_birth: null
@@ -5501,3 +5894,17 @@ artists:
   - Aurelio Suárez
   - Aurelio Suarez
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5398382'
+- artist_id: aurelio_tolosa
+  display_name: Aureli Tolosa i Alsina
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1861
+  death_year: 1938
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Aurelio Tolosa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1861, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q16999675'

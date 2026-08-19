@@ -273,6 +273,20 @@ artists:
   aliases:
   - Léon Danchin
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3270866'
+- artist_id: leon_ferrari
+  display_name: León Ferrari
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1920
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - LEON FERRARI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q324030'
 - artist_id: leon_huygens
   display_name: Léon Huygens
   country_birth: BE
@@ -491,6 +505,20 @@ artists:
   aliases:
   - Leopoldo Galeota
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21453662'
+- artist_id: leopoldo_garcia_ramon
+  display_name: Leopoldo García Ramón
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1876
+  death_year: 1958
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Leopoldo García Ramón
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1876, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q9021586'
 - artist_id: leopoldo_guerrero_del_castillo
   display_name: Leopoldo Guerrero del Castillo
   birth_year: 1878
@@ -1051,6 +1079,20 @@ artists:
   aliases:
   - Louis Leopold Boilly
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q715909'
+- artist_id: louis_reinhardt
+  display_name: Ludwig Reinhardt
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1849
+  death_year: 1870
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Louis REINHARDT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1849, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q26772616'
 - artist_id: louise_nevelson
   display_name: Louise Nevelson
   country_birth: UA
@@ -1297,6 +1339,20 @@ artists:
   - MUÑOZ, LUCIO
   - MUÑOZ MARTÍNEZ, LUCIO
   notes: '62 lotes | casas: duran_subastas | pintor nacido en Madrid en 1929 y fallecido en 1998. Fuente: https://www.museoreinasofia.es/exposicion/lucio-munoz'
+- artist_id: lucius_rossi
+  display_name: Lucius Rossi
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1846
+  death_year: 1913
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Lucius Rossi
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1846, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q26248409'
 - artist_id: lucy_tejada
   display_name: Lucy Tejada
   country_birth: CO
@@ -1468,6 +1524,20 @@ artists:
   aliases:
   - Luis Bagaría
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q504959'
+- artist_id: luis_berdejo
+  display_name: Luis Berdejo Elipe
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1902
+  death_year: 1980
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Luis Berdejo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1902, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q13049530'
 - artist_id: luis_bertodano
   display_name: Luis Bertodano
   country_birth: null
@@ -1597,6 +1667,20 @@ artists:
   aliases:
   - Luis de Madrazo y Kuntz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3840426'
+- artist_id: luis_de_morales
+  display_name: Luis de Morales
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1509
+  death_year: 1586
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Luis de Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1509, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q703250'
 - artist_id: luis_delacamara
   display_name: Luis Delacamara
   country_birth: null

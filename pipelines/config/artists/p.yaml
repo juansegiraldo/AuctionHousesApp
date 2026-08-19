@@ -168,7 +168,10 @@ artists:
   - Pablo Ruiz Picasso
   - Picasso, Pablo
   - PICASSO, PABLO RUIZ
-  notes: '13 lotes | casas: bogota_auctions, duran_subastas'
+  - Picasso
+  - PICASSO
+  notes: '13 lotes | casas: bogota_auctions, duran_subastas. Ficha ''picasso'' consolidada aqui el 2026-08-19: misma
+    persona (mismas fechas).'
 - artist_id: pablo_raul_quert_alvarez
   display_name: Pablo Raúl Quert Álvarez
   country_birth: CU
@@ -244,6 +247,17 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q55992734'
   death_status: living
+- artist_id: pablo_tamayo
+  display_name: Pablo Tamayo
+  birth_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - PABLO TAMAYO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1972, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q123579561'
 - artist_id: pablo_uranga_diaz_de_arcaya
   display_name: Pablo Uranga
   country_birth: ES
@@ -789,6 +803,18 @@ artists:
   - Pedro de Oraa
   - Pedro de Oraá
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q59179487'
+- artist_id: pedro_de_valencia
+  display_name: Pedro de Valencia
+  birth_year: 1902
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pedro de Valencia
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1902, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q136101307'
 - artist_id: pedro_delso_ruperez
   display_name: Pedro Delso Rupérez
   country_birth: ES
@@ -880,6 +906,19 @@ artists:
   - Pedro Gastó VIlanova
   - Pedro Gastó
   notes: '30 lotes | casas: duran_subastas'
+- artist_id: pedro_gonzalez
+  display_name: Pedro González
+  birth_year: 1927
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pedro González
+  - Pedro Gonzalez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1927, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q94649046'
 - artist_id: pedro_gros
   display_name: Pedro Gross
   country_birth: ES
@@ -1444,6 +1483,20 @@ artists:
   aliases:
   - Philip-Lorca Dicorcia
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1274009'
+- artist_id: philippe_derchain
+  display_name: Philippe Derchain
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1873
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Philippe DERCHAIN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1873, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21712377'
 - artist_id: philippe_halsman
   display_name: Philippe Halsman
   birth_year: 1906
@@ -1558,6 +1611,20 @@ artists:
   aliases:
   - PIERRE-JULES MENE
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3383244'
+- artist_id: pierre_keller
+  display_name: Pierre Keller
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1945
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - PIERRE KELLER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1945, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3385675'
 - artist_id: pierre_le_faguays
   display_name: Pierre Le Faguays
   country_birth: FR
@@ -1623,6 +1690,49 @@ artists:
   aliases:
   - PIET MONDRIAN
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q151803'
+- artist_id: pieter_de_molijn
+  display_name: Pieter de Molijn
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1595
+  death_year: 1661
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Pieter de Molijn
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1595, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28771'
+- artist_id: pieter_schenk
+  display_name: Peter Schenk the Elder
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1660
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Pieter Schenk
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1660, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q78163'
+- artist_id: pietro_barucci
+  display_name: Pietro Barucci
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1845
+  death_year: 1917
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Pietro BARUCCI
+  - PIETRO BARUCCI
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1845, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q7192931'
 - artist_id: pietro_parboni
   display_name: Pietro Parboni
   country_birth: IT
@@ -1650,6 +1760,18 @@ artists:
     (Q3904190) y las tandas automaticas ya le han puesto pais TRES veces (altas y complementos); ahora esta en DISPUTED_IDENTITIES
     de artist_master_promote.py, que cubre las dos rutas. Un match exacto acredita que la ficha existe, no que la
     identidad sea real. Test: test_unverifiable_artists_keep_no_country.'
+- artist_id: pilar_aranda
+  display_name: Pilar Aranda Nicolás
+  birth_year: 1914
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Pilar Aranda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1914, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q18224620'
 - artist_id: pilar_cocero_de_corvera
   display_name: Pilar Cocero De Corvera
   country_birth: null

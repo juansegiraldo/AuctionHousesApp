@@ -178,6 +178,121 @@ def test_a_declared_non_artistic_occupation_still_rejects():
     assert skipped[0]["reason"] == "no_artistic_occupation"
 
 
+def _ambiguous(**updates):
+    """Dos homonimos humanos con el mismo nombre, distinto anio."""
+    result = _result(status="ambiguous")
+    result.pop("match", None)
+    result["candidates"] = [
+        {
+            "wikidata_id": "Q1",
+            "source_url": "https://www.wikidata.org/wiki/Q1",
+            "label": "Juan Pérez",
+            "matched_names": ["Juan Pérez"],
+            "proposal": {
+                "display_name": "Juan Pérez",
+                "birth_year": 1920,
+                "death_year": 1992,
+                "birth_places": [_place("Q1492", "Barcelona")],
+                "occupations": [_place("Q1028181", "pintor")],
+            },
+        },
+        {
+            "wikidata_id": "Q2",
+            "source_url": "https://www.wikidata.org/wiki/Q2",
+            "label": "Juan Pérez",
+            "matched_names": ["Juan Pérez"],
+            "proposal": {
+                "display_name": "Juan Pérez",
+                "birth_year": 1855,
+                "death_year": 1910,
+                "birth_places": [_place("Q90", "París")],
+                "occupations": [_place("Q1028181", "pintor")],
+            },
+        },
+    ]
+    result.update(updates)
+    return result
+
+
+def test_the_catalog_birth_year_breaks_a_two_way_ambiguity():
+    """Dos homonimos y la casa publica el anio: eso desempata.
+
+    No es una conjetura: son dos fuentes independientes concordando. El
+    catalogo dice 1920 y solo uno de los dos candidatos nacio en 1920.
+    """
+    result = _ambiguous()
+    result["master_context"] = {"candidate_birth_year": 1920}
+
+    entries, _ = promote.build_entries([result], master={})
+
+    assert len(entries) == 1
+    assert entries[0]["birth_year"] == 1920
+    assert entries[0]["country_birth"] == "ES"
+    # Nunca "high": el desempate es solido pero sigue siendo un homonimo.
+    assert entries[0]["confidence"] == "medium"
+    assert "desempat" in entries[0]["notes"].lower()
+
+
+def test_an_ambiguity_the_catalog_cannot_break_stays_out():
+    """Si el anio del catalogo no casa con ninguno, sigue sin resolver."""
+    result = _ambiguous()
+    result["master_context"] = {"candidate_birth_year": 1700}
+
+    entries, skipped = promote.build_entries([result], master={})
+
+    assert entries == []
+    assert skipped[0]["reason"] == "status_ambiguous"
+
+
+def test_an_ambiguity_matching_two_candidates_stays_out():
+    """Dos candidatos con el mismo anio no se desempatan por fecha."""
+    result = _ambiguous()
+    result["candidates"][1]["proposal"]["birth_year"] = 1920
+    result["master_context"] = {"candidate_birth_year": 1920}
+
+    entries, skipped = promote.build_entries([result], master={})
+
+    assert entries == []
+    assert skipped[0]["reason"] == "status_ambiguous"
+
+
+def test_an_ambiguity_without_a_catalog_year_stays_out():
+    """Sin dato de la casa no hay desempate posible."""
+    result = _ambiguous()
+
+    entries, skipped = promote.build_entries([result], master={})
+
+    assert entries == []
+    assert skipped[0]["reason"] == "status_ambiguous"
+
+
+def test_a_non_latin_wikidata_label_does_not_become_the_display_name():
+    """Wikidata devolvio 'بابلو بيكاسو' como label de Picasso.
+
+    El display_name es lo que se PUBLICA en el informe y lo que la casa
+    escribe en su catalogo, asi que un label en otro alfabeto no puede
+    ganarle al nombre del catalogo. Ademas parte la ficha: 'picasso' habria
+    entrado como artista nuevo teniendo ya 'pablo_picasso'.
+    """
+    result = _result(display_name="Pablo Picasso", aliases=["Pablo Picasso"])
+    result["match"]["label"] = "Pablo Picasso"
+    result["match"]["proposal"]["display_name"] = "بابلو بيكاسو"
+
+    entries, _ = promote.build_entries([result], master={})
+
+    assert entries[0]["display_name"] == "Pablo Picasso"
+
+
+def test_a_latin_wikidata_label_still_wins_over_the_catalog_form():
+    """El label de Wikidata suele estar mejor escrito que el del catalogo."""
+    result = _result(display_name="PEREZ, JUAN", aliases=["PEREZ, JUAN"])
+    result["match"]["proposal"]["display_name"] = "Juan Pérez"
+
+    entries, _ = promote.build_entries([result], master={})
+
+    assert entries[0]["display_name"] == "Juan Pérez"
+
+
 def test_an_identity_the_repo_declares_unverifiable_is_never_promoted():
     """Pietro Psaier: existe la ficha de Wikidata, se discute la PERSONA.
 

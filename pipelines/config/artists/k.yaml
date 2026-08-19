@@ -99,6 +99,20 @@ artists:
   aliases:
   - Käthe Olshausen-Schonberger
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1712827'
+- artist_id: kathleen_browne
+  display_name: Kathleen Browne
+  country_birth: NZ
+  nationalities:
+  - NZ
+  birth_year: 1905
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Kathleen Browne
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1905, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21556608'
 - artist_id: kaws
   display_name: KAWS
   country_birth: US
@@ -113,6 +127,20 @@ artists:
   - Kaws
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3194367'
   death_status: living
+- artist_id: kazumi_amano
+  display_name: Amano Kazumi
+  country_birth: JP
+  nationalities:
+  - JP
+  birth_year: 1927
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Kazumi Amano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1927, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q69215609'
 - artist_id: kcho
   display_name: Kcho
   country_birth: CU

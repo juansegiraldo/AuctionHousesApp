@@ -36,6 +36,20 @@ artists:
   - Magali Lara
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26001043'
   death_status: living
+- artist_id: malcolm_hughes
+  display_name: Malcolm Hughes
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1920
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Malcolm Hughes
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6742390'
 - artist_id: malte_sartorius
   display_name: Malte Sartorius
   country_birth: RU
@@ -60,6 +74,20 @@ artists:
   - Mamerto Seguí Arecharala
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q110176216'
+- artist_id: man_ray
+  display_name: Man Ray
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1890
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Man Ray
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1890, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q46139'
 - artist_id: manel_lledos
   display_name: Manel Lledós
   country_birth: ES
@@ -426,6 +454,20 @@ artists:
   aliases:
   - Manuel Castro Mellado
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98097853'
+- artist_id: manuel_colmeiro
+  display_name: Manuel Colmeiro Guimarás
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel Colmeiro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1901, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1846044'
 - artist_id: manuel_cusi_y_ferret
   display_name: Manuel Cusí i Ferret
   country_birth: ES
@@ -705,6 +747,20 @@ artists:
   aliases:
   - Manuel López Garabal
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55769649'
+- artist_id: manuel_lopez_ruiz
+  display_name: Manuel López Ruiz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1869
+  death_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel López Ruiz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1869, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q60036262'
 - artist_id: manuel_lopez_villasenor
   display_name: Manuel López-Villaseñor y López-Cano
   country_birth: ES
@@ -732,6 +788,18 @@ artists:
   - Manuel Losada
   notes: '8 lotes | casas: duran_subastas | Manuel Losada Perez de Nenin, nacido y fallecido en Bilbao, 1865-1949;
     fechas coincidentes con Silver. Fuente: https://bilbaomuseoa.eus/explora/artista/manuel-losada-perez-de-nenin/9e396d4a-23b7-4a09-8386-3afb0f595d80'
+- artist_id: manuel_maldonado
+  display_name: Manuel Maldonado
+  birth_year: 1915
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Manuel Maldonado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1915, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q55949877'
 - artist_id: manuel_mampaso
   display_name: Manuel Mampaso Bueno
   country_birth: ES
@@ -857,6 +925,20 @@ artists:
   - Manuel Osuna
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q100249627'
+- artist_id: manuel_otero
+  display_name: Manuel Otero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1921
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel Otero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42385566'
 - artist_id: manuel_oyonarte
   display_name: Manuel Oyonarte
   country_birth: ES
@@ -1043,6 +1125,20 @@ artists:
   - Manuel Rosé
   - Manuel ROSÉ
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16860267'
+- artist_id: manuel_ruiz_guerrero
+  display_name: Manuel Ruiz Guerrero
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1864
+  death_year: 1917
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel Ruiz Guerrero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1864, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q27431311'
 - artist_id: manuel_ruiz_morales
   display_name: Manuel Bernardino Ruiz Sánchez Morales
   country_birth: ES
@@ -1121,6 +1217,34 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55999247'
   death_status: living
+- artist_id: manuel_torres_martinez
+  display_name: Manuel Torres Martínez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1901
+  death_year: 1995
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel Torres Martínez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1901, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q12392834'
+- artist_id: manuel_tovar
+  display_name: Manuel Tovar
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1875
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Manuel tovar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1875, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q17682774'
 - artist_id: manuel_valdes
   display_name: Manuel Valdés
   country_birth: ES
@@ -1427,6 +1551,19 @@ artists:
   - MARCO TULIO VILLALOBOS
   - Marco Tulio Villalobos
   notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: margarita_lozano
+  display_name: Margarita Lozano
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - MARGARITA LOZANO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1936, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42308778'
 - artist_id: margarita_monsalve
   display_name: Margarita María Monsalve Pino
   birth_year: 1948
@@ -1699,6 +1836,17 @@ artists:
   aliases:
   - MARIA GORDILLO
   notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: maria_isabel_rueda
+  display_name: María Isabel Rueda
+  birth_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - MARIA ISABEL RUEDA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1972, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q130554375'
 - artist_id: maria_luisa_de_la_riva_munoz
   display_name: María Luisa de la Riva y Callol-Muñoz
   country_birth: ES
@@ -1737,6 +1885,20 @@ artists:
   - María Mira Montoyo
   - Maria Mira Montoyo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96593693'
+- artist_id: maria_pop
+  display_name: Maria Pop
+  country_birth: GR
+  nationalities:
+  - GR
+  birth_year: 1925
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Maria Pop
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1925, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q104034703'
 - artist_id: maria_revenga
   display_name: María Revenga
   country_birth: null
@@ -1860,6 +2022,20 @@ artists:
   aliases:
   - Mariano Alonso Pérez
   notes: '11 lotes en Silver | fuente: Wikidata'
+- artist_id: mariano_andreu
+  display_name: Mariano Andreu
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Mariano Andreu
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1888, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6762305'
 - artist_id: mariano_barbasan_lagueruela
   display_name: Mariano Barbasán
   country_birth: ES
@@ -2064,6 +2240,20 @@ artists:
   - MARIANO RODRIGUEZ
   - Mariano Rodríguez
   notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: mariano_salvador_maella
+  display_name: Mariano Salvador Maella
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1739
+  death_year: 1819
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Mariano Salvador Maella
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1739, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q662397'
 - artist_id: mariano_tito_vazquez
   display_name: Mariano Tito Vázquez
   country_birth: ES
@@ -2419,6 +2609,20 @@ artists:
     Paises Bajos espanioles: hoy BE, pero el estado belga no existia (Flandes historico). Murio en Frankfurt tras
     huir de las persecuciones religiosas. OJO: es una familia entera de pintores (su hermano Lucas, sus hijos Frederik
     y Gillis); un ''van Valckenborch'' sin nombre de pila NO debe resolverse aqui.'
+- artist_id: martin_archer_shee
+  display_name: Martin Archer Shee
+  country_birth: IE
+  nationalities:
+  - IE
+  birth_year: 1769
+  death_year: 1850
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Martin Archer-Shee
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1769, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3850027'
 - artist_id: martin_chambi_jimenez
   display_name: Martín Chambi
   country_birth: PE
@@ -2446,19 +2650,6 @@ artists:
   aliases:
   - Martín Chirino
   notes: '41 lotes | casas: duran_subastas'
-- artist_id: martin_rico_ortega
-  display_name: Martín Rico
-  country_birth: ES
-  nationalities:
-  - ES
-  birth_year: 1833
-  death_year: 1908
-  attribution_type: autor
-  source: wikidata
-  confidence: high
-  aliases:
-  - Martín Rico Ortega
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q427999'
 - artist_id: martin_rico_y_ortega
   display_name: Martín Rico y Ortega
   country_birth: ES
@@ -2471,7 +2662,10 @@ artists:
   confidence: high
   aliases:
   - Martín Rico y Ortega
-  notes: '14 lotes | casas: duran_subastas'
+  - Martín Rico Ortega
+  - Martín Rico
+  notes: '14 lotes | casas: duran_subastas. Ficha ''martin_rico_ortega'' consolidada aqui el 2026-08-19: misma persona
+    (mismas fechas).'
 - artist_id: martin_ruiz_anglada
   display_name: Ruizanglada
   country_birth: ES
@@ -3198,6 +3392,20 @@ artists:
   - Michael Swaney
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133578642'
   death_status: living
+- artist_id: michel_bouquet
+  display_name: Michel Bouquet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1807
+  death_year: 1890
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Michel Bouquet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1807, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3309075'
 - artist_id: michel_hunter
   display_name: Michel Hunter
   country_birth: BE
@@ -3419,6 +3627,32 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q55688275'
   death_status: living
+- artist_id: miguel_cabrera
+  display_name: Miguel Cabrera
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1695
+  death_year: 1768
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Miguel Cabrera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1695, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q527206'
+- artist_id: miguel_davila
+  display_name: Miguel Dávila
+  birth_year: 1926
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Miguel Dávila
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1926, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q20990940'
 - artist_id: miguel_de_la_espriella
   display_name: Miguel de la Espriella
   country_birth: CO
@@ -3587,6 +3821,20 @@ artists:
   - Miguel Pradilla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q97604148'
+- artist_id: miguel_prieto
+  display_name: Miguel Prieto Anguita
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1907
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Miguel Prieto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1907, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6014966'
 - artist_id: miguel_rasero
   display_name: Miguel Rasero
   country_birth: ES
@@ -4222,6 +4470,20 @@ artists:
   - Muriel Angulo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q140181273'
+- artist_id: myles_birket_foster
+  display_name: Myles Birket Foster
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1825
+  death_year: 1899
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Myles Birket Foster
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1825, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1738050'
 - artist_id: myrna_baez
   display_name: Myrna Baez
   country_birth: PR

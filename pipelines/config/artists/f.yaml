@@ -157,7 +157,9 @@ artists:
   aliases:
   - Federico de Madrazo
   - Federico de Madrazo y Kuntz
-  notes: '5 lotes | casas: duran_subastas'
+  - Federico Madrazo
+  notes: '5 lotes | casas: duran_subastas. Ficha ''federico_madrazo'' consolidada aqui el 2026-08-19: misma persona
+    (mismas fechas).'
 - artist_id: federico_echevarria
   display_name: Federico de Echevarría Uribe
   country_birth: ES
@@ -213,17 +215,6 @@ artists:
   - Federico Lloveras
   - Federico LLoveras
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11923057'
-- artist_id: federico_madrazo
-  display_name: Federico Madrazo
-  birth_year: 1815
-  death_year: 1894
-  attribution_type: autor
-  source: wikidata
-  confidence: low
-  aliases:
-  - Federico Madrazo
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q1345186'
 - artist_id: federico_montanana
   display_name: Federico Montañana
   country_birth: ES
@@ -824,6 +815,17 @@ artists:
   aliases:
   - Fernando Chueca
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q322154'
+- artist_id: fernando_davila
+  display_name: Fernando Dávila
+  birth_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - FERNANDO DAVILA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1953, el anio que publica la casa. Wikidata no declara ocupacion: confirmar que es artista
+    antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q139098374'
 - artist_id: fernando_de_amarica_y_medina
   display_name: Fernando de Amárica
   country_birth: ES
@@ -888,6 +890,20 @@ artists:
   - Fernando Fernández Mota
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q98110293'
+- artist_id: fernando_fresno
+  display_name: Fernando Fresno
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1881
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Fernando Fresno
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1881, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q19203135'
 - artist_id: fernando_higueras
   display_name: Fernando Higueras
   country_birth: ES
@@ -941,6 +957,31 @@ artists:
   - Fernando Lerin
   - Fernando Lerín
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3069483'
+- artist_id: fernando_maldonado
+  display_name: Fernando Maldonado
+  country_birth: CO
+  nationalities:
+  - CO
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - FERNANDO MALDONADO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1962, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5687637'
+- artist_id: fernando_martinez_checa
+  display_name: Fernando Martínez Checa
+  birth_year: 1858
+  death_year: 1933
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Fernando Martínez Checa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1858, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q5859862'
 - artist_id: fernando_oramas
   display_name: Fernando Oramas
   country_birth: CO
@@ -1347,6 +1388,20 @@ artists:
   - Francesco Bartolozzi
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q734889'
+- artist_id: francesco_camarda
+  display_name: Francesco Camarda
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1886
+  death_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francesco Camarda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1886, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q110961756'
 - artist_id: francesco_maestosi
   display_name: Francesco Maestosi
   birth_year: 1822
@@ -1371,6 +1426,20 @@ artists:
   aliases:
   - Francesco Paolo Michetti
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3081044'
+- artist_id: francesco_peluso
+  display_name: Francesco Peluso
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1836
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francesco Peluso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1836, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q106696328'
 - artist_id: francesco_raibolini_francia
   display_name: Francesco Francia
   country_birth: IT
@@ -1383,6 +1452,20 @@ artists:
   aliases:
   - Francesco Raibolini Francia
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q260057'
+- artist_id: francesco_solimena
+  display_name: Francesco Solimena
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1657
+  death_year: 1747
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francesco Solimena
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1657, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q736065'
 - artist_id: francis_bacon
   display_name: Francis Bacon
   country_birth: IE
@@ -1397,6 +1480,20 @@ artists:
   aliases:
   - Francis Bacon
   notes: '3 lotes | casas: duran_subastas'
+- artist_id: francis_grant
+  display_name: Francis Grant
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1803
+  death_year: 1878
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francis Grant
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1803, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1628686'
 - artist_id: francis_picabia
   display_name: فرانسيس پيكابيا
   country_birth: FR
@@ -1512,6 +1609,20 @@ artists:
   aliases:
   - Francisco Barrachina
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q123158407'
+- artist_id: francisco_barrera
+  display_name: Francisco Barrera
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1595
+  death_year: 1658
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francisco Barrera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1595, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2397091'
 - artist_id: francisco_bayeu
   display_name: Francisco Bayeu
   country_birth: ES
@@ -1841,6 +1952,20 @@ artists:
   - Francisco Guinart Candelich
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q131448972'
+- artist_id: francisco_hernandez
+  display_name: Francisco Hernández Díaz
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  death_year: 2012
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francisco Hernández
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1932, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5865982'
 - artist_id: francisco_hohenleiter
   display_name: Francisco Hohenleiter
   country_birth: ES
@@ -2016,6 +2141,20 @@ artists:
   aliases:
   - Francisco Meneses Osorio
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5483705'
+- artist_id: francisco_miralles
+  display_name: Francisco Miralles Galup
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1848
+  death_year: 1901
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francisco Miralles
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1848, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3081026'
 - artist_id: francisco_narbona
   display_name: Francisco Narbona
   country_birth: ES
@@ -2173,6 +2312,20 @@ artists:
   aliases:
   - Francisco Pons Arnau
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867118'
+- artist_id: francisco_portela
+  display_name: Francisco Portela
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1869
+  death_year: 1956
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Francisco Portela
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1869, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q99859680'
 - artist_id: francisco_pradilla_ortiz
   display_name: Francisco Pradilla Ortiz
   country_birth: ES
@@ -2294,6 +2447,19 @@ artists:
   - Francisco Rodríguez Sanclement
   - Francisco Rodriguez Sanclement
   notes: '13 lotes en Silver | fuente: Artnet'
+- artist_id: francisco_ruiz
+  display_name: Francisco Ruiz
+  country_birth: AR
+  nationalities:
+  - AR
+  birth_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - FRANCISCO RUIZ
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1945, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q99493435'
 - artist_id: francisco_ruiz_morales
   display_name: Francisco Ruiz Morales
   country_birth: null
@@ -2485,6 +2651,20 @@ artists:
   - Francky Boy
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q139586030'
   death_status: living
+- artist_id: francois_bonvin
+  display_name: François Bonvin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1817
+  death_year: 1887
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - François Bonvin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1817, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1357683'
 - artist_id: francois_charles_cachoud
   display_name: François Cachoud
   country_birth: FR
@@ -2625,6 +2805,48 @@ artists:
   aliases:
   - Franklin, Benjamin
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q34969'
+- artist_id: frans_wouters
+  display_name: Frans Wouters
+  country_birth: BE
+  nationalities:
+  - BE
+  birth_year: 1612
+  death_year: 1659
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Frans Wouters
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1612, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1959143'
+- artist_id: frantisek_dvorak
+  display_name: Franz Dvorak
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1862
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - František DVOŘÁK
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1862, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q14506842'
+- artist_id: frantisek_kupka
+  display_name: František Kupka
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1871
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Frantisek Kupka
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1871, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q167414'
 - artist_id: franz_werner_von_tamm
   display_name: Franz Werner Tamm
   country_birth: DE
@@ -2746,6 +2968,20 @@ artists:
   - Frederick Hendrik Kaemmerer
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q132130895'
+- artist_id: frederick_walker
+  display_name: Frederick Walker
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1840
+  death_year: 1875
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Frederick Walker
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1840, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5498976'
 - artist_id: frederico_vigil
   display_name: Frederico Vigil
   country_birth: US

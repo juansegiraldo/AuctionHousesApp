@@ -27,6 +27,20 @@ artists:
     el nacimiento y su produccion de spin paintings, coincidente con los lotes de Silver. Fuentes: https://collection.britishcouncil.org/author/hirst-damien/6495b265425178137a390e43?_locale=en
     ; https://www.npg.org.uk/collections/search/person/mp14191/damien-hirst'
   death_status: living
+- artist_id: dan_flavin
+  display_name: Dan Flavin
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1933
+  death_year: 1996
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Dan Flavin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1933, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q504395'
 - artist_id: dana_gluckstein
   display_name: Dana Gluckstein
   country_birth: US
@@ -75,6 +89,20 @@ artists:
   - Daniel Canogar
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19998250'
   death_status: living
+- artist_id: daniel_hernandez
+  display_name: Daniel Hernández Morillo
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1856
+  death_year: 1932
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Daniel Hernández
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1856, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3014183'
 - artist_id: daniel_merino
   display_name: Daniel Merino
   country_birth: ES
@@ -99,6 +127,20 @@ artists:
   - Daniel Perea y Rojas
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q17515989'
+- artist_id: daniel_sabater
+  display_name: Daniel Sabater Salabert
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1888
+  death_year: 1951
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Daniel Sabater
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1888, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q50185266'
 - artist_id: daniel_salamanca
   display_name: Daniel Salamanca
   country_birth: CO
@@ -610,6 +652,34 @@ artists:
   aliases:
   - Diego Mullor
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q121666787'
+- artist_id: diego_rivera
+  display_name: Diego Rivera
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1886
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - DIEGO RIVERA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1886, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q171128'
+- artist_id: dieter_roth
+  display_name: Dieter Roth
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1930
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Dieter Roth
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1930, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q25591768'
 - artist_id: dieter_wallert
   display_name: Dieter Wallert
   birth_year: 1935
@@ -859,6 +929,20 @@ artists:
   aliases:
   - Domingo Laporte
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12163354'
+- artist_id: domingo_martinez
+  display_name: Domingo Martínez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1688
+  death_year: 1749
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Domingo Martínez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1688, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5812830'
 - artist_id: domingo_moreno_otero
   display_name: Domingo Moreno Otero
   country_birth: CO
@@ -949,6 +1033,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q99481766'
   death_status: living
+- artist_id: don_herbert
+  display_name: Don Herbert
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1942
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Don Herbert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1942, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q110242770'
 - artist_id: donald_sultan
   display_name: Donald Sultan
   country_birth: US

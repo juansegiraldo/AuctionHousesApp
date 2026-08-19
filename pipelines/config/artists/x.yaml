@@ -25,6 +25,20 @@ artists:
   - Xano Armenter
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16170391'
   death_status: living
+- artist_id: xavier_blanch
+  display_name: Xavier Blanch Pla
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1918
+  death_year: 1999
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Xavier Blanch
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1918, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q11955286'
 - artist_id: xavier_corbero
   display_name: Xavier Corberó
   country_birth: ES

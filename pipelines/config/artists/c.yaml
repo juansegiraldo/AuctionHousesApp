@@ -38,6 +38,18 @@ artists:
   - Camilo Bojacá (Colombia, 1985)
   - CAMILO BOJACA
   notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: canaletto
+  display_name: Canaletto
+  birth_year: 1697
+  death_year: 1768
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Canaletto
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1697, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q182664'
 - artist_id: candido_portinari
   display_name: Candido Portinari
   country_birth: BR
@@ -79,6 +91,20 @@ artists:
   aliases:
   - Carl KAUBA
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1039179'
+- artist_id: carl_oscar_borg
+  display_name: Carl Oscar Borg
+  country_birth: SE
+  nationalities:
+  - SE
+  birth_year: 1879
+  death_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carl Oscar Borg
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1879, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5040599'
 - artist_id: carl_wilhelm_nordgren
   display_name: Carl Vilhelm Nordgren
   country_birth: SE
@@ -328,6 +354,20 @@ artists:
   aliases:
   - Carlos Cruz-Diez
   notes: '16 lotes | casas: bogota_auctions, duran_subastas'
+- artist_id: carlos_de_beistegui
+  display_name: Carlos de Beistegui
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1863
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carlos de Beistegui
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1863, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2939502'
 - artist_id: carlos_de_haes
   display_name: Carlos de Haes
   country_birth: ES
@@ -420,6 +460,19 @@ artists:
   - Carlos García-Alix
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55725975'
   death_status: living
+- artist_id: carlos_garcia_estrada
+  display_name: Carlos García Estrada
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - CARLOS GARCIA ESTRADA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1934, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q94457362'
 - artist_id: carlos_gonzalez_ragel
   display_name: Carlos González Ragel
   country_birth: ES
@@ -477,6 +530,20 @@ artists:
   notes: '5 filas en Silver | nacido en La Habana, Cuba, en 1950; fallecido en Miami en 1991. La ficha de Duran
     confirma que las formas cortas Alfonzo Espina y Alfonzo corresponden al nombre completo. Fuentes: https://americanart.si.edu/artist/carlos-alfonzo-7498
     ; https://www.wikidata.org/wiki/Q5750663 ; https://www.duran-subastas.com/es/subasta-lote/alfonzo-sin-titulo/598-210'
+- artist_id: carlos_jurado
+  display_name: Carlos Jurado
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1927
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carlos Jurado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1927, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1042988'
 - artist_id: carlos_laharrague
   display_name: Carlos Laharrague
   country_birth: ES
@@ -514,6 +581,34 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q111311089'
   death_status: living
+- artist_id: carlos_lezcano
+  display_name: Carlos Lezcano
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1871
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - CARLOS LEZCANO
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1871, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q27882206'
+- artist_id: carlos_llanos
+  display_name: Carlos Llanos
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1930
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - CARLOS LLANOS
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1930, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42395762'
 - artist_id: carlos_marcote
   display_name: Carlos Marcote
   country_birth: ES
@@ -554,6 +649,21 @@ artists:
   aliases:
   - Carlos María Esquivel Rivas
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18919729'
+- artist_id: carlos_maria_herrera
+  display_name: Carlos María Herrera
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1875
+  death_year: 1914
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carlos María HERRERA
+  - CARLOS MARÍA HERRERA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1875, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q456427'
 - artist_id: carlos_menck_freire
   display_name: Carlos Menck Freire
   country_birth: UY
@@ -910,6 +1020,20 @@ artists:
   - Carmelo García Barrena
   - GARCÍA BARRENA, CARMELO
   notes: '22 lotes | casas: duran_subastas'
+- artist_id: carmelo_gonzalez
+  display_name: Carmelo González Iglesias
+  country_birth: CU
+  nationalities:
+  - CU
+  birth_year: 1920
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carmelo Gónzález
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q61951330'
 - artist_id: carmelo_ortiz_de_elgea
   display_name: Carmelo Ortiz de Elgea
   country_birth: ES
@@ -1113,6 +1237,20 @@ artists:
   - Casimiro Sainz
   - Casimiro Sáinz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5756239'
+- artist_id: caspar_ritter
+  display_name: Caspar Ritter
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1861
+  death_year: 1923
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Caspar Ritter
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1861, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1048013'
 - artist_id: casto_plasencia
   display_name: Casto Plasencia
   country_birth: ES
@@ -1470,6 +1608,34 @@ artists:
   - Charles Boizard
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q110020737'
+- artist_id: charles_cottet
+  display_name: Charles Cottet
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1863
+  death_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Charles Cottet
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1863, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1574250'
+- artist_id: charles_edward_dixon
+  display_name: Charles Dixon
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1872
+  death_year: 1934
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Charles Edward DIXON
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1872, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5076893'
 - artist_id: charles_henri_willems
   display_name: Charles Henri Willems
   birth_year: 1865
@@ -1622,6 +1788,20 @@ artists:
   - Charles Rochussen
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q2252008'
+- artist_id: charles_schneider
+  display_name: Charles Schneider
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1881
+  death_year: 1953
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Charles SCHNEIDER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1881, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2960206'
 - artist_id: chatelain_henry_abraham
   display_name: CHATELAIN, HENRY ABRAHAM
   country_birth: FR

@@ -39,6 +39,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import unicodedata
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -192,6 +193,21 @@ def occupation_verdict(occupations: Iterable[Mapping[str, Any]]) -> str:
     return "non_artistic"
 
 
+
+def _is_latin(text: str) -> bool:
+    """True si el texto se escribe en alfabeto latino.
+
+    El display_name se PUBLICA en el informe y lo compara el fold contra el
+    catalogo, asi que un label en otro alfabeto no sirve: Wikidata devolvio
+    "بابلو بيكاسو" como label de Picasso, y esa ficha habria entrado como un
+    artista nuevo teniendo ya "pablo_picasso" en el maestro.
+    """
+    letters = [ch for ch in text if ch.isalpha()]
+    if not letters:
+        return False
+    return all("LATIN" in unicodedata.name(ch, "") for ch in letters)
+
+
 def _artist_id(result: Mapping[str, Any]) -> str:
     for key in ("research_key", "artist_key"):
         value = result.get(key)
@@ -207,6 +223,59 @@ def _aliases(result: Mapping[str, Any]) -> list[str]:
         if isinstance(value, str) and value.strip() and value.strip() not in names:
             names.append(value.strip())
     return names
+
+
+
+def _catalog_birth_year(result: Mapping[str, Any]) -> int | None:
+    """Anio de nacimiento que publica la casa, venga donde venga."""
+    direct = result.get("candidate_birth_year")
+    if direct is not None:
+        return _plausible_year(direct)
+    context = result.get("master_context")
+    if isinstance(context, Mapping):
+        return _plausible_year(context.get("candidate_birth_year"))
+    return None
+
+
+def _disambiguate_by_catalog_year(result: Mapping[str, Any]) -> dict[str, Any] | None:
+    """Un ambiguous con un unico candidato que casa el anio de la casa.
+
+    Devuelve el registro convertido en ``matched`` sobre ese candidato, o None
+    si no hay desempate limpio. La ficha resultante nunca llega a ``high``: es
+    un homonimo resuelto por concordancia, no una identidad sin dudas.
+    """
+    year = _catalog_birth_year(result)
+    if not year:
+        return None
+    candidates = result.get("candidates")
+    if not isinstance(candidates, list):
+        return None
+    hits = [
+        c
+        for c in candidates
+        if isinstance(c, Mapping)
+        and _plausible_year((c.get("proposal") or {}).get("birth_year")) == year
+    ]
+    if len(hits) != 1:
+        return None
+    match = dict(hits[0])
+    resolved = dict(result)
+    resolved["status"] = "matched"
+    resolved["match"] = match
+    resolved["_disambiguated_by_catalog_year"] = year
+    return resolved
+
+
+
+def _display_name(
+    proposal: Mapping[str, Any], result: Mapping[str, Any], artist_id: str
+) -> str:
+    """El label de Wikidata gana salvo que no sea latino; ahi manda el catalogo."""
+    proposed = str(proposal.get("display_name") or "").strip()
+    catalog = str(result.get("display_name") or "").strip()
+    if proposed and _is_latin(proposed):
+        return proposed
+    return catalog or proposed or artist_id
 
 
 def build_entries(
@@ -257,7 +326,19 @@ def build_entries(
 
     for result in results:
         status = str(result.get("status") or "unknown")
-        if status != "matched":
+        if status == "ambiguous":
+            # Wikidata no desempata homonimos por popularidad, y hace bien.
+            # Pero la CASA publica el anio de nacimiento, y si solo uno de los
+            # candidatos lo cumple, son dos fuentes independientes concordando
+            # y la ambiguedad desaparece. Si casan dos, o ninguno, se queda sin
+            # resolver: el desempate tiene que ser unico para valer.
+            resolved = _disambiguate_by_catalog_year(result)
+            if resolved is None:
+                skip(result, "status_ambiguous")
+                continue
+            result = resolved
+            status = "matched"
+        elif status != "matched":
             skip(result, f"status_{status}")
             continue
 
@@ -388,6 +469,12 @@ def build_entries(
         if lots:
             note_parts.append(f"{lots} lotes")
         note_parts.append("Identidad verificada en Wikidata por match exacto de nombre")
+        disambiguated = result.get("_disambiguated_by_catalog_year")
+        if disambiguated:
+            note_parts.append(
+                "habia varios homonimos y se desempato porque solo uno nacio en "
+                f"{disambiguated}, el anio que publica la casa"
+            )
         if verdict == "unknown":
             note_parts.append(
                 "Wikidata no declara ocupacion: confirmar que es artista antes de fijar"
@@ -404,9 +491,7 @@ def build_entries(
 
         entry = {
                 "artist_id": artist_id,
-                "display_name": (
-                    proposal.get("display_name") or result.get("display_name") or artist_id
-                ),
+                "display_name": _display_name(proposal, result, artist_id),
                 "country_birth": country,
                 "nationalities": [country] if country else [],
                 "birth_year": birth,
@@ -416,7 +501,9 @@ def build_entries(
                 # Sin pais la ficha sigue siendo util (identidad y fechas), pero
                 # se marca low para que la siguiente tanda la vuelva a mirar.
                 "confidence": (
-                    "high"
+                    "medium"
+                    if disambiguated and country and birth
+                    else "high"
                     if country and birth and verdict == "artistic" and not implausibly_old
                     else "low"
                 ),

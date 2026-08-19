@@ -64,6 +64,20 @@ artists:
   aliases:
   - Zdena Fibichova
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21296305'
+- artist_id: zdenek_sykora
+  display_name: Zdeněk Sýkora
+  country_birth: CZ
+  nationalities:
+  - CZ
+  birth_year: 1920
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Zdeněk Sýkora
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1920, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q169066'
 - artist_id: zinaida_zatsepina
   display_name: Zinaida Illivna Zatsepina
   country_birth: RU

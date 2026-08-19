@@ -217,9 +217,9 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-08-19: 3,307 artists**, resolving **25,615 lots with a country** (60.8% of
-lots that have an author). In the ranking, **2,265 of 9,774 artists (23.2%) cover
-89.27% of artist-attributed revenue** — publish both figures, never just the first. Entry
+**Populated as of 2026-08-19: 3,524 artists**, resolving **26,034 lots with a country** (61.8% of
+lots that have an author). In the ranking, **2,386 of 9,769 artists (24.4%) cover
+89.79% of artist-attributed revenue** — publish both figures, never just the first. Entry
 completeness: 87.4% have a country, 94.4% a birth year, 70.9% are complete (country + birth +
 death-or-`living`). Everything else stays `fold_only` with no country, and the report publishes the
 real coverage rather than looking complete. To extend it:

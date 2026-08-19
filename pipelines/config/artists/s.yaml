@@ -176,6 +176,34 @@ artists:
   aliases:
   - Salvador Victoria
   notes: '19 lotes | casas: duran_subastas'
+- artist_id: salvator_rosa
+  display_name: Salvator Rosa
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1615
+  death_year: 1673
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Salvator Rosa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1615, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q359421'
+- artist_id: salvatore_frangiamore
+  display_name: Salvatore Frangiamore
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1853
+  death_year: 1915
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Salvatore Frangiamore
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1853, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q19966576'
 - artist_id: salvatore_scarpitta
   display_name: Salvatore Scarpitta
   country_birth: US
@@ -576,6 +604,20 @@ artists:
   aliases:
   - Sebastián Martínez Moyano
   notes: '65 lotes | casas: duran_subastas'
+- artist_id: sebastian_miranda
+  display_name: Sebastián Miranda
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1885
+  death_year: 1975
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Sebastián Miranda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1885, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3476923'
 - artist_id: sebastian_palomo_linares
   display_name: Palomo Linares
   country_birth: ES
@@ -785,6 +827,21 @@ artists:
   - Sergio Belinchón
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q5813151'
+- artist_id: sergio_telles
+  display_name: Sergio Telles
+  country_birth: BR
+  nationalities:
+  - BR
+  birth_year: 1936
+  death_year: 2022
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Sergio Telles
+  - SERGIO TELLES
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1936, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q10370248'
 - artist_id: sergio_trujillo_magnenat
   display_name: Sergio Trujillo Magnenat
   country_birth: CO
@@ -980,6 +1037,34 @@ artists:
   aliases:
   - Sigmar Polke
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q376062'
+- artist_id: silvano_girardello
+  display_name: Silvano Girardello
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1928
+  death_year: 2016
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Silvano Girardello
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1928, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q51328890'
+- artist_id: silvestre_perez
+  display_name: Silvestre Pérez
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1767
+  death_year: 1825
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Silvestre Pérez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1767, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q6128494'
 - artist_id: silvia_hornig
   display_name: Sílvia Hornig
   country_birth: DE
@@ -1109,6 +1194,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q55990226'
   death_status: living
+- artist_id: sofia_morales
+  display_name: Sofía Morales
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1917
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Sofía Morales
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1917, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q23071534'
 - artist_id: sofia_urrutia_holguin
   display_name: Sofía Urrutia Holguín
   country_birth: BO

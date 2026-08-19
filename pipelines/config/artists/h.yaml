@@ -20,6 +20,20 @@ artists:
   - HANS ALBRECHT VON DERSCHAU
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q55843668'
+- artist_id: hans_bachmann
+  display_name: Hans Bachmann
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1852
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Hans Bachmann
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1852, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q14906334'
 - artist_id: hans_bellmer
   display_name: Hans Bellmer
   country_birth: PL
@@ -154,6 +168,34 @@ artists:
   aliases:
   - Heinrich Pforr
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1598483'
+- artist_id: heinz_keller
+  display_name: Heinz Keller
+  country_birth: CH
+  nationalities:
+  - CH
+  birth_year: 1928
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Heinz Keller
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1928, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q94910273'
+- artist_id: helen_bradley
+  display_name: Helen Bradley
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1900
+  death_year: 1979
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Helen Bradley
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1900, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5701942'
 - artist_id: helene_feillet
   display_name: Hélène Feillet
   country_birth: FR
@@ -232,6 +274,20 @@ artists:
   aliases:
   - Henri Desire GAUQUIE
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3131037'
+- artist_id: henri_fugere
+  display_name: Henri Fugère
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1872
+  death_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Henri FUGÈRE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1872, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28317737'
 - artist_id: henri_girault_de_nolhac
   display_name: Henri de Nolhac
   country_birth: FR
@@ -312,6 +368,20 @@ artists:
   aliases:
   - Henri NIcolas Van Gorp
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3130449'
+- artist_id: henri_rousseau
+  display_name: Henri Rousseau
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1844
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HENRI ROUSSEAU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1844, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q156386'
 - artist_id: henri_van_wyk
   display_name: Henri van Wijk
   country_birth: FR
@@ -338,6 +408,60 @@ artists:
   aliases:
   - Henri Vergé Sarrat
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21074158'
+- artist_id: henry_andrews
+  display_name: Henry Andrews
+  birth_year: 1794
+  death_year: 1868
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - Henry Andrews
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1794, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q21289077'
+- artist_id: henry_arnold
+  display_name: Henry Arnold
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1879
+  death_year: 1945
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HENRY ARNOLD
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1879, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3132585'
+- artist_id: henry_bacon
+  display_name: Henry Bacon
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1839
+  death_year: 1912
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Henry Bacon
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1839, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1606486'
+- artist_id: henry_bright
+  display_name: Henry Bright
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1810
+  death_year: 1873
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HENRY BRIGHT
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1810, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5718611'
 - artist_id: henry_caro_delvaille
   display_name: Henry Caro-Delvaille
   country_birth: FR
@@ -404,6 +528,20 @@ artists:
   aliases:
   - Henry Pierce Bone
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5727002'
+- artist_id: herbert_fink
+  display_name: Herbert Fink
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1921
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HERBERT FINK
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q15407618'
 - artist_id: hercules_brabazon
   display_name: Hercules Brabazon Brabazon
   country_birth: FR
@@ -441,6 +579,20 @@ artists:
   - Herman Weyen
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q105090704'
+- artist_id: hermann_goldschmidt
+  display_name: Hermann Mayer Salomon Goldschmidt
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1802
+  death_year: 1866
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Hermann Goldschmidt
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1802, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q77022'
 - artist_id: hermann_josef_painitz
   display_name: Hermann Josef Painitz
   country_birth: AT
@@ -720,6 +872,21 @@ artists:
   notes: Pintor español nacido en Valencia el 29 de marzo de 1950. Profesor en la Facultad de Bellas Artes de la
     Universidad Politécnica de Valencia. Ha evolucionado del realismo al cubismo cromático.
   death_status: living
+- artist_id: horacio_torres
+  display_name: Horacio Torres
+  country_birth: IT
+  nationalities:
+  - IT
+  birth_year: 1924
+  death_year: 1976
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HORACIO TORRES
+  - Horacio TORRES
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1924, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21705889'
 - artist_id: hortensia_nunez_ladeveze
   display_name: Hortensia Núñez Ladeveze
   country_birth: ES
@@ -733,6 +900,21 @@ artists:
   - Hortensia Nunez-Ladeveze
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q106411321'
   death_status: living
+- artist_id: huang_zhou
+  display_name: Huang Zhou
+  country_birth: CN
+  nationalities:
+  - CN
+  birth_year: 1925
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Huang Zhou
+  - HUANG ZHOU
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1925, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q4502004'
 - artist_id: hugo_demarco
   display_name: Hugo Demarco
   country_birth: CO
@@ -812,6 +994,20 @@ artists:
   aliases:
   - HUGO SARTORE
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42405527'
+- artist_id: hugo_von_habermann
+  display_name: Hugo von Habermann
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1849
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Hugo Von Habermann
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1849, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q316819'
 - artist_id: hugo_zapata
   display_name: Hugo Zapata
   country_birth: CO

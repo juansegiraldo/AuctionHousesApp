@@ -872,6 +872,18 @@ artists:
   - Egbert Van der Poel
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q1296941'
+- artist_id: egbert_van_heemskerck
+  display_name: Egbert van Heemskerck
+  birth_year: 1634
+  death_year: 1704
+  attribution_type: autor
+  source: wikidata
+  confidence: low
+  aliases:
+  - EGBERT VAN HEEMSKERCK
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1634, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
+    Fuente: https://www.wikidata.org/wiki/Q721656'
 - artist_id: egon_possehl
   display_name: Egon Possehl
   country_birth: DE
@@ -1112,6 +1124,20 @@ artists:
   aliases:
   - Emile Auguste Pinchart
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20926482'
+- artist_id: emile_carlier
+  display_name: Émile Joseph Nestor Carlier
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1849
+  death_year: 1927
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - EMILE CARLIER
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1849, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2657618'
 - artist_id: emile_clavel
   display_name: Émile Clavel
   country_birth: FR
@@ -1140,6 +1166,34 @@ artists:
   - Emile Fabry
   notes: '1 lote | casas: duran_subastas | nacido en Verviers, Belgica, en 1865 y fallecido en Woluwe-Saint-Pierre
     en 1966; fechas coincidentes con Silver. Fuente: https://www.musee-orsay.fr/fr/ressources/repertoire-artistes-personnalites/emile-fabry-28615'
+- artist_id: emile_galle
+  display_name: Émile Gallé
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1846
+  death_year: 1904
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Emile Gallé
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1846, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q275085'
+- artist_id: emile_laporte
+  display_name: Emile Laporte
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1858
+  death_year: 1907
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - EMILE LAPORTE
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1858, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21328740'
 - artist_id: emile_munier
   display_name: Émile Munier
   country_birth: FR
@@ -1580,6 +1634,20 @@ artists:
   - Enrique Broglia
   - Enrique BROGLIA
   notes: '5 lotes | casas: zorrilla_subastas'
+- artist_id: enrique_careaga
+  display_name: Enrique Careaga
+  country_birth: PY
+  nationalities:
+  - PY
+  birth_year: 1944
+  death_year: 2014
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - ENRIQUE CAREAGA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1944, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5833142'
 - artist_id: enrique_castells_capurro
   display_name: Enrique Castells Capurro
   country_birth: UY
@@ -1808,6 +1876,19 @@ artists:
   - Enrique Marty
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19863315'
   death_status: living
+- artist_id: enrique_medina
+  display_name: Enrique Medina
+  country_birth: UY
+  nationalities:
+  - UY
+  birth_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Enrique MEDINA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1935, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q42387800'
 - artist_id: enrique_melida_y_alinari
   display_name: Enrique Mélida y Alinari
   country_birth: ES
@@ -1911,6 +1992,20 @@ artists:
   aliases:
   - Enrique Segura
   notes: '28 lotes | casas: duran_subastas'
+- artist_id: enrique_serra
+  display_name: Enrique Serra
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1859
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Enrique Serra
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1859, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q11919354'
 - artist_id: enrique_serra_auque
   display_name: Enrique Serra Auqué
   country_birth: ES
@@ -2291,6 +2386,20 @@ artists:
   aliases:
   - Erwin Bechtold
   notes: '17 lotes | casas: duran_subastas'
+- artist_id: erwin_hubert
+  display_name: Erwin Hubert
+  country_birth: AT
+  nationalities:
+  - AT
+  birth_year: 1883
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Erwin Hubert
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1883, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q21999910'
 - artist_id: erwin_kraus
   display_name: Erwin Kraus
   country_birth: CO
@@ -2368,6 +2477,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q93435619'
   death_status: living
+- artist_id: esteban_vicente
+  display_name: Esteban Vicente
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1903
+  death_year: 2001
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Esteban Vicente
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1903, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5400843'
 - artist_id: esterio_segura
   display_name: Esterio Segura Mora
   country_birth: CU
@@ -2450,6 +2573,34 @@ artists:
   aliases:
   - Eugene-Antoine Aizelin
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3059654'
+- artist_id: eugene_baudouin
+  display_name: Eugène Baudouin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1842
+  death_year: 1893
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Eugene Baudouin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1842, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q84550713'
+- artist_id: eugene_boudin
+  display_name: Eugène Boudin
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1824
+  death_year: 1898
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - EUGÉNE BOUDIN
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1824, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q212600'
 - artist_id: eugene_de_blaas
   display_name: Eugene de Blaas
   country_birth: IT
