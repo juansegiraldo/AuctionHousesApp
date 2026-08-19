@@ -2154,12 +2154,17 @@ artists:
   - UY
   birth_year: 1895
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Luis MAZZEY
   - LUIS MAZZEY
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42382941'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42382941.
+    INVESTIGADO 2026-08-19: nacido en MONTEVIDEO el 15-08-1895 y muerto alli en 1983. Muralista y grabador; alumno
+    de Figari, profesor de grabado en la Escuela Nacional de Bellas Artes y director del Club de Grabado de Montevideo.
+    Fuentes: Museo Nacional de Artes Visuales https://mnav.gub.uy/cms.php?a=286 ; Arte Activo (museos.uy) http://museos.uy/arteactivo/artistas/item/mazzey-luis.html'
+  death_year: 1983
+  death_status: known
 - artist_id: luis_menendez_pidal
   display_name: Luis Menéndez Pidal
   country_birth: ES

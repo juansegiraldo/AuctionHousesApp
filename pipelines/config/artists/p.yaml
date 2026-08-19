@@ -636,11 +636,16 @@ artists:
   - FR
   birth_year: 1856
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Paul Maurice Duthoit
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3370362'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3370362.
+    INVESTIGADO 2026-08-19: nacido en LILLE el 20-11-1856; formado en los talleres de Gerome y Humbert, expuso en
+    el Salon desde 1879. La MUERTE se deja SIN FIJAR a proposito: ni la BNF ni el Musee d''Orsay la conocen -- la
+    BNF lo ficha como ''(1858-19..?)'' y Orsay solo dice ''despues de 1900''. Ojo ademas a que la BNF da 1858 y
+    no el 1856 de Wikipedia. Fuentes: BNF https://data.bnf.fr/fr/14973289/paul_maurice_duthoit/ ; Musee d''Orsay
+    https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/paul-duthoit-11745'
 - artist_id: paul_rebeyrolle
   display_name: Paul Rebeyrolle
   country_birth: FR
