@@ -2777,16 +2777,19 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110016932'
 - artist_id: jordi_rollan_lahoz
   display_name: Jordi Rollán Lahoz
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1940
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Jordi Rollán Lahoz
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q6453417'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6453417. INVESTIGADO 2026-08-19: Nacido en BARCELONA el
+    28-01-1940; formado en la Llotja y el Reial Cercle Artistic, que le beco en 1965. En activo. Fuente: Reial Cercle
+    Artistic https://publicacions.reialcercleartistic.cat/es/node/124'
   death_status: living
 - artist_id: jordi_socias
   display_name: Jordi Socías
@@ -4778,16 +4781,20 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q110424508'
 - artist_id: jose_maria_jardines
   display_name: José María Jardines
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1862
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Jose María Jardines
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q5943046'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5943046. INVESTIGADO 2026-08-19: Nacido en CADIZ en 1862;
+    formado alli y en San Fernando, carrera en Paris y profesor de la Academia de Bellas Artes de Cadiz desde 1914.
+    La MUERTE se deja sin fijar a proposito: las fuentes la dan como ''?1932?'' con interrogante. Fuentes: Wikipedia
+    ES https://es.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Jardines ; Wikidata https://www.wikidata.org/wiki/Q5943046'
 - artist_id: jose_maria_labrador_arjona
   display_name: José María Labrador Arjona
   country_birth: ES
@@ -8220,16 +8227,21 @@ artists:
   death_status: living
 - artist_id: julian_tordesillas_de_lara
   display_name: Julián Tordesillas de Lara
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1861
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Julián Tordesillas de Lara
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q99865162'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99865162. INVESTIGADO 2026-08-19: Nacido en MADRID en 1861
+    y muerto en 1933; paisajista. La fecha de muerte la publica la propia casa en sus fichas de catalogo. Fuente:
+    Fernando Duran https://www.fernandoduran.com/es/931-julian-tordesillas-de-lara-madrid-1861-1933-paisaje-oleo-sobre-tablex-medidas-23-x-31-cm'
+  death_year: 1933
+  death_status: known
 - artist_id: julije_knifer
   display_name: Julije Knifer
   country_birth: null
