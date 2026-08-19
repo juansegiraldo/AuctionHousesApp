@@ -142,11 +142,17 @@ artists:
   - GB
   birth_year: 1577
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Adam Willaerts
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2824028'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2824028.
+    INVESTIGADO 2026-08-19: Muerte 04-04-1664 en Utrecht. Nacio en LONDRES el 21-07-1577, de padres flamencos huidos
+    de Amberes -- por eso GB y no NL, pese a ser una figura central de la pintura marina del Siglo de Oro HOLANDES:
+    vivio y trabajo en Utrecht desde 1597. Fuentes: Wikipedia https://en.wikipedia.org/wiki/Adam_Willaerts ; Staedel
+    Museum https://sammlung.staedelmuseum.de/en/person/willaerts-adam'
+  death_year: 1664
+  death_status: known
 - artist_id: adela_gines_y_ortiz
   display_name: Adela Ginés y Ortiz
   country_birth: ES
@@ -5834,11 +5840,16 @@ artists:
   - FR
   birth_year: 1849
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Auguste Lepère
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2871286'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2871286.
+    INVESTIGADO 2026-08-19: Muerte 20-11-1918 en Domme. Nacido en Paris el 30-11-1849; renovador del grabado en
+    madera en Europa. Fuentes: Wikipedia https://en.wikipedia.org/wiki/Auguste-Louis_Lep%C3%A8re ; Birmingham Museum
+    of Art https://www.artsbma.org/artist/auguste-louis-lepere-french-1849-1918/'
+  death_year: 1918
+  death_status: known
 - artist_id: auguste_nicolas_cain
   display_name: Auguste Cain
   country_birth: FR
