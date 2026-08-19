@@ -1934,16 +1934,22 @@ artists:
     solo uno nacio en 1925, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q104034703'
 - artist_id: maria_revenga
   display_name: María Revenga
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1901
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Maria Revenga
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q101092473'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q101092473. INVESTIGADO 2026-08-19: Maria Revenga Sancho,
+    nacida en MADRID en diciembre de 1901 y muerta en 1988. Paisajista; Primera Medalla de la II Bienal de los Paises
+    Mediterraneos (Alejandria, 1957). Fuentes: Pupitre de Museologia http://jpalomaressamper.blogspot.com/2015/03/maria-revenga-sancho-madrid-1901-1988.html
+    ; Las Mujeres en el arte https://conchamayordomo.com/2019/12/22/maria-revenga/'
+  death_year: 1988
+  death_status: known
 - artist_id: maria_rius_zunon
   display_name: María Rius Zunon
   attribution_type: autor

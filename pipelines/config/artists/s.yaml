@@ -661,17 +661,24 @@ artists:
     de verificar. Fuente: https://www.wikidata.org/wiki/Q98461779'
 - artist_id: segundo_agelvis
   display_name: Segundo Agelvis
-  country_birth: null
-  nationalities: []
+  country_birth: CO
+  nationalities:
+  - CO
   birth_year: 1899
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - SEGUNDO AGELVIS
   - Segundo Agelvis
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q109858770'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q109858770. INVESTIGADO 2026-08-19: Segundo Agelvis Rubio,
+    nacido en CUCUTA (Norte de Santander, Colombia) el 01-06-1899 y muerto en Medellin el 06-11-1988. OJO: algunas
+    fuentes lo dan por venezolano porque Cucuta esta en la frontera y el se llamaba hijo de tierras santandereanas;
+    la fuente academica es explicita en Cucuta. Fuentes: Universidad Autonoma de Bucaramanga https://revistas.unab.edu.co/index.php/reflexion/article/view/1584
+    ; WorldCat https://search.worldcat.org/es/title/SEGUNDO-AGELVIS-PINTOR-DE-LA-TIERRA-1899-1988/oclc/1075625827'
+  death_year: 1988
+  death_status: known
 - artist_id: segundo_cabello_izarra
   display_name: Segundo Cabello Izarra
   country_birth: ES
