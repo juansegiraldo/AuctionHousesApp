@@ -1589,11 +1589,15 @@ artists:
   - ES
   birth_year: 1875
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Luis Blesa
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29565024'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29565024.
+    INVESTIGADO 2026-08-19: nacido en VALENCIA el 18-06-1875 (no en Zaragoza); profesor de la Real Academia de San
+    Carlos, mencion de honor en la Nacional de 1897 y tercera medalla en la de 1910. La MUERTE se deja SIN FIJAR:
+    las fuentes la dan como ''hacia 1934'', que es una aproximacion y no un dato, y la ficha del Prado devuelve
+    403. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Luis_Blesa_y_Prats ; Museo del Prado (coleccion) https://www.museodelprado.es/coleccion/artista/blesa-y-prats-luis/817492a1-66eb-43d5-8466-5babe760e398'
 - artist_id: luis_caballero
   display_name: Luis Caballero
   country_birth: CO
