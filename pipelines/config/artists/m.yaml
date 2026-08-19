@@ -995,18 +995,22 @@ artists:
   notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
 - artist_id: manuel_picolo_y_lopez
   display_name: Manuel Picolo López
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1855
   death_year: 1912
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Manuel Picolo y López
   - Manuel Pícolo y López
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q20027929'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q20027929. INVESTIGADO 2026-08-19: Nacido en Murcia en 1855,
+    muerto alli en 1912. Fuentes: Museo del Prado https://www.museodelprado.es/aprende/enciclopedia/voz/picolo-lopez-manuel/6e73413e-ac6d-42c6-9d68-fc276f0afc2b
+    ; Coleccion Carmen Thyssen https://coleccioncarmenthyssen.es/artist/manuel-picolo-lopez/'
+  death_status: known
 - artist_id: manuel_poy_dalmau
   display_name: Manuel Poy Dalmau
   birth_year: 1874
@@ -2167,17 +2171,22 @@ artists:
     persona (mismas fechas), partida en dos entradas por variantes del nombre.'
 - artist_id: mariano_izquierdo_vivas
   display_name: Mariano Izquierdo y Vivas
-  country_birth: null
-  nationalities: []
+  country_birth: CU
+  nationalities:
+  - CU
   birth_year: 1893
   death_year: 1985
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Mariano Izquierdo Vivas
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q55769779'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55769779. INVESTIGADO 2026-08-19: Nacido en Puerto Principe
+    (Camaguey), CUBA, no en Espania pese a su carrera espaniola: fue profesor en La Coruna y Madrid, donde murio
+    en 1985. Fuentes: Museo de Belas Artes da Coruna https://museobelasartescoruna.xunta.gal/es/coleccion/autores/izquierdo-y-vivas-mariano
+    ; Museo del Prado https://www.museodelprado.es/aprende/enciclopedia/voz/yzquierdo-y-vivas-mariano/18439f99-aa0d-4269-adfb-92df0fe6a195'
+  death_status: known
 - artist_id: mariano_nani
   display_name: Mariano Nani
   country_birth: IT
@@ -2799,18 +2808,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6005916'
 - artist_id: mateo_mate
   display_name: Mateo Maté
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1964
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Mateo Maté
   - Mateo Mate
   - MAteo Maté
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q17582627'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q17582627. INVESTIGADO 2026-08-19: Nacido en Madrid en 1964;
+    artista conceptual en activo. Fuente: Museo Reina Sofia https://www.museoreinasofia.es/exposicion/mateo-mate-universo-personal/'
   death_status: living
 - artist_id: mateo_orozco
   display_name: Mateo Orozco

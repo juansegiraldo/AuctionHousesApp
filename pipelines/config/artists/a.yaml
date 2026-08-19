@@ -4163,17 +4163,19 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q27883413'
 - artist_id: antonio_de_felipe
   display_name: Antonio De Felipe
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1965
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Antonio de Felipe
   - Antonio De Felipe
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q43129161'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q43129161. INVESTIGADO 2026-08-19: Nacido en Valencia en
+    1965; licenciado en Bellas Artes por la Universidad de Valencia, en activo. Fuente: web oficial https://antoniodefelipe.es/'
   death_status: living
 - artist_id: antonio_de_ferrer_corriol
   display_name: Antonio de Ferrer Corriol

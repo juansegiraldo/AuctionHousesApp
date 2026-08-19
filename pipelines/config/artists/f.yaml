@@ -1744,17 +1744,21 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q127990113'
 - artist_id: francisco_cortijo
   display_name: Francisco Cortijo
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1936
   death_year: 1996
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Francisco Cortijo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q110175670'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q110175670. INVESTIGADO 2026-08-19: Francisco Cortijo Merida,
+    nacido en Sevilla el 18-02-1936 y muerto en Madrid el 25-05-1996. Del Grupo de Sevilla y de Estampa Popular.
+    Fuentes: web oficial http://franciscocortijo.com/en/ ; Editorial Universidad de Sevilla https://editorial.us.es/es/detalle-libro/30016/el-pintor-francisco-cortijo-1936-1996'
+  death_status: known
 - artist_id: francisco_cruz_de_castro
   display_name: Francisco Cruz de Castro
   country_birth: ES
