@@ -651,11 +651,16 @@ artists:
   - ES
   birth_year: 1861
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Agustín Salinas Teruel
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16930330'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16930330.
+    INVESTIGADO 2026-08-19: nacido en ZARAGOZA en 1861; becado a Roma por la Diputacion en 1883 y muerto alli. La
+    MUERTE se deja SIN FIJAR a proposito: circulan tres anios distintos -- 1915 (Wikipedia, wahooart, Aragon Subastas),
+    1923 (Abalarte) y 1928 (otras fuentes) -- y la ficha de la Real Academia de la Historia no carga. Un hueco es
+    preferible a elegir uno de los tres. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Agust%C3%ADn_Salinas_y_Teruel
+    ; Coleccion Carmen Thyssen https://coleccioncarmenthyssen.es/artist/agustin-salinas-teruel/'
 - artist_id: agustin_segura
   display_name: Agustín Segura
   country_birth: ES

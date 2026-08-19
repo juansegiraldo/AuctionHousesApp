@@ -294,12 +294,18 @@ artists:
   - BE
   birth_year: 1876
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Leon Huygens
   - León Huygens
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q748875'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q748875.
+    INVESTIGADO 2026-08-19: nacido en AUDERGHEM (Bruselas) en 1876 y muerto en Paris en 1919. Paisajista del Bosque
+    de Soignes y la costa de Nieuwpoort; voluntario del ejercito belga en la Gran Guerra como pintor de guerra.
+    OJO: Arcadja da 1918; se conserva 1919 por Wikipedia y los Musees royaux des Beaux-Arts de Belgique, y se anota
+    la duda. Fuentes: https://en.wikipedia.org/wiki/L%C3%A9on_Huygens ; https://fine-arts-museum.be/fr/la-collection?artist=huygens-leon-1'
+  death_year: 1919
+  death_status: known
 - artist_id: leon_richet
   display_name: 레옹 리셰
   country_birth: FR
