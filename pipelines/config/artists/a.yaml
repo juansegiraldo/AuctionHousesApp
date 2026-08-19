@@ -508,16 +508,20 @@ artists:
   death_status: living
 - artist_id: agustin_de_celis
   display_name: Agustín Celis
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1932
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Agustín de Celis
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q80957797'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q80957797. INVESTIGADO 2026-08-19: Agustin de Celis Gutierrez,
+    nacido en COMILLAS (Cantabria) el 07-03-1932. Premio Roma 1960 y Premio Nacional de Pintura 1971. VIVO: entrevistado
+    en octubre de 2025 a los 93 anios. Fuentes: Legado Cantabria https://legadocantabria.org/agustin-de-celis-gutierrez/
+    ; Ayuntamiento de Comillas https://www.aytocomillas.es/comillas/opencms/contenido/Comillas/Historia/Personajes/Agustindecelis.html'
   death_status: living
 - artist_id: agustin_gasull
   display_name: Agustín Gasull

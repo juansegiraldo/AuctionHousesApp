@@ -27,16 +27,19 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15997603'
 - artist_id: ulpiano_carrasco
   display_name: Ulpiano Carrasco
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1961
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Ulpiano Carrasco
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q6155318'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q6155318. INVESTIGADO 2026-08-19: Nacido en Casas de Santa
+    Cruz (Cuenca) en 1961; reside en Villanueva de la Jara. Estudio Bellas Artes en Salamanca. En activo. Fuente:
+    web oficial https://www.ulpianocarrasco.com/about-ulpiano-carrasco'
   death_status: living
 - artist_id: ulpiano_checa_y_sanz
   display_name: Ulpiano Checa y Sanz

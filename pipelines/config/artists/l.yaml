@@ -2048,7 +2048,9 @@ artists:
   aliases:
   - Luis Lozano Losilla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q97604315'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97604315. INVESTIGADO 2026-08-19 SIN RESULTADO: solo consta
+    su paso por el Salon de Otonio (premiado en 1934, 1935 y 1960); ninguna fuente publica lugar de nacimiento.
+    Se queda SIN PAIS a proposito.'
 - artist_id: luis_luna
   display_name: Luis Luna
   country_birth: CO
