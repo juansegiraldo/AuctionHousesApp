@@ -109,18 +109,23 @@ artists:
   death_status: living
 - artist_id: salvador_rodriguez_bronchu
   display_name: Salvador Rodriguez Bronchu
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1913
   death_year: 1999
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Salvador Rodríguez Bronchu
   - Salvador Rodriguez Bronchu
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q106767057'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q106767057. INVESTIGADO 2026-08-19: nacido y muerto en GODELLA
+    (Valencia), 1913-1999. Hijo del pintor y escenografo Francisco Rodriguez Cabanes ''El Pintoret''; Segunda Medalla
+    en la Nacional de 1957. Fuentes: Drouot https://drouot.com/en/l/30535631-salvador-rodriguez-bronchu-godella-valencia-1913-1999
+    ; Gran Enciclopedia Catalana https://www.enciclopedia.cat/gran-enciclopedia-catalana/salvador-rodriguez-i-bronchu'
+  death_status: known
 - artist_id: salvador_sanchez_barbudo
   display_name: Salvador Sánchez Barbudo
   country_birth: ES
