@@ -1823,7 +1823,11 @@ artists:
   - Francisco de Paula Mendoza y Moreno
   notes: '2 lotes | casas: duran_subastas | nacido en Madrid en 1812. Silver publica 1812-1885, mientras la Real
     Academia de Bellas Artes de San Fernando marca la muerte como dudosa (¿1885?); se omite death_year. Fuente:
-    https://www.academiacolecciones.com/pinturas/mostrar-autores.php?id=mendoza-y-moreno-francisco-de-paula'
+    https://www.academiacolecciones.com/pinturas/mostrar-autores.php?id=mendoza-y-moreno-francisco-de-paula. Muerte
+    1885 fijada el 2026-08-19: Wikidata CONFIRMA el nacimiento que ya tenia la ficha (1812) y anade la muerte, y
+    las propias notas ya recogian que Silver publica 1812-1885. Fuente: https://www.wikidata.org/wiki/Q58212045'
+  death_year: 1885
+  death_status: known
 - artist_id: francisco_de_paula_van_halen
   display_name: Francisco de Paula Van Halen
   country_birth: ES
