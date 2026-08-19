@@ -6596,13 +6596,18 @@ artists:
   - ES
   birth_year: 1842
   attribution_type: autor
-  source: wikidata
-  confidence: medium
+  source: manual
+  confidence: high
   aliases:
   - Juan Antonio González
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1842, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
-    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q43130888'
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q43130888. INVESTIGADO 2026-08-19: pintor sevillano
+    nacido en 1842 (de Chiclana de la Frontera, Cadiz) y muerto en 1914. Discipulo de Rodriguez en Cadiz y de Pils
+    en Paris, donde se instalo; medalla de oro en la Provincial de Cadiz de 1879. Fuentes: Getty ULAN https://www.getty.edu/vow/ULANFullDisplay?find=&role=&nation=&subjectid=500035510
+    ; Art Renewal Center https://www.artrenewal.org/artists/juan-antonio-gonzalez/233'
+  death_year: 1914
+  death_status: known
 - artist_id: juan_antonio_morales
   display_name: Juan Antonio Morales
   country_birth: ES

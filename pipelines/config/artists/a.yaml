@@ -268,13 +268,18 @@ artists:
   - ES
   birth_year: 1840
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Adolfo Giraldez
   - Adolfo GIRÁLDEZ
   - Adolfo Giráldez y Peñalver
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60500347'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60500347.
+    INVESTIGADO 2026-08-19: marinista nacido en CADIZ; el PAIS es firme, las FECHAS no. El nacimiento ''hacia 1840''
+    es una DEDUCCION de Cuenca (1923), que al conocerle ''alla por el anio 1900'' le echaba mas de sesenta; y la
+    muerte se da ''hacia 1920'' o 1923 segun la fuente. Se conserva el 1840 que ya tenia la ficha y la muerte se
+    deja SIN FIJAR: una estimacion no es un dato. Fuentes: Wikipedia ES https://es.wikipedia.org/wiki/Adolfo_Gir%C3%A1ldez_y_Pe%C3%B1alver
+    ; Museo Carmen Thyssen Malaga https://www.carmenthyssenmalaga.org/artista/adolfo-giraldez-penalver'
 - artist_id: adolfo_nigro
   display_name: Adolfo Nigro
   country_birth: AR
