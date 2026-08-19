@@ -128,11 +128,17 @@ artists:
   - FR
   birth_year: 1758
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Carle Vernet
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q585852'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q585852.
+    INVESTIGADO 2026-08-19: Antoine Charles Horace ''Carle'' Vernet, nacido en BURDEOS el 14-08-1758 y muerto en
+    Paris el 27-11-1836. Hijo del pintor Claude-Joseph Vernet y padre de Horace Vernet; pinto batallas para Napoleon
+    I y temas ecuestres para Luis XVIII. Fuentes: Louvre https://collections.louvre.fr/en/ark:/53355/cl020583202
+    ; Britannica https://www.britannica.com/biography/Carle-Vernet'
+  death_year: 1836
+  death_status: known
 - artist_id: carlo_brancaccio
   display_name: Carlo Brancaccio
   country_birth: IT

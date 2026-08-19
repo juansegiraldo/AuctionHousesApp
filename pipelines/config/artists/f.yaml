@@ -2357,11 +2357,18 @@ artists:
   - ES
   birth_year: 1886
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Francisco Pons Arnau
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867118'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5867118.
+    INVESTIGADO 2026-08-19: Nacido en VALENCIA en 1886 y muerto en Madrid en 1953. Discipulo de Sorolla y casado
+    con su hija Maria Sorolla; medallas de plata (1911) y oro (1912) en las Nacionales de Rio de Janeiro. OJO: Ansorena
+    da 1955; se conserva 1953 por el Prado, el Reina Sofia y la Real Academia de la Historia. Fuentes: Museo del
+    Prado https://www.museodelprado.es/aprende/enciclopedia/voz/pons-arnau-francisco/d932de8d-7911-45e3-96c7-d433c9c4a7f4
+    ; Museo Reina Sofia https://www.museoreinasofia.es/en/collections/artist/pons-arnau-francisco/'
+  death_year: 1953
+  death_status: known
 - artist_id: francisco_portela
   display_name: Francisco Portela
   country_birth: ES
