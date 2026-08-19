@@ -486,11 +486,17 @@ artists:
   - DE
   birth_year: 1631
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Benjamin Von Block
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q445590'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q445590.
+    INVESTIGADO 2026-08-19: nacido en LUBECK en 1631, de familia de pintores (su padre Daniel Blok y sus hermanos
+    Emanuel y Adolf), y muerto en RATISBONA en 1690. Retratista barroco; trabajo para los margraves de Ansbach y
+    la corte de Viena, y Leopoldo I le armo caballero en 1684. Fuentes: Wikipedia https://en.wikipedia.org/wiki/Benjamin_Block
+    ; Wikidata https://www.wikidata.org/wiki/Q445590'
+  death_year: 1690
+  death_status: known
 - artist_id: benjamin_williams_leader
   display_name: Benjamin Williams Leader
   country_birth: GB

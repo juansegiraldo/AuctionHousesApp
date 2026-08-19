@@ -89,11 +89,15 @@ artists:
   - IT
   birth_year: 1870
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Temistocle Lamesi
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94993109'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94993109.
+    INVESTIGADO 2026-08-19: nacido en ROMA en 1870; retratista, expuso junto a Pio Joris y Antonio Mancini. La MUERTE
+    se deja SIN FIJAR: Luca Sforzini Arte da 1951 y Cambi Casa d''Aste 1957, sin fuente institucional que desempate.
+    Fuentes: Luca Sforzini http://www.lucasforziniarte.it/archivio-artisti/lazio/lamesi-temistocle-roma-1870-roma-1951-pittore
+    ; Cambi https://www.cambiaste.com/it/asta-0253/temistocle-lamesi-18701957-149315'
 - artist_id: teodoro_andreu_sentamans
   display_name: Teodoro Andreu
   country_birth: ES
