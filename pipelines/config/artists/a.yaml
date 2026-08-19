@@ -1487,16 +1487,19 @@ artists:
     solo uno nacio en 1921, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q2117224'
 - artist_id: alejandro_quincoces
   display_name: Alejandro Quincoces
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1951
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Alejandro Quincoces
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q99492302'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q99492302. INVESTIGADO 2026-08-19: Nacido en BILBAO en 1951;
+    Bellas Artes por la Universidad del Pais Vasco. En activo. Fuentes: web oficial https://www.alejandroquincoces.com/sobre-mi
+    ; Fundacion Juan March https://archivo.march.es/repositories/3/archival_objects/8235'
   death_status: living
 - artist_id: alejandro_saint_aubin_bonnefou
   display_name: Alejandro Saint Aubin Bonnefon
@@ -2952,17 +2955,21 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q60024826'
 - artist_id: andres_cillero
   display_name: Andrés Cillero
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1934
   death_year: 1993
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Andrés Cillero
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q60828446'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60828446. INVESTIGADO 2026-08-19: Andres Jose Cillero Dolz,
+    nacido en VALENCIA en 1934 y muerto en Madrid en 1993. Uno de los introductores del pop art en Espania; Premio
+    Nacional de Pintura 1976. Fuente: Museo Reina Sofia https://www.museoreinasofia.es/en/collections/artist/cillero-dolz-andres-jose/'
+  death_status: known
 - artist_id: andres_colombo
   display_name: Andrés Colombo
   country_birth: ES
