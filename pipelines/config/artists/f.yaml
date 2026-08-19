@@ -119,18 +119,23 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1865225'
 - artist_id: federico_amerigo_rouviere
   display_name: Federico Amérigo Rouviere
-  country_birth: null
-  nationalities: []
+  country_birth: CU
+  nationalities:
+  - CU
   birth_year: 1840
   death_year: 1912
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Federico Amérigo Rouviere
   - Federico Amerigo Rouviere
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q97583617'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q97583617. INVESTIGADO 2026-08-19: Nacido en MATANZAS, Cuba,
+    pese a estar asociado a Alicante, donde se instalo en 1873. Volvio a Cuba en 1882 y murio en Mexico. Fuente:
+    Diccionario de Pintores Alicantinos https://alicantinos.wordpress.com/2012/01/30/amerigo-rouviere-federico/
+    ; Wikidata https://www.wikidata.org/wiki/Q97583617'
+  death_status: known
 - artist_id: federico_beltran_masses
   display_name: Federico Beltrán Masses
   country_birth: ES

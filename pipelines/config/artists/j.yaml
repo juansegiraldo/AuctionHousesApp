@@ -3171,17 +3171,22 @@ artists:
   death_status: living
 - artist_id: jose_alvarez_niebla
   display_name: Josep Niebla
-  country_birth: null
-  nationalities: []
+  country_birth: MA
+  nationalities:
+  - MA
   birth_year: 1945
   death_year: 2021
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - José Álvarez Niebla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q21464263'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q21464263. INVESTIGADO 2026-08-19: Nacido en TETUAN, entonces
+    protectorado espaniol de Marruecos, en 1945; murio en Girona el 08-11-2021. Estudio Bellas Artes en Tetuan antes
+    de pasar a Sevilla, Barcelona y Paris. Pais por el lugar literal de nacimiento, como Saenz de Tejada (Tanger).
+    Fuente: Wikipedia ES https://es.wikipedia.org/wiki/Josep_Niebla ; obituario El Espanol https://www.elespanol.com/el-cultural/arte/20211109/muere-artista-josep-niebla/625938533_0.html'
+  death_status: known
 - artist_id: jose_andres_gutierrez_alonso
   display_name: José Andrés Gutiérrez Alonso
   country_birth: ES
@@ -5737,17 +5742,23 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12260876'
 - artist_id: jose_sancha
   display_name: José Sancha
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1908
   death_year: 1994
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - José Sancha
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
-    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q110245262'
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q110245262.
+    INVESTIGADO 2026-08-19: Jose Sancha Padros, nacido en San Lorenzo del Escorial (Madrid) en 1908, muerto en 1994.
+    Exiliado en la URSS tras la Guerra Civil; vivio en Moscu, Bulgaria, Inglaterra y la RDA antes de volver a Madrid
+    en 1966. Fuente: PARES, Ministerio de Cultura http://pares.mcu.es/ParesBusquedas20/catalogo/autoridad/124975
+    ; Fundacion March https://archivo.march.es/agents/people/3395'
+  death_status: known
 - artist_id: jose_sanchez_carralero
   display_name: José Sánchez-Carralero López
   country_birth: null

@@ -269,17 +269,22 @@ artists:
   death_status: living
 - artist_id: irena_snarska
   display_name: Irena Snarska
-  country_birth: null
-  nationalities: []
+  country_birth: UA
+  nationalities:
+  - UA
   birth_year: 1934
   death_year: 2013
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Irena Snarska
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q51551326'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q51551326. INVESTIGADO 2026-08-19: Nacida en LVIV en 1934:
+    entonces Polonia, hoy Ucrania. Se codifica UA por el lugar literal de nacimiento, misma regla que Paja Jovanovic
+    (Vrsac, Imperio austriaco entonces, RS hoy). Carrera entera en Polonia, Academia de Bellas Artes de Varsovia.
+    Fuente: Zacheta Galeria Nacional https://zacheta.art.pl/pl/kolekcja/artysci/irena-snarska'
+  death_status: known
 - artist_id: irene_laffitte
   display_name: Irene Laffitte
   country_birth: ES
