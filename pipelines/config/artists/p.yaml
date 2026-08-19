@@ -1758,11 +1758,11 @@ artists:
   confidence: low
   aliases:
   - Pietro Psaier
-  notes: 'SIN PAIS NI FECHAS A PROPOSITO. No es que falten los datos: el mundo del arte discute que la PERSONA existiera
-    (se sospecha una identidad fabricada por marchantes para vender obra atribuida a Warhol). Wikidata tiene ficha
-    (Q3904190) y las tandas automaticas ya le han puesto pais TRES veces (altas y complementos); ahora esta en DISPUTED_IDENTITIES
-    de artist_master_promote.py, que cubre las dos rutas. Un match exacto acredita que la ficha existe, no que la
-    identidad sea real. Test: test_unverifiable_artists_keep_no_country.'
+  notes: 'SIN PAIS NI FECHAS A PROPOSITO. El mundo del arte discute que la PERSONA existiera (identidad presuntamente
+    fabricada por marchantes para vender obra atribuida a Warhol). Wikidata tiene ficha (Q3904190) y las tandas
+    automaticas ya le han puesto pais CUATRO veces, cada una por una ruta distinta: altas, complementos y relleno
+    de pais desde el lugar de nacimiento. Esta en DISPUTED_IDENTITIES; cualquier script nuevo que escriba en el
+    maestro TIENE que consultarla. Test: test_unverifiable_artists_keep_no_country.'
 - artist_id: pilar_aranda
   display_name: Pilar Aranda Nicolás
   birth_year: 1914

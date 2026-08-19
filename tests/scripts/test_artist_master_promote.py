@@ -683,3 +683,20 @@ def test_a_corrupted_journal_line_does_not_abort_the_promotion(tmp_path):
 
     assert len(rows) == 1
     assert rows[0]["research_key"] == "juan_perez"
+
+
+def test_a_place_country_map_rescues_entries_researched_before_the_p17_hop():
+    """265 fichas se investigaron antes de que existiera el salto P19->P17.
+
+    Sus lugares llegan sin country_iso ('Florencia', None) y _countries.yaml
+    no conoce esas ciudades, asi que la ficha se quedaba sin pais teniendo el
+    dato a un salto de distancia. El mapa se pasa aparte para no reinvestigar.
+    """
+    result = _result()
+    result["match"]["proposal"]["birth_places"] = [_place("Q2044", "Florencia")]
+
+    entries, _ = promote.build_entries(
+        [result], master={}, place_countries={"Q2044": "IT"}
+    )
+
+    assert entries[0]["country_birth"] == "IT"

@@ -566,6 +566,30 @@ candidatos revisados, la mayoria eran autores reales que la senial marcaba mal
 `PALAZUELO, PABLO`, `HOGARTH, WILLIAM`, `MERCATOR, GERHARD`, `Equipo Realidad`,
 `Estampa Popular`. Hay un test que fija que los 17 sobrevivan.
 
+### El techo del pais: Florencia declara Francia e Italia
+
+Las 510 fichas sin pais no son trabajo pendiente por pereza. El desglose:
+
+| | |
+|---|---|
+| Wikidata las casa pero no publica lugar de nacimiento (P19) | 347 |
+| No hay match en Wikidata | 113 |
+| **Tienen lugar pero su pais no se resuelve** | **50** |
+
+Ese ultimo grupo parecia facil -- `Florencia`, `Berlin`, `Dresde`, `Venecia` --
+y **no lo es**: Florencia declara **once** P17, de los que dos siguen vigentes,
+`FR` (ocupacion napoleonica) e `IT`. Con dos paises vigentes el codigo deja el
+hueco, que es exactamente lo que debe hacer. Es el caso Minsk otra vez.
+
+Resolver esos 98 lugares contra Wikidata cerro 55, pero **casi todos pertenecen
+a fichas que ya tenian pais**: solo una del maestro lo ganaba, y era Pietro
+Psaier, cuyo hueco es deliberado.
+
+**Cuarta reincidencia de Psaier, y por una ruta nueva.** Ya habia entrado por
+altas y por complementos; esta vez por el relleno de pais desde el lugar de
+nacimiento. `DISPUTED_IDENTITIES` existe precisamente para esto: **cualquier
+script nuevo que escriba en el maestro tiene que consultarla**.
+
 ### Fichas con el anio EQUIVOCADO, y por que importan mas que un hueco
 
 Un hueco es un resultado correcto; un anio equivocado se publica en el informe
