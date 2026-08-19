@@ -1771,17 +1771,23 @@ artists:
     solo uno nacio en 1893, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q8195148'
 - artist_id: alfonso_guerra_calle
   display_name: Alfonso Guerra Calle
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1950
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Alfonso Guerra Calle
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q105346248'
-  death_status: living
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q105346248. INVESTIGADO 2026-08-19: Nacido en 1950 en la
+    barriada de Junta de los Rios, ARCOS DE LA FRONTERA (Cadiz); formado en Bellas Artes en Madrid, donde vivio
+    mas de cuarenta anios. Murio el 28-02-2020, poco despues de recibir la medalla de la ciudad. Fuentes: Andalucia
+    Informacion https://andaluciainformacion.es/arcos/882068/fallece-el-pintor-arcense-alfonso-guerra-calle/ ; 8cadiz
+    https://8cadiz.es/alfonso-guerra-calle-pintor-arcos/'
+  death_status: known
+  death_year: 2020
 - artist_id: alfonso_ortuno
   display_name: Alfonso Ortuño
   country_birth: null
@@ -3632,17 +3638,23 @@ artists:
   death_status: living
 - artist_id: anne_ethuin
   display_name: Anne Ethuin
-  country_birth: null
-  nationalities: []
+  country_birth: FR
+  nationalities:
+  - FR
   birth_year: 1921
   death_year: 2009
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Anne Ethuin
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q28492215'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q28492215. INVESTIGADO 2026-08-19: Simone Jaguer, conocida
+    como Anne Ethuin, nacida en el NORTE DE FRANCIA en 1921 y muerta en 2009 (enterrada en el Pere Lachaise). Cofundadora
+    con su marido Edouard Jaguer del movimiento Phases; participo en el encuentro Cobra de Copenhague (1949). OJO:
+    Arcadja da 2008; se conserva 2009 por la ficha del cementerio, que es fuente registral. Fuentes: APPL Pere Lachaise
+    https://www.appl-lachaise.net/ethuin-simone-jaguer-dite-anne-1921-2009/ ; La Maison Nevers https://maisonculture.fr/spectacle/anne-ethuin'
+  death_status: known
 - artist_id: annie_leibovitz
   display_name: Annie Leibovitz
   country_birth: US
