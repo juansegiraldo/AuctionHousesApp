@@ -444,7 +444,10 @@ artists:
     la hoja curada y el propio catalogo de Bogota, que escribe ''Leonor Alarcón Colombia, 1918'' en los tres lotes.
     Sin fecha de muerte: no esta en Wikidata ni en Wikipedia y Banrepcultural bloquea el acceso automatizado. Tendria
     108 anios, asi que el informe la marca ''n. 1918 (?)'': el hueco es casi seguro un dato que falta, pero NO se
-    inventa una muerte.'
+    inventa una muerte. INVESTIGADO 2026-08-19 SIN RESULTADO para la MUERTE: solo consta en Artprice como ''Leonor
+    Alarcon (1918)'', sin fecha de fallecimiento ni biografia. Las busquedas devuelven homonimas de otras disciplinas.
+    El pais (CO) y el nacimiento se conservan; la muerte se queda SIN FIJAR y tampoco se marca ''living'': nacida
+    hace 108 anios, supera MAX_PLAUSIBLE_AGE.'
 - artist_id: leonor_fini
   display_name: argentinar jatorriko frantses pintorea
   country_birth: AR

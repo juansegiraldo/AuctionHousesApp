@@ -2157,11 +2157,17 @@ artists:
   - IT
   birth_year: 1875
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Coco Madrazo
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16673232'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16673232.
+    INVESTIGADO 2026-08-19: Federico de Madrazo y Ochoa ''Coco'', nacido en ROMA en 1875 y muerto en Madrid en 1934
+    -- de ahi IT y no ES, pese a ser el ultimo miembro destacado de la dinastia madrilenia de los Madrazo (hijo
+    de Raimundo, bisnieto de Jose). Escribio con Cocteau el ballet ''Le Dieu bleu'' para los Ballets Russes. Fuentes:
+    Wikipedia https://en.wikipedia.org/wiki/Federico_de_Madrazo_y_Ochoa ; Coleccion BBVA https://www.coleccionbbva.com/en/autor/madrazo-y-ochoa-federico-carlos-de-2/'
+  death_year: 1934
+  death_status: known
 - artist_id: collier_schorr
   display_name: Collier Schorr
   country_birth: US

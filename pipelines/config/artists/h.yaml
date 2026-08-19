@@ -375,13 +375,18 @@ artists:
   - FR
   birth_year: 1844
   attribution_type: autor
-  source: wikidata
-  confidence: medium
+  source: manual
+  confidence: high
   aliases:
   - HENRI ROUSSEAU
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1844, el anio que publica la casa. sin fecha de muerte y nacido hace mas de 105 anios: falta
-    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q156386'
+    el dato, no esta vivo. Fuente: https://www.wikidata.org/wiki/Q156386. INVESTIGADO 2026-08-19: Henri Rousseau
+    ''le Douanier'', nacido en LAVAL el 21-05-1844 y muerto en Paris el 02-09-1910. Autodidacta; aduanero de oficio,
+    de ahi el apodo. Fuentes: Musee d''Orsay https://www.musee-orsay.fr/en/ressources/artists-personalities-catalog/henri-rousseau-21236
+    ; Centre Pompidou https://www.centrepompidou.fr/en/ressources/personne/c8E4ekB'
+  death_year: 1910
+  death_status: known
 - artist_id: henri_van_wyk
   display_name: Henri van Wijk
   country_birth: FR
