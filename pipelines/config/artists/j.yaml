@@ -2813,12 +2813,16 @@ artists:
   - ES
   birth_year: 1917
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Jordi Pla Doménech
   - Jordi Pla Domenech
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110016932'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q110016932.
+    INVESTIGADO 2026-08-19: nacido en BARCELONA en 1917; expuso en los 50 en Barcelona, Roma, Venecia y Nueva York.
+    El PAIS es firme; la MUERTE se deja SIN FIJAR porque las fuentes se parten entre 1992 (RoGallery, LiveAuctioneers)
+    y 1996 (Arcadja, Artprice) y ninguna es institucional. Fuentes: RoGallery https://rogallery.com/artists/jordi-pla-domenech/
+    ; Arcadja http://www.arcadja.com/auctions/en/pla_domenech_jordi/artist/23048/'
 - artist_id: jordi_rollan_lahoz
   display_name: Jordi Rollán Lahoz
   country_birth: ES

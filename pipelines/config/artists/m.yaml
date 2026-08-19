@@ -1912,12 +1912,16 @@ artists:
   - ES
   birth_year: 1916
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - María Mira Montoyo
   - Maria Mira Montoyo
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96593693'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96593693.
+    INVESTIGADO 2026-08-19: acuarelista nacida en ALICANTE en 1916; obra en el Museu de Reus. La MUERTE no consta
+    en ninguna fuente y NO se marca ''living'': nacida hace 110 anios, supera MAX_PLAUSIBLE_AGE, asi que el hueco
+    es dato ausente y no persona viva. Fuentes: Xarxa de Museus d''Art de Catalunya https://xarxa.museunacional.cat/artista/maria-mira-montoyo/
+    ; Diccionario de Pintores Alicantinos https://alicantinos.wordpress.com/tag/maria-mira-montoya/'
 - artist_id: maria_pop
   display_name: Maria Pop
   country_birth: GR
