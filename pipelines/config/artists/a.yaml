@@ -3321,11 +3321,19 @@ artists:
   - ES
   birth_year: 1889
   attribution_type: autor
-  source: wikidata
-  confidence: high
+  source: manual
+  confidence: medium
   aliases:
   - Ángel Cerezo Vallejo
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98110345'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98110345.
+    INVESTIGADO 2026-08-19: pintor, dibujante e ilustrador espaniol; gano el cartel de los San Fermines de 1923
+    y fue profesor de Dibujo del Instituto y Escuela Normal de Pamplona hasta su MUERTE en 1936, represaliado al
+    comienzo de la Guerra Civil. El Gobierno de Navarra le rindio homenaje el 10-09-2016 junto a otros docentes
+    represaliados, lo que fija el anio con solidez. OJO al NACIMIENTO: Arcadja da 1885 frente al 1889 de la ficha;
+    se conserva 1889 y se anota la duda. Fuentes: Tebeosfera https://www.tebeosfera.com/autores/cerezo_vallejo_angel.html
+    ; Arcadja https://www.arcadja.com/auctions/es/author-lots/hmtg9zvq/'
+  death_year: 1936
+  death_status: known
 - artist_id: angel_cervino
   display_name: Ángel Cerviño
   country_birth: ES
