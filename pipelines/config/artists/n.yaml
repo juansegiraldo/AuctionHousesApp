@@ -10,7 +10,11 @@ artists:
   confidence: high
   aliases:
   - Naama Tsabar
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29754679'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29754679.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: nacho_criado
   display_name: Nacho Criado
   country_birth: ES
@@ -74,7 +78,11 @@ artists:
   aliases:
   - NAN GOLDIN
   - Nan Goldin
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q234279'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q234279.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: nancy_friedman
   display_name: Nancy Friedman
   country_birth: US
@@ -177,7 +185,10 @@ artists:
   aliases:
   - NATALIA MENDIETA
   - Natalia Mendieta
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: natalio_bayo
   display_name: Natalio Bayo
   country_birth: ES
@@ -419,7 +430,10 @@ artists:
   confidence: high
   aliases:
   - Nicola de Maria
-  notes: '14 lotes | casas: duran_subastas'
+  notes: '14 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: nicolas_alperiz
   display_name: Nicolás Alperiz
   country_birth: ES
@@ -500,7 +514,10 @@ artists:
   aliases:
   - Nicolás Gless
   - Nicolas Gless
-  notes: '16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila'
+  notes: '16 lotes en Silver | fuente: curriculum; Wikipedia | Mirueña de los Infanzones, Avila. Marcado ''living''
+    el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin
+    este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: nicolas_martinez_ortiz_de_zarate
   display_name: Nicolás Martínez Ortíz de Zárate
   country_birth: ES
@@ -660,7 +677,10 @@ artists:
   aliases:
   - NOHEMI PEREZ
   - Nohemí Pérez
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: noni_lazaga
   display_name: Noni Lazaga
   country_birth: ES
@@ -672,7 +692,11 @@ artists:
   confidence: high
   aliases:
   - Noni Lazaga
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30337906'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30337906.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: norah_borges
   display_name: Norah Borges
   country_birth: AR

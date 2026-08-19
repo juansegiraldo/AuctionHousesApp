@@ -66,7 +66,10 @@ artists:
   aliases:
   - Edgar Plans
   - PLANS, EDGAR
-  notes: '9 lotes | casas: duran_subastas'
+  notes: '9 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: edgardo_ribeiro
   display_name: Edgardo Ribeiro
   country_birth: UY
@@ -831,7 +834,11 @@ artists:
   aliases:
   - EDWIN MONSALVE
   - Edwin Monsalve
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CONFLICTO nacimiento en la hoja: 1984x1, 1986x1'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas | CONFLICTO nacimiento en la hoja: 1984x1, 1986x1.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: efrain_arrieta
   display_name: Efrain Arrieta
   country_birth: CO
@@ -950,7 +957,10 @@ artists:
   confidence: high
   aliases:
   - Elena Blasco
-  notes: '14 lotes en Silver | fuente: Wikipedia | Madrid'
+  notes: '14 lotes en Silver | fuente: Wikipedia | Madrid. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues
+    y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA''
+    y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: elena_del_rivero
   display_name: Elena del Rivero
   country_birth: null
@@ -1554,7 +1564,11 @@ artists:
   confidence: high
   aliases:
   - Eneko Las Heras
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42534348'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42534348.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: enric_planas_dura
   display_name: Enric Planasdurà
   birth_year: 1921
@@ -2100,8 +2114,11 @@ artists:
   confidence: high
   aliases:
   - Enrique Vega
-  notes: Pintor nacido en Salamanca, 1953. Residente entre Madrid y Valencia. Estudió en San Fernando, obras en
-    Reina Sofía, Museo Provincial de Huelva.
+  notes: 'Pintor nacido en Salamanca, 1953. Residente entre Madrid y Valencia. Estudió en San Fernando, obras en
+    Reina Sofía, Museo Provincial de Huelva. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: enrique_vera_sales
   display_name: Enrique Vera Sales
   country_birth: ES
@@ -2308,7 +2325,10 @@ artists:
   aliases:
   - ERNESTO RESTREPO
   - Ernesto Restrepo
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ernesto_santasusagna
   display_name: Ernest Santasusagna Santacreu
   country_birth: ES
@@ -2346,7 +2366,10 @@ artists:
   confidence: high
   aliases:
   - ERNESTO YERENA
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ernst_barlach
   display_name: Ernst Barlach
   country_birth: DE

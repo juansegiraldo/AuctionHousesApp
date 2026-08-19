@@ -222,3 +222,38 @@ def test_a_null_death_year_is_not_written_as_a_key(tmp_path):
 
     data = yaml.safe_load((tmp_path / "z.yaml").read_text(encoding="utf-8"))
     assert "death_year" not in data["artists"][0]
+
+
+def test_a_recent_birth_without_any_death_evidence_is_marked_living(tmp_path):
+    """Un artista nacido en 1974 y sin muerte en NINGUNA fuente esta vivo.
+
+    No es una conjetura: es la lectura correcta de que nadie ha registrado el
+    fallecimiento de alguien que hoy tendria 52 anios. Sin death_status el
+    informe escribe "n. 1974" y el lector no sabe si falta el dato.
+    """
+    shard = tmp_path / "n.yaml"
+    shard.write_text(
+        'artists:\n'
+        '  - artist_id: nico_reciente\n'
+        '    display_name: "Nico Reciente"\n'
+        '    country_birth: "ES"\n'
+        '    nationalities: ["ES"]\n'
+        '    birth_year: 1974\n'
+        '    attribution_type: autor\n'
+        '    source: manual\n'
+        '    confidence: high\n'
+        '    aliases:\n'
+        '      - "Nico Reciente"\n',
+        encoding="utf-8",
+    )
+
+    changed = apply_mod.apply_completions(
+        [{"artist_id": "nico_reciente", "fields": {"death_status": "living"}}],
+        shard_dir=tmp_path,
+    )
+
+    assert changed == 1
+    data = yaml.safe_load(shard.read_text(encoding="utf-8"))
+    assert data["artists"][0]["death_status"] == "living"
+    # El anio de nacimiento no se toca.
+    assert data["artists"][0]["birth_year"] == 1974

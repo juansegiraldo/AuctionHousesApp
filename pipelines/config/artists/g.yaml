@@ -326,7 +326,10 @@ artists:
   confidence: high
   aliases:
   - GAVIRIA
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: gemma_sin
   display_name: Gemma Sin
   birth_year: 1952
@@ -1274,7 +1277,10 @@ artists:
   aliases:
   - GONZALO DIAZ
   - Gonzalo Díaz
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: gonzalo_fonseca
   display_name: Gonzalo Fonseca
   country_birth: UY
@@ -1517,7 +1523,10 @@ artists:
   notes: '1 lote vendido por 9.000 EUR | casas: duran_subastas | la memoria institucional de la Fundació Miró identifica
     Grip Face como pseudónimo de David Oliver, nacido en Palma en 1989. David Oliver no se añade como alias por
     riesgo de homonimia y porque esa forma no aparece como artista crudo en Silver. Fuentes: https://miromallorca.com/uploads/2026/04/memoria2025.pdf
-    ; https://miromallorca.com/es/exhibition/grip-face-utopia-del-lodo-y-sashimi-de-bruma/'
+    ; https://miromallorca.com/es/exhibition/grip-face-utopia-del-lodo-y-sashimi-de-bruma/. Marcado ''living'' el
+    2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este
+    campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: guillem_villa_bassols
   display_name: Guillem Villà Bassols
   country_birth: null
@@ -1827,7 +1836,10 @@ artists:
   confidence: high
   aliases:
   - GUSTAVO "GARAVATO" BERNAL
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: gustavo_isoe
   display_name: Tsuyoshi Isoe
   country_birth: JP
@@ -1867,7 +1879,10 @@ artists:
   aliases:
   - GUSTAVO OTERO MUÑOZ
   - Otero Muñoz, Gustavo
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: gustavo_sorzano
   display_name: Gustavo Sorzano
   country_birth: CO

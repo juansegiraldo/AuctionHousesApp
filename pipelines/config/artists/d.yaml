@@ -153,9 +153,12 @@ artists:
   aliases:
   - Daniel Salamanca
   - Daniel Salamanca Núñez
-  notes: Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC
+  notes: 'Colombian contemporary visual artist, born 1983, from Bogotá. BFA Javeriana University (2006), MFA SAIC
     Chicago (2019). Works as artist, graphic designer, essayist, lecturer. Won Cultural Ministry of Colombia grant
-    for emerging artists (2015).
+    for emerging artists (2015). Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni
+    la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue
+    ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: daniel_spoerri
   display_name: Daniel Spoerri
   country_birth: RO
@@ -290,7 +293,10 @@ artists:
   aliases:
   - DARIO ORTIZ
   - Darío Ortiz
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: dario_villalba
   display_name: Darío Villalba
   country_birth: PY
@@ -603,7 +609,10 @@ artists:
   - Diego Chaves "Lesivo" (Colombia)
   - DIEGO CHAVES "LESIVO"
   - Diego Chaves "Lesivo"
-  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: diego_crosa_y_costa
   display_name: Diego Crosa y Costa
   country_birth: ES

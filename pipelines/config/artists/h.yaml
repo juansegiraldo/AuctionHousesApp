@@ -931,7 +931,10 @@ artists:
   aliases:
   - HUGO DEMARCO
   - Hugo Demarco
-  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: hugo_fontela
   display_name: Hugo Fontela
   country_birth: ES

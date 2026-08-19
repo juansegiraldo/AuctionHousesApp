@@ -117,7 +117,11 @@ artists:
   confidence: high
   aliases:
   - Olga de Dios
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q62116521'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q62116521.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: olga_sacharoff
   display_name: Olga Nicolaevna Sacharoff
   country_birth: null
@@ -346,7 +350,10 @@ artists:
   aliases:
   - Oscar Muñoz (Colombia, 1951)
   - Oscar Muñoz
-  notes: '21 lotes | casas: bogota_auctions'
+  notes: '21 lotes | casas: bogota_auctions. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: oscar_rodriguez_naranjo
   display_name: Oscar Rodríguez Naranjo
   country_birth: CO
@@ -374,7 +381,10 @@ artists:
   aliases:
   - OSCAR VILLALOBOS
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
-    solo uno nacio en 1987, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q124425935'
+    solo uno nacio en 1987, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q124425935. Marcado
+    ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento.
+    Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: oskar_dalvit
   display_name: Oskar Dalvit
   country_birth: CH

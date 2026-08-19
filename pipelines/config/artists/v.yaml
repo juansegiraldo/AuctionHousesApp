@@ -136,7 +136,11 @@ artists:
   confidence: high
   aliases:
   - Vicent Benito Botella
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42585261'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42585261.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: vicente_ameztoy
   display_name: Vicente Ameztoy
   country_birth: ES
@@ -575,7 +579,10 @@ artists:
   aliases:
   - VICTOR LAIGNELET
   - Victor Laignelet
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: victor_lecomte
   display_name: Victor Lecomte
   birth_year: 1856
@@ -598,7 +605,11 @@ artists:
   confidence: high
   aliases:
   - Víctor López Rúa
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99495111'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99495111.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: victor_manuel_garcia_valdez
   display_name: Víctor Manuel García Valdez
   country_birth: CU

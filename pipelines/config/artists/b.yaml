@@ -11,7 +11,10 @@ artists:
   aliases:
   - BAIRO MARTINEZ
   - Bairo Martinez
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: baldassare_de_caro
   display_name: Baldassare de Caro
   country_birth: IT
@@ -115,7 +118,10 @@ artists:
   aliases:
   - BARBARITA CARDOZO
   - Barbarita Cardozo
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: barend_gael
   display_name: Barent Gael
   country_birth: NL
@@ -652,7 +658,10 @@ artists:
   aliases:
   - BERNARDO ORTIZ
   - Bernardo Ortiz
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: bernardo_perez_torrens
   display_name: Bernardo Perez Torrens
   country_birth: ES
@@ -665,7 +674,10 @@ artists:
   aliases:
   - Bernardo Perez Torrens
   - Bernardo Pérez Torrens
-  notes: '45 lotes en Silver | fuente: Askart; Artnet | Madrid'
+  notes: '45 lotes en Silver | fuente: Askart; Artnet | Madrid. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: bernardo_salcedo
   display_name: Bernardo Salcedo
   country_birth: CO
@@ -1100,7 +1112,10 @@ artists:
   aliases:
   - BRIAN DONNELLY "KAWS"
   - Brian Donnelly "Kaws"
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: bruno_widmann
   display_name: Bruno Widmann
   country_birth: UY

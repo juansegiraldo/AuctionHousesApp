@@ -219,7 +219,10 @@ artists:
   aliases:
   - JAIME TARAZONA
   - Jaime Tarazona
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jairo_betancourt_alvarez
   display_name: Jairo Betancourt Alvarez
   birth_year: 1934
@@ -621,8 +624,12 @@ artists:
   aliases:
   - JAVIER CARABALLO
   - Javier Caraballo
-  notes: Master en Plastic Arts, Facultad de Bellas Artes, Universidad del Atlántico, Colombia. De Barranquilla.
-    Serie 'Grandes Maestros'. En colecciones Royal Family de Mónaco y Private Collection del PM de Luxemburgo.
+  notes: 'Master en Plastic Arts, Facultad de Bellas Artes, Universidad del Atlántico, Colombia. De Barranquilla.
+    Serie ''Grandes Maestros''. En colecciones Royal Family de Mónaco y Private Collection del PM de Luxemburgo.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: javier_clavo
   display_name: Javier Clavo
   country_birth: ES
@@ -685,7 +692,10 @@ artists:
   aliases:
   - JAVIER MANTILLA P
   - Javier Mantilla P
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: javier_mariscal
   display_name: Javier Mariscal
   country_birth: ES
@@ -697,7 +707,10 @@ artists:
   confidence: high
   aliases:
   - Javier Mariscal
-  notes: '13 lotes en Silver | fuente: Wikipedia | Valencia'
+  notes: '13 lotes en Silver | fuente: Wikipedia | Valencia. Marcado ''living'' el 2026-08-19: nacido en 1950 o
+    despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: javier_mulio
   display_name: Javier Mulio
   birth_year: 1957
@@ -721,7 +734,10 @@ artists:
   aliases:
   - Javier Pagola
   - Javier Págola
-  notes: '17 lotes en Silver | fuente: MutualArt; Artsper | San Sebastian'
+  notes: '17 lotes en Silver | fuente: MutualArt; Artsper | San Sebastian. Marcado ''living'' el 2026-08-19: nacido
+    en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe
+    escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: javier_penafiel
   display_name: Javier Peñafiel
   country_birth: ES
@@ -1219,7 +1235,10 @@ artists:
   aliases:
   - JEISSON SIERRA
   - Jeisson Sierra
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jenny_holzer
   display_name: Jenny Holzer
   country_birth: US
@@ -1561,7 +1580,10 @@ artists:
   confidence: high
   aliases:
   - BENNASSAR, JOAN
-  notes: '10 lotes | casas: duran_subastas'
+  notes: '10 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: joan_brossa
   display_name: Joan Brossa
   country_birth: ES
@@ -1681,7 +1703,10 @@ artists:
   aliases:
   - JOAN FONTCUBERTA
   - Joan Fontcuberta
-  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: joan_gardy_artigas
   display_name: Joan Gardy Artigas
   country_birth: FR
@@ -1879,7 +1904,10 @@ artists:
   confidence: high
   aliases:
   - Joao Paramés
-  notes: '64 lotes | casas: duran_subastas'
+  notes: '64 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: joaquim_falco
   display_name: Joaquim Falcó
   country_birth: ES
@@ -2639,7 +2667,10 @@ artists:
   aliases:
   - JONIER MARIN
   - Jonier Marin
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jonio_montiel
   display_name: Jonio Montiel
   country_birth: IT
@@ -2882,7 +2913,10 @@ artists:
   aliases:
   - JORGE CAVELIER
   - Jorge Cavelier
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jorge_damiani
   display_name: Jorge Damiani
   country_birth: IT
@@ -3345,7 +3379,10 @@ artists:
   confidence: high
   aliases:
   - José Bedia
-  notes: '7 lotes | casas: duran_subastas'
+  notes: '7 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jose_belloni
   display_name: José Belloni
   country_birth: UY
@@ -4246,7 +4283,10 @@ artists:
   confidence: high
   aliases:
   - Jose Luis Checa
-  notes: '36 lotes | casas: duran_subastas'
+  notes: '36 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jose_luis_cuevas
   display_name: José Luis Cuevas
   country_birth: MX
@@ -5499,7 +5539,10 @@ artists:
   confidence: high
   aliases:
   - JOSE "PEZ" SABATE
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: jose_pico_mitjans
   display_name: José Picó Mitjans
   country_birth: ES
@@ -6800,7 +6843,10 @@ artists:
   aliases:
   - JUAN CARLOS DELGADO
   - Juan Carlos Delgado
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: juan_carlos_eguillor
   display_name: Juan Carlos Eguillor
   country_birth: ES
@@ -7090,7 +7136,10 @@ artists:
   aliases:
   - JUAN FERNANDO HERRAN
   - Juan Fernando Herrán
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: juan_ferrer_carbonell
   display_name: Juan Ferrer Carbonell
   country_birth: ES
@@ -7620,7 +7669,10 @@ artists:
   confidence: high
   aliases:
   - JUAN PABLO ECHEVERRI
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: juan_padilla_lara
   display_name: Juán Padilla Lara
   country_birth: null
@@ -7723,7 +7775,10 @@ artists:
   aliases:
   - JUAN RODRIGUEZ VARON
   - Juan Rodríguez Varón
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: juan_romero
   display_name: Juan Romero
   country_birth: ES
@@ -8189,7 +8244,10 @@ artists:
   aliases:
   - JULIAN PARDO
   - Julian Pardo
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: julian_perez_munoz
   display_name: Julián Pérez Muñoz
   birth_year: 1927

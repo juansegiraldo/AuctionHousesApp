@@ -10,7 +10,11 @@ artists:
   confidence: high
   aliases:
   - Rafael Agredano
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55999969'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55999969.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: rafael_alberti
   display_name: Rafael Alberti
   country_birth: ES
@@ -49,7 +53,11 @@ artists:
   confidence: high
   aliases:
   - Rafael Amoros
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133764300'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q133764300.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: rafael_argeles_escriche
   display_name: Rafael Argelés
   birth_year: 1894
@@ -406,7 +414,10 @@ artists:
   aliases:
   - Rafael González Zapatero
   - Rafael Gonzalez Zapatero
-  notes: '16 lotes en Silver | fuente: Askart; Arteinformado | Sevilla'
+  notes: '16 lotes en Silver | fuente: Askart; Arteinformado | Sevilla. Marcado ''living'' el 2026-08-19: nacido
+    en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe
+    escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rafael_griera
   display_name: Rafael Griera i Calderón
   country_birth: ES
@@ -468,7 +479,10 @@ artists:
   aliases:
   - RAFAEL MENA G
   - Rafael Mena G.
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rafael_monagas
   display_name: Rafael Monagas
   birth_year: 1947
@@ -1179,7 +1193,11 @@ artists:
   confidence: high
   aliases:
   - Rashid Diab
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21693162'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21693162.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: raul_javiel_cabrera
   display_name: Raúl Javiel Cabrera
   country_birth: UY
@@ -1493,7 +1511,10 @@ artists:
   confidence: high
   aliases:
   - Ricardo Alario
-  notes: '16 lotes en Silver | fuente: Artelista; Artnet | Valencia'
+  notes: '16 lotes en Silver | fuente: Artelista; Artnet | Valencia. Marcado ''living'' el 2026-08-19: nacido en
+    1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ricardo_arenys
   display_name: Ricard Arenys i Galdon
   country_birth: ES
@@ -1603,7 +1624,10 @@ artists:
   aliases:
   - RICARDO CARDENAS
   - Ricardo Cárdenas
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ricardo_de_madrazo_y_garreta
   display_name: Ricardo de Madrazo y Garreta
   country_birth: ES
@@ -2143,7 +2167,11 @@ artists:
   confidence: high
   aliases:
   - ROBERT SCHABERL
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1702624'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1702624.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: robert_thegerstrom
   display_name: Robert Thegerström
   country_birth: GB
@@ -2483,7 +2511,10 @@ artists:
   aliases:
   - RODRIGO ECHEVERRI CALERO
   - Rodrigo Echeverri Calero
-  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rodrigo_trujillo
   display_name: Rodrigo Trujillo
   country_birth: CO
@@ -2496,7 +2527,10 @@ artists:
   aliases:
   - RODRIGO TRUJILLO
   - Rodrigo Trujillo
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rogelio_lopez_cuenca
   display_name: Rogelio López Cuenca
   country_birth: ES
@@ -2508,7 +2542,11 @@ artists:
   confidence: high
   aliases:
   - Rogelio López Cuenca
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594509'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594509.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: rogelio_polesello
   display_name: Rogelio Polesello
   country_birth: AR
@@ -2665,7 +2703,10 @@ artists:
   - RONNY VAYDA ADLER
   - RONNY VAYDA
   - Ronny Vayda
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rosa_biadiu
   display_name: Rosa Biadiu
   country_birth: null
@@ -2717,7 +2758,11 @@ artists:
   confidence: high
   aliases:
   - Rosa Gallego del Peso
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134490466'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134490466.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: rosa_torres
   display_name: Rosa Torres
   country_birth: ES
@@ -2741,7 +2786,11 @@ artists:
   confidence: high
   aliases:
   - Rosângela Rennó
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10364684'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q10364684.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: rosario_de_velasco
   display_name: Rosario de Velasco
   country_birth: ES
@@ -2766,7 +2815,10 @@ artists:
   confidence: high
   aliases:
   - ROSARIO LOPEZ PARRA
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: rosendo_gonzalez_carbonell
   display_name: Rossend González Carbonell
   country_birth: ES

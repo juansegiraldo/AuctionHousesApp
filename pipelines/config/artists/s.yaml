@@ -23,7 +23,10 @@ artists:
   aliases:
   - SAIR GARCIA
   - Sair García
-  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: salvador_clemente
   display_name: Salvador Clemente
   country_birth: ES
@@ -443,7 +446,10 @@ artists:
   aliases:
   - SANTIAGO URIBE HOLGUIN
   - Santiago Uribe Holguin
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: santiago_ydanez
   display_name: Santiago Ydañez
   country_birth: ES
@@ -919,7 +925,11 @@ artists:
   confidence: high
   aliases:
   - Shen Jingdong
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13626767'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13626767.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: shepard_fairey
   display_name: Shepard Fairey
   country_birth: US
@@ -931,7 +941,11 @@ artists:
   confidence: high
   aliases:
   - Shepard Fairey
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1332698'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1332698.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: shepard_fairey_obey
   display_name: Shepard Fairey "Obey"
   country_birth: US
@@ -945,7 +959,10 @@ artists:
   - SHEPARD FAIREY "OBEY"
   - SHEPARD FAIREY (OBEY)
   - Shepard Fairey "Obey"
-  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '11 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: shigeru_izumi
   display_name: Shigeru Izumi
   country_birth: JP
@@ -1010,7 +1027,11 @@ artists:
   confidence: high
   aliases:
   - SIGFREDO CHACON
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55937584'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55937584.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: sigfrido_martin_begue
   display_name: Sigfrido Martín Begué
   country_birth: ES
@@ -1365,7 +1386,10 @@ artists:
   aliases:
   - SUSANA CARRIE
   - Susana Carrié
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: susana_solano
   display_name: Susana Solano
   country_birth: ES

@@ -10,7 +10,10 @@ artists:
   confidence: high
   aliases:
   - A ROJAS
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: aaron_bohrod
   display_name: Aaron Bohrod
   country_birth: US
@@ -1522,7 +1525,10 @@ artists:
   - Alejandro Sánchez
   notes: '17 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. CORREGIDO 2026-08-19: la ficha decia n.1945 y
     el catalogo de la casa publica ''ALEJANDRO SANCHEZ (1981) / Alejandro Sanchez (Colombia, 1981)'' en sus lotes.
-    La hoja FINALL.xlsx traia el anio equivocado; gana el dato de la casa.'
+    La hoja FINALL.xlsx traia el anio equivocado; gana el dato de la casa. Marcado ''living'' el 2026-08-19: nacido
+    en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe
+    escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: alejandro_seiquer
   display_name: Alejandro Seiquer López
   country_birth: ES
@@ -1691,7 +1697,10 @@ artists:
   aliases:
   - Alfonso Albacete
   - ALBACETE, ALFONSO
-  notes: '86 lotes | casas: duran_subastas'
+  notes: '86 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: alfonso_alberto_de_velasco
   display_name: Alfonso Alberto de Velasco
   birth_year: 1635
@@ -2183,7 +2192,10 @@ artists:
   - Alicia Martín Villanueva
   - Alicia Martín-Pozuelo
   - Alicia Martín
-  notes: '21 lotes | casas: duran_subastas'
+  notes: '21 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: alicia_tafur
   display_name: Alicia Tafur
   country_birth: CO
@@ -2663,7 +2675,10 @@ artists:
   confidence: high
   aliases:
   - AMHOS
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ana_legido_soto
   display_name: Ana María Legido Soto
   country_birth: ES
@@ -2691,7 +2706,10 @@ artists:
   - Ana María Rueda - Colombia, 1954.
   - ANA MARIA RUEDA
   - Ana María Rueda
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: ana_mercedes_hoyos
   display_name: Ana Mercedes Hoyos
   country_birth: CO
@@ -3075,7 +3093,10 @@ artists:
   aliases:
   - ANDRES MATIAS PINILLA
   - Andrés Matías Pinilla
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: andres_merida
   display_name: Andres Merida
   country_birth: ES
@@ -3101,7 +3122,10 @@ artists:
   aliases:
   - ANDRES MONTOYA "TOXICOMANO"
   - Andrés Montoya "Toxicómano"
-  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '6 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: andres_nagel
   display_name: Andrés Nagel
   country_birth: ES
@@ -3128,7 +3152,10 @@ artists:
   aliases:
   - ANDRES ORJUELA
   - Andrés Orjuela
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: andres_rabago_garcia
   display_name: Andrés Rábago García
   country_birth: ES
@@ -3182,7 +3209,10 @@ artists:
   aliases:
   - ANDREW LORD
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
-    solo uno nacio en 1950, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28756442'
+    solo uno nacio en 1950, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28756442. Marcado
+    ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento.
+    Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: andy_warhol
   display_name: Andy Warhol
   country_birth: US
@@ -3537,7 +3567,10 @@ artists:
   aliases:
   - ANIBAL GOMESCASSERES
   - Aníbal Gomescasseres
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: anita_gibson
   display_name: Anita Gibson
   country_birth: PE
@@ -4236,8 +4269,11 @@ artists:
   confidence: high
   aliases:
   - Antonio Escobar Moreno
-  notes: Pintor español. Nacido 1952 Madrid. Estudió Bellas Artes San Fernando, Nueva York 1978 (Pratt Graphics
-    Center). Exposiciones desde 1971. Especializado en paisaje.
+  notes: 'Pintor español. Nacido 1952 Madrid. Estudió Bellas Artes San Fernando, Nueva York 1978 (Pratt Graphics
+    Center). Exposiciones desde 1971. Especializado en paisaje. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: antonio_fabres_y_costa
   display_name: Antonio Fabrés
   country_birth: ES
@@ -4827,7 +4863,11 @@ artists:
   aliases:
   - Antonio Posada
   notes: 'Artista español nacido en Valladolid, 1952. Residente en Valladolid. Representado por Galería Doña Sancha.
-    Nota: es artista español, no colombiano, aunque el catálogo pueda incluir obras de él en casas de subastas latinoamericanas.'
+    Nota: es artista español, no colombiano, aunque el catálogo pueda incluir obras de él en casas de subastas latinoamericanas.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: antonio_puga
   display_name: Antonio Puga
   country_birth: ES
@@ -4964,8 +5004,11 @@ artists:
   aliases:
   - Antonio Rojas Peinado
   - Antonio Rojas
-  notes: Spanish painter born 1962 in Tarifa (Cádiz). Resides in Madrid. Influenced by magical realism and surrealism.
-    Geometrical style inspired by Giorgio de Chirico. Scholarship from Spanish Academy Rome 1993.
+  notes: 'Spanish painter born 1962 in Tarifa (Cádiz). Resides in Madrid. Influenced by magical realism and surrealism.
+    Geometrical style inspired by Giorgio de Chirico. Scholarship from Spanish Academy Rome 1993. Marcado ''living''
+    el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin
+    este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: antonio_ros_y_guell
   display_name: Antoni Ros i Güell
   country_birth: ES
@@ -5016,7 +5059,11 @@ artists:
   confidence: high
   aliases:
   - Antonio Santos Lloro
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99481552'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q99481552.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: antonio_santos_viana
   display_name: Antonio Santos Viana
   country_birth: ES
@@ -5179,7 +5226,10 @@ artists:
   aliases:
   - ANTONIO VALENCIA MEJIA
   - Antonio Valencia Mejía
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: antonio_vazquez
   display_name: Antonio Vázquez
   birth_year: 1485

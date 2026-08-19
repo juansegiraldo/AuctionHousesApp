@@ -203,7 +203,10 @@ artists:
   notes: '4 lotes | casas: duran_subastas | n. 1983, pintor madrilenio de arte automovilistico; vivo. El anio viene
     de la ficha de la propia casa (CAMPA, MANU (1983)), no de fuente independiente: no tiene Wikipedia ni Wikidata
     y su web y Artsy bloquean el fetch. De ahi confidence medium. Para un artista contemporaneo vivo el dato de
-    la casa es aceptable; no lo seria para atribuir un pais.'
+    la casa es aceptable; no lo seria para atribuir un pais. Marcado ''living'' el 2026-08-19: nacido en 1950 o
+    despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: manu_muniategiandikoetxea
   display_name: Manu Muniategiandikoetxea
   country_birth: ES
@@ -215,7 +218,11 @@ artists:
   confidence: high
   aliases:
   - Manu Muniategiandikoetxea
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12262963'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q12262963.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: manuel_abelenda
   display_name: Manuel Abelenda Zapata
   country_birth: ES
@@ -440,7 +447,11 @@ artists:
   confidence: high
   aliases:
   - Manuel Castaño
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5406224'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5406224.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: manuel_castro_mellado
   display_name: Manuel Castro Mellado
   country_birth: ES
@@ -824,7 +835,10 @@ artists:
   confidence: medium
   aliases:
   - Manuel Martos
-  notes: '17 lotes en Silver | fuente: Askart; MutualArt | Jaen'
+  notes: '17 lotes en Silver | fuente: Askart; MutualArt | Jaen. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: manuel_mendive
   display_name: Manuel Mendive
   country_birth: CU
@@ -1329,7 +1343,11 @@ artists:
   confidence: high
   aliases:
   - Manuela Trasobares
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2469656'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2469656.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: marc_chagall
   display_name: Marc Chagall
   country_birth: BY
@@ -1698,7 +1716,11 @@ artists:
   confidence: high
   aliases:
   - María Carbonero
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94411958'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q94411958.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: maria_carrera_pascual
   display_name: María Carrera Pascual
   country_birth: ES
@@ -1843,7 +1865,10 @@ artists:
   confidence: high
   aliases:
   - MARIA GORDILLO
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: maria_isabel_rueda
   display_name: María Isabel Rueda
   birth_year: 1972
@@ -1939,7 +1964,11 @@ artists:
   confidence: high
   aliases:
   - MARIA TERESA CANO
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42583492'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42583492.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: maria_teresa_hincapie
   display_name: María teresa Hincapié
   country_birth: CO
@@ -2104,7 +2133,10 @@ artists:
   aliases:
   - Mariano de Blas
   - DE BLAS, MARIANO
-  notes: '23 lotes | casas: duran_subastas'
+  notes: '23 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: mariano_de_corral_y_libano
   display_name: Mariano de Corral
   country_birth: ES
@@ -2407,7 +2439,11 @@ artists:
   confidence: high
   aliases:
   - Mario GIACOYA
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28015818'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28015818.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: mario_martin_del_campo
   display_name: Mario Martín del Campo
   country_birth: MX
@@ -2457,7 +2493,11 @@ artists:
   confidence: high
   aliases:
   - MARIO MURUA
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134311078'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q134311078.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: mario_opazo
   display_name: Mario Opazo
   birth_year: 1969
@@ -2515,7 +2555,11 @@ artists:
   confidence: high
   aliases:
   - Mark Kostabi
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q724401'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q724401.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: markus_lupertz
   display_name: Markus Lüpertz
   country_birth: CZ
@@ -2796,7 +2840,10 @@ artists:
   aliases:
   - MATEO LOPEZ
   - Mateo López
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: mateo_manaure
   display_name: Mateus Manaure
   country_birth: VE
@@ -3088,7 +3135,10 @@ artists:
   aliases:
   - MAURICIO ZEQUEDA
   - Mauricio Zequeda
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: maurizio_cattelan
   display_name: Maurizio Cattelan
   country_birth: IT
@@ -3100,7 +3150,11 @@ artists:
   confidence: high
   aliases:
   - Maurizio Cattelan
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q655398'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q655398.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: maurizio_corona
   display_name: Mauro Corona
   country_birth: IT
@@ -3125,7 +3179,11 @@ artists:
   confidence: high
   aliases:
   - Maurizio Lanzillotta
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18819136'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18819136.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: mauro_leivas
   display_name: Mauro Leivas
   country_birth: ES
@@ -3150,7 +3208,11 @@ artists:
   confidence: high
   aliases:
   - Mauro Piva
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43135328'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43135328.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: max_bill
   display_name: Max Bill
   country_birth: CH
@@ -3244,7 +3306,10 @@ artists:
   - Maximo Flórez López
   - MAXIMO FLOREZ
   - Máximo Florez
-  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '4 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: maximo_juderias_caballero
   display_name: Máximo Juderías Caballero
   country_birth: ES
@@ -3865,7 +3930,11 @@ artists:
   confidence: high
   aliases:
   - Miguel Rasero
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20101192'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20101192.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: miguel_reche
   display_name: Miguel Reche
   birth_year: 1948
@@ -4006,7 +4075,11 @@ artists:
   confidence: high
   aliases:
   - Miki Leal
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47493986'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q47493986.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: miklos_mihalovits
   display_name: Miklós Mihalovits
   birth_year: 1888
@@ -4090,7 +4163,10 @@ artists:
   aliases:
   - MILOS JONIC
   - Milos Jonic
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: mimmo_rotella
   display_name: Mimmo Rotella
   country_birth: IT
@@ -4131,7 +4207,10 @@ artists:
   confidence: high
   aliases:
   - Miquel Barceló
-  notes: '23 lotes | casas: duran_subastas'
+  notes: '23 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: miquel_carbonell
   display_name: Miquel Carbonell
   country_birth: ES
@@ -4354,7 +4433,10 @@ artists:
   aliases:
   - Mondhare, Louis-Joseph
   - MONDHARE
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: monica_meira
   display_name: Mónica Meira
   country_birth: CO
@@ -4367,7 +4449,10 @@ artists:
   aliases:
   - MONICA MEIRA
   - Mónica Meira
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: monica_rosello
   display_name: Mònica Roselló Menasanch
   country_birth: ES
@@ -4379,7 +4464,11 @@ artists:
   confidence: high
   aliases:
   - Mónica Roselló
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q112128288'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q112128288.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: monique_de_roux
   display_name: Monique de Roux
   country_birth: FR
@@ -4442,7 +4531,11 @@ artists:
   confidence: high
   aliases:
   - Montserrat Gómez-Osuna
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96756764'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q96756764.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: montserrat_gudiol
   display_name: Montserrat Gudiol
   country_birth: ES

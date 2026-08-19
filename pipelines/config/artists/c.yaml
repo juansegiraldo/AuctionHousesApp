@@ -37,7 +37,10 @@ artists:
   aliases:
   - Camilo Bojacá (Colombia, 1985)
   - CAMILO BOJACA
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: canaletto
   display_name: Canaletto
   birth_year: 1697
@@ -328,8 +331,11 @@ artists:
   aliases:
   - Carlos Cobián
   - Carlos Cobian
-  notes: Pintor español contemporáneo. Nace en Asturias, España. Especializado en paisajes marinos del litoral cantábrico.
-    Comparado con Sorolla del norte.
+  notes: 'Pintor español contemporáneo. Nace en Asturias, España. Especializado en paisajes marinos del litoral
+    cantábrico. Comparado con Sorolla del norte. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carlos_correa
   display_name: Carlos Correa
   country_birth: CO
@@ -396,7 +402,10 @@ artists:
   aliases:
   - CARLOS ECHEVERRY
   - Carlos Echeverry
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carlos_federico_saez
   display_name: Carlos Federico Sáez
   country_birth: UY
@@ -435,7 +444,10 @@ artists:
   confidence: high
   aliases:
   - Carlos Franco
-  notes: '35 lotes | casas: duran_subastas'
+  notes: '35 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carlos_garaicoa
   display_name: Carlos Garaicoa
   country_birth: CU
@@ -693,7 +705,10 @@ artists:
   aliases:
   - MORAGO, CARLOS
   - Carlos Morago
-  notes: '18 lotes | casas: duran_subastas'
+  notes: '18 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carlos_nadal_farreras
   display_name: Carles Nadal
   country_birth: FR
@@ -857,7 +872,10 @@ artists:
   - CARLOS SALAZAR ARENAS
   - CARLOS SALAZAR
   - Carlos Salazar
-  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '5 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carlos_schwartz
   display_name: Carlos A. Schwartz
   country_birth: null
@@ -1069,7 +1087,10 @@ artists:
   confidence: high
   aliases:
   - Carmen Calvo
-  notes: '19 lotes | casas: duran_subastas'
+  notes: '19 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: carmen_corral_jam
   display_name: Carmen Corral Jam
   country_birth: ES
@@ -1300,7 +1321,10 @@ artists:
   aliases:
   - CATALINA CABRERA
   - Catalina Cabrera
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: cayetano_cornet_palau
   display_name: Cayetano Cornet y Palau
   country_birth: ES
@@ -1460,7 +1484,10 @@ artists:
   confidence: high
   aliases:
   - CESAR DEL VALLE
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: cesar_domela
   display_name: César Domela
   country_birth: FR
@@ -1564,7 +1591,10 @@ artists:
   confidence: high
   aliases:
   - César Saldívar
-  notes: '117 lotes | casas: duran_subastas'
+  notes: '117 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: cesare_dell_acqua
   display_name: Cesare Dell’Acqua
   country_birth: SI
@@ -1900,7 +1930,10 @@ artists:
   confidence: high
   aliases:
   - CHRISTIAN ABUSAID
-  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '0 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: christo_vladimirov_javacheff
   display_name: Christo
   country_birth: BG
@@ -2040,7 +2073,10 @@ artists:
   aliases:
   - CLAUDIA HAKIM
   - Claudia Hakim
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: claudio_bravo
   display_name: Claudio Bravo
   country_birth: CL
@@ -2394,7 +2430,10 @@ artists:
   aliases:
   - CRISTINA GHETTI
   - Cristina Ghetti
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: cristina_iglesias
   display_name: Cristina Iglesias
   country_birth: ES
@@ -2406,7 +2445,10 @@ artists:
   confidence: high
   aliases:
   - Cristina Iglesias
-  notes: '42 lotes | casas: duran_subastas'
+  notes: '42 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: cristina_navarro
   display_name: Cristina Navarro Avilés
   country_birth: ES

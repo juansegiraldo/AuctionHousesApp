@@ -597,7 +597,11 @@ artists:
   confidence: high
   aliases:
   - LEYLA CARDENAS CAMPOS
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q116282620'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q116282620.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: lia_bermudez
   display_name: Lía Bermúdez
   country_birth: VE
@@ -650,7 +654,10 @@ artists:
   aliases:
   - LILIANA SANCHEZ
   - Liliana Sánchez
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: lincoln_presno
   display_name: Lincoln Presno
   country_birth: UY
@@ -1221,7 +1228,10 @@ artists:
   aliases:
   - LUCIANO DENVER
   - Luciano Denver
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luciano_diaz_castilla
   display_name: Luciano Díaz Castilla
   country_birth: ES
@@ -1788,7 +1798,10 @@ artists:
   aliases:
   - LUIS FERNANDO PELAEZ
   - Luis Fernando Peláez
-  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luis_fernando_roldan
   display_name: Luis Fernando Roldán
   country_birth: CO
@@ -1881,7 +1894,11 @@ artists:
   confidence: high
   aliases:
   - Luis García-Ramos
-  notes: Pintor canario nacido en Tenerife, especializado en naturaleza e inspiración marina. Obra en museos españoles.
+  notes: 'Pintor canario nacido en Tenerife, especializado en naturaleza e inspiración marina. Obra en museos españoles.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: luis_garcia_sampedro
   display_name: Luis García Sampedro
   country_birth: ES
@@ -1906,7 +1923,10 @@ artists:
   confidence: high
   aliases:
   - Luis Giner Bueno
-  notes: '12 lotes en Silver | fuente: Artnet; Wikipedia ES | Godella, Valencia'
+  notes: '12 lotes en Silver | fuente: Artnet; Wikipedia ES | Godella, Valencia. Marcado ''living'' el 2026-08-19:
+    nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el
+    informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luis_gordillo
   display_name: Luis Gordillo
   country_birth: ES
@@ -2155,7 +2175,10 @@ artists:
   aliases:
   - LUIS MORALES
   - Luis Morales
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luis_moscardo
   display_name: Luis Moscardó
   country_birth: ES
@@ -2167,7 +2190,10 @@ artists:
   confidence: high
   aliases:
   - Luis Moscardó
-  notes: '17 lotes | casas: duran_subastas'
+  notes: '17 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luis_mosquera_gomez
   display_name: Luis Mosquera Gómez
   country_birth: ES
@@ -2272,7 +2298,10 @@ artists:
   confidence: high
   aliases:
   - Luis Roldán
-  notes: '6 lotes | casas: bogota_auctions'
+  notes: '6 lotes | casas: bogota_auctions. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: luis_saez_diez
   display_name: Luis Sáez Díez
   country_birth: ES
@@ -2423,7 +2452,10 @@ artists:
   aliases:
   - LUZ HELENA CABALLERO
   - Luz Helena Caballero
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: lydia_azout
   display_name: Lydia Azout
   country_birth: CO

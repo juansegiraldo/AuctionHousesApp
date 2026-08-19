@@ -45,7 +45,11 @@ artists:
   confidence: high
   aliases:
   - Pablo Genovés
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19863653'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19863653.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: pablo_gilberto_montoya
   display_name: Pablo Gilberto Montoya
   country_birth: CO
@@ -58,7 +62,10 @@ artists:
   aliases:
   - PABLO GILBERTO MONTOYA
   - Pablo Gilberto Montoya
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: pablo_gonzalvo_perez
   display_name: Pablo Gonzalvo
   country_birth: ES
@@ -101,7 +108,10 @@ artists:
   aliases:
   - PABLO MUÑOZ
   - Pablo Muñoz
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: pablo_obelar
   display_name: Pablo Obelar
   country_birth: CL
@@ -308,7 +318,10 @@ artists:
   aliases:
   - Paco Leal
   notes: 'Spanish painter born 1952. Works sold at auction. Note: there is also a Mexican portrait artist named
-    Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist.'
+    Paco Leal (b. 1964 Guadalajara), but the 1952 birth year identifies the Spanish artist. Marcado ''living'' el
+    2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este
+    campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: paco_rabanne
   display_name: Paco Rabanne
   country_birth: ES
@@ -399,7 +412,11 @@ artists:
   confidence: high
   aliases:
   - Pamen Pereira
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30243149'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q30243149.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: pancho_cossio
   display_name: Pancho Cossío
   country_birth: ES
@@ -512,7 +529,10 @@ artists:
   aliases:
   - PATRICIA TAVERA
   - Patricia Tavera
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: patricio_cabrera
   display_name: Patricio Cabrera
   country_birth: ES
@@ -524,7 +544,11 @@ artists:
   confidence: high
   aliases:
   - Patricio Cabrera
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594506'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594506.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: patricio_court
   display_name: Patricio Court
   country_birth: CL
@@ -1076,7 +1100,10 @@ artists:
   - Pedro Ruiz Ortega
   - Pedro Ruiz (Colombia, 1957)
   - Pedro Ruíz
-  notes: '24 lotes | casas: bogota_auctions'
+  notes: '24 lotes | casas: bogota_auctions. Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA
+    fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector
+    no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: pedro_saenz_y_saenz
   display_name: Pedro Sáenz
   country_birth: ES
@@ -1115,7 +1142,10 @@ artists:
   aliases:
   - Pedro Sandoval
   notes: '7 lotes | casas: duran_subastas | CORREGIDO: la ficha decia country_birth ES y nacio en Ciudad Bolivar
-    (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA).'
+    (VE) en 1966; reside y vende en Espania. Fuentes: Wikipedia ES, Wikihistoria del Arte Venezolano (ULA). Marcado
+    ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento.
+    Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: pedro_serra_farnes
   display_name: Pedro Serra Farnés
   country_birth: ES
@@ -1235,7 +1265,11 @@ artists:
   confidence: high
   aliases:
   - Pepe Cerdá
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6071721'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6071721.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: pepe_espana
   display_name: Pepe España
   birth_year: 1930
@@ -1403,7 +1437,11 @@ artists:
   confidence: high
   aliases:
   - Peter Kuhfeld
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7175292'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q7175292.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: peter_pollag
   display_name: Peter Pollág
   country_birth: SK
@@ -1415,7 +1453,11 @@ artists:
   confidence: high
   aliases:
   - Peter Pollag
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q51176362'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q51176362.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: peter_schmersal
   display_name: Peter Schmersal
   country_birth: DE
@@ -1810,7 +1852,11 @@ artists:
   confidence: high
   aliases:
   - Pilar Gómez Cossío
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6075776'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q6075776.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: pilar_perez_hidalgo
   display_name: Pilar Pérez Hidalgo
   birth_year: 1956

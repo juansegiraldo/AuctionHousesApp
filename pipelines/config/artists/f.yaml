@@ -271,7 +271,10 @@ artists:
   aliases:
   - FEDERICO URIBE
   - Federico Uribe
-  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '7 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: felice_vellan
   display_name: Felice Vellan
   country_birth: IT
@@ -349,7 +352,10 @@ artists:
   aliases:
   - FELIPE BONILLA
   - Felipe Bonilla
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: felipe_checa
   display_name: Felipe Checa
   country_birth: ES
@@ -744,7 +750,10 @@ artists:
   aliases:
   - FERNANDO ARIAS
   - Fernando Arias
-  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '1 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: fernando_bellver
   display_name: Fernando Bellver
   country_birth: ES
@@ -810,7 +819,11 @@ artists:
   confidence: high
   aliases:
   - FERNANDO CANO
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20532887'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q20532887.
+    Marcado ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra
+    fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
+    el dato''.'
+  death_status: living
 - artist_id: fernando_chueca
   display_name: Fernando Chueca Goitia
   country_birth: ES
@@ -978,7 +991,10 @@ artists:
   aliases:
   - FERNANDO MALDONADO
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
-    solo uno nacio en 1962, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5687637'
+    solo uno nacio en 1962, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5687637. Marcado
+    ''living'' el 2026-08-19: nacido en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento.
+    Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: fernando_martinez_checa
   display_name: Fernando Martínez Checa
   birth_year: 1858
@@ -1118,7 +1134,10 @@ artists:
   aliases:
   - FERNANDO UHIA
   - Fernando Uhía
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: fernando_verdugo
   display_name: Fernando Verdugo
   country_birth: ES
@@ -3047,7 +3066,10 @@ artists:
   aliases:
   - FREDY ALZATE
   - Fredy Alzate
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: fredy_serna
   display_name: Fredy Serna
   country_birth: CO
@@ -3060,7 +3082,10 @@ artists:
   aliases:
   - FREDY SERNA
   - Fredy Serna
-  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '2 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1950
+    o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
+    ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
+  death_status: living
 - artist_id: friedrich_eibner
   display_name: Friedrich Eibner
   country_birth: DE
