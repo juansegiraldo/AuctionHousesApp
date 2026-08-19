@@ -2474,7 +2474,9 @@ artists:
   aliases:
   - ALVARO MARIN
   - Álvaro Marín
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1946
+    y su ficha de Wikidata NO declara fecha de muerte (P570 ausente). Fuente: https://www.wikidata.org/wiki/Q120698312'
+  death_status: living
 - artist_id: alve_valdemi_del_mare
   display_name: Alve Valdemi del Mare
   country_birth: IT
@@ -4484,7 +4486,9 @@ artists:
   - ANTONIO GRASS
   - Antonio Grass
   - Grass, Antonio
-  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+  notes: '3 lotes en Silver | fuente: FINALL.xlsx hoja Artistas. Marcado ''living'' el 2026-08-19: nacido en 1937
+    y su ficha de Wikidata NO declara fecha de muerte (P570 ausente). Fuente: https://www.wikidata.org/wiki/Q124814634'
+  death_status: living
 - artist_id: antonio_grau
   display_name: Antonio Grau
   country_birth: CU

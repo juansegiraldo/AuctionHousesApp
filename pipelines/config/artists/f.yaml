@@ -1622,7 +1622,9 @@ artists:
   confidence: high
   aliases:
   - Francisco Arjona
-  notes: '47 lotes | casas: duran_subastas'
+  notes: '47 lotes | casas: duran_subastas. Marcado ''living'' el 2026-08-19: nacido en 1944 y su ficha de Wikidata
+    NO declara fecha de muerte (P570 ausente). Fuente: https://www.wikidata.org/wiki/Q51170443'
+  death_status: living
 - artist_id: francisco_avila
   display_name: Francisco Avila
   attribution_type: autor
@@ -2593,7 +2595,10 @@ artists:
   confidence: high
   aliases:
   - Francisco Sebastián
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55988399'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55988399.
+    Marcado ''living'' el 2026-08-19: nacido en 1920 y su ficha de Wikidata NO declara fecha de muerte (P570 ausente).
+    Fuente: https://www.wikidata.org/wiki/Q55988399'
+  death_status: living
 - artist_id: francisco_serra_castellet
   display_name: Francesc Serra Castellet
   country_birth: ES

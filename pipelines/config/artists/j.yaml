@@ -865,8 +865,10 @@ artists:
   confidence: high
   aliases:
   - Lambert, Jean - Clarence
-  notes: French poet, art critic, and art historian. Born in Paris 1930. Represented in Metropolitan Museum and
-    MoMA collections.
+  notes: 'French poet, art critic, and art historian. Born in Paris 1930. Represented in Metropolitan Museum and
+    MoMA collections. Marcado ''living'' el 2026-08-19: nacido en 1930 y su ficha de Wikidata NO declara fecha de
+    muerte (P570 ausente). Fuente: https://www.wikidata.org/wiki/Q3164789'
+  death_status: living
 - artist_id: jean_cocteau
   display_name: Jean Cocteau
   country_birth: FR
