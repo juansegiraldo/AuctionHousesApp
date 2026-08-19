@@ -3634,7 +3634,10 @@ artists:
   aliases:
   - Anna Marinova
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
-    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q113806597'
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q113806597.
+    INVESTIGADO 2026-08-19 SIN RESULTADO: la unica Anna Marinova documentada (pintora rusa formada en el Repin de
+    San Petersburgo) nacio en 1983, once anios despues del 1972 de esta ficha. Es un HOMONIMO, no la misma persona,
+    asi que no se le asigna pais. Se queda SIN PAIS a proposito.'
   death_status: living
 - artist_id: anne_ethuin
   display_name: Anne Ethuin
@@ -5003,18 +5006,23 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4776926'
 - artist_id: antonio_rodriguez_valdivieso
   display_name: Antonio Rodríguez Valdivieso
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   birth_year: 1918
   death_year: 2000
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Antonio Rodríguez Valdivieso
   - Antonio Rodriguez Valdivieso
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q5699569'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q5699569. INVESTIGADO 2026-08-19: Nacido en GRANADA el 14-04-1918
+    y muerto en Madrid el 28-12-2000. Figurativo; colaboro con el arquitecto Fernandez del Amo en el Instituto Nacional
+    de Colonizacion. Fuentes: Museo Reina Sofia https://www.museoreinasofia.es/en/coleccion/autor/rodriguez-valdivieso-antonio
+    ; Wikipedia ES https://es.wikipedia.org/wiki/Antonio_Rodr%C3%ADguez_Valdivieso'
+  death_status: known
 - artist_id: antonio_rojas_peinado
   display_name: Antonio Rojas Peinado
   country_birth: ES

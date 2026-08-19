@@ -2065,16 +2065,22 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q23446768'
 - artist_id: joaquin_gonzalez_ibaseta
   display_name: Joaquín González Ibaseta
-  country_birth: null
-  nationalities: []
+  country_birth: ES
+  nationalities:
+  - ES
   death_year: 1925
   attribution_type: autor
-  source: wikidata
-  confidence: low
+  source: manual
+  confidence: high
   aliases:
   - Joaquín González Ibaseta
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q60024508'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q60024508. INVESTIGADO 2026-08-19: Nacido en SANTANDER en
+    1855 y muerto en Madrid en 1925 -- la ficha ya tenia bien el 1925, que es la MUERTE, y le faltaba el nacimiento.
+    Tercera medalla en la Nacional de 1908 por ''La siesta'', hoy en el Prado. Fuente: Museo Nacional del Prado
+    https://museodelprado.es/aprende/enciclopedia/voz/gonzalez-ibaseta-joaquin/4d4290ac-12ce-4318-9bbe-f6636db5ffc2'
+  birth_year: 1855
+  death_status: known
 - artist_id: joaquin_luque_rosello
   display_name: Joaquín Luque Roselló
   country_birth: ES
