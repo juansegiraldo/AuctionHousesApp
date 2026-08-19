@@ -217,8 +217,11 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-08-16: 993 artists**, resolving **20,515 lots with a country** (31.8% of all
-lots, 49.0% of lots that have an author) across **44 countries**. Everything else stays `fold_only` with no country, and the report publishes the
+**Populated as of 2026-08-19: 3,307 artists**, resolving **25,615 lots with a country** (60.8% of
+lots that have an author). In the ranking, **2,265 of 9,774 artists (23.2%) cover
+89.27% of artist-attributed revenue** — publish both figures, never just the first. Entry
+completeness: 87.4% have a country, 94.4% a birth year, 70.9% are complete (country + birth +
+death-or-`living`). Everything else stays `fold_only` with no country, and the report publishes the
 real coverage rather than looking complete. To extend it:
 `python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
 
@@ -226,6 +229,29 @@ real coverage rather than looking complete. To extend it:
 handover plan: what to do next in priority order (fix the Durán parser *before* adding entries),
 the mistakes the last pass made, and the checks to run before calling a batch done. Read it before
 adding artists.
+
+**Exhaustive coverage is a three-step cycle, and "100%" means *classified*, not *asserted*.**
+`gold/build_artist_master.py` accounts for **all 12,961 author folds** (`author_fold_coverage_rate:
+1.0`), sorting each into `verified` / `needs_web` / `needs_review` / `ambiguous` and writing the
+versioned queue to `pipelines/config/artist_review/`. `scripts/artist_master_web_research.py` then
+researches every `needs_web` fold in Wikidata, writing an evidence journal with `auto_promote:
+false`; `scripts/artist_master_promote.py` turns only the unambiguous evidence into YAML entries
+for a human to paste. **None of the three ever writes to `pipelines/config/artists/`.** A fold left
+in `needs_web` is a visible gap with its flag set — which is the point, not a shortfall.
+- **Wikidata cannot close the long tail, and that is a measured result, not a missing feature.**
+  Match rate is 65% over the already-curated head but **25% over the uncurated segment**. The
+  obvious hypothesis — that comma-inverted names (`MARTINEZ TERRON,VICTORIANO`) fail on the comma
+  — was tested by also searching the inversion and **does not rescue them**: they simply aren't in
+  Wikidata. **7,343 of the 11,473 uncurated candidates (64%) appear in a single lot**; they are
+  local painters no encyclopedic source documents. Comma inversion is for *merging variants of
+  artists already in the master*, never for discovering new ones.
+- **Birth country comes from the birthplace, resolved in two hops** — P19 (place) → P17 (country)
+  → P297 (ISO code) — because `_countries.yaml` only knows major cities (`Barcelona` resolves;
+  `Oslo`, `Lausana`, `Manila` do not). **P17 lists every state that ever governed the place**: Oslo
+  declares four, Minsk fourteen (Kievan Rus' through Ukraine), so taking the first would publish a
+  dead country. Only currently-coded states count, and if more than one survives the gap is left.
+  Verified live against the two cases the repo already documents as traps: Steinlen → Lausanne →
+  `CH` (not France, where all his work was made) and Monir → Qazvin → `IR`.
 
 It got there in four passes, best source first — see
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md) for the full account:

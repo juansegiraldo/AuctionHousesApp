@@ -212,17 +212,49 @@ algo en `build_insights.py`, **actualiza el YAML en la misma edicion**.
 ## 3. Comprobaciones antes de dar una tanda por buena
 
 ```powershell
-python -m pytest -q                                    # 441 en verde hoy
+python -m pipelines.gold.build_artist_master --write-review-queue
 python -m pipelines.silver.artist_resolve
 python -m pipelines.gold.build_gold
 python -m pipelines.gold.build_insights
-python pipelines/silver/quality_gates.py --house-slug duran_subastas
 python -m pipelines.analytics.report_gold
+python pipelines/silver/quality_gates.py --house-slug duran_subastas
+python -m pytest -q                                    # 654 en verde hoy
 ```
 
-Y contrasta que **el ingreso total no se mueve**: hoy son
-**37.575.775,80 EUR**. Dar de alta artistas reatribuye lotes; nunca crea ni
-destruye ingreso. Si esa cifra cambia, algo se rompio.
+**El orden importa y los tests van al FINAL.** Con Gold a medio reconstruir,
+`report_gold` reventaba con un `TypeError` en `render_html` y caian 11 tests de
+`test_render_html.py`; no era un bug del informe sino agregados de dos
+generaciones mezclados. Completada la cadena en orden, los 654 pasan. Es la
+misma razon por la que el CLAUDE.md insiste en `run_all.ps1` en vez de correr
+etapas sueltas.
+
+Y contrasta que **el ingreso total no se mueve**. Dar de alta artistas
+reatribuye lotes; nunca crea ni destruye ingreso. Si esa cifra cambia por una
+tanda del maestro, algo se rompio.
+
+**La cifra de referencia caduca cuando se re-scrapea una casa, y hay que
+comprobarlo antes de dar la alarma.** El 2026-08-17 el total leia
+**37.145.061,77 EUR** frente a los **37.575.775,80** que decia este plan, y la
+diferencia **no era del maestro**: Zorrilla habia pasado de 3.437 a **11.168
+lotes** en un re-scrape posterior, asi que el corpus ya no era el mismo. Como se
+descarto que fuera un fallo, en este orden:
+
+1. `artist_resolve.py` **no toca precios** — `grep -n "price\|revenue" ` sobre
+   el fichero sale vacio. Una tanda de artistas no puede mover el ingreso.
+2. Lefebre seguia cuadrando **exactamente** con su cifra pinchada en CLAUDE.md
+   (12.361.725.000 COP, 1.600 vendidos), asi que el pipeline no corrompia importes.
+3. Las tasas de `fx_history.yaml` y `fx.yaml` no tenian cambios locales.
+4. La suma nativa de Zorrilla cuadraba con su agregado (4.365.109 USD).
+
+Referencia vigente al 2026-08-17, con Zorrilla ya ampliada:
+
+| Casa | Lotes | Vendidos | Ingreso EUR |
+|---|---|---|---|
+| duran_subastas | 40.442 | 18.624 | 23.450.015,00 |
+| bogota_auctions | 9.099 | 9.059 | 7.018.893,65 |
+| zorrilla_subastas | 11.168 | 6.942 | 3.919.315,22 |
+| lefebre_subastas | 3.858 | 1.600 | 2.756.837,90 |
+| **Total** | **64.567** | | **37.145.061,77** |
 
 Metricas a reportar al cerrar (las dos, no solo la primera):
 
