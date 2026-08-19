@@ -1276,11 +1276,17 @@ artists:
   - ES
   birth_year: 1600
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - JERÓNIMO JACINTO ESPINOSA
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3496858'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3496858.
+    INVESTIGADO 2026-08-19: nacido en COCENTAINA (Alicante) en 1600 y muerto en Valencia en 1667. Tras la muerte
+    de los Ribalta (1628) fue la figura dominante de la escuela valenciana del Barroco. Fuentes: Museo del Prado
+    https://www.museodelprado.es/aprende/enciclopedia/voz/espinosa-jeronimo-jacinto/4e134763-01e1-4b35-abe1-bf83da37cf33
+    ; Biblioteca Nacional https://datos.bne.es/persona/XX1375184.html'
+  death_year: 1667
+  death_status: known
 - artist_id: jerry_sheerin
   display_name: Jerry Sheerin
   country_birth: null

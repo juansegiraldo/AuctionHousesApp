@@ -2424,11 +2424,16 @@ artists:
   - IT
   birth_year: 1869
   attribution_type: autor
-  source: wikidata
+  source: manual
   confidence: high
   aliases:
   - Mario Borgoni
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13178568'
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q13178568.
+    INVESTIGADO 2026-08-19: nacido en PESARO en 1869 y muerto en Napoles en 1936. Cartelista del Liberty; director
+    artistico del establecimiento Richter & C de Napoles desde 1906. Fuentes: Arte Liberty http://www.arteliberty.it/manifesti_borgoni_bio_ing.html
+    ; Wikidata https://www.wikidata.org/wiki/Q13178568'
+  death_year: 1936
+  death_status: known
 - artist_id: mario_dario_grandi
   display_name: Mario Darío Grandi
   birth_year: 1918
