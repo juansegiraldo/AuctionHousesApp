@@ -263,6 +263,48 @@ Metricas a reportar al cerrar (las dos, no solo la primera):
 
 ---
 
+## 3.bis. Estado al cerrar la sesion del 2026-08-19, y por donde seguir
+
+**3.524 artistas** en el maestro; **86,8% con pais**, **78,9% completas**
+(pais + nacimiento + muerte-o-`living`). Ingreso cubierto **89,90%**.
+
+Las **743 fichas incompletas** que quedan, clasificadas por CAUSA -- que es lo
+que dice si merece la pena seguir:
+
+| Causa | Fichas |
+|---|---|
+| **Sin investigar todavia** | **724** |
+| Ya investigadas sin exito (queda escrito en `notes`) | 10 |
+| Hueco deliberado documentado (discrepancia, duo, identidad en disputa) | 9 |
+
+**Ojo con la lectura facil:** que la via AUTOMATICA este agotada no significa que
+las 724 no tengan fuente. Lo medido es esto:
+
+- de **16.049 nombres consultados** en Wikidata, el 63,8% no da identidad
+  utilizable, y de **490 fichas incompletas con match** solo UNA aporto un dato
+  seguro (las otras 17 candidatas eran muertes anteriores al nacimiento, paises
+  ambiguos o `SU` como pais vigente);
+- pero de **63 fichas investigadas A MANO**, la mayoria SI se resolvio con fuente
+  institucional. Buscar una por una funciona; lo que no funciona es automatizarlo.
+
+### Por donde empezar la proxima tanda
+
+1. **El tramo nacido antes de 1920 sin muerte (~24 fichas).** Es el mas rentable
+   con diferencia: son artistas historicos con ficha en museos nacionales, no la
+   cola de pintores locales. En esta sesion se cerraron ahi Henri Rousseau,
+   Jeronimo Jacinto de Espinosa, Carle Vernet, Coco Madrazo y Adam Willaerts.
+2. **Los 10 conflictos de anio** (`--year-conflicts`): son datos EQUIVOCADOS
+   publicandose hoy, y eso pesa mas que un hueco.
+3. **La cola de pais**, por volumen de lotes. Rinde 1-2 fichas por ronda de
+   busqueda y varias no existen en ninguna fuente.
+
+### Ritmo real, para dimensionar
+
+Una ficha exige buscar, contrastar fuentes que a menudo se contradicen (Agelvis
+sale venezolano en unas y colombiano en la fuente academica; Salinas Teruel tiene
+tres anios de muerte distintos) y a veces una segunda consulta para verificar si
+la persona vive. **1-4 fichas por ronda**, con la URL citada en `notes`.
+
 ## 4. Lo que NO hay que hacer
 
 Reglas que ya costaron un bug. Estan en el README con mas detalle.
