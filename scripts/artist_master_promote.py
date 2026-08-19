@@ -103,6 +103,10 @@ HISTORICAL_ISO = frozenset({"SU", "YU", "CS", "DD", "ZR", "AN"})
 # diferencia ya no es un error de registro sino otra persona.
 MAX_BIRTH_YEAR_DRIFT = 15
 
+# Distancia a partir de la cual el anio del catalogo ya no es un desacuerdo
+# entre fuentes sino una ficha equivocada.
+MAX_CATALOG_YEAR_DRIFT = 25
+
 # Identidades que el repo declara NO verificables, con test propio en
 # tests/pipelines/test_artist_master.py. Tener ficha en Wikidata acredita que
 # la ficha existe, no que la persona sea real: de Pietro Psaier se sospecha una
@@ -276,6 +280,63 @@ def _display_name(
     if proposed and _is_latin(proposed):
         return proposed
     return catalog or proposed or artist_id
+
+
+
+# El catalogo tiene que INSISTIR para contradecir al maestro: un lote suelto
+# puede llevar una errata del scraper, varios ya son la ficha de la casa.
+MIN_LOTS_TO_CHALLENGE_MASTER = 2
+
+
+def catalog_year_conflicts(
+    master: Mapping[str, Any],
+    dimension_rows: Iterable[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    """Fichas cuyo birth_year contradice al que publica la casa.
+
+    Un hueco es un resultado correcto, pero un anio EQUIVOCADO se publica en
+    el informe y no lo detecta nadie leyendolo. La carga del Excel curado dejo
+    40 de estas: Nirma Zarate figuraba como n.1969 cuando sus 13 lotes dicen
+    1936-1999, y el texto crudo lo confirma.
+
+    NO corrige nada: devuelve la lista para revisar a mano, que es la misma
+    disciplina del resto del ciclo.
+    """
+    out: list[dict[str, Any]] = []
+    for row in dimension_rows:
+        artist_id = row.get("artist_id")
+        entry = master.get(artist_id) if artist_id else None
+        if not isinstance(entry, Mapping):
+            continue
+        master_year = _plausible_year(entry.get("birth_year"))
+        if not master_year:
+            continue
+        evidence = (row.get("evidence") or {}).get("birth_year") or []
+        best = None
+        for item in evidence:
+            if not isinstance(item, Mapping):
+                continue
+            value = _plausible_year(item.get("value"))
+            count = item.get("count") or 0
+            if not value or count < MIN_LOTS_TO_CHALLENGE_MASTER:
+                continue
+            if abs(value - master_year) <= MAX_CATALOG_YEAR_DRIFT:
+                continue
+            if best is None or count > best[1]:
+                best = (value, count)
+        if best:
+            out.append(
+                {
+                    "artist_id": artist_id,
+                    "display_name": entry.get("display_name"),
+                    "master_birth_year": master_year,
+                    "catalog_birth_year": best[0],
+                    "lots": best[1],
+                    "source": entry.get("source"),
+                }
+            )
+    out.sort(key=lambda item: -item["lots"])
+    return out
 
 
 def build_entries(
@@ -690,6 +751,11 @@ def main(argv: list[str] | None = None) -> int:
         help="Resume promovidos y motivos de descarte en vez de emitir YAML.",
     )
     parser.add_argument(
+        "--year-conflicts",
+        action="store_true",
+        help="Lista fichas cuyo birth_year contradice al catalogo de la casa.",
+    )
+    parser.add_argument(
         "--completions",
         action="store_true",
         help="Lista huecos de fichas YA curadas que la evidencia puede cerrar.",
@@ -703,6 +769,19 @@ def main(argv: list[str] | None = None) -> int:
             file=sys.stderr,
         )
         return 2
+
+    if args.year_conflicts:
+        sys.stdout.reconfigure(encoding="utf-8")
+        dim = ROOT / "data" / "gold" / "dim_artist_master.jsonl"
+        rows = _iter_jsonl(dim) if dim.exists() else []
+        conflicts = catalog_year_conflicts(load_master(), rows)
+        print(f"--- Fichas con anio en conflicto con el catalogo: {len(conflicts)} ---")
+        for item in conflicts:
+            print(
+                f"  {item['artist_id']:<34} maestro n.{item['master_birth_year']}"
+                f"  catalogo n.{item['catalog_birth_year']} ({item['lots']} lotes)"
+            )
+        return 0
 
     if args.completions:
         sys.stdout.reconfigure(encoding="utf-8")

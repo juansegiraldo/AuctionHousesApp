@@ -566,6 +566,33 @@ candidatos revisados, la mayoria eran autores reales que la senial marcaba mal
 `PALAZUELO, PABLO`, `HOGARTH, WILLIAM`, `MERCATOR, GERHARD`, `Equipo Realidad`,
 `Estampa Popular`. Hay un test que fija que los 17 sobrevivan.
 
+### 40 fichas con el anio EQUIVOCADO, y por que importan mas que un hueco
+
+Un hueco es un resultado correcto; un anio equivocado se publica en el informe
+y **nadie lo detecta leyendolo**. La carga del Excel curado dejo 40 fichas donde
+el catalogo insiste en otra fecha, y el texto crudo le da la razon a la casa:
+
+| Ficha | Maestro | Catalogo | Lotes |
+|---|---|---|---|
+| `alejandro_sanchez` | n.1945 | **n.1981** | 59 |
+| `alberto_riano` | n.1920 | **1958-2006** | 34 |
+| `nirma_zarate` | n.1969 | **1936-1999** | 13 |
+| `maria_villa` | n.1972 | **1909-1991** | 6 |
+
+`python scripts/artist_master_promote.py --year-conflicts` las lista. **No
+corrige nada**: cada una se verifica a mano contra fuente antes de tocarla, la
+misma disciplina del resto del ciclo.
+
+El umbral (`MAX_CATALOG_YEAR_DRIFT`, 25 anios) distingue el error de dato del
+desacuerdo normal entre fuentes — Antonio Palacios es 1874 en Wikipedia y 1876
+en la ficha de Duran, y eso no es un conflicto. Y el catalogo tiene que
+**insistir** (`MIN_LOTS_TO_CHALLENGE_MASTER`): un lote suelto puede llevar una
+errata del scraper, varios ya son la ficha de la casa.
+
+**Ojo con la lectura ingenua de la evidencia:** el primer analisis leyo esos
+anios como fechas de MUERTE y salieron artistas muertos a los 11 y 19 anios.
+Eran nacimientos, y el maestro era el que estaba mal.
+
 ### El anio de la casa desempata al homonimo que Wikidata deja abierto
 
 Wikidata no elige entre dos homonimos, y hace bien. Pero **la casa publica el
