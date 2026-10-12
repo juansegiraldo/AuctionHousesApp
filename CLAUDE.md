@@ -411,10 +411,14 @@ the same dead-string bug already fixed in `quality_gates.py`. Metrics that are *
 
 Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
 
-- **`scraping/houses/bogota_auctions/parsers.py` never extracts `status`** — a regression from the
-  refactor. The legacy [scraping/parsers.py](scraping/parsers.py) still does, and its final
-  `if not status and price_sold: status = "VENDIDO"` is where Bogotá's inferred status comes from.
-  Current Bogotá status data was produced by the legacy scraper.
+- **Bogotá's house parser *is* the legacy one** — `scraping/houses/bogota_auctions/parsers.py` is
+  `from scraping.parsers import *`, so it extracts `status` exactly as before (an older note here
+  claiming it didn't was wrong; disproved 2026-10-12). The real defect was that `import *` skips
+  `_`-prefixed names, so all three Bogotá runners died on `ImportError: _auction_id_from_url`
+  until an explicit re-export was added; `test_every_house_runner_imports` now guards every
+  house. Inference (`if not status and price_sold: status = "VENDIDO"`) only runs on the
+  *catalog* price, so ~1,100 lots whose price comes from the detail page keep `status=None`.
+  Harmless: `is_sold()` falls back to "has a price" per lot, so they still count as sold.
 - **Bronze skips test-run leftovers, and that filter is load-bearing** (fixed 2026-08-16).
   `bronze/ingest.py` used to copy every `*.jsonl` in a house's `output/` blindly. Two files left
   over from development — `2245_test.jsonl` and `test_info_url.jsonl` in Bogotá — were **catalog

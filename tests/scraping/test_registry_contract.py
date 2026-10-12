@@ -58,3 +58,11 @@ def test_framework_house_matches_registry(entry):
 
     for func in REQUIRED_PARSER_FUNCS:
         assert hasattr(house.parsers, func), f"{slug}: parsers missing {func}"
+
+
+@pytest.mark.parametrize("entry", _registry_houses(), ids=lambda e: e["slug"])
+@pytest.mark.parametrize("runner", ["run_one_auction", "run_auction_list", "run_historic"])
+def test_every_house_runner_imports(entry, runner):
+    # Las casas legacy no pasan por el contrato de arriba, y asi Bogota estuvo meses con
+    # los tres runners rotos: su parsers.py hace `import *`, que no reexporta `_auction_id_from_url`.
+    importlib.import_module(f"scraping.houses.{entry['slug']}.{runner}")

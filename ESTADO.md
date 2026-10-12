@@ -74,9 +74,10 @@ Todo esto aparece también en el panel de avisos del propio informe.
 
 ## Deuda técnica conocida
 
-- **El parser nuevo de Bogotá no extrae `status`.** El legacy
-  ([scraping/parsers.py](scraping/parsers.py)) sí lo hacía; `scraping/houses/bogota_auctions/parsers.py`
-  perdió esa lógica en el refactor. Los datos actuales de status vienen del scraper viejo.
+- **~~El parser nuevo de Bogotá no extrae `status`~~ — era falso (comprobado 2026-10-12).**
+  `scraping/houses/bogota_auctions/parsers.py` es un `import *` del legacy, así que extrae
+  `status` igual. El fallo real era otro: `import *` no reexporta los nombres con `_`, y los tres
+  runners de Bogotá morían con `ImportError`. Arreglado y cubierto por un test.
 - **Acentos corruptos** en títulos y nombres de artista (`Álvaro` → `\udc81lvaro`): problema
   de codificación en el scraping. Se avisa en el informe pero no está corregido; arreglarlo
   bien exige re-scrapear o una pasada de reparación sobre bronce.
