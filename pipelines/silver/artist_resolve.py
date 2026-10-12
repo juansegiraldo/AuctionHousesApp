@@ -46,6 +46,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict
 
+from pipelines.shared import attribution_jev
 from pipelines.shared.artist_master import (
     load_lot_author_fixes,
     normalize_country,
@@ -124,6 +125,20 @@ def main() -> None:
             "Ejecuta primero python -m pipelines.silver.build_silver"
         )
 
+    # Jev solo opina sobre el default de las reglas: "autor" fuera del maestro.
+    # Primera pasada para juntar esos folds y rellenar la cache de golpe; la
+    # escritura de abajo lee SOLO la cache, asi Silver es reproducible offline.
+    jev_cache = attribution_jev.load_cache()
+    jev_states: Dict[str, Dict[str, Any]] = {}
+    with open(SILVER_LOTS, encoding="utf-8") as source:
+        for line in source:
+            if line.strip():
+                resolved = resolve_row(json.loads(line))
+                if resolved["artist_resolution"] == "fold_only":
+                    jev_states.setdefault(resolved["artist_fold"],
+                                          attribution_jev.lot_state(resolved))
+    attribution_jev.fetch_missing(jev_states, jev_cache)
+
     tmp_path = SILVER_LOTS.with_suffix(".jsonl.tmp")
     stats = Counter()
     countries_seen = Counter()
@@ -138,7 +153,9 @@ def main() -> None:
             if not line:
                 continue
             row = json.loads(line)
-            resolved = resolve_row(row)
+            ruled = resolve_row(row)
+            resolved = attribution_jev.apply(ruled, jev_cache)
+            stats["jev_reclassified"] += resolved is not ruled
 
             stats["lots"] += 1
             stats[resolved["artist_resolution"]] += 1
@@ -175,7 +192,8 @@ def main() -> None:
     print(f"  autores (attribution_type=autor): {authors:,} ({authors / total:.1%})")
     print(f"  resueltos con maestro: {stats['master']:,}")
     print(f"  solo fold (sin maestro): {stats['fold_only']:,}")
-    print(f"  no son autor: {stats['not_an_author']:,}")
+    print(f"  no son autor: {stats['not_an_author']:,} "
+          f"({stats['jev_reclassified']:,} por Jev, conf>={attribution_jev.THRESHOLD})")
     print(f"  sin nombre: {stats['unresolved']:,}")
     print(f"  con pais: {stats['with_country']:,} ({stats['with_country'] / total:.1%})")
 

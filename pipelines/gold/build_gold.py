@@ -26,6 +26,9 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+from pipelines.shared.attribution_jev import THRESHOLD as JEV_THRESHOLD
+from pipelines.shared.attribution_jev import is_low_conf as is_jev_low_conf
+from pipelines.shared.attribution_jev import load_cache as load_jev_cache
 from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur, to_eur_at
 from pipelines.shared.schema import UNKNOWN_YEAR, extract_month, extract_year, is_sold
 
@@ -104,8 +107,15 @@ def main() -> None:
     # confundirla con lotes a los que si deberia haberse podido datar.
     non_auction_lots: dict[str, int] = defaultdict(int)
 
+    # Lotes que siguen "autor" aunque Jev dude (conf < umbral): no se tocan,
+    # pero el informe tiene que decir que el ranking puede llevar ruido.
+    jev_cache = load_jev_cache()
+    jev_low_conf: dict[str, int] = defaultdict(int)
+
     for row in _read_lots(lots_path):
         house = row.get("house_slug", "unknown")
+        if is_jev_low_conf(row, jev_cache):
+            jev_low_conf[house] += 1
         currency = row.get("currency")
         status = row.get("status")
         price = row.get("price_sold")
@@ -443,6 +453,21 @@ def main() -> None:
                 "message": (
                     f"{count:,} lotes vendidos en '{currency}' sin tasa en fx.yaml: "
                     "excluidos de los totales en EUR."
+                ),
+            }
+        )
+
+    for house, count in sorted(jev_low_conf.items()):
+        flags.append(
+            {
+                "level": "info",
+                "code": "attribution_low_conf",
+                "house_slug": house,
+                "count": count,
+                "message": (
+                    f"{count:,} lotes de {house} cuentan como autor aunque Jev "
+                    f"sugiere que no lo son (confianza < {JEV_THRESHOLD}): "
+                    "pueden ser objetos o títulos en el ranking de artistas."
                 ),
             }
         )
