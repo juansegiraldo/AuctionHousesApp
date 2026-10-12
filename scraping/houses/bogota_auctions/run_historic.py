@@ -69,7 +69,7 @@ def main() -> None:
 
     merged_path.parent.mkdir(parents=True, exist_ok=True)
     total_lots = 0
-    with open(merged_path, "ab") as merged_handle:
+    with open(merged_path, "wb") as merged_handle:
         for auction in auctions[start_idx:]:
             auction_id = _auction_id_from_url(auction.auction_url)
             individual_path = DEFAULT_OUTPUT_DIR / f"{auction_id}.jsonl"
