@@ -18,7 +18,6 @@ from pipelines.shared.artist_master import (
     RESOLUTION_UNRESOLVED,
 )
 
-REAL_ARTISTS_DIR = artist_master.ARTISTS_DIR
 
 COUNTRIES_YAML = textwrap.dedent(
     """
@@ -364,26 +363,18 @@ def test_every_shard_entry_validates():
     Este es el test que impide que el maestro se pudra: houses.yaml quedo
     obsoleto justamente porque nada lo leia ni lo comprobaba.
     """
-    artist_master.reset_caches()
-    try:
-        problems = artist_master.validate_master()
-    finally:
-        artist_master.reset_caches()
+    problems = artist_master.validate_master()
     assert problems == [], "\n".join(problems)
 
 
 def test_real_countries_table_is_loadable():
     """Los alias del repo deben apuntar a paises declarados."""
-    artist_master.reset_caches()
-    try:
-        data = artist_master.load_countries()
-        assert data["countries"], "_countries.yaml no declara ningun pais"
-        unknown = sorted(
-            {code for code in data["aliases"].values() if code not in data["countries"]}
-        )
-        assert unknown == [], f"alias apuntando a paises no declarados: {unknown}"
-    finally:
-        artist_master.reset_caches()
+    data = artist_master.load_countries()
+    assert data["countries"], "_countries.yaml no declara ningun pais"
+    unknown = sorted(
+        {code for code in data["aliases"].values() if code not in data["countries"]}
+    )
+    assert unknown == [], f"alias apuntando a paises no declarados: {unknown}"
 
 
 @pytest.mark.parametrize(
@@ -425,11 +416,7 @@ def test_real_table_maps_the_values_silver_actually_writes(text, expected):
     Estos valores salieron de contar unmapped_country_values sobre los 64.567
     lotes reales.
     """
-    artist_master.reset_caches()
-    try:
-        assert artist_master.normalize_country(text) == expected
-    finally:
-        artist_master.reset_caches()
+    assert artist_master.normalize_country(text) == expected
 
 
 # --------------------------------------------------------------------------
@@ -457,11 +444,7 @@ def test_comma_inverted_aliases_resolve_to_the_same_artist(comma_form, expected_
     Se comprueba contra el maestro REAL del repo, no contra un fixture: lo que
     se quiere fijar es que esos alias sigan estando en los shards.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(comma_form)
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(comma_form)
     assert resolved["artist_id"] == expected_id
     assert resolved["artist_resolution"] == RESOLUTION_MASTER
 
@@ -472,11 +455,7 @@ def test_garcia_marquez_is_still_not_merged():
     "García Márquez, Gabriel" son 55 lotes de LIBROS: el escritor, no un pintor.
     Invertir por regla automatica lo habria fusionado con un pintor homonimo.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist("García Márquez, Gabriel")
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist("García Márquez, Gabriel")
     assert resolved["artist_resolution"] != RESOLUTION_MASTER
     assert resolved["artist_country_birth"] is None
 
@@ -502,11 +481,7 @@ def test_garcia_marquez_is_still_not_merged():
 )
 def test_birth_country_is_not_the_market_country(name, country_birth):
     """El pais es donde NACIO el artista, no donde se subasta su obra."""
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(name)
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(name)
     assert resolved["artist_country_birth"] == country_birth
 
 
@@ -521,11 +496,7 @@ def test_beatriz_gonzalez_birth_year_is_1932_not_1938():
     Se fija en un test porque el dato equivocado va a volver: esta en el alias
     que entra por el scraper en cada ingesta.
     """
-    artist_master.reset_caches()
-    try:
-        years = artist_master.artist_years("beatriz_gonzalez")
-    finally:
-        artist_master.reset_caches()
+    years = artist_master.artist_years("beatriz_gonzalez")
     assert years == {"birth_year": 1932, "death_year": 2026}
 
 
@@ -552,11 +523,7 @@ def test_corrected_birth_countries(name, country, nationalities):
     nationalities conserva la del mercado en primer lugar (regla 4 del README):
     el dato de mercado no se pierde, se coloca donde corresponde.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(name)
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(name)
     assert resolved["artist_country_birth"] == country
     assert resolved["artist_nationalities"] == nationalities
 
@@ -574,12 +541,8 @@ def test_corrected_birth_countries(name, country, nationalities):
     ],
 )
 def test_second_pass_resolved_these(name, country, birth):
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(name)
-        years = artist_master.artist_years(resolved["artist_id"])
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(name)
+    years = artist_master.artist_years(resolved["artist_id"])
     assert resolved["artist_country_birth"] == country
     assert years["birth_year"] == birth
 
@@ -591,11 +554,7 @@ def test_mitsuo_miura_is_the_living_painter_not_the_cinematographer():
     personas: el de los 93 lotes de Duran nacio en 1946, reside en Espania
     desde 1966 y esta VIVO, asi que no puede llevar death_year.
     """
-    artist_master.reset_caches()
-    try:
-        years = artist_master.artist_years("mitsuo_miura")
-    finally:
-        artist_master.reset_caches()
+    years = artist_master.artist_years("mitsuo_miura")
     assert years["birth_year"] == 1946
     assert years["death_year"] is None
 
@@ -619,11 +578,7 @@ def test_unverifiable_artists_keep_no_country(name):
     Es la regla del README y la razon de que el informe publique la cobertura
     real. Un pais a ojo aqui no se distinguiria luego de uno documentado.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(name)
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(name)
     assert resolved["artist_country_birth"] is None
 
 
@@ -649,11 +604,7 @@ def test_single_word_pseudonyms_resolve(pseudonym, country_birth):
     El fold no puede resolverlos por su cuenta: hace falta que alguien decida
     que "Serny" es Ricardo Summers. Por eso viven como alias del maestro.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist(pseudonym)
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist(pseudonym)
     assert resolved["artist_resolution"] == RESOLUTION_MASTER
     assert resolved["artist_country_birth"] == country_birth
 
@@ -666,11 +617,7 @@ def test_ambiguous_surname_is_left_unresolved():
     con el que desempatar, asi que se quedan sin pais: es el caso "Francisco
     Toledo" que justifica que el maestro se clave en alias y no en el fold.
     """
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist("*Mingorance")
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist("*Mingorance")
     assert resolved["artist_country_birth"] is None
 
 
@@ -698,12 +645,8 @@ def test_excel_epoch_year_is_not_a_birth_date():
     SI lo confirma el catalogo ("Leonor Alarcon Colombia, 1918"), asi que se
     queda. La diferencia no es la antiguedad, es que haya una segunda fuente.
     """
-    artist_master.reset_caches()
-    try:
-        julia = artist_master.artist_years("julia_acuna_guillen")
-        leonor = artist_master.artist_years("leonor_alarcon")
-    finally:
-        artist_master.reset_caches()
+    julia = artist_master.artist_years("julia_acuna_guillen")
+    leonor = artist_master.artist_years("leonor_alarcon")
     assert julia["birth_year"] is None
     assert leonor["birth_year"] == 1918
 
@@ -717,15 +660,11 @@ def test_luis_alberto_acuna_is_one_artist_not_two():
     Wikidata dicen 1994, pero el claim P570 de Wikidata y Wikipedia ES dicen
     1993.
     """
-    artist_master.reset_caches()
-    try:
-        assert "luis_alberto_acuna_tapias" not in artist_master.load_master()
-        for name in ("Luis Alberto Acuña", "LUIS ALBERTO ACUÑA TAPIAS"):
-            resolved = artist_master.resolve_artist(name)
-            assert resolved["artist_id"] == "luis_alberto_acuna"
-        years = artist_master.artist_years("luis_alberto_acuna")
-    finally:
-        artist_master.reset_caches()
+    assert "luis_alberto_acuna_tapias" not in artist_master.load_master()
+    for name in ("Luis Alberto Acuña", "LUIS ALBERTO ACUÑA TAPIAS"):
+        resolved = artist_master.resolve_artist(name)
+        assert resolved["artist_id"] == "luis_alberto_acuna"
+    years = artist_master.artist_years("luis_alberto_acuna")
     assert years == {"birth_year": 1904, "death_year": 1993}
 
 
@@ -755,38 +694,26 @@ def test_artist_years_never_invents_a_date():
     Un artista en fold_only no tiene artist_id, y artist_raw viene truncado a 60
     caracteres, asi que no hay de donde sacar la fecha sin inventarla.
     """
-    artist_master.reset_caches()
-    try:
-        assert artist_master.artist_years(None) == {
-            "birth_year": None,
-            "death_year": None,
-        }
-        assert artist_master.artist_years("no_existe_este_id") == {
-            "birth_year": None,
-            "death_year": None,
-        }
-    finally:
-        artist_master.reset_caches()
+    assert artist_master.artist_years(None) == {
+        "birth_year": None,
+        "death_year": None,
+    }
+    assert artist_master.artist_years("no_existe_este_id") == {
+        "birth_year": None,
+        "death_year": None,
+    }
 
 
 def test_juan_romero_does_not_publish_a_false_death_year():
     """El catálogo antiguo decía 1996, pero el artista estaba activo en 2023."""
-    artist_master.reset_caches()
-    try:
-        years = artist_master.artist_years("juan_romero")
-    finally:
-        artist_master.reset_caches()
+    years = artist_master.artist_years("juan_romero")
     assert years == {"birth_year": 1932, "death_year": None}
 
 
 def test_jose_catala_omits_the_disputed_birth_year():
     """Las fuentes secundarias discrepan entre 1958 y 1959."""
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist("CATALÁ , JOSÉ")
-        years = artist_master.artist_years("jose_catala")
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist("CATALÁ , JOSÉ")
+    years = artist_master.artist_years("jose_catala")
     assert resolved["artist_id"] == "jose_catala"
     assert resolved["artist_country_birth"] == "ES"
     assert years == {"birth_year": None, "death_year": None}
@@ -794,12 +721,8 @@ def test_jose_catala_omits_the_disputed_birth_year():
 
 def test_jorge_damiani_uses_birth_country_and_real_death_year():
     """El MNAV fija Nervi, Italia (1931), y Montevideo (2017)."""
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist("Jorge DAMIANI")
-        years = artist_master.artist_years("jorge_damiani")
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist("Jorge DAMIANI")
+    years = artist_master.artist_years("jorge_damiani")
     assert resolved["artist_country_birth"] == "IT"
     assert set(resolved["artist_nationalities"]) == {"IT", "UY"}
     assert years == {"birth_year": 1931, "death_year": 2017}
@@ -819,7 +742,6 @@ def test_jorge_damiani_uses_birth_country_and_real_death_year():
 )
 def test_finall_misidentifications_are_corrected(name, country, birth, death):
     """FINALL habia asociado estas siete fichas a homonimos u otras personas."""
-    artist_master.reset_caches()
     resolved = artist_master.resolve_artist(name)
     years = artist_master.artist_years(resolved["artist_id"])
     assert resolved["artist_country_birth"] == country
@@ -828,7 +750,6 @@ def test_finall_misidentifications_are_corrected(name, country, birth, death):
 
 def test_known_objects_and_multi_artist_group_are_not_in_master():
     """Una fila curada en Excel no basta para convertir un objeto/grupo en persona."""
-    artist_master.reset_caches()
     for name in (
         "Banco Bajo",
         "GILBERT & GEORGE (GILBERT PROESCH & GEORGE PASSMORE) Y DAVID HOCKNEY",
@@ -840,26 +761,18 @@ def test_known_objects_and_multi_artist_group_are_not_in_master():
 
 def test_santiago_cardenas_short_and_full_names_are_one_living_artist():
     """El sufijo Arroyo no crea otro ID y 2006 no era una muerte."""
-    artist_master.reset_caches()
-    try:
-        short = artist_master.resolve_artist("Santiago Cárdenas")
-        full = artist_master.resolve_artist("SANTIAGO CARDENAS ARROYO")
-        years = artist_master.artist_years("santiago_cardenas")
-        master = artist_master.load_master()
-    finally:
-        artist_master.reset_caches()
+    short = artist_master.resolve_artist("Santiago Cárdenas")
+    full = artist_master.resolve_artist("SANTIAGO CARDENAS ARROYO")
+    years = artist_master.artist_years("santiago_cardenas")
+    master = artist_master.load_master()
     assert short["artist_id"] == full["artist_id"] == "santiago_cardenas"
     assert "santiago_cardenas_arroyo" not in master
     assert years == {"birth_year": 1937, "death_year": None}
 
 
 def test_giuseppe_maraschini_house_typo_resolves():
-    artist_master.reset_caches()
-    try:
-        resolved = artist_master.resolve_artist("Guiseppe MARASCHINI")
-        years = artist_master.artist_years("giuseppe_maraschini")
-    finally:
-        artist_master.reset_caches()
+    resolved = artist_master.resolve_artist("Guiseppe MARASCHINI")
+    years = artist_master.artist_years("giuseppe_maraschini")
     assert resolved["artist_id"] == "giuseppe_maraschini"
     assert resolved["artist_country_birth"] == "IT"
     assert years == {"birth_year": 1839, "death_year": 1903}
@@ -881,11 +794,7 @@ def test_a_bogus_source_is_still_rejected():
 def test_slovenia_is_in_the_country_table():
     """Cesare Dell'Acqua (Trieste) y Joze Spacal llegaron con SI y el maestro
     no lo conocia. Es ISO vigente: faltaba en la tabla, no sobraba en la ficha."""
-    artist_master.reset_caches()
-    try:
-        countries = artist_master.load_countries()["countries"]
-    finally:
-        artist_master.reset_caches()
+    countries = artist_master.load_countries()["countries"]
     assert countries["SI"]["es"] == "Eslovenia"
 
 
@@ -895,10 +804,6 @@ def test_tunisia_and_south_korea_are_in_the_country_table():
     Son el mismo patron que Eslovenia: ISO vigente que faltaba en la tabla. El
     hueco lo destapa el pegado, no una revision teorica.
     """
-    artist_master.reset_caches()
-    try:
-        countries = artist_master.load_countries()["countries"]
-    finally:
-        artist_master.reset_caches()
+    countries = artist_master.load_countries()["countries"]
     assert countries["TN"]["es"] == "Túnez"
     assert countries["KR"]["es"] == "Corea del Sur"
