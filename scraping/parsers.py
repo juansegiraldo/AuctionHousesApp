@@ -394,6 +394,16 @@ def parse_lot_page(page: Any, auction_meta: AuctionMeta | None = None) -> dict:
         year = _extract_lot_year(title_text)
         if year:
             result["lot_year"] = year
+    else:
+        # Template used since auction 2687 (2026): no span.description, the
+        # title lives in span.object_title inside the description block.
+        obj_title = page.css(".desc-lot-profile-content span.object_title")
+        if obj_title:
+            title_text = _clean_text(obj_title[0].text)
+            result["lot_title"] = title_text
+            year = _extract_lot_year(title_text)
+            if year:
+                result["lot_year"] = year
     if len(desc_spans) > 1:
         result["artist_name"] = _clean_text(desc_spans[1].text)
 

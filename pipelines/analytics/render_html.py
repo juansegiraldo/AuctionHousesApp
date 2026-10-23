@@ -1972,7 +1972,7 @@ if (!toggle.textContent.trim()) {
       const byYear = new Map();
       lots.forEach((l) => {
         if (!l.sold || !l.price_sold_eur) return;
-        const m = /(19|20)\d{2}/.exec(l.auction_start_date || l.auction_id || '');
+        const m = /(19|20)\\d{2}/.exec(l.auction_start_date || l.auction_id || '');
         if (!m) return;
         byYear.set(m[0], (byYear.get(m[0]) || 0) + l.price_sold_eur);
       });
