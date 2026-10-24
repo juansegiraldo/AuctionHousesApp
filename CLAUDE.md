@@ -37,7 +37,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest typesafe-sdk
 ```
 
-Run tests (799 pass):
+Run tests (801 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -95,7 +95,7 @@ Two layers connected by the `data/` directory and the **house registry**.
   `output/checkpoints/`, test limits (`--max-auctions`, `--max-lots-per-auction`), and optional
   thread-pool parallelism (`--workers`; >16 risks HTTP 419 rate limiting).
 - Duran discovers lots via an **AJAX endpoint**, not the static page. Its `historic_all_lots.jsonl`
-  is a superset of the per-auction files (40,442 lots, 2014→2026) and is safe to re-ingest —
+  is a superset of the per-auction files (47,383 lots, 2014→2026, re-scraped 2026-10-15) and is safe to re-ingest —
   Silver dedupes on `lot_url`.
 - **Zorrilla (`zorrilla_subastas`) is the only house built on the `scraping/common/` framework**
   (frozen `House` + injected `discover`/`fetcher`); Bogotá and Duran stay on their legacy
@@ -238,7 +238,7 @@ real coverage rather than looking complete. To extend it:
 `python scripts/artist_master_propose.py --min-lots 3`, reviewed shard by shard.
 
 **Continuing this work?** [docs/PLAN_MAESTRO_ARTISTAS.md](docs/PLAN_MAESTRO_ARTISTAS.md) is the
-handover plan: what to do next in priority order (fix the Durán parser *before* adding entries),
+handover plan: what to do next in priority order (its first step, fixing the Durán parser, is done),
 the mistakes the last pass made, and the checks to run before calling a batch done. Read it before
 adding artists.
 
@@ -372,7 +372,7 @@ These are load-bearing. Breaking one silently corrupts the report:
     (`code: "fx_historical"`). It currently reads **0 lots** — every lot in every house converts
     at its own month's rate. An unknown currency still returns
     `None`. **EUR short-circuits before the history** and is always `monthly`: without that,
-    Durán's 40,442 EUR lots with no parseable date would have flooded the fallback counter with
+    Durán's 47,383 EUR lots with no parseable date would have flooded the fallback counter with
     lots that are not approximated at all. A test pins it.
   - `fx_static_timeseries` (warn) became `fx_timeseries` (info): it used to warn that comparing
     years was invalid because of a single rate, which is exactly what this fixed.
@@ -432,6 +432,20 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   house. Inference (`if not status and price_sold: status = "VENDIDO"`) only runs on the
   *catalog* price, so ~1,100 lots whose price comes from the detail page keep `status=None`.
   Harmless: `is_sold()` falls back to "has a price" per lot, so they still count as sold.
+- **Bogotá changed its lot-page template from auction 2687 (2026)** (fixed 2026-10-23). The
+  detail page no longer has `span.description`; the title lives in
+  `.desc-lot-profile-content span.object_title` (with author/technique/size in sibling spans
+  `author`, `technique_material`, `medidas`). Before the fix 1,158 of 1,714 lots of 2026 came in
+  with an empty `lot_title` and the `lot_title` gate read 0.89. `parse_lot_page()` in
+  `scraping/parsers.py` now falls back to `object_title`; fixtures of both templates live in
+  `tests/scraping/bogota_auctions/`. If the gate drops again, suspect another template change.
+- **`historic_all_lots.jsonl` can shadow a fresh per-auction scrape.** Silver keeps the *first*
+  row per `lot_url`, and files land alphabetically, so `historic_all_lots` beats any auction slug
+  sorting after `h` (`libros-…`, `un-recorrido-…`). After re-scraping a single auction, patch its
+  rows into `historic_all` too — or the old version wins silently.
+- **Bogotá 2026 looked thin because it was never ingested**, not because sales fell: 9 auctions
+  were scraped on 2026-10-12/13 after that day's Bronze run. Now 11 auctions, 1,714 lots, 4,513 M
+  COP. Run `run_historic --list-only` to see the live list (it rewrites `auction_index.jsonl`).
 - **Bronze skips test-run leftovers, and that filter is load-bearing** (fixed 2026-08-16).
   `bronze/ingest.py` used to copy every `*.jsonl` in a house's `output/` blindly. Two files left
   over from development — `2245_test.jsonl` and `test_info_url.jsonl` in Bogotá — were **catalog
@@ -505,16 +519,17 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   `Ciudad Real, Antonio` survives — with a closed list of country/city tails so
   `Ciudad Cádiz, España` still gets caught. Anyone re-profiling "top unresolved artists" hits these
   first: they are not researchable, they are noise.
-- **Durán's parser prefers a guess over the real author, and it costs a Botero.**
-  `_infer_artist_from_title()` in [scraping/houses/duran_subastas/parsers.py](scraping/houses/duran_subastas/parsers.py)
+- **Durán's parser used to prefer a guess over the real author, and it cost a Botero** (fixed
+  in `9b333c2`, re-scraped 2026-10-15). `_infer_artist_from_title()` in
+  [scraping/houses/duran_subastas/parsers.py](scraping/houses/duran_subastas/parsers.py)
   takes everything before the first `.` as the artist, so a lot published as
-  `"Madre Superiora". Óleo sobre lienzo. 130 x 99…` lands with the **work's title** as
-  its artist — 721 lots in 452 variants. The detail page *does* publish an `autor` field
+  `"Madre Superiora". Óleo sobre lienzo. 130 x 99…` landed with the **work's title** as
+  its artist — 721 lots in 452 variants. The detail page publishes an `autor` field
   (`BOTERO, FERNANDO (1932 - 2023)` for that one, a 120.000 € lot that ranked #39 as an
-  artist of its own with no country), but line 515 only uses it
-  `if artist_from_detail and not artist_raw` — **the guess wins over the good data**.
-  Fixing it properly means inverting that precedence and re-scraping Durán. Until then
-  `_QUOTED_TITLE_RE` in `pipelines/shared/artist_key.py` marks them `not_an_author`, which
+  artist of its own with no country), and it now **always wins** over the guess
+  ([parsers.py:515](scraping/houses/duran_subastas/parsers.py#L515)). After the re-scrape only
+  **20 lots** still carry a quoted title as artist (lots with no `autor` on the detail page).
+  The safety nets below stay: `_QUOTED_TITLE_RE` in `pipelines/shared/artist_key.py` marks them `not_an_author`, which
   keeps them out of the artist ranking without inventing an attribution; the revenue still
   counts for the house. The rule matches only names that are *entirely* a quoted title —
   29 lots like `"Au merite" art nouveau. Henri Louis Levasseur` carry the real artist
