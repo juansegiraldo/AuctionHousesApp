@@ -1,14 +1,13 @@
-"""Tests de los dos renderizados del informe.
+"""Tests de la app del informe (build_artifact.py) y de sus piezas compartidas.
 
-No habia ninguno, y es donde vivian las divergencias mas caras: el artifact
-decia "las tres casas" con cuatro, imprimia codigos ISO donde el HTML local
-escribia el nombre del pais, y los dos llevaban el corte de lotes escrito a mano.
-
-Cubren tres cosas: el contrato posicional de LOT_DETAIL_COLUMNS (que acopla tres
-sitios en dos ficheros), la accesibilidad de la ficha, y que las dos versiones
-publiquen las mismas cifras.
+Habia dos renderers y vivian divergiendo: uno decia "las tres casas" con
+cuatro, imprimia codigos ISO donde el otro escribia el pais, y los dos llevaban
+el corte de lotes escrito a mano. Queda uno; estos tests guardan los mismos
+invariantes sobre el, mas el contrato de la app ligera: los datos pesados van
+en lots.json/cards.json y no inline.
 """
 
+import json
 import re
 
 import pytest
@@ -54,30 +53,22 @@ def test_pack_lot_details_handles_empty():
     assert "artist_key" in packed["cols"]
 
 
-def test_lot_detail_columns_match_both_lot_line_functions():
-    """LOT_DETAIL_COLUMNS acopla tres sitios en dos ficheros.
-
-    La tupla, el LOT_HEAD del JS de render_html y el del JS del artifact tienen
-    que tener la misma longitud: si alguien anade una columna y olvida una de
-    las dos cabeceras, el CSV sale desalineado sin que falle nada.
-    """
-    n = len(render_html.LOT_DETAIL_COLUMNS)
-
-    def _head_len(source: str) -> int:
-        m = re.search(r"LOT_HEAD\s*=\s*\[(.*?)\]", source, re.S)
-        assert m, "no se encontro LOT_HEAD"
-        return len([x for x in m.group(1).split(",") if x.strip()])
-
-    assert _head_len(render_html.JS_TEMPLATE) == n
-    assert _head_len(build_artifact.JS) == n
+def test_lot_detail_columns_match_the_lot_line_function():
+    """LOT_DETAIL_COLUMNS y el LOT_HEAD del JS tienen que medir lo mismo: si
+    alguien anade una columna y olvida la cabecera, el CSV sale desalineado
+    sin que falle nada."""
+    m = re.search(r"LOT_HEAD\s*=\s*\[(.*?)\]", build_artifact.JS, re.S)
+    assert m, "no se encontro LOT_HEAD"
+    head = [x for x in m.group(1).split(",") if x.strip()]
+    assert len(head) == len(render_html.LOT_DETAIL_COLUMNS)
 
 
 # --------------------------------------------------------------------------
-# Informe completo
+# App completa
 # --------------------------------------------------------------------------
 
 def _report():
-    """Informe minimo pero realista: dos artistas, dos casas, dos paises."""
+    """Informe minimo pero realista: dos artistas, cuatro casas, un pais."""
     artists = [
         {
             "artist_name": "Fernando Botero", "artist_key": "fernando_botero",
@@ -168,149 +159,162 @@ def _report():
 
 
 @pytest.fixture
-def local_html(tmp_path):
-    out = tmp_path / "report.html"
-    render_html.write_html(_report(), out)
-    return out.read_text(encoding="utf-8")
+def app_html():
+    return build_artifact.build(_report())
 
 
 @pytest.fixture
-def artifact_html():
+def app_cards():
     rep = _report()
-    return build_artifact.build(rep, rep["lot_details"])
+    return build_artifact.build_cards(rep, rep["lot_details"])
 
 
-def test_artist_cards_have_coherent_aria(local_html):
-    """Cada aria-controls tiene que apuntar a un id que exista."""
-    controls = set(re.findall(r"aria-controls='([^']+)'", local_html))
-    ids = set(re.findall(r"<tr class='artist-card' id='([^']+)'", local_html))
-    assert controls, "no se generaron fichas"
-    assert controls <= ids, controls - ids
-    # Todas empiezan cerradas: una ficha abierta de salida seria ruido.
-    assert "aria-expanded='true'" not in local_html
+def test_every_artist_row_opens_an_existing_card(app_html, app_cards):
+    """data-card de cada fila tiene que existir en cards.json, o tocar el
+    nombre abre una hoja vacia. Las dos usan la misma seleccion."""
+    keys = set(re.findall(r"data-card='([^']+)'", app_html))
+    assert keys, "no se generaron filas de artista"
+    assert keys == set(app_cards)
+    assert "Fernando Botero" in app_cards["ficha-1"]
 
 
-def test_artist_row_carries_the_join_key(local_html):
+def test_cards_and_lot_details_are_not_inline(app_html):
+    """Iban inline y eran 12 MB que el movil bajaba para pintar una cabecera."""
+    assert "LOT_DETAILS" not in app_html
+    assert "class='acard'" not in app_html
+    assert "artist-card" not in app_html
+    assert "cards.json" in app_html and "lots.json" in app_html
+
+
+def test_write_app_writes_the_three_files(tmp_path):
+    rep = _report()
+    build_artifact.write_app(rep, rep["lot_details"], tmp_path)
+    assert (tmp_path / "index.html").read_text(encoding="utf-8").startswith("<!doctype html>")
+    lots = json.loads((tmp_path / "lots.json").read_text(encoding="utf-8"))
+    assert len(lots["rows"]) == 2 and "artist_key" in lots["cols"]
+    cards = json.loads((tmp_path / "cards.json").read_text(encoding="utf-8"))
+    assert set(cards) == {"ficha-1", "ficha-2"}
+
+
+def test_app_is_a_mobile_document(app_html):
+    assert "<html lang='es'>" in app_html
+    assert "viewport-fit=cover" in app_html
+    # Una tabla con min-width obliga a desplazar de lado en el movil.
+    assert "min-width:560px" not in build_artifact.CSS
+    # Sin esto, .pager{display:flex} gana a hidden y sale con un solo resultado.
+    assert "[hidden]{display:none!important}" in build_artifact.CSS
+
+
+def test_artist_row_carries_the_join_key(app_html):
     """La fila lleva artist_key para cruzar con el detalle sin pasar por el fold."""
-    assert "data-key='fernando_botero'" in local_html
+    assert "data-key='fernando_botero'" in app_html
 
 
-def test_fold_only_artist_is_rendered_without_inventing_a_country(local_html):
-    """El caso mayoritario: 863 de 1.521 artistas no tienen pais.
+def test_fold_only_artist_is_rendered_without_inventing_a_country(app_html, app_cards):
+    """El caso mayoritario: la mayoria de artistas no tienen pais.
 
     No puede heredar el de su casa de subastas (Duran => Espania). Hay un test
     equivalente en el pipeline; este cubre la capa de presentacion.
     """
-    assert "Artista Sin Ficha" in local_html
     row = re.search(
         r"<tr data-country='__none__'[^>]*data-key='artista sin ficha'[^>]*>.*?</tr>",
-        local_html, re.S,
+        app_html, re.S,
     )
     assert row, "no se encontro la fila del artista sin ficha"
     assert "Sin país informado" in row.group(0)
     assert "España" not in row.group(0)
+    assert "no está en el maestro curado" in app_cards["ficha-2"]
 
 
-def test_multi_house_filter_exists_in_both_renderers(local_html, artifact_html):
-    """Los artistas que venden en varias casas tienen que poder aislarse.
-
-    El dato estaba en cada fila pero no habia forma de filtrarlo: habia que
-    abrir fichas una a una para encontrarlos.
-    """
-    for html in (local_html, artifact_html):
-        assert "id='kind-filter'" in html
-        for value in ("multi", "cross_market", "same_market", "single"):
-            assert f"<option value='{value}'>" in html, value
+def test_multi_house_filter_exists(app_html):
+    """Los artistas que venden en varias casas tienen que poder aislarse."""
+    assert "id='kind-filter'" in app_html
+    for value in ("multi", "cross_market", "same_market", "single"):
+        assert f"<option value='{value}'>" in app_html, value
 
 
-def test_multi_house_filter_separates_markets_in_the_rows(local_html):
+def test_multi_house_filter_separates_markets_in_the_rows(app_html):
     """Botero (Bogota+Duran) es cross_market; el de una sola casa, single.
 
-    Sin esa distincion, los 104 artistas que solo repiten en Bogota+Lefebre
-    (las dos colombianas) se contarian como internacionales.
+    Sin esa distincion, los artistas que solo repiten en Bogota+Lefebre (las
+    dos colombianas) se contarian como internacionales.
     """
-    botero = re.search(r"<tr[^>]*data-key='fernando_botero'[^>]*>", local_html)
+    botero = re.search(r"<tr[^>]*data-key='fernando_botero'[^>]*>", app_html)
     assert botero and "data-kind='cross_market'" in botero.group(0)
-    solo = re.search(r"<tr[^>]*data-key='artista sin ficha'[^>]*>", local_html)
+    solo = re.search(r"<tr[^>]*data-key='artista sin ficha'[^>]*>", app_html)
     assert solo and "data-kind='single'" in solo.group(0)
 
 
-def test_artifact_house_count_is_derived_not_hardcoded(artifact_html):
+def test_house_count_is_derived_not_hardcoded(app_html):
     """Decia "Las tres casas" cuando ya eran cuatro."""
-    assert "Las tres casas" not in artifact_html
-    assert "Las cuatro casas" in artifact_html
+    assert "Las tres casas" not in app_html
+    assert "Las cuatro casas" in app_html
 
 
-def test_min_lots_text_is_not_hardcoded_in_either_renderer(local_html, artifact_html):
-    assert narrative.CAVEAT_MIN_LOTS in local_html
-    assert narrative.CAVEAT_MIN_LOTS in artifact_html
-    for html in (local_html, artifact_html):
-        assert "Mínimo 3 lotes vendidos para entrar" not in html
+def test_min_lots_text_is_not_hardcoded(app_html):
+    assert narrative.CAVEAT_MIN_LOTS in app_html
+    assert "Mínimo 3 lotes vendidos para entrar" not in app_html
 
 
-def test_both_renderers_draw_the_four_charts(local_html, artifact_html):
-    """Los cuatro graficos existen en las dos versiones.
-
-    El local los dibuja con Plotly (contenedor + funcion draw); el artifact los
-    trae como SVG ya generado. Distinta tecnica, misma seccion.
-    """
-    for cid in ("chart-pareto", "chart-scatter", "chart-generations", "chart-heatmap"):
-        assert f"id='{cid}'" in local_html, cid
-    for fn in ("drawPareto", "drawScatter", "drawGenerations", "drawHeatmap"):
-        assert fn in local_html, fn
-    # El artifact no usa contenedores: el SVG va inline.
-    assert "class='cum'" in artifact_html, "falta la linea del Pareto"
-    assert "class='pt" in artifact_html, "falta el scatter"
+def test_the_charts_are_drawn_and_readable_by_touch(app_html):
+    """Pareto, scatter y mapa de calor, cada uno con marcas que llevan su lectura:
+    en una pantalla tactil el <title> del SVG no aparece nunca."""
+    assert "class='cum'" in app_html, "falta la linea del Pareto"
+    assert "class='pt" in app_html, "falta el scatter"
+    assert "class='hm" in app_html, "falta el mapa de calor"
+    assert app_html.count("class='chart scrub") >= 4
+    assert re.search(r"<circle class='pt[^>]*data-l='Fernando Botero'", app_html)
+    assert "class='ro-v'" in app_html
 
 
-def test_missing_birth_dates_are_coverage_not_a_fake_generation_bar(
-    local_html, artifact_html
-):
+def test_critical_flag_is_next_to_the_sell_through_it_qualifies():
+    """La tasa de venta de Bogota no es comparable: el aviso tiene que estar en
+    la pantalla de casas, donde se lee esa tasa, no solo en Resumen."""
+    rep = _report()
+    rep["quality_flags"] = [{"level": "critical", "house_slug": "bogota_auctions",
+                             "message": "Tasa de venta de bogota_auctions NO comparable"}]
+    casas = re.search(r"<section class='screen' id='casas'.*?</section>",
+                      build_artifact.build(rep), re.S).group(0)
+    assert "Tasa de venta de Bogotá Auctions NO comparable" in casas
+
+
+def test_missing_birth_dates_are_coverage_not_a_fake_generation_bar(app_html):
     """La ausencia de dato sigue visible, pero queda fuera del eje temporal."""
-    for html in (local_html, artifact_html):
-        assert "class='generation-coverage'" in html
-        assert "Cobertura de fechas del ranking completo" in html
-        assert "<strong>Sin fecha</strong>" in html
-        # Fixture: 400.000 EUR datados y 5.000 sin fecha.
-        assert "style='width:98.8%'" in html
-        assert "style='width:1.2%'" in html
-
-    # Plotly filtra el sentinela antes de construir x/y.
-    assert "DATA.generations.filter(r => !r.is_sentinel)" in local_html
+    assert "class='generation-coverage'" in app_html
+    assert "Cobertura de fechas del ranking completo" in app_html
+    assert "<strong>Sin fecha</strong>" in app_html
+    # Fixture: 400.000 EUR datados y 5.000 sin fecha.
+    assert "style='width:98.8%'" in app_html
+    assert "style='width:1.2%'" in app_html
     # El SVG no puede volver a dibujarlo como una barra normal.
-    assert "<title>Sin fecha de nacimiento:" not in artifact_html
+    assert "<title>Sin fecha de nacimiento:" not in app_html
 
 
-def test_narrative_caveats_reach_both_renderers(local_html, artifact_html):
+def test_narrative_caveats_reach_the_app(app_html):
     """Los avisos son parte del grafico, no un adorno opcional."""
-    for html in (local_html, artifact_html):
-        assert narrative.CAVEAT_PARETO_SCOPE in html
-        assert narrative.CAVEAT_SCATTER_LOWN in html
-        assert narrative.CAVEAT_GENERATIONS_COVERAGE in html
+    for caveat in (narrative.CAVEAT_PARETO_SCOPE, narrative.CAVEAT_SCATTER_LOWN,
+                   narrative.CAVEAT_GENERATIONS_COVERAGE,
+                   narrative.CAVEAT_FX_TIMESERIES, narrative.CAVEAT_COUNTRY_IS_HOUSE):
+        assert caveat in app_html
 
 
-def test_fx_caveat_is_next_to_the_time_series(local_html):
-    """El mapa es una serie temporal con FX de tasa unica: hay que decirlo.
-
-    Sin este aviso, la fila de Colombia se lee como evolucion real del mercado
-    cuando buena parte del movimiento es el tipo de cambio.
-    """
-    assert narrative.CAVEAT_FX_TIMESERIES in local_html
-    assert narrative.CAVEAT_COUNTRY_IS_HOUSE in local_html
+def test_app_reports_the_artist_revenue(app_html):
+    assert re.search(r"Fernando Botero.*?400[.,]000", app_html, re.S)
 
 
-def test_both_renderers_report_the_same_revenue(local_html, artifact_html):
-    """Si las dos versiones publican cifras distintas, una miente.
+def test_short_money_matches_the_js_format():
+    """La cabecera la escribe Python y la reanima el JS: mismo formato o salta."""
+    assert build_artifact.money(41_839_851.72) == "41,84 M€"
+    assert build_artifact.money(4_400_000) == "4,4 M€"
+    assert build_artifact.money(934_000) == "934 k€"
+    assert build_artifact.money(1_490) == "1.490 €"
 
-    Se comprueba sobre el volumen del artista lider, que aparece en las dos
-    tablas y viene del mismo agregado.
-    """
-    def _find(html):
-        m = re.search(r"Fernando Botero.*?400[.,]000", html, re.S)
-        return bool(m)
 
-    assert _find(local_html)
-    assert _find(artifact_html)
+def test_lot_date_does_not_truncate_spanish_text_dates():
+    """Cortar a 10 caracteres convertia "Octubre 2020" en "Octubre 20"."""
+    assert build_artifact.lot_date("Octubre 2020") == "Octubre 2020"
+    assert build_artifact.lot_date("2024-05-10T18:00") == "2024-05-10"
+    assert build_artifact.lot_date(None) == "—"
 
 
 # --------------------------------------------------------------------------
@@ -328,7 +332,18 @@ def _artist(name, country, revenue):
     }
 
 
-def test_country_ranking_reaches_beyond_the_global_top():
+@pytest.fixture
+def table(monkeypatch):
+    def _table(artists, limit):
+        monkeypatch.setattr(build_artifact, "ARTIST_LIMIT", limit)
+        html = build_artifact.build_artist_table(artists, {})
+        # Solo la lista y su paginador: los graficos de debajo (el scatter
+        # etiqueta nombres) no son el ranking.
+        return html[html.index("<table"):html.index("box-notes")]
+    return _table
+
+
+def test_country_ranking_reaches_beyond_the_global_top(table):
     """Filtrar Colombia mostraba 41 de 258 porque el corte era GLOBAL.
 
     Se renderiza el top global mas el top de cada pais, o el desplegable
@@ -336,69 +351,88 @@ def test_country_ranking_reaches_beyond_the_global_top():
     """
     artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(5)]
     artists += [_artist(f"Colombiano {i}", "CO", 100 - i) for i in range(3)]
-
-    html = render_html.build_artist_table(artists, limit=5)
-
-    # Los colombianos quedan fuera del top 5 global y aun asi deben estar.
+    html = table(artists, 5)
     for i in range(3):
         assert f"Colombiano {i}" in html
 
 
-def test_country_ranking_still_caps_each_country():
+def test_country_ranking_still_caps_each_country(table):
     artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(9)]
-    html = render_html.build_artist_table(artists, limit=3)
+    html = table(artists, 3)
     # 3 globales + 3 del tope por pais: el resto no se pinta.
     assert "Espanol 2" in html
     assert "Espanol 8" not in html
 
 
-def test_a_single_country_batch_is_not_duplicated():
+def test_a_single_country_batch_is_not_duplicated(table):
     """Un artista que esta en el top global Y en el de su pais sale una vez."""
     artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(3)]
-    html = render_html.build_artist_table(artists, limit=5)
+    html = table(artists, 5)
     assert html.count(">Espanol 0<") == 1
 
 
-def test_artist_table_ships_pagination_controls():
-    """750 filas de golpe abruman. La tabla pagina en cliente.
-
-    Se comprueba el andamiaje que el JS necesita: sin los controles en el DOM
-    la paginacion no existe, por muy escrito que este el script.
-    """
+def test_artist_table_ships_pagination_controls(table):
+    """Mas de mil filas de golpe abruman. La lista pagina en cliente."""
     artists = [_artist(f"Pintor {i}", "ES", 1000 - i) for i in range(12)]
-    html = render_html.build_artist_table(artists, limit=12)
+    html = table(artists, 12)
     assert "artist-pager" in html
     assert "artist-page-prev" in html
     assert "artist-page-next" in html
 
 
 def test_pagination_logic_ships_in_the_document_script():
-    # El tamano de pagina vive en el script global, no en el fragmento de la
-    # tabla: se comprueba donde de verdad esta.
-    js = render_html.JS_TEMPLATE
+    js = build_artifact.JS
     assert "PAGE_SIZE" in js
     # Las descargas no pueden volver a leer !hidden: con paginacion, hidden
     # solo dice si la fila cae en la pagina actual.
     assert "dataset.match" in js
 
 
-def test_artifact_ranking_also_reaches_beyond_the_global_top():
-    """Los dos renderizadores deben comportarse igual.
+# --------------------------------------------------------------------------
+# Mapa de paises
+# --------------------------------------------------------------------------
 
-    El artifact tenia su propio corte y se quedaba en 41 colombianos mientras
-    el informe local mostraba 200: dos productos del mismo dato contando cosas
-    distintas es justo la divergencia que estos tests existen para impedir.
-    """
-    artists = [_artist(f"Espanol {i}", "ES", 10_000 - i) for i in range(5)]
-    artists += [_artist(f"Colombiano {i}", "CO", 100 - i) for i in range(3)]
-
-    html = build_artifact.build_artist_table(artists, {}, {}, None)
-
-    for i in range(3):
-        assert f"Colombiano {i}" in html
+def _world():
+    return {
+        "viewBox": [0, -10, 100, 20],
+        "countries": {
+            "CO": {"name": "Colombia", "d": "M0 0l1 1z", "c": [1, 1]},
+            "PE": {"name": "Perú", "d": "M2 2l1 1z", "c": [2, 2]},
+        },
+    }
 
 
-def test_artifact_ships_pagination_too():
-    artists = [_artist(f"Pintor {i}", "ES", 1000 - i) for i in range(12)]
-    html = build_artifact.build_artist_table(artists, {}, {}, None)
-    assert "artist-pager" in html
+def test_map_paints_sales_blue_and_absence_gray():
+    """Un pais sin ventas va gris, no con el tramo mas claro: se leeria como
+    "vendio poco" cuando no hay ningun artista nacido alli en el ranking."""
+    svg, missing = build_artifact.world_map(
+        [{"country": "CO", "country_es": "Colombia", "revenue_eur": 6_000_000,
+          "artists": 300, "lots_sold": 9000}], _world())
+    co = re.search(r"<path class='geo q5'[^>]*data-l='Colombia'", svg)
+    assert co, "Colombia (6 M€) tiene que ir en el tramo mas oscuro"
+    assert re.search(r"<path class='geo' [^>]*data-l='Perú'[^>]*data-v='Sin ventas'", svg)
+    assert missing == []
+
+
+def test_map_declares_countries_it_cannot_draw():
+    """Checoslovaquia no existe en el mapa de hoy. Se declara, no se reparte."""
+    _, missing = build_artifact.world_map(
+        [{"country": "CS", "country_es": "Checoslovaquia", "revenue_eur": 16_750}], _world())
+    assert missing == ["Checoslovaquia"]
+
+
+def test_map_bins_are_decades():
+    assert build_artifact.map_bin(9_999) == "q1"
+    assert build_artifact.map_bin(10_000) == "q2"
+    assert build_artifact.map_bin(999_999) == "q3"
+    assert build_artifact.map_bin(1_000_000) == "q4"
+    assert build_artifact.map_bin(5_000_000) == "q5"
+
+
+def test_versioned_world_has_france_and_norway():
+    """En ISO_A2 de Natural Earth Francia y Noruega valen "-99": saldrian grises
+    con ventas millonarias. El script usa ISO_A2_EH."""
+    world = json.loads(build_artifact.WORLD_PATH.read_text(encoding="utf-8"))
+    for code in ("FR", "NO", "ES", "CO", "UY"):
+        assert code in world["countries"], code
+    assert "AQ" not in world["countries"]

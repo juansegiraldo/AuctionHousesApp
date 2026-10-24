@@ -26,10 +26,10 @@ $stages = @(
     @{ Name = "Enrich  (categorias)";           Module = "pipelines.enrichments.category_tag" },
     @{ Name = "Gold    (agregados)";            Module = "pipelines.gold.build_gold" },
     @{ Name = "Gold    (artistas/categorias)";  Module = "pipelines.gold.build_insights" },
-    @{ Name = "Informe (JSON + HTML)";          Module = "pipelines.analytics.report_gold" },
-    # Version sin CDN para publicar como Artifact de Claude (ver el docstring
-    # del modulo: un Artifact bloquea todo host externo).
-    @{ Name = "Informe (version Artifact)";     Module = "pipelines.analytics.build_artifact" },
+    @{ Name = "Informe (JSON)";                 Module = "pipelines.analytics.report_gold" },
+    # La app (data/gold/app/): carpeta estatica sin CDN, valida como Artifact
+    # de Claude y para Vercel. Ver el docstring del modulo.
+    @{ Name = "App     (data/gold/app)";        Module = "pipelines.analytics.build_artifact" },
     # Panel de la capa FX: cuanto se desviaba la tasa unica mes a mes. Va al
     # final porque lee agg_house_metrics de Gold.
     @{ Name = "Informe (capa FX)";              Module = "pipelines.analytics.build_fx_report" }
@@ -56,4 +56,4 @@ foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas", "z
 
 Write-Host ""
 Write-Host "Pipeline completo." -ForegroundColor Green
-Write-Host "Abre el informe con:  start data\gold\analytics_report.html" -ForegroundColor Green
+Write-Host "Abre la app con:  python -m http.server -d data\gold\app   (y visita http://localhost:8000)" -ForegroundColor Green

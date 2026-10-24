@@ -9,8 +9,10 @@ results through a Medallion (bronze → silver → gold) architecture for analyt
 running web service or database in the current tree — it is a batch scrape-and-transform project
 producing JSONL files plus an HTML analytics report.
 
-**The HTML report *is* the frontend.** `data/gold/analytics_report.html` is the product; there
-is nothing to serve. Users looking for a UI should open that file.
+**The app *is* the frontend.** `data/gold/app/` (`index.html` + `lots.json` + `cards.json`) is
+the product: a static, mobile-first app that the repo owner's partner reads on a phone, via a
+URL (a Claude Artifact now, Vercel or similar later). Serve it — `python -m http.server -d
+data/gold/app` — because `file://` blocks the `fetch` of the two JSON files.
 
 > Note on git status: the tracked `backend/` (FastAPI), `frontend/` (Next.js), `database/`, and
 > root `docker-compose.yml` / `Makefile` files show as **deleted** — the project was rebuilt
@@ -37,7 +39,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest typesafe-sdk
 ```
 
-Run tests (801 pass):
+Run tests (804 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -59,8 +61,8 @@ python -m pipelines.silver.build_silver
 python -m pipelines.silver.artist_resolve            # identidad de artista + pais
 python -m pipelines.enrichments.currency_normalize   # also: artist_canonicalize, category_tag
 python -m pipelines.gold.build_gold
-python -m pipelines.analytics.report_gold            # writes data/gold/analytics_report.{json,html}
-python -m pipelines.analytics.build_artifact         # writes data/gold/artifact_report.html
+python -m pipelines.analytics.report_gold            # writes data/gold/analytics_report.json
+python -m pipelines.analytics.build_artifact         # writes the app: data/gold/app/
 python -m pipelines.analytics.build_fx_report        # writes data/gold/fx_report.html
 
 python -m scripts.fx_fetch_history                   # MANUAL: baja BCE+TRM -> fx_history.yaml
@@ -196,19 +198,42 @@ Data flows one direction through `data/`, and each stage reads the previous laye
    `artist_resolution_rate`, `artist_country_coverage`, `attribution_autor_pct` and
    `unmapped_country_values`; the artist gates default to `0.0` (informative, not blocking) and
    skip `HOUSES_WITHOUT_ARTISTS` (Zorrilla is jewellery — 0% forever, not a defect).
-7. **analytics/build_artifact.py**: a second renderer producing `data/gold/artifact_report.html`,
-   the version that can be **published as a Claude Artifact**. It exists because an Artifact is
-   served under a strict CSP that blocks every external host — the normal report loads Plotly from
-   `cdn.plot.ly` and its fonts from Google Fonts, so published as-is it would render with no charts
-   and fallback type. Here the three charts are **SVG generated in Python** (no client library,
-   ~20 KB instead of Plotly's 3.5 MB) and the fonts are system stacks. It keeps the filters,
-   totals bar and CSV downloads. `<a href>` links to the source lots are content, not resource
-   loads, so they are fine under the CSP.
-8. **analytics** (`analytics/report_gold.py`): renders the Gold layer to JSON + HTML. Reads Gold
-   only — never bronze/silver. It decides *what* goes in the report; `analytics/render_html.py`
-   decides *how it looks* (design system, CSS, Plotly config), so the report can be restyled
-   without touching aggregation logic. The insight aggregates are optional: if
-   `build_insights.py` hasn't run, those sections are omitted rather than raising.
+7. **analytics/build_artifact.py — the app, and the only renderer** (2026-10-24). It writes
+   `data/gold/app/`. The Plotly report (`analytics_report.html`) was retired: two renderers of the
+   same data kept diverging. `render_html.py` survives only as the home of the shared pieces the
+   app imports (`HOUSE_LABELS`, `HOUSE_COUNTRY`, `MONTH_LABELS`, `_rank_selection`,
+   `pack_lot_details`). Things that look odd but are load-bearing:
+   - **No CDN, ever.** An Artifact's CSP blocks every external host, and the same folder must
+     deploy unchanged to Vercel. Charts are **SVG generated in Python**, and the fonts are system
+     stacks (`ui-rounded` for numbers).
+   - **Heavy data is fetched, not inlined.** `lots.json` (~7 MB, only for the "Lotes" CSV) is
+     fetched when the ⋯ download menu opens, so it is usually in memory by the time the tap lands
+     — Safari blocks downloads that fire outside the user gesture. `cards.json` (artist cards,
+     rendered in Python by `artist_card()`) is fetched when the Artistas tab opens. Both used to
+     be inline and the file weighed 12 MB. `build_cards()` and `build_artist_table()` **must** use
+     the same `_rank_selection()`, or `data-card` opens another artist's card (a test pins it).
+   - **Every chart mark carries `data-x`/`data-l`/`data-v`**, and one JS handler writes the
+     nearest mark into the readout above the chart (drag a finger across it). `<title>` tooltips
+     never show on touch screens. Stacked bars use an invisible `.hit` column per year.
+   - **The lists are still `<table>`s**, restyled as cards by CSS, because `wire()` (filter,
+     pagination, totals, CSV) works on the rows. `[hidden]{display:none!important}` is load-bearing:
+     without it, `.pager{display:flex}` beats `hidden`.
+   - The `money()` formatter exists twice (Python and JS) on purpose: Python writes the headline
+     figure and JS re-animates it, so the two must agree (a test pins the format).
+   - The house palette was validated with the dataviz skill's CVD script for adjacent pairs, in
+     both themes. The light yellow and aqua sit below 3:1 on white, which is why every
+     multi-series chart has a legend and a text readout.
+   - **The world map's geometry is versioned, not fetched**: `pipelines/config/world_110m.json`
+     (Natural Earth 110m, already projected to Equal Earth, ~93 KB), regenerated by hand with
+     `python -m scripts.build_world_map` — manual and rare, like `fx_fetch_history`. It keys on
+     **`ISO_A2_EH`, not `ISO_A2`**: in the latter France and Norway are `-99` and would paint gray
+     despite millions in sales. Bins are fixed decades (`MAP_BINS`), not quantiles; gray means
+     "no artist born there in the ranking", never the lowest bin. Historic countries with no
+     shape (Czechoslovakia, `CS`) are declared in the map's notes, never split among today's states.
+8. **analytics** (`analytics/report_gold.py`): renders the Gold layer to `analytics_report.json`.
+   Reads Gold only — never bronze/silver. It decides *what* goes in the report; `build_artifact.py`
+   decides *how it looks*. The insight aggregates are optional: if `build_insights.py` hasn't
+   run, those sections are omitted rather than raising.
 9. **analytics/build_fx_report.py**: `data/gold/fx_report.html`, the panel for the FX layer.
    Separate from the main report because it answers a different question — not "how much sold"
    but "how far off was the single rate". It plots the **ratio** of each month's rate to the

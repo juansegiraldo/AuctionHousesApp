@@ -15,16 +15,17 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest
 
 .\scripts\run_all.ps1                    # reconstruye todo el pipeline
-start data\gold\analytics_report.html    # abre el informe
+python -m http.server -d data\gold\app  # abre la app en http://localhost:8000
 ```
 
 Todos los comandos se ejecutan **desde la raíz del repo**. Requiere Python 3.13.
 
 ## El informe
 
-`data/gold/analytics_report.html` es la interfaz: KPIs, treemap de ingresos por casa y
-subasta, gráficos por año, tablas de detalle y un **panel de avisos de calidad** que declara
-qué cifras son aproximadas y por qué.
+`data/gold/app/` es la interfaz: una app estática pensada para el móvil (pestañas Resumen,
+Mercado, Casas, Artistas y Países), con gráficos que se leen deslizando el dedo, fichas de
+artista, descargas CSV y un **panel de avisos de calidad** que declara qué cifras son
+aproximadas y por qué. Se puede publicar tal cual como Artifact de Claude o en Vercel.
 
 Cifras actuales (2014-2026):
 

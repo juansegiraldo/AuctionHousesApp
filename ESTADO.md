@@ -23,11 +23,15 @@ y `Makefile`. El proyecto se reconstruyó alrededor del scraping y los pipelines
 Aquí:
 
 ```powershell
-start data\gold\analytics_report.html
+python -m http.server -d data\gold\app    # y abre http://localhost:8000
 ```
 
-Ese HTML **es** la interfaz: KPIs, treemap, gráficos por año y por casa, tablas de detalle
-y un panel de avisos de calidad. Se regenera con el pipeline; no hay servidor que arrancar.
+Esa carpeta **es** la interfaz: una app pensada para el móvil (`index.html` + `lots.json` +
+`cards.json`) que se regenera con el pipeline. Hay que servirla, no abrirla con doble clic:
+las fichas y el detalle de lotes se cargan con `fetch`, que el navegador bloquea en `file://`.
+Se publica tal cual como Artifact de Claude o en Vercel (`vercel deploy data/gold/app`).
+El antiguo `analytics_report.html` (Plotly) se retiró: dos renderers del mismo dato acababan
+diciendo cosas distintas.
 
 ## Cómo regenerar todo
 

@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
 Analytics report from Gold layer only.
-Reads data/gold/*.jsonl and writes analytics_report.json + rich HTML with Plotly.
+Reads data/gold/*.jsonl and writes analytics_report.json. La app que lo pinta es
+pipelines/analytics/build_artifact.py (data/gold/app/).
 """
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
-
-from pipelines.analytics.render_html import write_html
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLD_ROOT = ROOT / "data" / "gold"
@@ -178,17 +177,9 @@ def main() -> None:
     out_json = GOLD_ROOT / "analytics_report.json"
     out_json.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Report JSON: {out_json}")
-
-    # El detalle lote a lote alimenta las descargas del HTML, pero NO entra en
-    # analytics_report.json: son 13.733 filas que multiplicarian por cinco el
-    # tamanio de un fichero pensado para leerse de un vistazo. Quien lo quiera
-    # en bruto tiene data/gold/lot_details.jsonl.
-    report_html = dict(report)
-    report_html["lot_details"] = load_jsonl(GOLD_ROOT / "lot_details.jsonl")
-
-    out_html = GOLD_ROOT / "analytics_report.html"
-    write_html(report_html, out_html)
-    print(f"Report HTML: {out_html}")
+    # El detalle lote a lote NO entra en analytics_report.json: son decenas de
+    # miles de filas en un fichero pensado para leerse de un vistazo. La app lo
+    # lee aparte de data/gold/lot_details.jsonl (build_artifact.py).
 
     print("\n--- Resumen ---")
     s = report["summary"]
