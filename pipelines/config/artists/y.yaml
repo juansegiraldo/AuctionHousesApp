@@ -169,3 +169,16 @@ artists:
   aliases:
   - Yvette Troispoux
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3574059'
+- artist_id: yvonne_domenge
+  display_name: Yvonne Domenge
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1946
+  death_year: 2019
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Yvonne Domenge
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8062443'

@@ -1587,6 +1587,21 @@ artists:
   - GUILLERMO LONDOÑO
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5888697'
   death_status: living
+- artist_id: guillermo_meza
+  display_name: Guillermo Meza
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1917
+  death_year: 1997
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Guillermo Meza
+  notes: 'Guillermo Meza Alvarez, pintor nacido en Ciudad de Mexico: https://www.wikidata.org/wiki/Q1554035 (P19
+    Q1489). Morton: ''(Ciudad de Mexico, 1917 - Ciudad de Mexico, 1997)'' en 71 lotes. Homonimo descartado por el
+    anio: futbolista de 1988.'
 - artist_id: guillermo_mora
   display_name: Guillermo Mora
   country_birth: ES
@@ -1699,6 +1714,19 @@ artists:
   aliases:
   - Guillermo Wiedemann
   notes: '12 lotes | casas: bogota_auctions'
+- artist_id: gunther_gerzso
+  display_name: Gunther Gerzso
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1915
+  death_year: 2000
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Gunther Gerzso
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q352356'
 - artist_id: gust_romijn
   display_name: Gustavus Adrianus Maria Romijn
   birth_year: 1922
@@ -1867,6 +1895,20 @@ artists:
   - Gustavo Lopez Armentia
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q105335046'
   death_status: living
+- artist_id: gustavo_montoya
+  display_name: Gustavo Montoya
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1905
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Gustavo Montoya
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1905, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q5621449'
 - artist_id: gustavo_otero_munoz
   display_name: Gustavo Otero Muñoz
   country_birth: CO

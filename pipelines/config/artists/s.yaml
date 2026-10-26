@@ -292,6 +292,18 @@ artists:
   aliases:
   - Sandú Darié
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q29043595'
+- artist_id: santiago_carbonell
+  display_name: Santiago Carbonell
+  country_birth: EC
+  nationalities:
+  - EC
+  birth_year: 1960
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Santiago Carbonell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43128303'
 - artist_id: santiago_cardenas
   display_name: Santiago Cárdenas Arroyo
   country_birth: CO
@@ -511,6 +523,19 @@ artists:
   notes: 'La ficha heredada de FINALL.xlsx habia usado Grecia y 1912-1994 por error. La fundacion de la artista
     y Hammer Museum documentan nacimiento en Barranquilla, Colombia, en 1951 y muerte en 2010. Fuentes: https://saramodiano.org/sara-modiano
     ; https://hammer.ucla.edu/radical-women/artists/sara-modiano'
+- artist_id: saturnino_herran
+  display_name: Saturnino Herrán
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1887
+  death_year: 1918
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Saturnino Herrán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q432826'
 - artist_id: saturnino_ramirez
   display_name: Saturnino Ramírez
   country_birth: CO
@@ -551,6 +576,23 @@ artists:
   - Sebastián Ramis
   notes: Pintor y grabador nacido en Palma de Mallorca (1947). Especializado en paisajes, naturalezas muertas y
     escenas de playa. Pasteles y técnicas de grabado. Exposiciones en Barcelona, Madrid, París, Toulouse.
+- artist_id: sebastian
+  display_name: Sebastián
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1947
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Sebastian
+  - Sebastián
+  - Enrique Carbajal
+  notes: 'Enrique Carbajal Gonzalez, escultor, nacido en Ciudad Camargo, Chihuahua, 1947: https://www.wikidata.org/wiki/Q723886
+    (P19 Q61302). Morton: ''(Camargo, Chihuahua, 1947 - )'' en 93 lotes, firmados SEBASTIAN o ENRIQUE CARBAJAL "SEBASTIAN".
+    4 lotes con ese mismo titulo traen la biografia ''(Ojocaliente, Zacatecas, 1942 - )'': errata de la casa, no
+    otra persona.'
 - artist_id: sebastian_cestero
   display_name: Sebastián Cestero
   country_birth: ES
@@ -845,6 +887,19 @@ artists:
   - Sergio Belinchón
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q5813151'
+- artist_id: sergio_hernandez
+  display_name: Sergio Hernández
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Sergio Hernández
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1957, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q16630368'
 - artist_id: sergio_telles
   display_name: Sergio Telles
   country_birth: BR

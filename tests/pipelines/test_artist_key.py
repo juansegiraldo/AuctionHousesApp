@@ -98,6 +98,8 @@ def test_fold_returns_none_when_there_is_no_usable_key(name):
         ("ANONIMO", "anonimo"),
         ("VV.AA.", "anonimo"),
         ("Varios autores", "anonimo"),
+        # Morton: "VARIOS ARTISTAS, El TGP, Doce Años de Obra..." (carpeta colectiva)
+        ("Varios Artistas", "anonimo"),
         # Autores de verdad
         ("Fernando Botero", "autor"),
         ("Antoni Tàpies", "autor"),

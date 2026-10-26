@@ -1189,6 +1189,19 @@ artists:
   aliases:
   - Raphael Morghen
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2275991'
+- artist_id: rashid_al_khalifa
+  display_name: Rashid Al Khalifa
+  country_birth: BH
+  nationalities:
+  - BH
+  birth_year: 1952
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rashid Al Khalifa
+  notes: 'Rashid bin Khalifa Al Khalifa, pintor de Barein nacido en 1952: https://www.wikidata.org/wiki/Q7294933
+    (P19 Manama). Morton dice Riffa; el pais concuerda.'
 - artist_id: rashid_diab
   display_name: Rashid Diab
   country_birth: SD
@@ -1205,6 +1218,20 @@ artists:
     fallecimiento. Sin este campo el informe escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta
     el dato''.'
   death_status: living
+- artist_id: raul_anguiano
+  display_name: Raúl Anguiano
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1915
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Raúl Anguiano
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1915, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q325503'
 - artist_id: raul_javiel_cabrera
   display_name: Raúl Javiel Cabrera
   country_birth: UY
@@ -1373,6 +1400,20 @@ artists:
   - REMBRANDT
   - REMBRANDT"
   notes: '15 lotes en Silver | fuente: Wikipedia | Rembrandt Harmenszoon van Rijn, Leiden; aguafuertes'
+- artist_id: remedios_varo
+  display_name: Remedios Varo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1908
+  death_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Remedios Varo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q235275
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: remo_brindisi
   display_name: Remo Brindisi
   country_birth: IT
@@ -1752,6 +1793,20 @@ artists:
   - Ricardo Marín
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1874, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28973511'
+- artist_id: ricardo_martinez
+  display_name: Ricardo Martínez
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1918
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Ricardo Martínez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1918, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q7322718'
 - artist_id: ricardo_montesinos
   display_name: Ricardo Montesinos
   country_birth: ES
@@ -2334,6 +2389,20 @@ artists:
   - Roberto Matta
   - MATTA, ROBERTO
   notes: '15 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: roberto_montenegro
+  display_name: Roberto Montenegro
+  country_birth: MX
+  nationalities:
+  - MX
+  death_year: 1968
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Roberto Montenegro
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q724692
+    Wikidata publica dos nacimientos (1885 y 1887); desempata la casa, que publica 1885.'
+  birth_year: 1885
 - artist_id: roberto_ortuno
   display_name: Roberto Ortuño
   country_birth: VE
@@ -2436,11 +2505,16 @@ artists:
   death_year: 2001
   attribution_type: autor
   source: wikidata
-  confidence: low
+  confidence: medium
   aliases:
   - RODOLFO MORALES
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
-    de verificar. Fuente: https://www.wikidata.org/wiki/Q7357180'
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q7357180 | Pais: nacido en Ocotlan de Morelos, Oaxaca, segun
+    Morton en 65 lotes; Wikidata lo describe como pintor zapoteca, 1925-2001: https://www.wikidata.org/wiki/Q7357180
+    (sin P19).'
+  country_birth: MX
+  nationalities:
+  - MX
 - artist_id: rodolfo_nieto
   display_name: Rodolfo Nieto
   country_birth: MX
@@ -2495,6 +2569,21 @@ artists:
   aliases:
   - RODRIGO ARENAS BETANCOURT
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q332420'
+- artist_id: rodrigo_de_la_sierra
+  display_name: Rodrigo de la Sierra
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rodrigo de la Sierra
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q107001783 Wikidata no publica lugar de nacimiento (si 1971-09-18).
+    Escultor de Ciudad de Mexico, autor de Timoteo: https://www.timeoutmexico.mx/ciudad-de-mexico/arte/las-esculturas-de-timo-llegan-a-guadalajara
+    ; Morton: ''(Ciudad de Mexico, 1971 - )''.'
 - artist_id: rodrigo_echeverri
   display_name: Rodrigo Echeverri
   country_birth: null
@@ -2580,6 +2669,19 @@ artists:
   - Rolando Campos
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q110176461'
+- artist_id: rolando_rojas
+  display_name: Rolando Rojas
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1970
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Rolando Rojas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1970, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q59510055'
 - artist_id: roman_navarro_garcia_de_vinuesa
   display_name: Román Navarro
   country_birth: ES

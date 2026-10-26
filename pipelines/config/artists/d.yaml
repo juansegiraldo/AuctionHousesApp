@@ -1134,6 +1134,23 @@ artists:
   aliases:
   - Dorothy Napangardi Robinson
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5298564'
+- artist_id: dr_atl
+  display_name: Dr. Atl
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1875
+  death_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Dr. Atl
+  - Gerardo Murillo Dr. Atl
+  - Gerardo Murillo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q266092
+    Gerardo Murillo. Morton lo publica como ''DR. ATL'' y como ''GERARDO MURILLO "DR. ATL" (Guadalajara, Jalisco,
+    1875 - Ciudad de Mexico, 1964)''; ''Gerardo Murillo'' solo aparece en esos lotes.'
 - artist_id: duflos_le_jeune
   display_name: Pierre Duflos
   country_birth: FR

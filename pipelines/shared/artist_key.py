@@ -91,6 +91,9 @@ _ANONYMOUS_MARKERS = (
     "vv aa",
     "vvaa",
     "varios autores",
+    # Morton firma asi las carpetas colectivas ("VARIOS ARTISTAS, El TGP...");
+    # sin esto entraban al ranking como un artista llamado "Varios Artistas".
+    "varios artistas",
     "autor desconocido",
     "sin firma",
 )

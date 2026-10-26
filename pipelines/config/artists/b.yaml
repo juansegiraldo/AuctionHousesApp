@@ -1122,6 +1122,20 @@ artists:
     o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
     ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
   death_status: living
+- artist_id: bridget_tichenor
+  display_name: Bridget Tichenor
+  country_birth: FR
+  nationalities:
+  - FR
+  birth_year: 1917
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Bridget Tichenor
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4966695
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: bruno_widmann
   display_name: Bruno Widmann
   country_birth: UY
@@ -1161,3 +1175,16 @@ artists:
   aliases:
   - Buero Vallejo
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q373044'
+- artist_id: byron_galvez
+  display_name: Byron Gálvez
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1941
+  death_year: 2009
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Byron Gálvez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5004362'

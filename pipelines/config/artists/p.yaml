@@ -824,6 +824,20 @@ artists:
   aliases:
   - Pedro Centeno Vallenilla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q79389513'
+- artist_id: pedro_coronel
+  display_name: Pedro Coronel
+  country_birth: MX
+  nationalities:
+  - MX
+  death_year: 1985
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Pedro Coronel
+  notes: 'Nacido en Zacatecas: https://www.wikidata.org/wiki/Q380779 . Se omite el anio de nacimiento por discrepancia:
+    Wikidata P569 dice 1922, su descripcion 1921 y Morton 1923. 14 lotes de Morton traen las fechas de su hermano
+    Rafael (1931-2019): errata de la casa; el titulo dice PEDRO CORONEL.'
 - artist_id: pedro_de_oraa
   display_name: Pedro de Oraá
   country_birth: CU

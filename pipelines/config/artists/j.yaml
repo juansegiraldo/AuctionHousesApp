@@ -696,6 +696,19 @@ artists:
     o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe escribe
     ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
   death_status: living
+- artist_id: javier_marin
+  display_name: Javier Marín
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1962
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Javier Marín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1962, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q16194674'
 - artist_id: javier_mariscal
   display_name: Javier Mariscal
   country_birth: ES
@@ -1382,6 +1395,19 @@ artists:
   - Jesús González de la Torre
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28503664'
   death_status: living
+- artist_id: jesus_helguera
+  display_name: Jesús Helguera
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1910
+  death_year: 1971
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Jesús Helguera
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q4582502'
 - artist_id: jesus_infante
   display_name: Jesús Infante Pérez de Pipaón
   country_birth: ES
@@ -2034,6 +2060,19 @@ artists:
   - Joaquim Chancho
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q19594488'
   death_status: living
+- artist_id: joaquin_clausell
+  display_name: Joaquín Clausell
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1866
+  death_year: 1935
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Joaquín Clausell
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1838351'
 - artist_id: joaquin_dominguez_becquer
   display_name: Joaquín Domínguez Bécquer
   country_birth: ES
@@ -2248,7 +2287,9 @@ artists:
   aliases:
   - Joaquín Sorolla
   - Joaquín Sorolla y Bastida
-  notes: '8 lotes | casas: duran_subastas'
+  - SOROLLA Y BASTIDA, JOAQUÍN
+  notes: '8 lotes | casas: duran_subastas | Alias ''SOROLLA Y BASTIDA, JOAQUÍN'': Duran lo publica invertido,
+    mismas fechas (1863-1923).'
 - artist_id: joaquin_sunyer
   display_name: Joaquim Sunyer
   country_birth: ES
@@ -3010,6 +3051,19 @@ artists:
   - Jorge Gay
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q98456398'
   death_status: living
+- artist_id: jorge_gonzalez_camarena
+  display_name: Jorge González Camarena
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1908
+  death_year: 1980
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Jorge González Camarena
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1703837'
 - artist_id: jorge_luis_santos
   display_name: Jorge Luis Santos
   birth_year: 1973
@@ -3061,6 +3115,19 @@ artists:
   - JORGE MANTILLA CABALLERO
   - Jorge Mantilla Caballero
   notes: '9 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: jorge_marin
+  display_name: Jorge Marín
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1963
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Jorge Marín
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1963, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q12061486'
 - artist_id: jorge_ortiz
   display_name: Jorge Ortiz
   country_birth: CO
@@ -3624,6 +3691,19 @@ artists:
   notes: 'Pintor madrileño especializado entre otros motivos en composiciones ferroviarias. Se omite birth_year:
     las fuentes institucionales no lo publican y las secundarias discrepan entre 1958 y 1959. Fuentes: https://ffe.es/RailArte/catalogoRailArte/files/downloads/catalogo_RailArte.pdf
     ; https://www.museodelferrocarril.org/pdf/BoletinMuseos/Boletin-Informativo-13.pdf'
+- artist_id: jose_chavez_morado
+  display_name: José Chávez Morado
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1909
+  death_year: 2002
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - José Chávez Morado
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1709105'
 - artist_id: jose_clara_ayats
   display_name: Josep Clará i Ayats
   country_birth: ES
@@ -3637,6 +3717,19 @@ artists:
   aliases:
   - José Clará Ayats
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3042936'
+- artist_id: jose_clemente_orozco
+  display_name: José Clemente Orozco
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1883
+  death_year: 1949
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - José Clemente Orozco
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q332041'
 - artist_id: jose_coll_bardolet
   display_name: Josep Coll i Bardolet
   country_birth: ES
@@ -6503,6 +6596,20 @@ artists:
   - Joseph Nigg
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1782, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1707710'
+- artist_id: joy_laville
+  display_name: Joy Laville
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1923
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Joy Laville
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q3728614
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: joze_spacal
   display_name: Jože Spacal
   country_birth: SI
@@ -7497,9 +7604,12 @@ artists:
   aliases:
   - Juan Luna y Novicio
   - Juan Luna Novicio
+  - LUNA Y NOVICIO, JUAN
   notes: '6 lotes | casas: duran_subastas | nacido en Badoc, Ilocos Norte, en 1857 y fallecido en Hong Kong en 1899.
     Silver publica 1900 en una variante; se corrige con el marcador biografico de la National Historical Commission
-    of the Philippines. Fuente: https://philhistoricsites.nhcp.gov.ph/registry_database/juan-luna-y-novicio-1857-1899/'
+    of the Philippines. Fuente: https://philhistoricsites.nhcp.gov.ph/registry_database/juan-luna-y-novicio-1857-1899/
+    | Alias ''LUNA Y NOVICIO, JUAN'': Duran lo publica invertido; nace en 1857 como la ficha (Duran da 1900 de muerte
+    frente a 1899: desacuerdo normal entre fuentes).'
 - artist_id: juan_manuel_barrigon
   display_name: Juan Manuel Barrigón
   country_birth: ES
@@ -7697,6 +7807,19 @@ artists:
   aliases:
   - Juan Navarro Ramón
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q15627801'
+- artist_id: juan_o_gorman
+  display_name: Juan O'Gorman
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1905
+  death_year: 1982
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Juan O'Gorman
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1378325'
 - artist_id: juan_pablo_echeverri
   display_name: Juan Pablo Echeverri
   country_birth: CO
@@ -7904,6 +8027,21 @@ artists:
   aliases:
   - Juan Soler Puig
   notes: '11 lotes en Silver | fuente: Artnet'
+- artist_id: juan_soriano
+  display_name: Juan Soriano
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1920
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Juan Soriano
+  notes: 'Nacido en Guadalajara: https://www.wikidata.org/wiki/Q1234088 . Morton: ''(Guadalajara, Jalisco, 1920
+    - Ciudad de Mexico, 2006)'' en 104 lotes; 1 lote dice ''(Ciudad de Mexico, 1969 - )'', probable errata de la
+    casa.'
 - artist_id: juan_storm
   display_name: Juan Storm
   country_birth: UY
@@ -8430,6 +8568,20 @@ artists:
   - Julio Fernández Argüelles
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q55769669'
+- artist_id: julio_galan
+  display_name: Julio Galán
+  country_birth: MX
+  nationalities:
+  - MX
+  death_year: 2006
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Julio Galán
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1712361
+    Wikidata publica dos nacimientos (1959 y 1958); desempata la casa, que publica 1959.'
+  birth_year: 1959
 - artist_id: julio_girona
   display_name: Julio Girona
   birth_year: 1914

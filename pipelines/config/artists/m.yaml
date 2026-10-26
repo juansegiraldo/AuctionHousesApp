@@ -168,7 +168,9 @@ artists:
   confidence: high
   aliases:
   - Manolo Valdés
-  notes: '68 lotes | casas: duran_subastas'
+  - VALDÉS, MANOLO
+  notes: '68 lotes | casas: duran_subastas | Alias ''VALDÉS, MANOLO'': Duran lo publica invertido, mismo nacimiento
+    (1942).'
   death_status: living
 - artist_id: manolo_vellojin
   display_name: Manolo Vellojín
@@ -549,6 +551,19 @@ artists:
   - MAnuel Facal
   notes: Artista gallego multidisciplinario. Nacido 20 julio 1943 Carballo, Coruña, fallecido 6 abril 2024. Pintor,
     grabador, escultor. Integrante Grupo Atlántica años 80. Presidió Fundación Manuel Facal 2022-2024.
+- artist_id: manuel_felguerez
+  display_name: Manuel Felguérez
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1928
+  death_year: 2020
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Manuel Felguérez
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1426480'
 - artist_id: manuel_fernandez_carpio
   display_name: Manuel Fernández Carpio
   country_birth: ES
@@ -1880,6 +1895,20 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1972, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
     Fuente: https://www.wikidata.org/wiki/Q130554375'
+- artist_id: maria_izquierdo
+  display_name: María Izquierdo
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1902
+  death_year: 1955
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - María Izquierdo
+  notes: 'Pintora nacida en San Juan de los Lagos, Jalisco: https://www.wikidata.org/wiki/Q461937 . Morton concuerda
+    en lugar y fechas. Homonimo descartado: actriz chilena de 1960.'
 - artist_id: maria_luisa_de_la_riva_munoz
   display_name: María Luisa de la Riva y Callol-Muñoz
   country_birth: ES
@@ -2933,6 +2962,20 @@ artists:
   - Mateu Bauzá
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q118829551'
+- artist_id: mathias_goeritz
+  display_name: Mathias Goeritz
+  country_birth: PL
+  nationalities:
+  - PL
+  birth_year: 1915
+  death_year: 1990
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Mathias Goeritz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q64487
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: mathias_withoos
   display_name: Matthias Withoos
   birth_year: 1627
@@ -3742,6 +3785,20 @@ artists:
   - Miguel Cabrera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1695, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q527206'
+- artist_id: miguel_covarrubias
+  display_name: Miguel Covarrubias
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1904
+  death_year: 1957
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Miguel Covarrubias
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1904, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1709505'
 - artist_id: miguel_davila
   display_name: Miguel Dávila
   birth_year: 1926

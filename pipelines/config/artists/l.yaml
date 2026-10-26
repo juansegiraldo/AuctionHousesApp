@@ -461,6 +461,20 @@ artists:
   - Leonor Fini
   - LEONOR FINI
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q464011'
+- artist_id: leonora_carrington
+  display_name: Leonora Carrington
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1917
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonora Carrington
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q233207
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: leopold_durangel
   display_name: Léopold Durangel
   country_birth: FR

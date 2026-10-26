@@ -53,6 +53,21 @@ artists:
   - Nadín Ospina
   notes: '10 lotes | casas: bogota_auctions'
   death_status: living
+- artist_id: nahui_olin
+  display_name: Nahui Olin
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1893
+  death_year: 1978
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Nahui Olin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q540953
+    Nombre real Carmen Mondragon; la casa y el mercado la nombran Nahui Olin. Nacimiento 1893 segun Wikidata (P569;
+    nacida en Tacubaya); Morton publica 1894: gana la fuente, discrepancia anotada.'
 - artist_id: nam_june_paik
   display_name: Nam June Paik
   country_birth: KR

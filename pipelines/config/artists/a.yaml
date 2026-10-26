@@ -1548,6 +1548,20 @@ artists:
     en 1950 o despues y NINGUNA fuente (ni la casa ni Wikidata) registra fallecimiento. Sin este campo el informe
     escribe ''n. AAAA'' y el lector no distingue ''sigue vivo'' de ''falta el dato''.'
   death_status: living
+- artist_id: alejandro_santiago
+  display_name: Alejandro Santiago
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1964
+  death_year: 2013
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Alejandro Santiago
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1964, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q28811936'
 - artist_id: alejandro_seiquer
   display_name: Alejandro Seiquer López
   country_birth: ES
@@ -2014,6 +2028,37 @@ artists:
   - ALCAÍN, ALFREDO
   notes: '46 lotes | casas: duran_subastas'
   death_status: living
+- artist_id: alfredo_alcalde_garcia
+  display_name: Alfredo Alcalde
+  country_birth: PE
+  nationalities:
+  - PE
+  birth_year: 1961
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Alfredo Alcalde García
+  - Alfredo Alcalde
+  notes: 'Pintor peruano de Chimbote, discipulo de Victor Humareda: https://larepublica.pe/cultural/2022/07/03/alfredo-alcalde-yo-soy-un-zorro-de-abajo-exposicion-chimbote
+    ; 1961 segun Artsper y Morton ''(Chimbote, Peru, 1961 - )''. Sin ficha en Wikidata.'
+- artist_id: alfredo_castaneda
+  display_name: Alfredo Castañeda
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1938
+  death_year: 2010
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Alfredo Castañeda
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q55942624 Wikidata no publica lugar de nacimiento. Ciudad
+    de Mexico segun el Blanton Museum (https://blanton.emuseum.com/objects/13871/la-afliccion-de-san-marcos-the-affliction-of-saint-mark:
+    ''Mexico City, 1938 - Madrid (?), 2010'') y Morton. Otras fuentes dan 1930 o 1936; se mantiene 1938 (Wikidata,
+    Blanton, Christie''s y la casa).'
 - artist_id: alfredo_de_simone
   display_name: Alfredo De Simone
   country_birth: IT
@@ -2190,6 +2235,19 @@ artists:
   aliases:
   - Alfredo Souto Cuero
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q25422735'
+- artist_id: alfredo_zalce
+  display_name: Alfredo Zalce
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1908
+  death_year: 2003
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Alfredo Zalce
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q2646392'
 - artist_id: alfredo_zorrilla_de_san_martin
   display_name: Alfredo Zorrilla De San Martín
   country_birth: UY
@@ -2567,6 +2625,19 @@ artists:
   - Amado González Hevia
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8196971'
   death_status: living
+- artist_id: amador_montes
+  display_name: Amador Montes
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1975
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Amador Montes
+  notes: 'Pintor nacido en Oaxaca en 1975: https://www.lasiemprehabana.com/pages/amador-montes . Morton: ''(Oaxaca,
+    Oaxaca, 1975 - )''. Sin ficha en Wikidata.'
 - artist_id: amalia_avia
   display_name: Amalia Avia
   country_birth: ES
@@ -3530,6 +3601,19 @@ artists:
   aliases:
   - Ángel Sevillano Estremera
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q118215004'
+- artist_id: angel_zarraga
+  display_name: Ángel Zárraga
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1886
+  death_year: 1946
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Ángel Zárraga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q251967'
 - artist_id: angeles_san_jose
   display_name: Ángeles San José
   country_birth: ES
@@ -4710,6 +4794,24 @@ artists:
   - Antonio López García
   - LÓPEZ GARCÍA, ANTONIO
   notes: '19 lotes | casas: duran_subastas'
+- artist_id: antonio_lopez_saenz
+  display_name: Antonio López Sáenz
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1936
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Antonio López Sáenz
+  - Antonio López Saénz
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
+    que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q94627923
+    Pintor y escultor de Mazatlan, 1936-2023 (murio el 15-08-2023): https://culturamazatlan.com/en/directory/mazatlecan-artists/antonio-lopez-saenz/
+    y https://www.luznoticias.mx/2023-08-16/sinaloa/fallece-antonio-lopez-saenz-cronista-grafico-de-mazatlan/174009
+    . Eso resuelve la duda de ocupacion que dejo Wikidata.'
+  death_year: 2023
 - artist_id: antonio_lorenzo
   display_name: Antonio Lorenzo
   country_birth: ES
@@ -5527,6 +5629,19 @@ artists:
   - ARMANDO VILLEGAS
   - Armando Villegas
   notes: '14 lotes en Silver | fuente: FINALL.xlsx hoja Artistas'
+- artist_id: armando_zesatti
+  display_name: Armando Zesatti
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1967
+  attribution_type: autor
+  source: manual
+  confidence: medium
+  aliases:
+  - Armando Zesatti
+  notes: 'Pintor fotorrealista nacido en Mexico en 1967 (AskArt, citando a Sotheby''s): https://webmail6.askart.com/bio/Armando_Zesatti/11226185/armando-zesatti
+    . Morton: ''(Ciudad de Mexico, 1967 - )''. Sin ficha en Wikidata.'
 - artist_id: arnaldo_curia_santos
   display_name: Arnaldo Curia Santos
   birth_year: 1929
@@ -5551,6 +5666,20 @@ artists:
   aliases:
   - Arnau Alemany Batalla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q11906595'
+- artist_id: arnold_belkin
+  display_name: Arnold Belkin
+  country_birth: CA
+  nationalities:
+  - CA
+  birth_year: 1930
+  death_year: 1992
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Arnold Belkin
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q636218
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: arnulf_rainer
   display_name: أرنولف راينر
   country_birth: AT
@@ -5666,6 +5795,19 @@ artists:
   aliases:
   - Arturo Acebal Idígoras
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q26211518'
+- artist_id: arturo_estrada
+  display_name: Arturo Estrada
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1925
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Arturo Estrada
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1925, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q715219'
 - artist_id: arturo_michelena
   display_name: Arturo Michelena
   country_birth: VE

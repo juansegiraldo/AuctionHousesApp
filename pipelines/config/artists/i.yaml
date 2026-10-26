@@ -311,6 +311,18 @@ artists:
   - Irma Morassi
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q132856654'
   death_status: living
+- artist_id: irma_palacios
+  display_name: Irma Palacios
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1943
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Irma Palacios
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q43135006'
 - artist_id: isaac_santacruz
   display_name: Isaac Santacruz
   country_birth: CO

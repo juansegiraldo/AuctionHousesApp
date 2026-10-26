@@ -699,6 +699,21 @@ artists:
   - Carlos Menck Freire
   - Carlos MENCK FREIRE
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q42386656'
+- artist_id: carlos_merida
+  display_name: Carlos Mérida
+  country_birth: GT
+  nationalities:
+  - GT
+  birth_year: 1891
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carlos Mérida
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1891, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1043100 Nacido fuera
+    de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: carlos_morago
   display_name: Carlos Morago
   country_birth: ES
@@ -728,6 +743,20 @@ artists:
   aliases:
   - Carlos Nadal Farreras
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q5042428'
+- artist_id: carlos_orozco_romero
+  display_name: Carlos Orozco Romero
+  country_birth: MX
+  nationalities:
+  - MX
+  death_year: 1984
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Carlos Orozco Romero
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1043110
+    Wikidata publica dos nacimientos (1898 y 1896); desempata la casa, que publica 1898.'
+  birth_year: 1898
 - artist_id: carlos_paez_vilaro
   display_name: Carlos Páez Vilaró
   country_birth: UY
@@ -1138,6 +1167,20 @@ artists:
   aliases:
   - Carmen Laffon
   notes: '22 lotes | casas: duran_subastas'
+- artist_id: carmen_parra
+  display_name: Carmen Parra
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1944
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Carmen Parra
+  notes: 'Pintora nacida en Ciudad de Mexico en 1944: https://www.wikidata.org/wiki/Q24809969 . Morton: ''(Ciudad
+    de Mexico, 1944 - )'' en 171 lotes (3 dicen 1972). Desempata el anio frente a los homonimos de Wikidata (profesora,
+    politica, escritora).'
 - artist_id: carmen_santonja
   display_name: Carmen Santonja
   country_birth: ES
