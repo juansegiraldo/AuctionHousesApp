@@ -111,7 +111,12 @@ quedaban sin país aunque la casa lo publicase.
 - **La página de la casa está paginada**: la 1 solo trae 24 de los 45 catálogos. `fetch_historic`
   recorre `?page=N` hasta que no aparecen nuevos. Sin eso se pierde todo 2019-2020.
 - **Cada página de catálogo repite ~3 lotes promocionados.** No es un bug; el engine deduplica
-  por `lot_url`.
+  por `lot_url`. Pero sí lo era contarlos al paginar: `LOTS_PER_PAGE` valía 28 y cada página
+  aporta **24** lotes nuevos, así que la última página de casi cada catálogo nunca se pedía.
+  El output actual (11.168 lotes) es exactamente `ceil(N/28)×24` en 21 de 24 catálogos
+  comprobados: falta ~11%. Arreglado el 2026-10-26, pero **sin re-scrapear**: ese día
+  LiveAuctioneers ya no incrustaba `window.__data` y bloqueaba con Incapsula a la segunda
+  petición, así que el parser entero necesita adaptarse antes de volver a bajar nada.
 - **La página incluye "Similar Items" de otras casas.** `parse_auction_page` filtra por
   `sellerId == 6727`; sin ese filtro se cuelan lotes ajenos en el catálogo.
 - **`str(page)` devuelve solo `"<200 url>"`** con scrapling. El HTML real está en
