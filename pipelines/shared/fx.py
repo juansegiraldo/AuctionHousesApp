@@ -134,7 +134,7 @@ def fx_note(fallback_lots: Optional[int] = None) -> str:
     first, last = fx_history_range()
     note = (
         f"Conversion a EUR con la tasa media del MES de cada subasta "
-        f"({first} a {last}). Fuentes: BCE (EUR/USD) y TRM de la "
+        f"({first} a {last}). Fuentes: BCE (EUR/USD y EUR/MXN) y TRM de la "
         "Superfinanciera de Colombia (USD/COP). "
         "Sirve para comparar casas entre si, no para valoracion contable."
     )

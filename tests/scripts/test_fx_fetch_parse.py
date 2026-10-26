@@ -62,6 +62,25 @@ def test_build_rates_cop_bridges_through_usd():
     assert rates["COP"]["2014-01"] == expected
 
 
+def test_build_rates_mxn_is_direct_from_ecb_without_bridge():
+    # A diferencia del COP, el BCE SI publica el peso mexicano
+    # (D.MXN.EUR.SP00.A): MXN->EUR es el inverso directo, sin pasar por USD.
+    rates = build_rates({"2021-08": 1.18}, {}, {"2021-08": 23.6})
+    assert rates["MXN"]["2021-08"] == round(1 / 23.6, 10)
+
+
+def test_build_rates_without_mxn_keeps_the_old_shape():
+    assert "MXN" not in build_rates({"2014-01": 1.36}, {})
+
+
+def test_render_yaml_writes_mxn_with_its_source():
+    from scripts.fx_fetch_history import render_yaml
+
+    text = render_yaml(build_rates({"2021-08": 1.18}, {"2021-08": 3900.0}, {"2021-08": 23.6}), "2026-10-25")
+    assert "  MXN:\n" in text
+    assert "D.MXN.EUR.SP00.A" in text
+
+
 def test_build_rates_skips_month_missing_from_either_source():
     # Sin las dos series no se puede componer COP: mejor omitir el mes que
     # inventarlo. Es la misma disciplina que to_eur() devolviendo None.

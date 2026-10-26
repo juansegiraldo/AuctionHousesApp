@@ -11,16 +11,20 @@ D.COP.EUR.SP00.A devuelve 404). El puente es:
 
 usando en cada lado la fuente canonica de esa moneda.
 
+El peso mexicano (Morton Subastas) NO necesita puente: el BCE si lo publica
+(D.MXN.EUR.SP00.A), asi que MXN->EUR = 1 / EURMXN_BCE.
+
 Ejecutar desde la raiz:  python -m scripts.fx_fetch_history
 """
 
 from __future__ import annotations
 
 import json
+import ssl
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "pipelines" / "config" / "fx_history.yaml"
@@ -30,7 +34,7 @@ OUTPUT = ROOT / "pipelines" / "config" / "fx_history.yaml"
 START = "2013-01-01"
 
 ECB_URL = (
-    "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A"
+    "https://data-api.ecb.europa.eu/service/data/EXR/D.{currency}.EUR.SP00.A"
     "?startPeriod={start}&format=csvdata"
 )
 TRM_URL = (
@@ -42,9 +46,24 @@ TRM_URL = (
 HEADERS = {"User-Agent": "AuctionHousesApp/1.0 (fx history fetch)"}
 
 
+def _ssl_context() -> ssl.SSLContext:
+    """Contexto TLS con las raices de certifi.
+
+    En Windows, Python valida contra el almacen del sistema, y ahi puede faltar
+    la raiz "Sectigo Public Server Authentication Root E46" que sirve el BCE:
+    Windows la descarga bajo demanda cuando la pide un navegador, Python no.
+    Sintoma: CERTIFICATE_VERIFY_FAILED mientras curl responde 200.
+    """
+    try:
+        import certifi
+    except ImportError:
+        return ssl.create_default_context()
+    return ssl.create_default_context(cafile=certifi.where())
+
+
 def _fetch(url: str) -> str:
     request = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=120) as response:
+    with urllib.request.urlopen(request, timeout=120, context=_ssl_context()) as response:
         return response.read().decode("utf-8")
 
 
@@ -88,6 +107,7 @@ def monthly_average(daily: Dict[str, float]) -> Dict[str, float]:
 def build_rates(
     eurusd_monthly: Dict[str, float],
     trm_monthly: Dict[str, float],
+    eurmxn_monthly: Optional[Dict[str, float]] = None,
 ) -> Dict[str, Dict[str, float]]:
     """Compone las tasas hacia EUR.
 
@@ -100,7 +120,10 @@ def build_rates(
         for m, trm in trm_monthly.items()
         if trm and eurusd_monthly.get(m)
     }
-    return {"USD": usd, "COP": cop}
+    rates = {"USD": usd, "COP": cop}
+    if eurmxn_monthly:
+        rates["MXN"] = {m: round(1 / v, 10) for m, v in eurmxn_monthly.items() if v}
+    return rates
 
 
 def render_yaml(rates: Dict[str, Dict[str, float]], generated_at: str) -> str:
@@ -118,9 +141,13 @@ def render_yaml(rates: Dict[str, Dict[str, float]], generated_at: str) -> str:
         "sources:",
         '  USD: "ECB SDW EXR D.USD.EUR.SP00.A (media mensual)"',
         '  COP: "TRM Superfinanciera datos.gov.co 32sa-8pi3 x ECB EUR/USD (media mensual)"',
-        "rates_to_eur:",
     ]
-    for currency in ("USD", "COP"):
+    if "MXN" in rates:
+        lines.append('  MXN: "ECB SDW EXR D.MXN.EUR.SP00.A (media mensual)"')
+    lines.append("rates_to_eur:")
+    for currency in ("USD", "COP", "MXN"):
+        if currency not in rates:
+            continue
         lines.append(f"  {currency}:")
         for month, rate in sorted(rates[currency].items()):
             lines.append(f'    "{month}": {rate}')
@@ -131,18 +158,25 @@ def main() -> None:
     import datetime
 
     print(f"[fx] descargando BCE EUR/USD desde {START} ...")
-    eurusd = monthly_average(parse_ecb_csv(_fetch(ECB_URL.format(start=START))))
+    eurusd = monthly_average(parse_ecb_csv(_fetch(ECB_URL.format(currency="USD", start=START))))
     print(f"[fx]   {len(eurusd)} meses")
 
     print(f"[fx] descargando TRM COP/USD desde {START} ...")
     trm = monthly_average(parse_trm_json(_fetch(TRM_URL.format(start=START))))
     print(f"[fx]   {len(trm)} meses")
 
-    rates = build_rates(eurusd, trm)
+    print(f"[fx] descargando BCE EUR/MXN desde {START} ...")
+    eurmxn = monthly_average(parse_ecb_csv(_fetch(ECB_URL.format(currency="MXN", start=START))))
+    print(f"[fx]   {len(eurmxn)} meses")
+
+    rates = build_rates(eurusd, trm, eurmxn)
     generated_at = datetime.date.today().isoformat()
     OUTPUT.write_text(render_yaml(rates, generated_at), encoding="utf-8")
     print(f"[fx] escrito {OUTPUT}")
-    print(f"[fx]   USD: {len(rates['USD'])} meses | COP: {len(rates['COP'])} meses")
+    print(
+        f"[fx]   USD: {len(rates['USD'])} meses | COP: {len(rates['COP'])} meses"
+        f" | MXN: {len(rates['MXN'])} meses"
+    )
 
 
 if __name__ == "__main__":
