@@ -15,6 +15,7 @@ HOUSE_LABELS = {
     "duran_subastas": "Durán Subastas",
     "zorrilla_subastas": "Zorrilla Subastas",
     "lefebre_subastas": "Lefebre Subastas",
+    "morton_subastas": "Morton Subastas",
 }
 # Donde OCURRE la subasta. NO es la nacionalidad del artista: esa sale del
 # maestro (pipelines/config/artists/) via artist_country_birth. Usar esta tabla
@@ -25,6 +26,7 @@ HOUSE_COUNTRY = {
     "duran_subastas": "España",
     "zorrilla_subastas": "Uruguay",
     "lefebre_subastas": "Colombia",
+    "morton_subastas": "México",
 }
 MONTH_LABELS = {
     "01": "Ene", "02": "Feb", "03": "Mar", "04": "Abr",

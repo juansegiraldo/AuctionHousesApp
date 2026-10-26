@@ -175,7 +175,18 @@ def test_every_artist_row_opens_an_existing_card(app_html, app_cards):
     keys = set(re.findall(r"data-card='([^']+)'", app_html))
     assert keys, "no se generaron filas de artista"
     assert keys == set(app_cards)
-    assert "Fernando Botero" in app_cards["ficha-1"]
+
+
+def test_card_key_is_the_artist_not_its_position(app_html, app_cards):
+    """La ficha se pedia por posicion ("ficha-7"). Con un cards.json viejo en la
+    cache del navegador y un index.html nuevo, tocar a Tamayo abria a Obregon:
+    al entrar Morton, el puesto 7 era otro artista. Con la clave del artista, una
+    mezcla de ficheros de dos builds abre como mucho la ficha vieja de la MISMA
+    persona, nunca la de otra."""
+    rows = re.findall(r"data-key='([^']*)' data-card='([^']+)'", app_html)
+    assert rows and all(key == card for key, card in rows)
+    botero = next(card for key, card in rows if "botero" in key)
+    assert "Fernando Botero" in app_cards[botero]
 
 
 def test_cards_and_lot_details_are_not_inline(app_html):
@@ -193,7 +204,20 @@ def test_write_app_writes_the_three_files(tmp_path):
     lots = json.loads((tmp_path / "lots.json").read_text(encoding="utf-8"))
     assert len(lots["rows"]) == 2 and "artist_key" in lots["cols"]
     cards = json.loads((tmp_path / "cards.json").read_text(encoding="utf-8"))
-    assert set(cards) == {"ficha-1", "ficha-2"}
+    assert len(cards) == 2 and not any(k.startswith("ficha-") for k in cards)
+
+
+def test_data_files_are_fetched_with_a_content_version(tmp_path):
+    """index.html pide cards.json?v=<huella del contenido>: si los datos cambian,
+    cambia la URL y el navegador no reutiliza una copia vieja de la cache."""
+    import hashlib
+
+    rep = _report()
+    build_artifact.write_app(rep, rep["lot_details"], tmp_path)
+    page = (tmp_path / "index.html").read_text(encoding="utf-8")
+    for name in ("cards", "lots"):
+        digest = hashlib.sha256((tmp_path / f"{name}.json").read_bytes()).hexdigest()[:12]
+        assert f'"{name}": "{digest}"' in page, name
 
 
 def test_app_is_a_mobile_document(app_html):
@@ -223,7 +247,7 @@ def test_fold_only_artist_is_rendered_without_inventing_a_country(app_html, app_
     assert row, "no se encontro la fila del artista sin ficha"
     assert "Sin país informado" in row.group(0)
     assert "España" not in row.group(0)
-    assert "no está en el maestro curado" in app_cards["ficha-2"]
+    assert "no está en el maestro curado" in app_cards["artista sin ficha"]
 
 
 def test_multi_house_filter_exists(app_html):
@@ -436,3 +460,63 @@ def test_versioned_world_has_france_and_norway():
     for code in ("FR", "NO", "ES", "CO", "UY"):
         assert code in world["countries"], code
     assert "AQ" not in world["countries"]
+
+
+# --------------------------------------------------------------------------
+# Una casa nueva no puede heredar el color, el pais ni el mercado de otra
+# --------------------------------------------------------------------------
+
+def test_every_house_has_its_own_series_color_in_every_theme():
+    # series_color() cicla: con 5 casas y 4 colores, Morton salia del mismo azul
+    # que Bogota y la leyenda no permitia distinguirlas.
+    houses = list(render_html.HOUSE_LABELS)
+    assert len(build_artifact.SERIES_COLORS) >= len(houses)
+    for cls in build_artifact.SERIES_COLORS:
+        # claro, oscuro por preferencia y oscuro forzado
+        assert len(re.findall(rf"--{cls}:#[0-9a-fA-F]{{6}}", build_artifact.CSS)) == 3, cls
+        assert f".chart .{cls}{{" in build_artifact.CSS, cls
+        if cls != "s0":  # s0 es el color por defecto de .key i y .dot
+            assert f".key i.{cls}{{" in build_artifact.CSS, cls
+            assert f".dot.{cls}{{" in build_artifact.CSS, cls
+
+
+def test_house_color_is_fixed_by_house_not_by_sales_rank():
+    # El color salia de la posicion en house_order (por volumen): al entrar
+    # Morton segunda, Bogota paso de naranja a verde, Zorrilla de verde a
+    # amarillo y Lefebre de amarillo a magenta. Quien ya usaba la app veia cada
+    # casa de otro color. El color sigue a la casa; el orden solo ordena.
+    assert set(build_artifact.HOUSE_SERIES) == set(render_html.HOUSE_LABELS)
+    assert len(set(build_artifact.HOUSE_SERIES.values())) == len(build_artifact.HOUSE_SERIES)
+    # los cuatro de antes de Morton conservan su color
+    assert build_artifact.house_color("duran_subastas") == "s0"
+    assert build_artifact.house_color("bogota_auctions") == "s1"
+    assert build_artifact.house_color("zorrilla_subastas") == "s2"
+    assert build_artifact.house_color("lefebre_subastas") == "s3"
+    assert build_artifact.house_color("morton_subastas") == "s4"
+
+
+def test_stacked_chart_colors_do_not_depend_on_the_order_of_houses():
+    rows = [
+        {"year": "2024", "house_slug": "morton_subastas", "revenue_eur": 100},
+        {"year": "2024", "house_slug": "bogota_auctions", "revenue_eur": 50},
+    ]
+    a = build_artifact.stacked_chart(rows, ["morton_subastas", "bogota_auctions"])
+    b = build_artifact.stacked_chart(rows, ["bogota_auctions", "morton_subastas"])
+    for svg in (a, b):
+        assert "class='bar s4'" in svg and "class='bar s1'" in svg
+        assert "class='bar s0'" not in svg
+
+
+def test_every_registered_house_has_label_country_and_market():
+    from pathlib import Path
+
+    registry = json.loads(
+        (Path(__file__).resolve().parents[2] / "scraping" / "houses" / "registry.json").read_text(encoding="utf-8")
+    )
+    for house in registry["houses"]:
+        slug = house["slug"]
+        assert slug in render_html.HOUSE_LABELS, slug
+        assert slug in render_html.HOUSE_COUNTRY, slug
+        assert slug in narrative._HOUSE_MARKET, slug
+    assert render_html.HOUSE_COUNTRY["morton_subastas"] == "México"
+    assert narrative._HOUSE_MARKET["morton_subastas"] == "MX"

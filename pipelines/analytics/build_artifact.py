@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -564,12 +565,36 @@ def world_map(countries: list[dict], world: dict | None = None) -> tuple[str, li
 # Paleta validada con el script del skill dataviz (CVD por pares adyacentes) en
 # los dos temas; el amarillo y el aguamarina no llegan a 3:1 sobre blanco, y por
 # eso todo grafico multiserie lleva leyenda y lectura en texto.
-SERIES_COLORS = ["s0", "s1", "s2", "s3"]
+# s4 (magenta, quinta casa: Morton) es el slot 5 del orden fijo de la paleta de
+# referencia; revalidada con las 5 el 2026-10-25: CVD peor par 9,1 en claro y
+# 8,4 en oscuro, ambos el amarillo-aguamarina de antes. El magenta tampoco
+# llega a 3:1 en claro (2,69). Contra --crit en oscuro no pasaria (7,8), pero
+# --crit solo pinta alertas y avisos, nunca un grafico junto a las casas.
+SERIES_COLORS = ["s0", "s1", "s2", "s3", "s4"]
 
 
 def series_color(index: int) -> str:
     """Color de la serie n. Cicla si algun dia hay mas casas que colores."""
     return SERIES_COLORS[index % len(SERIES_COLORS)]
+
+
+# Color FIJO por casa. Antes salia de su puesto en house_order (por volumen), y
+# al entrar Morton segunda repinto a las demas: Bogota de naranja a verde,
+# Zorrilla de verde a amarillo, Lefebre de amarillo a magenta. Quien ya leia la
+# app veia cada casa de otro color. Los cuatro primeros son los que tenian antes
+# de Morton; una casa nueva toma el siguiente slot libre de SERIES_COLORS.
+HOUSE_SERIES = {
+    "duran_subastas": "s0",
+    "bogota_auctions": "s1",
+    "zorrilla_subastas": "s2",
+    "lefebre_subastas": "s3",
+    "morton_subastas": "s4",
+}
+
+
+def house_color(slug: str) -> str:
+    """Color de una casa: el suyo, este donde este en el grafico."""
+    return HOUSE_SERIES.get(slug, "s0")
 
 
 def stacked_chart(rows, houses, *, grow: bool = False) -> str:
@@ -589,7 +614,7 @@ def stacked_chart(rows, houses, *, grow: bool = False) -> str:
         x = idx * slot + (slot - bw) / 2
         total = 0.0
         breakdown = []
-        for hi, h in enumerate(houses):
+        for h in houses:
             v = by.get((y, h), 0)
             if not v:
                 continue
@@ -600,7 +625,7 @@ def stacked_chart(rows, houses, *, grow: bool = False) -> str:
             # 1,5 unidades de hueco entre segmentos: sin el, dos casas de color
             # parecido se funden en una sola barra.
             parts.append(
-                f"<rect class='bar {series_color(hi)}' x='{x:.2f}' "
+                f"<rect class='bar {house_color(h)}' x='{x:.2f}' "
                 f"y='{base - acc:.2f}' width='{bw:.2f}' "
                 f"height='{max(0.6, bh - 1.5):.2f}' style='--i:{idx}' data-col='{idx}'>"
                 f"<title>{esc(y)}, {esc(HOUSE_LABELS.get(h, h))}: {esc(eur(v))}</title></rect>"
@@ -620,9 +645,9 @@ def house_legend(houses: list[str]) -> str:
     # Se recorren TODAS las casas: un zip() con una lista corta de colores
     # dejaria fuera de la leyenda a las que sobren, y en silencio.
     return "<div class='legend'>" + "".join(
-        f"<span class='key'><i class='{series_color(i)}'></i>"
+        f"<span class='key'><i class='{house_color(h)}'></i>"
         f"{esc(HOUSE_LABELS.get(h, h))}</span>"
-        for i, h in enumerate(houses)
+        for h in houses
     ) + "</div>"
 
 
@@ -669,7 +694,7 @@ CSS = """
   color-scheme:light;
   --bg:#EDF1F5; --surface:#FFFFFF; --raised:#F3F6F9;
   --ink:#0F1B2A; --ink-soft:#566375; --line:#DCE2E9; --tint:rgb(15 27 42/.07);
-  --s0:#2a78d6; --s1:#eb6834; --s2:#1baf7a; --s3:#eda100;
+  --s0:#2a78d6; --s1:#eb6834; --s2:#1baf7a; --s3:#eda100; --s4:#e87ba4;
   --crit:#c93636;
   /* Escala del mapa (validada como ordinal con el script de dataviz) y gris de
      "sin ventas": la ausencia no puede leerse como el tramo mas bajo. */
@@ -685,7 +710,7 @@ CSS = """
     color-scheme:dark;
     --bg:#0A1119; --surface:#131C26; --raised:#1A2532;
     --ink:#EAF0F6; --ink-soft:#93A2B3; --line:#243140; --tint:rgb(234 240 246/.08);
-    --s0:#3987e5; --s1:#d95926; --s2:#199e70; --s3:#c98500;
+    --s0:#3987e5; --s1:#d95926; --s2:#199e70; --s3:#c98500; --s4:#d55181;
     --crit:#e66767;
     --q1:#184f95; --q2:#2a78d6; --q3:#5598e7; --q4:#86b6ef; --q5:#b7d3f6; --nd:#2A3644;
     --glass:rgb(19 28 38/.72);
@@ -696,7 +721,7 @@ CSS = """
   color-scheme:dark;
   --bg:#0A1119; --surface:#131C26; --raised:#1A2532;
   --ink:#EAF0F6; --ink-soft:#93A2B3; --line:#243140; --tint:rgb(234 240 246/.08);
-  --s0:#3987e5; --s1:#d95926; --s2:#199e70; --s3:#c98500;
+  --s0:#3987e5; --s1:#d95926; --s2:#199e70; --s3:#c98500; --s4:#d55181;
   --crit:#e66767;
   --q1:#184f95; --q2:#2a78d6; --q3:#5598e7; --q4:#86b6ef; --q5:#b7d3f6; --nd:#2A3644;
   --glass:rgb(19 28 38/.72);
@@ -746,6 +771,7 @@ svg.scrub{touch-action:pan-y;cursor:crosshair;border-radius:8px}
 .chart .bar{fill:var(--s0)}
 .chart .s0{fill:var(--s0)} .chart .s1{fill:var(--s1)}
 .chart .s2{fill:var(--s2)} .chart .s3{fill:var(--s3)}
+.chart .s4{fill:var(--s4)}
 .chart .bar,.chart .pt,.chart .hm{transition:opacity .15s}
 .chart .hit{fill:transparent}
 .chart .base{stroke:var(--line);stroke-width:1}
@@ -788,6 +814,7 @@ svg.scrub{touch-action:pan-y;cursor:crosshair;border-radius:8px}
 .key{display:inline-flex;align-items:center;gap:6px}
 .key i{width:10px;height:10px;border-radius:3px;background:var(--s0)}
 .key i.s1{background:var(--s1)} .key i.s2{background:var(--s2)} .key i.s3{background:var(--s3)}
+.key i.s4{background:var(--s4)}
 .key i.none{background:var(--ink-soft);opacity:.4}
 
 /* KPIs: carril horizontal en el movil, rejilla en escritorio. */
@@ -835,6 +862,7 @@ details>summary::-webkit-details-marker{display:none}
 .house-head h3{font-size:1.02rem}
 .dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto;background:var(--s0)}
 .dot.s1{background:var(--s1)} .dot.s2{background:var(--s2)} .dot.s3{background:var(--s3)}
+.dot.s4{background:var(--s4)}
 .where{margin-left:auto;font-size:.8rem;color:var(--ink-soft);white-space:nowrap}
 .house-v{font-family:var(--num);font-size:2.2rem;font-weight:700;letter-spacing:-.025em;
   margin:12px 0 0;line-height:1.1;font-variant-numeric:tabular-nums}
@@ -1143,8 +1171,8 @@ _CARDINAL = {1: "una", 2: "dos", 3: "tres", 4: "cuatro", 5: "cinco", 6: "seis"}
 
 
 def house_order(houses: list[dict]) -> list[str]:
-    """Orden de las casas por volumen. Fija el color de cada una en toda la app:
-    el color sigue a la casa, nunca a su posicion en un grafico concreto."""
+    """Orden de las casas por volumen, para pintarlas en ese orden. NO decide su
+    color: eso es house_color(), fijo por casa (ver HOUSE_SERIES)."""
     return [h["house_slug"] for h in sorted(houses, key=lambda r: -(r.get("revenue_eur") or 0))]
 
 
@@ -1152,13 +1180,13 @@ def build_houses(houses: list[dict], flags: list[dict] | None = None) -> str:
     order = house_order(houses)
     by_slug = {h["house_slug"]: h for h in houses}
     cards = []
-    for i, slug in enumerate(order):
+    for slug in order:
         h = by_slug[slug]
         cur = h.get("currency") or "?"
         st = (h.get("sell_through_rate") or 0) * 100
         cards.append(
             "<article class='house'>"
-            f"<div class='house-head'><i class='dot {series_color(i)}'></i>"
+            f"<div class='house-head'><i class='dot {house_color(slug)}'></i>"
             f"<h3>{esc(HOUSE_LABELS.get(slug, slug))}</h3>"
             f"<span class='where'>{esc(HOUSE_COUNTRY.get(slug, ''))}, {esc(cur)}</span></div>"
             f"<p class='house-v'>{esc(money(h.get('revenue_eur')))}</p>"
@@ -1408,7 +1436,7 @@ def build_artist_table(artists: list[dict], cov: dict,
             f"<tr data-country='{esc(code or '__none__')}' "
             f"data-name='{esc((a.get('artist_name') or '').lower())}' "
             f"data-key='{esc(a.get('artist_key') or '')}' "
-            f"data-card='ficha-{i}' "
+            f"data-card='{esc(card_key(a, i))}' "
             f"data-kind='{esc(multi_house_kind(a.get('houses') or []))}' "
             f"data-sold='{a.get('lots_sold') or 0}' "
             f"data-offered='{a.get('lots_offered') or 0}' "
@@ -1755,6 +1783,12 @@ JS = r"""
   // --- Datos bajo demanda ------------------------------------------------
   // lots.json y cards.json viven junto a index.html. No van inline: eran 12 MB
   // que el movil descargaba y parseaba para enseñar una cabecera.
+  // ?v=<huella del contenido>: si el dato cambia, cambia la URL y el navegador
+  // no sirve una copia vieja. Sin huella (tests, build suelto) va la URL pelada.
+  function dataUrl(name) {
+    var v = (typeof DATA_V === 'object' && DATA_V && DATA_V[name]) || '';
+    return name + '.json' + (v ? '?v=' + v : '');
+  }
   function loadJSON(url) {
     return fetch(url).then(function (r) {
       if (!r.ok) throw new Error(url + ' ' + r.status);
@@ -1763,12 +1797,12 @@ JS = r"""
   }
   var cardsP = null, lotsP = null;
   function cards() {
-    return cardsP || (cardsP = loadJSON('cards.json').catch(function (e) {
+    return cardsP || (cardsP = loadJSON(dataUrl('cards')).catch(function (e) {
       cardsP = null; throw e;
     }));
   }
   function lots() {
-    return lotsP || (lotsP = loadJSON('lots.json').then(function (p) {
+    return lotsP || (lotsP = loadJSON(dataUrl('lots')).then(function (p) {
       if (!p || !p.rows) return [];
       return p.rows.map(function (r) {
         var o = {};
@@ -2274,13 +2308,30 @@ def build_cards(rep: dict, details: list[dict]) -> dict[str, str]:
     by_artist = _lots_by_artist(details)
     shown = _rank_selection(rep.get("by_artist", []), ARTIST_LIMIT)
     return {
-        f"ficha-{i}": artist_card(a, by_artist.get(a.get("artist_key")) or [])
+        card_key(a, i): artist_card(a, by_artist.get(a.get("artist_key")) or [])
         for i, a in enumerate(shown, 1)
     }
 
 
-def build(rep: dict) -> str:
-    """index.html completo. Sin datos de lotes inline: van en lots.json/cards.json."""
+def card_key(a: dict, position: int) -> str:
+    """Clave de la ficha en cards.json: el ARTISTA, no su puesto.
+
+    Era "ficha-<puesto>". Un navegador con cards.json de un build anterior en
+    cache y el index.html nuevo abria la ficha de otro: al entrar Morton cambio
+    el ranking y el puesto 7 ya no era Tamayo sino Obregon. Con la clave del
+    artista, mezclar ficheros de dos builds abre como mucho una ficha vieja de
+    la MISMA persona. La posicion queda solo de respaldo si faltara la clave.
+    """
+    return a.get("artist_key") or f"ficha-{position}"
+
+
+def build(rep: dict, data_version: dict[str, str] | None = None) -> str:
+    """index.html completo. Sin datos de lotes inline: van en lots.json/cards.json.
+
+    data_version: huella del contenido de cada JSON ({"cards": ..., "lots": ...}).
+    Va en la URL del fetch para que un dato nuevo no se lea de una copia vieja
+    de la cache del navegador (ver write_app).
+    """
     s = rep["summary"]
     dist = rep.get("price_distribution") or {}
     years = [r["year"] for r in rep.get("by_year", []) if str(r.get("year", "")).isdigit()]
@@ -2337,21 +2388,23 @@ def build(rep: dict) -> str:
         "</form></div><div class='sheet-body'></div></dialog>"
         "<div class='toast' id='toast' role='status' aria-live='polite'></div>"
         f"<template id='ic-moon'>{ICON_MOON}</template><template id='ic-sun'>{ICON_SUN}</template>"
-        f"<script>{JS}</script></body></html>"
+        f"<script>var DATA_V = {json.dumps(data_version or {})};{JS}</script></body></html>"
     )
 
 
 def write_app(rep: dict, details: list[dict], out: Path) -> None:
+    """Escribe los tres ficheros. Los JSON primero: index.html lleva su huella."""
     out.mkdir(parents=True, exist_ok=True)
-    (out / "index.html").write_text(build(rep), encoding="utf-8")
-    (out / "lots.json").write_text(
-        json.dumps(pack_lot_details(details), ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
-    (out / "cards.json").write_text(
-        json.dumps(build_cards(rep, details), ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
+    payloads = {
+        "lots": json.dumps(pack_lot_details(details), ensure_ascii=False, separators=(",", ":")),
+        "cards": json.dumps(build_cards(rep, details), ensure_ascii=False, separators=(",", ":")),
+    }
+    versions = {}
+    for name, text in payloads.items():
+        data = text.encode("utf-8")
+        (out / f"{name}.json").write_bytes(data)
+        versions[name] = hashlib.sha256(data).hexdigest()[:12]
+    (out / "index.html").write_text(build(rep, versions), encoding="utf-8")
 
 
 def main() -> None:
