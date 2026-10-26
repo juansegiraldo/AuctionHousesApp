@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Actualizado: 2026-08-01
+Actualizado: 2026-10-25
 
 ## Qué es esto (y qué no es)
 
@@ -48,27 +48,32 @@ porque importan de `pipelines.shared`.
 Tests:
 
 ```powershell
-python -m pytest        # 56 pasan, 1 se salta
+python -m pytest        # 941 pasan
 ```
 
 ## Las cifras hoy
 
-| Casa | Lotes | Vendidos | Tasa | Ingresos (nativa) | ≈ EUR |
-|---|---|---|---|---|---|
-| duran_subastas | 40.442 | 18.624 | 46,1% | 23.450.015 EUR | 23,45 M € |
-| bogota_auctions | 9.099 | 9.045 | 99,4% | 31.215.260.000 COP | 7,24 M € |
-| **Total** | **49.541** | **27.669** | — | — | **30,69 M €** |
+| Casa | País | Lotes | Vendidos | Tasa | Ingresos (nativa) | ≈ EUR |
+|---|---|---|---|---|---|---|
+| duran_subastas | España | 47.383 | 21.949 | 46,3% | 27.154.575 EUR | 27,15 M € |
+| morton_subastas | México | 12.838 | 4.742 | 36,9% | 481.195.909 MXN | 23,43 M € |
+| bogota_auctions | Colombia | 10.437 | 10.395 | 99,6% | 35.245.120.000 COP | 8,01 M € |
+| zorrilla_subastas | Uruguay | 11.168 | 6.942 | 62,2% | 4.365.109 USD | 3,92 M € |
+| lefebre_subastas | Colombia | 3.858 | 1.600 | 41,5% | 12.361.725.000 COP | 2,76 M € |
+| **Total** | | **85.684** | **45.628** | — | — | **65,28 M €** |
 
-Cobertura temporal: 2014 → 2026.
+Cobertura temporal: 2014 → 2026. De Morton solo están sus **57 subastas de arte** (de 803: el
+resto son camiones, coches, vinos y joyas); ver `scraping/houses/morton_subastas/README.md`.
 
 ### Qué es aproximado (léelo antes de citar una cifra)
 
-1. **La conversión a EUR.** Tasa estática de `pipelines/config/fx.yaml`, no histórica por
-   fecha. Sirve para comparar casas entre sí; **no** para valoración contable. Los datos
-   abarcan 2014-2026 y el COP se movió mucho en ese periodo.
+1. **La conversión a EUR.** Tasa media del MES de cada subasta (`pipelines/config/fx_history.yaml`:
+   BCE para USD y MXN, TRM para COP). Sirve para comparar casas entre sí; **no** para valoración
+   contable.
 2. **La tasa de venta NO es comparable entre casas.** Bogotá da 99,4% porque su web
    publica casi solo lotes vendidos (faltan ~1.764 números de lote de las secuencias).
-   Durán publica también los `NO VENDIDO`, y por eso da 46,1%. Comparar ambas es un error.
+   Durán, Zorrilla, Lefebre y Morton publican también los no vendidos (46%, 62%, 42% y 37%) y sí
+   son comparables entre sí. Comparar cualquiera de ellas con Bogotá es un error.
 3. **1.133 lotes de Bogotá no traen estado explícito**: se infiere "vendido" por tener precio.
 4. **1.202 lotes en subastas sin fecha en el título** quedan agrupados como `unknown`.
 5. **2.672 lotes de Durán son tienda online** (venta directa permanente), no subastas: no
@@ -85,6 +90,15 @@ Todo esto aparece también en el panel de avisos del propio informe.
 - **Acentos corruptos** en títulos y nombres de artista (`Álvaro` → `\udc81lvaro`): problema
   de codificación en el scraping. Se avisa en el informe pero no está corregido; arreglarlo
   bien exige re-scrapear o una pasada de reparación sobre bronce.
+- **~~Bogotá cortaba nombres de artista al nombre de pila~~ — arreglado el 2026-10-25.** "Fernando"
+  por Fernando Botero, "Edgar" por Edgar Negret: el parser confundía el apellido con el país. Botero
+  recupera *La plegaria* y vuelve al puesto 1.
+- **Plata se queda con la copia MÁS ANTIGUA de cada lote** que hay en bronce. Por eso un arreglo del
+  scraper no llega solo a los lotes que ya existían, y el de Bogotá se aplica al construir plata.
+  Cambiar el orden es el arreglo de verdad, pero hoy cambiaría 1.018 lotes de Zorrilla que hay que
+  revisar antes. Detalle en CLAUDE.md.
+- **Morton trae los acentos rotos en su propia web** (títulos de 2021-2023), a diferencia de Bogotá
+  y Durán, donde era la consola. El parser de Morton los repara al leer.
 - **`subasta-541-marzo-2107`**: errata en la web de Durán (2107 en vez de 2017). El extractor
   de año la rechaza en vez de inventarse un año, así que esos 315 lotes caen en `unknown`.
 - Quedan copias legacy de los scripts en la raíz de `scraping/` junto a la estructura nueva

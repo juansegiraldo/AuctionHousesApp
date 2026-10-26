@@ -39,7 +39,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest typesafe-sdk
 ```
 
-Run tests (804 pass):
+Run tests (941 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -66,6 +66,7 @@ python -m pipelines.analytics.build_artifact         # writes the app: data/gold
 python -m pipelines.analytics.build_fx_report        # writes data/gold/fx_report.html
 
 python -m scripts.fx_fetch_history                   # MANUAL: baja BCE+TRM -> fx_history.yaml
+python scripts/verify_morton_scrape.py               # lotes de cada subasta vs "N Results" de la web
 ```
 
 `quality_gates.py` is the exception — still a file path, and it takes arguments:
@@ -83,7 +84,7 @@ Two layers connected by the `data/` directory and the **house registry**.
 - `scraping/common/models.py` — shared Pydantic schema for **all** houses: `AuctionMeta` and
   `LotItem`. The schema is intentionally **Dublin Core (DCMI)–compatible** (fields annotated with
   `dcterms:*` mappings) and prices are integers in the house's own currency, which differs per
-  house (`COP` for Bogotá and Lefebre, `EUR` for Duran, `USD` for Zorrilla — the model defaults
+  house (`COP` for Bogotá and Lefebre, `EUR` for Duran, `USD` for Zorrilla, `MXN` for Morton — the model defaults
   to `COP`, so each house sets `currency` explicitly when building `LotItem`s). Changing this
   schema affects every house and every downstream pipeline stage.
 - `scraping/houses/<slug>/` — each house has `parsers.py` (HTML → models) plus three runners with
@@ -99,15 +100,42 @@ Two layers connected by the `data/` directory and the **house registry**.
 - Duran discovers lots via an **AJAX endpoint**, not the static page. Its `historic_all_lots.jsonl`
   is a superset of the per-auction files (47,383 lots, 2014→2026, re-scraped 2026-10-15) and is safe to re-ingest —
   Silver dedupes on `lot_url`.
-- **Zorrilla (`zorrilla_subastas`) is the only house built on the `scraping/common/` framework**
-  (frozen `House` + injected `discover`/`fetcher`); Bogotá and Duran stay on their legacy
-  duplicated code. Copy Zorrilla, not them, when adding a house. Two things make it unusual:
+- **Zorrilla (`zorrilla_subastas`) and Morton (`morton_subastas`) are the houses built on the
+  `scraping/common/` framework** (frozen `House` + injected `discover`/`fetcher`); Bogotá and Duran
+  stay on their legacy duplicated code. Copy Zorrilla or Morton, not them, when adding a house. Two things make it unusual:
   its source is **LiveAuctioneers, not the house's own site** (zorrilla.com.uy unpublishes lots
   after each sale — all 70 historic pages return "No se encontraron resultados"), and its parsers
   read the embedded **`window.__data` JSON** rather than the DOM, because the React UI shows
   "See Sold Price" instead of the number. Run it with `--quick`: the catalog payload already has
   price, estimates, status and title, so per-lot detail fetches add nothing. See
   [scraping/houses/zorrilla_subastas/README.md](scraping/houses/zorrilla_subastas/README.md).
+- **Morton (`morton_subastas`, Ciudad de México, MXN) is the only Mexican house, and only its ART
+  is here: 57 of its 803 past auctions** (2021→2026, 12,838 lots), chosen by title in
+  `parsers.is_art_auction()` — the rest are truck fleets, cars, wine, jewellery, antiques and mixed
+  "Subastas de los Sábados". Gold emits `source_is_art_subset` so its volume is never read as the
+  house total. Source is `live.mortonsubastas.com` (Bidsquare, server-rendered). Full account in
+  [scraping/houses/morton_subastas/README.md](scraping/houses/morton_subastas/README.md). Traps:
+  - **Before 2024 the catalog says "Login for Price"**, but each lot page publishes a JSON-LD
+    `Product` with the hammer price, so Morton runs **without `--quick`** (~12,800 lot pages,
+    ~1h at `--workers 6`). **`availability: Discontinued` ALSO carries a price — the opening bid,
+    always below the low estimate** (20/20 checked against the visible label). Only `SoldOut` is a
+    sale. "Sold Price excludes BP": hammer, like every other house. A test pins it.
+  - **The mojibake is REAL here** (unlike the console artifact below): 2021-2023 titles come
+    double-encoded in Morton's own HTML; `fix_mojibake()` repairs it run by run. The JSON-LD also
+    carries escaped HTML entities (`M&eacute;xico`), unescaped on read.
+  - **Dates are converted to `America/Mexico_City`**: the listing prints the viewer's zone
+    ("01:00AM BST") and the JSON-LD US zones; read raw, the 2026 Arte Mexicano lands a day (and on
+    a 31st, a month — another FX rate) late. Needs `tzdata` on Windows.
+  - **The artist is the UPPERCASE lead of the title** (comma until 2023, period since 2024,
+    bilingual "ES | EN" in 2021), with nicknames skipped (`GEORGINA "GOGY" FARÍAS`), honorifics kept
+    (`DR. LAKRA`, `MR. BRAINWASH`) and glued separators split (`JAVIER MARÍN,Torso` used to rank
+    "Javier" as an artist). Morton writes Mexican birthplaces as *city, state* with no country, so a
+    Mexican state reads as `México` in `artist_country` — diagnostics only, as always.
+  - **Morton recycles records**: 51 lots of auction 20912 carry a used-car title ("Camioneta
+    Chevrolet Tornado 2009", even in the URL) over the real artwork's description and price;
+    `lot_title_for()` rebuilds the title from the description.
+  - `artist_for_lot()` is separate from `parse_lot_page()` so a rule change can be re-applied to
+    the downloaded JSONL without re-fetching 12,838 pages.
 - **Lefebre (`lefebre_subastas`) is the only house with two sources in one `output/`**, and that
   is deliberate — each covers a period the other cannot. `from_excel.py` converts a spreadsheet
   curated by hand in 2024 (1,037 lots, 11 auctions, 2021→2023); `parsers.py` + the three runners
@@ -212,6 +240,12 @@ Data flows one direction through `data/`, and each stage reads the previous laye
      rendered in Python by `artist_card()`) is fetched when the Artistas tab opens. Both used to
      be inline and the file weighed 12 MB. `build_cards()` and `build_artist_table()` **must** use
      the same `_rank_selection()`, or `data-card` opens another artist's card (a test pins it).
+   - **Each house has a FIXED colour (`HOUSE_SERIES`), never its rank.** It used to come from the
+     position in `house_order` (by revenue), and Morton entering second repainted every other house.
+   - **Artist cards are keyed by `artist_key`, not position, and the JSON is fetched with a content
+     hash (`cards.json?v=…`).** With `ficha-<rank>`, a browser holding last build's `cards.json`
+     opened Obregón when tapping Tamayo. Now a mixed old/new pair can at worst show the same
+     person's older card.
    - **Every chart mark carries `data-x`/`data-l`/`data-v`**, and one JS handler writes the
      nearest mark into the readout above the chart (drag a finger across it). `<title>` tooltips
      never show on touch screens. Stacked bars use an invisible `.hit` column per year.
@@ -254,7 +288,7 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-08-19: 3,524 artists**, resolving **26,034 lots with a country** (61.8% of
+**Populated as of 2026-10-25: 3,582 artists** (58 added for Morton's top-200 gaps; figures below are from 2026-08-19), resolving **26,034 lots with a country** (61.8% of
 lots that have an author). In the ranking, **2,386 of 9,769 artists (24.4%) cover
 89.79% of artist-attributed revenue** — publish both figures, never just the first. Entry
 completeness: 87.4% have a country, 94.4% a birth year, 70.9% are complete (country + birth +
@@ -325,7 +359,11 @@ It got there in four passes, best source first — see
    the Spanish market, and Oller gets `PR` — ISO does code Puerto Rico, so neither `ES` nor
    `US` needs forcing. Lempicka and Juan de Juanes stay `confidence: medium` (disputed
    birthplace; the house's 1523 contradicts the c.1503 consensus). **Top 200 now has zero
-   artists without a country.**
+   artists without a country.** Morton reopened it to 68 (2026-10-25); a batch of 58 entries
+   plus 5 comma aliases closed it to **4, each deliberate**: `Fernando` (Botero, a Bogotá parser
+   bug, since fixed), Robert Henri (one Durán lot whose death year contradicts the painter's),
+   and Gómez Mayorga and Raymundo Martínez (no independent second source). Traps it caught:
+   Zúñiga → `CR` and Goeritz → `PL` (Danzig) are "Mexican" artists born elsewhere.
 
 The master also **merges variants that don't share a fold** — that is work only the alias list can
 do. `Joaquín Sorolla` / `Joaquín Sorolla y Bastida`, `Pablo Picasso` / `Pablo Ruiz Picasso`,
@@ -382,7 +420,7 @@ These are load-bearing. Breaking one silently corrupts the report:
   in `pipelines/config/fx_history.yaml` (2013-01 → today, 164 months, versioned in git),
   generated by `python -m scripts.fx_fetch_history` — **manual and rare, not part of
   `run_all.ps1`**: the pipelines never touch the network (sole exception: `artist_resolve` asking
-  Jev about *new* folds — see above). Two sources because **the ECB does not
+  Jev about *new* folds — see above). MXN comes straight from the ECB (`D.MXN.EUR.SP00.A`). Two sources because **the ECB does not
   publish COP** (`D.COP.EUR.SP00.A` → 404): ECB for EUR/USD, Colombia's official TRM for USD/COP,
   bridged as `COP→EUR = (1/TRM) × (1/EURUSD)`.
   - **The size of the effect is not what the design doc predicted, and the reason matters.** It
@@ -410,8 +448,8 @@ These are load-bearing. Breaking one silently corrupts the report:
   is absent.
 - **Sell-through is not comparable across houses.** Bogotá reads ~99% because its site publishes
   almost exclusively sold lots (~1,764 lot numbers missing from otherwise contiguous sequences);
-  Duran publishes `NO VENDIDO` too and reads ~46%, Zorrilla ~62% and Lefebre ~42%. Those three
-  are comparable with each other; Bogotá is not. This is a source-data property, not a bug —
+  Duran publishes `NO VENDIDO` too and reads ~46%, Zorrilla ~62%, Lefebre ~42% and Morton ~37%.
+  Those four are comparable with each other; Bogotá is not. This is a source-data property, not a bug —
   surface it as a warning, never "fix" it by computation. Lefebre carries an extra caveat of its
   own: 1,037 of its lots (all from the Excel source) have no lot number, so the missing-sequence check that
   detects this bias cannot run on them (flag `partial_lot_numbers`).
@@ -457,6 +495,24 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   house. Inference (`if not status and price_sold: status = "VENDIDO"`) only runs on the
   *catalog* price, so ~1,100 lots whose price comes from the detail page keep `status=None`.
   Harmless: `is_sold()` falls back to "has a price" per lot, so they still count as sold.
+- **Bogotá's alt-text parser cut artist names to the first name** (fixed 2026-10-25).
+  `_parse_artist_from_alt()` in `scraping/parsers.py` let the country group take several
+  capitalised words — written for alts with name and country glued ("Fernando BoteroColombia,
+  1932"). With a space, the "country" swallowed the surname: `Fernando` + `Botero Colombia`, so
+  Botero's *La plegaria* (340 M COP) ranked under an artist called "Fernando" (38 lots; also
+  Negret, Luis Caballero, Wifredo Lam). `_split_alt_artist()` now takes only the LAST word as the
+  country (or a known multi-word one: Puerto Rico, `EE. UU.`), the FIRST year as birth, and sets
+  nothing when stray digits precede it (`Colombia, 19 - 1972`, `19867`). Botero is #1 again.
+  **The landed data is repaired in Silver, not in Bronze** — see the next item.
+- **Silver keeps the OLDEST Bronze copy of each lot.** `build_silver.py` walks partitions in
+  folder order (oldest first) and the first `dedupe_key` wins, while `bronze/ingest.py` copies the
+  whole current output into today's partition on every run. So a scraper fix never reaches a lot
+  that already existed: 9,099 Bogotá lots still come from the 2026-03-07 copy. That is why the
+  Bogotá name fix lives in `artist_resolve._full_bogota_name()` (same grammar, imported from the
+  scraper, and it only completes a name that is the START of the alt's), not in a re-scrape.
+  Switching Silver to newest-first is the real fix but is **not done**: today it would change only
+  Zorrilla, where 1,018 lots that carry an artist in the 2026-08-01 copy come with none in the
+  newest one — investigate that before flipping the order.
 - **Bogotá changed its lot-page template from auction 2687 (2026)** (fixed 2026-10-23). The
   detail page no longer has `span.description`; the title lives in
   `.desc-lot-profile-content span.object_title` (with author/technique/size in sibling spans
@@ -491,7 +547,8 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   **real data** the house itself titled "Subasta de prueba" — 5 fully populated lots by Jim
   Amaral, Le Parc, Acevedo Bernal and Shepard Fairey. The filter matches the English `test` as
   a segment, so the Spanish `prueba` is correctly left alone.
-- **The "mojibake" is a console artifact, not a data defect** (verified 2026-08-01). Scanning all
+- **The "mojibake" is a console artifact, not a data defect** (verified 2026-08-01) — except in
+  Morton, where it is real and repaired in the parser (see above). Scanning all
   49,541 Silver lots for surrogates (`\udc80`–`\udcff`) returns **zero**: `artist_name` holds a
   clean `Álvaro Barrios`, and the HTML report renders accents correctly. What looks like mojibake
   is the Windows console failing to print UTF-8 — reproduce it with
