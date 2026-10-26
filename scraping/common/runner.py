@@ -76,6 +76,16 @@ def _lot_from_preview(preview: dict, meta: AuctionMeta, currency: str) -> LotIte
 
 
 def _merge_lot(preview: dict, detail: dict, meta: AuctionMeta, lot_url: str, currency: str) -> LotItem:
+    """Detalle con preferencia; el preview rellena lo que el detalle no trae.
+
+    Los campos descriptivos (artist_*, description, medium...) tambien caen al
+    preview: antes solo se leian del detalle, asi que una ficha que fallaba
+    (el engine es lenient) borraba el autor que Morton ya habia leido del
+    titulo del catalogo, mientras titulo y estimaciones si se conservaban.
+    """
+    def pick(field: str) -> Any:
+        return detail.get(field) or preview.get(field)
+
     return LotItem(
         auction_id=detail.get("auction_id", meta.auction_id),
         auction_title=detail.get("auction_title", meta.auction_title),
@@ -93,15 +103,15 @@ def _merge_lot(preview: dict, detail: dict, meta: AuctionMeta, lot_url: str, cur
         price_estimate_max=detail.get("price_estimate_max") or preview.get("price_estimate_max"),
         price_sold=detail.get("price_sold") or preview.get("price_sold"),
         currency=detail.get("currency", currency),
-        artist_name=detail.get("artist_name"),
-        artist_birth_year=detail.get("artist_birth_year"),
-        artist_death_year=detail.get("artist_death_year"),
-        artist_country=detail.get("artist_country"),
-        artist_raw=detail.get("artist_raw"),
-        description=detail.get("description"),
-        medium=detail.get("medium"),
-        dimensions=detail.get("dimensions"),
-        provenance=detail.get("provenance"),
+        artist_name=pick("artist_name"),
+        artist_birth_year=pick("artist_birth_year"),
+        artist_death_year=pick("artist_death_year"),
+        artist_country=pick("artist_country"),
+        artist_raw=pick("artist_raw"),
+        description=pick("description"),
+        medium=pick("medium"),
+        dimensions=pick("dimensions"),
+        provenance=pick("provenance"),
         status=detail.get("status") or preview.get("status"),
     )
 

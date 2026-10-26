@@ -50,7 +50,7 @@ foreach ($stage in $stages) {
 
 Write-Host ""
 Write-Host "Puertas de calidad (informativas, no rompen el pipeline)" -ForegroundColor Cyan
-foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas", "zorrilla_subastas")) {
+foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas", "zorrilla_subastas", "morton_subastas")) {
     python pipelines/silver/quality_gates.py --house-slug $house
 }
 

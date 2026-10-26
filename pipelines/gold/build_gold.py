@@ -407,6 +407,27 @@ def main() -> None:
             }
         )
 
+    # Morton vende de todo (flotillas de camiones, coches, vinos, joyas,
+    # antiguedades) y aqui solo entran sus subastas de ARTE: 57 de 803 desde 2020.
+    # Su volumen en la app es el de su arte, no el de la casa. Ver
+    # scraping/houses/morton_subastas/README.md.
+    # OJO: per_house es un defaultdict; usar 'in' y no .get() para no crear la clave.
+    if "morton_subastas" in per_house:
+        flags.append(
+            {
+                "level": "info",
+                "code": "source_is_art_subset",
+                "house_slug": "morton_subastas",
+                "count": per_house["morton_subastas"]["lots_offered"],
+                "message": (
+                    "De morton_subastas solo estan sus subastas de arte (57 de 803 "
+                    "desde 2020): la casa vende tambien coches, vinos, joyas y "
+                    "antiguedades, que no se incluyen. Su volumen aqui no es el "
+                    "total de la casa."
+                ),
+            }
+        )
+
     # Lefebre no se scrapea: sale de una hoja de calculo curada a mano en 2024
     # (FINALL.xlsx). No se actualiza sola y su cobertura es la que se transcribio,
     # no la que publico la casa. Ver scraping/houses/lefebre_subastas/README.md.

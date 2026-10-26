@@ -23,6 +23,12 @@
       "name": "Lefebre Subastas",
       "module": "scraping.houses.lefebre_subastas",
       "output_dir": "scraping/houses/lefebre_subastas/output"
+    },
+    {
+      "slug": "morton_subastas",
+      "name": "Morton Subastas",
+      "module": "scraping.houses.morton_subastas",
+      "output_dir": "scraping/houses/morton_subastas/output"
     }
   ]
 }
