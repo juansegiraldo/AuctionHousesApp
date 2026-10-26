@@ -49,56 +49,48 @@ máquina. Si faltan, Morton se rehace con
 `python -m scraping.houses.morton_subastas.run_historic --workers 6 --auction-timeout 7200`, que
 tarda una hora. Después corre `python scripts/verify_morton_scrape.py` y `.\scripts\run_all.ps1`.
 
+## Hecho en la sesión del 2026-10-26 (tareas 1-3 de la versión anterior de este prompt)
+
+- **Silver ahora se queda con la copia MÁS NUEVA** de cada lote, y dentro de una partición lee
+  `historic_all_lots.jsonl` el último. Cambiarlo no movió ningún campo en los 85.684 lotes. Los
+  1.018 lotes de Zorrilla "sin artista" no dependían de la partición: salían de un
+  `historic_all_lots.jsonl` que se concatenó antes de re-scrapear 13 subastas. Hay tests para las
+  dos reglas. `_full_bogota_name()` **sigue haciendo falta**, porque el output de Bogotá aún dice
+  `Fernando` (sus subastas antiguas nunca se re-scrapearon).
+- **A Zorrilla le falta ~11% de sus lotes**: `LOTS_PER_PAGE` valía 28 y cada página aporta 24. El
+  código está arreglado y tiene test, pero **no se ha re-scrapeado**: LiveAuctioneers ya no incrusta
+  `window.__data` y bloquea con Incapsula a la segunda petición. Ver CLAUDE.md, "Known issues".
+- **Maestro: 3.584 artistas** (+Robert Henri, +Myra Landau). En el top 200 quedan 2 huecos
+  deliberados, Gómez Mayorga y Raymundo Martínez: solo hay páginas de galerías como fuente.
+- **App publicada** con Morton en la misma URL: https://claude.ai/artifact/9vJLvbfstaWdA3638vqAF1
+  (versión 3).
+
+Las cifras de la tabla de arriba no cambiaron: 65.276.288,00 EUR, 45.628 vendidos. `pytest`: 965.
+
 ## Tareas pendientes, por prioridad
 
-### 1. Silver se queda con la copia MÁS ANTIGUA de cada lote (lo más importante)
+### 1. Adaptar el scraper de Zorrilla a la LiveAuctioneers de hoy (decidirlo con el dueño)
 
-`pipelines/silver/build_silver.py` recorre las particiones de Bronze en orden de carpeta (la más
-antigua primero) y gana la primera fila de cada `dedupe_key`. `pipelines/bronze/ingest.py` copia en
-cada corrida TODO el output actual a la partición de hoy. Resultado: un re-scrape o un arreglo del
-parser **no llega** a los lotes que ya existían. Hoy 9.099 lotes de Bogotá salen de la copia del
-2026-03-07.
+Es lo que recupera el ~11% que falta (~1.300 lotes). Exige otra fuente de datos (la página ya no
+trae `window.__data`; la de la casa trae JSON-LD `SaleEvent` sin número de lotes) y pasar el
+bloqueo de Incapsula. Es un proyecto, no un parche: pregunta antes de empezar. Cuando funcione,
+añade un `scripts/verify_zorrilla_scrape.py` como el de Morton, que compare con `lotsListed`.
 
-El arreglo natural es que gane la partición MÁS NUEVA, pero **no lo apliques a ciegas**. Medido el
-2026-10-25 comparando la copia más antigua con la más nueva de cada lote:
+### 2. Descargas CSV dentro del Artifact (opcional)
 
-- Bogotá, Durán, Lefebre y Morton: sin diferencias en `artist_name`, `price_sold`, `status`,
-  `lot_title`, `auction_start_date` y `price_estimate_min`.
-- **Zorrilla: 1.018 lotes** que en la copia del 2026-08-01 traen artista (p. ej. "Eduardo Mac
-  Entyre") vienen **sin artista** en la más nueva.
+El visor de Artifacts bloquea las descargas por `blob:`. Hoy la app cae a abrir el CSV en otra
+pestaña o copiarlo al portapapeles. Se arreglaría declarando la capacidad `downloads` y usando
+`window.claude.downloads.save(...)` **solo si existe**: la misma carpeta tiene que seguir sirviendo
+en Vercel sin cambios.
 
-Hay que averiguar por qué el output actual de Zorrilla perdió esos artistas. ¿Un re-scrape con un
-parser anterior a `_artist_from_description()`? ¿Una corrida con `--quick` antes de que
-`_lot_from_preview` copiara los campos descriptivos? Arréglalo en el origen y solo después cambia el
-orden de Silver, con un test. Cuando esté hecho, `_full_bogota_name()` en `artist_resolve.py` deja de
-hacer falta y se puede quitar, si un test demuestra que Botero sigue en el puesto 1.
+### 3. Menores
 
-Comprobación obligatoria antes y después: el ingreso total no se mueve, o la diferencia se explica
-lote a lote.
-
-### 2. Volver a publicar la app
-
-`data/gold/app/` (`index.html`, `cards.json`, `lots.json`) cambió mucho y **no se ha vuelto a
-publicar**. La URL que usa la pareja del dueño sigue enseñando la versión sin Morton. Busca el
-Artifact existente con la herramienta Artifact (`action: list`), léelo y publica encima en la misma
-URL, con los dos JSON como ficheros de apoyo. No crees uno nuevo: la pareja perdería el enlace.
-
-### 3. Los 4 huecos que quedan en el top 200 (y el borde)
-
-Robert Henri (un lote de Durán con una fecha de muerte que no cuadra), Guillermo Gómez Mayorga y
-Raymundo Martínez (sin segunda fuente independiente) y **Myra Landau**, que entró por el borde (#200).
-Usa el método de `docs/PLAN_MAESTRO_ARTISTAS.md` §2.4: `resolve_artist` primero, una fuente por ficha
-con la URL en `notes`, y el hueco antes que un país inventado. Cada alta mueve el borde: no persigas
-el puesto 200 indefinidamente.
-
-### 4. Menores
-
-- Durán tiene 2 lotes con artista "Juan Antonio" (el nombre viene así de su ficha, no es el fallo de
-  Bogotá).
-- En `ESTADO.md` sigue la viñeta antigua "Acentos corruptos", que contradice a CLAUDE.md (era la
-  consola). Bórrala o reescríbela.
+- Durán tiene 2 lotes con artista "Juan Antonio": es la misma obra ofrecida dos veces, Durán la
+  publica sin apellido y la venta no trae precio. No es investigable ni mueve un euro. Déjalo.
 - Las "Subastas de los Sábados" de Morton (115) mezclan arte con muebles. Si el dueño quiere más
   volumen de Morton, hay que decidir con él si se filtra por lote. No es una tarea técnica.
+- Re-scrapear las subastas antiguas de Bogotá con el parser arreglado permitiría quitar
+  `_full_bogota_name()` (con un test que demuestre que Botero sigue el #1).
 
 ## Trampas de entorno que costaron tiempo
 

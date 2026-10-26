@@ -288,7 +288,7 @@ gitignored. Loaded only through [pipelines/shared/artist_master.py](pipelines/sh
 the same single-source-of-truth pattern as `fx.py`. See
 [pipelines/config/artists/README.md](pipelines/config/artists/README.md).
 
-**Populated as of 2026-10-25: 3,582 artists** (58 added for Morton's top-200 gaps; figures below are from 2026-08-19), resolving **26,034 lots with a country** (61.8% of
+**Populated as of 2026-10-26: 3,584 artists** (58 added for Morton's top-200 gaps, then Robert Henri and Myra Landau; figures below are from 2026-08-19), resolving **26,034 lots with a country** (61.8% of
 lots that have an author). In the ranking, **2,386 of 9,769 artists (24.4%) cover
 89.79% of artist-attributed revenue** — publish both figures, never just the first. Entry
 completeness: 87.4% have a country, 94.4% a birth year, 70.9% are complete (country + birth +
@@ -360,9 +360,11 @@ It got there in four passes, best source first — see
    `US` needs forcing. Lempicka and Juan de Juanes stay `confidence: medium` (disputed
    birthplace; the house's 1523 contradicts the c.1503 consensus). **Top 200 now has zero
    artists without a country.** Morton reopened it to 68 (2026-10-25); a batch of 58 entries
-   plus 5 comma aliases closed it to **4, each deliberate**: `Fernando` (Botero, a Bogotá parser
-   bug, since fixed), Robert Henri (one Durán lot whose death year contradicts the painter's),
-   and Gómez Mayorga and Raymundo Martínez (no independent second source). Traps it caught:
+   plus 5 comma aliases closed it to 4, and on 2026-10-26 Robert Henri (Wikidata wins over
+   Durán's 1926 death year; noted, `confidence: medium`) and Myra Landau (born Bucharest → `RO`)
+   left **2, each deliberate**: Gómez Mayorga and Raymundo Martínez — only dealer pages, no
+   independent source (Museo Kaluz's site had a broken TLS certificate). Don't chase the edge:
+   adding a country never moves the revenue ranking, so #200 stays Landau. Traps it caught:
    Zúñiga → `CR` and Goeritz → `PL` (Danzig) are "Mexican" artists born elsewhere.
 
 The master also **merges variants that don't share a fold** — that is work only the alias list can
@@ -504,15 +506,17 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   country (or a known multi-word one: Puerto Rico, `EE. UU.`), the FIRST year as birth, and sets
   nothing when stray digits precede it (`Colombia, 19 - 1972`, `19867`). Botero is #1 again.
   **The landed data is repaired in Silver, not in Bronze** — see the next item.
-- **Silver keeps the OLDEST Bronze copy of each lot.** `build_silver.py` walks partitions in
-  folder order (oldest first) and the first `dedupe_key` wins, while `bronze/ingest.py` copies the
-  whole current output into today's partition on every run. So a scraper fix never reaches a lot
-  that already existed: 9,099 Bogotá lots still come from the 2026-03-07 copy. That is why the
-  Bogotá name fix lives in `artist_resolve._full_bogota_name()` (same grammar, imported from the
-  scraper, and it only completes a name that is the START of the alt's), not in a re-scrape.
-  Switching Silver to newest-first is the real fix but is **not done**: today it would change only
-  Zorrilla, where 1,018 lots that carry an artist in the 2026-08-01 copy come with none in the
-  newest one — investigate that before flipping the order.
+- **Silver used to keep the OLDEST Bronze copy of each lot** (fixed 2026-10-26). `build_silver.py`
+  now walks partitions **newest first** (the first `dedupe_key` still wins), and inside a partition
+  puts `historic_all_lots.jsonl` **last**. Bronze copies the whole output on every run, so with
+  oldest-first a scraper fix never reached a lot that already existed. Flipping it changed **zero
+  fields in all 85,684 lots**. The 1,018 Zorrilla lots once blamed on the order came from inside
+  *each* partition: `historic_all_lots.jsonl` is concatenated at the end of a run and was not
+  regenerated after 13 auctions were re-scraped with descriptions, so it carries them without an
+  artist. Tests pin both rules. `artist_resolve._full_bogota_name()` **is still needed**: the Bogotá
+  *output* itself still says `Fernando` (its old auctions were never re-scraped with the fixed
+  parser), so newest-first changes nothing there. Remove it only after that re-scrape, with a test
+  showing Botero still #1.
 - **Bogotá changed its lot-page template from auction 2687 (2026)** (fixed 2026-10-23). The
   detail page no longer has `span.description`; the title lives in
   `.desc-lot-profile-content span.object_title` (with author/technique/size in sibling spans
@@ -520,10 +524,19 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   with an empty `lot_title` and the `lot_title` gate read 0.89. `parse_lot_page()` in
   `scraping/parsers.py` now falls back to `object_title`; fixtures of both templates live in
   `tests/scraping/bogota_auctions/`. If the gate drops again, suspect another template change.
-- **`historic_all_lots.jsonl` can shadow a fresh per-auction scrape.** Silver keeps the *first*
-  row per `lot_url`, and files land alphabetically, so `historic_all_lots` beats any auction slug
-  sorting after `h` (`libros-…`, `un-recorrido-…`). After re-scraping a single auction, patch its
-  rows into `historic_all` too — or the old version wins silently.
+- **`historic_all_lots.jsonl` used to shadow a fresh per-auction scrape** (fixed 2026-10-26).
+  Files landed alphabetically, so it beat any auction slug sorting after `h` (`libros-…`,
+  `un-recorrido-…`). Silver now reads it last in each partition, so it only contributes lots no
+  per-auction file has (Durán's are a superset; Zorrilla's has 47 such lots).
+- **Zorrilla is missing ~11% of its lots, and today it cannot be re-scraped** (found 2026-10-26).
+  `parsers.LOTS_PER_PAGE` was 28, but a LiveAuctioneers catalog page adds **24** new lots (it
+  paints 27; 3 promoted ones repeat on every page), so the last page of almost every catalog was
+  never requested: in 21 of the 24 catalogs on the house page's first screen the output holds
+  exactly `ceil(N/28)×24` lots (144 of 214514's 149; 6,196 of 6,961 overall). The constant is
+  fixed and a test pins it, but **re-scraping is blocked**: as of 2026-10-26 LiveAuctioneers no
+  longer embeds `window.__data` (the house page renders JSON-LD `SaleEvent`s with no lot count)
+  and Incapsula blocks the second request. Adapting the scraper is a project of its own. Until
+  then Zorrilla's totals are an undercount, not a defect to "fix" by computation.
 - **Bogotá 2026 looked thin because it was never ingested**, not because sales fell: 9 auctions
   were scraped on 2026-10-12/13 after that day's Bronze run. Now 11 auctions, 1,714 lots, 4,513 M
   COP. Run `run_historic --list-only` to see the live list (it rewrites `auction_index.jsonl`).

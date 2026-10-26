@@ -87,16 +87,21 @@ Todo esto aparece también en el panel de avisos del propio informe.
   `scraping/houses/bogota_auctions/parsers.py` es un `import *` del legacy, así que extrae
   `status` igual. El fallo real era otro: `import *` no reexporta los nombres con `_`, y los tres
   runners de Bogotá morían con `ImportError`. Arreglado y cubierto por un test.
-- **Acentos corruptos** en títulos y nombres de artista (`Álvaro` → `\udc81lvaro`): problema
-  de codificación en el scraping. Se avisa en el informe pero no está corregido; arreglarlo
-  bien exige re-scrapear o una pasada de reparación sobre bronce.
+- **~~Acentos corruptos~~ — era la consola de Windows, no los datos** (comprobado 2026-08-01). En
+  plata no hay ni un carácter roto: `Álvaro Barrios` está bien guardado y la app lo pinta bien. Lo
+  que parecía corrupto era la consola sin UTF-8. La excepción es Morton (ver más abajo).
 - **~~Bogotá cortaba nombres de artista al nombre de pila~~ — arreglado el 2026-10-25.** "Fernando"
   por Fernando Botero, "Edgar" por Edgar Negret: el parser confundía el apellido con el país. Botero
   recupera *La plegaria* y vuelve al puesto 1.
-- **Plata se queda con la copia MÁS ANTIGUA de cada lote** que hay en bronce. Por eso un arreglo del
-  scraper no llega solo a los lotes que ya existían, y el de Bogotá se aplica al construir plata.
-  Cambiar el orden es el arreglo de verdad, pero hoy cambiaría 1.018 lotes de Zorrilla que hay que
-  revisar antes. Detalle en CLAUDE.md.
+- **~~Plata se queda con la copia MÁS ANTIGUA de cada lote~~ — arreglado el 2026-10-26.** Ahora gana
+  la copia más nueva, así que un arreglo del scraper sí llega a los lotes ya cargados. Cambiarlo no
+  movió ni un dato en los 85.684 lotes. Los 1.018 lotes de Zorrilla que daban miedo no dependían del
+  orden: salían de un fichero resumen (`historic_all_lots.jsonl`) que quedó desfasado. Ese fichero
+  ahora se lee el último.
+- **A Zorrilla le falta ~11% de sus lotes.** El scraper no pedía la última página de casi ningún
+  catálogo (la subasta "Uruguayan Art" tiene 149 lotes y llegaron 144). El fallo está arreglado en
+  el código, pero hoy no se puede volver a bajar: LiveAuctioneers cambió su web y bloquea el robot.
+  Hasta entonces las cifras de Zorrilla se quedan cortas.
 - **Morton trae los acentos rotos en su propia web** (títulos de 2021-2023), a diferencia de Bogotá
   y Durán, donde era la consola. El parser de Morton los repara al leer.
 - **`subasta-541-marzo-2107`**: errata en la web de Durán (2107 en vez de 2017). El extractor
