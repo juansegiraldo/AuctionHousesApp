@@ -16,17 +16,32 @@ from pipelines.shared.schema import normalize_lot
 BRONZE_ROOT = ROOT / "data" / "bronze"
 SILVER_ROOT = ROOT / "data" / "silver"
 NON_LOT_FILES = {"auction_index.jsonl"}
+MERGED_FILE = "historic_all_lots.jsonl"
+
+
+def _file_order(path: Path) -> tuple[bool, str]:
+    # historic_all es la concatenacion de los ficheros por subasta al cerrar la
+    # corrida y no se regenera si luego se re-scrapea una subasta suelta: va el
+    # ultimo, para que solo aporte los lotes que no estan en otro fichero.
+    return (path.name == MERGED_FILE, path.name)
 
 
 def iter_bronze_rows():
-    for house_dir in BRONZE_ROOT.iterdir():
+    """Filas de Bronze en orden de precedencia: gana la primera de cada dedupe_key.
+
+    Particion MAS NUEVA primero. Bronze copia todo el output en cada ingesta, asi
+    que con la mas antigua primero un re-scrape o un arreglo del parser nunca
+    llegaba a un lote ya cargado. Los lotes que solo estan en particiones viejas
+    entran igual.
+    """
+    for house_dir in sorted(BRONZE_ROOT.iterdir()):
         if not house_dir.is_dir():
             continue
         house_slug = house_dir.name
-        for partition_dir in house_dir.iterdir():
+        for partition_dir in sorted(house_dir.iterdir(), reverse=True):
             if not partition_dir.is_dir():
                 continue
-            for file_path in partition_dir.glob("*.jsonl"):
+            for file_path in sorted(partition_dir.glob("*.jsonl"), key=_file_order):
                 if file_path.name in NON_LOT_FILES:
                     continue
                 with open(file_path, encoding="utf-8") as handle:
