@@ -4670,6 +4670,22 @@ artists:
   - Myles Birket Foster
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1825, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1738050'
+- artist_id: myra_landau
+  display_name: Myra Landau
+  country_birth: RO
+  nationalities:
+  - MX
+  birth_year: 1926
+  death_year: 2018
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Myra Landau
+  notes: 'Nacida en Bucarest (P19, 1926-12-05), muerta en 2018-07-14; ciudadania mexicana (P27). Fuente: https://www.wikidata.org/wiki/Q6948116
+    | retrospectiva del MUAC-UNAM: https://muac.unam.mx/exposicion/myra-landau | casas: morton_subastas, que
+    publica las mismas fechas (Bucarest, Rumania, 1926 - Paises Bajos, 2018). Nacida fuera de Mexico; obra y mercado
+    mexicanos. El pais es el de NACIMIENTO.'
 - artist_id: myrna_baez
   display_name: Myrna Baez
   country_birth: PR

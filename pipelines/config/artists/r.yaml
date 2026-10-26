@@ -2139,6 +2139,23 @@ artists:
   - Robert Bouchery
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. Fuente: https://www.wikidata.org/wiki/Q26214473'
+- artist_id: robert_henri
+  display_name: Robert Henri
+  country_birth: US
+  nationalities:
+  - US
+  birth_year: 1865
+  death_year: 1929
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - HENRI, ROBERT
+  - Robert Henri
+  notes: 'Nacido en Cincinnati (P19, 1865-06-24), muerto en 1929-07-12. Fuente: https://www.wikidata.org/wiki/Q724860
+    | casas: duran_subastas, 1 lote (Retrato de la Señorita Carmen Diaz Perez, firmado y localizado en Madrid en
+    1908). DISCREPANCIA: Duran publica 1865-1926; gana la fuente y se anota. El nacimiento coincide y el lote encaja
+    con sus estancias documentadas en Espana (1906-1926, Madrid en 1908). medium por la fecha de muerte de la casa.'
 - artist_id: robert_indiana
   display_name: Robert Indiana
   country_birth: US
