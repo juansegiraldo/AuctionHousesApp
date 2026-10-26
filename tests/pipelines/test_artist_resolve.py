@@ -301,6 +301,43 @@ def test_lot_author_fix_map_is_empty(real_artist_config):
     assert artist_master.load_lot_author_fixes() == {}
 
 
+def test_bogota_name_cut_at_the_first_name_is_restored_from_the_alt_text(silver):
+    """El parser del alt de Bogota cortaba "Fernando Botero Colombia, 1932" en
+    "Fernando" (~38 lotes, La plegaria de Botero entre ellos). Bronze es
+    inmutable y Silver se queda con la copia MAS ANTIGUA de cada lote, asi que
+    arreglar el scraper no basta: Silver rehace el nombre desde artist_raw con la
+    misma gramatica que el scraper."""
+    _, master = silver
+    _seed_master(master, [{
+        "artist_id": "fernando_botero", "display_name": "Fernando Botero",
+        "country_birth": "CO", "nationalities": ["CO"], "birth_year": 1932,
+        "attribution_type": "autor", "source": "manual", "confidence": "high",
+        "aliases": ["Fernando Botero"],
+    }])
+    botero = artist_resolve.resolve_row(_lot(
+        house_slug="bogota_auctions", artist_name="Fernando",
+        artist_raw="Fernando Botero Colombia, 1932 - Mónaco, 2023 : La plegaria",
+    ))
+    assert botero["artist_id"] == "fernando_botero"
+    assert botero["artist_country_birth"] == "CO"
+
+
+def test_bogota_alt_repair_only_completes_a_cut_name(silver):
+    # Solo se completa un nombre que es el COMIENZO del del alt: un nombre que
+    # vino de la ficha del lote, distinto del alt, no se toca.
+    lot = artist_resolve.resolve_row(_lot(
+        house_slug="bogota_auctions", artist_name="Ana Mercedes Hoyos",
+        artist_raw="Otra Persona Colombia, 1942 : Sandía",
+    ))
+    assert lot["artist_display_name"] == "Ana Mercedes Hoyos"
+    # Y no aplica a otras casas.
+    other = artist_resolve.resolve_row(_lot(
+        house_slug="duran_subastas", artist_name="Fernando",
+        artist_raw="Fernando Botero Colombia, 1932 : La plegaria",
+    ))
+    assert other["artist_display_name"] == "Fernando"
+
+
 def test_lefebre_multiline_title_only_uses_a_master_backed_prefix(silver):
     """Un titulo en la segunda linea no se convierte en alias ni en artista."""
     _, master = silver

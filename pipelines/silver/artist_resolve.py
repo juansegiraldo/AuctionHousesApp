@@ -67,6 +67,30 @@ RESOLUTION_FIELDS = (
 )
 
 
+def _full_bogota_name(name: Any, artist_raw: Any) -> Any:
+    """Completa un nombre de Bogota que el parser del alt corto en el de pila.
+
+    "Fernando Botero Colombia, 1932 - Monaco, 2023 : La plegaria" salia como
+    "Fernando": el grupo del pais se comia el apellido (~38 lotes; Botero, Negret,
+    Luis Caballero, Wifredo Lam). El scraper ya esta arreglado, pero Bronze es
+    inmutable y Silver se queda con la copia MAS ANTIGUA de cada lote, asi que
+    las copias viejas seguirian ganando. Se usa la misma funcion que el scraper
+    para no tener dos gramaticas del alt que diverjan.
+
+    Solo completa: el nombre nuevo tiene que EMPEZAR por el viejo. Un nombre que
+    vino de la ficha del lote y no coincide con el alt no se toca.
+    """
+    if not isinstance(name, str) or not isinstance(artist_raw, str) or " : " not in artist_raw:
+        return name
+    from scraping.parsers import _split_alt_artist
+
+    parsed = _split_alt_artist(artist_raw.split(" : ")[0].strip())
+    full = parsed[0] if parsed else None
+    if full and full.startswith(name.strip() + " "):
+        return full
+    return name
+
+
 def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     """Devuelve el lote con los 7 campos de artista anadidos.
 
@@ -82,6 +106,9 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     lot_url = row.get("lot_url")
     if lot_url:
         name = load_lot_author_fixes().get(lot_url, name)
+
+    if row.get("house_slug") == "bogota_auctions":
+        name = _full_bogota_name(name, row.get("artist_raw"))
 
     artist = resolve_artist(name)
 
