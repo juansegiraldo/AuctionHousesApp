@@ -31,16 +31,16 @@ tocar el maestro de artistas, lee también `docs/PLAN_MAESTRO_ARTISTAS.md` y
   `pipelines/silver/artist_resolve._full_bogota_name()`.
 - **Categorías:** "Con documento" ya no convierte una obra en `books_documents`.
 
-Cifras de referencia al cerrar (si cambian sin motivo, algo se rompió):
+Cifras de referencia (actualizadas 2026-11-09, tras bajar 7 subastas de Durán que fallaron por red el 2026-10-15; si cambian sin motivo, algo se rompió):
 
 | Casa | Lotes | Vendidos | Ingreso EUR |
 |---|---|---|---|
-| duran_subastas | 47.383 | 21.949 | 27.154.575,00 |
+| duran_subastas | 51.788 | 23.908 | 29.180.695,00 |
 | morton_subastas | 12.838 | 4.742 | 23.434.298,54 |
 | bogota_auctions | 10.437 | 10.395 | 8.011.261,34 |
 | zorrilla_subastas | 11.168 | 6.942 | 3.919.315,22 |
 | lefebre_subastas | 3.858 | 1.600 | 2.756.837,90 |
-| **Total** | **85.684** | **45.628** | **65.276.288,00** |
+| **Total** | **90.089** | **47.587** | **67.302.408,00** |
 
 `python -m pytest` → 963 en verde. Maestro: 3.582 artistas, 0 problemas de validación.
 

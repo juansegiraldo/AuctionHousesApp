@@ -382,6 +382,12 @@ not by him) and `García Márquez, Gabriel` (a writer in book lots, not a painte
   construction. Same reason `propose_inversion()` (`GARCIA OCHOA, LUIS` → `luis garcia ochoa`) is a
   *suggestion* for `scripts/artist_master_propose.py` and is deliberately **not** in `artist_fold`:
   `García Márquez, Gabriel` is a writer in book lots, not a painter.
+  **One guarded exception (2026-11-08):** `artist_resolve.resolve_row()` applies the inversion
+  when it lands on a master entry **and** the birth year in the house's biographical parenthesis
+  is within ±2 of the master's. Durán's re-scraped `autor` field (`MIRÓ, JOAN (1893 - 1983)`) had
+  Miró, Dalí and Chillida ranking twice — 608 names, 1.74 M€. The year is the guard:
+  `COSSÍO, JUAN (1960)` is not the master's Cossío (1898), and no year on either side means no
+  merge. A test pins Miró merging and Cossío, García Márquez and year-less names staying apart.
 - **Never invent a country.** An artist missing from the master gets `artist_country_birth: None` —
   never a guess, and never the auction house's country. Same discipline as `to_eur()` returning
   `None` instead of `1.0`. `HOUSE_COUNTRY` in `render_html.py` is where the *sale* happens; using it
@@ -537,6 +543,19 @@ Don't rediscover these; they're documented in [ESTADO.md](ESTADO.md) too:
   longer embeds `window.__data` (the house page renders JSON-LD `SaleEvent`s with no lot count)
   and Incapsula blocks the second request. Adapting the scraper is a project of its own. Until
   then Zorrilla's totals are an undercount, not a defect to "fix" by computation.
+- **An empty output file used to mark an auction as done forever** (fixed 2026-11-08). On
+  2026-10-15 DNS/TLS failures hit 7 Durán auctions and 650 left a 0-byte `.jsonl`; resume
+  (`individual_path.exists()`) skipped it on every later run. Resume now also requires
+  `st_size > 0`, in Durán's runner and in `scraping/common/runner.py`. A *partial* non-empty file
+  is still the trap documented in Lefebre's `run_historic.py`. Don't launch 8 Durán scrapes at
+  once: the burst got `GetAjaxLots` answering **429** for every lane — run them one at a time.
+  And note Durán's `historic_all_lots.jsonl` holds auctions with no per-auction file (632, 634,
+  635, 643, 651, 654), so a full `run_historic` merge would **shrink** it: pass `-o` elsewhere.
+- **Wikidata's P17 made Amsterdam French** (fixed 2026-11-08). Amsterdam lists France (1810-1813,
+  current ISO code) next to the Netherlands (preferred rank, but `NL` deprecated), and the
+  deprecated fallback lost to France: Lucebert, César Domela, Schellinks and 5 more were `FR`.
+  `_current_country_iso()` now keeps only `preferred` P17 statements when any exist; the 8
+  entries were corrected with a note.
 - **Bogotá 2026 looked thin because it was never ingested**, not because sales fell: 9 auctions
   were scraped on 2026-10-12/13 after that day's Bronze run. Now 11 auctions, 1,714 lots, 4,513 M
   COP. Run `run_historic --list-only` to see the live list (it rewrites `auction_index.jsonl`).

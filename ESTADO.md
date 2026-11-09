@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Actualizado: 2026-10-25
+Actualizado: 2026-11-09
 
 ## Qué es esto (y qué no es)
 
@@ -55,12 +55,12 @@ python -m pytest        # 941 pasan
 
 | Casa | País | Lotes | Vendidos | Tasa | Ingresos (nativa) | ≈ EUR |
 |---|---|---|---|---|---|---|
-| duran_subastas | España | 47.383 | 21.949 | 46,3% | 27.154.575 EUR | 27,15 M € |
+| duran_subastas | España | 51.788 | 23.908 | 46,2% | 29.180.695 EUR | 29,18 M € |
 | morton_subastas | México | 12.838 | 4.742 | 36,9% | 481.195.909 MXN | 23,43 M € |
 | bogota_auctions | Colombia | 10.437 | 10.395 | 99,6% | 35.245.120.000 COP | 8,01 M € |
 | zorrilla_subastas | Uruguay | 11.168 | 6.942 | 62,2% | 4.365.109 USD | 3,92 M € |
 | lefebre_subastas | Colombia | 3.858 | 1.600 | 41,5% | 12.361.725.000 COP | 2,76 M € |
-| **Total** | | **85.684** | **45.628** | — | — | **65,28 M €** |
+| **Total** | | **90.089** | **47.587** | — | — | **67,30 M €** |
 
 Cobertura temporal: 2014 → 2026. De Morton solo están sus **57 subastas de arte** (de 803: el
 resto son camiones, coches, vinos y joyas); ver `scraping/houses/morton_subastas/README.md`.
