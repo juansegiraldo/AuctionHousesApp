@@ -626,6 +626,26 @@ def test_a_normal_iso_code_wins_over_a_deprecated_one():
     assert got == "BY"
 
 
+def test_a_preferred_country_beats_a_former_state_with_a_current_code():
+    """Amsterdam declara en P17 a Paises Bajos (preferred, NL deprecated) y a
+    Francia (normal, con fecha de fin: la anexion de 1810-1813). Francia tiene
+    codigo vigente y ganaba al respaldo deprecated: 8 pintores nacidos en
+    Amsterdam (Schellinks, Lucebert, Cesar Domela...) se publicaban franceses.
+    El rango preferred es como Wikidata marca el estado actual."""
+    preferred = _item_statement("Q55")
+    preferred["rank"] = "preferred"
+    place = _entity("Q727", "Amsterdam", human=False,
+                    claims={"P17": [preferred, _item_statement("Q142")]})
+    paises_bajos = _entity("Q55", "Paises Bajos", human=False,
+                           claims={"P297": [_iso_statement_ranked("NL", rank="deprecated")]})
+    francia = _entity("Q142", "Francia", human=False,
+                      claims={"P297": [_iso_statement_ranked("FR")]})
+
+    got = research._current_country_iso(place, {"Q55": paises_bajos, "Q142": francia})
+
+    assert got == "NL"
+
+
 def test_each_record_is_written_in_a_single_call(tmp_path, monkeypatch):
     """Dos procesos a la vez entrelazaban lineas y partian registros.
 

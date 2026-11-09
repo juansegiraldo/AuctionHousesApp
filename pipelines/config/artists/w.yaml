@@ -198,14 +198,15 @@ artists:
     solo uno nacio en 1822, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q1372280'
 - artist_id: willem_schellinks
   display_name: Willem Schellinks
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1627
   death_year: 1678
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Willem Schellinks
   - WILLEM SCHELLINKS

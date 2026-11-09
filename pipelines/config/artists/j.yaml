@@ -386,14 +386,15 @@ artists:
   death_status: living
 - artist_id: jan_van_couver
   display_name: Hermanus the Younger Koekkoek
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1836
   death_year: 1909
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Jan VAN COUVER
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q18330803'

@@ -778,14 +778,15 @@ artists:
   notes: '34 lotes | casas: duran_subastas'
 - artist_id: gerardus_hendriks
   display_name: Gerardus Hendriks
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1804
   death_year: 1859
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Gerardus Hendriks
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q21464294'

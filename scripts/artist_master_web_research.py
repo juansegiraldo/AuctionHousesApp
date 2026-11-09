@@ -721,6 +721,13 @@ def _current_country_iso(
     """
     codes: set[str] = set()
     fallback: set[str] = set()
+    # Si Wikidata marca un estado como preferred (el actual), solo cuenta ese:
+    # Amsterdam declara tambien a Francia (1810-1813), con codigo vigente, y
+    # ganaba al NL deprecated de Paises Bajos.
+    statements = (place.get("claims") or {}).get("P17") or []
+    preferred = [s for s in statements if isinstance(s, Mapping) and s.get("rank") == "preferred"]
+    if preferred:
+        place = {"claims": {"P17": preferred}}
     for qid in _item_ids(place, "P17"):
         country = related.get(qid)
         if not isinstance(country, Mapping):

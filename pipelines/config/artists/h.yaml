@@ -389,14 +389,15 @@ artists:
   death_status: known
 - artist_id: henri_van_wyk
   display_name: Henri van Wijk
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1833
   death_year: 1889
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Henri van Wyk
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q55804863'
