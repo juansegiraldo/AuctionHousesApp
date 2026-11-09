@@ -407,3 +407,34 @@ def test_isolated_quoted_title_stays_not_an_author(real_artist_config):
     assert resolved["artist_resolution"] == "not_an_author"
     assert resolved["artist_id"] is None
     assert resolved["artist_country_birth"] is None
+
+
+def test_comma_inversion_merges_only_when_the_birth_year_agrees(silver):
+    """Desde el re-scrape de 2026-10-15 Duran escribe "MIRO, JOAN (1893 - 1983)"
+    y Miro, Dali o Chillida rankeaban dos veces, la segunda sin pais (608
+    nombres, 1,74 M EUR). La inversion solo se acepta si el anio de nacimiento
+    de la casa coincide (+-2) con el del maestro: es lo que separa a Miro de
+    los homonimos."""
+    _, master = silver
+    _seed_master(master, [
+        {"artist_id": "joan_miro", "display_name": "Joan Miró", "country_birth": "ES",
+         "birth_year": 1893, "attribution_type": "autor", "aliases": ["Joan Miró"]},
+        {"artist_id": "juan_cossio", "display_name": "Juan Cossío", "country_birth": "ES",
+         "birth_year": 1898, "attribution_type": "autor", "aliases": ["Juan Cossío"]},
+        {"artist_id": "sin_anio", "display_name": "Pedro Sinanio", "country_birth": "ES",
+         "attribution_type": "autor", "aliases": ["Pedro Sinanio"]},
+    ])
+
+    def resolve(name, raw):
+        return artist_resolve.resolve_row(_lot(artist_name=name, artist_raw=raw))
+
+    miro = resolve("MIRÓ, JOAN", "MIRÓ, JOAN (1893 - 1983)")
+    assert miro["artist_id"] == "joan_miro"
+    assert miro["artist_country_birth"] == "ES"
+    # Otro Juan Cossio, nacido en 1960: mismo nombre, otra persona.
+    assert resolve("COSSÍO, JUAN", "COSSÍO, JUAN (1960)")["artist_id"] is None
+    # Sin anio en la casa o en el maestro no hay nada que comprobar: no se fusiona.
+    assert resolve("MIRÓ, JOAN", "MIRÓ, JOAN")["artist_id"] is None
+    assert resolve("SINANIO, PEDRO", "SINANIO, PEDRO (1900)")["artist_id"] is None
+    # Un escritor que no esta en el maestro sigue sin fusionarse con nadie.
+    assert resolve("GARCÍA MÁRQUEZ, GABRIEL", "GARCÍA MÁRQUEZ, GABRIEL (1927 - 2014)")["artist_id"] is None

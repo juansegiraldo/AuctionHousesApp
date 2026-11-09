@@ -42,12 +42,15 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from collections import Counter
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from pipelines.shared import attribution_jev
+from pipelines.shared.artist_key import propose_inversion
 from pipelines.shared.artist_master import (
+    artist_years,
     load_lot_author_fixes,
     normalize_country,
     resolve_artist,
@@ -89,6 +92,25 @@ def _full_bogota_name(name: Any, artist_raw: Any) -> Any:
     if full and full.startswith(name.strip() + " "):
         return full
     return name
+
+
+_BIO_PAREN_RE = re.compile(r"\(([^()]*)\)")
+_YEAR_RE = re.compile(r"\b(1[3-9]\d{2}|20\d{2})\b")
+
+
+def _bio_birth_year(text: Any) -> Optional[int]:
+    """Primer anio del primer parentesis biografico: "X (1893 - 1983)" -> 1893.
+
+    Solo dentro del parentesis: un anio suelto en el titulo de la obra no dice
+    nada de cuando nacio el artista.
+    """
+    if not isinstance(text, str):
+        return None
+    for chunk in _BIO_PAREN_RE.findall(text):
+        match = _YEAR_RE.search(chunk)
+        if match:
+            return int(match.group(1))
+    return None
 
 
 def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
@@ -133,6 +155,22 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
                 name = candidate
                 artist = candidate_artist
                 break
+
+    # "MIRO, JOAN (1893 - 1983)": Duran escribe asi su campo Autor desde el
+    # re-scrape de 2026-10-15, y Miro, Dali o Chillida rankeaban dos veces, la
+    # segunda sin pais (608 nombres, 1,74 M EUR). La inversion sola no basta
+    # ("COSSIO, JUAN" de 1960 no es el Cossio de 1898 del maestro), asi que se
+    # exige que el anio de nacimiento de la casa coincida con el del maestro.
+    # Sin anio en cualquiera de los dos lados no hay nada que comprobar y el
+    # lote se queda fold_only, igual que antes.
+    if artist["artist_resolution"] == "fold_only" and isinstance(name, str) and "," in name:
+        inverted = propose_inversion(name)
+        candidate_artist = resolve_artist(inverted) if inverted else None
+        if candidate_artist and candidate_artist["artist_resolution"] == "master":
+            master_birth = artist_years(candidate_artist["artist_id"])["birth_year"]
+            house_birth = _bio_birth_year(name) or _bio_birth_year(row.get("artist_raw"))
+            if master_birth and house_birth and abs(int(master_birth) - house_birth) <= 2:
+                artist = candidate_artist
 
     resolved.update(artist)
 
