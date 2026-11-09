@@ -1991,7 +1991,30 @@ JS = r"""
   // sandbox, donde <a download> sobre un blob puede quedar bloqueado sin avisar:
   // por eso hay plan B (abrir en pestania) y plan C (copiar al portapapeles),
   // y el usuario siempre recibe una confirmacion de lo que ha pasado.
+  //
+  // Dentro de un Artifact de Claude hay una via mejor: la capacidad
+  // "downloads" (window.claude.use). Solo existe ahi; en Vercel o con
+  // http.server window.claude no esta y se sigue con las tres vias de abajo.
+  var DL = null;
+  try {
+    if (window.claude && window.claude.use) {
+      window.claude.use('downloads').then(function (d) { DL = d; }, function () {});
+    }
+  } catch (e) {}
+
   function save(name, text, filas) {
+    if (!DL) { saveLegacy(name, text, filas); return; }
+    DL.save({filename: name, data: text}).then(function () {
+      say('Descargado ' + name + ', ' + filas + ' filas');
+    }, function (err) {
+      var code = err && err.code;
+      if (code === 'declined') { say('Descarga cancelada.'); return; }
+      if (code === 'rate_limited') { say('Ya hay una descarga pendiente: acéptala o espera un momento.', true); return; }
+      saveLegacy(name, text, filas);
+    });
+  }
+
+  function saveLegacy(name, text, filas) {
     var ok = false;
     try {
       var blob = new Blob([text], {type: 'text/csv;charset=utf-8;'});

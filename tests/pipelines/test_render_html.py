@@ -412,6 +412,17 @@ def test_pagination_logic_ships_in_the_document_script():
     assert "dataset.match" in js
 
 
+def test_claude_downloads_is_optional_and_the_browser_paths_survive():
+    """La misma carpeta se sirve en un Artifact y en Vercel. downloads.save solo
+    existe en el Artifact: si se llamara sin comprobar window.claude, en
+    Vercel ningun CSV se descargaria."""
+    js = build_artifact.JS
+    assert "window.claude && window.claude.use" in js
+    assert "use('downloads')" in js
+    assert "saveLegacy(name, text, filas)" in js  # cae al plan de tres vias
+    assert "createObjectURL" in js and "clipboard.writeText" in js
+
+
 # --------------------------------------------------------------------------
 # Mapa de paises
 # --------------------------------------------------------------------------
