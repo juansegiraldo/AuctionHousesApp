@@ -141,7 +141,7 @@ def main() -> None:
         for auction in auctions:
             auction_id = _auction_id_from_url(auction.auction_url)
             individual_path = _auction_output_path(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 write_checkpoint(
                     checkpoint_dir,
                     auction_id,
@@ -180,7 +180,7 @@ def main() -> None:
         for auction in auctions:
             auction_id = _auction_id_from_url(auction.auction_url)
             individual_path = _auction_output_path(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 existing.append((auction_id, individual_path))
             else:
                 pending.append((auction, individual_path))

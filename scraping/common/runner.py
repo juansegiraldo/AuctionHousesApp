@@ -377,7 +377,7 @@ def run_historic_cli(module_globals: dict) -> None:
         for auction in auctions:
             auction_id = auction_id_from_url(auction.auction_url)
             individual_path = output_path_for(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 checkpoints.write_checkpoint(
                     checkpoint_dir, auction_id,
                     {"status": "skipped_existing", "auction_id": auction_id, "output": str(individual_path)},
@@ -414,7 +414,7 @@ def run_historic_cli(module_globals: dict) -> None:
         for auction in auctions:
             auction_id = auction_id_from_url(auction.auction_url)
             individual_path = output_path_for(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 existing.append((auction_id, individual_path))
             else:
                 pending.append((auction, individual_path))
