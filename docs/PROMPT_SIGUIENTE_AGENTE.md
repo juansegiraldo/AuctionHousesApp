@@ -71,12 +71,16 @@ Las cifras de la tabla de arriba no cambiaron: 65.276.288,00 EUR, 45.628 vendido
 
 ### 1. Adaptar el scraper de Zorrilla a la LiveAuctioneers de hoy (decidirlo con el dueño)
 
+**2026-11-09:** Incapsula bloquea ya la PRIMERA petición. Saltarse esa protección no es una
+opción (se denegó como evasión anti-bots). Solo falta la última página de los 13 catálogos de
+arte: la vía razonable es pedir el dato a Zorrilla o a LiveAuctioneers.
+
 Es lo que recupera el ~11% que falta (~1.300 lotes). Exige otra fuente de datos (la página ya no
 trae `window.__data`; la de la casa trae JSON-LD `SaleEvent` sin número de lotes) y pasar el
 bloqueo de Incapsula. Es un proyecto, no un parche: pregunta antes de empezar. Cuando funcione,
 añade un `scripts/verify_zorrilla_scrape.py` como el de Morton, que compare con `lotsListed`.
 
-### 2. Descargas CSV dentro del Artifact (opcional)
+### 2. ~~Descargas CSV dentro del Artifact~~ — hecho 2026-11-09 (capacidad `downloads`, versión 5)
 
 El visor de Artifacts bloquea las descargas por `blob:`. Hoy la app cae a abrir el CSV en otra
 pestaña o copiarlo al portapapeles. Se arreglaría declarando la capacidad `downloads` y usando
@@ -85,6 +89,8 @@ en Vercel sin cambios.
 
 ### 3. Menores
 
+- Durán: la subasta 661 se celebra el 2026-11-12. Bájala después con
+  `run_auction_list` (una sola, nunca en paralelo: 8 a la vez dieron 429).
 - Durán tiene 2 lotes con artista "Juan Antonio": es la misma obra ofrecida dos veces, Durán la
   publica sin apellido y la venta no trae precio. No es investigable ni mueve un euro. Déjalo.
 - Las "Subastas de los Sábados" de Morton (115) mezclan arte con muebles. Si el dueño quiere más
