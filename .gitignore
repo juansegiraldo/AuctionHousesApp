@@ -50,3 +50,6 @@ FINALL.xlsx
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs de run_all.ps1
+logs/

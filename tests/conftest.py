@@ -1,8 +1,19 @@
 import pytest
 
+from pipelines.bronze import load_raw
 from pipelines.shared import artist_master, attribution_jev
 
 _REAL_ARTISTS_DIR = artist_master.ARTISTS_DIR
+
+
+@pytest.fixture(autouse=True)
+def _supabase_offline(monkeypatch):
+    """Ningun test escribe en Supabase: el .env del autor tiene el token real y
+    auction.raw_lots es solo de insercion, asi que una fila de prueba no se
+    podria borrar nunca. Un test que necesite la red sustituye `_urlopen` el mismo."""
+    def _blocked(*args, **kwargs):
+        raise AssertionError("un test intento salir a la red hacia Supabase")
+    monkeypatch.setattr(load_raw, "_urlopen", _blocked)
 
 
 @pytest.fixture(autouse=True)

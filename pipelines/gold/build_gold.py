@@ -31,6 +31,7 @@ from pipelines.shared.attribution_jev import is_low_conf as is_jev_low_conf
 from pipelines.shared.attribution_jev import load_cache as load_jev_cache
 from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur, to_eur_at
 from pipelines.shared.schema import UNKNOWN_YEAR, extract_month, extract_year, is_sold
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -47,7 +48,8 @@ def _read_lots(lots_path: Path):
 
 
 def _write_jsonl(path: Path, rows) -> None:
-    with open(path, "w", encoding="utf-8") as output:
+    # Atomico: un fallo a mitad no deja un agregado truncado en Gold.
+    with atomic_write(path, "w", encoding="utf-8") as output:
         for row in rows:
             output.write(json.dumps(row, ensure_ascii=False) + "\n")
     print(f"[gold] wrote: {path}")

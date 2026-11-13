@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 import sys
 
@@ -12,11 +13,16 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from pipelines.shared.schema import normalize_lot
+from scraping.common.atomic import atomic_write
 
 BRONZE_ROOT = ROOT / "data" / "bronze"
 SILVER_ROOT = ROOT / "data" / "silver"
 NON_LOT_FILES = {"auction_index.jsonl"}
 MERGED_FILE = "historic_all_lots.jsonl"
+# Unas pocas colas truncadas (un scraper matado a mitad de linea) son normales;
+# por encima de esto es corrupcion masiva y Silver no debe publicarse.
+MAX_MALFORMED_RATE = 0.001
+_PARTITION_RE = re.compile(r"^ingestion_date=(\d{4}-\d{2}-\d{2})$")
 
 
 def _file_order(path: Path) -> tuple[bool, str]:
@@ -26,14 +32,21 @@ def _file_order(path: Path) -> tuple[bool, str]:
     return (path.name == MERGED_FILE, path.name)
 
 
-def iter_bronze_rows():
+def iter_bronze_rows(stats: dict | None = None):
     """Filas de Bronze en orden de precedencia: gana la primera de cada dedupe_key.
 
     Particion MAS NUEVA primero. Bronze copia todo el output en cada ingesta, asi
     que con la mas antigua primero un re-scrape o un arreglo del parser nunca
     llegaba a un lote ya cargado. Los lotes que solo estan en particiones viejas
     entran igual.
+
+    stats, si se pasa, recibe "lines" (lineas leidas) y "malformed"
+    ({fichero: lineas rotas}): una linea que no es JSON se salta y se cuenta.
     """
+    if stats is None:
+        stats = {}
+    stats.setdefault("lines", 0)
+    stats.setdefault("malformed", {})
     for house_dir in sorted(BRONZE_ROOT.iterdir()):
         if not house_dir.is_dir():
             continue
@@ -41,6 +54,10 @@ def iter_bronze_rows():
         for partition_dir in sorted(house_dir.iterdir(), reverse=True):
             if not partition_dir.is_dir():
                 continue
+            # ingested_at = fecha de la particion, no el reloj: con now_iso()
+            # Silver no era reproducible byte a byte sobre el mismo Bronze.
+            match = _PARTITION_RE.match(partition_dir.name)
+            ingested_at = f"{match.group(1)}T00:00:00+00:00" if match else None
             for file_path in sorted(partition_dir.glob("*.jsonl"), key=_file_order):
                 if file_path.name in NON_LOT_FILES:
                     continue
@@ -49,10 +66,22 @@ def iter_bronze_rows():
                         line = line.strip()
                         if not line:
                             continue
-                        record = json.loads(line)
+                        stats["lines"] += 1
+                        # Un scraper matado deja la ultima linea a medias. Sin
+                        # este try, esa linea abortaba toda la corrida.
+                        try:
+                            record = json.loads(line)
+                        except ValueError:
+                            record = None
+                        if not isinstance(record, dict):
+                            source = str(file_path.relative_to(ROOT))
+                            stats["malformed"][source] = stats["malformed"].get(source, 0) + 1
+                            continue
                         if not record.get("lot_url"):
                             continue
-                        yield normalize_lot(record, house_slug, str(file_path.relative_to(ROOT)))
+                        yield normalize_lot(
+                            record, house_slug, str(file_path.relative_to(ROOT)), ingested_at
+                        )
 
 
 def main() -> None:
@@ -63,8 +92,14 @@ def main() -> None:
     dedupe_keys: set[str] = set()
     seen_auctions: set[str] = set()
 
-    with open(lots_path, "w", encoding="utf-8") as lots_out, open(auctions_path, "w", encoding="utf-8") as auctions_out:
-        for row in iter_bronze_rows():
+    stats: dict = {}
+    # Escritura atomica: antes se abrian (y vaciaban) los dos ficheros ANTES de
+    # leer Bronze, asi que un fallo a mitad dejaba un Silver truncado que las
+    # etapas siguientes leian como si fuera completo.
+    with atomic_write(lots_path, "w", encoding="utf-8") as lots_out, atomic_write(
+        auctions_path, "w", encoding="utf-8"
+    ) as auctions_out:
+        for row in iter_bronze_rows(stats):
             dedupe_key = row["dedupe_key"]
             if dedupe_key in dedupe_keys:
                 continue
@@ -89,6 +124,18 @@ def main() -> None:
                     )
                     + "\n"
                 )
+
+        # Dentro del with: si se aborta, el Silver anterior queda intacto.
+        malformed = sum(stats["malformed"].values())
+        for source, count in sorted(stats["malformed"].items()):
+            print(f"[silver] AVISO: {count:,} lineas rotas saltadas en {source}")
+        if malformed:
+            print(f"[silver] {malformed:,} lineas rotas de {stats['lines']:,} leidas")
+        if malformed > stats["lines"] * MAX_MALFORMED_RATE:
+            raise SystemExit(
+                f"[silver] ABORTADO: {malformed:,} lineas rotas de {stats['lines']:,} "
+                f"superan el {MAX_MALFORMED_RATE:.1%}. Bronze esta corrupto; Silver no se toca."
+            )
 
     print(f"[silver] wrote: {lots_path}")
     print(f"[silver] wrote: {auctions_path}")

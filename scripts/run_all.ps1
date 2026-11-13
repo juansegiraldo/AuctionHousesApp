@@ -12,9 +12,35 @@
 
 $ErrorActionPreference = "Stop"
 
+# Cada corrida deja su log: sin el, un fallo de anoche no se puede reconstruir.
+# No se usa Start-Transcript: en PowerShell 5.1 no recoge la salida de python.
+New-Item -ItemType Directory -Force logs | Out-Null
+$log = "logs\run_all_{0}.log" -f (Get-Date -Format "yyyyMMdd_HHmmss")
+$env:PYTHONIOENCODING = "utf-8"
+[Console]::OutputEncoding = [Text.Encoding]::UTF8
+
+function Log([string]$message, $color = "Gray") {
+    Write-Host $message -ForegroundColor $color
+    Add-Content -Path $script:log -Value $message -Encoding UTF8
+}
+
+function Invoke-Python {
+    # stderr tambien va al log: ahi salen los tracebacks. Con "Stop", PowerShell
+    # 5.1 trata cada linea de stderr como un error fatal, asi que se baja a
+    # "Continue" solo dentro de esta funcion; el fallo se decide por $LASTEXITCODE.
+    $ErrorActionPreference = "Continue"
+    & python @args 2>&1 | ForEach-Object { Log "$_" }
+}
+
 $stages = @(
     @{ Name = "Bronze  (landing crudo)";        Module = "pipelines.bronze.ingest" },
+    # Registro duradero: sube a auction.raw_lots lo scrapeado. --best-effort
+    # porque el pipeline debe poder correr sin red; la carga es idempotente.
+    @{ Name = "Supabase (registro duradero)";   Module = "pipelines.bronze.load_raw"; Args = @("--best-effort") },
     @{ Name = "Silver  (normaliza + dedupe)";   Module = "pipelines.silver.build_silver" },
+    # Corta la cadena si Silver tiene menos lotes de una casa que la base, que
+    # nunca borra: es la senal de que una particion o un output se perdio.
+    @{ Name = "Silver  (control de volumen)";   Module = "pipelines.silver.volume_guard" },
     # Va justo despues de build_silver: reescribe lots.jsonl anadiendo identidad
     # de artista, tipo de autoria y pais. Todo lo que viene detras lo da por hecho.
     @{ Name = "Silver  (artistas + paises)";    Module = "pipelines.silver.artist_resolve" },
@@ -40,20 +66,31 @@ $i = 0
 foreach ($stage in $stages) {
     $i++
     Write-Host ""
-    Write-Host "[$i/$total] $($stage.Name)" -ForegroundColor Cyan
-    python -m $stage.Module
+    Log "[$i/$total] $($stage.Name)" Cyan
+    $extra = @()
+    if ($stage.Args) { $extra = $stage.Args }
+    Invoke-Python -m $stage.Module @extra
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "FALLO en $($stage.Module) (codigo $LASTEXITCODE)" -ForegroundColor Red
+        Log "FALLO en $($stage.Module) (codigo $LASTEXITCODE)" Red
         exit $LASTEXITCODE
     }
 }
 
 Write-Host ""
-Write-Host "Puertas de calidad (informativas, no rompen el pipeline)" -ForegroundColor Cyan
-foreach ($house in @("bogota_auctions", "duran_subastas", "lefebre_subastas", "zorrilla_subastas", "morton_subastas")) {
-    python pipelines/silver/quality_gates.py --house-slug $house
+# Las casas salen del registro: la lista escrita a mano se quedaba atras al
+# anadir una casa. Con --fail-on-violation las puertas SI rompen la corrida
+# (las cinco pasan a 2026-11-13); se evaluan todas antes de salir.
+Log "Puertas de calidad" Cyan
+$failed = @()
+foreach ($house in (Get-Content scraping\houses\registry.json -Raw | ConvertFrom-Json).houses.slug) {
+    Invoke-Python pipelines/silver/quality_gates.py --house-slug $house --fail-on-violation
+    if ($LASTEXITCODE -ne 0) { $failed += $house }
+}
+if ($failed.Count -gt 0) {
+    Log "FALLO en las puertas de calidad: $($failed -join ", ")" Red
+    exit 1
 }
 
 Write-Host ""
-Write-Host "Pipeline completo." -ForegroundColor Green
+Log "Pipeline completo." Green
 Write-Host "Abre la app con:  python -m http.server -d data\gold\app   (y visita http://localhost:8000)" -ForegroundColor Green

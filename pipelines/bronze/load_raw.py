@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import os
 import subprocess
+import time
 import urllib.error
 import urllib.request
 from collections import Counter
@@ -27,6 +28,11 @@ ROOT = Path(__file__).resolve().parents[2]
 BATCH = 500
 # auction_index.jsonl lista subastas, no lotes: build_silver tambien lo salta.
 NOT_LOTS = {"auction_index.jsonl"}
+RETRIES = 4
+_urlopen = urllib.request.urlopen  # los tests lo sustituyen: ninguno sale a la red
+# ponytail: cada corrida reenvia las ~92.000 versiones (~3 min) para que la base
+# descarte las que ya tiene. Si molesta, anadir a auction-ingest una op que
+# devuelva los hashes ya cargados por casa y enviar solo los que falten.
 
 
 def content_hash(record: dict) -> str:
@@ -95,12 +101,22 @@ def call(schema: str, body: dict) -> dict:
             "x-ingest-token": _env("AUCTION_INGEST_TOKEN"),
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            return orjson.loads(resp.read())
-    except urllib.error.HTTPError as e:
-        # El cuerpo trae el error de Postgres; sin el, un 500 no dice nada.
-        raise SystemExit(f"auction-ingest {body['op']} -> {e.code}: {e.read().decode()[:500]}")
+    # Una carga completa son ~190 peticiones: un solo corte de TLS a mitad
+    # ("bad record mac", visto el 2026-11-13) tumbaba la corrida entera. Todas
+    # las operaciones son repetibles (raw hace `on conflict do nothing`).
+    for attempt in range(1, RETRIES + 1):
+        try:
+            with _urlopen(req, timeout=120) as resp:
+                return orjson.loads(resp.read())
+        except urllib.error.HTTPError as e:
+            if e.code < 500 or attempt == RETRIES:
+                # El cuerpo trae el error de Postgres; sin el, un 500 no dice nada.
+                raise SystemExit(f"auction-ingest {body['op']} -> {e.code}: {e.read().decode()[:500]}")
+        except OSError:  # URLError, SSLError, timeout
+            if attempt == RETRIES:
+                raise
+        time.sleep(2 ** attempt)
+    raise AssertionError("inalcanzable")
 
 
 def main() -> None:
@@ -109,6 +125,8 @@ def main() -> None:
     ap.add_argument("--house", help="solo esta casa (slug)")
     ap.add_argument("--backfill", action="store_true", help="incluye todas las particiones de Bronze")
     ap.add_argument("--dry-run", action="store_true", help="cuenta versiones sin enviar nada")
+    ap.add_argument("--best-effort", action="store_true",
+                    help="si Supabase no responde, avisa y sale con 0 (para run_all.ps1)")
     args = ap.parse_args()
 
     houses = [h for h in load_house_registry() if not args.house or h["slug"] == args.house]
@@ -119,7 +137,16 @@ def main() -> None:
     if not args.dry_run:
         sha = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
                              capture_output=True, text=True).stdout.strip() or None
-        run_id = call(args.schema, {"op": "run_start", "git_sha": sha})["run_id"]
+        try:
+            run_id = call(args.schema, {"op": "run_start", "git_sha": sha})["run_id"]
+        except (OSError, SystemExit) as exc:  # URLError y timeout son OSError
+            # El pipeline tiene que poder correr sin red: la carga es idempotente,
+            # asi que saltarsela hoy solo la deja pendiente para la proxima corrida.
+            if not args.best_effort:
+                raise
+            print(f"AVISO: Supabase no responde ({exc}). La carga queda pendiente; "
+                  "es idempotente y se puede repetir.")
+            return
 
     seen: set[tuple[str, str, str]] = set()  # las 34 particiones repiten casi todo
     counts: dict[str, dict] = {}

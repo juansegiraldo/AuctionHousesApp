@@ -7,6 +7,8 @@ import json
 import re
 from pathlib import Path
 
+from scraping.common.atomic import atomic_write
+
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
 OUTPUT = ROOT / "data" / "enrichments" / "category_tags.jsonl"
@@ -47,8 +49,15 @@ def classify(text: str) -> str:
 
 def main() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    with open(SILVER_LOTS, encoding="utf-8") as source, open(OUTPUT, "w", encoding="utf-8") as target:
+    # Escritura atomica: un fallo a mitad no deja un enrichment truncado que
+    # Gold leeria como completo.
+    with open(SILVER_LOTS, encoding="utf-8") as source, atomic_write(OUTPUT, "w", encoding="utf-8") as target:
         for line in source:
+            # Una linea en blanco reventaba json.loads; los otros dos
+            # enrichments ya las saltaban.
+            line = line.strip()
+            if not line:
+                continue
             row = json.loads(line)
             text = " ".join(filter(None, [row.get("lot_title"), row.get("description"), row.get("medium")]))
             payload = {

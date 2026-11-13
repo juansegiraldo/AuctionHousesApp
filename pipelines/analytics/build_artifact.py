@@ -62,6 +62,7 @@ from pipelines.analytics.render_html import (
     pack_lot_details,
 )
 from pipelines.shared.fx import fx_note
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLD_ROOT = ROOT / "data" / "gold"
@@ -2425,9 +2426,12 @@ def write_app(rep: dict, details: list[dict], out: Path) -> None:
     versions = {}
     for name, text in payloads.items():
         data = text.encode("utf-8")
-        (out / f"{name}.json").write_bytes(data)
+        # Atomico: la app publicada nunca sirve un JSON a medias.
+        with atomic_write(out / f"{name}.json") as f:
+            f.write(data)
         versions[name] = hashlib.sha256(data).hexdigest()[:12]
-    (out / "index.html").write_text(build(rep, versions), encoding="utf-8")
+    with atomic_write(out / "index.html", "w", encoding="utf-8") as f:
+        f.write(build(rep, versions))
 
 
 def main() -> None:
@@ -2442,7 +2446,15 @@ def main() -> None:
             "python -m pipelines.analytics.report_gold"
         )
     rep = json.loads(report_path.read_text(encoding="utf-8"))
-    details = load_jsonl(GOLD_ROOT / "lot_details.jsonl")
+    details_path = GOLD_ROOT / "lot_details.jsonl"
+    # Obligatorio: sin el, load_jsonl devolvia [] y se publicaba una app con 0
+    # lotes y sin fichas de artista.
+    if not details_path.exists():
+        raise SystemExit(
+            f"No encontrado: {details_path}. Ejecuta antes "
+            "python -m pipelines.gold.build_insights"
+        )
+    details = load_jsonl(details_path)
 
     write_app(rep, details, args.out)
     for name in ("index.html", "cards.json", "lots.json"):

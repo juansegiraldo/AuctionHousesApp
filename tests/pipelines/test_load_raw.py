@@ -18,3 +18,21 @@ def test_read_file_cuenta_la_linea_rota_y_sigue(tmp_path, monkeypatch):
     assert [r["lot_url"] for r in rows] == ["a"]
     assert rows[0]["source_file"] == "subasta.jsonl"
     assert dict(rejects) == {"sin_lot_url": 1, "linea_rota": 1}
+
+
+def test_call_reintenta_un_corte_de_red_y_acaba_bien(monkeypatch):
+    # Un "bad record mac" de TLS a mitad de carga tumbo una corrida entera.
+    import io, ssl
+    attempts = []
+
+    def flaky(req, timeout):
+        attempts.append(1)
+        if len(attempts) < 3:
+            raise ssl.SSLError("bad record mac")
+        return io.BytesIO(b'{"inserted": 5}')
+
+    monkeypatch.setattr(load_raw, "_urlopen", flaky)
+    monkeypatch.setattr(load_raw, "_env", lambda name: "http://local.invalid")
+    monkeypatch.setattr(load_raw.time, "sleep", lambda s: None)
+    assert load_raw.call("auction", {"op": "raw", "rows": []}) == {"inserted": 5}
+    assert len(attempts) == 3
