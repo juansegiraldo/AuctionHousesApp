@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import json
 import logging
@@ -287,7 +288,7 @@ def scrape_auction(
     output_path.parent.mkdir(parents=True, exist_ok=True)
     accepted: list[LotItem] = []
 
-    with open(output_path, "wb") as out_file:
+    with atomic_write(output_path) as out_file:
         for idx, preview in enumerate(deduped, 1):
             lot_url = preview["lot_url"]
             if skip_lot_detail:

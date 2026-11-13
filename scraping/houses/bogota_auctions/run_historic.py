@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import logging
 import time
@@ -34,7 +35,7 @@ def fetch_historic(url: str) -> list[AuctionMeta]:
 
 def save_auction_index(auctions: list[AuctionMeta], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "wb") as output_file:
+    with atomic_write(path) as output_file:
         for auction in auctions:
             output_file.write(orjson.dumps(auction.model_dump(), option=orjson.OPT_APPEND_NEWLINE))
 
@@ -69,12 +70,14 @@ def main() -> None:
 
     merged_path.parent.mkdir(parents=True, exist_ok=True)
     total_lots = 0
-    with open(merged_path, "wb") as merged_handle:
+    with atomic_write(merged_path) as merged_handle:
         for auction in auctions[start_idx:]:
             auction_id = _auction_id_from_url(auction.auction_url)
             individual_path = DEFAULT_OUTPUT_DIR / f"{auction_id}.jsonl"
 
-            if not individual_path.exists():
+            # Tambien se repite un fichero de 0 bytes: es lo que dejaba un fallo de
+            # red antes de la escritura atomica, y `exists()` lo daba por hecho.
+            if not (individual_path.exists() and individual_path.stat().st_size):
                 lots = scrape_auction(
                     auction.auction_url,
                     individual_path,

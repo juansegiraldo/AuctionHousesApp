@@ -5,6 +5,7 @@ Shared so every house gets resume + per-auction checkpoints + merged output for 
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import json
 from pathlib import Path
 from typing import Callable
@@ -16,14 +17,14 @@ from scraping.common.models import AuctionMeta
 
 def save_auction_index(auctions: list[AuctionMeta], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "wb") as handle:
+    with atomic_write(path) as handle:
         for auction in auctions:
             handle.write(orjson.dumps(auction.model_dump(), option=orjson.OPT_APPEND_NEWLINE))
 
 
 def write_checkpoint(checkpoint_dir: Path, auction_id: str, payload: dict) -> None:
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    with open(checkpoint_dir / f"{auction_id}.json", "w", encoding="utf-8") as handle:
+    with atomic_write(checkpoint_dir / f"{auction_id}.json", "w", encoding="utf-8") as handle:
         json.dump(payload, handle, ensure_ascii=False, indent=2)
 
 
@@ -35,7 +36,7 @@ def merge_outputs(
     """Concatenate each auction's individual JSONL into one merged file. Returns line count."""
     merged_path.parent.mkdir(parents=True, exist_ok=True)
     merged_lots = 0
-    with open(merged_path, "wb") as merged:
+    with atomic_write(merged_path) as merged:
         for auction in auctions:
             individual_path = output_path_for(auction)
             if not individual_path.exists():

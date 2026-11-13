@@ -16,6 +16,7 @@ at call time, so each house exposes its own module-level names and the
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import concurrent.futures
 import time
@@ -187,7 +188,7 @@ def scrape_auction(
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     accepted: list[LotItem] = []
-    with open(output_path, "wb") as out_file:
+    with atomic_write(output_path) as out_file:
         for idx, preview in enumerate(deduped, 1):
             lot_url = preview["lot_url"]
             if skip_lot_detail:
@@ -308,7 +309,7 @@ def run_auction_list_cli(module_globals: dict) -> None:
 
     if merged_path and len(urls) > 1:
         merged_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(merged_path, "wb") as out_handle:
+        with atomic_write(merged_path) as out_handle:
             for auction_url in urls:
                 src = default_output_dir / f"{auction_id_from_url(auction_url)}.jsonl"
                 if src.exists():
