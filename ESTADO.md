@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Actualizado: 2026-11-09
+Actualizado: 2026-11-13
 
 ## Qué es esto (y qué no es)
 
@@ -41,15 +41,61 @@ Un solo comando, desde la raíz del repo:
 .\scripts\run_all.ps1
 ```
 
-Ejecuta en orden: bronce → plata → enriquecimientos → oro → informe, y termina con las
-puertas de calidad. Las etapas se lanzan como **módulos** (`python -m pipelines...`)
-porque importan de `pipelines.shared`.
+Ejecuta en orden: bronce → copia a Supabase → plata → control de volumen → enriquecimientos
+→ oro → informe, y termina con las puertas de calidad, que ahora **detienen la corrida** si
+una casa no las pasa. Las etapas se lanzan como **módulos** (`python -m pipelines...`)
+porque importan de `pipelines.shared`. Cada corrida deja su log en `logs/`.
 
 Tests:
 
 ```powershell
-python -m pytest        # 941 pasan
+python -m pytest        # 985 pasan
 ```
+
+## Dónde están los datos (y cómo recuperarlos)
+
+Desde el 2026-11-13 los lotes ya no viven solo en este disco. Hay tres copias:
+
+1. **Este disco**: la copia de trabajo (`scraping/houses/*/output/` y `data/`).
+2. **Supabase**, tabla `auction.raw_lots` del proyecto de entrenamiento: cada versión de cada
+   lote tal como salió del scraper. 90.089 lotes. **Nadie puede borrar ni modificar ahí**, ni
+   siquiera el pipeline: solo se añade.
+3. **Supabase Storage**, bucket privado `auction-archive`: lo que no es lote y no se puede
+   volver a generar (el Excel de Lefebre y la investigación de artistas).
+
+Si se pierde el disco:
+
+```powershell
+python -m scripts.db_restore --out .     # baja todo lo scrapeado desde Supabase
+.\scripts\run_all.ps1                    # reconstruye plata, oro y la app
+```
+
+Para comprobar que la copia sirve, sin tocar nada (tarda 2 minutos; pasó el 2026-11-13 con
+cero diferencias en los 90.089 lotes):
+
+```powershell
+python -m scripts.db_restore --out C:\Temp\prueba --check
+```
+
+Supabase está en el **plan gratuito**: no hace copias de seguridad por su cuenta y pausa el
+proyecto tras 7 días sin actividad (hoy lo mantiene despierto la sincronización de Garmin).
+Por eso existen las tres copias. Tras guardar algo irreemplazable nuevo, lanza
+`python -m scripts.archive_to_storage`.
+
+**Supabase no es un backend.** La app sigue siendo estática y no consulta la base.
+
+## Qué pasa ahora cuando algo falla
+
+Antes estos fallos pasaban en silencio; ahora cortan la corrida y lo dicen:
+
+- **Un scrape cortado a medias** deja un fichero `.part` y se repite en la siguiente corrida.
+  Antes quedaba un fichero incompleto que se daba por bueno para siempre.
+- **Un re-scrape que trae menos datos que el anterior** (falló la página de detalle y solo
+  quedó el catálogo) detiene la carga si afecta a más del 1 % de una casa.
+- **Plata con menos lotes de una casa que Supabase** detiene la corrida: algo se perdió.
+- **Falta un fichero intermedio**: error con el nombre del fichero y la etapa que lo genera.
+  Antes salía una app con 0 lotes o con todo clasificado como "other".
+- **Sin conexión**: la copia a Supabase avisa, queda pendiente y el resto sigue.
 
 ## Las cifras hoy
 
@@ -108,8 +154,11 @@ Todo esto aparece también en el panel de avisos del propio informe.
   de año la rechaza en vez de inventarse un año, así que esos 315 lotes caen en `unknown`.
 - Quedan copias legacy de los scripts en la raíz de `scraping/` junto a la estructura nueva
   `scraping/houses/`.
-- Bronce tiene ahora dos particiones con contenido solapado (marzo y agosto). Es seguro: la
-  capa plata deduplica por `lot_url`.
+- Bronce guarda una copia completa por cada día de ingesta (35 particiones, ~1,4 GB). Es
+  seguro —plata deduplica por `lot_url`— pero ya es redundante: Supabase tiene todas las
+  versiones. Se pueden borrar las particiones viejas dejando las dos últimas de cada casa.
+- **No hay tabla consultable en Supabase** (solo el registro crudo). Se dejó fuera a propósito:
+  ocuparía ~150 MB más de un plan de 500 MB y hoy nada la usaría.
 
 ## La decisión pendiente
 

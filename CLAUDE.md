@@ -40,7 +40,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest typesafe-sdk
 ```
 
-Run tests (982 pass):
+Run tests (985 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -310,6 +310,13 @@ python -m scripts.db_restore --out C:\Temp\x --check           # simulacro: reco
 - **Parámetros JSON en la función: `${JSON.stringify(x)}::text::jsonb`.** Con `::jsonb` a secas
   postgres.js serializa dos veces y Postgres recibe un string ("cannot call jsonb_to_recordset
   on a non-array").
+- **`load_raw` pregunta primero qué hashes faltan (op `missing`) y envía solo eso**: una corrida
+  sin novedades tarda ~27 s, no 3 min. Al final pide la op `degraded`: versiones de esta corrida
+  con **menos campos con valor que la versión anterior del mismo lote** — la huella de un
+  re-scrape en el que falló la página de detalle. Por encima del 1 % de una casa corta la
+  cadena (`--allow-degraded` si el cambio de parser es deliberado). Probado en `auction_des`
+  con 50 lotes vaciados: 50/50 detectados. El trigger de solo-inserción también está probado
+  (DELETE rechazado).
 - **`run_all.ps1` carga a Supabase tras Bronze (`--best-effort`: sin red avisa y sigue) y corre
   `volume_guard` tras Silver**: Silver no puede tener menos lotes de una casa que la base. Si
   salta, algo se perdió (partición movida, output borrado); `--allow-shrink` solo para retirar

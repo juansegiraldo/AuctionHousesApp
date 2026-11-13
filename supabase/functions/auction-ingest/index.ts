@@ -60,6 +60,37 @@ Deno.serve(async (req: Request) => {
           on conflict do nothing`;
         return json({ inserted: res.count });
       }
+      case "missing": {
+        // De los hashes que el cliente tiene, cuales no estan aun en la base:
+        // asi una corrida normal envia solo lo nuevo y no las ~92.000 versiones.
+        const rows = await sql`
+          select t.h from jsonb_array_elements_text(${JSON.stringify(b.hashes)}::text::jsonb) as t(h)
+          where not exists (
+            select 1 from ${s}.raw_lots r
+            where r.house_slug = ${b.house_slug} and r.content_hash = t.h)`;
+        return json({ missing: rows.map((r) => r.h) });
+      }
+      case "degraded": {
+        // Versiones cargadas en esta corrida que traen MENOS campos con valor que
+        // la version anterior del mismo lote: la huella de un re-scrape en el que
+        // fallo la pagina de detalle y solo quedo el catalogo.
+        const rows = await sql`
+          with nuevo as (
+            select house_slug, lot_url, payload from ${s}.raw_lots
+            where first_run_id = ${b.run_id}::bigint),
+          previo as (
+            select distinct on (r.house_slug, r.lot_url) r.house_slug, r.lot_url, r.payload
+            from ${s}.raw_lots r join nuevo n using (house_slug, lot_url)
+            where r.first_run_id is distinct from ${b.run_id}::bigint
+            order by r.house_slug, r.lot_url, r.ingested_at desc)
+          select n.house_slug, count(*)::int as con_previa,
+            (count(*) filter (where
+              (select count(*) from jsonb_each(n.payload) e where e.value <> 'null'::jsonb) <
+              (select count(*) from jsonb_each(p.payload) e where e.value <> 'null'::jsonb)))::int as degraded
+          from nuevo n join previo p using (house_slug, lot_url)
+          group by 1`;
+        return json({ houses: rows });
+      }
       case "rejects": {
         await sql`
           insert into ${s}.rejects (run_id, house_slug, source_file, motivo, n)

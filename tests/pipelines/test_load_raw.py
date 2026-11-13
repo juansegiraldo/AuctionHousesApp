@@ -36,3 +36,37 @@ def test_call_reintenta_un_corte_de_red_y_acaba_bien(monkeypatch):
     monkeypatch.setattr(load_raw.time, "sleep", lambda s: None)
     assert load_raw.call("auction", {"op": "raw", "rows": []}) == {"inserted": 5}
     assert len(attempts) == 3
+
+
+def test_degradado_tolera_un_arreglo_de_parser_pero_no_un_scrape_roto():
+    # Lefebre tiene 3.858 lotes: el 1 % son 38.
+    assert not load_raw.degraded_exceeds(38, 3858)
+    assert load_raw.degraded_exceeds(39, 3858)
+    assert not load_raw.degraded_exceeds(0, 0)
+
+
+def test_sin_red_y_con_best_effort_la_corrida_sigue(monkeypatch, capsys):
+    # El pipeline tiene que poder correr sin conexion: avisa y sale sin error.
+    def sin_red(req, timeout):
+        raise OSError("getaddrinfo failed")
+
+    monkeypatch.setattr(load_raw, "_urlopen", sin_red)
+    monkeypatch.setattr(load_raw, "_env", lambda name: "http://local.invalid")
+    monkeypatch.setattr(load_raw.time, "sleep", lambda s: None)
+    monkeypatch.setattr("sys.argv", ["load_raw", "--best-effort"])
+    load_raw.main()
+    assert "queda pendiente" in capsys.readouterr().out
+
+
+def test_sin_red_y_sin_best_effort_la_carga_falla(monkeypatch):
+    import pytest
+
+    def sin_red(req, timeout):
+        raise OSError("getaddrinfo failed")
+
+    monkeypatch.setattr(load_raw, "_urlopen", sin_red)
+    monkeypatch.setattr(load_raw, "_env", lambda name: "http://local.invalid")
+    monkeypatch.setattr(load_raw.time, "sleep", lambda s: None)
+    monkeypatch.setattr("sys.argv", ["load_raw"])
+    with pytest.raises(OSError):
+        load_raw.main()

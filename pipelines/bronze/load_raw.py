@@ -30,15 +30,18 @@ BATCH = 500
 NOT_LOTS = {"auction_index.jsonl"}
 RETRIES = 4
 _urlopen = urllib.request.urlopen  # los tests lo sustituyen: ninguno sale a la red
-# ponytail: cada corrida reenvia las ~92.000 versiones (~3 min) para que la base
-# descarte las que ya tiene. Si molesta, anadir a auction-ingest una op que
-# devuelva los hashes ya cargados por casa y enviar solo los que falten.
 
 
 def content_hash(record: dict) -> str:
     # Sin scraped_at: re-scrapear el mismo lote sin cambios no es una version nueva.
     body = {k: v for k, v in record.items() if k != "scraped_at"}
     return hashlib.sha256(orjson.dumps(body, option=orjson.OPT_SORT_KEYS)).hexdigest()
+
+
+def degraded_exceeds(degraded: int, house_lots: int) -> bool:
+    # Hasta el 1 % de la casa es normal: un arreglo de parser legitimo tambien
+    # quita campos (p. ej. dejar de inventar un artista). Mas es un scrape roto.
+    return degraded > 0.01 * house_lots
 
 
 def read_file(path: Path, house_slug: str) -> tuple[list[dict], Counter]:
@@ -125,6 +128,8 @@ def main() -> None:
     ap.add_argument("--house", help="solo esta casa (slug)")
     ap.add_argument("--backfill", action="store_true", help="incluye todas las particiones de Bronze")
     ap.add_argument("--dry-run", action="store_true", help="cuenta versiones sin enviar nada")
+    ap.add_argument("--allow-degraded", action="store_true",
+                    help="no cortar aunque un re-scrape traiga menos datos (cambio de parser deliberado)")
     ap.add_argument("--best-effort", action="store_true",
                     help="si Supabase no responde, avisa y sale con 0 (para run_all.ps1)")
     args = ap.parse_args()
@@ -157,12 +162,7 @@ def main() -> None:
             slug = house["slug"]
             c = counts[slug] = {"versions": 0, "lots": 0, "inserted": 0, "payload_bytes": 0}
             lots: set[str] = set()
-            pending: list[dict] = []
-
-            def flush() -> None:
-                if pending and not args.dry_run:
-                    c["inserted"] += call(args.schema, {"op": "raw", "run_id": run_id, "rows": pending})["inserted"]
-                pending.clear()
+            unique: list[dict] = []
 
             for path in source_files(house, args.backfill):
                 source = path.relative_to(ROOT).as_posix()
@@ -182,13 +182,35 @@ def main() -> None:
                     lots.add(row["lot_url"])
                     c["versions"] += 1
                     c["payload_bytes"] += len(orjson.dumps(row["payload"]))
-                    pending.append(row)
-                    if len(pending) >= BATCH:
-                        flush()
-            flush()
+                    unique.append(row)
             c["lots"] = len(lots)
+            if not args.dry_run:
+                # Se pregunta primero que hashes faltan y se envia solo eso: una
+                # corrida sin novedades son unas pocas peticiones, no 111 MB.
+                hashes = [r["content_hash"] for r in unique]
+                missing: set[str] = set()
+                for i in range(0, len(hashes), 5000):
+                    missing.update(call(args.schema, {"op": "missing", "house_slug": slug,
+                                                      "hashes": hashes[i:i + 5000]})["missing"])
+                new = [r for r in unique if r["content_hash"] in missing]
+                for i in range(0, len(new), BATCH):
+                    c["inserted"] += call(args.schema, {"op": "raw", "run_id": run_id,
+                                                        "rows": new[i:i + BATCH]})["inserted"]
             print(f"{slug}: {c['lots']} lotes, {c['versions']} versiones, "
                   f"{c['payload_bytes'] / 1e6:.0f} MB, {c['inserted']} insertadas")
+
+        if run_id is not None:
+            # Un re-scrape en el que falla la pagina de detalle guarda el lote solo
+            # con los campos del catalogo, y como gana la version mas nueva, pisaba
+            # en silencio el registro completo. Aqui se ve y se corta la cadena.
+            degraded = [h for h in call(args.schema, {"op": "degraded", "run_id": run_id})["houses"]
+                        if degraded_exceeds(h["degraded"], counts[h["house_slug"]]["lots"])]
+            for h in degraded:
+                counts[h["house_slug"]]["degraded"] = h["degraded"]
+                print(f"{h['house_slug']}: {h['degraded']} lotes con MENOS datos que su version anterior")
+            if degraded and not args.allow_degraded:
+                raise SystemExit("Re-scrape degradado. Revisa el scraper antes de reconstruir Silver, "
+                                 "o repite con --allow-degraded si el cambio es deliberado.")
     except BaseException:
         status = "failed"
         raise
