@@ -154,7 +154,7 @@ Todo esto aparece también en el panel de avisos del propio informe.
   de año la rechaza en vez de inventarse un año, así que esos 315 lotes caen en `unknown`.
 - Quedan copias legacy de los scripts en la raíz de `scraping/` junto a la estructura nueva
   `scraping/houses/`.
-- Bronce guarda una copia completa por cada día de ingesta (35 particiones, ~1,4 GB). Es
+- Bronce guarda una copia completa por cada día de ingesta (39 particiones entre las cinco casas, ~1,4 GB). Es
   seguro —plata deduplica por `lot_url`— pero ya es redundante: Supabase tiene todas las
   versiones. Se pueden borrar las particiones viejas dejando las dos últimas de cada casa.
 - **No hay tabla consultable en Supabase** (solo el registro crudo). Se dejó fuera a propósito:
