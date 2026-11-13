@@ -6,8 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A Python data pipeline that scrapes Latin American / Spanish auction houses and refines the
 results through a Medallion (bronze → silver → gold) architecture for analytics. There is no
-running web service or database in the current tree — it is a batch scrape-and-transform project
-producing JSONL files plus an HTML analytics report.
+running web service — it is a batch scrape-and-transform project producing JSONL files plus a
+static app. Since 2026-11-13 every scraped lot is also stored, append-only, in Supabase (see
+"Supabase: el registro duradero"); that is a durable record, not a backend the app queries.
 
 **The app *is* the frontend.** `data/gold/app/` (`index.html` + `lots.json` + `cards.json`) is
 the product: a static, mobile-first app that the repo owner's partner reads on a phone, via a
@@ -39,7 +40,7 @@ pip install -r scraping/requirements.txt
 pip install requests pyyaml pytest typesafe-sdk
 ```
 
-Run tests (941 pass):
+Run tests (982 pass):
 
 ```powershell
 python -m pytest                          # full suite
@@ -280,6 +281,60 @@ Data flows one direction through `data/`, and each stage reads the previous laye
 Run the whole chain with `.\scripts\run_all.ps1`. Running stages piecemeal is how the layers
 previously drifted out of sync (enrichments built in March over a Silver rebuilt in May).
 The Duran "massive run" runbook lives in [docs/SCALING_CHECKLIST.md](docs/SCALING_CHECKLIST.md).
+
+### Supabase: el registro duradero (2026-11-13)
+
+Los lotes ya no viven solo en este disco. **Cada versión distinta de cada lote está en
+`auction.raw_lots`** (Supabase, proyecto `oowdptfdnzgvtfiixscj`, plan free compartido con los
+datos de entrenamiento): 90.089 lotes, 92.706 versiones, ~190 MB. Los ficheros locales siguen
+siendo la copia de trabajo y **la transformación sigue en Python**; Supabase es respaldo y
+libro de corridas, no un backend. La app sigue siendo estática.
+
+```powershell
+python -m pipelines.bronze.load_raw [--backfill] [--dry-run]   # sube lo scrapeado (idempotente)
+python -m scripts.archive_to_storage                           # FINALL.xlsx + investigacion web -> bucket
+python -m scripts.db_restore --out C:\Temp\x --check           # simulacro: reconstruye Silver desde la base
+```
+
+- **El único acceso es la función `auction-ingest`** (`supabase/functions/auction-ingest/`,
+  `verify_jwt=false`, autenticación propia). El esquema `auction` no está expuesto en la Data
+  API. El token vive en `.env` (`AUCTION_INGEST_TOKEN`, gitignored) y en la base solo su sha256
+  (`auction.ingest_tokens`). Para cambiar la función hay que redesplegarla con el conector MCP;
+  el SQL versionado está en `supabase/migrations/`.
+- **`raw_lots` es solo de inserción** (un trigger rechaza UPDATE/DELETE/TRUNCATE). La clave es
+  `(house_slug, lot_url, content_hash)`; el hash excluye `scraped_at`, así que re-scrapear lo
+  mismo no crea versión. Zorrilla tiene 2 versiones de 2.617 lotes: `historic_all_lots.jsonl`
+  los trae sin artista y los ficheros por subasta con él.
+- **`auction_des` es el esquema de pruebas** (mismas tablas, datos de Lefebre). Prueba ahí
+  cualquier migración o cambio de la función antes de tocar `auction`.
+- **Parámetros JSON en la función: `${JSON.stringify(x)}::text::jsonb`.** Con `::jsonb` a secas
+  postgres.js serializa dos veces y Postgres recibe un string ("cannot call jsonb_to_recordset
+  on a non-array").
+- **`run_all.ps1` carga a Supabase tras Bronze (`--best-effort`: sin red avisa y sigue) y corre
+  `volume_guard` tras Silver**: Silver no puede tener menos lotes de una casa que la base. Si
+  salta, algo se perdió (partición movida, output borrado); `--allow-shrink` solo para retirar
+  una fuente a propósito.
+- **No hay tabla tipada `auction.lots` ni Gold en la base**, a propósito: nada los consulta y
+  llevarían la base a ~360 MB de los 500 del plan free. Añadirlos cuando la app lea en vivo.
+- El plan free **no tiene backups y se pausa tras 7 días sin actividad** (lo mantiene vivo la
+  sincronización de Garmin del mismo proyecto). Las tres copias son: disco local, `raw_lots` y
+  el bucket privado `auction-archive` (carpetas fechadas). El simulacro `db_restore --check`
+  pasó el 2026-11-13 con 0 diferencias; repetirlo tras cualquier cambio en `load_raw`.
+
+Robustez añadida el mismo día — no la deshagas:
+
+- **Toda escritura pasa por `scraping.common.atomic.atomic_write`** (escribe `<fichero>.part`,
+  renombra al terminar). En los scrapers arregla el scrape a medias que el resume daba por
+  hecho; en el pipeline, el Silver/Gold truncado que la etapa siguiente leía como bueno. Un
+  `.part` huérfano es el rastro de una corrida que murió: se puede borrar.
+- `build_silver` salta líneas rotas y aborta solo por encima del 0,1 %. `ingested_at` es la
+  fecha de la partición de Bronze, no el reloj: Silver es reproducible byte a byte.
+- `category_tags.jsonl` (para `build_insights`) y `lot_details.jsonl` (para `build_artifact`)
+  son **obligatorios**; antes su ausencia daba "todo es other" y una app con 0 lotes.
+- Las quality gates **cortan la cadena** (`--fail-on-violation`, casas leídas de
+  `registry.json`). `run_all.ps1` deja un log por corrida en `logs/` con stdout y stderr.
+- `tests/conftest.py` bloquea `load_raw._urlopen` en todos los tests — mantenlo: `raw_lots` no
+  admite borrados, así que una fila de prueba se quedaría para siempre.
 
 ### El maestro de artistas (`pipelines/config/artists/`)
 
