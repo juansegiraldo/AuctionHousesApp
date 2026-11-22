@@ -531,3 +531,59 @@ def test_every_registered_house_has_label_country_and_market():
         assert slug in narrative._HOUSE_MARKET, slug
     assert render_html.HOUSE_COUNTRY["morton_subastas"] == "México"
     assert narrative._HOUSE_MARKET["morton_subastas"] == "MX"
+
+
+def test_house_filter_carries_per_house_figures():
+    """El filtro por casa cambia las cifras de la fila por las de esa casa.
+
+    Sin el desglose, filtrar Duran ensenaba a Botero con lo vendido en Bogota.
+    """
+    a = _artist("Fernando Botero", "CO", 300.0)
+    a["by_house"] = {
+        "bogota_auctions": {"lots_offered": 3, "lots_sold": 2, "revenue_eur": 200.0},
+        "duran_subastas": {"lots_offered": 1, "lots_sold": 1, "revenue_eur": 100.0},
+    }
+    html = build_artifact.build_artist_table([a], {})
+    assert "data-houses='bogota_auctions:3:2:200.0,duran_subastas:1:1:100.0'" in html
+    assert "id='house-filter'" in html and "value='duran_subastas'" in html
+
+
+def test_house_filter_hidden_without_breakdown():
+    html = build_artifact.build_artist_table([_artist("X", "ES", 1.0)], {})
+    assert "house-filter'>" not in html
+
+
+def test_every_auction_row_opens_its_own_card():
+    """Cada subasta de Casas abre SU ficha: la clave lleva la casa, porque el
+    auction_id se repite entre casas, y la ficha lista solo sus lotes."""
+    rep = _report()
+    rep["by_auction"] = [
+        {"house_slug": "bogota_auctions", "auction_id": "a1", "auction_title": "Arte moderno",
+         "auction_start_date": "2024-05-10T18:00", "lots": 5, "sold": 5,
+         "sell_through_pct": 100.0, "currency": "COP", "revenue_native": 1000,
+         "revenue_eur": 232.0},
+        {"house_slug": "duran_subastas", "auction_id": "a1", "auction_title": "Otra con el mismo id",
+         "auction_start_date": None, "lots": 3, "sold": 0, "sell_through_pct": 0.0,
+         "currency": "EUR", "revenue_native": 0, "revenue_eur": 0},
+    ]
+    html = build_artifact.build(rep)
+    cards = build_artifact.build_cards(rep, rep["lot_details"])
+    keys = set(re.findall(r"<li data-card='([^']+)'", html))
+    assert keys == {"subasta:bogota_auctions|a1", "subasta:duran_subastas|a1"}
+    assert keys <= set(cards)
+    assert "Mujer" in cards["subasta:bogota_auctions|a1"]
+    assert "Mujer" not in cards["subasta:duran_subastas|a1"]
+    # Bogota lleva su salvedad de tasa de venta; Duran no.
+    assert "no se compara" in cards["subasta:bogota_auctions|a1"]
+    assert "no se compara" not in cards["subasta:duran_subastas|a1"]
+
+
+def test_home_has_one_hidden_summary_per_house():
+    """El filtro de la portada cambia de bloque, no recalcula: cada casa trae
+    el suyo, oculto, con SUS cifras."""
+    html = build_artifact.build(_report())
+    assert "id='home-house'" in html
+    for slug in ("bogota_auctions", "duran_subastas", "zorrilla_subastas", "lefebre_subastas"):
+        assert f"<div data-home='{slug}' hidden>" in html
+        assert f"<option value='{slug}'>" in html
+    assert "<div data-home=''>" in html
