@@ -30,6 +30,7 @@ from pipelines.shared.artist_key import artist_fold, attribution_type
 from pipelines.shared.artist_master import artist_years, country_es, format_life_years
 from pipelines.shared.fx import to_eur_at
 from pipelines.shared.schema import extract_month, extract_year, is_sold
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -81,8 +82,8 @@ def load_jsonl(path: Path) -> list[dict]:
 
 
 def write_jsonl(path: Path, rows: list[dict]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "wb") as f:
+    # Atomico: un fallo a mitad no deja un agregado truncado en Gold.
+    with atomic_write(path, "wb") as f:
         for r in rows:
             f.write(orjson.dumps(r, option=orjson.OPT_APPEND_NEWLINE))
 
@@ -119,8 +120,16 @@ def artist_identity(row: dict) -> tuple[str | None, str]:
 
 def load_categories() -> dict[str, str]:
     """dedupe_key -> categoria (del enrichment category_tag)."""
+    path = ENRICH_ROOT / "category_tags.jsonl"
+    # Obligatorio: sin el, load_jsonl devolvia [] y TODOS los lotes salian como
+    # categoria "other" sin que nada avisara.
+    if not path.exists():
+        raise SystemExit(
+            f"No encontrado: {path}. Ejecuta antes "
+            "python -m pipelines.enrichments.category_tag"
+        )
     out = {}
-    for r in load_jsonl(ENRICH_ROOT / "category_tags.jsonl"):
+    for r in load_jsonl(path):
         key = r.get("dedupe_key")
         if key:
             out[key] = r.get("category") or "other"

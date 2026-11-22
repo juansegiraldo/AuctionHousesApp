@@ -11,7 +11,9 @@ artists:
   confidence: high
   aliases:
   - Fabián de la Rosa
-  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1888557'
+  - ROSA, FABIAN DE LA
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q1888557
+    | Alias ''ROSA, FABIAN DE LA'': Duran lo publica invertido, mismas fechas (1869-1937).'
 - artist_id: fabio_herrera
   display_name: Fabio Herrera
   country_birth: CR
@@ -301,6 +303,19 @@ artists:
   - Felician von Myrbach Rheinfeld
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
     de verificar. Fuente: https://www.wikidata.org/wiki/Q1403041'
+- artist_id: feliciano_bejar
+  display_name: Feliciano Béjar
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1920
+  death_year: 2007
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Feliciano Béjar
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q370425'
 - artist_id: feliciano_carvallo
   display_name: Feliciano Carvallo
   country_birth: null
@@ -1168,7 +1183,9 @@ artists:
   - Fernando Zóbel (Después)
   - Fernando Zóbel de Ayala
   - Fernando Zóbel
-  notes: '47 lotes | casas: duran_subastas'
+  - ZÓBEL, FERNANDO
+  notes: '47 lotes | casas: duran_subastas | Alias ''ZÓBEL, FERNANDO'': Duran lo publica invertido, mismas fechas
+    (1924-1984).'
 - artist_id: fernell_franco
   display_name: Fernell Franco
   country_birth: CO
@@ -1801,6 +1818,19 @@ artists:
     nacido en Sevilla el 18-02-1936 y muerto en Madrid el 25-05-1996. Del Grupo de Sevilla y de Estampa Popular.
     Fuentes: web oficial http://franciscocortijo.com/en/ ; Editorial Universidad de Sevilla https://editorial.us.es/es/detalle-libro/30016/el-pintor-francisco-cortijo-1936-1996'
   death_status: known
+- artist_id: francisco_corzas
+  display_name: Francisco Corzas
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1936
+  death_year: 1983
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Corzas
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q595191'
 - artist_id: francisco_cruz_de_castro
   display_name: Francisco Cruz de Castro
   country_birth: ES
@@ -2707,6 +2737,20 @@ artists:
   - Francisco Zorrilla
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Wikidata no declara ocupacion: confirmar
     que es artista antes de fijar. sin pais de nacimiento resoluble: pendiente de verificar. Fuente: https://www.wikidata.org/wiki/Q19423756'
+- artist_id: francisco_zuniga
+  display_name: Francisco Zúñiga
+  country_birth: CR
+  nationalities:
+  - CR
+  birth_year: 1912
+  death_year: 1998
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Francisco Zúñiga
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q351618
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: francky_boy
   display_name: Francky Boy
   country_birth: FR

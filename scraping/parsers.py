@@ -463,30 +463,76 @@ def _parse_artist_from_alt(alt: str, result: dict) -> None:
     if len(parts) < 2:
         return
 
-    artist_part = parts[0].strip()
-    # Alt text often has no space between name and country:
-    #   "Fernando BoteroColombia, 1932 - 2023"
-    #   "Gastón LelargeFrancia, 1861 - 1890"
-    # We split at the boundary where a lowercase letter precedes a capital letter + comma + year.
-    m = re.match(
-        r"(.+?)([A-ZÁ-Ú][a-zá-úñ]+(?:\s+[A-ZÁ-Ú][a-zá-úñ]+)*),\s*(\d{4})\s*[-–]\s*(\d{4})?",
-        artist_part,
-    )
-    if m:
-        name = m.group(1).strip().rstrip(",").strip()
-        country = m.group(2).strip()
-        # If the name ends without a space before country, it was concatenated
-        # Only set country from alt if it looks reasonable (not part of the name)
+    parsed = _split_alt_artist(parts[0].strip())
+    if not parsed:
+        return
+    name, birth, death = parsed
+    if name:
         result.setdefault("artist_name", name)
-        try:
-            result.setdefault("artist_birth_year", int(m.group(3)))
-        except (ValueError, TypeError):
-            pass
-        if m.group(4):
-            try:
-                result.setdefault("artist_death_year", int(m.group(4)))
-            except (ValueError, TypeError):
-                pass
+    if birth:
+        result.setdefault("artist_birth_year", birth)
+    if death:
+        result.setdefault("artist_death_year", death)
+
+
+# Countries the house writes with more than one word. Any OTHER capitalised word
+# before the country belongs to the name: the old regex let the country take
+# several words, so "Fernando Botero Colombia, 1932" parsed as name "Fernando" +
+# country "Botero Colombia" (~150 lots: Botero's La plegaria, Luis Caballero,
+# Juan Antonio Roda...).
+_MULTIWORD_COUNTRIES = (
+    "Puerto Rico", "Costa Rica", "Estados Unidos", "Reino Unido", "El Salvador",
+    "República Dominicana", "República Checa", "Países Bajos", "Nueva Zelanda",
+    "Corea del Sur", "Arabia Saudita", "Sri Lanka", "EE. UU.", "EE. UU",
+)
+_MULTIWORD_COUNTRY_RE = re.compile(
+    r"(?:\s+|(?<=[a-zá-úñ]))(?:" + "|".join(map(re.escape, _MULTIWORD_COUNTRIES)) + r")$"
+)
+# A standalone 4-digit year: "19867" (a real typo) is not 1986 nor 9867.
+_ALT_YEAR_RE = re.compile(r"(?<!\d)(\d{4})(?!\d)")
+
+
+def _split_alt_artist(artist_part: str) -> tuple[str, int | None, int | None] | None:
+    """'Fernando Botero Colombia, 1932 - Mónaco, 2023' -> ('Fernando Botero', 1932, 2023).
+
+    Three shapes of the name/country boundary, all seen in the house's alts:
+      glued    "Manuel HernándezColombia, 1928"  -> split at lowercase->Uppercase
+      spaced   "Fernando Botero Colombia, 1932"  -> the country is the LAST word only
+      2 words  "Domingo Izquierdo Puerto Rico"   -> a known multi-word country
+    plus the bracketed form "Manuel Hernández (Colombia, 1928 - 2014)".
+    The birth year is the FIRST year and the death year the last one, whatever
+    sits between them ("1932 - Mónaco, 2023", "1881, Francia, 1973").
+    Returns None when there is no year (a book's "[Primera edición] Icaza, Jorge")
+    or when stray digits precede it ("Colombia, 19 - 1972", "19867"): with no
+    reliable boundary it is better to set nothing than a wrong name.
+    """
+    if "(" in artist_part:
+        name, _, inner = artist_part.partition("(")
+        years = _ALT_YEAR_RE.findall(inner)
+        if not years:
+            return None
+        return name.strip(), int(years[0]), int(years[-1]) if len(years) > 1 else None
+
+    first = _ALT_YEAR_RE.search(artist_part)
+    if not first:
+        return None
+    head = artist_part[: first.start()].strip().rstrip(",").strip()
+    if not head or any(ch.isdigit() for ch in head):
+        return None
+    later = _ALT_YEAR_RE.findall(artist_part[first.end():])
+    birth, death = int(first.group(1)), (int(later[-1]) if later else None)
+    multi = _MULTIWORD_COUNTRY_RE.search(head)
+    glued = re.search(r"(?<=[a-zá-úñ])[A-ZÁ-Ú][^\s]*$", head)
+    if multi:
+        name = head[: multi.start()]
+    elif glued:
+        name = head[: glued.start()]
+    elif " " in head:
+        name = head.rsplit(" ", 1)[0]
+    else:
+        return None
+    # "John Castles - Colombia": the dash before the country is not part of the name
+    return name.strip().rstrip(",-–").strip(), birth, death
 
 
 def _parse_embedded_json(page: Any, result: dict) -> None:

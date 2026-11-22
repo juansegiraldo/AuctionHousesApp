@@ -10,6 +10,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from scraping.common.atomic import atomic_write
+
 ROOT = Path(__file__).resolve().parents[2]
 GOLD_ROOT = ROOT / "data" / "gold"
 
@@ -175,7 +177,9 @@ def main() -> None:
     report = run_report()
 
     out_json = GOLD_ROOT / "analytics_report.json"
-    out_json.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    # Atomico: build_artifact no debe encontrarse un JSON a medias.
+    with atomic_write(out_json, "w", encoding="utf-8") as f:
+        f.write(json.dumps(report, indent=2, ensure_ascii=False))
     print(f"Report JSON: {out_json}")
     # El detalle lote a lote NO entra en analytics_report.json: son decenas de
     # miles de filas en un fichero pensado para leerse de un vistazo. La app lo

@@ -92,6 +92,21 @@ def test_scrape_auction_lenient_on_detail_error(tmp_path):
     assert {r["lot_title"] for r in rows} == {"One", "Two"}  # from preview
 
 
+def test_failed_detail_keeps_the_artist_read_from_the_preview(tmp_path):
+    # Morton saca el autor tambien del titulo del catalogo. Si la ficha falla,
+    # _merge_lot tiraba ese autor (solo leia artist_* del detalle) aunque el
+    # resto de campos si caia al preview.
+    parsers = _make_parsers(raise_on_detail=True)
+
+    def discover(first_page, meta, **_):
+        return [{"lot_url": "http://h/lot/1", "lot_title": "One", "artist_name": "Toledo",
+                 "artist_birth_year": 1940, "artist_raw": "TOLEDO"}]
+
+    house, _ = _make_house(tmp_path, parsers, discover=discover)
+    lots = runner.scrape_auction(house, "http://h/auction/7", tmp_path / "out.jsonl")
+    assert (lots[0].artist_name, lots[0].artist_birth_year, lots[0].artist_raw) == ("Toledo", 1940, "TOLEDO")
+
+
 def test_accept_lot_none_keeps_everything(tmp_path):
     parsers = _make_parsers(lot_detail={})
     house, _ = _make_house(tmp_path, parsers, accept_lot=None)

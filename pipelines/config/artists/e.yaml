@@ -340,6 +340,19 @@ artists:
   aliases:
   - Eduardo Cano de la Peña
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q8772252'
+- artist_id: eduardo_catano
+  display_name: Eduardo Cataño
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1910
+  death_year: 1964
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Eduardo Cataño
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q24583861'
 - artist_id: eduardo_chicharro_y_aguera
   display_name: Eduardo Chicharro y Agüera
   country_birth: ES
@@ -1254,6 +1267,20 @@ artists:
   - Emilia Fedriani Y Camps
   notes: Pintora española del siglo XIX, activa hasta 1883. Registrada en Artprice con 16 lotes de subasta. Obras
     de temática religiosa.
+- artist_id: emiliano_gironella_parra
+  display_name: Emiliano Gironella Parra
+  country_birth: MX
+  nationalities:
+  - MX
+  birth_year: 1972
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Emiliano Gironella Parra
+  - Emiliano Gironella
+  notes: 'Pintor nacido en Ciudad de Mexico en 1972: https://www.wikidata.org/wiki/Q59462080 (hay un item duplicado,
+    Q99481350, mismo anio). Morton: ''(Ciudad de Mexico, 1972 - )'' en 100 lotes.'
 - artist_id: emiliano_ramos
   display_name: Emiliano Ramos
   country_birth: ES

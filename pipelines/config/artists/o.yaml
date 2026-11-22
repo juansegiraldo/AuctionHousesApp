@@ -91,6 +91,23 @@ artists:
   aliases:
   - Olegario Junyent
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q9051988'
+- artist_id: olga_costa
+  display_name: Olga Costa
+  country_birth: DE
+  nationalities:
+  - DE
+  birth_year: 1913
+  death_year: 1993
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Olga Costa
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. sin pais de nacimiento resoluble: pendiente
+    de verificar. Fuente: https://www.wikidata.org/wiki/Q77889 Nacida en Leipzig (Wikidata P19); Morton: ''(Leipzig,
+    Alemania, 1913 - Guanajuato, Guanajuato, 1993)''. El P17 de Leipzig lista varios estados historicos y el promotor
+    dejo el hueco; el estado vigente del lugar es DE. Nacido fuera de Mexico; obra y mercado mexicanos (Morton).
+    El pais es el de NACIMIENTO.'
 - artist_id: olga_de_amaral
   display_name: Olga de Amaral
   country_birth: CO

@@ -91,6 +91,9 @@ _ANONYMOUS_MARKERS = (
     "vv aa",
     "vvaa",
     "varios autores",
+    # Morton firma asi las carpetas colectivas ("VARIOS ARTISTAS, El TGP...");
+    # sin esto entraban al ranking como un artista llamado "Varios Artistas".
+    "varios artistas",
     "autor desconocido",
     "sin firma",
 )
@@ -404,6 +407,11 @@ def propose_inversion(name: Optional[str]) -> Optional[str]:
     automaticamente ni entra en artist_fold(), porque "Garcia Marquez, Gabriel"
     (51 lotes) es un escritor en lotes de libros, no un pintor. Esto alimenta a
     scripts/artist_master_propose.py; la decision la toma una persona.
+
+    Excepcion (2026-11-08): silver/artist_resolve.py SI la aplica cuando la
+    inversion cae en un artista del maestro Y el anio de nacimiento del
+    parentesis biografico de la casa coincide (+-2) con el del maestro. Sin
+    anio comprobable no se fusiona nada.
 
     Devuelve None si el nombre no tiene exactamente una coma util.
     """

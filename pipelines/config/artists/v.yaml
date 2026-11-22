@@ -441,6 +441,21 @@ artists:
   aliases:
   - VICENTE PUIG
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q28503622'
+- artist_id: vicente_rojo
+  display_name: Vicente Rojo
+  country_birth: ES
+  nationalities:
+  - ES
+  birth_year: 1932
+  death_year: 2021
+  attribution_type: autor
+  source: wikidata
+  confidence: medium
+  aliases:
+  - Vicente Rojo
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
+    solo uno nacio en 1932, el anio que publica la casa. Fuente: https://www.wikidata.org/wiki/Q3753365 Nacido fuera
+    de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: vicente_ruiz
   display_name: Vicente Ruiz
   country_birth: ES
@@ -915,3 +930,18 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. habia varios homonimos y se desempato porque
     solo uno nacio en 1935, el anio que publica la casa. sin pais de nacimiento resoluble: pendiente de verificar.
     Fuente: https://www.wikidata.org/wiki/Q1978366'
+- artist_id: vlady
+  display_name: Vlady
+  country_birth: RU
+  nationalities:
+  - RU
+  birth_year: 1920
+  death_year: 2005
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Vlady
+  notes: 'Vladimir Kibalchich Rusakov, nacido en Petrogrado (San Petersburgo) en 1920, muerto en Cuernavaca en 2005;
+    obra y mercado mexicanos: https://www.wikidata.org/wiki/Q369214 (P19 Q656). Morton: ''(Petrogrado, Rusia, 1920
+    - Cuernavaca, Morelos, 2005)'' en 25 lotes.'

@@ -143,9 +143,23 @@ def test_quick_mode_preserves_description_and_image():
 
 
 def test_get_page_urls_covers_all_lots():
-    """lotsListed=149 con 28 por pagina -> hay que pedir varias paginas."""
+    """Las paginas pedidas tienen que alcanzar lotsListed, con los lotes NUEVOS por pagina.
+
+    Regresion: se dividia entre 28 (los 27 lotes que pinta la pagina, mas uno), pero 3
+    de esos 27 son promocionados y se repiten en TODAS las paginas. Cada pagina aporta
+    24 lotes nuevos, asi que la ultima pagina de casi cada catalogo no se pedia: el
+    output traia exactamente ceil(N/28)*24 lotes (144 de los 149 de esta subasta) y
+    faltaban ~11% de los lotes de la casa.
+    """
     base = "https://www.liveauctioneers.com/catalog/214514/"
     urls = get_page_urls(_catalog_html(), base)
-    assert len(urls) >= 5
+
+    p1 = {p["lot_url"] for p in parse_auction_page(_catalog_html(), _meta())}
+    p2_html = (FIXTURES / "la_catalog_p2.html").read_text(encoding="utf-8")
+    nuevos_por_pagina = len({p["lot_url"] for p in parse_auction_page(p2_html, _meta())} - p1)
+    assert nuevos_por_pagina == 24
+
+    assert len(urls) * nuevos_por_pagina >= 149  # lotsListed de la fixture
+    assert len(urls) == 7
     assert all(u.startswith(base) for u in urls)
-    assert any("page=2" in u for u in urls)
+    assert any("page=7" in u for u in urls)

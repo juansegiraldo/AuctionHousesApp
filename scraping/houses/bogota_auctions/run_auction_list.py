@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import logging
 import shutil
@@ -60,7 +61,7 @@ def main() -> None:
 
     if merged_path and len(urls) > 1:
         merged_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(merged_path, "wb") as merged:
+        with atomic_write(merged_path) as merged:
             for auction_url in urls:
                 src = DEFAULT_OUTPUT_DIR / f"{_auction_id_from_url(auction_url)}.jsonl"
                 if src.exists():

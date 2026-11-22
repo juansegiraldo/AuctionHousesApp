@@ -89,6 +89,12 @@ countries:
   BY: {es: Bielorrusia, demonym_es: bielorruso}
   CZ: {es: Chequia, demonym_es: checo}
   TR: {es: Turquía, demonym_es: turco}
+  # Aparecen en artist_country de Morton (lugar de nacimiento de la biografia).
+  IN: {es: India, demonym_es: indio}
+  CY: {es: Chipre, demonym_es: chipriota}
+  LV: {es: Letonia, demonym_es: letón}
+  FI: {es: Finlandia, demonym_es: finlandés}
+  BH: {es: Baréin, demonym_es: bareiní}
 
 # Todo lo que Silver escribe hoy en artist_country, mapeado a ISO.
 # Las claves se comparan plegadas (sin acentos, en minusculas), asi que
@@ -287,3 +293,28 @@ aliases:
   # donde toca el pais.
   viena: AT
   nueva york: US
+
+  # --- Morton Subastas (Mexico) ---
+  # Morton escribe el LUGAR de nacimiento: "(Salt Lake City, Utah, 1930 - ...)".
+  # El parser se queda con el ultimo tramo, asi que llegan estados de EE. UU. y
+  # capitales pegadas al pais. Misma regla que las ciudades de arriba. Los
+  # estados mexicanos los resuelve el parser a "México" (ver su _MEXICO_PLACES).
+  "e e u u": US      # "E.E. U.U." y "E.E.U.U." pliegan aqui (199 + 40 lotes)
+  utah: US
+  california: US
+  texas: US
+  indiana: US
+  illinois: US
+  louisiana: US
+  massachusetts: US
+  nuevo mexico: US   # el estado de EE. UU.; el parser no lo confunde con Mexico
+  santiago de chile: CL
+  san jose de costa rica: CR
+  republica de panama: PA
+  cataluna: ES       # region, como 'catalan' arriba
+  india: IN
+  chipre: CY
+  letonia: LV
+  latvia: LV
+  finlandia: FI
+  barein: BH

@@ -5,6 +5,7 @@ Phase 1: Scrape a single Bogota Auctions auction and all its lots.
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import logging
 import time
@@ -108,7 +109,7 @@ def scrape_auction(
 
     results: list[LotItem] = []
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "wb") as output_file:
+    with atomic_write(output_path) as output_file:
         for index, preview in enumerate(unique_previews, 1):
             lot_url = preview["lot_url"]
             if skip_lot_detail:

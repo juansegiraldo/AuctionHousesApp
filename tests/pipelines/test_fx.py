@@ -18,6 +18,22 @@ def test_cop_converts_down():
     assert 7_000_000 < result < 7_500_000
 
 
+def test_mxn_converts_down():
+    # Morton cotiza en pesos mexicanos: ~20-22 MXN por euro en 2026.
+    result = to_eur(1_000_000, "MXN")
+    assert result is not None
+    assert 40_000 < result < 55_000
+
+
+def test_mxn_uses_the_month_of_the_auction():
+    from pipelines.shared.fx import to_eur_at
+
+    agosto_2021, method = to_eur_at(1_000_000, "MXN", "2021-08")
+    assert method == "monthly"
+    # En 2021 el euro valia ~23,6 MXN; en 2026 ~21: el mismo importe vale menos.
+    assert agosto_2021 < to_eur_at(1_000_000, "MXN", "2026-08")[0]
+
+
 def test_unknown_currency_returns_none_not_one():
     # Regla clave: una moneda sin tasa NO debe pasar por euros.
     assert to_eur(100, "XYZ") is None
@@ -41,6 +57,11 @@ def test_note_describes_monthly_conversion():
     # conversion usa la tasa del MES de cada subasta.
     note = fx_note()
     assert "MES" in note or "mes" in note
+
+
+def test_note_names_every_source_including_the_mexican_peso():
+    # La app muestra esta nota; con Morton hay una tercera moneda y su fuente.
+    assert "EUR/MXN" in fx_note()
 
 
 def test_note_mentions_fallback_count_when_given():

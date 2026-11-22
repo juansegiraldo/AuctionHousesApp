@@ -36,6 +36,7 @@ _HOUSE_MARKET = {
     "duran_subastas": "ES",
     "zorrilla_subastas": "UY",
     "lefebre_subastas": "CO",
+    "morton_subastas": "MX",
 }
 
 # Cortes del Pareto. Son los que el informe cita en texto, asi que viven aqui y

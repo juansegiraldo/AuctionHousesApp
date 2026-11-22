@@ -31,8 +31,10 @@ HOUSE_NAME = "Zorrilla Subastas"
 SELLER_ID = 6727
 BASE_URL = "https://www.liveauctioneers.com"
 
-# LiveAuctioneers pinta 28 lotes por pagina en /catalog/<id>/?page=N
-LOTS_PER_PAGE = 28
+# Lotes NUEVOS por pagina en /catalog/<id>/?page=N. La pagina pinta 27, pero 3 son
+# promocionados que se repiten en todas. Con 28 no se pedia la ultima pagina de casi
+# ningun catalogo y faltaba ~11% de la casa (ver test_get_page_urls_covers_all_lots).
+LOTS_PER_PAGE = 24
 
 
 # ---------------------------------------------------------------------------
@@ -353,7 +355,7 @@ def parse_historic_page(page: Any) -> list[AuctionMeta]:
 def get_page_urls(first_page: Any, base_auction_url: str) -> list[str]:
     """Todas las paginas del catalogo, derivadas de lotsListed.
 
-    La pagina 1 solo trae 28 de los ~300 lotes; sin esto perderiamos el 90%.
+    La pagina 1 solo trae 24 lotes nuevos de los ~300; sin esto perderiamos el 90%.
     """
     data = extract_page_data(first_page)
     total = 0

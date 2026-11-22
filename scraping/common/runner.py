@@ -16,6 +16,7 @@ at call time, so each house exposes its own module-level names and the
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import concurrent.futures
 import time
@@ -76,6 +77,16 @@ def _lot_from_preview(preview: dict, meta: AuctionMeta, currency: str) -> LotIte
 
 
 def _merge_lot(preview: dict, detail: dict, meta: AuctionMeta, lot_url: str, currency: str) -> LotItem:
+    """Detalle con preferencia; el preview rellena lo que el detalle no trae.
+
+    Los campos descriptivos (artist_*, description, medium...) tambien caen al
+    preview: antes solo se leian del detalle, asi que una ficha que fallaba
+    (el engine es lenient) borraba el autor que Morton ya habia leido del
+    titulo del catalogo, mientras titulo y estimaciones si se conservaban.
+    """
+    def pick(field: str) -> Any:
+        return detail.get(field) or preview.get(field)
+
     return LotItem(
         auction_id=detail.get("auction_id", meta.auction_id),
         auction_title=detail.get("auction_title", meta.auction_title),
@@ -93,15 +104,15 @@ def _merge_lot(preview: dict, detail: dict, meta: AuctionMeta, lot_url: str, cur
         price_estimate_max=detail.get("price_estimate_max") or preview.get("price_estimate_max"),
         price_sold=detail.get("price_sold") or preview.get("price_sold"),
         currency=detail.get("currency", currency),
-        artist_name=detail.get("artist_name"),
-        artist_birth_year=detail.get("artist_birth_year"),
-        artist_death_year=detail.get("artist_death_year"),
-        artist_country=detail.get("artist_country"),
-        artist_raw=detail.get("artist_raw"),
-        description=detail.get("description"),
-        medium=detail.get("medium"),
-        dimensions=detail.get("dimensions"),
-        provenance=detail.get("provenance"),
+        artist_name=pick("artist_name"),
+        artist_birth_year=pick("artist_birth_year"),
+        artist_death_year=pick("artist_death_year"),
+        artist_country=pick("artist_country"),
+        artist_raw=pick("artist_raw"),
+        description=pick("description"),
+        medium=pick("medium"),
+        dimensions=pick("dimensions"),
+        provenance=pick("provenance"),
         status=detail.get("status") or preview.get("status"),
     )
 
@@ -177,7 +188,7 @@ def scrape_auction(
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     accepted: list[LotItem] = []
-    with open(output_path, "wb") as out_file:
+    with atomic_write(output_path) as out_file:
         for idx, preview in enumerate(deduped, 1):
             lot_url = preview["lot_url"]
             if skip_lot_detail:
@@ -298,7 +309,7 @@ def run_auction_list_cli(module_globals: dict) -> None:
 
     if merged_path and len(urls) > 1:
         merged_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(merged_path, "wb") as out_handle:
+        with atomic_write(merged_path) as out_handle:
             for auction_url in urls:
                 src = default_output_dir / f"{auction_id_from_url(auction_url)}.jsonl"
                 if src.exists():
@@ -367,7 +378,7 @@ def run_historic_cli(module_globals: dict) -> None:
         for auction in auctions:
             auction_id = auction_id_from_url(auction.auction_url)
             individual_path = output_path_for(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 checkpoints.write_checkpoint(
                     checkpoint_dir, auction_id,
                     {"status": "skipped_existing", "auction_id": auction_id, "output": str(individual_path)},
@@ -404,7 +415,7 @@ def run_historic_cli(module_globals: dict) -> None:
         for auction in auctions:
             auction_id = auction_id_from_url(auction.auction_url)
             individual_path = output_path_for(auction)
-            if individual_path.exists():
+            if individual_path.exists() and individual_path.stat().st_size:
                 existing.append((auction_id, individual_path))
             else:
                 pending.append((auction, individual_path))

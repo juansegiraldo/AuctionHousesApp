@@ -17,6 +17,7 @@ scraper y mezclarlas duplicaria el dato.
 
 from __future__ import annotations
 
+from scraping.common.atomic import atomic_write
 import argparse
 import re
 import unicodedata
@@ -350,7 +351,7 @@ def main() -> None:
         use_lot_number = real_lot_numbers(auction_rows)
 
         path = args.output_dir / f"{auction_slug}.jsonl"
-        with open(path, "wb") as handle:
+        with atomic_write(path) as handle:
             for row in auction_rows:
                 lot = build_lot(row, auction_slug, use_lot_number)
                 handle.write(orjson.dumps(lot.model_dump(), option=orjson.OPT_APPEND_NEWLINE))

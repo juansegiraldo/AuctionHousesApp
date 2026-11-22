@@ -1,3 +1,5 @@
 scrapling[fetchers]
 pydantic>=2.0
 orjson>=3.11
+# zoneinfo necesita la base de zonas en Windows (Morton: fechas en America/Mexico_City)
+tzdata

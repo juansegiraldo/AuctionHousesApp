@@ -121,11 +121,21 @@ def is_sold(status: Optional[str], price_sold: Optional[float]) -> bool:
     return price_sold is not None
 
 
-def normalize_lot(record: Dict[str, Any], house_slug: str, source_file: str) -> Dict[str, Any]:
-    """Normalize a lot record into a Silver-compatible shape."""
+def normalize_lot(
+    record: Dict[str, Any],
+    house_slug: str,
+    source_file: str,
+    ingested_at: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Normalize a lot record into a Silver-compatible shape.
+
+    ingested_at: build_silver pasa la fecha de la particion de Bronze. Con la
+    hora del reloj, dos corridas sobre el mismo Bronze nunca daban el mismo
+    Silver byte a byte. Sin el argumento se conserva el reloj (otros llamantes).
+    """
     normalized = dict(record)
     normalized["house_slug"] = house_slug
-    normalized["ingested_at"] = now_iso()
+    normalized["ingested_at"] = ingested_at or now_iso()
     normalized["source_file"] = source_file
     normalized["dedupe_key"] = f"{house_slug}|{normalized.get('lot_url', '')}"
     return normalized

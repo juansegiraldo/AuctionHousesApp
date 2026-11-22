@@ -31,6 +31,7 @@ from pipelines.shared.attribution_jev import is_low_conf as is_jev_low_conf
 from pipelines.shared.attribution_jev import load_cache as load_jev_cache
 from pipelines.shared.fx import fx_as_of, fx_note, rate_for, to_eur, to_eur_at
 from pipelines.shared.schema import UNKNOWN_YEAR, extract_month, extract_year, is_sold
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_ROOT = ROOT / "data" / "silver"
@@ -47,7 +48,8 @@ def _read_lots(lots_path: Path):
 
 
 def _write_jsonl(path: Path, rows) -> None:
-    with open(path, "w", encoding="utf-8") as output:
+    # Atomico: un fallo a mitad no deja un agregado truncado en Gold.
+    with atomic_write(path, "w", encoding="utf-8") as output:
         for row in rows:
             output.write(json.dumps(row, ensure_ascii=False) + "\n")
     print(f"[gold] wrote: {path}")
@@ -403,6 +405,27 @@ def main() -> None:
                     "el agregador (LiveAuctioneers), no en la moneda de martillo. "
                     "La casa opera en Montevideo y pudo rematar en UYU; ese dato no "
                     "esta publicado en la fuente."
+                ),
+            }
+        )
+
+    # Morton vende de todo (flotillas de camiones, coches, vinos, joyas,
+    # antiguedades) y aqui solo entran sus subastas de ARTE: 57 de 803 desde 2020.
+    # Su volumen en la app es el de su arte, no el de la casa. Ver
+    # scraping/houses/morton_subastas/README.md.
+    # OJO: per_house es un defaultdict; usar 'in' y no .get() para no crear la clave.
+    if "morton_subastas" in per_house:
+        flags.append(
+            {
+                "level": "info",
+                "code": "source_is_art_subset",
+                "house_slug": "morton_subastas",
+                "count": per_house["morton_subastas"]["lots_offered"],
+                "message": (
+                    "De morton_subastas solo estan sus subastas de arte (57 de 803 "
+                    "desde 2020): la casa vende tambien coches, vinos, joyas y "
+                    "antiguedades, que no se incluyen. Su volumen aqui no es el "
+                    "total de la casa."
                 ),
             }
         )

@@ -16,3 +16,6 @@ rates_to_eur:
   EUR: 1.0
   COP: 0.000232   # ~1 EUR = 4300 COP
   USD: 0.92
+  # Anadido 2026-10-25 con Morton Subastas (BCE, media de 2026-10). Solo lo usa
+  # un lote sin mes utilizable; los demas van por fx_history.yaml.
+  MXN: 0.0486     # ~1 EUR = 20.6 MXN

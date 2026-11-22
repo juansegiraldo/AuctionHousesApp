@@ -78,6 +78,9 @@ def gold(tmp_path, monkeypatch):
     goldd = tmp_path / "data" / "gold"
     for d in (silver, enrich, goldd):
         d.mkdir(parents=True, exist_ok=True)
+    # category_tags es entrada obligatoria (sin el, todo salia "other" en
+    # silencio). Vacio equivale a "la etapa corrio y no etiqueto nada".
+    (enrich / "category_tags.jsonl").touch()
     monkeypatch.setattr(build_insights, "SILVER_ROOT", silver)
     monkeypatch.setattr(build_insights, "ENRICH_ROOT", enrich)
     monkeypatch.setattr(build_insights, "GOLD_ROOT", goldd)

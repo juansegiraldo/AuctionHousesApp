@@ -42,12 +42,15 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from collections import Counter
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from pipelines.shared import attribution_jev
+from pipelines.shared.artist_key import propose_inversion
 from pipelines.shared.artist_master import (
+    artist_years,
     load_lot_author_fixes,
     normalize_country,
     resolve_artist,
@@ -67,6 +70,49 @@ RESOLUTION_FIELDS = (
 )
 
 
+def _full_bogota_name(name: Any, artist_raw: Any) -> Any:
+    """Completa un nombre de Bogota que el parser del alt corto en el de pila.
+
+    "Fernando Botero Colombia, 1932 - Monaco, 2023 : La plegaria" salia como
+    "Fernando": el grupo del pais se comia el apellido (~38 lotes; Botero, Negret,
+    Luis Caballero, Wifredo Lam). El scraper ya esta arreglado, pero Bronze es
+    inmutable y Silver se queda con la copia MAS ANTIGUA de cada lote, asi que
+    las copias viejas seguirian ganando. Se usa la misma funcion que el scraper
+    para no tener dos gramaticas del alt que diverjan.
+
+    Solo completa: el nombre nuevo tiene que EMPEZAR por el viejo. Un nombre que
+    vino de la ficha del lote y no coincide con el alt no se toca.
+    """
+    if not isinstance(name, str) or not isinstance(artist_raw, str) or " : " not in artist_raw:
+        return name
+    from scraping.parsers import _split_alt_artist
+
+    parsed = _split_alt_artist(artist_raw.split(" : ")[0].strip())
+    full = parsed[0] if parsed else None
+    if full and full.startswith(name.strip() + " "):
+        return full
+    return name
+
+
+_BIO_PAREN_RE = re.compile(r"\(([^()]*)\)")
+_YEAR_RE = re.compile(r"\b(1[3-9]\d{2}|20\d{2})\b")
+
+
+def _bio_birth_year(text: Any) -> Optional[int]:
+    """Primer anio del primer parentesis biografico: "X (1893 - 1983)" -> 1893.
+
+    Solo dentro del parentesis: un anio suelto en el titulo de la obra no dice
+    nada de cuando nacio el artista.
+    """
+    if not isinstance(text, str):
+        return None
+    for chunk in _BIO_PAREN_RE.findall(text):
+        match = _YEAR_RE.search(chunk)
+        if match:
+            return int(match.group(1))
+    return None
+
+
 def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     """Devuelve el lote con los 7 campos de artista anadidos.
 
@@ -82,6 +128,9 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
     lot_url = row.get("lot_url")
     if lot_url:
         name = load_lot_author_fixes().get(lot_url, name)
+
+    if row.get("house_slug") == "bogota_auctions":
+        name = _full_bogota_name(name, row.get("artist_raw"))
 
     artist = resolve_artist(name)
 
@@ -106,6 +155,22 @@ def resolve_row(row: Dict[str, Any]) -> Dict[str, Any]:
                 name = candidate
                 artist = candidate_artist
                 break
+
+    # "MIRO, JOAN (1893 - 1983)": Duran escribe asi su campo Autor desde el
+    # re-scrape de 2026-10-15, y Miro, Dali o Chillida rankeaban dos veces, la
+    # segunda sin pais (608 nombres, 1,74 M EUR). La inversion sola no basta
+    # ("COSSIO, JUAN" de 1960 no es el Cossio de 1898 del maestro), asi que se
+    # exige que el anio de nacimiento de la casa coincida con el del maestro.
+    # Sin anio en cualquiera de los dos lados no hay nada que comprobar y el
+    # lote se queda fold_only, igual que antes.
+    if artist["artist_resolution"] == "fold_only" and isinstance(name, str) and "," in name:
+        inverted = propose_inversion(name)
+        candidate_artist = resolve_artist(inverted) if inverted else None
+        if candidate_artist and candidate_artist["artist_resolution"] == "master":
+            master_birth = artist_years(candidate_artist["artist_id"])["birth_year"]
+            house_birth = _bio_birth_year(name) or _bio_birth_year(row.get("artist_raw"))
+            if master_birth and house_birth and abs(int(master_birth) - house_birth) <= 2:
+                artist = candidate_artist
 
     resolved.update(artist)
 

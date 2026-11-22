@@ -461,6 +461,20 @@ artists:
   - Leonor Fini
   - LEONOR FINI
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q464011'
+- artist_id: leonora_carrington
+  display_name: Leonora Carrington
+  country_birth: GB
+  nationalities:
+  - GB
+  birth_year: 1917
+  death_year: 2011
+  attribution_type: autor
+  source: wikidata
+  confidence: high
+  aliases:
+  - Leonora Carrington
+  notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q233207
+    Nacido fuera de Mexico; obra y mercado mexicanos (Morton). El pais es el de NACIMIENTO.'
 - artist_id: leopold_durangel
   display_name: Léopold Durangel
   country_birth: FR
@@ -992,14 +1006,15 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q16039496'
 - artist_id: louis_chantal
   display_name: Louis Chantal
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1822
   death_year: 1899
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Louis Chantal
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q22667503'
@@ -1190,14 +1205,15 @@ artists:
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q320980'
 - artist_id: lucebert
   display_name: Lucebert
-  country_birth: FR
+  country_birth: NL
   nationalities:
-  - FR
+  - NL
   birth_year: 1924
   death_year: 1994
   attribution_type: autor
   source: wikidata
   confidence: high
+  notes: 'Nacido en Amsterdam (Wikidata P19 Q727). Salia FR por un fallo del script: Amsterdam declara en P17 a Francia (1810-1813) con codigo vigente; Paises Bajos es el preferred. Corregido 2026-11-08.'
   aliases:
   - Lucebert
   notes: 'Identidad verificada en Wikidata por match exacto de nombre. Fuente: https://www.wikidata.org/wiki/Q689279'

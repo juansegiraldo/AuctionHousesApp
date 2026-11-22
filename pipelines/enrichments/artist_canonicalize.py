@@ -18,6 +18,7 @@ import json
 from pathlib import Path
 
 from pipelines.shared.artist_key import artist_fold
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
@@ -32,7 +33,9 @@ def artist_key(name: str | None) -> str | None:
 
 def main() -> None:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    with open(SILVER_LOTS, encoding="utf-8") as source, open(OUTPUT, "w", encoding="utf-8") as target:
+    # Escritura atomica: un fallo a mitad no deja un enrichment truncado que
+    # Gold leeria como completo.
+    with open(SILVER_LOTS, encoding="utf-8") as source, atomic_write(OUTPUT, "w", encoding="utf-8") as target:
         for line in source:
             line = line.strip()
             if not line:

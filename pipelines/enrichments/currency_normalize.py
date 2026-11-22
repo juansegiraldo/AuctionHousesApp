@@ -18,6 +18,7 @@ from pathlib import Path
 
 from pipelines.shared.fx import fx_as_of, to_eur_at
 from pipelines.shared.schema import extract_month
+from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_LOTS = ROOT / "data" / "silver" / "lots.jsonl"
@@ -30,7 +31,9 @@ def main() -> None:
     missing_rate = 0
     fallback = 0
 
-    with open(SILVER_LOTS, encoding="utf-8") as source, open(
+    # Escritura atomica: un fallo a mitad no deja un enrichment truncado que
+    # Gold leeria como completo.
+    with open(SILVER_LOTS, encoding="utf-8") as source, atomic_write(
         OUTPUT, "w", encoding="utf-8"
     ) as target:
         for line in source:
