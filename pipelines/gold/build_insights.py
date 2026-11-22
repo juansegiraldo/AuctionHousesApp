@@ -174,6 +174,11 @@ def build_insights() -> dict:
             "nationalities": set(),
             "resolution": None,
             "houses": set(),
+            # Desglose por casa para el filtro de la app: sin el, filtrar por
+            # Duran ensenaria a Botero con lo vendido en Bogota sumado.
+            "by_house": defaultdict(
+                lambda: {"lots_offered": 0, "lots_sold": 0, "revenue_eur": 0.0}
+            ),
             # Anios con al menos un lote, para el rango de actividad de la ficha.
             "years": set(),
         }
@@ -276,6 +281,12 @@ def build_insights() -> dict:
                 a = artists[key]
                 a["lots_offered"] += 1
                 a["houses"].add(house)
+                bh = a["by_house"][house]
+                bh["lots_offered"] += 1
+                if sold:
+                    bh["lots_sold"] += 1
+                    if eur:
+                        bh["revenue_eur"] += eur
                 a["years"].add(year)
                 if not a["artist_name"]:
                     a["artist_name"] = display
@@ -450,6 +461,10 @@ def build_insights() -> dict:
                 "nationalities": sorted(a["nationalities"]),
                 "resolution": a["resolution"],
                 "houses": sorted(h for h in a["houses"] if h),
+                "by_house": {
+                    h: {**v, "revenue_eur": round(v["revenue_eur"], 2)}
+                    for h, v in sorted(a["by_house"].items()) if h
+                },
                 "lots_offered": a["lots_offered"],
                 "lots_sold": a["lots_sold"],
                 "sell_through_rate": round(a["lots_sold"] / a["lots_offered"], 4)

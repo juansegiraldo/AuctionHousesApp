@@ -163,6 +163,9 @@ def run_report() -> dict:
                 "lots": r.get("lots", 0),
                 "sold": r.get("sold", 0),
                 "sell_through_pct": r.get("sell_through_pct"),
+                # La ficha de subasta da la cifra exacta en la moneda de la casa.
+                "currency": r.get("currency"),
+                "revenue_native": r.get("revenue_native", 0),
                 "revenue_eur": r.get("revenue_eur", 0),
             }
             for r in auction_metrics

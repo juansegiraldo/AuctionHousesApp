@@ -36,6 +36,7 @@ import html
 import hashlib
 import json
 import math
+import unicodedata
 from pathlib import Path
 
 from pipelines.analytics.narrative import (
@@ -62,6 +63,7 @@ from pipelines.analytics.render_html import (
     pack_lot_details,
 )
 from pipelines.shared.fx import fx_note
+from pipelines.shared.schema import extract_month
 from scraping.common.atomic import atomic_write
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -941,6 +943,17 @@ details>summary::-webkit-details-marker{display:none}
   padding:0;font:inherit;color:inherit;cursor:pointer}
 .artist-toggle .name::after{content:'';display:inline-block;width:6px;height:6px;margin-left:.45rem;
   border:solid var(--ink-soft);border-width:1.6px 1.6px 0 0;transform:translateY(-1px) rotate(45deg)}
+/* Lista de subastas (Casas) */
+.auctions{list-style:none;margin:0;padding:0;background:var(--surface);border-radius:22px;overflow:hidden}
+.auctions li+li{border-top:1px solid var(--line)}
+.auction-toggle{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:10px 14px;
+  text-align:left;background:none;border:0;font:inherit;color:inherit;cursor:pointer}
+.au-main{flex:1 1 auto;min-width:0}
+.au-main .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.au-num{flex:0 0 auto;text-align:right;font-family:var(--num);font-weight:650;
+  font-variant-numeric:tabular-nums}
+.au-num .sub{display:block;margin:0;font-weight:400}
+.acard-res .dot{display:inline-block;width:9px;height:9px;vertical-align:baseline}
 .empty{color:var(--ink-soft);font-size:.92rem;padding:24px 4px;margin:0;text-align:center}
 .pager{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 0 0;flex-wrap:wrap}
 .pager-btn:disabled{opacity:.4;cursor:default}
@@ -1049,6 +1062,9 @@ ICONS = {
     "resumen": _icon("<path d='M4 19V9M10 19V5M16 19v-7M22 19H2'/>"),
     "mercado": _icon("<path d='M3 17l5-6 4 3 7-8'/><path d='M15 6h4v4'/>"),
     "casas": _icon("<path d='M3 10l9-6 9 6'/><path d='M5 10v9h14v-9M9 19v-5h6v5'/>"),
+    # Mazo, el mismo trazo que la marca de la cabecera.
+    "subastas": _icon("<path d='m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10'/>"
+                      "<path d='m16 16 6-6M8 8l6-6M9 7l8 8M21 11l-8-8'/>"),
     "artistas": _icon("<circle cx='13.5' cy='6.5' r='1'/><circle cx='17.5' cy='10.5' r='1'/>"
                       "<circle cx='8.5' cy='7.5' r='1'/><path d='M12 21a9 9 0 1 1 9-9c0 2-1.5 3-3 3h-2"
                       "a2 2 0 0 0-1.5 3.3A1.7 1.7 0 0 1 12 21z'/>"),
@@ -1068,7 +1084,7 @@ ICON_GAVEL = _icon("<path d='m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10'/>"
 
 TABS = [
     ("resumen", "Resumen"), ("mercado", "Mercado"), ("casas", "Casas"),
-    ("artistas", "Artistas"), ("paises", "Países"),
+    ("subastas", "Subastas"), ("artistas", "Artistas"), ("paises", "Países"),
 ]
 
 
@@ -1236,6 +1252,166 @@ def lot_date(raw) -> str:
     return raw or "—"
 
 
+def _lot_rows(lots: list[dict], where) -> list[str]:
+    """Filas de lote de las fichas (artista y subasta). where(l) es la linea
+    pequenia de debajo del titulo: fecha y casa en el artista, numero y autor
+    en la subasta."""
+    rows = []
+    for l in lots:
+        title = (
+            f"<a href='{esc(l.get('lot_url'))}' target='_blank' rel='noopener'>"
+            f"{esc(l.get('lot_title') or 'Ver lote')}</a>"
+            if l.get("lot_url") else esc(l.get("lot_title") or "")
+        )
+        if l.get("price_sold"):
+            price = f"{num(l['price_sold'])} {esc(l.get('currency') or '')}"
+            if l.get("price_sold_eur") and l.get("currency") != "EUR":
+                price += f"<span class='sub'>= {esc(eur(l['price_sold_eur']))}</span>"
+        else:
+            price = "<span class='none'>no vendido</span>"
+        house = HOUSE_LABELS.get(l.get("house_slug"), l.get("house_slug") or "")
+        rows.append(
+            f"<tr><td>{esc(where(l))}</td><td>{esc(house)}</td>"
+            f"<td>{title}</td><td class='n'>{price}</td></tr>"
+        )
+    return rows
+
+
+def auction_key(a: dict) -> str:
+    """Clave de la ficha de subasta en cards.json. Prefijo propio: no puede
+    chocar con la clave de un artista. auction_id solo no basta, se repite
+    entre casas."""
+    return f"subasta:{a.get('house_slug')}|{a.get('auction_id')}"
+
+
+def _auction_when(a: dict) -> str:
+    raw = a.get("auction_start_date")
+    if raw:
+        return lot_date(raw)
+    month, _ = extract_month(None, a.get("auction_id"))
+    return month or "Sin fecha"
+
+
+def auction_card(a: dict, lots: list[dict]) -> str:
+    """Ficha de una subasta. Las cifras salen de agg_auction_metrics (todos los
+    lotes); la lista de lotes, de lot_details, que solo trae los de artistas
+    del ranking. Por eso se dice cuantos de cuantos se ven."""
+    slug = a.get("house_slug") or ""
+    cur = a.get("currency") or ""
+    st = a.get("sell_through_pct") or 0
+    stats = [
+        ("Lotes vendidos",
+         f"{num(a.get('sold'))}<span class='sub'>de {num(a.get('lots'))}</span>"),
+        ("Tasa de venta", pct(st)),
+        ("Volumen", esc(eur(a.get("revenue_eur")))),
+    ]
+    if cur and cur != "EUR":
+        stats.append((f"En {cur}", num(a.get("revenue_native"))))
+    ministats = "".join(
+        f"<div class='ministat'><span class='ministat-label'>{esc(k)}</span>"
+        f"<span class='ministat-value'>{v}</span></div>"
+        for k, v in stats
+    )
+
+    sold = [l for l in lots if l.get("price_sold")]
+    top = sorted(sold, key=lambda l: -(l.get("price_sold_eur") or 0))[:10]
+    rows = _lot_rows(top, lambda l: " · ".join(
+        x for x in (f"Lote {l['lot_number']}" if l.get("lot_number") else "",
+                    l.get("artist_name") or "") if x
+    ))
+    if rows:
+        lot_block = (
+            "<p class='acard-note'>Los lotes más caros con artista atribuido.</p>"
+            "<div class='acard-lots'><table><thead><tr><th>Lote</th><th>Casa</th>"
+            f"<th>Título</th><th>Precio</th></tr></thead><tbody>{''.join(rows)}"
+            "</tbody></table></div>"
+            f"<p class='caveat'>Se listan {len(top)} de los {num(a.get('sold'))} lotes "
+            "vendidos: solo hay detalle de los lotes de artistas del ranking. Las cifras "
+            "de arriba sí cuentan todos.</p>"
+        )
+    else:
+        lot_block = (
+            "<p class='caveat'>No hay detalle de lotes de esta subasta: solo se guardan "
+            "los de artistas del ranking"
+            + (", y Zorrilla vende joyería, sin artista." if slug == "zorrilla_subastas"
+               else ".") + " Las cifras de arriba sí cuentan todos sus lotes.</p>"
+        )
+
+    # Misma salvedad que en Casas: Bogota solo publica lo vendido.
+    bogota = (
+        "<p class='caveat'>Bogotá publica casi solo los lotes vendidos, así que su tasa "
+        "de venta ronda el 100% y no se compara con las otras casas.</p>"
+        if slug == "bogota_auctions" else ""
+    )
+    return (
+        f"<div class='acard' role='region' aria-label='Subasta {esc(a.get('auction_title'))}'>"
+        f"<div class='acard-head'><h4>{esc(a.get('auction_title') or a.get('auction_id'))}</h4>"
+        f"<span class='acard-res'><i class='dot {house_color(slug)}'></i> "
+        f"{esc(HOUSE_LABELS.get(slug, slug))} · {esc(_auction_when(a))}</span></div>"
+        f"<div class='ministats'>{ministats}</div>"
+        + lot_block + bogota
+        + "<p class='caveat'>Los importes en euros usan la tasa del mes de la subasta; "
+          "el precio en la moneda de la casa es el exacto.</p>"
+        "</div>"
+    )
+
+
+def _fold(s: str) -> str:
+    """Minusculas y sin tildes, como fold() del JS: 'Bogota' encuentra 'Bogotá'."""
+    return "".join(c for c in unicodedata.normalize("NFD", s.lower())
+                   if not unicodedata.combining(c))
+
+
+def _auction_sort_key(a: dict) -> tuple:
+    """Mas reciente primero (con reverse=True); las sin fecha, al final. Con
+    una clave de texto, "|" ordenaba por encima de "2026" y las sin fecha
+    salian las primeras."""
+    month, _ = extract_month(a.get("auction_start_date"), a.get("auction_id"))
+    return (month is not None, month or "", a.get("auction_start_date") or "")
+
+
+def build_auction_list(auctions: list[dict]) -> str:
+    """Lista de subastas (Casas). Cada una abre su ficha en la hoja."""
+    if not auctions:
+        return ""
+    shown = sorted(auctions, key=_auction_sort_key, reverse=True)
+    houses = sorted({a.get("house_slug") for a in shown if a.get("house_slug")},
+                    key=lambda h: HOUSE_LABELS.get(h, h))
+    options = "".join(
+        f"<option value='{esc(h)}'>{esc(HOUSE_LABELS.get(h, h))}</option>" for h in houses
+    )
+    items = []
+    for a in shown:
+        slug = a.get("house_slug") or ""
+        title = a.get("auction_title") or a.get("auction_id") or ""
+        when = _auction_when(a)
+        name = _fold(f"{title} {when} {HOUSE_LABELS.get(slug, slug)} {a.get('auction_id')}")
+        items.append(
+            f"<li data-card='{esc(auction_key(a))}' data-house='{esc(slug)}' "
+            f"data-name='{esc(name)}'>"
+            "<button type='button' class='auction-toggle' aria-haspopup='dialog' "
+            "aria-controls='sheet'>"
+            f"<i class='dot {house_color(slug)}'></i>"
+            f"<span class='au-main'><span class='name'>{esc(title)}</span>"
+            f"<span class='meta'>{esc(HOUSE_LABELS.get(slug, slug))} · {esc(when)}</span></span>"
+            f"<span class='au-num'>{esc(money(a.get('revenue_eur')))}"
+            f"<span class='sub'>{num(a.get('sold'))} de {num(a.get('lots'))}</span></span>"
+            "</button></li>"
+        )
+    return (
+        "<h2 class='large'>Las subastas</h2>"
+        f"<p class='lead'>Las {num(len(shown))} subastas, de la más reciente a la más "
+        "antigua; las que no tienen fecha, al final. Toca una para ver su ficha.</p>"
+        "<div class='controls'>"
+        "<label class='search'>Buscar<input type='search' id='auction-search' "
+        "placeholder='Arte moderno, 2024…' autocomplete='off' enterkeyhint='search'></label>"
+        "<label>Casa<select id='auction-house'><option value=''>Todas</option>"
+        f"{options}</select></label></div>"
+        "<p class='acard-note' id='auction-count' aria-live='polite'></p>"
+        f"<ul class='auctions' id='auction-list'>{''.join(items)}</ul>"
+    )
+
+
 def artist_card(a: dict, lots: list[dict]) -> str:
     """Ficha de un artista, con sus lotes y su actividad. Va a cards.json."""
     houses = a.get("houses") or []
@@ -1266,25 +1442,10 @@ def artist_card(a: dict, lots: list[dict]) -> str:
         )
 
     top = sorted(lots, key=lambda l: -(l.get("price_sold_eur") or 0))[:10]
-    lot_rows = []
-    for l in top:
-        title = (
-            f"<a href='{esc(l.get('lot_url'))}' target='_blank' rel='noopener'>"
-            f"{esc(l.get('lot_title') or 'Ver lote')}</a>"
-            if l.get("lot_url") else esc(l.get("lot_title") or "")
-        )
-        if l.get("price_sold"):
-            price = f"{num(l['price_sold'])} {esc(l.get('currency') or '')}"
-            if l.get("price_sold_eur") and l.get("currency") != "EUR":
-                price += f"<span class='sub'>= {esc(eur(l['price_sold_eur']))}</span>"
-        else:
-            price = "<span class='none'>no vendido</span>"
-        house = HOUSE_LABELS.get(l.get("house_slug"), l.get("house_slug") or "")
-        lot_rows.append(
-            f"<tr><td>{esc(lot_date(l.get('auction_start_date')))}, {esc(house)}</td>"
-            f"<td>{esc(house)}</td>"
-            f"<td>{title}</td><td class='n'>{price}</td></tr>"
-        )
+    lot_rows = _lot_rows(top, lambda l: (
+        f"{lot_date(l.get('auction_start_date'))}, "
+        f"{HOUSE_LABELS.get(l.get('house_slug'), l.get('house_slug') or '')}"
+    ))
     lot_table = ""
     if lot_rows:
         more = (
@@ -1395,6 +1556,14 @@ def build_artist_charts(artists: list[dict], generations: list[dict]) -> str:
     return "".join(out)
 
 
+def by_house_attr(a: dict) -> str:
+    """'casa:ofertados:vendidos:volumen,...' para el filtro por casa del JS."""
+    return ",".join(
+        f"{h}:{v.get('lots_offered') or 0}:{v.get('lots_sold') or 0}:{v.get('revenue_eur') or 0}"
+        for h, v in (a.get("by_house") or {}).items()
+    )
+
+
 def build_artist_table(artists: list[dict], cov: dict,
                        generations: list[dict] | None = None) -> str:
     if not artists:
@@ -1410,6 +1579,11 @@ def build_artist_table(artists: list[dict], cov: dict,
     options = "".join(f"<option value='{esc(c)}'>{esc(l)}</option>" for c, l in pares)
     if any(not a.get("country_birth") for a in shown):
         options += "<option value='__none__'>Sin país informado</option>"
+    house_options = "".join(
+        f"<option value='{esc(h)}'>{esc(HOUSE_LABELS.get(h, h))}</option>"
+        for h in sorted({h for a in shown for h in (a.get("by_house") or {})},
+                        key=lambda h: HOUSE_LABELS.get(h, h))
+    )
 
     top_rev = max((a.get("revenue_eur") or 0) for a in shown) or 1
     rows = []
@@ -1439,6 +1613,9 @@ def build_artist_table(artists: list[dict], cov: dict,
             f"data-key='{esc(a.get('artist_key') or '')}' "
             f"data-card='{esc(card_key(a, i))}' "
             f"data-kind='{esc(multi_house_kind(a.get('houses') or []))}' "
+            # casa:ofertados:vendidos:volumen. El filtro por casa cambia las
+            # cifras de la fila por las de esa casa, no solo la oculta.
+            f"data-houses='{esc(by_house_attr(a))}' "
             f"data-sold='{a.get('lots_sold') or 0}' "
             f"data-offered='{a.get('lots_offered') or 0}' "
             f"data-birth='{a.get('birth_year') or ''}' "
@@ -1503,9 +1680,13 @@ def build_artist_table(artists: list[dict], cov: dict,
         "placeholder='Botero, Sorolla…' autocomplete='off' enterkeyhint='search'></label>"
         "<label>País de nacimiento<select id='country-filter'>"
         f"<option value=''>Todos</option>{options}</select></label>"
+        # Sin desglose por casa en Gold (build_insights viejo) no se ofrece:
+        # un filtro que vacia la lista parece un fallo.
+        + (f"<label>Casa<select id='house-filter'><option value=''>Todas</option>"
+           f"{house_options}</select></label>" if house_options else "")
         # Presencia en varias casas. "Mismo mercado" y "cruza mercados" van
         # separados porque Bogota y Lefebre son las dos colombianas.
-        "<label>Presencia<select id='kind-filter'>"
+        + "<label>Presencia<select id='kind-filter'>"
         "<option value=''>Todos</option>"
         "<option value='multi'>En más de una casa</option>"
         "<option value='cross_market'>· cruzando mercados</option>"
@@ -1651,6 +1832,59 @@ def _dated(rows: list[dict]) -> tuple[list[dict], float]:
     return dated, undated
 
 
+def house_home(rep: dict, slug: str) -> str:
+    """Resumen de UNA casa (filtro de la portada). Sin precio mediano ni
+    artistas con pais: Gold solo los tiene globales, y se dice el precio
+    medio, que si esta por casa, antes que inventar un mediano."""
+    h = next((x for x in rep.get("by_house", []) if x.get("house_slug") == slug), None)
+    if not h:
+        return ""
+    label = HOUSE_LABELS.get(slug, slug)
+    cur = h.get("currency") or ""
+    rows, undated = _dated([r for r in rep.get("by_year_by_house", [])
+                            if r.get("house_slug") == slug])
+    years = [r["year"] for r in rows]
+    span = f"entre {min(years)} y {max(years)}" if years else "en todo el histórico"
+    rev = h.get("revenue_eur") or 0
+    hero = chart_card(
+        stacked_chart(rows, [slug]),
+        money(rev),
+        f"Vendido por {label} {span}, en {num(h.get('lots_sold'))} lotes.",
+        cls="hero", n=rev,
+        extra=notes(
+            "Volumen adjudicado convertido a euros con la tasa del mes de cada subasta.",
+            (f"{esc(money(undated))} corresponden a lotes sin año y no están en el gráfico; "
+             "sí en el total." if undated else ""),
+        ),
+    ) or (f"<figure class='card hero'><p class='ro'><span class='ro-v'>{esc(money(rev))}</span>"
+          f"<span class='ro-l'>Vendido por {esc(label)}.</span></p></figure>")
+    est = next((e for e in (rep.get("estimate_accuracy") or {}).get("by_house", [])
+                if e.get("house_slug") == slug), None)
+    st = (h.get("sell_through_rate") or 0) * 100
+    cards = [
+        ("Lotes vendidos", num(h.get("lots_sold")),
+         f"{pct(st)} de {num(h.get('lots_offered'))} ofertados"),
+        ("Precio medio", eur(h.get("avg_sold_price_eur")),
+         f"{num(h.get('avg_sold_price_native'))} {cur}" if cur != "EUR" else "Por lote vendido"),
+    ]
+    if est and est.get("total"):
+        cards.append(("Superan la estimación", pct(est["above"] / est["total"] * 100),
+                      f"De {num(est['total'])} lotes con estimación"))
+    cards += [
+        ("Subastas", num(sum(1 for a in rep.get("by_auction", [])
+                             if a.get("house_slug") == slug)),
+         "Detalle en la pestaña Subastas"),
+        (f"En {cur}" if cur else "En su moneda", num(h.get("revenue_native")),
+         "La cifra exacta; la de euros es aproximada" if cur != "EUR" else "Su moneda es el euro"),
+    ]
+    kpis = "".join(
+        f"<article class='kpi'><span class='kpi-l'>{esc(k)}</span>"
+        f"<span class='kpi-v'>{esc(v)}</span><span class='kpi-n'>{esc(n)}</span></article>"
+        for k, v, n in cards
+    )
+    return f"<div data-home='{esc(slug)}' hidden>{hero}<div class='rail'>{kpis}</div></div>"
+
+
 def build_summary(rep: dict, span: str, dek: str, houses: list[str]) -> str:
     s = rep["summary"]
     by_yh, undated = _dated(rep.get("by_year_by_house", []))
@@ -1666,11 +1900,24 @@ def build_summary(rep: dict, span: str, dek: str, houses: list[str]) -> str:
              "sí en el total." if undated else ""),
         ),
     )
+    picker = (
+        "<div class='controls'><label>Casa<select id='home-house'>"
+        "<option value=''>Todas las casas</option>"
+        + "".join(f"<option value='{esc(h)}'>{esc(HOUSE_LABELS.get(h, h))}</option>"
+                  for h in houses)
+        + "</select></label></div>"
+    ) if houses else ""
     return (
         "<h1 class='large'>Qué se vende, a quién y por cuánto</h1>"
+        + picker
+        + "<div data-home=''>"
         + hero
         + f"<p class='insight'>{esc(dek)}</p>"
         + build_kpis(rep)
+        + "</div>"
+        # Una portada por casa, pintada en Python y oculta: el JS solo cambia
+        # cual se ve, asi las cifras salen del mismo formateador que la global.
+        + "".join(house_home(rep, h) for h in houses)
         + build_flags(rep.get("quality_flags", []))
         + "<div class='box-notes'>"
         + notes(
@@ -1830,7 +2077,7 @@ JS = r"""
     // casa no puede devolverte al principio de 1.300 filas.
     window.scrollTo(0, pos[id] || 0);
     // La ficha se pide al entrar en Artistas, antes del primer toque.
-    if (id === 'artistas') cards().catch(function () {});
+    if (id === 'artistas' || id === 'subastas') cards().catch(function () {});
   }
   window.addEventListener('hashchange', function () { go(location.hash.slice(1)); });
   go(location.hash.slice(1));
@@ -2098,7 +2345,44 @@ JS = r"""
       return rows.filter(function (r) { return r.dataset.match; });
     }
 
+    // Filtro por casa: la fila pasa a ensenar las cifras de ESA casa (vendidos,
+    // tasa, volumen), y los totales y el CSV las heredan porque leen dataset.
+    // Sin esto, filtrar Duran sumaria lo que Botero vendio en Bogota.
+    var houseEl = cfg.house ? document.getElementById(cfg.house) : null;
+    function houseValue() { return houseEl ? houseEl.value : ''; }
+    function showHouse(row, house) {
+      if (!row._all) {
+        row._all = {sold: row.dataset.sold, offered: row.dataset.offered,
+                    revenue: row.dataset.revenue,
+                    c2: row.cells[2].innerHTML, c3: row.cells[3].innerHTML,
+                    c4: row.cells[4].innerHTML};
+        row._h = {};
+        (row.dataset.houses || '').split(',').forEach(function (p) {
+          var f = p.split(':');
+          if (f.length === 4) row._h[f[0]] = {offered: f[1], sold: f[2], revenue: f[3]};
+        });
+      }
+      var a = row._all, h = house ? row._h[house] : null;
+      var v = h || a;
+      row.dataset.sold = v.sold; row.dataset.offered = v.offered;
+      row.dataset.revenue = v.revenue;
+      if (h) {
+        row.cells[2].innerHTML = miles(+h.sold) + "<span class='sub'>de " +
+          miles(+h.offered) + '</span>';
+        row.cells[3].textContent = +h.offered
+          ? (h.sold / h.offered * 100).toFixed(1).replace('.', ',') + '%' : '—';
+        row.cells[4].textContent = miles(Math.round(+h.revenue)) + ' €';
+      } else {
+        row.cells[2].innerHTML = a.c2; row.cells[3].innerHTML = a.c3;
+        row.cells[4].innerHTML = a.c4;
+      }
+      return !house || !!h;
+    }
+
     function apply() {
+      var house0 = houseValue();
+      // Sin casa elegida, devolver a cada fila sus cifras globales.
+      if (!house0) rows.forEach(function (r) { if (r._all) showHouse(r, ''); });
       var q = fold(cfg.search ? (document.getElementById(cfg.search) || {}).value : '');
       var sel = cfg.select ? (document.getElementById(cfg.select) || {}).value : '';
       var n = 0, sold = 0, offered = 0, revenue = 0, artists = 0, dated = 0;
@@ -2106,12 +2390,14 @@ JS = r"""
       // de pais para que wire() siga sirviendo a las dos listas.
       var extraEl = cfg.extra ? document.getElementById(cfg.extra) : null;
       var extra = extraEl ? extraEl.value : '';
+      var house = houseValue();
       rows.forEach(function (row) {
         var okExtra = !extra ||
           (extra === 'multi' ? row.dataset.kind !== 'single'
                              : row.dataset.kind === extra);
+        var okHouse = !house || showHouse(row, house);
         var ok = (!q || fold(row.dataset.name).indexOf(q) >= 0) &&
-                 (!sel || row.dataset.country === sel) && okExtra;
+                 (!sel || row.dataset.country === sel) && okExtra && okHouse;
         row.dataset.match = ok ? '1' : '';
         row.hidden = !ok;
         if (!ok) return;
@@ -2218,7 +2504,10 @@ JS = r"""
       var keys = {};
       visible().forEach(function (r) { keys[cfg.matchKey(r)] = 1; });
       lots().then(function (all) {
-        var sel = all.filter(function (l) { return keys[cfg.lotKey(l)]; });
+        var house = houseValue();
+        var sel = all.filter(function (l) {
+          return keys[cfg.lotKey(l)] && (!house || l.house_slug === house);
+        });
         if (!sel.length) {
           say('No hay detalle de lotes para esta selección: solo se exportan los ' +
               'lotes de artistas con país en el maestro.', true);
@@ -2243,8 +2532,8 @@ JS = r"""
   wire({
     table: 'artist-table', empty: 'artist-empty', totals: 'artist-totals',
     search: 'artist-search', select: 'country-filter', reset: 'artist-reset',
-    extra: 'kind-filter',
-    inputs: ['artist-search', 'country-filter', 'kind-filter'],
+    extra: 'kind-filter', house: 'house-filter',
+    inputs: ['artist-search', 'country-filter', 'house-filter', 'kind-filter'],
     ids: {count: 't-artists', sold: 't-sold', rate: 't-rate',
           revenue: 't-revenue', avg: 't-avg', dated: 't-dated'},
     dlView: 'artist-dl-view', dlLots: 'artist-dl-lots', prefix: 'artistas',
@@ -2287,14 +2576,16 @@ JS = r"""
 
   // --- Ficha de artista en hoja inferior -----------------------------------
   (function () {
-    var table = document.getElementById('artist-table');
+    // Un solo manejador para fichas de artista y de subasta: las dos viven en
+    // cards.json y se abren en la misma hoja.
+    var main = document.querySelector('main');
     var sheet = document.getElementById('sheet');
-    if (!table || !sheet || !sheet.showModal) return;
+    if (!main || !sheet || !sheet.showModal) return;
     var body = sheet.querySelector('.sheet-body');
-    table.addEventListener('click', function (ev) {
-      var btn = ev.target.closest && ev.target.closest('.artist-toggle');
+    main.addEventListener('click', function (ev) {
+      var btn = ev.target.closest && ev.target.closest('.artist-toggle, .auction-toggle');
       if (!btn) return;
-      var id = btn.closest('tr').dataset.card;
+      var id = btn.closest('[data-card]').dataset.card;
       body.innerHTML = "<p class='loading'>Cargando la ficha…</p>";
       body.scrollTop = 0;
       sheet.showModal();
@@ -2307,6 +2598,45 @@ JS = r"""
     });
     // Tocar el fondo cierra, como en cualquier hoja del sistema.
     sheet.addEventListener('click', function (ev) { if (ev.target === sheet) sheet.close(); });
+  })();
+
+  // --- Filtro por casa de la portada: ensenia el bloque de esa casa --------
+  (function () {
+    var sel = document.getElementById('home-house');
+    if (!sel) return;
+    var blocks = [].slice.call(document.querySelectorAll('[data-home]'));
+    sel.addEventListener('change', function () {
+      blocks.forEach(function (b) { b.hidden = b.dataset.home !== sel.value; });
+    });
+  })();
+
+  // --- Lista de subastas: buscar y filtrar por casa -------------------------
+  (function () {
+    var list = document.getElementById('auction-list');
+    if (!list) return;
+    var q = document.getElementById('auction-search');
+    var h = document.getElementById('auction-house');
+    var count = document.getElementById('auction-count');
+    var items = [].slice.call(list.children);
+    // ponytail: tope fijo de filas visibles; paginar si 60 se queda corto.
+    var MAX = 60;
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+    function apply() {
+      var t = norm(q.value.trim()), hv = h.value, n = 0;
+      items.forEach(function (li) {
+        var ok = (!hv || li.dataset.house === hv) && (!t || li.dataset.name.indexOf(t) >= 0);
+        li.hidden = !ok || n >= MAX;
+        if (ok) n++;
+      });
+      count.textContent = n > MAX
+        ? 'Se ven ' + MAX + ' de ' + n + ' subastas. Busca o filtra por casa para ver el resto.'
+        : n + (n === 1 ? ' subasta.' : ' subastas.');
+    }
+    q.addEventListener('input', apply);
+    h.addEventListener('change', apply);
+    apply();
   })();
 })();
 """
@@ -2331,10 +2661,17 @@ def build_cards(rep: dict, details: list[dict]) -> dict[str, str]:
     """
     by_artist = _lots_by_artist(details)
     shown = _rank_selection(rep.get("by_artist", []), ARTIST_LIMIT)
-    return {
+    out = {
         card_key(a, i): artist_card(a, by_artist.get(a.get("artist_key")) or [])
         for i, a in enumerate(shown, 1)
     }
+    # Fichas de subasta: mismo fichero, clave con prefijo "subasta:".
+    by_auction: dict[str, list[dict]] = {}
+    for d in details:
+        by_auction.setdefault(auction_key(d), []).append(d)
+    for a in rep.get("by_auction", []):
+        out[auction_key(a)] = auction_card(a, by_auction.get(auction_key(a)) or [])
+    return out
 
 
 def card_key(a: dict, position: int) -> str:
@@ -2378,6 +2715,9 @@ def build(rep: dict, data_version: dict[str, str] | None = None) -> str:
         "resumen": build_summary(rep, span, dek, houses),
         "mercado": build_market(rep),
         "casas": build_houses(rep.get("by_house", []), rep.get("quality_flags", [])),
+        # Pestania propia: al final de Casas quedaba debajo de cinco tarjetas
+        # y en el movil no se encontraba.
+        "subastas": build_auction_list(rep.get("by_auction", [])),
         "artistas": build_artist_table(rep.get("by_artist", []),
                                        rep.get("artist_coverage") or {},
                                        rep.get("by_generation") or []),
@@ -2406,7 +2746,7 @@ def build(rep: dict, data_version: dict[str, str] | None = None) -> str:
         "</header>"
         f"<main>{sections}</main></div>"
         f"<nav class='tabs' aria-label='Secciones'>{nav}</nav>"
-        "<dialog class='sheet' id='sheet' aria-label='Ficha de artista'>"
+        "<dialog class='sheet' id='sheet' aria-label='Ficha'>"
         "<div class='sheet-top'><form method='dialog'>"
         f"<button class='icon-btn' aria-label='Cerrar la ficha'>{ICON_CLOSE}</button>"
         "</form></div><div class='sheet-body'></div></dialog>"
