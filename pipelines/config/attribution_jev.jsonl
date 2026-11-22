@@ -433,6 +433,7 @@
 {"fold":"alfredo florez","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alfredo garzon","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alfredo gonzalez","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-25"}
+{"fold":"alfredo lleras","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"alfredo martos","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alfredo mompo roca","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alfredo montana","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -454,6 +455,7 @@
 {"fold":"alicia botello","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alicia grau","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alicia paz","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-25"}
+{"fold":"alicia viteri","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"aliejos","label":"no_autor","confidence":0.46,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"alighieri dante aranda y sanjuan manuel","label":"autor","confidence":0.9,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"alivez","label":"autor","confidence":0.99,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -2355,6 +2357,7 @@
 {"fold":"cebrian carabias vicente","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"cebrian javier","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"cecil scott forester","label":"autor","confidence":0.94,"model":"jev-1.13.0","date":"2026-10-12"}
+{"fold":"cecilia delgado","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"cecilia vicuna","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"cecilio guerrero malagon","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"cecilo pla","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -4672,6 +4675,7 @@
 {"fold":"franciaso farreras","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"franciis bacon","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"francis","label":"autor","confidence":0.9,"model":"jev-1.14.0","date":"2026-10-23"}
+{"fold":"francis alys","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"francis cotes s","label":"autor","confidence":0.92,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"francis drake","label":"autor","confidence":0.88,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"francis e","label":"autor","confidence":0.99,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -5670,6 +5674,7 @@
 {"fold":"heirs homann","label":"taller","confidence":0.47,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"heiter guillermo","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"helen adriana klokke","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
+{"fold":"helena ceballos","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"helga krebs","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-25"}
 {"fold":"helgi thorgils fridjonson","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"helguero puyuel luis","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-09"}
@@ -7549,6 +7554,7 @@
 {"fold":"legislativa y derecho colombiano","label":"no_autor","confidence":0.97,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"legumbrera con tapa","label":"no_autor","confidence":0.99,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"leicht hermann","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
+{"fold":"leidy chavez y fernando pareja","label":"autor","confidence":0.99,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"lejeune raoul","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-09"}
 {"fold":"leland lynn","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"lemaire joseph","label":"autor","confidence":0.99,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -8283,6 +8289,7 @@
 {"fold":"marechal bissey francois","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
 {"fold":"marechal francois","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-09"}
 {"fold":"marfa josep","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
+{"fold":"marga clark","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"margarita fontana","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"margarita saiz de andino","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"margarita soguero","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
@@ -8894,6 +8901,7 @@
 {"fold":"milagros martin","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"milagros sena lazcano","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"milan kunc","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
+{"fold":"milan laluha","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"militares a caballo","label":"no_autor","confidence":0.97,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"millan","label":"autor","confidence":0.98,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"millan ferriz emilio","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-23"}
@@ -9541,6 +9549,7 @@
 {"fold":"olga billoir","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"olga billon","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"olga costa","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-25"}
+{"fold":"olga de amaral telas amaral","label":"autor","confidence":0.88,"model":"jev-1.14.0","date":"2026-11-22"}
 {"fold":"olga gabrielle","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
 {"fold":"olga mendez","label":"autor","confidence":1.0,"model":"jev-1.14.0","date":"2026-10-25"}
 {"fold":"olinto marcucci","label":"autor","confidence":1.0,"model":"jev-1.13.0","date":"2026-10-12"}
